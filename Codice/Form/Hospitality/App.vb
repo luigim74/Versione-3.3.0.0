@@ -281,7 +281,16 @@ Public Class App
             If tempoDemoScaduto = False Then
                g_frmMain.AttivaDisattivaTutto(False)
             End If
+
+            ' Visualizza i giorni rimanenti della Licenza sulla barra di stato.
+            g_frmMain.eui_cmdLicenza.Text = giorniVerDemo
+         Else
+            ' Verifica senza messaggio a video!
+            g_frmMain.VerificaLicenza(False)
          End If
+
+         ' Verifica senza messaggio a video!
+         g_frmMain.VerificaAggiornamenti(False)
 
          Dim frmAccesso As New frmAccesso
          If frmAccesso.ShowDialog() = DialogResult.Cancel Then
