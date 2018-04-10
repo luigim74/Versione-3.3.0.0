@@ -295,6 +295,8 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
+         cmb.Items.clear()
+
          Do While dr.Read
             cmb.Items.Add(dr.Item("Descrizione"))
          Loop

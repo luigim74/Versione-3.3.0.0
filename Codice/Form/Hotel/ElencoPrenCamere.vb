@@ -1,8 +1,8 @@
 ' Nome form:            ElencoPrenCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/08/2014
-' Data ultima modifica: 23/08/2014
-' Descrizione:          Elenco prenotazioni.
+' Data ultima modifica: 10/04/2018
+' Descrizione:          Elenco prenotazioni camere.
 
 Option Strict Off
 Option Explicit On 
@@ -17,8 +17,10 @@ Public Class ElencoPrenCamere
 
    ' A_TODO: HOTEL - da modificare!
    Const COLONNA_ID_DOC As Short = 0
-   Const COLONNA_NUMERO_DOC As Short = 1
-   Const COLONNA_TIPO_DOC As Short = 4
+   Const COLONNA_NUMERO_PREN As Short = 1
+   Const COLONNA_DATA As Short = 1
+   Const COLONNA_COGNOME As Short = 3
+   Const COLONNA_NOME As Short = 4
    Const COLONNA_NOTTI As Short = 7
    Const COLONNA_ADULTI As Short = 8
    Const COLONNA_NEONATI As Short = 9
@@ -931,10 +933,10 @@ Public Class ElencoPrenCamere
          Dim Risposta As Short
          Dim sql As String
 
-         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-         Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
-         Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4)
+         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_PREN)
+         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA)
+         Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
+         Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
          Dim descrizione As String
 
          If Nome = String.Empty Then
@@ -1555,10 +1557,10 @@ Public Class ElencoPrenCamere
          numCameraStyle.NullText = ""
          numCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(numCameraStyle)
-         ' Trattamento.
+         ' Arrangiamento.
          Dim trattamentoPagStyle As New DataGridTextBoxColumn
          trattamentoPagStyle.MappingName = "Trattamento"
-         trattamentoPagStyle.HeaderText = "Trattamento"
+         trattamentoPagStyle.HeaderText = "Arrangiamento"
          trattamentoPagStyle.Width = 150
          trattamentoPagStyle.NullText = ""
          trattamentoPagStyle.TextBox.BackColor = Color.White
@@ -1628,6 +1630,8 @@ Public Class ElencoPrenCamere
                campoRicerca = "DataPartenza"
             Case "Notti"
                campoRicerca = "NumeroNotti"
+            Case "Arrangiamento"
+               campoRicerca = "Trattamento"
             Case "Acconto"
                campoRicerca = "AccontoCamera"
             Case "Totale conto"
@@ -1704,7 +1708,7 @@ Public Class ElencoPrenCamere
          CampoRicerca.Items.Add("Neonati")
          CampoRicerca.Items.Add("Bambini")
          CampoRicerca.Items.Add("Ragazzi")
-         CampoRicerca.Items.Add("Trattamento")
+         CampoRicerca.Items.Add("Arrangiamento")
          CampoRicerca.Items.Add("Acconto")
          CampoRicerca.Items.Add("Totale conto")
          CampoRicerca.Items.Add("Camera")

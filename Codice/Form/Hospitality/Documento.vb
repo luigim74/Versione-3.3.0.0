@@ -1759,6 +1759,63 @@ Public Class frmDocumento
       End Try
    End Function
 
+#Region "Procedure per Hotel "
+
+   Private Sub CaricaDatiPrenotazione()
+      Try
+         eui_cmbCausaleDocumento.Text = "Vendita da hotel"
+
+         eui_cmbClienteCognome.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 3)
+         eui_txtClienteNome.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 4)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Public Sub InserisciDettagliRigaPren()
+      Try
+         eui_cmdNuovaRiga.PerformClick()
+
+         ' Codice / Data.
+         dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = Today.ToShortDateString
+
+         ' Descrizione.
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 13)
+
+         ' Unità di misura.
+         dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+         ' Quantità.
+         dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = 1
+
+         ' Valore Unitario.
+         dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 15)
+
+         ' Sconto %.
+         dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+         ' Importo.
+         dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 15)
+
+         ' Aliquota Iva.
+         dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "10"
+
+         ' Categoria.
+         dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+#End Region
+
    Private Sub frmDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
          ImpostaIcona(Me)
@@ -1786,6 +1843,25 @@ Public Class frmDocumento
                Else
                   ModificaDocumento()
                End If
+
+            Case "ElencoPrenCamere"
+               ' Carica la lista dei documenti. 
+               eui_cmbTipoDocumento.Items.Clear()
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_PF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_RF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_FF)
+
+               ' Cambia l'intestazione della colonna Codice in Data per Hotel.
+               clnCodice.HeaderText = "Data"
+
+               ' Crea un nuovo documento con i dati della prenotazione.
+               NuovoDocumento()
+
+               ' Carica i dati della prenotazione camera.
+               CaricaDatiPrenotazione()
+
+               ' Inserisce la tipologia di arrangiamento nel dettaglio riga.
+               InserisciDettagliRigaPren()
 
          End Select
 

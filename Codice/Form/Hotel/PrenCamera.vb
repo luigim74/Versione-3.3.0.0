@@ -1,8 +1,8 @@
-' Nome form:            frmCamere
+' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 06/08/2005
-' Descrizione:          Anagrafica Camere.
+' Data ultima modifica: 10/04/2018
+' Descrizione:          Anagrafica Prenotazioni Camere.
 
 Option Strict Off
 Option Explicit On 
@@ -169,9 +169,9 @@ Public Class frmPrenCamera
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -322,7 +322,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(592, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(612, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -356,7 +356,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(592, 20)
+      Me.Panel1.Size = New System.Drawing.Size(612, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -366,7 +366,7 @@ Public Class frmPrenCamera
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -383,7 +383,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(592, 565)
+      Me.TabControl1.Size = New System.Drawing.Size(612, 585)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -424,7 +424,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(584, 539)
+      Me.TabPage1.Size = New System.Drawing.Size(604, 559)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -525,9 +525,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 283)
+      Me.Panel2.Location = New System.Drawing.Point(0, 303)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(584, 256)
+      Me.Panel2.Size = New System.Drawing.Size(604, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -893,9 +893,9 @@ Public Class frmPrenCamera
       Me.Label3.Location = New System.Drawing.Point(32, 216)
       Me.Label3.Name = "Label3"
       Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label3.Size = New System.Drawing.Size(67, 13)
+      Me.Label3.Size = New System.Drawing.Size(78, 13)
       Me.Label3.TabIndex = 162
-      Me.Label3.Text = "Trattamento:"
+      Me.Label3.Text = "Arrangiamento:"
       '
       'Label20
       '
@@ -918,7 +918,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(584, 539)
+      Me.TabPage3.Size = New System.Drawing.Size(604, 559)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Occupanti"
       '
@@ -948,7 +948,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(584, 456)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(604, 456)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1004,7 +1004,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(584, 539)
+      Me.TabPage4.Size = New System.Drawing.Size(604, 559)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1136,17 +1136,17 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader6})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup1.Header = "Articoli vari"
-      ListViewGroup1.Name = "ListViewGroup1"
-      ListViewGroup2.Header = "Accessori"
-      ListViewGroup2.Name = "ListViewGroup2"
-      ListViewGroup3.Header = "Servizi"
-      ListViewGroup3.Name = "ListViewGroup3"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3})
+      ListViewGroup4.Header = "Articoli vari"
+      ListViewGroup4.Name = "ListViewGroup1"
+      ListViewGroup5.Header = "Accessori"
+      ListViewGroup5.Name = "ListViewGroup2"
+      ListViewGroup6.Header = "Servizi"
+      ListViewGroup6.Name = "ListViewGroup3"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup4, ListViewGroup5, ListViewGroup6})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(584, 456)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(604, 456)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1205,7 +1205,7 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(584, 539)
+      Me.TabPage7.Size = New System.Drawing.Size(604, 559)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
       '
@@ -1328,9 +1328,9 @@ Public Class frmPrenCamera
       '
       Me.cmbApplicaSconto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbApplicaSconto.Items.AddRange(New Object() {"Totale camera", "Totale conto"})
-      Me.cmbApplicaSconto.Location = New System.Drawing.Point(152, 200)
+      Me.cmbApplicaSconto.Location = New System.Drawing.Point(160, 200)
       Me.cmbApplicaSconto.Name = "cmbApplicaSconto"
-      Me.cmbApplicaSconto.Size = New System.Drawing.Size(112, 21)
+      Me.cmbApplicaSconto.Size = New System.Drawing.Size(104, 21)
       Me.cmbApplicaSconto.TabIndex = 7
       '
       'Label23
@@ -1543,7 +1543,7 @@ Public Class frmPrenCamera
       Me.TabPage5.Controls.Add(Me.lvwAllegati)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(574, 529)
+      Me.TabPage5.Size = New System.Drawing.Size(604, 559)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
@@ -1582,7 +1582,7 @@ Public Class frmPrenCamera
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(574, 456)
+      Me.lvwAllegati.Size = New System.Drawing.Size(604, 456)
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
       Me.lvwAllegati.View = System.Windows.Forms.View.Details
@@ -1623,7 +1623,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(574, 529)
+      Me.TabPage6.Size = New System.Drawing.Size(594, 549)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1640,7 +1640,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(574, 529)
+      Me.txtNote.Size = New System.Drawing.Size(594, 549)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1656,7 +1656,7 @@ Public Class frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(592, 611)
+      Me.ClientSize = New System.Drawing.Size(612, 631)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1772,28 +1772,28 @@ Public Class frmPrenCamera
             .Pagamento = FormattaApici(cmbPagamento.Text)
 
             If IsNumeric(txtPrezzoCamera.Text) = True Then
-               .CostoCamera = CFormatta.FormattaEuro(Convert.ToDecimal(txtPrezzoCamera.Text))
+               .CostoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtPrezzoCamera.Text))
             Else
                .CostoCamera = VALORE_ZERO
             End If
             If IsNumeric(txtAccontoCamera.Text) = True Then
-               .AccontoCamera = CFormatta.FormattaEuro(Convert.ToDecimal(txtAccontoCamera.Text))
+               .AccontoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtAccontoCamera.Text))
             Else
                .AccontoCamera = VALORE_ZERO
             End If
             If IsNumeric(txtTotaleConto.Text) = True Then
-               .TotaleConto = CFormatta.FormattaEuro(Convert.ToDecimal(txtTotaleConto.Text))
+               .TotaleConto = CFormatta.FormattaEuro(Convert.ToDouble(txtTotaleConto.Text))
             Else
                .TotaleConto = VALORE_ZERO
             End If
 
             If IsNumeric(txtSconto.Text) = True Then
-               .Sconto = CFormatta.FormattaEuro(Convert.ToDecimal(txtSconto.Text))
+               .Sconto = CFormatta.FormattaEuro(Convert.ToDouble(txtSconto.Text))
             Else
                .Sconto = VALORE_ZERO
             End If
             If IsNumeric(txtServizio.Text) = True Then
-               .Servizio = CFormatta.FormattaEuro(Convert.ToDecimal(txtServizio.Text))
+               .Servizio = CFormatta.FormattaEuro(Convert.ToDouble(txtServizio.Text))
             Else
                .Servizio = VALORE_ZERO
             End If
@@ -1926,7 +1926,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Function LeggiTotaleTassaSoggiorno(ByVal numAdulti As Integer, ByVal numNeonati As Integer, ByVal numBambini As Integer, ByVal numRagazzi As Integer) As Decimal
       Try
          DatiConfig = New AppConfig
@@ -2100,7 +2100,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub SalvaPrenCamere()
       'If SalvaPCamera = True Then
       '   IPrenCamere.EliminaDati(TAB_PREN_CAMERE, IPren.Codice)
@@ -2124,7 +2124,7 @@ Public Class frmPrenCamera
       'End If
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub SalvaPrenTratt()
       'If SalvaPTratt = True Then
       '   IPrenTratt.EliminaDati(TAB_PREN_TRATT, IPren.Codice)
@@ -2152,7 +2152,7 @@ Public Class frmPrenCamera
       'End If
    End Sub
 
-   ' NON PIU' UTILIZZATA!
+   ' DA_FARE_A: NON PIU' UTILIZZATA!
    Private Sub ModificaColore()
       'Try
       '   With ColorDialog1()
@@ -2174,7 +2174,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Public Function ApriClienti(ByVal val As String) As Boolean
       Try
          ' Modifica il cursore del mouse.
@@ -2291,7 +2291,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub ConvalidaAllegati()
       '' Carica la lista dei componenti aggiuntivi.
       'If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, IPren.IdCliente) = True Then
@@ -2304,7 +2304,7 @@ Public Class frmPrenCamera
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub ConvalidaPrenCamere()
       '' Carica la lista dei componenti aggiuntivi.
       'If IPrenCamere.ConvalidaDati(lvwCamere) = True Then
@@ -2316,7 +2316,7 @@ Public Class frmPrenCamera
       'End If
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub ConvalidaPrenTratt()
       '' Carica la lista dei componenti aggiuntivi.
       'If IPrenTratt.ConvalidaDati(lvwTrattamento) = True Then
@@ -2410,18 +2410,18 @@ Public Class frmPrenCamera
                dtpOraArrivo.Value = Convert.ToDateTime(.OraArrivo)
                txtNumeroNotti.Text = .NumeroNotti.ToString
                cmbPagamento.Text = .Pagamento
-               txtPrezzoCamera.Text = CFormatta.FormattaEuro(.CostoCamera)
-               txtAccontoCamera.Text = CFormatta.FormattaEuro(.AccontoCamera)
-               txtTotaleConto.Text = CFormatta.FormattaEuro(.TotaleConto)
+               txtPrezzoCamera.Text = CFormatta.FormattaNumeroDouble(.CostoCamera)
+               txtAccontoCamera.Text = CFormatta.FormattaNumeroDouble(.AccontoCamera)
+               txtTotaleConto.Text = CFormatta.FormattaNumeroDouble(.TotaleConto)
                cmbApplicaSconto.SelectedIndex = Convert.ToInt32(.ApplicaSconto)
 
                If IsNumeric(.Sconto) = True Then
-                  txtSconto.Text = CFormatta.FormattaEuro(Convert.ToDecimal(.Sconto))
+                  txtSconto.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Sconto))
                Else
                   txtSconto.Text = VALORE_ZERO
                End If
                If IsNumeric(.Servizio) = True Then
-                  txtServizio.Text = CFormatta.FormattaEuro(Convert.ToDecimal(.Servizio))
+                  txtServizio.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Servizio))
                Else
                   txtServizio.Text = VALORE_ZERO
                End If
@@ -2544,7 +2544,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub frmPrenCamera_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       If Me.Tag <> "0" Then
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -2610,7 +2610,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdRimuovi_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       Try
          'cmdInserimento.NotifyDefault(False)
@@ -2625,7 +2625,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdModifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       Try
          'cmdInserimento.NotifyDefault(False)
@@ -2659,7 +2659,7 @@ Public Class frmPrenCamera
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdInsCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'Try
       '   Dim frm As New frmPrenCamere
@@ -2679,7 +2679,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdModCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'cmdInsCamere.NotifyDefault(False)
 
@@ -2707,7 +2707,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdRimCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'cmdInsCamere.NotifyDefault(False)
 
@@ -2734,7 +2734,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdInsTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'Try
       '   Dim frm As New frmPrenTratt
@@ -2754,7 +2754,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdModTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'cmdInsTratt.NotifyDefault(False)
 
@@ -2785,7 +2785,7 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   'DA_FARE_A: HOTEL - da modificare!
    Private Sub cmdRimTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       'cmdInsTratt.NotifyDefault(False)
 
@@ -2812,9 +2812,9 @@ Public Class frmPrenCamera
       'End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub lvwAllegati_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles lvwAllegati.DoubleClick
-      ' a_todo: DA TERMINARE - IMPOSTARE TUTTI I PROGRAMMI APRIBILI.
+      ' DA_FARE_A: DA TERMINARE - IMPOSTARE TUTTI I PROGRAMMI APRIBILI.
       Dim Estensione As String
       Dim NomeFile As String
       Dim Percorso As String
@@ -3429,14 +3429,6 @@ Public Class frmPrenCamera
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   Private Sub txtPrezzoCamera_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtPrezzoCamera.TextChanged
-
-   End Sub
-
-   Private Sub txtAccontoCamera_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtAccontoCamera.TextChanged
-
    End Sub
 
    Private Sub cmbListino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbListino.SelectedIndexChanged
