@@ -1,0 +1,8 @@
+"*** 11/04/2018 - 18:27:05 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectNotEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaTassaSogg() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1830"
+"
+"

@@ -24,6 +24,7 @@ Public Class PrenCamere
    Public Listino As String
    Public Pagamento As String
    Public CostoCamera As String
+   Public TassaSoggiorno As String
    Public AccontoCamera As String
    Public TotaleConto As String
    Public ApplicaSconto As String
@@ -172,6 +173,11 @@ Public Class PrenCamere
          Else
             Me.CostoCamera = VALORE_ZERO
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("TassaSoggiorno")) = False Then
+            Me.TassaSoggiorno = ds.Tables(tabella).Rows(0)("TassaSoggiorno").ToString
+         Else
+            Me.TassaSoggiorno = VALORE_ZERO
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("AccontoCamera")) = False Then
             Me.AccontoCamera = ds.Tables(tabella).Rows(0)("AccontoCamera").ToString
          Else
@@ -229,11 +235,11 @@ Public Class PrenCamere
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " & _
-                                              "Trattamento, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, AccontoCamera, " & _
-                                              "TotaleConto, ApplicaSconto, Sconto, Servizio, Colore, [Note]) " & _
-                                       "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " & _
-                                              "@Trattamento, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @AccontoCamera, " & _
+         sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " &
+                                              "Trattamento, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, TassaSoggiorno, AccontoCamera, " &
+                                              "TotaleConto, ApplicaSconto, Sconto, Servizio, Colore, [Note]) " &
+                                       "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " &
+                                              "@Trattamento, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @TassaSoggiorno, @AccontoCamera, " &
                                               "@TotaleConto, @ApplicaSconto, @Sconto, @Servizio, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
@@ -260,6 +266,7 @@ Public Class PrenCamere
          cmdInsert.Parameters.Add("@Listino", Me.Listino)
          cmdInsert.Parameters.Add("@Pagamento", Me.Pagamento)
          cmdInsert.Parameters.Add("@CostoCamera", Me.CostoCamera)
+         cmdInsert.Parameters.Add("@TassaSoggiorno", Me.TassaSoggiorno)
          cmdInsert.Parameters.Add("@AccontoCamera", Me.AccontoCamera)
          cmdInsert.Parameters.Add("@TotaleConto", Me.TotaleConto)
          cmdInsert.Parameters.Add("@ApplicaSconto", Me.ApplicaSconto)
@@ -303,37 +310,38 @@ Public Class PrenCamere
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET IdCliente = @IdCliente, " & _
-                             "Numero = @Numero, " & _
-                             "Data = @Data, " & _
-                             "Tipologia = @Tipologia, " & _
-                             "Stato = @Stato, " & _
-                             "Cognome = @Cognome, " & _
-                             "Nome = @Nome, " & _
-                             "Adulti = @Adulti, " & _
-                             "Neonati = @Neonati, " & _
-                             "Bambini = @Bambini, " & _
-                             "Ragazzi = @Ragazzi, " & _
-                             "NumeroCamera = @NumeroCamera, " & _
-                             "DescrizioneCamera = @DescrizioneCamera, " & _
-                             "Trattamento = @Trattamento, " & _
-                             "DataArrivo = @DataArrivo, " & _
-                             "DataPartenza = @DataPartenza, " & _
-                             "OraArrivo = @OraArrivo, " & _
-                             "NumeroNotti = @NumeroNotti, " & _
-                             "Listino = @Listino, " & _
-                             "Pagamento = @Pagamento, " & _
-                             "CostoCamera = @CostoCamera, " & _
-                             "AccontoCamera = @AccontoCamera, " & _
-                             "TotaleConto = @TotaleConto, " & _
-                             "ApplicaSconto = @ApplicaSconto, " & _
-                             "Sconto = @Sconto, " & _
-                             "Servizio = @Servizio, " & _
-                             "Colore = @Colore, " & _
-                             "[Note] = @Note " & _
-                             "WHERE Id = {1}", _
-                              tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET IdCliente = @IdCliente, " &
+                             "Numero = @Numero, " &
+                             "Data = @Data, " &
+                             "Tipologia = @Tipologia, " &
+                             "Stato = @Stato, " &
+                             "Cognome = @Cognome, " &
+                             "Nome = @Nome, " &
+                             "Adulti = @Adulti, " &
+                             "Neonati = @Neonati, " &
+                             "Bambini = @Bambini, " &
+                             "Ragazzi = @Ragazzi, " &
+                             "NumeroCamera = @NumeroCamera, " &
+                             "DescrizioneCamera = @DescrizioneCamera, " &
+                             "Trattamento = @Trattamento, " &
+                             "DataArrivo = @DataArrivo, " &
+                             "DataPartenza = @DataPartenza, " &
+                             "OraArrivo = @OraArrivo, " &
+                             "NumeroNotti = @NumeroNotti, " &
+                             "Listino = @Listino, " &
+                             "Pagamento = @Pagamento, " &
+                             "CostoCamera = @CostoCamera, " &
+                             "TassaSoggiorno = @TassaSoggiorno, " &
+                             "AccontoCamera = @AccontoCamera, " &
+                             "TotaleConto = @TotaleConto, " &
+                             "ApplicaSconto = @ApplicaSconto, " &
+                             "Sconto = @Sconto, " &
+                             "Servizio = @Servizio, " &
+                             "Colore = @Colore, " &
+                             "[Note] = @Note " &
+                             "WHERE Id = {1}",
+                              tabella,
                               codice)
 
          ' Crea il comando per la connessione corrente.
@@ -360,6 +368,7 @@ Public Class PrenCamere
          cmdUpdate.Parameters.Add("@Listino", Me.Listino)
          cmdUpdate.Parameters.Add("@Pagamento", Me.Pagamento)
          cmdUpdate.Parameters.Add("@CostoCamera", Me.CostoCamera)
+         cmdUpdate.Parameters.Add("@TassaSoggiorno", Me.TassaSoggiorno)
          cmdUpdate.Parameters.Add("@AccontoCamera", Me.AccontoCamera)
          cmdUpdate.Parameters.Add("@TotaleConto", Me.TotaleConto)
          cmdUpdate.Parameters.Add("@ApplicaSconto", Me.ApplicaSconto)

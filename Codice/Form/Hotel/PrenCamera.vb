@@ -165,13 +165,15 @@ Public Class frmPrenCamera
    Public WithEvents txtTotaleTassaSoggiorno As System.Windows.Forms.TextBox
    Public WithEvents Label26 As System.Windows.Forms.Label
    Friend WithEvents cmbIdListino As System.Windows.Forms.ComboBox
+   Public WithEvents txtTassaSoggiorno As TextBox
+   Public WithEvents Label29 As Label
    Friend WithEvents Button4 As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -251,6 +253,8 @@ Public Class frmPrenCamera
       Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.TabPage7 = New System.Windows.Forms.TabPage()
+      Me.txtTassaSoggiorno = New System.Windows.Forms.TextBox()
+      Me.Label29 = New System.Windows.Forms.Label()
       Me.cmbIdListino = New System.Windows.Forms.ComboBox()
       Me.txtTotaleTassaSoggiorno = New System.Windows.Forms.TextBox()
       Me.Label26 = New System.Windows.Forms.Label()
@@ -322,7 +326,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(612, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(642, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -356,7 +360,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(612, 20)
+      Me.Panel1.Size = New System.Drawing.Size(642, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -383,7 +387,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(612, 585)
+      Me.TabControl1.Size = New System.Drawing.Size(642, 615)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -424,7 +428,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(604, 559)
+      Me.TabPage1.Size = New System.Drawing.Size(634, 589)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -525,9 +529,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 303)
+      Me.Panel2.Location = New System.Drawing.Point(0, 333)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(604, 256)
+      Me.Panel2.Size = New System.Drawing.Size(634, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -918,7 +922,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(604, 559)
+      Me.TabPage3.Size = New System.Drawing.Size(624, 579)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Occupanti"
       '
@@ -948,7 +952,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(604, 456)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(624, 456)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1004,7 +1008,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(604, 559)
+      Me.TabPage4.Size = New System.Drawing.Size(624, 579)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1136,17 +1140,17 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader6})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup4.Header = "Articoli vari"
-      ListViewGroup4.Name = "ListViewGroup1"
-      ListViewGroup5.Header = "Accessori"
-      ListViewGroup5.Name = "ListViewGroup2"
-      ListViewGroup6.Header = "Servizi"
-      ListViewGroup6.Name = "ListViewGroup3"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup4, ListViewGroup5, ListViewGroup6})
+      ListViewGroup1.Header = "Articoli vari"
+      ListViewGroup1.Name = "ListViewGroup1"
+      ListViewGroup2.Header = "Accessori"
+      ListViewGroup2.Name = "ListViewGroup2"
+      ListViewGroup3.Header = "Servizi"
+      ListViewGroup3.Name = "ListViewGroup3"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(604, 456)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(624, 456)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1178,6 +1182,8 @@ Public Class frmPrenCamera
       'TabPage7
       '
       Me.TabPage7.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage7.Controls.Add(Me.txtTassaSoggiorno)
+      Me.TabPage7.Controls.Add(Me.Label29)
       Me.TabPage7.Controls.Add(Me.cmbIdListino)
       Me.TabPage7.Controls.Add(Me.txtTotaleTassaSoggiorno)
       Me.TabPage7.Controls.Add(Me.Label26)
@@ -1205,9 +1211,41 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(604, 559)
+      Me.TabPage7.Size = New System.Drawing.Size(634, 589)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
+      '
+      'txtTassaSoggiorno
+      '
+      Me.txtTassaSoggiorno.AcceptsReturn = True
+      Me.txtTassaSoggiorno.BackColor = System.Drawing.SystemColors.Window
+      Me.txtTassaSoggiorno.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtTassaSoggiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTassaSoggiorno.ForeColor = System.Drawing.Color.Blue
+      Me.txtTassaSoggiorno.Location = New System.Drawing.Point(160, 122)
+      Me.txtTassaSoggiorno.MaxLength = 0
+      Me.txtTassaSoggiorno.Name = "txtTassaSoggiorno"
+      Me.txtTassaSoggiorno.ReadOnly = True
+      Me.txtTassaSoggiorno.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtTassaSoggiorno.Size = New System.Drawing.Size(104, 20)
+      Me.txtTassaSoggiorno.TabIndex = 257
+      Me.txtTassaSoggiorno.TabStop = False
+      Me.txtTassaSoggiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.txtTassaSoggiorno.Visible = False
+      '
+      'Label29
+      '
+      Me.Label29.AutoSize = True
+      Me.Label29.BackColor = System.Drawing.Color.Transparent
+      Me.Label29.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label29.ForeColor = System.Drawing.Color.Black
+      Me.Label29.Location = New System.Drawing.Point(32, 122)
+      Me.Label29.Name = "Label29"
+      Me.Label29.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label29.Size = New System.Drawing.Size(99, 13)
+      Me.Label29.TabIndex = 256
+      Me.Label29.Text = "Tassa di soggiorno:"
+      Me.Label29.Visible = False
       '
       'cmbIdListino
       '
@@ -1225,13 +1263,13 @@ Public Class frmPrenCamera
       Me.txtTotaleTassaSoggiorno.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleTassaSoggiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleTassaSoggiorno.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleTassaSoggiorno.Location = New System.Drawing.Point(416, 144)
+      Me.txtTotaleTassaSoggiorno.Location = New System.Drawing.Point(416, 123)
       Me.txtTotaleTassaSoggiorno.MaxLength = 0
       Me.txtTotaleTassaSoggiorno.Name = "txtTotaleTassaSoggiorno"
       Me.txtTotaleTassaSoggiorno.ReadOnly = True
       Me.txtTotaleTassaSoggiorno.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtTotaleTassaSoggiorno.Size = New System.Drawing.Size(104, 20)
-      Me.txtTotaleTassaSoggiorno.TabIndex = 5
+      Me.txtTotaleTassaSoggiorno.TabIndex = 4
       Me.txtTotaleTassaSoggiorno.TabStop = False
       Me.txtTotaleTassaSoggiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
@@ -1241,7 +1279,7 @@ Public Class frmPrenCamera
       Me.Label26.BackColor = System.Drawing.Color.Transparent
       Me.Label26.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label26.ForeColor = System.Drawing.Color.Black
-      Me.Label26.Location = New System.Drawing.Point(280, 144)
+      Me.Label26.Location = New System.Drawing.Point(280, 123)
       Me.Label26.Name = "Label26"
       Me.Label26.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label26.Size = New System.Drawing.Size(128, 13)
@@ -1255,7 +1293,7 @@ Public Class frmPrenCamera
       Me.txtTotaleIncassare.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleIncassare.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleIncassare.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleIncassare.Location = New System.Drawing.Point(416, 288)
+      Me.txtTotaleIncassare.Location = New System.Drawing.Point(416, 293)
       Me.txtTotaleIncassare.MaxLength = 0
       Me.txtTotaleIncassare.Name = "txtTotaleIncassare"
       Me.txtTotaleIncassare.ReadOnly = True
@@ -1271,7 +1309,7 @@ Public Class frmPrenCamera
       Me.Label25.BackColor = System.Drawing.Color.Transparent
       Me.Label25.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label25.ForeColor = System.Drawing.Color.Black
-      Me.Label25.Location = New System.Drawing.Point(280, 288)
+      Me.Label25.Location = New System.Drawing.Point(280, 293)
       Me.Label25.Name = "Label25"
       Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label25.Size = New System.Drawing.Size(103, 13)
@@ -1281,7 +1319,7 @@ Public Class frmPrenCamera
       'txtServizio
       '
       Me.txtServizio.ForeColor = System.Drawing.Color.Black
-      Me.txtServizio.Location = New System.Drawing.Point(416, 176)
+      Me.txtServizio.Location = New System.Drawing.Point(416, 181)
       Me.txtServizio.MaxLength = 0
       Me.txtServizio.Name = "txtServizio"
       Me.txtServizio.Size = New System.Drawing.Size(104, 20)
@@ -1294,7 +1332,7 @@ Public Class frmPrenCamera
       Me.Label24.BackColor = System.Drawing.Color.Transparent
       Me.Label24.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label24.ForeColor = System.Drawing.Color.Black
-      Me.Label24.Location = New System.Drawing.Point(280, 176)
+      Me.Label24.Location = New System.Drawing.Point(280, 181)
       Me.Label24.Name = "Label24"
       Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label24.Size = New System.Drawing.Size(58, 13)
@@ -1304,7 +1342,7 @@ Public Class frmPrenCamera
       'txtSconto
       '
       Me.txtSconto.ForeColor = System.Drawing.Color.Black
-      Me.txtSconto.Location = New System.Drawing.Point(416, 200)
+      Me.txtSconto.Location = New System.Drawing.Point(416, 205)
       Me.txtSconto.MaxLength = 0
       Me.txtSconto.Name = "txtSconto"
       Me.txtSconto.Size = New System.Drawing.Size(104, 20)
@@ -1317,7 +1355,7 @@ Public Class frmPrenCamera
       Me.Label22.BackColor = System.Drawing.Color.Transparent
       Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label22.ForeColor = System.Drawing.Color.Black
-      Me.Label22.Location = New System.Drawing.Point(280, 200)
+      Me.Label22.Location = New System.Drawing.Point(280, 205)
       Me.Label22.Name = "Label22"
       Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label22.Size = New System.Drawing.Size(55, 13)
@@ -1328,7 +1366,7 @@ Public Class frmPrenCamera
       '
       Me.cmbApplicaSconto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbApplicaSconto.Items.AddRange(New Object() {"Totale camera", "Totale conto"})
-      Me.cmbApplicaSconto.Location = New System.Drawing.Point(160, 200)
+      Me.cmbApplicaSconto.Location = New System.Drawing.Point(160, 205)
       Me.cmbApplicaSconto.Name = "cmbApplicaSconto"
       Me.cmbApplicaSconto.Size = New System.Drawing.Size(104, 21)
       Me.cmbApplicaSconto.TabIndex = 7
@@ -1339,7 +1377,7 @@ Public Class frmPrenCamera
       Me.Label23.BackColor = System.Drawing.Color.Transparent
       Me.Label23.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label23.ForeColor = System.Drawing.Color.Black
-      Me.Label23.Location = New System.Drawing.Point(32, 200)
+      Me.Label23.Location = New System.Drawing.Point(32, 205)
       Me.Label23.Name = "Label23"
       Me.Label23.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label23.Size = New System.Drawing.Size(107, 13)
@@ -1353,13 +1391,13 @@ Public Class frmPrenCamera
       Me.txtTotaleAddebiti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleAddebiti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleAddebiti.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleAddebiti.Location = New System.Drawing.Point(416, 120)
+      Me.txtTotaleAddebiti.Location = New System.Drawing.Point(416, 149)
       Me.txtTotaleAddebiti.MaxLength = 0
       Me.txtTotaleAddebiti.Name = "txtTotaleAddebiti"
       Me.txtTotaleAddebiti.ReadOnly = True
       Me.txtTotaleAddebiti.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtTotaleAddebiti.Size = New System.Drawing.Size(104, 20)
-      Me.txtTotaleAddebiti.TabIndex = 4
+      Me.txtTotaleAddebiti.TabIndex = 5
       Me.txtTotaleAddebiti.TabStop = False
       Me.txtTotaleAddebiti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
@@ -1369,7 +1407,7 @@ Public Class frmPrenCamera
       Me.Label15.BackColor = System.Drawing.Color.Transparent
       Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label15.ForeColor = System.Drawing.Color.Black
-      Me.Label15.Location = New System.Drawing.Point(280, 120)
+      Me.Label15.Location = New System.Drawing.Point(280, 152)
       Me.Label15.Name = "Label15"
       Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label15.Size = New System.Drawing.Size(106, 13)
@@ -1383,7 +1421,7 @@ Public Class frmPrenCamera
       Me.txtTotaleConto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleConto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleConto.Location = New System.Drawing.Point(416, 232)
+      Me.txtTotaleConto.Location = New System.Drawing.Point(416, 237)
       Me.txtTotaleConto.MaxLength = 0
       Me.txtTotaleConto.Name = "txtTotaleConto"
       Me.txtTotaleConto.ReadOnly = True
@@ -1399,7 +1437,7 @@ Public Class frmPrenCamera
       Me.Label14.BackColor = System.Drawing.Color.Transparent
       Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label14.ForeColor = System.Drawing.Color.Black
-      Me.Label14.Location = New System.Drawing.Point(280, 232)
+      Me.Label14.Location = New System.Drawing.Point(280, 237)
       Me.Label14.Name = "Label14"
       Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label14.Size = New System.Drawing.Size(70, 13)
@@ -1413,7 +1451,7 @@ Public Class frmPrenCamera
       Me.txtAccontoCamera.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtAccontoCamera.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtAccontoCamera.ForeColor = System.Drawing.Color.Green
-      Me.txtAccontoCamera.Location = New System.Drawing.Point(416, 256)
+      Me.txtAccontoCamera.Location = New System.Drawing.Point(416, 261)
       Me.txtAccontoCamera.MaxLength = 0
       Me.txtAccontoCamera.Name = "txtAccontoCamera"
       Me.txtAccontoCamera.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1428,7 +1466,7 @@ Public Class frmPrenCamera
       Me.Label18.BackColor = System.Drawing.Color.Transparent
       Me.Label18.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label18.ForeColor = System.Drawing.Color.Black
-      Me.Label18.Location = New System.Drawing.Point(280, 256)
+      Me.Label18.Location = New System.Drawing.Point(280, 261)
       Me.Label18.Name = "Label18"
       Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label18.Size = New System.Drawing.Size(50, 13)
@@ -1543,7 +1581,7 @@ Public Class frmPrenCamera
       Me.TabPage5.Controls.Add(Me.lvwAllegati)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(604, 559)
+      Me.TabPage5.Size = New System.Drawing.Size(624, 579)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
@@ -1582,7 +1620,7 @@ Public Class frmPrenCamera
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(604, 456)
+      Me.lvwAllegati.Size = New System.Drawing.Size(624, 456)
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
       Me.lvwAllegati.View = System.Windows.Forms.View.Details
@@ -1623,7 +1661,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(594, 549)
+      Me.TabPage6.Size = New System.Drawing.Size(624, 579)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1640,7 +1678,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(594, 549)
+      Me.txtNote.Size = New System.Drawing.Size(624, 579)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1656,7 +1694,7 @@ Public Class frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(612, 631)
+      Me.ClientSize = New System.Drawing.Size(642, 661)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1775,6 +1813,11 @@ Public Class frmPrenCamera
                .CostoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtPrezzoCamera.Text))
             Else
                .CostoCamera = VALORE_ZERO
+            End If
+            If IsNumeric(txtTassaSoggiorno.Text) = True Then
+               .TassaSoggiorno = CFormatta.FormattaEuro(Convert.ToDouble(txtTassaSoggiorno.Text))
+            Else
+               .TassaSoggiorno = VALORE_ZERO
             End If
             If IsNumeric(txtAccontoCamera.Text) = True Then
                .AccontoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtAccontoCamera.Text))
@@ -2254,7 +2297,7 @@ Public Class frmPrenCamera
          Dim Documento As String = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf & _
+         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf &
                            "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -2411,6 +2454,7 @@ Public Class frmPrenCamera
                txtNumeroNotti.Text = .NumeroNotti.ToString
                cmbPagamento.Text = .Pagamento
                txtPrezzoCamera.Text = CFormatta.FormattaNumeroDouble(.CostoCamera)
+               txtTassaSoggiorno.Text = CFormatta.FormattaNumeroDouble(.TassaSoggiorno)
                txtAccontoCamera.Text = CFormatta.FormattaNumeroDouble(.AccontoCamera)
                txtTotaleConto.Text = CFormatta.FormattaNumeroDouble(.TotaleConto)
                cmbApplicaSconto.SelectedIndex = Convert.ToInt32(.ApplicaSconto)
@@ -3111,61 +3155,20 @@ Public Class frmPrenCamera
 
          ' Calcola il totale del costo della camera in base al tipo di listino applicato.
          Dim totCamera As Double
-         Dim totCameraAdulti As Double
-         Dim totCameraNeonati As Double
-         Dim totCameraBambini As Double
-         Dim totCameraRagazzi As Double
-
          Dim numAdulti As Integer = Convert.ToInt32(nudAdulti.Value)
          Dim numNeonati As Integer = Convert.ToInt32(nudNeonati.Value)
          Dim numBambini As Integer = Convert.ToInt32(nudBambini.Value)
          Dim numRagazzi As Integer = Convert.ToInt32(nudRagazzi.Value)
 
-         Select Case tipoListino
-
-            Case "Tariffa a Persona"
-               ' Adulti.
-               totCameraAdulti = ((prezzoCamera * numAdulti) * numNotti)
-
-               ' Neonati.
-               If scontoNeonato = VALORE_ZERO Or scontoNeonato = String.Empty Then
-                  totCameraNeonati = ((prezzoCamera * numNeonati) * numNotti)
-               Else
-                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoNeonato)) / 100)
-                  totCameraNeonati = ((scontoPrezzoCamera * numNeonati) * numNotti)
-               End If
-
-               ' Bambini.
-               If scontoBambino = VALORE_ZERO Or scontoBambino = String.Empty Then
-                  totCameraBambini = ((prezzoCamera * numBambini) * numNotti)
-               Else
-                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoBambino)) / 100)
-                  totCameraBambini = ((scontoPrezzoCamera * numBambini) * numNotti)
-               End If
-
-               ' Ragazzi.
-               If scontoRagazzo = VALORE_ZERO Or scontoRagazzo = String.Empty Then
-                  totCameraRagazzi = ((prezzoCamera * numRagazzi) * numNotti)
-               Else
-                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoRagazzo)) / 100)
-                  totCameraRagazzi = ((scontoPrezzoCamera * numRagazzi) * numNotti)
-               End If
-
-               ' Totale camera complessivo.
-               totCamera = (totCameraAdulti + totCameraNeonati + totCameraBambini + totCameraRagazzi)
-
-            Case "Tariffa a Camera"
-               ' Totale camera complessivo.
-               totCamera = (prezzoCamera * numNotti)
-
-         End Select
-
+         ' Totale camera complessivo.
+         totCamera = (prezzoCamera * numNotti)
          txtTotaleCostoCamera.Text = CFormatta.FormattaEuro(totCamera)
 
          ' Legge e calcola il totale per la Tassa di Soggiorno.
          Dim totaleTassaSoggiorno As Double
          totaleTassaSoggiorno = LeggiTotaleTassaSoggiorno(numAdulti, numNeonati, numBambini, numRagazzi)
-         txtTotaleTassaSoggiorno.Text = CFormatta.FormattaEuro(totaleTassaSoggiorno)
+         txtTassaSoggiorno.Text = CFormatta.FormattaEuro(totaleTassaSoggiorno)
+         txtTotaleTassaSoggiorno.Text = CFormatta.FormattaEuro(totaleTassaSoggiorno * numNotti)
 
          ' Calcola il totale parziale del conto.
          Dim totConto As Double = (totCamera + addebitiExtra + totaleTassaSoggiorno) ' - accontoCamera)
@@ -3995,8 +3998,55 @@ Public Class frmPrenCamera
             prezzoCamera = LeggiPrezzoListino(tipoStagione)
          End If
 
-         ' Assegna il prezzo alla camera.
-         txtPrezzoCamera.Text = CFormatta.FormattaEuro(Convert.ToDecimal(prezzoCamera))
+         ' Calcola il totale del costo della camera in base al tipo di listino applicato.
+         Dim totCameraAdulti As Double
+         Dim totCameraNeonati As Double
+         Dim totCameraBambini As Double
+         Dim totCameraRagazzi As Double
+
+         Dim numAdulti As Integer = Convert.ToInt32(nudAdulti.Value)
+         Dim numNeonati As Integer = Convert.ToInt32(nudNeonati.Value)
+         Dim numBambini As Integer = Convert.ToInt32(nudBambini.Value)
+         Dim numRagazzi As Integer = Convert.ToInt32(nudRagazzi.Value)
+
+         Select Case tipoListino
+
+            Case "Tariffa a Persona"
+               ' Adulti.
+               totCameraAdulti = (prezzoCamera * numAdulti)
+
+               ' Neonati.
+               If scontoNeonato = VALORE_ZERO Or scontoNeonato = String.Empty Then
+                  totCameraNeonati = (prezzoCamera * numNeonati)
+               Else
+                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoNeonato)) / 100)
+                  totCameraNeonati = (scontoPrezzoCamera * numNeonati)
+               End If
+
+               ' Bambini.
+               If scontoBambino = VALORE_ZERO Or scontoBambino = String.Empty Then
+                  totCameraBambini = (prezzoCamera * numBambini)
+               Else
+                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoBambino)) / 100)
+                  totCameraBambini = (scontoPrezzoCamera * numBambini)
+               End If
+
+               ' Ragazzi.
+               If scontoRagazzo = VALORE_ZERO Or scontoRagazzo = String.Empty Then
+                  totCameraRagazzi = (prezzoCamera * numRagazzi)
+               Else
+                  Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoRagazzo)) / 100)
+                  totCameraRagazzi = (scontoPrezzoCamera * numRagazzi)
+               End If
+
+               ' Assegna il prezzo alla camera.
+               txtPrezzoCamera.Text = CFormatta.FormattaEuro((totCameraAdulti + totCameraNeonati + totCameraBambini + totCameraRagazzi))
+
+            Case "Tariffa a Camera"
+               ' Assegna il prezzo alla camera.
+               txtPrezzoCamera.Text = CFormatta.FormattaEuro(prezzoCamera)
+
+         End Select
 
          ' Esegue i calcoli per il totale degli importi.
          CalcolaTotaleConto()

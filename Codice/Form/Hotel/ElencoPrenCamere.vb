@@ -16,17 +16,22 @@ Public Class ElencoPrenCamere
    Public Const TAB_CAMERE As String = "Camere"
 
    ' A_TODO: HOTEL - da modificare!
-   Const COLONNA_ID_DOC As Short = 0
-   Const COLONNA_NUMERO_PREN As Short = 1
-   Const COLONNA_DATA As Short = 1
-   Const COLONNA_COGNOME As Short = 3
-   Const COLONNA_NOME As Short = 4
-   Const COLONNA_NOTTI As Short = 7
-   Const COLONNA_ADULTI As Short = 8
-   Const COLONNA_NEONATI As Short = 9
-   Const COLONNA_BAMBINI As Short = 10
-   Const COLONNA_RAGAZZI As Short = 11
-   Const COLONNA_IMPORTO_TOTALE As Short = 15
+   Public Const COLONNA_ID_DOC As Short = 0
+   Public Const COLONNA_NUMERO_PREN As Short = 1
+   Public Const COLONNA_DATA As Short = 2
+   Public Const COLONNA_COGNOME As Short = 3
+   Public Const COLONNA_NOME As Short = 4
+   Public Const COLONNA_DATA_ARRIVO As Short = 5
+   Public Const COLONNA_DATA_PARTENZA As Short = 6
+   Public Const COLONNA_NOTTI As Short = 7
+   Public Const COLONNA_ADULTI As Short = 8
+   Public Const COLONNA_NEONATI As Short = 9
+   Public Const COLONNA_BAMBINI As Short = 10
+   Public Const COLONNA_RAGAZZI As Short = 11
+   Public Const COLONNA_ARRANGIAMENTO As Short = 13
+   Public Const COLONNA_IMPORTO_TOTALE As Short = 15
+   Public Const COLONNA_COSTO_CAMERA As Short = 18
+   Public Const COLONNA_TASSA_SOGGIORNO As Short = 19
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -1602,6 +1607,25 @@ Public Class ElencoPrenCamere
          coloreStyle.TextBox.BackColor = Color.White
          coloreStyle.TextBox.ForeColor = Color.White
          gridStyle.GridColumnStyles.Add(coloreStyle)
+         ' Costo camera.
+         Dim costoCameraStyle As New DataGridTextBoxColumn
+         costoCameraStyle.MappingName = "CostoCamera"
+         costoCameraStyle.HeaderText = "Costo"
+         costoCameraStyle.Width = 0
+         costoCameraStyle.NullText = ""
+         costoCameraStyle.Format = "##,##0.00"
+         costoCameraStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(costoCameraStyle)
+
+         ' Tassa di soggiorno.
+         Dim tassaSoggStyle As New DataGridTextBoxColumn
+         tassaSoggStyle.MappingName = "TassaSoggiorno"
+         tassaSoggStyle.HeaderText = "Tassa"
+         tassaSoggStyle.Width = 0
+         tassaSoggStyle.NullText = ""
+         tassaSoggStyle.Format = "##,##0.00"
+         tassaSoggStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tassaSoggStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)

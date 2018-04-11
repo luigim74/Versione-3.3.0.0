@@ -1784,28 +1784,83 @@ Public Class frmDocumento
          dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = Today.ToShortDateString
 
          ' Descrizione.
-         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 13)
+         Dim numeroPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUMERO_PREN)
+         Dim dataArrivo As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_ARRIVO)
+         Dim dataPartenza As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_PARTENZA)
+         Dim arraggiamento As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ARRANGIAMENTO)
+         Dim adulti As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ADULTI))
+         Dim neonati As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NEONATI))
+         Dim bambini As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_BAMBINI))
+         Dim ragazzi As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_RAGAZZI))
+         Dim persone As Integer = adulti + neonati + bambini + ragazzi
+
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "Pren. N. " & numeroPren & " (Sogg. dal " & dataArrivo & " al " & dataPartenza & ") - (" & arraggiamento & " / Persone: " & persone.ToString & ")"
 
          ' Unità di misura.
-         dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+         dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = "GG"
 
          ' Quantità.
-         dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = 1
+         dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NOTTI)
 
          ' Valore Unitario.
-         dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 15)
+         dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_COSTO_CAMERA)
 
          ' Sconto %.
          dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
 
          ' Importo.
-         dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 15)
+         dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_IMPORTO_TOTALE)
 
          ' Aliquota Iva.
-         dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "10"
+         dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = AliquotaIvaHotel
 
          ' Categoria.
          dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaTassaSogg()
+      Try
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         ' Se il campo Tassa di soggiorno ha un valore lo inserisce nel documento.
+         If CFormatta.FormattaNumeroDouble(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_TASSA_SOGGIORNO)) <> VALORE_ZERO Then
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice / Data.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = Today.ToShortDateString
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = DatiConfig.GetValue("DescrizioneTassaSoggHotel")
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = "GG"
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NOTTI)
+
+            ' Valore Unitario.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_TASSA_SOGGIORNO)
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Importo.
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = String.Empty
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = 0
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1862,6 +1917,9 @@ Public Class frmDocumento
 
                ' Inserisce la tipologia di arrangiamento nel dettaglio riga.
                InserisciDettagliRigaPren()
+
+               ' Inserisce la tassa di soggiorno nel dettaglio riga.
+               InserisciDettagliRigaTassaSogg()
 
          End Select
 

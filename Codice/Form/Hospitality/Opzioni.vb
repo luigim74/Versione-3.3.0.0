@@ -242,6 +242,8 @@ Public Class frmOpzioni
    Friend WithEvents ckbApplicaTassaNeonati As System.Windows.Forms.CheckBox
    Friend WithEvents ckbApplicaTassaBambini As System.Windows.Forms.CheckBox
    Friend WithEvents chkAbilitaPalmareAndroid As System.Windows.Forms.CheckBox
+   Friend WithEvents txtDescrizioneTassaSogg As TextBox
+   Public WithEvents Label54 As Label
    Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -459,6 +461,8 @@ Public Class frmOpzioni
       Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+      Me.Label54 = New System.Windows.Forms.Label()
+      Me.txtDescrizioneTassaSogg = New System.Windows.Forms.TextBox()
       Me.tabOpzioni.SuspendLayout()
       Me.tbpGenerali.SuspendLayout()
       Me.GroupBox5.SuspendLayout()
@@ -1262,6 +1266,8 @@ Public Class frmOpzioni
       '
       'GroupBox9
       '
+      Me.GroupBox9.Controls.Add(Me.txtDescrizioneTassaSogg)
+      Me.GroupBox9.Controls.Add(Me.Label54)
       Me.GroupBox9.Controls.Add(Me.ckbApplicaTassaRagazzi)
       Me.GroupBox9.Controls.Add(Me.ckbApplicaTassaNeonati)
       Me.GroupBox9.Controls.Add(Me.txtTassaSoggiorno)
@@ -1269,7 +1275,7 @@ Public Class frmOpzioni
       Me.GroupBox9.Controls.Add(Me.Label52)
       Me.GroupBox9.Location = New System.Drawing.Point(392, 128)
       Me.GroupBox9.Name = "GroupBox9"
-      Me.GroupBox9.Size = New System.Drawing.Size(344, 152)
+      Me.GroupBox9.Size = New System.Drawing.Size(344, 199)
       Me.GroupBox9.TabIndex = 2
       Me.GroupBox9.TabStop = False
       Me.GroupBox9.Text = "Tassa di Soggiorno"
@@ -1279,22 +1285,22 @@ Public Class frmOpzioni
       Me.ckbApplicaTassaRagazzi.AutoSize = True
       Me.ckbApplicaTassaRagazzi.CheckAlign = System.Drawing.ContentAlignment.TopLeft
       Me.ckbApplicaTassaRagazzi.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ckbApplicaTassaRagazzi.Location = New System.Drawing.Point(24, 112)
+      Me.ckbApplicaTassaRagazzi.Location = New System.Drawing.Point(27, 163)
       Me.ckbApplicaTassaRagazzi.Name = "ckbApplicaTassaRagazzi"
-      Me.ckbApplicaTassaRagazzi.Size = New System.Drawing.Size(122, 18)
-      Me.ckbApplicaTassaRagazzi.TabIndex = 3
-      Me.ckbApplicaTassaRagazzi.Text = "Applica ai Ragazzi:"
+      Me.ckbApplicaTassaRagazzi.Size = New System.Drawing.Size(119, 18)
+      Me.ckbApplicaTassaRagazzi.TabIndex = 4
+      Me.ckbApplicaTassaRagazzi.Text = "Applica ai Ragazzi"
       '
       'ckbApplicaTassaNeonati
       '
       Me.ckbApplicaTassaNeonati.AutoSize = True
       Me.ckbApplicaTassaNeonati.CheckAlign = System.Drawing.ContentAlignment.TopLeft
       Me.ckbApplicaTassaNeonati.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ckbApplicaTassaNeonati.Location = New System.Drawing.Point(24, 64)
+      Me.ckbApplicaTassaNeonati.Location = New System.Drawing.Point(27, 115)
       Me.ckbApplicaTassaNeonati.Name = "ckbApplicaTassaNeonati"
-      Me.ckbApplicaTassaNeonati.Size = New System.Drawing.Size(121, 18)
-      Me.ckbApplicaTassaNeonati.TabIndex = 1
-      Me.ckbApplicaTassaNeonati.Text = "Applica ai Neonati:"
+      Me.ckbApplicaTassaNeonati.Size = New System.Drawing.Size(118, 18)
+      Me.ckbApplicaTassaNeonati.TabIndex = 2
+      Me.ckbApplicaTassaNeonati.Text = "Applica ai Neonati"
       '
       'txtTassaSoggiorno
       '
@@ -1310,11 +1316,11 @@ Public Class frmOpzioni
       Me.ckbApplicaTassaBambini.AutoSize = True
       Me.ckbApplicaTassaBambini.CheckAlign = System.Drawing.ContentAlignment.TopLeft
       Me.ckbApplicaTassaBambini.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ckbApplicaTassaBambini.Location = New System.Drawing.Point(24, 88)
+      Me.ckbApplicaTassaBambini.Location = New System.Drawing.Point(27, 139)
       Me.ckbApplicaTassaBambini.Name = "ckbApplicaTassaBambini"
-      Me.ckbApplicaTassaBambini.Size = New System.Drawing.Size(121, 18)
-      Me.ckbApplicaTassaBambini.TabIndex = 2
-      Me.ckbApplicaTassaBambini.Text = "Applica ai Bambini:"
+      Me.ckbApplicaTassaBambini.Size = New System.Drawing.Size(118, 18)
+      Me.ckbApplicaTassaBambini.TabIndex = 3
+      Me.ckbApplicaTassaBambini.Text = "Applica ai Bambini"
       '
       'Label52
       '
@@ -1335,7 +1341,7 @@ Public Class frmOpzioni
       Me.GroupBox8.Controls.Add(Me.ckbNumeroSchedinaPS)
       Me.GroupBox8.Controls.Add(Me.txtNumeroModC59)
       Me.GroupBox8.Controls.Add(Me.txtNumeroSchedinaPS)
-      Me.GroupBox8.Location = New System.Drawing.Point(24, 304)
+      Me.GroupBox8.Location = New System.Drawing.Point(24, 352)
       Me.GroupBox8.Name = "GroupBox8"
       Me.GroupBox8.Size = New System.Drawing.Size(712, 112)
       Me.GroupBox8.TabIndex = 3
@@ -1449,7 +1455,7 @@ Public Class frmOpzioni
       Me.GroupBox6.Controls.Add(Me.Label51)
       Me.GroupBox6.Location = New System.Drawing.Point(24, 128)
       Me.GroupBox6.Name = "GroupBox6"
-      Me.GroupBox6.Size = New System.Drawing.Size(344, 152)
+      Me.GroupBox6.Size = New System.Drawing.Size(344, 199)
       Me.GroupBox6.TabIndex = 1
       Me.GroupBox6.TabStop = False
       Me.GroupBox6.Text = "Varie:"
@@ -2817,13 +2823,34 @@ Public Class frmOpzioni
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'Label54
+      '
+      Me.Label54.AutoSize = True
+      Me.Label54.BackColor = System.Drawing.Color.Transparent
+      Me.Label54.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label54.ForeColor = System.Drawing.Color.Black
+      Me.Label54.Location = New System.Drawing.Point(24, 64)
+      Me.Label54.Name = "Label54"
+      Me.Label54.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label54.Size = New System.Drawing.Size(134, 13)
+      Me.Label54.TabIndex = 189
+      Me.Label54.Text = "Descrizione nei documenti:"
+      '
+      'txtDescrizioneTassaSogg
+      '
+      Me.txtDescrizioneTassaSogg.ForeColor = System.Drawing.Color.Black
+      Me.txtDescrizioneTassaSogg.Location = New System.Drawing.Point(27, 80)
+      Me.txtDescrizioneTassaSogg.Name = "txtDescrizioneTassaSogg"
+      Me.txtDescrizioneTassaSogg.Size = New System.Drawing.Size(293, 20)
+      Me.txtDescrizioneTassaSogg.TabIndex = 1
+      '
       'frmOpzioni
       '
       Me.AcceptButton = Me.cmdOK
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(779, 569)
+      Me.ClientSize = New System.Drawing.Size(782, 566)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -3756,6 +3783,12 @@ Public Class frmOpzioni
             txtTassaSoggiorno.Text = VALORE_ZERO
          End If
 
+         ' Descrizione Tassa di soggiorno.
+         txtDescrizioneTassaSogg.Text = DatiConfig.GetValue("DescrizioneTassaSoggHotel")
+         If txtDescrizioneTassaSogg.Text.Length = 0 Then
+            txtDescrizioneTassaSogg.Text = String.Empty
+         End If
+
          ' Applica Tassa di soggiorno Neonati.
          If DatiConfig.GetValue("ApplicaTassaNeonati") <> String.Empty Then
             ckbApplicaTassaNeonati.Checked = DatiConfig.GetValue("ApplicaTassaNeonati")
@@ -4345,6 +4378,13 @@ Public Class frmOpzioni
          Else
             DatiConfig.SetValue("TassaSoggiornoHotel", txtTassaSoggiorno.Text)
             'TassaSoggiornoHotel = txtTassaSoggiorno.Text
+         End If
+
+         ' Descrizione Tassa di soggiorno.
+         If txtDescrizioneTassaSogg.Text.Length = 0 Then
+            DatiConfig.SetValue("DescrizioneTassaSoggHotel", String.Empty)
+         Else
+            DatiConfig.SetValue("DescrizioneTassaSoggHotel", txtDescrizioneTassaSogg.Text)
          End If
 
          ' Applica Tassa di soggiorno Neonati.
