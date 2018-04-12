@@ -237,6 +237,9 @@
                g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(VALORE_ZERO)
             End If
 
+            ' Codice.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
             ' Stringa per registrare loperazione effettuata dall'operatore identificato.
             'strDescrizione = "(" & dr.Item("Descrizione") & ")"
 

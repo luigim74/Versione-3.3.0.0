@@ -3,6 +3,7 @@ Imports System.Data.OleDb
 Public Class PrenCamereAddebiti
 
    Public RifPren As Integer
+   Public Codice As String
    Public Data As String
    Public Descrizione As String
    Public Quantità As Integer
@@ -33,6 +34,12 @@ Public Class PrenCamereAddebiti
                Me.RifPren = Convert.ToInt32(dr.Item("RifPren"))
             Else
                Me.RifPren = codPren
+            End If
+            ' Codice.
+            If IsDBNull(dr.Item("Codice")) = False Then
+               Me.Codice = dr.Item("Codice").ToString
+            Else
+               Me.Codice = String.Empty
             End If
             ' Data.
             If IsDBNull(dr.Item("Data")) = False Then
@@ -100,7 +107,6 @@ Public Class PrenCamereAddebiti
          lst.Items.Clear()
 
          Do While dr.Read()
-
             ' Data.
             If IsDBNull(dr.Item("Data")) = False Then
                lst.Items.Add(dr.Item("Data").ToString)
@@ -126,11 +132,18 @@ Public Class PrenCamereAddebiti
                lst.Items(i).SubItems.Add("1")
             End If
 
-            ' Totale.
+            ' Importo.
             If IsDBNull(dr.Item("Importo")) = False Then
                lst.Items(i).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("Importo"))))
             Else
                lst.Items(i).SubItems.Add(VALORE_ZERO)
+            End If
+
+            ' Codice.
+            If IsDBNull(dr.Item("Codice")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("Codice").ToString)
+            Else
+               lst.Items(i).SubItems.Add(String.Empty)
             End If
 
             'lst.Items(i).BackColor = Color.MediumSeaGreen
@@ -179,13 +192,14 @@ Public Class PrenCamereAddebiti
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, Data, Descrizione, Quantità, Importo, Colore, Gruppo) " & _
-                                       "VALUES(@RifPren, @Data, @Descrizione, @Quantità, @Importo, @Colore, @Gruppo)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, Codice, Data, Descrizione, Quantità, Importo, Colore, Gruppo) " &
+                                       "VALUES(@RifPren, @Codice, @Data, @Descrizione, @Quantità, @Importo, @Colore, @Gruppo)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
          cmdInsert.Parameters.AddWithValue("@RifPren", Me.RifPren)
+         cmdInsert.Parameters.AddWithValue("@Codice", Me.Codice)
          cmdInsert.Parameters.AddWithValue("@Data", Me.Data)
          cmdInsert.Parameters.AddWithValue("@Descrizione", Me.Descrizione)
          cmdInsert.Parameters.AddWithValue("@Quantità", Me.Quantità)
@@ -228,22 +242,24 @@ Public Class PrenCamereAddebiti
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET RifPren = @RifPren, " & _
-                             "Data = @Data, " & _
-                             "Descrizione = @Descrizione, " & _
-                             "Quantità = @Quantità, " & _
-                             "Importo = @Importo, " & _
-                             "Colore = @Colore, " & _
-                             "Gruppo = @Gruppo " & _
-                             "WHERE RifPren = {1}", _
-                             tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET RifPren = @RifPren, " &
+                             "Codice = @Codice, " &
+                             "Data = @Data, " &
+                             "Descrizione = @Descrizione, " &
+                             "Quantità = @Quantità, " &
+                             "Importo = @Importo, " &
+                             "Colore = @Colore, " &
+                             "Gruppo = @Gruppo " &
+                             "WHERE RifPren = {1}",
+                             tabella,
                              codPren)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
          cmdUpdate.Parameters.AddWithValue("@RifPren", Me.RifPren)
+         cmdUpdate.Parameters.AddWithValue("@Codice", Me.Codice)
          cmdUpdate.Parameters.AddWithValue("@Data", Me.Data)
          cmdUpdate.Parameters.AddWithValue("@Descrizione", Me.Descrizione)
          cmdUpdate.Parameters.AddWithValue("@Quantità", Me.Quantità)

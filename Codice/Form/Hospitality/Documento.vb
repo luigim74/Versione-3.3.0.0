@@ -49,7 +49,6 @@ Public Class frmDocumento
    Dim numRecord As Integer
    Dim sql As String
 
-
    ''' <summary>
    ''' Apre il documento da eleborare.
    ''' </summary>
@@ -252,7 +251,7 @@ Public Class frmDocumento
          For i = 0 To dgvDettagli.Rows.Count - 2
             Dim IdPiatto As Integer
 
-            If IsNothing(dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString) = False Or dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString <> String.Empty Then
+            If IsNothing(dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString) = False And dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString <> String.Empty Then
                ' Ottiene l'Id del piatto.
                IdPiatto = Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString)
 
@@ -388,7 +387,7 @@ Public Class frmDocumento
          For i = 0 To dgvDettagli.Rows.Count - 2
 
             ' Salva solo le righe che hanno un codice Piatto.
-            If IsNothing(dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString) = False Or dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString <> String.Empty Then
+            If IsNothing(dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString) = False And dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString <> String.Empty Then
 
                With Stat
                   ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -405,7 +404,7 @@ Public Class frmDocumento
                      .IdCategoria = "0"
                   End If
 
-                  If IsNothing(dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString) = False Or dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString <> String.Empty Then
+                  If IsNothing(dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString) = False And dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString <> String.Empty Then
                      .DesCategoria = dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString
                   Else
                      .DesCategoria = "Nessuna"
@@ -1759,14 +1758,51 @@ Public Class frmDocumento
       End Try
    End Function
 
+   Private Sub CaricaDatiCliente()
+      Try
+         ' Legge il nome relativo alla lista Cognome.
+         eui_cmbIdCliente.SelectedIndex = eui_cmbClienteCognome.SelectedIndex
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnString)
+
+         AClienti.LeggiDati(ANA_CLIENTI, eui_cmbIdCliente.Text)
+
+         eui_txtClienteNome.Text = AClienti.Nome
+         eui_txtIndirizzo.Text = AClienti.Indirizzo1
+         eui_txtCittà.Text = AClienti.Città
+         eui_txtCap.Text = AClienti.Cap
+         eui_txtProvincia.Text = AClienti.Provincia
+         eui_txtPartitaIva.Text = AClienti.PIva
+         eui_txtCodiceFiscale.Text = AClienti.CodFisc
+         eui_txtSconto.Text = AClienti.Sconto
+
+         ' DA_FARE_A: Valutare se leggere l'aliquota iva del cliente
+         'eui_txtIva.Text = AClienti.Iva
+
+         If eui_txtClienteNome.Text <> String.Empty Then
+            eui_lblStatoClienteDoc.Text = eui_cmbClienteCognome.Text & " - " & eui_txtClienteNome.Text
+         Else
+            eui_lblStatoClienteDoc.Text = eui_cmbClienteCognome.Text
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 #Region "Procedure per Hotel "
 
    Private Sub CaricaDatiPrenotazione()
       Try
          eui_cmbCausaleDocumento.Text = "Vendita da hotel"
 
-         eui_cmbClienteCognome.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 3)
-         eui_txtClienteNome.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 4)
+         ' Legge tutti i dati anagrafici del cliente selezionato.
+         eui_cmbClienteCognome.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_COGNOME)
+         CaricaDatiCliente()
+
+         eui_cmbTipoPagamento.Text = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_TIPO_PAGAMENTO)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1780,8 +1816,8 @@ Public Class frmDocumento
       Try
          eui_cmdNuovaRiga.PerformClick()
 
-         ' Codice / Data.
-         dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = Today.ToShortDateString
+         ' Codice.
+         dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
 
          ' Descrizione.
          Dim numeroPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUMERO_PREN)
@@ -1794,7 +1830,7 @@ Public Class frmDocumento
          Dim ragazzi As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_RAGAZZI))
          Dim persone As Integer = adulti + neonati + bambini + ragazzi
 
-         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "Pren. N. " & numeroPren & " (Sogg. dal " & dataArrivo & " al " & dataPartenza & ") - (" & arraggiamento & " / Persone: " & persone.ToString & ")"
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = Today.ToShortDateString & "- Pren. N. " & numeroPren & " (Sogg. dal " & dataArrivo & " al " & dataPartenza & ") - (" & arraggiamento & " / Persone: " & persone.ToString & ")"
 
          ' Unità di misura.
          dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = "GG"
@@ -1834,11 +1870,11 @@ Public Class frmDocumento
 
             eui_cmdNuovaRiga.PerformClick()
 
-            ' Codice / Data.
-            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = Today.ToShortDateString
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
 
             ' Descrizione.
-            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = DatiConfig.GetValue("DescrizioneTassaSoggHotel")
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = Today.ToShortDateString & " - " & DatiConfig.GetValue("DescrizioneTassaSoggHotel").ToString
 
             ' Unità di misura.
             dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = "GG"
@@ -1853,7 +1889,7 @@ Public Class frmDocumento
             dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
 
             ' Importo.
-            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = String.Empty
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
 
             ' Aliquota Iva.
             dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = 0
@@ -1865,6 +1901,150 @@ Public Class frmDocumento
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaDescrizioneAddebiti()
+      Try
+         eui_cmdNuovaRiga.PerformClick()
+
+         ' Codice.
+         dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+         ' Descrizione.
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "ADDEBITI EXTRA"
+
+         ' Unità di misura.
+         dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+         ' Quantità.
+         dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = VALORE_ZERO
+
+         ' Valore Unitario.
+         dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = VALORE_ZERO
+
+         ' Sconto %.
+         dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+         ' Importo.
+         dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+
+         ' Aliquota Iva.
+         dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = 0
+
+         ' Categoria.
+         dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaAddebiti(ByVal tabella As String, ByVal id As Integer)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim addebiti As Boolean = True
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE RifPren = " & id & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' Inserisce una riga di descrizione.
+            If addebiti = True Then
+               InserisciDettagliRigaDescrizioneAddebiti()
+            End If
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            If IsDBNull(dr.Item("Codice")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = dr.Item("Codice")
+            Else
+               dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+            End If
+
+            'Data.
+            Dim data As String
+            If IsDBNull(dr.Item("Data")) = False Then
+               data = dr.Item("Data").ToString & " - "
+            Else
+               data = String.Empty
+            End If
+
+            ' Descrizione.
+            If IsDBNull(dr.Item("Descrizione")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = data & dr.Item("Descrizione")
+            Else
+               dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = String.Empty
+            End If
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            Dim qta As Double
+
+            If IsDBNull(dr.Item("Quantità")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = dr.Item("Quantità")
+               qta = dr.Item("Quantità")
+            Else
+               dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = VALORE_ZERO
+               qta = VALORE_ZERO
+            End If
+
+            ' Valore Unitario.
+            Dim importo As Double
+            Dim valUnitario As Double
+
+            If IsDBNull(dr.Item("Importo")) = False Then
+               importo = dr.Item("Importo")
+               valUnitario = importo / qta
+            Else
+               dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+               importo = VALORE_ZERO
+               valUnitario = VALORE_ZERO
+            End If
+
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = valUnitario
+
+            ' Importo.
+            If IsDBNull(dr.Item("Importo")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = dr.Item("Importo")
+
+            Else
+               dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+            End If
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            'If IsDBNull(dr.Item("AliquotaIva")) = False Then
+            '   dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = dr.Item("AliquotaIva")
+            'Else
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "0"
+            'End If
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
+            ' Serve a non inserire più volte la descrizione,
+            addebiti = False
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -1906,9 +2086,6 @@ Public Class frmDocumento
                eui_cmbTipoDocumento.Items.Add(TIPO_DOC_RF)
                eui_cmbTipoDocumento.Items.Add(TIPO_DOC_FF)
 
-               ' Cambia l'intestazione della colonna Codice in Data per Hotel.
-               clnCodice.HeaderText = "Data"
-
                ' Crea un nuovo documento con i dati della prenotazione.
                NuovoDocumento()
 
@@ -1920,6 +2097,8 @@ Public Class frmDocumento
 
                ' Inserisce la tassa di soggiorno nel dettaglio riga.
                InserisciDettagliRigaTassaSogg()
+
+               InserisciDettagliRigaAddebiti("PrenCamereAddebiti", g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_DOC))
 
          End Select
 
@@ -2003,37 +2182,9 @@ Public Class frmDocumento
    End Sub
 
    Private Sub eui_cmbClienteCognome_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbClienteCognome.SelectedIndexChanged
-      Try
-         ' Legge il nome relativo alla lista Cognome.
-         eui_cmbIdCliente.SelectedIndex = eui_cmbClienteCognome.SelectedIndex
 
-         Dim AClienti As New Anagrafiche.Cliente(ConnString)
-
-         AClienti.LeggiDati(ANA_CLIENTI, eui_cmbIdCliente.Text)
-
-         eui_txtClienteNome.Text = AClienti.Nome
-         eui_txtIndirizzo.Text = AClienti.Indirizzo1
-         eui_txtCittà.Text = AClienti.Città
-         eui_txtCap.Text = AClienti.Cap
-         eui_txtProvincia.Text = AClienti.Provincia
-         eui_txtPartitaIva.Text = AClienti.PIva
-         eui_txtCodiceFiscale.Text = AClienti.CodFisc
-         eui_txtSconto.Text = AClienti.Sconto
-
-         ' DA_FARE_A: Valutare se leggere l'aliquota iva del cliente
-         'eui_txtIva.Text = AClienti.Iva
-
-         If eui_txtClienteNome.Text <> String.Empty Then
-            eui_lblStatoClienteDoc.Text = eui_cmbClienteCognome.Text & " - " & eui_txtClienteNome.Text
-         Else
-            eui_lblStatoClienteDoc.Text = eui_cmbClienteCognome.Text
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
+      ' Legge tutti i dati anagrafici del cliente selezionato.
+      CaricaDatiCliente()
 
    End Sub
 
@@ -2362,8 +2513,15 @@ Public Class frmDocumento
 
             MessageBox.Show("Tutte le operazioni contabili sono state eseguite!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            If IsNothing(g_frmDocumenti) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmDocumenti.AggiornaDati()
+            End If
+
             ' Apre l'anteprima di stampa per il documento selezionato.
             AnteprimaDiStampa()
+
+            Me.Close()
          Else
             MessageBox.Show("Il comando non è stato eseguito! Verificare di avere compilato correttamente il documento e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -2391,7 +2549,14 @@ Public Class frmDocumento
             ' Modifica lo stato del documento.
             ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO)
 
+            If IsNothing(g_frmDocumenti) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmDocumenti.AggiornaDati()
+            End If
+
             MessageBox.Show("Tutte le operazioni contabili sono state eseguite!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Me.Close()
          Else
             MessageBox.Show("Il comando non è stato eseguito! Verificare di avere compilato correttamente il documento e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 

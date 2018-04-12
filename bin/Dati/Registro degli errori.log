@@ -1,8 +1,196 @@
-"*** 11/04/2018 - 18:27:05 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
-   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
-   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectNotEqual(Object Left, Object Right, Boolean TextCompare)
-   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaTassaSogg() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1830"
+"*** 12/04/2018 - 11:16:49 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'DBNull' al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(Object Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(Object Value)
+   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaTassaSogg() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1869"
+"
+"
+"*** 12/04/2018 - 11:18:00 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
+   in Hospitality_Solution.frmDocumento.dgvDettagli_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 2744"
+"
+"
+"*** 12/04/2018 - 12:09:16 ***"
+"- DESCRIZIONE ERRORE: Codice"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"
+"
+"*** 12/04/2018 - 12:09:59 ***"
+"- DESCRIZIONE ERRORE: Codice"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"
+"
+"*** 12/04/2018 - 12:10:48 ***"
+"- DESCRIZIONE ERRORE: Codice"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"
+"
+"*** 12/04/2018 - 12:11:03 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"
+"
+"*** 12/04/2018 - 12:18:26 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"
+"
+"*** 12/04/2018 - 13:51:49 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"
+"
+"*** 12/04/2018 - 13:54:42 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"
+"
+"*** 12/04/2018 - 14:01:52 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"
+"
+"*** 12/04/2018 - 14:22:58 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"
+"
+"*** 12/04/2018 - 14:27:32 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1943"
+"
+"
+"*** 12/04/2018 - 14:35:20 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"
+"
+"*** 12/04/2018 - 14:50:08 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"
+"
+"*** 12/04/2018 - 14:57:05 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3122"
+"
+"
+"*** 12/04/2018 - 15:06:05 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3115"
+"
+"
+"*** 12/04/2018 - 15:21:02 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3117"
+"
+"
+"*** 12/04/2018 - 16:00:34 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.frmDocumento.ScaricaIngredienti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 256"
+"
+"
+"*** 12/04/2018 - 16:09:17 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
+"
+"
+"*** 12/04/2018 - 16:09:28 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
+"
+"
+"*** 12/04/2018 - 16:09:30 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
+"
+"
+"*** 12/04/2018 - 16:09:32 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
+"
+"
+"*** 12/04/2018 - 16:09:32 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
+"
+"
+"*** 12/04/2018 - 16:09:33 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
 "
 "

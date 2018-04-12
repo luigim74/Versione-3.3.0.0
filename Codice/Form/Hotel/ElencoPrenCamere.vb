@@ -32,6 +32,7 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_IMPORTO_TOTALE As Short = 15
    Public Const COLONNA_COSTO_CAMERA As Short = 18
    Public Const COLONNA_TASSA_SOGGIORNO As Short = 19
+   Public Const COLONNA_TIPO_PAGAMENTO As Short = 20
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -1616,7 +1617,6 @@ Public Class ElencoPrenCamere
          costoCameraStyle.Format = "##,##0.00"
          costoCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(costoCameraStyle)
-
          ' Tassa di soggiorno.
          Dim tassaSoggStyle As New DataGridTextBoxColumn
          tassaSoggStyle.MappingName = "TassaSoggiorno"
@@ -1626,6 +1626,15 @@ Public Class ElencoPrenCamere
          tassaSoggStyle.Format = "##,##0.00"
          tassaSoggStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tassaSoggStyle)
+         ' Tipo pagamento.
+         Dim tipoPagStyle As New DataGridTextBoxColumn
+         tipoPagStyle.MappingName = "Pagamento"
+         tipoPagStyle.HeaderText = "Pagamento"
+         tipoPagStyle.Width = 0
+         tipoPagStyle.NullText = ""
+         tipoPagStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tipoPagStyle)
+
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
