@@ -3565,7 +3565,7 @@ Public Class ContoPos
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoServizio <> String.Empty Then
-                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO %")
+                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO" & txtServizio.Text)
                Else
                   cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO")
                End If
@@ -3847,7 +3847,7 @@ Public Class ContoPos
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoServizio <> String.Empty Then
-                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO %")
+                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO" & txtServizio.Text)
                Else
                   cmdInsert.Parameters.AddWithValue("@Descrizione", "SERVIZIO")
                End If
@@ -4030,7 +4030,7 @@ Public Class ContoPos
          End If
 
          ' Calcola il valore del servizio.
-         If IsNumeric((txtServizio.Text)) = False Then
+         If IsNumeric(txtServizio.Text) = False Then
             ' Gestito a percentuale.
             Dim percServizio As Integer = txtServizio.Text.IndexOf("%")
             If percServizio <> -1 Then
@@ -4050,7 +4050,7 @@ Public Class ContoPos
          valTotConto = (valTotConto + valServizio)
 
          ' Calcola il valore dello sconto.
-         If IsNumeric((txtValSconto.Text)) = False Then
+         If IsNumeric(txtValSconto.Text) = False Then
             ' Gestito a percentuale.
             Dim percSconto As Integer = txtValSconto.Text.IndexOf("%")
             If percSconto <> -1 Then

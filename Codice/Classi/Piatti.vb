@@ -129,7 +129,7 @@ Public Class Piatti
          If IsDBNull(ds.Tables(tabella).Rows(0)("AliquotaIva")) = False Then
             Me.AliquotaIva = ds.Tables(tabella).Rows(0)("AliquotaIva").ToString
          Else
-            Me.AliquotaIva = VALORE_ZERO
+            Me.AliquotaIva = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Note")) = False Then
             Me.Note = ds.Tables(tabella).Rows(0)("Note").ToString

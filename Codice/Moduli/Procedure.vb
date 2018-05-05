@@ -3558,7 +3558,7 @@ Module Procedure
                aliquotaIva = DatiConfig.GetValue("AliquotaIva4")
 
             Case Else
-               aliquotaIva = AliquotaIvaRistorante
+               aliquotaIva = "0"
 
          End Select
 

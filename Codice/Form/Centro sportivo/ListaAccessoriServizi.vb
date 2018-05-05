@@ -198,9 +198,6 @@
 
          Do While dr.Read()
 
-            ' Indice.
-            'g_frmPrenCamera.lvwAddebiti.Items.Add(g_frmPrenCamera.lvwAddebiti.Items.Count)
-
             ' Data.
             g_frmPrenCamera.lvwAddebiti.Items.Add(Today.ToShortDateString)
 
@@ -239,6 +236,17 @@
 
             ' Codice.
             g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+            ' Indice.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+            ' Aliquota Iva.
+            If IsDBNull(dr.Item("AliquotaIva")) = False Then
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(LeggiAliquotaIva(dr.Item("AliquotaIva")))
+
+            Else
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("0")
+            End If
 
             ' Stringa per registrare loperazione effettuata dall'operatore identificato.
             'strDescrizione = "(" & dr.Item("Descrizione") & ")"
@@ -309,12 +317,12 @@
             ' Importo.
             g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnImporto.Name).Value = g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnPrezzo.Name).Value
 
-            ' TODO_A: Inserire Aliquota Iva.
-            'If IsDBNull(dr.Item("AliquotaIva")) = False Then
-            '   g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnIva.Name).Value = LeggiAliquotaIva(dr.Item("AliquotaIva"))
-            'Else
-            g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnIva.Name).Value = AliquotaIvaCentroSportivo
-            'End If
+            ' Aliquota Iva.
+            If IsDBNull(dr.Item("AliquotaIva")) = False Then
+               g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnIva.Name).Value = LeggiAliquotaIva(dr.Item("AliquotaIva"))
+            Else
+               g_frmDocumento.dgvDettagli.CurrentRow.Cells(g_frmDocumento.clnIva.Name).Value = "0"
+            End If
 
             ' Stringa per registrare loperazione effettuata dall'operatore identificato.
             'strDescrizione = "(" & dr.Item("Descrizione") & ")"

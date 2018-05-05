@@ -803,7 +803,7 @@ Public Class frmDocumento
       Try
          Select Case stato
 
-            Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_ANNULLATO
+            Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO ', STATO_DOC_ANNULLATO
                ' Disattiva tutti i controlli delle schede.
                eui_tpGenerale.Enabled = False
                eui_tpDettagli.Enabled = False
@@ -821,7 +821,7 @@ Public Class frmDocumento
                eui_txtTotaleDocumento.Enabled = False
 
             Case Else
-               ' Disattiva solo i comando Emetti.
+               ' Disattiva solo il comando Emetti.
                If eui_cmbTipoDocumento.Text = TIPO_DOC_CO Or eui_cmbTipoDocumento.Text = TIPO_DOC_PF Then
                   eui_cmdEmettiStampa.Enabled = False
                   eui_cmdEmetti.Enabled = False
@@ -2026,17 +2026,149 @@ Public Class frmDocumento
             dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
 
             ' Aliquota Iva.
-            'If IsDBNull(dr.Item("AliquotaIva")) = False Then
-            '   dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = dr.Item("AliquotaIva")
-            'Else
-            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "0"
-            'End If
+            If IsDBNull(dr.Item("AliquotaIva")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = dr.Item("AliquotaIva")
+            Else
+               dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "0"
+            End If
 
             ' Categoria.
             dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
 
             ' Serve a non inserire più volte la descrizione,
             addebiti = False
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaServizio(ByVal tabella As String, ByVal id As Integer)
+      Try
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         Dim valServizio As Double
+
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' Calcola il valore del servizio.
+            If IsDBNull(dr.Item("Servizio")) = False Then
+               Dim totConto As Double = Convert.ToDouble(dr.Item("TotaleConto"))
+               Dim servizio As Double = Convert.ToDouble(dr.Item("Servizio"))
+
+               If servizio <> 0 Then
+                  valServizio = CalcolaPercentuale(totConto, servizio)
+               Else
+                  Exit Sub
+               End If
+            Else
+               Exit Sub
+            End If
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "SERVIZIO " & dr.Item("Servizio").ToString & "%"
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = "1"
+
+            ' Valore Unitario / Importo.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = valServizio.ToString
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = valServizio.ToString
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = AliquotaIvaHotel
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaSconto(ByVal tabella As String, ByVal id As Integer)
+      Try
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         Dim valSconto As Double
+
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' Calcola il valore dello sconto sul totale del conto.
+            If IsDBNull(dr.Item("Sconto")) = False Then
+               Dim totConto As Double = Convert.ToDouble(dr.Item("TotaleConto"))
+               Dim sconto As Double = Convert.ToDouble(dr.Item("Sconto"))
+
+               If sconto <> 0 Then
+                  valSconto = CalcolaPercentuale(totConto, sconto)
+               Else
+                  Exit Sub
+               End If
+            Else
+               Exit Sub
+            End If
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "SCONTO " & dr.Item("Sconto").ToString & "%"
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = "1"
+
+            ' Valore Unitario / Importo.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = -valSconto
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = -valSconto
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "0"
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+
          Loop
 
       Catch ex As Exception
@@ -2098,8 +2230,14 @@ Public Class frmDocumento
                ' Inserisce la tassa di soggiorno nel dettaglio riga.
                InserisciDettagliRigaTassaSogg()
 
+               ' Inserisce eventuali addebiti exstra.
                InserisciDettagliRigaAddebiti("PrenCamereAddebiti", g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_DOC))
 
+               ' Inserisce eventuali costi di servizio.
+               InserisciDettagliRigaServizio("PrenCamere", g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_DOC))
+
+               'Inserisce eventuali sconti.
+               InserisciDettagliRigaSconto("PrenCamere", g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_DOC))
          End Select
 
       Catch ex As Exception
@@ -2796,8 +2934,8 @@ Public Class frmDocumento
                      If e.ColumnIndex = 7 Then
                         Exit Sub
                      Else
-                        valCell = Convert.ToInt32(e.Value)
-                        e.Value = CFormatta.FormattaEuro(valCell)
+                        valCell = Convert.ToDouble(e.Value)
+                        e.Value = CFormatta.FormattaNumeroDouble(valCell)
                      End If
                   Else
                      ' Colonna Iva.

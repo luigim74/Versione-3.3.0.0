@@ -168,6 +168,8 @@ Public Class frmPrenCamera
    Public WithEvents txtTassaSoggiorno As TextBox
    Public WithEvents Label29 As Label
    Friend WithEvents clnCodice As ColumnHeader
+   Friend WithEvents clnAliquotaIva As ColumnHeader
+   Friend WithEvents ColumnHeader1 As ColumnHeader
    Friend WithEvents Button4 As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -300,6 +302,8 @@ Public Class frmPrenCamera
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.clnAliquotaIva = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -328,7 +332,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(588, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(598, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -362,7 +366,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(588, 20)
+      Me.Panel1.Size = New System.Drawing.Size(598, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -389,7 +393,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(588, 557)
+      Me.TabControl1.Size = New System.Drawing.Size(598, 567)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -430,7 +434,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(580, 531)
+      Me.TabPage1.Size = New System.Drawing.Size(590, 541)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -531,9 +535,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 275)
+      Me.Panel2.Location = New System.Drawing.Point(0, 285)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(580, 256)
+      Me.Panel2.Size = New System.Drawing.Size(590, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -1010,7 +1014,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(580, 531)
+      Me.TabPage4.Size = New System.Drawing.Size(590, 541)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1139,7 +1143,7 @@ Public Class frmPrenCamera
       'lvwAddebiti
       '
       Me.lvwAddebiti.AllowColumnReorder = True
-      Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice})
+      Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice, Me.clnAliquotaIva, Me.ColumnHeader1})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
       ListViewGroup1.Header = "Articoli vari"
@@ -1152,7 +1156,7 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(580, 461)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(590, 461)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1670,7 +1674,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(570, 521)
+      Me.TabPage6.Size = New System.Drawing.Size(580, 531)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1687,7 +1691,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(570, 521)
+      Me.txtNote.Size = New System.Drawing.Size(580, 531)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1699,11 +1703,19 @@ Public Class frmPrenCamera
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'clnAliquotaIva
+      '
+      Me.clnAliquotaIva.Width = 0
+      '
+      'ColumnHeader1
+      '
+      Me.ColumnHeader1.Width = 0
+      '
       'frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(588, 603)
+      Me.ClientSize = New System.Drawing.Size(598, 613)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1936,6 +1948,7 @@ Public Class frmPrenCamera
                .Quantità = lvwAddebiti.Items(i).SubItems(2).Text
                .Importo = lvwAddebiti.Items(i).SubItems(3).Text
                .Codice = lvwAddebiti.Items(i).SubItems(4).Text
+               .AliquotaIva = lvwAddebiti.Items(i).SubItems(6).Text
                .Colore = lvwAddebiti.Items(i).ForeColor.ToArgb
                .Gruppo = lvwAddebiti.Items(i).Group.ToString
                .InserisciDati(TAB_PREN_ADDEBITI)

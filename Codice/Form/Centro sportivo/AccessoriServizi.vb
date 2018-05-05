@@ -72,6 +72,8 @@ Public Class frmAccessoriServizi
    Public WithEvents Label2 As System.Windows.Forms.Label
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+   Friend WithEvents cmbAliquotaIva As ComboBox
+   Public WithEvents Label15 As Label
    Public WithEvents txtCosto As System.Windows.Forms.TextBox
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -79,6 +81,7 @@ Public Class frmAccessoriServizi
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
+      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
       Me.Panel1 = New System.Windows.Forms.Panel()
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -107,7 +110,8 @@ Public Class frmAccessoriServizi
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+      Me.cmbAliquotaIva = New System.Windows.Forms.ComboBox()
+      Me.Label15 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -127,7 +131,7 @@ Public Class frmAccessoriServizi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(548, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(558, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -147,6 +151,13 @@ Public Class frmAccessoriServizi
       Me.Annulla.Text = "Annulla"
       Me.Annulla.ToolTipText = "Annulla"
       '
+      'ImageList1
+      '
+      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+      Me.ImageList1.Images.SetKeyName(0, "saveHS.png")
+      Me.ImageList1.Images.SetKeyName(1, "Edit_UndoHS.png")
+      '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
@@ -154,7 +165,7 @@ Public Class frmAccessoriServizi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(548, 20)
+      Me.Panel1.Size = New System.Drawing.Size(558, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -177,12 +188,14 @@ Public Class frmAccessoriServizi
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(548, 324)
+      Me.TabControl1.Size = New System.Drawing.Size(558, 334)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbAliquotaIva)
+      Me.TabPage1.Controls.Add(Me.Label15)
       Me.TabPage1.Controls.Add(Me.txtCosto)
       Me.TabPage1.Controls.Add(Me.Label2)
       Me.TabPage1.Controls.Add(Me.cmdColore)
@@ -202,7 +215,7 @@ Public Class frmAccessoriServizi
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(540, 298)
+      Me.TabPage1.Size = New System.Drawing.Size(550, 308)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -213,7 +226,7 @@ Public Class frmAccessoriServizi
       Me.txtCosto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtCosto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCosto.Location = New System.Drawing.Point(144, 128)
+      Me.txtCosto.Location = New System.Drawing.Point(144, 117)
       Me.txtCosto.MaxLength = 0
       Me.txtCosto.Name = "txtCosto"
       Me.txtCosto.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -227,7 +240,7 @@ Public Class frmAccessoriServizi
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(24, 128)
+      Me.Label2.Location = New System.Drawing.Point(27, 117)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(37, 13)
@@ -238,10 +251,10 @@ Public Class frmAccessoriServizi
       '
       Me.cmdColore.BackColor = System.Drawing.SystemColors.Control
       Me.cmdColore.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-      Me.cmdColore.Location = New System.Drawing.Point(144, 192)
+      Me.cmdColore.Location = New System.Drawing.Point(144, 206)
       Me.cmdColore.Name = "cmdColore"
       Me.cmdColore.Size = New System.Drawing.Size(80, 19)
-      Me.cmdColore.TabIndex = 5
+      Me.cmdColore.TabIndex = 6
       Me.cmdColore.UseVisualStyleBackColor = False
       '
       'Label1
@@ -250,7 +263,7 @@ Public Class frmAccessoriServizi
       Me.Label1.BackColor = System.Drawing.Color.Transparent
       Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(24, 192)
+      Me.Label1.Location = New System.Drawing.Point(24, 206)
       Me.Label1.Name = "Label1"
       Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label1.Size = New System.Drawing.Size(40, 13)
@@ -261,20 +274,20 @@ Public Class frmAccessoriServizi
       '
       Me.cmbDisponibile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbDisponibile.Items.AddRange(New Object() {"Sì", "No"})
-      Me.cmbDisponibile.Location = New System.Drawing.Point(144, 248)
+      Me.cmbDisponibile.Location = New System.Drawing.Point(144, 231)
       Me.cmbDisponibile.Name = "cmbDisponibile"
       Me.cmbDisponibile.Size = New System.Drawing.Size(80, 21)
-      Me.cmbDisponibile.TabIndex = 8
+      Me.cmbDisponibile.TabIndex = 7
       Me.cmbDisponibile.Visible = False
       '
       'cmbEscludi
       '
       Me.cmbEscludi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbEscludi.Items.AddRange(New Object() {"Sì", "No"})
-      Me.cmbEscludi.Location = New System.Drawing.Point(144, 160)
+      Me.cmbEscludi.Location = New System.Drawing.Point(144, 179)
       Me.cmbEscludi.Name = "cmbEscludi"
       Me.cmbEscludi.Size = New System.Drawing.Size(80, 21)
-      Me.cmbEscludi.TabIndex = 4
+      Me.cmbEscludi.TabIndex = 5
       '
       'EliminaImg
       '
@@ -282,7 +295,7 @@ Public Class frmAccessoriServizi
       Me.EliminaImg.Location = New System.Drawing.Point(448, 176)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
-      Me.EliminaImg.TabIndex = 7
+      Me.EliminaImg.TabIndex = 9
       Me.EliminaImg.Text = "&Elimina"
       '
       'ApriImg
@@ -291,7 +304,7 @@ Public Class frmAccessoriServizi
       Me.ApriImg.Location = New System.Drawing.Point(376, 176)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(64, 24)
-      Me.ApriImg.TabIndex = 6
+      Me.ApriImg.TabIndex = 8
       Me.ApriImg.Text = "&Apri"
       '
       'picFoto
@@ -310,7 +323,7 @@ Public Class frmAccessoriServizi
       Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbTipologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbTipologia.Items.AddRange(New Object() {"Accessorio", "Servizio"})
-      Me.cmbTipologia.Location = New System.Drawing.Point(144, 96)
+      Me.cmbTipologia.Location = New System.Drawing.Point(144, 90)
       Me.cmbTipologia.Name = "cmbTipologia"
       Me.cmbTipologia.Size = New System.Drawing.Size(216, 21)
       Me.cmbTipologia.TabIndex = 2
@@ -335,7 +348,7 @@ Public Class frmAccessoriServizi
       Me.label.BackColor = System.Drawing.Color.Transparent
       Me.label.Cursor = System.Windows.Forms.Cursors.Default
       Me.label.ForeColor = System.Drawing.Color.Black
-      Me.label.Location = New System.Drawing.Point(24, 96)
+      Me.label.Location = New System.Drawing.Point(24, 90)
       Me.label.Name = "label"
       Me.label.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.label.Size = New System.Drawing.Size(53, 13)
@@ -348,7 +361,7 @@ Public Class frmAccessoriServizi
       Me.Label21.BackColor = System.Drawing.Color.Transparent
       Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label21.ForeColor = System.Drawing.Color.Black
-      Me.Label21.Location = New System.Drawing.Point(24, 160)
+      Me.Label21.Location = New System.Drawing.Point(24, 179)
       Me.Label21.Name = "Label21"
       Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label21.Size = New System.Drawing.Size(112, 13)
@@ -361,7 +374,7 @@ Public Class frmAccessoriServizi
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(24, 248)
+      Me.Label6.Location = New System.Drawing.Point(24, 231)
       Me.Label6.Name = "Label6"
       Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label6.Size = New System.Drawing.Size(61, 13)
@@ -446,19 +459,35 @@ Public Class frmAccessoriServizi
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'ImageList1
+      'cmbAliquotaIva
       '
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-      Me.ImageList1.Images.SetKeyName(0, "saveHS.png")
-      Me.ImageList1.Images.SetKeyName(1, "Edit_UndoHS.png")
+      Me.cmbAliquotaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbAliquotaIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbAliquotaIva.Items.AddRange(New Object() {"", "Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
+      Me.cmbAliquotaIva.Location = New System.Drawing.Point(144, 143)
+      Me.cmbAliquotaIva.Name = "cmbAliquotaIva"
+      Me.cmbAliquotaIva.Size = New System.Drawing.Size(144, 21)
+      Me.cmbAliquotaIva.TabIndex = 4
+      '
+      'Label15
+      '
+      Me.Label15.AutoSize = True
+      Me.Label15.BackColor = System.Drawing.Color.Transparent
+      Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label15.ForeColor = System.Drawing.Color.Black
+      Me.Label15.Location = New System.Drawing.Point(24, 143)
+      Me.Label15.Name = "Label15"
+      Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label15.Size = New System.Drawing.Size(77, 13)
+      Me.Label15.TabIndex = 55781
+      Me.Label15.Text = "Aliquota I.V.A.:"
       '
       'frmAccessoriServizi
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(548, 370)
+      Me.ClientSize = New System.Drawing.Size(558, 380)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -486,7 +515,7 @@ Public Class frmAccessoriServizi
 
 #End Region
 
-   Public ARisorsa As New Risorsa
+   Public ARisorsa As New AccessoriServizi
    Private CFormatta As New ClsFormatta
 
    Const NOME_TABELLA As String = "AccessoriServizi"
@@ -522,8 +551,10 @@ Public Class frmAccessoriServizi
             If IsNumeric(txtCosto.Text) Then
                .Costo = CFormatta.FormattaEuro(Convert.ToDouble(txtCosto.Text))
             Else
-               .Costo = "0,00"
+               .Costo = VALORE_ZERO
             End If
+
+            .AliquotaIva = cmbAliquotaIva.Text
 
             ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
@@ -671,6 +702,7 @@ Public Class frmAccessoriServizi
                txtDescrizione.Text = .Descrizione
                cmbTipologia.Text = .Tipologia
                txtCosto.Text = CFormatta.FormattaEuro(.Costo)
+               cmbAliquotaIva.Text = .AliquotaIva
                cmbDisponibile.Text = .Disponibile
                cmbEscludi.Text = .Escludi
                txtNote.Text = .Note
