@@ -191,7 +191,7 @@ Public Class PrenCamere
          If IsDBNull(ds.Tables(tabella).Rows(0)("ApplicaSconto")) = False Then
             Me.ApplicaSconto = ds.Tables(tabella).Rows(0)("ApplicaSconto").ToString
          Else
-            Me.ApplicaSconto = "0"
+            Me.ApplicaSconto = VALORE_ZERO
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Sconto")) = False Then
             Me.Sconto = ds.Tables(tabella).Rows(0)("Sconto").ToString

@@ -2130,7 +2130,7 @@ Public Class frmDocumento
 
             ' Calcola il valore dello sconto sul totale del conto.
             If IsDBNull(dr.Item("Sconto")) = False Then
-               Dim totConto As Double = Convert.ToDouble(dr.Item("TotaleConto"))
+               Dim totConto As Double = Convert.ToDouble(dr.Item("ApplicaSconto"))
                Dim sconto As Double = Convert.ToDouble(dr.Item("Sconto"))
 
                If sconto <> 0 Then

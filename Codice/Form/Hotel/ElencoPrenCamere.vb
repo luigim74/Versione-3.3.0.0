@@ -2225,14 +2225,13 @@ Public Class ElencoPrenCamere
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
       'If Modifica.Enabled = True Then
       '   ' Registra loperazione efettuata dall'operatore identificato.
       '   registraModifica()
 
-      '   ' Apre la finestra Cliente per la modifica dei dati.
-      '   ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+      ' Apre la finestra per la modifica dei dati.
+      Modifica()
       'End If
    End Sub
 
