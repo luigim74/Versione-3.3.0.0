@@ -5811,7 +5811,52 @@ Public Class ContoPos
          ' Inserire qui il codice per gestire l'addebito del conto.
          ' IMPORTANTE! I conti che verranno addebitati su altre risorse Hotel o Sporting Club devono essere eliminati e i dettagli del conto iseriti nel conto della risorsa.
 
-         MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Hotel non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+         Dim frm As New AddebitaContoPos
+         If frm.ShowDialog() = DialogResult.OK Then
+
+            Select Case frm.Tag.ToUpper
+               Case "HOTEL"
+                  'lblQuotaPersona.Visible = True
+                  'txtQuotaPersona.Visible = True
+                  'eui_cmdDivisioneAnalitica.Visible = False
+
+                  'AggiornaValoriConto()
+
+                  MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Hotel non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+               Case "CENTRO SPORTIVO"
+                  'lblQuotaPersona.Visible = False
+                  'txtQuotaPersona.Visible = False
+                  'eui_cmdDivisioneAnalitica.Visible = True
+
+                  'txtNumDoc.Enabled = True
+                  'txtNumDoc.BackColor = Color.White
+                  'txtNumDoc.Text = "2"
+
+                  'netBtn_DaPagare.TextButton = txtTotDividere.Text
+                  'txtSospeso.Text = txtTotDividere.Text
+
+                  'eui_cmdTipoElenco.Text = "Elenco completo"
+
+                  'lstvElencoDocAperti.Items.Clear()
+                  'lstvDettagli.Items.Clear()
+
+                  MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Centro Sportivo non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+               Case "CAMPEGGIO"
+                  ' DA SVILUPPARE!
+                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Campeggio non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+               Case "CENTRO BALNEARE"
+                  ' DA SVILUPPARE!
+                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Balneare non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+               Case "CENTRO BENESSERE"
+                  ' DA SVILUPPARE!
+                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Benessere non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+            End Select
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

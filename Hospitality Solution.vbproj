@@ -420,6 +420,9 @@
     <Compile Include="Codice\Form\Hospitality\ReportViewer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Form\Ristorante\AddebitaContoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="HospitalityDataSet.vb" />
     <Compile Include="Codice\Form\Ristorante\NoteContiPos.vb">
@@ -978,6 +981,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\NoteContiPos.resx">
       <DependentUpon>NoteContiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\AddebitaContoPos.resx">
+      <DependentUpon>AddebitaContoPos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\VisteContiPeriodoPos.resx">
       <DependentUpon>VisteContiPeriodoPos.vb</DependentUpon>
