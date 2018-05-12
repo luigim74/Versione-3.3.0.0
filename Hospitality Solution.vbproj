@@ -396,6 +396,9 @@
     <Compile Include="Codice\Form\Hospitality\Documento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Form\Hospitality\SelezionaPrenotazione.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Hospitality\ListaDocumenti.Designer.vb">
       <DependentUpon>ListaDocumenti.vb</DependentUpon>
     </Compile>
@@ -861,6 +864,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\Documento.resx">
       <DependentUpon>Documento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\SelezionaPrenotazione.resx">
+      <DependentUpon>SelezionaPrenotazione.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\ListaDocumenti.resx">
       <DependentUpon>ListaDocumenti.vb</DependentUpon>

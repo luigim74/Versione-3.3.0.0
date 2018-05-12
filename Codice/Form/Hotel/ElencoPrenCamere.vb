@@ -203,7 +203,7 @@ Public Class ElencoPrenCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(952, 120)
+      Me.Panel1.Size = New System.Drawing.Size(960, 120)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -212,7 +212,7 @@ Public Class ElencoPrenCamere
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(682, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(690, 20)
       Me.TestoRicerca.TabIndex = 7
       '
       'txtCamereConsegna
@@ -396,7 +396,7 @@ Public Class ElencoPrenCamere
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(706, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(714, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
       Me.CampoRicerca.TabIndex = 8
@@ -408,7 +408,7 @@ Public Class ElencoPrenCamere
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(706, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(714, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -450,9 +450,9 @@ Public Class ElencoPrenCamere
       Me.Panel2.Controls.Add(Me.txtTotaleNotti)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 450)
+      Me.Panel2.Location = New System.Drawing.Point(0, 458)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(952, 35)
+      Me.Panel2.Size = New System.Drawing.Size(960, 35)
       Me.Panel2.TabIndex = 13
       '
       'txtTotaleRagazzi
@@ -463,7 +463,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleRagazzi.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleRagazzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleRagazzi.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(701, 11)
+      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(709, 11)
       Me.txtTotaleRagazzi.MaxLength = 0
       Me.txtTotaleRagazzi.Name = "txtTotaleRagazzi"
       Me.txtTotaleRagazzi.ReadOnly = True
@@ -479,7 +479,7 @@ Public Class ElencoPrenCamere
       Me.Label12.BackColor = System.Drawing.Color.Transparent
       Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label12.ForeColor = System.Drawing.Color.White
-      Me.Label12.Location = New System.Drawing.Point(636, 11)
+      Me.Label12.Location = New System.Drawing.Point(644, 11)
       Me.Label12.Name = "Label12"
       Me.Label12.Size = New System.Drawing.Size(63, 15)
       Me.Label12.TabIndex = 244
@@ -493,7 +493,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleBambini.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleBambini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleBambini.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleBambini.Location = New System.Drawing.Point(573, 11)
+      Me.txtTotaleBambini.Location = New System.Drawing.Point(581, 11)
       Me.txtTotaleBambini.MaxLength = 0
       Me.txtTotaleBambini.Name = "txtTotaleBambini"
       Me.txtTotaleBambini.ReadOnly = True
@@ -509,7 +509,7 @@ Public Class ElencoPrenCamere
       Me.Label11.BackColor = System.Drawing.Color.Transparent
       Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label11.ForeColor = System.Drawing.Color.White
-      Me.Label11.Location = New System.Drawing.Point(508, 11)
+      Me.Label11.Location = New System.Drawing.Point(516, 11)
       Me.Label11.Name = "Label11"
       Me.Label11.Size = New System.Drawing.Size(64, 15)
       Me.Label11.TabIndex = 242
@@ -523,7 +523,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNeonati.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNeonati.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNeonati.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleNeonati.Location = New System.Drawing.Point(445, 11)
+      Me.txtTotaleNeonati.Location = New System.Drawing.Point(453, 11)
       Me.txtTotaleNeonati.MaxLength = 0
       Me.txtTotaleNeonati.Name = "txtTotaleNeonati"
       Me.txtTotaleNeonati.ReadOnly = True
@@ -539,7 +539,7 @@ Public Class ElencoPrenCamere
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label10.ForeColor = System.Drawing.Color.White
-      Me.Label10.Location = New System.Drawing.Point(380, 11)
+      Me.Label10.Location = New System.Drawing.Point(388, 11)
       Me.Label10.Name = "Label10"
       Me.Label10.Size = New System.Drawing.Size(61, 15)
       Me.Label10.TabIndex = 240
@@ -553,7 +553,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleImporto.Location = New System.Drawing.Point(818, 11)
+      Me.txtTotaleImporto.Location = New System.Drawing.Point(826, 11)
       Me.txtTotaleImporto.MaxLength = 0
       Me.txtTotaleImporto.Name = "txtTotaleImporto"
       Me.txtTotaleImporto.ReadOnly = True
@@ -569,7 +569,7 @@ Public Class ElencoPrenCamere
       Me.Label1.BackColor = System.Drawing.Color.Transparent
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(764, 11)
+      Me.Label1.Location = New System.Drawing.Point(772, 11)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(51, 15)
       Me.Label1.TabIndex = 238
@@ -583,7 +583,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleAdulti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleAdulti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleAdulti.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleAdulti.Location = New System.Drawing.Point(317, 11)
+      Me.txtTotaleAdulti.Location = New System.Drawing.Point(325, 11)
       Me.txtTotaleAdulti.MaxLength = 0
       Me.txtTotaleAdulti.Name = "txtTotaleAdulti"
       Me.txtTotaleAdulti.ReadOnly = True
@@ -599,7 +599,7 @@ Public Class ElencoPrenCamere
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(268, 11)
+      Me.Label3.Location = New System.Drawing.Point(276, 11)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(47, 15)
       Me.Label3.TabIndex = 236
@@ -613,7 +613,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNotti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNotti.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleNotti.Location = New System.Drawing.Point(170, 11)
+      Me.txtTotaleNotti.Location = New System.Drawing.Point(178, 11)
       Me.txtTotaleNotti.MaxLength = 0
       Me.txtTotaleNotti.Name = "txtTotaleNotti"
       Me.txtTotaleNotti.ReadOnly = True
@@ -629,7 +629,7 @@ Public Class ElencoPrenCamere
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(124, 11)
+      Me.Label6.Location = New System.Drawing.Point(132, 11)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(41, 15)
       Me.Label6.TabIndex = 16
@@ -644,7 +644,7 @@ Public Class ElencoPrenCamere
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(952, 485)
+      Me.ClientSize = New System.Drawing.Size(960, 493)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)

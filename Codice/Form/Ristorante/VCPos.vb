@@ -44,7 +44,7 @@ Public Class frmPos
    Public PrimoElemento As Integer = 0
    Public IndiceLista As Integer = 0
    Public CausaleMovMag As String = "Vendita"
-   Private idTavolo As Integer
+   Public idTavolo As Integer
    Public nomeTavolo As String
    Private infoTitolo As String
    Private ComandeEsistenti As Boolean = False
@@ -210,6 +210,17 @@ Public Class frmPos
 
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.ApriAsporto, String.Empty, MODULO_TAVOLI)
+
+         Case "Hotel"
+            ' Conto Immediato.
+            idTavolo = codiceTavolo
+            nomeTavolo = tavolo
+            nomeTavoloDoc = "Conto Imm."
+            nomeCameriereDoc = "Cassa"
+            infoTitolo = "Visual POS - CONTO IMMEDIATO"
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_PUNTO_CASSA, MODULO_GESTIONE_POS)
 
          Case Else
             ' Tavolo.

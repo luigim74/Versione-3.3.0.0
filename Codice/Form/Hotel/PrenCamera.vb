@@ -3340,7 +3340,7 @@ Public Class frmPrenCamera
 
    Private Sub eui_cmdApriPos_Click(sender As Object, e As EventArgs) Handles eui_cmdApriPos.Click
       ' Apre il punto cassa.
-      g_frmMain.ApriPos(0, String.Empty, String.Empty, String.Empty)
+      g_frmMain.ApriPos(Convert.ToInt32(txtNumero.Text), "Hotel", String.Empty, String.Empty)
    End Sub
 
    Private Sub eui_cmdEliminaRiga_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdEliminaRiga.Click

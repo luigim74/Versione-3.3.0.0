@@ -5809,53 +5809,56 @@ Public Class ContoPos
    Private Sub eui_AddebitoSuRisorsa_Click(sender As Object, e As EventArgs) Handles eui_AddebitoSuRisorsa.Click
       Try
          ' Inserire qui il codice per gestire l'addebito del conto.
-         ' IMPORTANTE! I conti che verranno addebitati su altre risorse Hotel o Sporting Club devono essere eliminati e i dettagli del conto iseriti nel conto della risorsa.
+         ' IMPORTANTE! I conti esistenti che verranno addebitati su altre risorse Hotel o Sporting Club devono essere eliminati e i dettagli del conto iseriti nel conto della risorsa.
 
-         Dim frm As New AddebitaContoPos
-         If frm.ShowDialog() = DialogResult.OK Then
+         If g_frmPos.nomeTavolo = "Hotel" Then
+            ' Salva i dati nella prenotazione.
 
-            Select Case frm.Tag.ToUpper
-               Case "HOTEL"
-                  'lblQuotaPersona.Visible = True
-                  'txtQuotaPersona.Visible = True
-                  'eui_cmdDivisioneAnalitica.Visible = False
+            ' Nasconde il form del Conto.
+            Me.Hide()
 
-                  'AggiornaValoriConto()
+            MessageBox.Show("Il conto è stato salvato nella prenotazione N. " & g_frmPos.idTavolo, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                  MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Hotel non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            ' Chiude il form del Conto.
+            Me.Close()
+         Else
 
-               Case "CENTRO SPORTIVO"
-                  'lblQuotaPersona.Visible = False
-                  'txtQuotaPersona.Visible = False
-                  'eui_cmdDivisioneAnalitica.Visible = True
+            Dim frm As New AddebitaContoPos
+            If frm.ShowDialog() = DialogResult.OK Then
 
-                  'txtNumDoc.Enabled = True
-                  'txtNumDoc.BackColor = Color.White
-                  'txtNumDoc.Text = "2"
+               Select Case frm.Tag.ToUpper
+                  Case "HOTEL"
+                     Dim frmSelPren As New frmSelezionaPrenotazione
+                     If frmSelPren.ShowDialog() = DialogResult.OK Then
 
-                  'netBtn_DaPagare.TextButton = txtTotDividere.Text
-                  'txtSospeso.Text = txtTotDividere.Text
+                        ' Nasconde il form del Conto.
+                        Me.Hide()
 
-                  'eui_cmdTipoElenco.Text = "Elenco completo"
+                        MessageBox.Show("Il conto è stato salvato nella prenotazione N. " & frmSelPren.Tag, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                  'lstvElencoDocAperti.Items.Clear()
-                  'lstvDettagli.Items.Clear()
+                        ' Chiude il form del Conto.
+                        Me.Close()
+                     End If
 
-                  MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Centro Sportivo non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  Case "CENTRO SPORTIVO"
 
-               Case "CAMPEGGIO"
-                  ' DA SVILUPPARE!
-                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Campeggio non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                     MessageBox.Show("Non è possibile eseguire l'operazione! Il modulo Centro Sportivo non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-               Case "CENTRO BALNEARE"
-                  ' DA SVILUPPARE!
-                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Balneare non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  Case "CAMPEGGIO"
+                     ' DA SVILUPPARE!
+                     MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Campeggio non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-               Case "CENTRO BENESSERE"
-                  ' DA SVILUPPARE!
-                  MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Benessere non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  Case "CENTRO BALNEARE"
+                     ' DA SVILUPPARE!
+                     MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Balneare non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            End Select
+                  Case "CENTRO BENESSERE"
+                     ' DA SVILUPPARE!
+                     MessageBox.Show("Non ci sono prenotazioni su cui addebitare il conto! Il modulo Centro Benessere non è installato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+               End Select
+            End If
+
          End If
 
       Catch ex As Exception
