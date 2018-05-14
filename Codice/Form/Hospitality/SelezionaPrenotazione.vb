@@ -111,7 +111,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdAddebita.DialogResult = System.Windows.Forms.DialogResult.OK
       Me.eui_cmdAddebita.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAddebita.Id = "c1e102ea-84d7-4e3c-8acf-9fe3c5e5ebb0"
-      Me.eui_cmdAddebita.Location = New System.Drawing.Point(715, 509)
+      Me.eui_cmdAddebita.Location = New System.Drawing.Point(718, 509)
       Me.eui_cmdAddebita.Name = "eui_cmdAddebita"
       Me.eui_cmdAddebita.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdAddebita.TabIndex = 5
@@ -130,7 +130,7 @@ Public Class frmSelezionaPrenotazione
       Me.lvwPrenotazioni.MultiSelect = False
       Me.lvwPrenotazioni.Name = "lvwPrenotazioni"
       Me.lvwPrenotazioni.ShowGroups = False
-      Me.lvwPrenotazioni.Size = New System.Drawing.Size(996, 491)
+      Me.lvwPrenotazioni.Size = New System.Drawing.Size(992, 491)
       Me.lvwPrenotazioni.TabIndex = 0
       Me.lvwPrenotazioni.UseCompatibleStateImageBehavior = False
       Me.lvwPrenotazioni.View = System.Windows.Forms.View.Details
@@ -193,7 +193,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAnnulla.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(852, 509)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(855, 509)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdAnnulla.TabIndex = 6
@@ -204,12 +204,12 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdPrenSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdPrenSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdPrenSu.Id = "c0143c92-f784-4c71-8ae2-4daff3fbf5ab"
-      Me.eui_cmdPrenSu.Location = New System.Drawing.Point(444, 509)
+      Me.eui_cmdPrenSu.Location = New System.Drawing.Point(447, 509)
       Me.eui_cmdPrenSu.Name = "eui_cmdPrenSu"
       Me.eui_cmdPrenSu.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdPrenSu.ScreenTip.Text = "Apre la tastiera virtuale."
       Me.eui_cmdPrenSu.Size = New System.Drawing.Size(120, 53)
-      Me.eui_cmdPrenSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdContiSu.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdPrenSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdPrenSu.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdPrenSu.TabIndex = 3
       '
       'eui_cmdPrenGiù
@@ -217,12 +217,12 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdPrenGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdPrenGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdPrenGiù.Id = "7a370a7a-c200-480c-9c8e-e8786e7033cf"
-      Me.eui_cmdPrenGiù.Location = New System.Drawing.Point(573, 509)
+      Me.eui_cmdPrenGiù.Location = New System.Drawing.Point(576, 509)
       Me.eui_cmdPrenGiù.Name = "eui_cmdPrenGiù"
       Me.eui_cmdPrenGiù.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdPrenGiù.ScreenTip.Text = "Apre la tastiera virtuale."
       Me.eui_cmdPrenGiù.Size = New System.Drawing.Size(120, 53)
-      Me.eui_cmdPrenGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdContiGiù.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdPrenGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdPrenGiù.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdPrenGiù.TabIndex = 4
       '
       'Label6
@@ -270,7 +270,7 @@ Public Class frmSelezionaPrenotazione
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(1009, 591)
+      Me.ClientSize = New System.Drawing.Size(992, 601)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_txtTrovaCognome)
       Me.Controls.Add(Me.Label6)
@@ -400,13 +400,12 @@ Public Class frmSelezionaPrenotazione
             End If
 
             ' Totale Conto.
-            'If IsDBNull(dr.Item("TotaleConto")) = False Then
-            '   Dim totaleConto As String = CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("TotaleConto")))
-
-            '   lvwPrenotazioni.Items(lvwPrenotazioni.Items.Count - 1).SubItems.Add(totaleConto)
-            'Else
-            '   lvwPrenotazioni.Items(lvwPrenotazioni.Items.Count - 1).SubItems.Add(VALORE_ZERO)
-            'End If
+            If IsDBNull(dr.Item("TotaleConto")) = False Then
+               'Dim totaleConto As String = CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("TotaleConto")))
+               lvwPrenotazioni.Items(lvwPrenotazioni.Items.Count - 1).SubItems.Add(dr.Item("TotaleConto"))
+            Else
+               lvwPrenotazioni.Items(lvwPrenotazioni.Items.Count - 1).SubItems.Add(VALORE_ZERO)
+            End If
 
             ' Codice.
             lvwPrenotazioni.Items(lvwPrenotazioni.Items.Count - 1).SubItems.Add(dr.Item("Id"))
@@ -532,9 +531,6 @@ Public Class frmSelezionaPrenotazione
 
             lvwPrenotazioni.Focus()
 
-            ' Inserisce il cliente selezionato nel'elenco degli occupanti.
-            'InserisciCliente(lvwPrenotazioni.Items(lvwPrenotazioni.FocusedItem.Index).SubItems(7).Text)
-
             Me.Close()
          End If
 
@@ -624,7 +620,12 @@ Public Class frmSelezionaPrenotazione
 
    Private Sub lvwPrenotazioni_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvwPrenotazioni.SelectedIndexChanged
       Try
-         Me.Tag = lvwPrenotazioni.Items(lvwPrenotazioni.FocusedItem.Index).SubItems(1).Text
+         Dim numPren As String = lvwPrenotazioni.Items(lvwPrenotazioni.FocusedItem.Index).SubItems(1).Text
+         Dim idPren As String = lvwPrenotazioni.Items(lvwPrenotazioni.FocusedItem.Index).SubItems(9).Text
+         Dim totConto As String = lvwPrenotazioni.Items(lvwPrenotazioni.FocusedItem.Index).SubItems(8).Text
+
+         ' Unisce l'Id con il Numero della prenotazione per passarli al form ContoPos.
+         Me.Tag = idPren & "," & numPren & "," & totConto
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

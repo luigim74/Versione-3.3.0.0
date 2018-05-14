@@ -9,6 +9,7 @@ Public Class PrenCamereAddebiti
    Public Quantità As Integer
    Public Importo As String
    Public AliquotaIva As String
+   Public Categoria As String
    Public Colore As Integer
    Public Gruppo As String
 
@@ -72,6 +73,13 @@ Public Class PrenCamereAddebiti
             Else
                Me.AliquotaIva = "0"
             End If
+            ' Categoria.
+            If IsDBNull(dr.Item("Categoria")) = False Then
+               Me.Categoria = dr.Item("Categoria").ToString
+            Else
+               Me.Categoria = String.Empty
+            End If
+            ' Colore
             If IsDBNull(dr.Item("Colore")) = False Then
                Me.Colore = Convert.ToInt32(dr.Item("Colore"))
             Else
@@ -163,6 +171,13 @@ Public Class PrenCamereAddebiti
                lst.Items(i).SubItems.Add("0")
             End If
 
+            ' Categoria.
+            If IsDBNull(dr.Item("Categoria")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("Categoria").ToString)
+            Else
+               lst.Items(i).SubItems.Add(String.Empty)
+            End If
+
             'lst.Items(i).BackColor = Color.MediumSeaGreen
             lst.Items(i).ForeColor = Color.FromArgb(Convert.ToInt32(dr.Item("Colore")))
             'lst.Items(i).Font = New Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic)
@@ -174,6 +189,8 @@ Public Class PrenCamereAddebiti
                   valGruppo = 1
                Case "Servizi"
                   valGruppo = 2
+               Case "Bar/Ristorante"
+                  valGruppo = 3
                Case Else ' Articoli vari
                   valGruppo = 0
             End Select
@@ -209,8 +226,8 @@ Public Class PrenCamereAddebiti
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, Codice, Data, Descrizione, Quantità, Importo, AliquotaIva, Colore, Gruppo) " &
-                                       "VALUES(@RifPren, @Codice, @Data, @Descrizione, @Quantità, @Importo, @AliquotaIva, @Colore, @Gruppo)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, Codice, Data, Descrizione, Quantità, Importo, AliquotaIva, Categoria, Colore, Gruppo) " &
+                                       "VALUES(@RifPren, @Codice, @Data, @Descrizione, @Quantità, @Importo, @AliquotaIva, @Categoria, @Colore, @Gruppo)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -222,6 +239,7 @@ Public Class PrenCamereAddebiti
          cmdInsert.Parameters.AddWithValue("@Quantità", Me.Quantità)
          cmdInsert.Parameters.AddWithValue("@Importo", Me.Importo)
          cmdInsert.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
+         cmdInsert.Parameters.AddWithValue("@Categoria", Me.Categoria)
          cmdInsert.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdInsert.Parameters.AddWithValue("@Gruppo", Me.Gruppo)
 
@@ -268,6 +286,7 @@ Public Class PrenCamereAddebiti
                              "Quantità = @Quantità, " &
                              "Importo = @Importo, " &
                              "AliquotaIva = @AliquotaIva, " &
+                             "Categoria = @Categoria, " &
                              "Colore = @Colore, " &
                              "Gruppo = @Gruppo " &
                              "WHERE RifPren = {1}",
@@ -284,6 +303,7 @@ Public Class PrenCamereAddebiti
          cmdUpdate.Parameters.AddWithValue("@Quantità", Me.Quantità)
          cmdUpdate.Parameters.AddWithValue("@Importo", Me.Importo)
          cmdUpdate.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
+         cmdUpdate.Parameters.AddWithValue("@Categoria", Me.Categoria)
          cmdUpdate.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdUpdate.Parameters.AddWithValue("@Gruppo", Me.Gruppo)
 

@@ -145,6 +145,8 @@
                   valGruppo = 1
                Case "Servizio"
                   valGruppo = 2
+               Case "Bar/Ristorante"
+                  valGruppo = 3
                Case Else ' Articoli vari
                   valGruppo = 0
             End Select
@@ -215,6 +217,8 @@
                   valGruppo = 1
                Case "Servizio"
                   valGruppo = 2
+               Case "Bar/Ristorante"
+                  valGruppo = 3
                Case Else ' Articoli vari
                   valGruppo = 0
             End Select
@@ -243,9 +247,15 @@
             ' Aliquota Iva.
             If IsDBNull(dr.Item("AliquotaIva")) = False Then
                g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(LeggiAliquotaIva(dr.Item("AliquotaIva")))
-
             Else
                g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("0")
+            End If
+
+            ' Categoria.
+            If tipologia <> String.Empty Then
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(tipologia)
+            Else
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
             End If
 
             ' Stringa per registrare loperazione effettuata dall'operatore identificato.

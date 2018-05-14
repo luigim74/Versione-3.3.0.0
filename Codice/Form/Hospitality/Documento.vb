@@ -2033,7 +2033,11 @@ Public Class frmDocumento
             End If
 
             ' Categoria.
-            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+            If IsDBNull(dr.Item("Categoria")) = False Then
+               dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = dr.Item("Categoria")
+            Else
+               dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = String.Empty
+            End If
 
             ' Serve a non inserire più volte la descrizione,
             addebiti = False

@@ -354,3 +354,204 @@ Nome parametro: index"
 "- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
 "
 "
+"*** 14/05/2018 - 11:31:29 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
+"
+"
+"*** 14/05/2018 - 11:31:56 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
+"
+"
+"*** 14/05/2018 - 11:32:46 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
+"
+"
+"*** 14/05/2018 - 13:48:36 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 404"
+"
+"
+"*** 14/05/2018 - 13:58:11 ***"
+"- DESCRIZIONE ERRORE: Indice oltre i limiti della matrice."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
+"
+"
+"*** 14/05/2018 - 14:03:50 ***"
+"- DESCRIZIONE ERRORE: Indice oltre i limiti della matrice."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
+"
+"
+"*** 14/05/2018 - 14:20:52 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4053
+   in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
+"
+"
+"*** 14/05/2018 - 15:14:59 ***"
+"- DESCRIZIONE ERRORE: Il campo ""PrenCamereAddebiti.Categoria"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.PrenCamereAddebiti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 247"
+"
+"
+"*** 14/05/2018 - 16:04:54 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4112"
+"
+"
+"*** 14/05/2018 - 16:15:13 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4115"
+"
+"
+"*** 14/05/2018 - 16:52:05 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4115"
+"
+"
+"*** 14/05/2018 - 16:58:11 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 16:58:22 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 16:58:23 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 16:58:24 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 16:58:25 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:07:46 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:07:58 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:07:59 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:08:00 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:11:30 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:11:38 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:11:39 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 17:11:40 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
+"
+"
+"*** 14/05/2018 - 18:52:19 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3982"
+"
+"
+"*** 14/05/2018 - 18:55:37 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3982"
+"
+"
+"*** 14/05/2018 - 19:10:42 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '6' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3972"
+"
+"
