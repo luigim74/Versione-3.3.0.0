@@ -33,6 +33,7 @@ Public Class ContoPos
    Public tipoDocumento As String = TIPO_DOC_RF
 
    Private Doc As New Documenti
+   Private DettagliDoc As New DettagliDocumenti
    Dim DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
@@ -189,6 +190,20 @@ Public Class ContoPos
          idTavoloDoc = idTavolo.ToString
       Else
          idTavoloDoc = String.Empty
+      End If
+
+      ' Se il conto viene aperto da una prenotazione disattiva i pulsanti che non servono..
+      If g_frmPos.netBtn_Conferma.Enabled = False And g_frmPos.netBtn_ContiParcheggiati.Enabled = False Then
+         eui_cmdTipoConto.Enabled = False
+         eui_cmdCliente.Enabled = False
+         eui_cmdRicevuta.Enabled = False
+         eui_cmdFattura.Enabled = False
+         eui_cmdProforma.Enabled = False
+         eui_cmdScontrino.Enabled = False
+         eui_cmdParcheggiaConto.Enabled = False
+         eui_cmdContanti.Enabled = False
+         eui_cmdTipoPagamento.Enabled = False
+         eui_cmdBuoni.Enabled = False
       End If
    End Sub
 
@@ -2603,6 +2618,48 @@ Public Class ContoPos
       End Try
    End Function
 
+   Public Function LeggiIdDocumento(ByVal tabella As String, ByVal NumDoc As String) As Integer
+      ' Dichiara un oggetto DataAdapter.
+      Dim da As OleDbDataAdapter
+      ' Dichiara un oggetto DataSet
+      Dim ds As DataSet
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Crea la stringa.
+         sql = String.Format("SELECT * FROM {0} WHERE NumDoc = {1}", tabella, NumDoc)
+
+         ' Dichiara un oggetto DataAdapter.
+         da = New OleDbDataAdapter(sql, cn)
+
+         ' Dichiara un oggetto DataSet
+         ds = New DataSet
+
+         ' Riempe il DataSet con i dati della tabella.
+         da.Fill(ds, tabella)
+
+         ' Assegna i valori dei campi del DataSet ai campi della classe.
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Id")) = False Then
+            Return ds.Tables(tabella).Rows(0)("Id")
+         Else
+            Return 0
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         da.Dispose()
+         ds.Dispose()
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Function
+
    Private Sub ImpostaScontoConto()
       Try
          ' Imposta lo sconto.
@@ -2613,7 +2670,7 @@ Public Class ContoPos
 
             If scontoConto <> VALORE_ZERO Then
                valSconto = Convert.ToDouble(scontoConto)
-               txtValSconto.Text = LeggiTipoScontoConto(g_frmPos.numeroContoDoc, TAB_DOC)
+               txtValSconto.Text = CFormatta.FormattaNumeroDouble(valSconto) '& LeggiTipoScontoConto(g_frmPos.numeroContoDoc, TAB_DOC)
             Else
                ' Se gestito a percentuale ma il valore è 0.
                valSconto = 0.0
@@ -2638,7 +2695,7 @@ Public Class ContoPos
 
             If servizioConto <> VALORE_ZERO Then
                valServizio = Convert.ToDouble(servizioConto)
-               txtServizio.Text = LeggiTipoServizioConto(g_frmPos.numeroContoDoc, TAB_DOC)
+               txtServizio.Text = CFormatta.FormattaNumeroDouble(valServizio) '& LeggiTipoServizioConto(g_frmPos.numeroContoDoc, TAB_DOC)
             Else
                ' Se gestito a percentuale ma il valore è 0.
                valServizio = 0.0
@@ -3884,6 +3941,174 @@ Public Class ContoPos
          ' Chiude la connessione.
          cn.Close()
 
+      End Try
+   End Function
+
+   Private Function AddebitaConto(ByVal RifPren As String, ByVal totContoPren As String) As Boolean
+      Try
+         Dim totaleImporto As Double = totContoPren
+
+         Doc.Sconto = CFormatta.FormattaNumeroDouble(valSconto)
+         If txtValSconto.Text.Contains("%") = True Then
+            Doc.TipoSconto = "%"
+         Else
+            Doc.TipoSconto = String.Empty
+         End If
+
+         Doc.Servizio = CFormatta.FormattaNumeroDouble(valServizio)
+         If txtServizio.Text.Contains("%") = True Then
+            Doc.TipoServizio = "%"
+         Else
+            Doc.TipoServizio = String.Empty
+         End If
+
+         ' SALVA I DETTAGLI PER I PIATTI.
+         Dim i As Integer
+         For i = 0 To lstvDettagli.Items.Count - 1
+
+            ' In caso di variante senza una quantità.
+            Dim quantità As String
+            If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
+               quantità = lstvDettagli.Items(i).SubItems(1).Text
+            Else
+               quantità = VALORE_ZERO
+            End If
+
+            ' Data.
+            g_frmPrenCamera.lvwAddebiti.Items.Add(Today.ToShortDateString)
+
+            ' Descrizione.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(FormattaApici(lstvDettagli.Items(i).SubItems(2).Text))
+
+            ' Imposta il gruppo di appartenenza Bar/Ristorante.
+            Dim valGruppo As Short = 3
+
+            ' Assegna il gruppo.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).Group = g_frmPrenCamera.lvwAddebiti.Groups.Item(valGruppo)
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).ForeColor = Color.FromArgb(Color.Green.ToArgb)
+
+            ' Quantità.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(quantità)
+
+            ' Costo.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(lstvDettagli.Items(i).SubItems(4).Text)
+
+            ' Codice.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(lstvDettagli.Items(i).SubItems(6).Text)
+
+            ' Indice.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+            ' Aliquota Iva.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(lstvDettagli.Items(i).SubItems(5).Text)
+
+            ' Categoria.
+            g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(lstvDettagli.Items(i).SubItems(7).Text)
+
+            ' Aggiorna i valore del conto con i nuovi elementi della lista.
+            If IsNumeric(lstvDettagli.Items(i).SubItems(4).Text) = True Then
+               totaleImporto = totaleImporto + Convert.ToDouble(lstvDettagli.Items(i).SubItems(4).Text)
+            End If
+         Next
+
+         ' SALVA I DETTAGLI PER LO SCONTO.
+         If eui_cmdTipoConto.Text.ToUpper <> "ALLA ROMANA" Then
+            If Doc.Sconto <> VALORE_ZERO Then
+
+               ' Data.
+               g_frmPrenCamera.lvwAddebiti.Items.Add(Today.ToShortDateString)
+
+               ' Descrizione.
+               If Doc.TipoSconto <> String.Empty Then
+                  g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("SCONTO " & txtValSconto.Text)
+               Else
+                  g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("SCONTO")
+               End If
+
+               ' Imposta il gruppo di appartenenza Bar/Ristorante.
+               Dim valGruppo As Short = 3
+
+               ' Assegna il gruppo.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).Group = g_frmPrenCamera.lvwAddebiti.Groups.Item(valGruppo)
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).ForeColor = Color.FromArgb(Color.Green.ToArgb)
+
+               ' Quantità.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(1)
+
+               ' Costo.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("-" & Doc.Sconto)
+
+               ' Codice.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+               ' Indice.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+               ' Aliquota Iva.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(0)
+
+               ' Categoria.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+            End If
+         End If
+
+         ' SALVA I DETTAGLI PER IL SERVIZIO.
+         If eui_cmdTipoConto.Text.ToUpper <> "ALLA ROMANA" Then
+            If Doc.Servizio <> VALORE_ZERO Then
+
+               ' Data.
+               g_frmPrenCamera.lvwAddebiti.Items.Add(Today.ToShortDateString)
+
+               ' Descrizione.
+               If Doc.TipoSconto <> String.Empty Then
+                  g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("SERVIZIO" & txtServizio.Text)
+               Else
+                  g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add("SERVIZIO")
+               End If
+
+               ' Imposta il gruppo di appartenenza Bar/Ristorante.
+               Dim valGruppo As Short = 3
+
+               ' Assegna il gruppo.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).Group = g_frmPrenCamera.lvwAddebiti.Groups.Item(valGruppo)
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).ForeColor = Color.FromArgb(Color.Green.ToArgb)
+
+               ' Quantità.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(1)
+
+               ' Costo.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(Doc.Servizio)
+
+               ' Codice.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+               ' Indice.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+               ' Aliquota Iva.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(AliquotaIvaRistorante)
+
+               ' Categoria.
+               g_frmPrenCamera.lvwAddebiti.Items(g_frmPrenCamera.lvwAddebiti.Items.Count - 1).SubItems.Add(String.Empty)
+
+            End If
+         End If
+
+         ' Aggiunge Coperto, Servizio e Sconto.
+         totaleImporto = totaleImporto + valServizio - valSconto
+
+         ' Aggiorna il totale del conto della prenotazione camera.
+         g_frmPrenCamera.CalcolaTotaleAddebiti()
+         g_frmPrenCamera.CalcolaTotaleConto()
+
+         Return True
+
+      Catch ex As Exception
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
       End Try
    End Function
 
@@ -6069,8 +6294,8 @@ Public Class ContoPos
 
    Private Sub eui_AddebitoSuRisorsa_Click(sender As Object, e As EventArgs) Handles eui_AddebitoSuRisorsa.Click
       Try
-         ' Addebito dalla prenotazione.
-         If g_frmPos.nomeTavolo <> String.Empty And g_frmPos.nomeTavolo <> "Tavoli" Then
+         ' Aperto dalla gestione Tavoli.
+         If g_frmPos.nomeTavolo <> String.Empty And g_frmPos.nomeTavolo <> "Tavoli" And g_frmPos.nomeTavolo <> "Hotel" Then
             Dim risposta As Integer
             risposta = MessageBox.Show("Si desidera mantenere ancora i dati del conto sul Tavolo?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If risposta = DialogResult.Yes Then
@@ -6082,9 +6307,17 @@ Public Class ContoPos
             mantieniDatiTavolo = True
          End If
 
+         ' ADDEBITO DALLA PRENOTAZIONE.
          If g_frmPos.nomeTavolo = "Hotel" Then
-            ' Salva i dati nella prenotazione.
-            If SalvaAddebitoConto("", "") = True Then
+            ' Viene passato il numero e il totale conto della prenotazione.
+            If AddebitaConto(g_frmPos.idTavolo, g_frmPos.totContoCamera) = True Then
+
+               ' Nel caso esista elimina il conto addebitato e le relative righe di dettaglio.
+               If g_frmPos.numeroContoDoc <> String.Empty Then
+                  DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOC, g_frmPos.numeroContoDoc))
+                  Doc.EliminaDati(TAB_DOC, g_frmPos.numeroContoDoc)
+               End If
+
                ' Nasconde il form del Conto.
                Me.Hide()
 
@@ -6093,14 +6326,11 @@ Public Class ContoPos
                ' Chiude il form del Conto.
                Me.DialogResult = DialogResult.OK
                Me.Close()
-
-               ' IMPORTANTE! I conti esistenti che verranno addebitati su altre risorse Hotel o Sporting Club devono essere eliminati e i dettagli del conto iseriti nel conto della risorsa.
-
             Else
                MessageBox.Show("Si è verificato un errore! Il conto non è stato salvato. Si suggerisce di verificare tutti i dati inseriti e riprovare. ", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
          Else
-            ' Addebito dal Punto Cassa.
+            ' ADDEBITO DAL PUNTO CASSA.
             Dim frm As New AddebitaContoPos
             If frm.ShowDialog() = DialogResult.OK Then
 
@@ -6115,6 +6345,12 @@ Public Class ContoPos
 
                         ' Viene passato il numero e il totale conto della prenotazione.
                         If SalvaAddebitoConto(idNumPren(0), idNumPren(2)) = True Then
+
+                           ' Nel caso esista elimina il conto addebitato e le relative righe di dettaglio.
+                           If g_frmPos.numeroContoDoc <> String.Empty Then
+                              DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOC, g_frmPos.numeroContoDoc))
+                              Doc.EliminaDati(TAB_DOC, g_frmPos.numeroContoDoc)
+                           End If
 
                            ' Nasconde il form del Conto.
                            Me.Hide()

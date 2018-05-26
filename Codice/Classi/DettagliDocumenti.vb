@@ -256,7 +256,7 @@ Public Class DettagliDocumenti
       End Try
    End Function
 
-   Public Function EliminaDati(ByVal tabella As String, ByVal codice As String) As Boolean
+   Public Function EliminaDati(ByVal tabella As String, ByVal RifDoc As String) As Boolean
       Dim sql As String
 
       Try
@@ -267,7 +267,7 @@ Public Class DettagliDocumenti
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
 
-         sql = String.Format("DELETE FROM tabella WHERE Codice = '{0}'", codice)
+         sql = String.Format("DELETE FROM {0} WHERE RifDoc = {1}", tabella, RifDoc)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdDelete As New OleDbCommand(sql, cn, tr)

@@ -555,3 +555,253 @@ Nome parametro: index"
    in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3972"
 "
 "
+"*** 20/05/2018 - 11:00:16 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 12608"
+"
+"
+"*** 26/05/2018 - 13:43:24 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:25 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:26 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:27 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:28 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:29 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 13:43:30 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
+"
+"
+"*** 26/05/2018 - 14:21:34 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'RifDoc ='."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.DettagliDocumenti.EliminaDati(String tabella, String RifDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\DettagliDocumenti.vb:riga 276"
+"
+"
+"*** 26/05/2018 - 14:27:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
+"
+"
+"*** 26/05/2018 - 14:27:02 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
+"
+"
+"*** 26/05/2018 - 14:27:03 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
+"
+"
+"*** 26/05/2018 - 14:27:35 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
+"
+"
+"*** 26/05/2018 - 14:27:53 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
+"
+"
+"*** 26/05/2018 - 14:27:55 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:27:57 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:27:58 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:27:58 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:27:59 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:27:59 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:00 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:00 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:02 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:02 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:04 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:06 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:06 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:07 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 14:28:08 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
+"
+"
+"*** 26/05/2018 - 15:17:35 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ContoPos.LeggiIdDocumento(String tabella, String NunDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2628"
+"
+"
+"*** 26/05/2018 - 17:32:20 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.SalvaComande() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\VCPos.vb:riga 3604"
+"
+"
+"*** 26/05/2018 - 17:37:02 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
+"
+"
+"*** 26/05/2018 - 17:37:11 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
+"
+"
+"*** 26/05/2018 - 17:37:38 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
+"
+"
