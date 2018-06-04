@@ -1,807 +1,457 @@
-"*** 12/04/2018 - 11:16:49 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'DBNull' al tipo 'Double'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(Object Value, NumberFormatInfo NumberFormat)
-   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(Object Value)
-   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaTassaSogg() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1869"
+"*** 04/06/2018 - 17:37:04 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmPrenCamera.VerificaDisponibilitàCamera(String numeroCamera, DateTime dataDal, DateTime dataAl) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2213"
 "
 "
-"*** 12/04/2018 - 11:18:00 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
-   in Hospitality_Solution.frmDocumento.dgvDettagli_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 2744"
+"*** 04/06/2018 - 18:04:26 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 12:09:16 ***"
-"- DESCRIZIONE ERRORE: Codice"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"*** 04/06/2018 - 18:04:30 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 12:09:59 ***"
-"- DESCRIZIONE ERRORE: Codice"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"*** 04/06/2018 - 18:04:31 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 12:10:48 ***"
-"- DESCRIZIONE ERRORE: Codice"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.PrenCamereAddebiti.LeggiDati(ListView lst, String tabella, Int32 codPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 143"
+"*** 04/06/2018 - 18:04:31 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 12:11:03 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"*** 04/06/2018 - 18:04:32 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 12:18:26 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"*** 04/06/2018 - 18:04:32 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 13:51:49 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"*** 04/06/2018 - 18:04:33 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 13:54:42 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"*** 04/06/2018 - 18:04:34 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:01:52 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"*** 04/06/2018 - 18:04:34 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:22:58 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"*** 04/06/2018 - 18:04:35 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:27:32 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '5' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1943"
+"*** 04/06/2018 - 18:04:35 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:35:20 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1937"
+"*** 04/06/2018 - 18:04:36 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:50:08 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '4' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1936"
+"*** 04/06/2018 - 18:04:36 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 14:57:05 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3122"
+"*** 04/06/2018 - 18:04:37 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 15:06:05 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3115"
+"*** 04/06/2018 - 18:05:52 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 15:21:02 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '3' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.CalcolaTotaleAddebiti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3117"
+"*** 04/06/2018 - 18:05:56 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
 "
 "
-"*** 12/04/2018 - 16:00:34 ***"
+"*** 04/06/2018 - 18:05:56 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:57 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:57 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:58 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:58 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:59 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:05:59 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:00 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:01 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:01 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:02 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:02 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:02 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:06:02 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 633"
+"
+"
+"*** 04/06/2018 - 18:11:16 ***"
 "- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
 "- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
    in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
    in System.Convert.ToInt32(String value)
-   in Hospitality_Solution.frmDocumento.ScaricaIngredienti() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 256"
+   in Hospitality_Solution.frmPrenCamera.SalvaDati() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1864"
 "
 "
-"*** 12/04/2018 - 16:09:17 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 12/04/2018 - 16:09:28 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 12/04/2018 - 16:09:30 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 12/04/2018 - 16:09:32 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 12/04/2018 - 16:09:32 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 12/04/2018 - 16:09:33 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Statistiche.DesCategoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Statistiche.vb:riga 154"
-"
-"
-"*** 05/05/2018 - 14:37:36 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ListinoCamera.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\ListinoCamera.vb:riga 58"
-"
-"
-"*** 05/05/2018 - 14:37:52 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ListinoCamera.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\ListinoCamera.vb:riga 58"
-"
-"
-"*** 05/05/2018 - 14:49:35 ***"
-"- DESCRIZIONE ERRORE: La colonna 'TipoPlanning' non appartiene alla tabella AccessoriServizi."
-"- NOME PROCEDURA:    in System.Data.DataRow.GetDataColumn(String columnName)
-   in System.Data.DataRow.get_Item(String columnName)
-   in Hospitality_Solution.Risorsa.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Risorsa.vb:riga 91"
-"
-"
-"*** 05/05/2018 - 14:50:32 ***"
-"- DESCRIZIONE ERRORE: La colonna 'TipoPlanning' non appartiene alla tabella AccessoriServizi."
-"- NOME PROCEDURA:    in System.Data.DataRow.GetDataColumn(String columnName)
-   in System.Data.DataRow.get_Item(String columnName)
-   in Hospitality_Solution.Risorsa.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Risorsa.vb:riga 91"
-"
-"
-"*** 05/05/2018 - 15:42:21 ***"
-"- DESCRIZIONE ERRORE: Il campo ""PrenRisorse.Intestatario"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenRisorse.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenRisorse.vb:riga 228"
-"
-"
-"*** 05/05/2018 - 15:42:26 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'DBNull' al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
-   in Hospitality_Solution.frmPrenRisorse.LeggiUltimaPren(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 3166"
-"
-"
-"*** 05/05/2018 - 16:15:43 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '6' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.frmPrenCamera.SalvaAddebitiExtra(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 1945"
-"
-"
-"*** 05/05/2018 - 17:21:27 ***"
+"*** 04/06/2018 - 18:37:12 ***"
 "- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdChiudi_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1243"
-"
-"
-"*** 05/05/2018 - 17:37:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
-"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
-   in System.Net.WebClient.DownloadFile(String address, String fileName)
-   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
-   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 12608"
-"
-"
-"*** 10/05/2018 - 21:46:36 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4038"
-"
-"
-"*** 10/05/2018 - 21:46:37 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4038"
-"
-"
-"*** 10/05/2018 - 21:46:38 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4038"
-"
-"
-"*** 10/05/2018 - 21:46:39 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4038"
-"
-"
-"*** 12/05/2018 - 15:27:14 ***"
-"- DESCRIZIONE ERRORE: DataNascita"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 276"
-"
-"
-"*** 12/05/2018 - 17:09:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
-"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
-   in System.Net.WebClient.DownloadFile(String address, String fileName)
-   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
-   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 12608"
-"
-"
-"*** 12/05/2018 - 17:09:40 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:10:57 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:12:38 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:15:29 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:24:05 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:30:45 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 12/05/2018 - 17:32:11 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 400"
-"
-"
-"*** 14/05/2018 - 11:31:29 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
-"
-"
-"*** 14/05/2018 - 11:31:56 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
-"
-"
-"*** 14/05/2018 - 11:32:46 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6008"
-"
-"
-"*** 14/05/2018 - 13:48:36 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmSelezionaPrenotazione.CaricaPrenotazioni(String strSql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\SelezionaPrenotazione.vb:riga 404"
-"
-"
-"*** 14/05/2018 - 13:58:11 ***"
-"- DESCRIZIONE ERRORE: Indice oltre i limiti della matrice."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
-"
-"
-"*** 14/05/2018 - 14:03:50 ***"
-"- DESCRIZIONE ERRORE: Indice oltre i limiti della matrice."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
-"
-"
-"*** 14/05/2018 - 14:20:52 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4053
-   in Hospitality_Solution.ContoPos.eui_AddebitoSuRisorsa_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6066"
-"
-"
-"*** 14/05/2018 - 15:14:59 ***"
-"- DESCRIZIONE ERRORE: Il campo ""PrenCamereAddebiti.Categoria"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereAddebiti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereAddebiti.vb:riga 247"
-"
-"
-"*** 14/05/2018 - 16:04:54 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4112"
-"
-"
-"*** 14/05/2018 - 16:15:13 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4115"
-"
-"
-"*** 14/05/2018 - 16:52:05 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.ContoPos.ModificaTotaleContoPrenCamera(String tabella, Double idPren, Double totConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4115"
-"
-"
-"*** 14/05/2018 - 16:58:11 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 16:58:22 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 16:58:23 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 16:58:24 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 16:58:25 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:07:46 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:07:58 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:07:59 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:08:00 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:11:30 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:11:38 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:11:39 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 17:11:40 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '12' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2806"
-"
-"
-"*** 14/05/2018 - 18:52:19 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3982"
-"
-"
-"*** 14/05/2018 - 18:55:37 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3982"
-"
-"
-"*** 14/05/2018 - 19:10:42 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '6' non valido per 'index'.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContoPos.SalvaAddebitoConto(String RifPren, String totContoPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 3972"
-"
-"
-"*** 20/05/2018 - 11:00:16 ***"
-"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
-"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
-   in System.Net.WebClient.DownloadFile(String address, String fileName)
-   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
-   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 12608"
-"
-"
-"*** 26/05/2018 - 13:43:24 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:25 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:26 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:27 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:28 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:29 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 13:43:30 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4291"
-"
-"
-"*** 26/05/2018 - 14:21:34 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'RifDoc ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.DettagliDocumenti.EliminaDati(String tabella, String RifDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\DettagliDocumenti.vb:riga 276"
-"
-"
-"*** 26/05/2018 - 14:27:01 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
-"
-"
-"*** 26/05/2018 - 14:27:02 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
-"
-"
-"*** 26/05/2018 - 14:27:03 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
-"
-"
-"*** 26/05/2018 - 14:27:35 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
-"
-"
-"*** 26/05/2018 - 14:27:53 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4292"
-"
-"
-"*** 26/05/2018 - 14:27:55 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:27:57 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:27:58 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:27:58 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:27:59 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:27:59 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:00 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:00 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:01 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:02 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:02 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:04 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:06 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:06 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:07 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 14:28:08 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDouble(String value)
-   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4230"
-"
-"
-"*** 26/05/2018 - 15:17:35 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ContoPos.LeggiIdDocumento(String tabella, String NunDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 2628"
-"
-"
-"*** 26/05/2018 - 17:32:20 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.SalvaComande() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\VCPos.vb:riga 3604"
-"
-"
-"*** 26/05/2018 - 17:37:02 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
-"
-"
-"*** 26/05/2018 - 17:37:11 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
-"
-"
-"*** 26/05/2018 - 17:37:38 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ContoPos.eui_cmdDivisioneAnalitica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 6681"
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1147
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 340"
+"
+"
+"*** 04/06/2018 - 18:37:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare la colonna denominata 26/06/2019.
+Nome parametro: columnName"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   in Hospitality_Solution.PlanningCamere.ScorriAnno(Boolean avanti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1232"
 "
 "

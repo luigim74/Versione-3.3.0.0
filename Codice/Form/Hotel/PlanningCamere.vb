@@ -4,8 +4,8 @@ Public Class PlanningCamere
 
    Const NOME_TABELLA As String = "Camere"
    Const TAB_PRENOTAZIONI As String = "PrenCamere"
-   Const ALTEZZA_PRENOTAZIONE As Short = 25
-   Const ALTEZZA_CELLA As Short = 28
+   Const ALTEZZA_PRENOTAZIONE As Short = 30 '25
+   Const ALTEZZA_CELLA As Short = 32 '28
    Const LARGHEZZA_CELLA As Short = 40
 
    ' Dichiara un oggetto connessione.
@@ -45,7 +45,7 @@ Public Class PlanningCamere
       ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
 
       ' A_TODO: HOTEL - da modificare!
-      ReDim Prenotazioni(10)
+      ReDim Prenotazioni(100)
 
    End Sub
 
@@ -506,7 +506,7 @@ Public Class PlanningCamere
       End Try
    End Sub
 
-   Public Sub DisegnaPrenotazione(ByVal Id As Integer, ByVal numCamera As String, ByVal intestatario As String, ByVal persone As Integer, ByVal tipologia As String, ByVal stato As String, ByVal trattamento As String,
+   Public Sub DisegnaPrenotazione(ByVal Id As Integer, ByVal numero As String, ByVal numCamera As String, ByVal intestatario As String, ByVal persone As Integer, ByVal tipologia As String, ByVal stato As String, ByVal trattamento As String,
                                   ByVal dataArrivo As String, ByVal dataPartenza As String, ByVal numNotti As Integer, ByVal note As String,
                                   ByVal totaleCamera As String, ByVal totaleAddebiti As String, ByVal acconto As String, ByVal totaleConto As String, ByVal colore As Integer)
       Try
@@ -592,8 +592,9 @@ Public Class PlanningCamere
 
          ' ScreenTip informativa.
          Dim infoPrenotazione As New Elegant.Ui.ScreenTipData(Prenotazioni(NumPren))
-         infoPrenotazione.Caption = "INFORMAZIONI PRENOTAZIONE"
+         infoPrenotazione.Caption = intestatario & " - N. " & numero
          infoPrenotazione.Text = "Intestatario: " & intestatario & vbCrLf &
+                                 "Prenotazione numero: " & numero & vbCrLf &
                                  "Persone: " & persone.ToString & vbCrLf &
                                  "Tipologia: " & tipologia & vbCrLf &
                                  "Stato: " & stato & vbCrLf &
@@ -601,11 +602,11 @@ Public Class PlanningCamere
                                  "Arrivo: " & dataArrivo & vbCrLf &
                                  "Partenza: " & dataPartenza & vbCrLf &
                                  "Notti: " & numNotti & vbCrLf & vbCrLf &
-                                 "Note: " & note & vbCrLf & vbCrLf &
                                  "Camera: € " & totaleCamera & vbCrLf &
-                                 "Addebiti: € " & totaleAddebiti & vbCrLf &
+                                 "Addebiti extra: € " & totaleAddebiti & vbCrLf &
                                  "Acconto: € " & acconto & vbCrLf &
-                                 "Totale: € " & totaleConto
+                                 "Totale soggiorno: € " & totaleConto & vbCrLf & vbCrLf &
+                                 "Note: " & note
 
          pnlPrenotazioni.Controls.Add(Prenotazioni(NumPren))
 
@@ -690,7 +691,7 @@ Public Class PlanningCamere
             Dim numNotti As Integer = Convert.ToInt32(dr.Item("NumeroNotti"))
             Dim totCamera As Double = ((costoCamera * adulti) * numNotti)
 
-            DisegnaPrenotazione(dr.Item("Id"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
+            DisegnaPrenotazione(dr.Item("Id"), dr.Item("Numero"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
                                 dr.Item("DataArrivo"), dr.Item("DataPartenza"), dr.Item("NumeroNotti"), dr.Item("Note"),
                                 CFormatta.FormattaEuro(totCamera), CalcolaTotaleAddebiti(dr.Item("Id")), CFormatta.FormattaEuro(dr.Item("AccontoCamera")), CFormatta.FormattaEuro(dr.Item("TotaleConto")), dr.Item("Colore"))
          Loop

@@ -1,7 +1,7 @@
 ' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 10/04/2018
+' Data ultima modifica: 04/06/2018
 ' Descrizione:          Anagrafica Prenotazioni Camere.
 
 Option Strict Off
@@ -172,14 +172,15 @@ Public Class frmPrenCamera
    Friend WithEvents clnCategoria As ColumnHeader
    Public WithEvents txtTotaleImporto As TextBox
    Friend WithEvents ColumnHeader2 As ColumnHeader
+   Friend WithEvents netBtn_Conferma As Softgroup.NetButton.NetButton
    Friend WithEvents eui_cmdElimina As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup7 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup8 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -309,6 +310,7 @@ Public Class frmPrenCamera
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.netBtn_Conferma = New Softgroup.NetButton.NetButton()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -337,7 +339,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(605, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(615, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -371,7 +373,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(605, 20)
+      Me.Panel1.Size = New System.Drawing.Size(615, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -381,7 +383,7 @@ Public Class frmPrenCamera
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -398,7 +400,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(605, 565)
+      Me.TabControl1.Size = New System.Drawing.Size(615, 575)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -439,7 +441,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage1.Size = New System.Drawing.Size(607, 549)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -540,9 +542,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 283)
+      Me.Panel2.Location = New System.Drawing.Point(0, 293)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(597, 256)
+      Me.Panel2.Size = New System.Drawing.Size(607, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -933,7 +935,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(587, 529)
+      Me.TabPage3.Size = New System.Drawing.Size(597, 539)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Occupanti"
       '
@@ -963,7 +965,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(587, 456)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(597, 456)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1019,7 +1021,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(587, 529)
+      Me.TabPage4.Size = New System.Drawing.Size(597, 539)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1150,19 +1152,19 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice, Me.clnAliquotaIva, Me.clnCategoria, Me.ColumnHeader2})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup5.Header = "Articoli vari"
-      ListViewGroup5.Name = "ListViewGroup1"
-      ListViewGroup6.Header = "Accessori"
-      ListViewGroup6.Name = "ListViewGroup2"
-      ListViewGroup7.Header = "Servizi"
-      ListViewGroup7.Name = "ListViewGroup3"
-      ListViewGroup8.Header = "Bar/Ristorante"
-      ListViewGroup8.Name = "ListViewGroup4"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup5, ListViewGroup6, ListViewGroup7, ListViewGroup8})
+      ListViewGroup1.Header = "Articoli vari"
+      ListViewGroup1.Name = "ListViewGroup1"
+      ListViewGroup2.Header = "Accessori"
+      ListViewGroup2.Name = "ListViewGroup2"
+      ListViewGroup3.Header = "Servizi"
+      ListViewGroup3.Name = "ListViewGroup3"
+      ListViewGroup4.Header = "Bar/Ristorante"
+      ListViewGroup4.Name = "ListViewGroup4"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(587, 461)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(597, 461)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1243,7 +1245,7 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(587, 529)
+      Me.TabPage7.Size = New System.Drawing.Size(597, 539)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
       '
@@ -1627,13 +1629,14 @@ Public Class frmPrenCamera
       'TabPage5
       '
       Me.TabPage5.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage5.Controls.Add(Me.netBtn_Conferma)
       Me.TabPage5.Controls.Add(Me.eui_cmdInserisci)
       Me.TabPage5.Controls.Add(Me.eui_cmdModifica)
       Me.TabPage5.Controls.Add(Me.eui_cmdElimina)
       Me.TabPage5.Controls.Add(Me.lvwAllegati)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage5.Size = New System.Drawing.Size(607, 549)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
@@ -1672,7 +1675,7 @@ Public Class frmPrenCamera
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(597, 456)
+      Me.lvwAllegati.Size = New System.Drawing.Size(607, 456)
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
       Me.lvwAllegati.View = System.Windows.Forms.View.Details
@@ -1713,7 +1716,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(587, 529)
+      Me.TabPage6.Size = New System.Drawing.Size(597, 539)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1730,7 +1733,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(587, 529)
+      Me.txtNote.Size = New System.Drawing.Size(597, 539)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1742,11 +1745,29 @@ Public Class frmPrenCamera
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'netBtn_Conferma
+      '
+      Me.netBtn_Conferma.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.netBtn_Conferma.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(40, Byte), Integer))
+      Me.netBtn_Conferma.ColorDisabled = System.Drawing.Color.SeaGreen
+      Me.netBtn_Conferma.ColorLight = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(189, Byte), Integer))
+      Me.netBtn_Conferma.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Green
+      Me.netBtn_Conferma.ColorText = System.Drawing.Color.Black
+      Me.netBtn_Conferma.ColorTop = System.Drawing.Color.White
+      Me.netBtn_Conferma.CornerRadius = 2
+      Me.netBtn_Conferma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.netBtn_Conferma.Location = New System.Drawing.Point(41, 475)
+      Me.netBtn_Conferma.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+      Me.netBtn_Conferma.Name = "netBtn_Conferma"
+      Me.netBtn_Conferma.Size = New System.Drawing.Size(41, 34)
+      Me.netBtn_Conferma.TabIndex = 25
+      Me.netBtn_Conferma.TextButton = "Conferma"
+      '
       'frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(605, 611)
+      Me.ClientSize = New System.Drawing.Size(615, 621)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1796,7 +1817,7 @@ Public Class frmPrenCamera
    Const TAB_CAMERE As String = "Camere"
    Const TAB_LISTINO As String = "ListiniCamere"
    Const TAB_PAGAMENTO As String = "ModPagamento"
-   Const TAB_ALLEGATI As String = "Allegati"
+   Const TAB_ALLEGATI As String = "PrenCamereAllegati"
    Const TAB_STATO_PREN As String = "StatoPren"
    Const TAB_PREN_OCCUPANTI As String = "PrenCamereOccupanti"
    Const TAB_PREN_ADDEBITI As String = "PrenCamereAddebiti"
@@ -2027,7 +2048,6 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' DA_FARE_A: HOTEL - da modificare!
    Private Function LeggiTotaleTassaSoggiorno(ByVal numAdulti As Integer, ByVal numNeonati As Integer, ByVal numBambini As Integer, ByVal numRagazzi As Integer) As Decimal
       Try
          DatiConfig = New AppConfig
@@ -2180,14 +2200,43 @@ Public Class frmPrenCamera
          ' Ottiene il numero di record.
          cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
                                          "WHERE NumeroCamera = '{1}' " &
-                                         "AND (DataArrivo >= #{2}# AND DataArrivo < #{3}#) " &
-                                         "OR (DataPartenza > #{2}# AND DataPartenza <= #{3}#) " &
-                                         "OR (DataArrivo < #{2}# AND DataPartenza > #{3}#)",
-                                         NOME_TABELLA, numeroCamera, dataDal.ToShortDateString, dataAl.ToShortDateString)
+                                         "AND (DataArrivo BETWEEN #{2}# AND #{3}#)",
+                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal), CFormatta.FormattaData_IT(dataAl.AddDays(-1)))
 
          numRec = CInt(cmd.ExecuteScalar())
 
-         Return numRec
+         ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
+         Dim numRecDataArrivo As Integer
+         If Me.Tag <> String.Empty Then
+            numRecDataArrivo = numRec - 1
+         Else
+            numRecDataArrivo = numRec
+         End If
+
+         numRec = 0
+
+         ' Chiude la connessione.
+         cn.Close()
+
+         If numRecDataArrivo = 0 Then
+            cn.Open()
+
+            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
+                                         "WHERE NumeroCamera = '{1}' " &
+                                         "AND (DataPartenza BETWEEN #{2}# AND #{3}#)",
+                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal.AddDays(1)), CFormatta.FormattaData_IT(dataAl))
+
+            numRec = CInt(cmd.ExecuteScalar())
+
+            ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
+            If Me.Tag <> String.Empty Then
+               Return numRec - 1
+            Else
+               Return numRec
+            End If
+         Else
+            Return numRecDataArrivo
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2202,81 +2251,6 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub SalvaPrenCamere()
-      'If SalvaPCamera = True Then
-      '   IPrenCamere.EliminaDati(TAB_PREN_CAMERE, IPren.Codice)
-      'End If
-
-      'If IPrenCamere.ConvalidaDati(lvwCamere) = True Then
-      '   Dim i As Integer
-      '   For i = 0 To lvwCamere.Items.Count - 1
-      '      With IPrenCamere
-      '         .IdPren = IPren.Codice
-      '         .Arrivo = lvwCamere.Items(i).SubItems(0).Text
-      '         .Partenza = lvwCamere.Items(i).SubItems(1).Text
-      '         .Giorni = lvwCamere.Items(i).SubItems(2).Text
-      '         .Camera = lvwCamere.Items(i).SubItems(3).Text
-      '         .Tipo = lvwCamere.Items(i).SubItems(4).Text
-      '         .Sistemazione = lvwCamere.Items(i).SubItems(5).Text
-      '      End With
-
-      '      IPrenCamere.InserisciDati(TAB_PREN_CAMERE)
-      '   Next
-      'End If
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub SalvaPrenTratt()
-      'If SalvaPTratt = True Then
-      '   IPrenTratt.EliminaDati(TAB_PREN_TRATT, IPren.Codice)
-      'End If
-
-      'If IPrenTratt.ConvalidaDati(lvwTrattamento) = True Then
-      '   Dim i As Integer
-      '   For i = 0 To lvwTrattamento.Items.Count - 1
-      '      With IPrenTratt
-      '         .IdPren = IPren.Codice
-      '         .Dal = lvwTrattamento.Items(i).SubItems(0).Text
-      '         .Al = lvwTrattamento.Items(i).SubItems(1).Text
-      '         .Giorni = lvwTrattamento.Items(i).SubItems(2).Text
-      '         .Trattamento = lvwTrattamento.Items(i).SubItems(3).Text
-      '         .Adulti = lvwTrattamento.Items(i).SubItems(4).Text
-      '         .Ragazzi = lvwTrattamento.Items(i).SubItems(5).Text
-      '         .Bambini = lvwTrattamento.Items(i).SubItems(6).Text
-      '         .Neonati = lvwTrattamento.Items(i).SubItems(7).Text
-      '         .Prezzo = lvwTrattamento.Items(i).SubItems(8).Text
-      '         .Retta = lvwTrattamento.Items(i).SubItems(9).Text
-      '      End With
-
-      '      IPrenTratt.InserisciDati(TAB_PREN_TRATT)
-      '   Next
-      'End If
-   End Sub
-
-   ' DA_FARE_A: NON PIU' UTILIZZATA!
-   Private Sub ModificaColore()
-      'Try
-      '   With ColorDialog1()
-      '      .Color = cmdColore.BackColor
-      '      .AllowFullOpen = True
-      '      .SolidColorOnly = True
-
-      '      If .ShowDialog = DialogResult.OK Then
-      '         cmdColore.BackColor = .Color
-      '      End If
-
-      '      IPren.Colore = Convert.ToString(.Color.ToArgb)
-      '   End With
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
    Public Function ApriClienti(ByVal val As String) As Boolean
       Try
          ' Modifica il cursore del mouse.
@@ -2316,7 +2290,7 @@ Public Class frmPrenCamera
 
          OpenFileDialog1.FilterIndex = 1
 
-         'IAllegati.IdCliente = CInt(IPren.IdCliente)
+         IAllegati.IdCliente = CInt(IPren.Codice)
 
          If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -2393,41 +2367,15 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   ' DA_FARE_A: HOTEL - da modificare!
    Private Sub ConvalidaAllegati()
-      '' Carica la lista dei componenti aggiuntivi.
-      'If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, IPren.IdCliente) = True Then
-      '   cmdModifica.Enabled = True
-      '   cmdRimuovi.Enabled = True
-      'Else
-      '   cmdModifica.Enabled = False
-      '   cmdRimuovi.Enabled = False
-      'End If
-
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub ConvalidaPrenCamere()
-      '' Carica la lista dei componenti aggiuntivi.
-      'If IPrenCamere.ConvalidaDati(lvwCamere) = True Then
-      '   cmdModCamere.Enabled = True
-      '   cmdRimCamere.Enabled = True
-      'Else
-      '   cmdModCamere.Enabled = False
-      '   cmdRimCamere.Enabled = False
-      'End If
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub ConvalidaPrenTratt()
-      '' Carica la lista dei componenti aggiuntivi.
-      'If IPrenTratt.ConvalidaDati(lvwTrattamento) = True Then
-      '   cmdModTratt.Enabled = True
-      '   cmdRimTratt.Enabled = True
-      'Else
-      '   cmdModTratt.Enabled = False
-      '   cmdRimTratt.Enabled = False
-      'End If
+      ' Carica la lista dei componenti aggiuntivi.
+      If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, IPren.Codice) = True Then
+         eui_cmdModifica.Enabled = True
+         eui_cmdElimina.Enabled = True
+      Else
+         eui_cmdModifica.Enabled = False
+         eui_cmdElimina.Enabled = False
+      End If
    End Sub
 
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
@@ -2478,7 +2426,6 @@ Public Class frmPrenCamera
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
-         ' A_TODO: HOTEL - da modificare!
          ' Carica le liste.
          CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
          CaricaListaCamere(cmbNumeroCamera, TAB_CAMERE)
@@ -2615,25 +2562,11 @@ Public Class frmPrenCamera
 
          End If
 
-         ' A_TODO: HOTEL - da modificare!
-         'IPrenCamere = New PrenCamere
-         'IPrenCamere.LeggiDati(lvwCamere, TAB_PREN_CAMERE, IPren.Codice)
-         'ConvalidaPrenCamere()
-
-         'IPrenTratt = New PrenTratt
-         'IPrenTratt.LeggiDati(lvwTrattamento, TAB_PREN_TRATT, IPren.Codice)
-         'ConvalidaPrenTratt()
-
          ' Carica la lista delle degli allegati.
          ConvalidaAllegati()
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione(txtNumero.Text, cmbCognome.Text, txtNome.Text)
-
-         ' Imposta i pulsanti di default.
-         'cmdInsCamere.NotifyDefault(True)
-         'cmdInsTratt.NotifyDefault(True)
-         'cmdInserimento.NotifyDefault(True)
 
          ' Imposta lo stato attivo.
          txtNumero.Focus()
@@ -2658,7 +2591,6 @@ Public Class frmPrenCamera
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_GESTIONE_PREN_RISORSE)
       End If
-
    End Sub
 
    Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
@@ -2714,273 +2646,6 @@ Public Class frmPrenCamera
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdRimuovi_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      Try
-         'cmdInserimento.NotifyDefault(False)
-
-         RimuoviAllegati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
-         ConvalidaAllegati()
-
-      Catch ex As NullReferenceException
-         ' Visualizza un messaggio.
-         MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdModifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      Try
-         'cmdInserimento.NotifyDefault(False)
-
-         With IAllegati
-            .Documento = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
-            .Data = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(1).Text
-            .Ora = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(2).Text
-            .Note = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(3).Text
-            .Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
-
-            If ImpostaDatiAllegati(.Note, False) = True Then
-               .ModificaDati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
-               ConvalidaAllegati()
-            End If
-         End With
-
-      Catch ex As NullReferenceException
-         ' Visualizza un messaggio.
-         MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      End Try
-   End Sub
-
-   ' A_TODO: HOTEL - da modificare!
-   Private Sub cmdInserimento_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      If ImpostaDatiAllegati("", True) = True Then
-         IAllegati.InserisciDati(TAB_ALLEGATI)
-         ConvalidaAllegati()
-      End If
-
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdInsCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'Try
-      '   Dim frm As New frmPrenCamere
-
-      '   frm.VisDati(IPrenCamere, False)
-
-      '   If frm.ShowDialog() = DialogResult.OK Then
-      '      SalvaPCamera = True
-      '      IPrenCamere.NuovoElemento(lvwCamere)
-      '      ConvalidaPrenCamere()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdModCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'cmdInsCamere.NotifyDefault(False)
-
-      'Try
-      '   Dim frm As New frmPrenCamere
-
-      '   With IPrenCamere
-      '      .Arrivo = lvwCamere.Items(lvwCamere.FocusedItem.Index).SubItems(0).Text
-      '      .Partenza = lvwCamere.Items(lvwCamere.FocusedItem.Index).SubItems(1).Text
-      '      .Camera = lvwCamere.Items(lvwCamere.FocusedItem.Index).SubItems(3).Text
-      '   End With
-
-      '   frm.VisDati(IPrenCamere, True)
-
-      '   If frm.ShowDialog() = DialogResult.OK Then
-      '      SalvaPCamera = True
-      '      IPrenCamere.RimuoviElemento(lvwCamere)
-      '      IPrenCamere.NuovoElemento(lvwCamere)
-      '   End If
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdRimCamere_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'cmdInsCamere.NotifyDefault(False)
-
-      'Try
-      '   Dim Risposta As Short
-
-      '   Dim val As String
-      '   val = lvwCamere.Items(lvwCamere.FocusedItem.Index).SubItems(0).Text
-
-      '   ' Chiede conferma per l'eliminazione.
-      '   Risposta = MsgBox("Si desidera rimuovere l'elemento selezionato?" & vbCrLf & vbCrLf & _
-      '                     "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
-
-      '   If Risposta = MsgBoxResult.Yes Then
-      '      SalvaPCamera = True
-      '      IPrenCamere.RimuoviElemento(lvwCamere)
-      '      ConvalidaPrenCamere()
-      '   End If
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdInsTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'Try
-      '   Dim frm As New frmPrenTratt
-
-      '   frm.VisDati(IPrenTratt, False)
-
-      '   If frm.ShowDialog() = DialogResult.OK Then
-      '      SalvaPTratt = True
-      '      IPrenTratt.NuovoElemento(lvwTrattamento)
-      '      ConvalidaPrenTratt()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdModTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'cmdInsTratt.NotifyDefault(False)
-
-      'Try
-      '   Dim frm As New frmPrenTratt
-      '   With IPrenTratt
-      '      .Dal = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(0).Text
-      '      .Al = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(1).Text
-      '      .Trattamento = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(3).Text
-      '      .Adulti = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(4).Text
-      '      .Ragazzi = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(5).Text
-      '      .Bambini = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(6).Text
-      '      .Neonati = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(7).Text
-      '   End With
-
-      '   frm.VisDati(IPrenTratt, True)
-
-      '   If frm.ShowDialog() = DialogResult.OK Then
-      '      SalvaPTratt = True
-      '      IPrenTratt.RimuoviElemento(lvwTrattamento)
-      '      IPrenTratt.NuovoElemento(lvwTrattamento)
-      '   End If
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   'DA_FARE_A: HOTEL - da modificare!
-   Private Sub cmdRimTratt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'cmdInsTratt.NotifyDefault(False)
-
-      'Try
-      '   Dim Risposta As Short
-
-      '   Dim val As String
-      '   val = lvwTrattamento.Items(lvwTrattamento.FocusedItem.Index).SubItems(0).Text
-
-      '   ' Chiede conferma per l'eliminazione.
-      '   Risposta = MsgBox("Si desidera rimuovere l'elemento selezionato?" & vbCrLf & vbCrLf & _
-      '                     "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
-
-      '   If Risposta = MsgBoxResult.Yes Then
-      '      SalvaPTratt = True
-      '      IPrenTratt.RimuoviElemento(lvwTrattamento)
-      '      ConvalidaPrenTratt()
-      '   End If
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub lvwAllegati_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles lvwAllegati.DoubleClick
-      ' DA_FARE_A: DA TERMINARE - IMPOSTARE TUTTI I PROGRAMMI APRIBILI.
-      Dim Estensione As String
-      Dim NomeFile As String
-      Dim Percorso As String
-      Dim PercorsoApp As String
-      Dim NomeApp As String
-      Dim Proc As New Process
-
-      Try
-
-         ' Nome del file.
-         NomeFile = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
-         ' Percorso del file.
-         Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
-
-         ' Ottiene l'estensione del file.
-         Estensione = Path.GetExtension(Percorso)
-
-         Select Case Estensione.ToUpper
-            Case ".DOC", ".RTF"
-               ' Word
-               NomeApp = "WINWORD.EXE"
-
-            Case ".XLS"
-               ' Excel
-               NomeApp = "EXCEL.EXE"
-
-            Case ".MDB"
-               ' Access
-               NomeApp = "MSACCESS.EXE"
-
-            Case ".PPT"
-               ' Power Point
-               NomeApp = "POWERPNT.EXE"
-
-            Case ".TXT"
-               ' Blocco note.
-               NomeApp = "NOTEPAD.EXE"
-
-            Case ".PDF"
-               ' Acrobat Reader
-               NomeApp = "ACRORD32.EXE"
-
-            Case ".HTM"
-               ' Internet Explorer
-               NomeApp = "IEXPLORE.EXE"
-         End Select
-
-         ' Avvia l'applicazione.
-         Proc.StartInfo.FileName = NomeApp
-         Proc.StartInfo.Arguments = Percorso
-         Proc.StartInfo.ErrorDialog = True
-         Proc.StartInfo.ErrorDialogParentHandle = Me.Handle
-         Proc.StartInfo.UseShellExecute = True
-         Proc.Start()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         'err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
    End Sub
@@ -3931,6 +3596,10 @@ Public Class frmPrenCamera
          Const MEZZA_PENSIONE As String = "MP"
          Const PENSIONE_COMPLETA As String = "PC"
 
+         If cmbListino.SelectedIndex = -1 Then
+            Return VALORE_ZERO
+         End If
+
          ' Leggo l'Id del listino selezionato.
          cmbIdListino.SelectedIndex = cmbListino.SelectedIndex
 
@@ -4006,6 +3675,7 @@ Public Class frmPrenCamera
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Return VALORE_ZERO
       End Try
    End Function
 
@@ -4143,6 +3813,108 @@ Public Class frmPrenCamera
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
+
+   Private Sub eui_cmdModifica_Click(sender As Object, e As EventArgs) Handles eui_cmdModifica.Click
+      Try
+         'cmdInserimento.NotifyDefault(False)
+
+         With IAllegati
+            .Documento = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
+            .Data = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(1).Text
+            .Ora = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(2).Text
+            .Note = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(3).Text
+            .Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
+
+            If ImpostaDatiAllegati(.Note, False) = True Then
+               .ModificaDati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
+               ConvalidaAllegati()
+            End If
+         End With
+
+      Catch ex As NullReferenceException
+         ' Visualizza un messaggio.
+         MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdElimina_Click(sender As Object, e As EventArgs) Handles eui_cmdElimina.Click
+      Try
+         'cmdInserimento.NotifyDefault(False)
+
+         RimuoviAllegati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
+         ConvalidaAllegati()
+
+      Catch ex As NullReferenceException
+         ' Visualizza un messaggio.
+         MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+      End Try
+   End Sub
+
+   Private Sub lvwAllegati_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles lvwAllegati.DoubleClick
+      ' DA_FARE_A: DA TERMINARE - IMPOSTARE TUTTI I PROGRAMMI APRIBILI.
+      Dim Estensione As String
+      Dim NomeFile As String
+      Dim Percorso As String
+      Dim PercorsoApp As String
+      Dim NomeApp As String
+      Dim Proc As New Process
+
+      Try
+
+         ' Nome del file.
+         NomeFile = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
+         ' Percorso del file.
+         Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
+
+         ' Ottiene l'estensione del file.
+         Estensione = Path.GetExtension(Percorso)
+
+         Select Case Estensione.ToUpper
+            Case ".DOC", ".RTF"
+               ' Word
+               NomeApp = "WINWORD.EXE"
+
+            Case ".XLS"
+               ' Excel
+               NomeApp = "EXCEL.EXE"
+
+            Case ".MDB"
+               ' Access
+               NomeApp = "MSACCESS.EXE"
+
+            Case ".PPT"
+               ' Power Point
+               NomeApp = "POWERPNT.EXE"
+
+            Case ".TXT"
+               ' Blocco note.
+               NomeApp = "NOTEPAD.EXE"
+
+            Case ".PDF"
+               ' Acrobat Reader
+               NomeApp = "ACRORD32.EXE"
+
+            Case ".HTM"
+               ' Internet Explorer
+               NomeApp = "IEXPLORE.EXE"
+         End Select
+
+         ' Avvia l'applicazione.
+         Proc.StartInfo.FileName = NomeApp
+         Proc.StartInfo.Arguments = Percorso
+         Proc.StartInfo.ErrorDialog = True
+         Proc.StartInfo.ErrorDialogParentHandle = Me.Handle
+         Proc.StartInfo.UseShellExecute = True
+         Proc.Start()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 End Class
