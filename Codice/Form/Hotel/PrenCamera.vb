@@ -2186,7 +2186,7 @@ Public Class frmPrenCamera
    End Function
 
    ' DA_FARE_A: Verificare il funzionamento della procedura 'VerificaDisponibilit‡Camera'.
-   Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Integer
+   Private Function VerificaDisponibilit‡Camera1(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Integer
       Dim closeOnExit As Boolean
       Dim numRec As Integer
 
@@ -2243,6 +2243,83 @@ Public Class frmPrenCamera
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
          Return 0
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
+   Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
+      Dim closeOnExit As Boolean
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         '  Leggo tutte le prenotazioni della camera.
+         Dim cmd As New OleDbCommand("SELECT * FROM " & NOME_TABELLA & " WHERE NumeroCamera = '" & numeroCamera & "' ORDER BY DataArrivo ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            ' Data arrivo.
+            Dim valDataArrivo As Date
+            If IsDate(dr.Item("DataArrivo")) = True Then
+               valDataArrivo = Convert.ToDateTime(dr.Item("DataArrivo"))
+            Else
+               Return False
+            End If
+
+            ' Data partenza.
+            Dim valDataPartenza As Date
+            If IsDate(dr.Item("DataPartenza")) = True Then
+               valDataPartenza = Convert.ToDateTime(dr.Item("DataPartenza"))
+            Else
+               Return False
+            End If
+
+            ' Numero notti.
+            Dim valNumNotti As Integer
+            If IsDBNull(dr.Item("NumeroNotti")) = False Then
+               valNumNotti = Convert.ToInt32(dr.Item("NumeroNotti"))
+            Else
+               Return False
+            End If
+
+            Dim dataDalTemp As Date
+
+            Do
+               ' Viene incrementato di uno perchË il primo giorno dell'intervallo puÚ incrociarsi con l'ultimo giorno di eventuali prenotazioni.
+               dataDalTemp = dataDal.AddDays(1)
+
+               Dim valDatatemp As Date = valDataArrivo
+               Dim i As Integer
+               For i = 0 To valNumNotti
+                  If valDatatemp = dataDalTemp Then
+                     ' Prenotazione esistente!
+                     Return True
+                  Else
+                     ' Incrementa di un giorno.
+                     valDatatemp = valDatatemp.AddDays(1)
+                  End If
+               Next
+
+               ' Non tiene conto dell'ultimo giorno dell'intervallo perchË puÚ incrociarsi con il primo giorno di eventuali prenotazioni.
+            Loop Until dataDalTemp = dataAl
+
+         Loop
+
+         Return False
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
 
       Finally
          ' Chiude la connessione.
@@ -2382,7 +2459,7 @@ Public Class frmPrenCamera
       Select Case e.Button.Tag
          Case "Salva"
 
-            If VerificaDisponibilit‡Camera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) <> 0 Then
+            If VerificaDisponibilit‡Camera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) = True Then
                MessageBox.Show("La camera che si vuole prenotare non Ë disponibile per il periodo selezionato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                ' Esegue i calcoli per il totale degli importi.
