@@ -293,6 +293,7 @@ Public Class frmPrenCamera
       Me.cmbPagamento = New System.Windows.Forms.ComboBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.netBtn_Conferma = New Softgroup.NetButton.NetButton()
       Me.eui_cmdInserisci = New Elegant.Ui.Button()
       Me.eui_cmdModifica = New Elegant.Ui.Button()
       Me.eui_cmdElimina = New Elegant.Ui.Button()
@@ -310,7 +311,6 @@ Public Class frmPrenCamera
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.netBtn_Conferma = New Softgroup.NetButton.NetButton()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -339,7 +339,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(615, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(625, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -373,7 +373,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(615, 20)
+      Me.Panel1.Size = New System.Drawing.Size(625, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -400,7 +400,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(615, 575)
+      Me.TabControl1.Size = New System.Drawing.Size(625, 585)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -441,7 +441,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(607, 549)
+      Me.TabPage1.Size = New System.Drawing.Size(617, 559)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -542,9 +542,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 293)
+      Me.Panel2.Location = New System.Drawing.Point(0, 303)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(607, 256)
+      Me.Panel2.Size = New System.Drawing.Size(617, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -935,7 +935,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage3.Size = New System.Drawing.Size(607, 549)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Occupanti"
       '
@@ -965,7 +965,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(597, 456)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(607, 456)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1021,7 +1021,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage4.Size = New System.Drawing.Size(607, 549)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1164,7 +1164,7 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(597, 461)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(607, 461)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1245,7 +1245,7 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage7.Size = New System.Drawing.Size(607, 549)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
       '
@@ -1640,6 +1640,24 @@ Public Class frmPrenCamera
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
+      'netBtn_Conferma
+      '
+      Me.netBtn_Conferma.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.netBtn_Conferma.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(40, Byte), Integer))
+      Me.netBtn_Conferma.ColorDisabled = System.Drawing.Color.SeaGreen
+      Me.netBtn_Conferma.ColorLight = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(189, Byte), Integer))
+      Me.netBtn_Conferma.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Green
+      Me.netBtn_Conferma.ColorText = System.Drawing.Color.Black
+      Me.netBtn_Conferma.ColorTop = System.Drawing.Color.White
+      Me.netBtn_Conferma.CornerRadius = 2
+      Me.netBtn_Conferma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.netBtn_Conferma.Location = New System.Drawing.Point(41, 475)
+      Me.netBtn_Conferma.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+      Me.netBtn_Conferma.Name = "netBtn_Conferma"
+      Me.netBtn_Conferma.Size = New System.Drawing.Size(41, 34)
+      Me.netBtn_Conferma.TabIndex = 25
+      Me.netBtn_Conferma.TextButton = "Conferma"
+      '
       'eui_cmdInserisci
       '
       Me.eui_cmdInserisci.Id = "66c9af49-ae69-4d17-a153-fc8b7b9c251f"
@@ -1716,7 +1734,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(597, 539)
+      Me.TabPage6.Size = New System.Drawing.Size(607, 549)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1733,7 +1751,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(597, 539)
+      Me.txtNote.Size = New System.Drawing.Size(607, 549)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1745,29 +1763,11 @@ Public Class frmPrenCamera
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'netBtn_Conferma
-      '
-      Me.netBtn_Conferma.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_Conferma.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(40, Byte), Integer))
-      Me.netBtn_Conferma.ColorDisabled = System.Drawing.Color.SeaGreen
-      Me.netBtn_Conferma.ColorLight = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(189, Byte), Integer))
-      Me.netBtn_Conferma.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Green
-      Me.netBtn_Conferma.ColorText = System.Drawing.Color.Black
-      Me.netBtn_Conferma.ColorTop = System.Drawing.Color.White
-      Me.netBtn_Conferma.CornerRadius = 2
-      Me.netBtn_Conferma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Conferma.Location = New System.Drawing.Point(41, 475)
-      Me.netBtn_Conferma.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_Conferma.Name = "netBtn_Conferma"
-      Me.netBtn_Conferma.Size = New System.Drawing.Size(41, 34)
-      Me.netBtn_Conferma.TabIndex = 25
-      Me.netBtn_Conferma.TextButton = "Conferma"
-      '
       'frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(615, 621)
+      Me.ClientSize = New System.Drawing.Size(625, 631)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1839,6 +1839,12 @@ Public Class frmPrenCamera
    Dim scontoNeonato As String
    Dim scontoBambino As String
    Dim scontoRagazzo As String
+
+   ' Servono a sapere se il periodo di prenotazione è stato modificato.
+   Dim numCameraPren As String
+   Dim dataArrivoPren As Date
+   Dim dataPartenzaPren As Date
+
    ' Serve a sapere se il form è stato caricato.
    Dim loadForm As Boolean = False
 
@@ -2252,13 +2258,15 @@ Public Class frmPrenCamera
    End Function
 
    Private Function VerificaDisponibilitàCamera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
-      Dim closeOnExit As Boolean
-
       Try
+         ' In caso di prenotazione esistente se il periodo e la camera non sono cambiati non verifica la disponibilità della camera. 
+         If numCameraPren = numeroCamera And dataArrivoPren = dataDal And dataPartenzaPren = dataAl Then
+            Return False
+         End If
+
          ' Se necessario apre la connessione.
          If cn.State = ConnectionState.Closed Then
             cn.Open()
-            closeOnExit = True
          End If
 
          '  Leggo tutte le prenotazioni della camera.
@@ -2290,18 +2298,20 @@ Public Class frmPrenCamera
                Return False
             End If
 
-            Dim dataDalTemp As Date
+            Dim dataDalTemp As Date = dataDal
 
             Do
                ' Viene incrementato di uno perchè il primo giorno dell'intervallo può incrociarsi con l'ultimo giorno di eventuali prenotazioni.
-               dataDalTemp = dataDal.AddDays(1)
+               dataDalTemp = dataDalTemp.AddDays(1)
 
                Dim valDatatemp As Date = valDataArrivo
                Dim i As Integer
                For i = 0 To valNumNotti
                   If valDatatemp = dataDalTemp Then
-                     ' Prenotazione esistente!
-                     Return True
+                     If dataDalTemp <> valDataArrivo Then
+                        ' Prenotazione esistente!
+                        Return True
+                     End If
                   Else
                      ' Incrementa di un giorno.
                      valDatatemp = valDatatemp.AddDays(1)
@@ -2458,6 +2468,11 @@ Public Class frmPrenCamera
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
       Select Case e.Button.Tag
          Case "Salva"
+            ' Verifica la presenza di un nome Intestatario.
+            If cmbCognome.Text = String.Empty Then
+               MessageBox.Show("Inserire un nominativo per l'intestatario della prenotazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               Exit Sub
+            End If
 
             If VerificaDisponibilitàCamera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) = True Then
                MessageBox.Show("La camera che si vuole prenotare non è disponibile per il periodo selezionato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -2577,6 +2592,11 @@ Public Class frmPrenCamera
 
                ' Legge il Sevizio.
                LeggiServizio()
+
+               ' Salva i dati per verificare se la prenotazione è cambiata.
+               numCameraPren = .NumeroCamera
+               dataArrivoPren = Convert.ToDateTime(.DataArrivo)
+               dataPartenzaPren = Convert.ToDateTime(.DataPartenza)
 
             End With
          Else
@@ -2800,7 +2820,13 @@ Public Class frmPrenCamera
 
    Private Sub cmbNumeroCamera_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbNumeroCamera.SelectedIndexChanged
       Try
+         ' Imposta la descrizione della camera selezionata.
          txtDescrizioneCamera.Text = LeggiDescrizioneCamera(cmbNumeroCamera.Text, TAB_CAMERE)
+
+         ' Se non è impostato un listino prezzi, Imposta il listino della camera selezionata.
+         If cmbListino.Text = String.Empty Then
+            cmbListino.Text = LeggiListinoCamera(cmbNumeroCamera.Text, TAB_CAMERE)
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

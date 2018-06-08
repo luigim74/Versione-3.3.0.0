@@ -3264,12 +3264,21 @@ Public Class frmElencoDati
       ' Escludi
       Dim escludiStyle As New DataGridTextBoxColumn
       escludiStyle.MappingName = "Escludi"
-      escludiStyle.HeaderText = "Escludi dal planning"
+      escludiStyle.HeaderText = "Escludi dal Planning"
       escludiStyle.Width = 120
       escludiStyle.Alignment = HorizontalAlignment.Center
       escludiStyle.NullText = ""
       escludiStyle.TextBox.BackColor = Color.White
       gridStyle.GridColumnStyles.Add(escludiStyle)
+      ' Evidenzia
+      Dim evidenziaStyle As New DataGridTextBoxColumn
+      evidenziaStyle.MappingName = "Evidenzia"
+      evidenziaStyle.HeaderText = "Evidenzia Planning"
+      evidenziaStyle.Width = 120
+      evidenziaStyle.Alignment = HorizontalAlignment.Center
+      evidenziaStyle.NullText = ""
+      evidenziaStyle.TextBox.BackColor = Color.White
+      gridStyle.GridColumnStyles.Add(evidenziaStyle)
       ' Listino
       Dim listinoStyle As New DataGridTextBoxColumn
       listinoStyle.MappingName = "Listino"
@@ -3647,6 +3656,8 @@ Public Class frmElencoDati
                campoRicerca = "PostiLetto"
             Case "Escludi dal Planning"
                campoRicerca = "Escludi"
+            Case "Evidenzia Planning"
+               campoRicerca = "Evidenzia"
             Case "Stato prenotazione"
                campoRicerca = "Stato"
          End Select
@@ -3814,7 +3825,8 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("Tipologia")
                CampoRicerca.Items.Add("Posti letto")
                CampoRicerca.Items.Add("Disponibile")
-               CampoRicerca.Items.Add("Escludi dal planning")
+               CampoRicerca.Items.Add("Escludi dal Planning")
+               CampoRicerca.Items.Add("Evidenzia Planning")
                CampoRicerca.Items.Add("Listino")
 
             Case Elenco.StatoPren

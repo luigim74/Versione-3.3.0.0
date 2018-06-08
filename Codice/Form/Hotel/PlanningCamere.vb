@@ -79,7 +79,7 @@ Public Class PlanningCamere
 
          ' Carica il calendario per l'anno corrente.
          CaricaCalendario(Now.Year)
-         CaricaRighePrenotazioni(numCamere)
+         CaricaRighePrenotazioni()
 
          ' Imposta la data selezionata sulla griglia.
          dtpCalendario.Value = Today
@@ -455,19 +455,41 @@ Public Class PlanningCamere
       End Try
    End Sub
 
-   Public Sub CaricaRighePrenotazioni(ByVal numCamere As Integer)
+   Private Sub CaricaRighePrenotazioni()
       Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
+
+         '  Leggo tutte le prenotazioni della camera.
+         Dim cmd As New OleDbCommand("SELECT * FROM " & NOME_TABELLA & " WHERE Escludi = 'No' ORDER BY Numero ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
          ' Traforma l'ultima riga già esistente in una barra.
          dgvPrenotazioni.Rows(0).Height = 0
          dgvPrenotazioni.Rows(0).DefaultCellStyle.BackColor = Color.DarkGray
          dgvPrenotazioni.Rows(0).DefaultCellStyle.SelectionBackColor = Color.DarkGray
 
-         ' Righe prenotazioni
-         Dim j As Integer
-         For j = 0 To numCamere - 1
+         Dim j As Integer = 0
+         Do While dr.Read()
             dgvPrenotazioni.Rows.Add()
             dgvPrenotazioni.Rows(j).Height = ALTEZZA_CELLA
-         Next
+
+            ' Evidenzia.
+            Dim evidenzia As String
+            If IsDBNull(dr.Item("Evidenzia")) = False Then
+               evidenzia = dr.Item("Evidenzia").ToString
+            Else
+               evidenzia = "No"
+            End If
+
+            If evidenzia = "Sì" Then
+               dgvPrenotazioni.Rows(j).DefaultCellStyle.BackColor = Color.FromArgb(Convert.ToInt32(dr.Item("Colore")))
+            End If
+
+            j = j + 1
+         Loop
 
          ' Imposta la dimensione della griglia.
          pnlPrenotazioni.Size = New Size(14680, 2000)
@@ -476,8 +498,52 @@ Public Class PlanningCamere
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
       End Try
    End Sub
+
+   Private Function VerificaDisponibilitàCamera(ByVal numeroCamera As String) As Boolean
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
+
+         '  Leggo tutte le prenotazioni della camera.
+         Dim cmd As New OleDbCommand("SELECT * FROM Camere WHERE Numero = '" & numeroCamera & "'", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            ' Disponibile.
+            Dim disponibile As String
+            If IsDBNull(dr.Item("Disponibile")) = False Then
+               disponibile = dr.Item("Disponibile").ToString
+            Else
+               disponibile = "No"
+            End If
+
+            If disponibile = "Sì" Then
+               Return True
+            Else
+               Return False
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
 
    Public Sub ApriDatiPrenotazione(ByVal nomeFrm As String, ByVal val As String)
       Try
@@ -495,9 +561,22 @@ Public Class PlanningCamere
             End If
          End If
 
-         g_frmPrenCamera = New frmPrenCamera(nomeFrm)
-         g_frmPrenCamera.Tag = val
-         g_frmPrenCamera.ShowDialog()
+         ' Per le nuove prenotazioni.
+         If val = String.Empty Then
+            ' Verifica se la camera selezionata è disponibile sul Planning.
+            If VerificaDisponibilitàCamera(g_frmPlanningCamere.dgvCamere.Rows(g_frmPlanningCamere.dgvPrenotazioni.CurrentCell.RowIndex).Cells("Numero").Value) = True Then
+               g_frmPrenCamera = New frmPrenCamera(nomeFrm)
+               g_frmPrenCamera.Tag = val
+               g_frmPrenCamera.ShowDialog()
+            Else
+               ' Visualizza un messaggio.
+               MessageBox.Show("La camera selezionata non è disponibile! Non è possibile assegnare prenotazioni a questa camera.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+         Else
+            g_frmPrenCamera = New frmPrenCamera(nomeFrm)
+            g_frmPrenCamera.Tag = val
+            g_frmPrenCamera.ShowDialog()
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -624,6 +703,123 @@ Public Class PlanningCamere
 
    End Sub
 
+   ' DA_FARE: Funzionalità futura.
+   Public Sub DisegnaEtichetta()
+      Try
+         Dim posCellaX As Integer
+         Dim posCellaY As Integer
+         Dim cordX As Boolean
+         Dim cordY As Boolean
+
+         ' Cerca la colonna X dove disegnare la prenotazione.
+         'Dim x As Integer
+         'For x = 0 To dgvPrenotazioni.Columns.Count - 1
+         '   If dgvPrenotazioni.Columns(x).Name = dataArrivo Then
+         '      posCellaX = x
+         '      cordX = True
+         '      Exit For
+         '   End If
+         'Next
+
+         'If cordX = False Then
+         '   ' Se non trova la colonna - data di arrivo non disegna la prenotazione.
+         '   Exit Sub
+         'End If
+
+         '' Cerca la riga Y dove disegnare la prenotazione.
+         'Dim y As Integer
+         'For y = 0 To dgvCamere.Rows.Count - 1
+         '   If dgvCamere.Rows(y).Cells("Numero").Value = numCamera Then
+         '      posCellaY = y
+         '      cordY = True
+         '      Exit For
+         '   End If
+         'Next
+
+         'If cordY = False Then
+         '   ' Se non trova la riga - numero camera non disegna la prenotazione.
+         '   Exit Sub
+         'End If
+
+         Dim larghezzaPren As Integer = 160 'numNotti * LARGHEZZA_CELLA
+
+         NumPren += 1
+         Prenotazioni(NumPren) = New NetButton
+         Prenotazioni(NumPren).Name = 1000 ' Id.ToString
+         Prenotazioni(NumPren).Location = New Point((5000) + 21, (2000) + 1)
+         Prenotazioni(NumPren).Size = New Point(larghezzaPren, ALTEZZA_PRENOTAZIONE)
+
+         '' Imposta i colori primari.
+         'Select Case Color.FromArgb(colore)
+         '   Case Color.FromArgb(255, 255, 255) ' Nessuno
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Default
+
+         '   Case Color.Silver ' Default
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Default
+
+         '   Case Color.RoyalBlue ' Blue
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Blue
+
+         '   Case Color.FromArgb(0, 192, 0) ' Green
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Green
+
+         '   Case Color.Gold ' Yellow
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Yellow
+
+         '   Case Color.FromArgb(210, 0, 0) ' Red
+         Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Red
+
+         '   Case Color.DarkMagenta ' Pink
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Pink
+
+         '   Case Color.DimGray ' Gray
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Gray
+
+         '   Case Else ' Custom
+         '      Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Custom
+         '      Prenotazioni(NumPren).ColorBottom = Color.FromArgb(colore)
+
+         'End Select
+
+         Prenotazioni(NumPren).TextButtonAlign = ContentAlignment.MiddleLeft
+         Prenotazioni(NumPren).TextButton = "Manutenzione" 'intestatario
+         Prenotazioni(NumPren).CornerRadius = 0
+         Prenotazioni(NumPren).Tag = ""
+
+         '' ScreenTip informativa.
+         'Dim infoPrenotazione As New Elegant.Ui.ScreenTipData(Prenotazioni(NumPren))
+         'infoPrenotazione.Caption = intestatario & " - N. " & numero
+         'infoPrenotazione.Text = "Intestatario: " & intestatario & vbCrLf &
+         '                        "Prenotazione numero: " & numero & vbCrLf &
+         '                        "Persone: " & persone.ToString & vbCrLf &
+         '                        "Tipologia: " & tipologia & vbCrLf &
+         '                        "Stato: " & stato & vbCrLf &
+         '                        "Trattamento: " & trattamento & vbCrLf & vbCrLf &
+         '                        "Arrivo: " & dataArrivo & vbCrLf &
+         '                        "Partenza: " & dataPartenza & vbCrLf &
+         '                        "Notti: " & numNotti & vbCrLf & vbCrLf &
+         '                        "Camera: € " & totaleCamera & vbCrLf &
+         '                        "Addebiti extra: € " & totaleAddebiti & vbCrLf &
+         '                        "Acconto: € " & acconto & vbCrLf &
+         '                        "Totale soggiorno: € " & totaleConto & vbCrLf & vbCrLf &
+         '                        "Note: " & note
+
+         pnlPrenotazioni.Controls.Add(Prenotazioni(NumPren))
+
+         Prenotazioni(NumPren).BringToFront()
+
+         AddHandler Prenotazioni(NumPren).Click, AddressOf Prenotazioni_Click
+         AddHandler Prenotazioni(NumPren).DoubleClick, AddressOf Prenotazioni_DoubleClick
+         AddHandler Prenotazioni(NumPren).GotFocus, AddressOf Prenotazioni_GotFocus
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
    Public Function CalcolaTotaleAddebiti(ByVal rifPren As Integer) As String
       Try
          ' Dichiara un oggetto connessione.
@@ -669,7 +865,7 @@ Public Class PlanningCamere
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY DataArrivo ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumeroCamera <> '' ORDER BY DataArrivo ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -1078,7 +1274,7 @@ Public Class PlanningCamere
 
          ' Crea la nuova vista per il Planning.
          CaricaCalendario(annoNuovo)
-         CaricaRighePrenotazioni(numCamere)
+         CaricaRighePrenotazioni()
          AggiornaPlanning()
 
       Catch ex As Exception
@@ -1253,7 +1449,7 @@ Public Class PlanningCamere
 
          ' Carica il calendario per l'anno corrente.
          CaricaCalendario(Now.Year)
-         CaricaRighePrenotazioni(numCamere)
+         CaricaRighePrenotazioni()
 
          ' Legge le prenotazioni salvate.
          AggiornaPlanning()

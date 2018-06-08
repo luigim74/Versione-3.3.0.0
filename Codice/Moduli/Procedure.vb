@@ -754,13 +754,40 @@ Module Procedure
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return ""
+         Return String.Empty
 
       Finally
          cn.Close()
 
       End Try
    End Function
+
+   Public Function LeggiListinoCamera(ByVal numero As String, ByVal tabella As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Numero = '" & numero & "' ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("Listino").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
 
    Private Sub CreaTabellaReport(ByVal stringaSql As String)
       'Dim sql As String

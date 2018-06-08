@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PlanningCamere
    Inherits System.Windows.Forms.Form
 
    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-   <System.Diagnostics.DebuggerNonUserCode()> _
+   <System.Diagnostics.DebuggerNonUserCode()>
    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
       Try
          If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,14 @@ Partial Class PlanningCamere
    'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
    'Può essere modificata in Progettazione Windows Form.  
    'Non modificarla nell'editor del codice.
-   <System.Diagnostics.DebuggerStepThrough()> _
+   <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
-      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.dgvCamere = New System.Windows.Forms.DataGridView()
       Me.ColonnaCamere = New System.Windows.Forms.DataGridViewTextBoxColumn()
       Me.pnlPrenotazioni = New System.Windows.Forms.Panel()
@@ -71,14 +71,14 @@ Partial Class PlanningCamere
       Me.dgvCamere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
       Me.dgvCamere.ColumnHeadersVisible = False
       Me.dgvCamere.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColonnaCamere})
-      DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-      DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent
-      DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-      Me.dgvCamere.DefaultCellStyle = DataGridViewCellStyle1
+      DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+      DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent
+      DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+      Me.dgvCamere.DefaultCellStyle = DataGridViewCellStyle11
       Me.dgvCamere.GridColor = System.Drawing.SystemColors.AppWorkspace
       Me.dgvCamere.Location = New System.Drawing.Point(0, 77)
       Me.dgvCamere.MultiSelect = False
@@ -90,7 +90,7 @@ Partial Class PlanningCamere
       Me.dgvCamere.ScrollBars = System.Windows.Forms.ScrollBars.None
       Me.dgvCamere.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
       Me.dgvCamere.ShowCellErrors = False
-      Me.dgvCamere.Size = New System.Drawing.Size(336, 538)
+      Me.dgvCamere.Size = New System.Drawing.Size(336, 546)
       Me.dgvCamere.StandardTab = True
       Me.dgvCamere.TabIndex = 0
       '
@@ -118,25 +118,25 @@ Partial Class PlanningCamere
       Me.dgvPrenotazioni.BackgroundColor = System.Drawing.Color.White
       Me.dgvPrenotazioni.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.dgvPrenotazioni.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-      DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-      DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-      DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-      Me.dgvPrenotazioni.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+      DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.dgvPrenotazioni.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
       Me.dgvPrenotazioni.ColumnHeadersHeight = 25
       Me.dgvPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
       Me.dgvPrenotazioni.ColumnHeadersVisible = False
       Me.dgvPrenotazioni.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColonnaPren})
-      DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-      DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange
-      DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-      Me.dgvPrenotazioni.DefaultCellStyle = DataGridViewCellStyle3
+      DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
+      DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Orange
+      DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+      Me.dgvPrenotazioni.DefaultCellStyle = DataGridViewCellStyle13
       Me.dgvPrenotazioni.Dock = System.Windows.Forms.DockStyle.Fill
       Me.dgvPrenotazioni.GridColor = System.Drawing.SystemColors.AppWorkspace
       Me.dgvPrenotazioni.Location = New System.Drawing.Point(0, 0)
@@ -176,14 +176,14 @@ Partial Class PlanningCamere
       Me.dgvGiorni.BackgroundColor = System.Drawing.Color.White
       Me.dgvGiorni.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.dgvGiorni.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-      DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-      DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-      DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-      DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-      Me.dgvGiorni.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+      DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+      DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+      DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.dgvGiorni.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
       Me.dgvGiorni.ColumnHeadersHeight = 40
       Me.dgvGiorni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
       Me.dgvGiorni.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColonnaGiorni})
@@ -199,7 +199,7 @@ Partial Class PlanningCamere
       Me.dgvGiorni.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
       Me.dgvGiorni.ScrollBars = System.Windows.Forms.ScrollBars.None
       Me.dgvGiorni.ShowCellErrors = False
-      Me.dgvGiorni.Size = New System.Drawing.Size(730, 40)
+      Me.dgvGiorni.Size = New System.Drawing.Size(738, 40)
       Me.dgvGiorni.StandardTab = True
       Me.dgvGiorni.TabIndex = 5
       Me.dgvGiorni.TabStop = False
@@ -225,7 +225,7 @@ Partial Class PlanningCamere
       Me.pnlGenerale.Dock = System.Windows.Forms.DockStyle.Fill
       Me.pnlGenerale.Location = New System.Drawing.Point(0, 0)
       Me.pnlGenerale.Name = "pnlGenerale"
-      Me.pnlGenerale.Size = New System.Drawing.Size(1053, 618)
+      Me.pnlGenerale.Size = New System.Drawing.Size(1061, 626)
       Me.pnlGenerale.TabIndex = 3
       '
       'Panel3
@@ -293,7 +293,7 @@ Partial Class PlanningCamere
       'Panel2
       '
       Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Panel2.Location = New System.Drawing.Point(1037, -1)
+      Me.Panel2.Location = New System.Drawing.Point(1045, -1)
       Me.Panel2.Name = "Panel2"
       Me.Panel2.Size = New System.Drawing.Size(20, 81)
       Me.Panel2.TabIndex = 14
@@ -307,14 +307,14 @@ Partial Class PlanningCamere
       Me.dgvMesi.BackgroundColor = System.Drawing.Color.White
       Me.dgvMesi.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.dgvMesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-      DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-      DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-      DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-      DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-      DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-      Me.dgvMesi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+      DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+      DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+      DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.dgvMesi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
       Me.dgvMesi.ColumnHeadersHeight = 40
       Me.dgvMesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
       Me.dgvMesi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColonnaMese})
@@ -347,11 +347,11 @@ Partial Class PlanningCamere
       Me.VerticalScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.VerticalScrollBar1.LargeChange = 280
-      Me.VerticalScrollBar1.Location = New System.Drawing.Point(1036, 80)
+      Me.VerticalScrollBar1.Location = New System.Drawing.Point(1044, 80)
       Me.VerticalScrollBar1.Maximum = 100
       Me.VerticalScrollBar1.Minimum = 0
       Me.VerticalScrollBar1.Name = "VerticalScrollBar1"
-      Me.VerticalScrollBar1.Size = New System.Drawing.Size(17, 522)
+      Me.VerticalScrollBar1.Size = New System.Drawing.Size(17, 530)
       Me.VerticalScrollBar1.SmallChange = 28
       Me.VerticalScrollBar1.TabIndex = 11
       Me.VerticalScrollBar1.Text = "VerticalScrollBar1"
@@ -360,7 +360,7 @@ Partial Class PlanningCamere
       'Panel1
       '
       Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Panel1.Location = New System.Drawing.Point(1037, 602)
+      Me.Panel1.Location = New System.Drawing.Point(1045, 610)
       Me.Panel1.Name = "Panel1"
       Me.Panel1.Size = New System.Drawing.Size(26, 22)
       Me.Panel1.TabIndex = 13
@@ -370,11 +370,11 @@ Partial Class PlanningCamere
       Me.HorizontalScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.HorizontalScrollBar1.LargeChange = 1200
-      Me.HorizontalScrollBar1.Location = New System.Drawing.Point(336, 601)
+      Me.HorizontalScrollBar1.Location = New System.Drawing.Point(336, 609)
       Me.HorizontalScrollBar1.Maximum = 100
       Me.HorizontalScrollBar1.Minimum = 0
       Me.HorizontalScrollBar1.Name = "HorizontalScrollBar1"
-      Me.HorizontalScrollBar1.Size = New System.Drawing.Size(701, 17)
+      Me.HorizontalScrollBar1.Size = New System.Drawing.Size(709, 17)
       Me.HorizontalScrollBar1.SmallChange = 40
       Me.HorizontalScrollBar1.TabIndex = 9
       Me.HorizontalScrollBar1.Text = "HorizontalScrollBar1"
@@ -390,7 +390,7 @@ Partial Class PlanningCamere
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1053, 618)
+      Me.ClientSize = New System.Drawing.Size(1061, 626)
       Me.Controls.Add(Me.pnlGenerale)
       Me.Name = "PlanningCamere"
       Me.Text = "Planning camere"

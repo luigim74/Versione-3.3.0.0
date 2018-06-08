@@ -81,6 +81,8 @@ Public Class frmCamere
    Public WithEvents txtCodice As System.Windows.Forms.TextBox
    Public WithEvents Label7 As System.Windows.Forms.Label
    Friend WithEvents nudPostiLetto As System.Windows.Forms.NumericUpDown
+   Friend WithEvents cmbEvidenzia As ComboBox
+   Public WithEvents Label8 As Label
    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -89,6 +91,9 @@ Public Class frmCamere
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.nudPostiLetto = New System.Windows.Forms.NumericUpDown()
+      Me.txtCodice = New System.Windows.Forms.TextBox()
+      Me.Label7 = New System.Windows.Forms.Label()
       Me.cmbListino = New System.Windows.Forms.ComboBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.cmdColore = New System.Windows.Forms.Button()
@@ -123,17 +128,16 @@ Public Class frmCamere
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.txtCodice = New System.Windows.Forms.TextBox()
-      Me.Label7 = New System.Windows.Forms.Label()
-      Me.nudPostiLetto = New System.Windows.Forms.NumericUpDown()
+      Me.cmbEvidenzia = New System.Windows.Forms.ComboBox()
+      Me.Label8 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
+      CType(Me.nudPostiLetto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage2.SuspendLayout()
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage6.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.nudPostiLetto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'Panel1
@@ -143,7 +147,7 @@ Public Class frmCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(548, 20)
+      Me.Panel1.Size = New System.Drawing.Size(546, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -172,6 +176,8 @@ Public Class frmCamere
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbEvidenzia)
+      Me.TabPage1.Controls.Add(Me.Label8)
       Me.TabPage1.Controls.Add(Me.nudPostiLetto)
       Me.TabPage1.Controls.Add(Me.txtCodice)
       Me.TabPage1.Controls.Add(Me.Label7)
@@ -200,6 +206,48 @@ Public Class frmCamere
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
+      'nudPostiLetto
+      '
+      Me.nudPostiLetto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.nudPostiLetto.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.nudPostiLetto.Location = New System.Drawing.Point(104, 192)
+      Me.nudPostiLetto.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+      Me.nudPostiLetto.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+      Me.nudPostiLetto.Name = "nudPostiLetto"
+      Me.nudPostiLetto.Size = New System.Drawing.Size(80, 20)
+      Me.nudPostiLetto.TabIndex = 6
+      Me.nudPostiLetto.Value = New Decimal(New Integer() {1, 0, 0, 0})
+      '
+      'txtCodice
+      '
+      Me.txtCodice.AcceptsReturn = True
+      Me.txtCodice.BackColor = System.Drawing.SystemColors.Control
+      Me.txtCodice.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtCodice.ForeColor = System.Drawing.Color.Red
+      Me.txtCodice.Location = New System.Drawing.Point(104, 24)
+      Me.txtCodice.MaxLength = 5
+      Me.txtCodice.Name = "txtCodice"
+      Me.txtCodice.ReadOnly = True
+      Me.txtCodice.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtCodice.Size = New System.Drawing.Size(80, 20)
+      Me.txtCodice.TabIndex = 0
+      Me.txtCodice.TabStop = False
+      Me.txtCodice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label7
+      '
+      Me.Label7.AutoSize = True
+      Me.Label7.BackColor = System.Drawing.Color.Transparent
+      Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label7.ForeColor = System.Drawing.Color.Black
+      Me.Label7.Location = New System.Drawing.Point(24, 24)
+      Me.Label7.Name = "Label7"
+      Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label7.Size = New System.Drawing.Size(43, 13)
+      Me.Label7.TabIndex = 187
+      Me.Label7.Text = "Codice:"
+      '
       'cmbListino
       '
       Me.cmbListino.Location = New System.Drawing.Point(352, 192)
@@ -213,7 +261,7 @@ Public Class frmCamere
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(288, 192)
+      Me.Label2.Location = New System.Drawing.Point(255, 194)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(40, 13)
@@ -256,9 +304,9 @@ Public Class frmCamere
       '
       Me.cmbEscludi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbEscludi.Items.AddRange(New Object() {"Sì", "No"})
-      Me.cmbEscludi.Location = New System.Drawing.Point(408, 224)
+      Me.cmbEscludi.Location = New System.Drawing.Point(414, 224)
       Me.cmbEscludi.Name = "cmbEscludi"
-      Me.cmbEscludi.Size = New System.Drawing.Size(80, 21)
+      Me.cmbEscludi.Size = New System.Drawing.Size(74, 21)
       Me.cmbEscludi.TabIndex = 9
       '
       'cmbPosizione
@@ -330,12 +378,12 @@ Public Class frmCamere
       Me.Label21.BackColor = System.Drawing.Color.Transparent
       Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label21.ForeColor = System.Drawing.Color.Black
-      Me.Label21.Location = New System.Drawing.Point(288, 224)
+      Me.Label21.Location = New System.Drawing.Point(255, 224)
       Me.Label21.Name = "Label21"
       Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label21.Size = New System.Drawing.Size(98, 13)
+      Me.Label21.Size = New System.Drawing.Size(104, 13)
       Me.Label21.TabIndex = 168
-      Me.Label21.Text = "Escludi dal plannig:"
+      Me.Label21.Text = "Escludi dal planning:"
       '
       'Label6
       '
@@ -504,7 +552,7 @@ Public Class frmCamere
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(548, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(546, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -531,54 +579,34 @@ Public Class frmCamere
       Me.ImageList1.Images.SetKeyName(0, "")
       Me.ImageList1.Images.SetKeyName(1, "")
       '
-      'txtCodice
+      'cmbEvidenzia
       '
-      Me.txtCodice.AcceptsReturn = True
-      Me.txtCodice.BackColor = System.Drawing.SystemColors.Control
-      Me.txtCodice.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCodice.ForeColor = System.Drawing.Color.Red
-      Me.txtCodice.Location = New System.Drawing.Point(104, 24)
-      Me.txtCodice.MaxLength = 5
-      Me.txtCodice.Name = "txtCodice"
-      Me.txtCodice.ReadOnly = True
-      Me.txtCodice.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCodice.Size = New System.Drawing.Size(80, 20)
-      Me.txtCodice.TabIndex = 0
-      Me.txtCodice.TabStop = False
-      Me.txtCodice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.cmbEvidenzia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbEvidenzia.Items.AddRange(New Object() {"Sì", "No"})
+      Me.cmbEvidenzia.Location = New System.Drawing.Point(414, 254)
+      Me.cmbEvidenzia.Name = "cmbEvidenzia"
+      Me.cmbEvidenzia.Size = New System.Drawing.Size(74, 21)
+      Me.cmbEvidenzia.TabIndex = 11
       '
-      'Label7
+      'Label8
       '
-      Me.Label7.AutoSize = True
-      Me.Label7.BackColor = System.Drawing.Color.Transparent
-      Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label7.ForeColor = System.Drawing.Color.Black
-      Me.Label7.Location = New System.Drawing.Point(24, 24)
-      Me.Label7.Name = "Label7"
-      Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label7.Size = New System.Drawing.Size(43, 13)
-      Me.Label7.TabIndex = 187
-      Me.Label7.Text = "Codice:"
-      '
-      'nudPostiLetto
-      '
-      Me.nudPostiLetto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.nudPostiLetto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.nudPostiLetto.Location = New System.Drawing.Point(104, 192)
-      Me.nudPostiLetto.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
-      Me.nudPostiLetto.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-      Me.nudPostiLetto.Name = "nudPostiLetto"
-      Me.nudPostiLetto.Size = New System.Drawing.Size(80, 20)
-      Me.nudPostiLetto.TabIndex = 6
-      Me.nudPostiLetto.Value = New Decimal(New Integer() {1, 0, 0, 0})
+      Me.Label8.AutoSize = True
+      Me.Label8.BackColor = System.Drawing.Color.Transparent
+      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label8.ForeColor = System.Drawing.Color.Black
+      Me.Label8.Location = New System.Drawing.Point(255, 256)
+      Me.Label8.Name = "Label8"
+      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label8.Size = New System.Drawing.Size(153, 13)
+      Me.Label8.TabIndex = 189
+      Me.Label8.Text = "Evidenzia periodo sul planning:"
       '
       'frmCamere
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(548, 370)
+      Me.ClientSize = New System.Drawing.Size(546, 370)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
       Me.Controls.Add(Me.TabControl1)
@@ -594,12 +622,12 @@ Public Class frmCamere
       Me.TabControl1.ResumeLayout(False)
       Me.TabPage1.ResumeLayout(False)
       Me.TabPage1.PerformLayout()
+      CType(Me.nudPostiLetto, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage2.ResumeLayout(False)
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage6.ResumeLayout(False)
       Me.TabPage6.PerformLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.nudPostiLetto, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -650,6 +678,7 @@ Public Class frmCamere
          ACamere.PostiLetto = nudPostiLetto.Value.ToString
          ACamere.Disponibile = cmbDisponibile.Text
          ACamere.Escludi = cmbEscludi.Text
+         ACamere.Evidenzia = cmbEvidenzia.Text
          ACamere.Listino = cmbListino.Text
          ACamere.Note = txtNote.Text
 
@@ -760,6 +789,7 @@ Public Class frmCamere
             nudPostiLetto.Value = Convert.ToDecimal(ACamere.PostiLetto)
             cmbDisponibile.Text = ACamere.Disponibile
             cmbEscludi.Text = ACamere.Escludi
+            cmbEvidenzia.Text = ACamere.Evidenzia
             cmbListino.Text = ACamere.Listino
             txtNote.Text = ACamere.Note
 
@@ -776,6 +806,7 @@ Public Class frmCamere
          Else
             cmbDisponibile.SelectedIndex = 0
             cmbEscludi.SelectedIndex = 1
+            cmbEvidenzia.SelectedIndex = 1
 
             ACamere.Immagine = ""
          End If

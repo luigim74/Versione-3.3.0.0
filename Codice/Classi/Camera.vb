@@ -11,6 +11,7 @@ Public Class Camera
    Public PostiLetto As String
    Public Disponibile As String
    Public Escludi As String
+   Public Evidenzia As String
    Public Listino As String
    Public Note As String
    Public Colore As Integer
@@ -91,6 +92,11 @@ Public Class Camera
          Else
             Me.Escludi = ""
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Evidenzia")) = False Then
+            Me.Evidenzia = ds.Tables(tabella).Rows(0)("Evidenzia")
+         Else
+            Me.Evidenzia = ""
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Listino")) = False Then
             Me.Listino = ds.Tables(tabella).Rows(0)("Listino")
          Else
@@ -134,10 +140,10 @@ Public Class Camera
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Numero, Descrizione, Tipologia, Posizione, Ubicazione, " & _
-                                              "PostiLetto, Disponibile, Escludi, Listino, Immagine, Colore, [Note]) " & _
-                                       "VALUES(@Numero, @Descrizione, @Tipologia, @Posizione, @Ubicazione, " & _
-                                              "@PostiLetto, @Disponibile, @Escludi, @Listino, @Immagine, @Colore, @Note)", tabella)
+         sql = String.Format("INSERT INTO {0} (Numero, Descrizione, Tipologia, Posizione, Ubicazione, " &
+                                              "PostiLetto, Disponibile, Escludi, Evidenzia, Listino, Immagine, Colore, [Note]) " &
+                                       "VALUES(@Numero, @Descrizione, @Tipologia, @Posizione, @Ubicazione, " &
+                                              "@PostiLetto, @Disponibile, @Escludi, @Evidenzia, @Listino, @Immagine, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -150,6 +156,7 @@ Public Class Camera
          cmdInsert.Parameters.Add("@PostiLetto", Me.PostiLetto)
          cmdInsert.Parameters.Add("@Disponibile", Me.Disponibile)
          cmdInsert.Parameters.Add("@Escludi", Me.Escludi)
+         cmdInsert.Parameters.Add("@Evidenzia", Me.Evidenzia)
          cmdInsert.Parameters.Add("@Listino", Me.Listino)
          cmdInsert.Parameters.Add("@Immagine", Me.Immagine)
          cmdInsert.Parameters.Add("@Colore", Me.Colore)
@@ -190,21 +197,22 @@ Public Class Camera
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET Numero = @Numero, " & _
-                             "Descrizione = @Descrizione, " & _
-                             "Tipologia = @Tipologia, " & _
-                             "Posizione = @Posizione, " & _
-                             "Ubicazione = @Ubicazione, " & _
-                             "PostiLetto = @PostiLetto, " & _
-                             "Disponibile = @Disponibile, " & _
-                             "Escludi = @Escludi, " & _
-                             "Listino = @Listino, " & _
-                             "Immagine = @Immagine, " & _
-                             "Colore = @Colore, " & _
-                             "[Note] = @Note " & _
-                             "WHERE Id = {1}", _
-                              tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET Numero = @Numero, " &
+                             "Descrizione = @Descrizione, " &
+                             "Tipologia = @Tipologia, " &
+                             "Posizione = @Posizione, " &
+                             "Ubicazione = @Ubicazione, " &
+                             "PostiLetto = @PostiLetto, " &
+                             "Disponibile = @Disponibile, " &
+                             "Escludi = @Escludi, " &
+                             "Evidenzia = @Evidenzia, " &
+                             "Listino = @Listino, " &
+                             "Immagine = @Immagine, " &
+                             "Colore = @Colore, " &
+                             "[Note] = @Note " &
+                             "WHERE Id = {1}",
+                              tabella,
                               codice)
 
          ' Crea il comando per la connessione corrente.
@@ -218,6 +226,7 @@ Public Class Camera
          cmdUpdate.Parameters.Add("@PostiLetto", Me.PostiLetto)
          cmdUpdate.Parameters.Add("@Disponibile", Me.Disponibile)
          cmdUpdate.Parameters.Add("@Escludi", Me.Escludi)
+         cmdUpdate.Parameters.Add("@Evidenzia", Me.Evidenzia)
          cmdUpdate.Parameters.Add("@Listino", Me.Listino)
          cmdUpdate.Parameters.Add("@Immagine", Me.Immagine)
          cmdUpdate.Parameters.Add("@Colore", Me.Colore)
