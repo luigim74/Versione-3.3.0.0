@@ -245,39 +245,50 @@ Public Class PlanningCamere
             If IsDBNull(dr.Item("Numero")) = False Then
                dgvCamere.Rows(i).Cells("Numero").Value = dr.Item("Numero")
             Else
-               dgvCamere.Rows(i).Cells("Numero").Value = ""
+               dgvCamere.Rows(i).Cells("Numero").Value = String.Empty
             End If
             ' Posti letto.
             If IsDBNull(dr.Item("PostiLetto")) = False Then
                dgvCamere.Rows(i).Cells("PostiLetto").Value = dr.Item("PostiLetto")
-               dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = "Libera"
+
+               ' Verifica se la camera è occupata o libera e gli assegna il colore appropriato.
+               If VerificaStatoCamera(dr.Item("Numero").ToString) = True Then
+                  dgvCamere.Rows(i).Cells("PostiLetto").Style.BackColor = Color.Red
+                  dgvCamere.Rows(i).Cells("PostiLetto").Style.ForeColor = Color.Black
+                  dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = "Occupata"
+               Else
+                  dgvCamere.Rows(i).Cells("PostiLetto").Style.BackColor = Color.LimeGreen
+                  dgvCamere.Rows(i).Cells("PostiLetto").Style.ForeColor = Color.Black
+                  dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = "Libera"
+               End If
             Else
-               dgvCamere.Rows(i).Cells("PostiLetto").Value = ""
-               dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = ""
+               dgvCamere.Rows(i).Cells("PostiLetto").Value = String.Empty
+               dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = String.Empty
             End If
+
             ' Ubicazione.
             If IsDBNull(dr.Item("Ubicazione")) = False Then
                dgvCamere.Rows(i).Cells("Ubicazione").Value = dr.Item("Ubicazione")
             Else
-               dgvCamere.Rows(i).Cells("Ubicazione").Value = ""
+               dgvCamere.Rows(i).Cells("Ubicazione").Value = String.Empty
             End If
             ' Descrizione.
             If IsDBNull(dr.Item("Descrizione")) = False Then
                dgvCamere.Rows(i).Cells("Descrizione").Value = dr.Item("Descrizione")
             Else
-               dgvCamere.Rows(i).Cells("Descrizione").Value = ""
+               dgvCamere.Rows(i).Cells("Descrizione").Value = String.Empty
             End If
             ' Posizione.
             If IsDBNull(dr.Item("Posizione")) = False Then
                dgvCamere.Rows(i).Cells("Posizione").Value = dr.Item("Posizione")
             Else
-               dgvCamere.Rows(i).Cells("Posizione").Value = ""
+               dgvCamere.Rows(i).Cells("Posizione").Value = String.Empty
             End If
             ' Tipologia.
             If IsDBNull(dr.Item("Tipologia")) = False Then
                dgvCamere.Rows(i).Cells("Tipologia").Value = dr.Item("Tipologia")
             Else
-               dgvCamere.Rows(i).Cells("Tipologia").Value = ""
+               dgvCamere.Rows(i).Cells("Tipologia").Value = String.Empty
             End If
             ' Disponibile.
             If IsDBNull(dr.Item("Disponibile")) = False Then
@@ -287,7 +298,7 @@ Public Class PlanningCamere
                   dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = "Non disponibile"
                End If
             Else
-               dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = ""
+               dgvCamere.Rows(i).Cells("PostiLetto").ToolTipText = String.Empty
             End If
             ' Colore.
             If IsDBNull(dr.Item("Colore")) = False Then
@@ -299,14 +310,11 @@ Public Class PlanningCamere
             If IsDBNull(dr.Item("Note")) = False Then
                dgvCamere.Rows(i).Cells("Descrizione").ToolTipText = dr.Item("Note")
             Else
-               dgvCamere.Rows(i).Cells("Descrizione").ToolTipText = ""
+               dgvCamere.Rows(i).Cells("Descrizione").ToolTipText = String.Empty
             End If
 
             i += 1
          Loop
-
-         dgvCamere.Rows(10).Cells("PostiLetto").Style.BackColor = Color.Red
-         dgvCamere.Rows(10).Cells("PostiLetto").ToolTipText = "Occupata"
 
          Return i
 
@@ -544,6 +552,73 @@ Public Class PlanningCamere
 
       End Try
    End Function
+
+   Private Function VerificaStatoCamera(ByVal numeroCamera As String) As Boolean
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
+
+         '  Leggo tutte le prenotazioni della camera.
+         Dim cmd As New OleDbCommand("SELECT * FROM PrenCamere WHERE NumeroCamera = '" & numeroCamera & "' ORDER BY DataArrivo ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            ' Data arrivo.
+            Dim valDataArrivo As Date
+            If IsDate(dr.Item("DataArrivo")) = True Then
+               valDataArrivo = Convert.ToDateTime(dr.Item("DataArrivo"))
+            Else
+               Return False
+            End If
+
+            ' Data partenza.
+            Dim valDataPartenza As Date
+            If IsDate(dr.Item("DataPartenza")) = True Then
+               valDataPartenza = Convert.ToDateTime(dr.Item("DataPartenza"))
+            Else
+               Return False
+            End If
+
+            ' Numero notti.
+            Dim valNumNotti As Integer
+            If IsDBNull(dr.Item("NumeroNotti")) = False Then
+               valNumNotti = Convert.ToInt32(dr.Item("NumeroNotti"))
+            Else
+               Return False
+            End If
+
+            Dim dataDalTemp As Date = Today
+
+            Dim valDatatemp As Date = valDataArrivo
+            Dim i As Integer
+            For i = 0 To valNumNotti
+               If valDatatemp = dataDalTemp Then
+                  ' Prenotazione esistente!
+                  Return True
+               Else
+                  ' Incrementa di un giorno.
+                  valDatatemp = valDatatemp.AddDays(1)
+               End If
+            Next
+         Loop
+
+         Return False
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
 
    Public Sub ApriDatiPrenotazione(ByVal nomeFrm As String, ByVal val As String)
       Try

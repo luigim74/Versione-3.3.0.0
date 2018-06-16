@@ -12,3 +12,136 @@ Nome parametro: columnName"
    in Hospitality_Solution.frmMain.eui_PCamere_VisMeseAvanti_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11076"
 "
 "
+"*** 16/06/2018 - 16:04:35 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.PlanningCamere.VerificaStatoCamera(String numeroCamera) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 566"
+"
+"
+"*** 16/06/2018 - 16:04:39 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.PlanningCamere.CaricaCamere() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 310"
+"
+"
+"*** 16/06/2018 - 16:49:28 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.PlanningCamere.VerificaStatoCamera(String numeroCamera) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 563"
+"
+"
+"*** 16/06/2018 - 16:49:31 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.PlanningCamere.CaricaCamere() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 310"
+"
+"
+"*** 16/06/2018 - 16:50:49 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.PlanningCamere.VerificaStatoCamera(String numeroCamera) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 563"
+"
+"
+"*** 16/06/2018 - 16:50:54 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.PlanningCamere.CaricaCamere() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 310"
+"
+"
+"*** 16/06/2018 - 16:57:29 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.PlanningCamere.CaricaCamere() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 310"
+"
+"
+"*** 16/06/2018 - 17:32:30 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1419
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 348"
+"
+"
+"*** 16/06/2018 - 17:32:51 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1419
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 348"
+"
+"
+"*** 16/06/2018 - 17:32:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare la colonna denominata 16/06/2019.
+Nome parametro: columnName"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   in Hospitality_Solution.PlanningCamere.ScorriAnno(Boolean avanti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1504"
+"
+"
+"*** 16/06/2018 - 17:34:43 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1419
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 348"
+"
+"
+"*** 16/06/2018 - 17:42:15 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1418
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 348"
+"
+"
+"*** 16/06/2018 - 17:43:49 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.dgvPrenotazioni_CurrentCellChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1418
+   in System.Windows.Forms.DataGridView.OnCurrentCellChanged(EventArgs e)
+   in System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   in System.Windows.Forms.DataGridView.set_CurrentCell(DataGridViewCell value)
+   in System.Windows.Forms.DataGridView.OnClearingColumns()
+   in System.Windows.Forms.DataGridViewColumnCollection.Clear()
+   in Hospitality_Solution.PlanningCamere.CaricaCalendario(Int32 anno) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 348"
+"
+"
