@@ -4,9 +4,11 @@ Public Class PlanningCamere
 
    Const NOME_TABELLA As String = "Camere"
    Const TAB_PRENOTAZIONI As String = "PrenCamere"
-   Const ALTEZZA_PRENOTAZIONE As Short = 30 '25
-   Const ALTEZZA_CELLA As Short = 32 '28
+   Const ALTEZZA_PRENOTAZIONE As Short = 30
+   Const ALTEZZA_CELLA As Short = 32
    Const LARGHEZZA_CELLA As Short = 40
+   Const LARGHEZZA_GRIGLIA_CAMERE As Short = 336
+   Const LARGHEZZA_GRIGLIA_PRENOTAZIONI As Short = 14680
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -95,6 +97,9 @@ Public Class PlanningCamere
          ' Serve a non generare un errore in dgvCamere_CurrentCellChanged.
          frmLoad = True
 
+         ' Ridimensiona la finestra per forzare la visualizzazione corretta della barra di scorrimento verticale.
+         Me.Size = New Size(Me.Width, Me.Height + 1)
+
          ' Evidenzia il cursore sul Planning.
          dgvPrenotazioni.Focus()
 
@@ -133,10 +138,10 @@ Public Class PlanningCamere
    End Sub
 
    Private Sub PlanningCamere_Resize(sender As Object, e As System.EventArgs) Handles Me.Resize
-      HorizontalScrollBar1.Maximum = 15800 - HorizontalScrollBar1.Width ' + 510
+      HorizontalScrollBar1.Maximum = 15800 - HorizontalScrollBar1.Width
       HorizontalScrollBar1.Minimum = 0
 
-      VerticalScrollBar1.Maximum = 2800 - VerticalScrollBar1.Height ' + 510
+      VerticalScrollBar1.Maximum = ((ALTEZZA_CELLA * numCamere) + 310) - VerticalScrollBar1.Height '1600 - VerticalScrollBar1.Height ' 
       VerticalScrollBar1.Minimum = 0
 
 
@@ -316,6 +321,10 @@ Public Class PlanningCamere
             i += 1
          Loop
 
+         ' Imposta la dimensione della griglia.
+         dgvCamere.Size = New Size(LARGHEZZA_GRIGLIA_CAMERE, (ALTEZZA_CELLA * i) + ALTEZZA_CELLA)
+
+         ' Numero camere trovate nel database.
          Return i
 
       Catch ex As Exception
@@ -500,7 +509,7 @@ Public Class PlanningCamere
          Loop
 
          ' Imposta la dimensione della griglia.
-         pnlPrenotazioni.Size = New Size(14680, 2000)
+         pnlPrenotazioni.Size = New Size(LARGHEZZA_GRIGLIA_PRENOTAZIONI, (ALTEZZA_CELLA * numCamere) + ALTEZZA_CELLA)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -618,7 +627,6 @@ Public Class PlanningCamere
 
       End Try
    End Function
-
 
    Public Sub ApriDatiPrenotazione(ByVal nomeFrm As String, ByVal val As String)
       Try
@@ -901,7 +909,10 @@ Public Class PlanningCamere
          Dim cn As New OleDbConnection(ConnString)
          Dim totAddebiti As Double
 
-         cn.Open()
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
 
          Dim cmd As New OleDbCommand("SELECT * FROM PrenCamereAddebiti WHERE RifPren = " & rifPren & " ORDER BY Id ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
@@ -1387,61 +1398,77 @@ Public Class PlanningCamere
    End Sub
 
    Private Sub dgvCamere_CurrentCellChanged(sender As Object, e As EventArgs) Handles dgvCamere.CurrentCellChanged
-      If dgvCamere.CurrentRow.Index >= dgvCamere.Rows.Count - 1 Then
-         Exit Sub
-      End If
-
-      ' Serve a non generare un errore.
-      If frmLoad = True Then
-         procChiamanteCamere = True
-
-         If procChiamanteData = True Or procChiamantePrenotazioni = True Then
-            procChiamanteData = False
-            procChiamantePrenotazioni = False
-
+      Try
+         If dgvCamere.CurrentRow.Index >= dgvCamere.Rows.Count - 1 Then
             Exit Sub
          End If
 
-         ' Seleziona la riga camere corrispondende.
-         SelezionaRigaCamera(dgvCamere)
+         ' Serve a non generare un errore.
+         If frmLoad = True Then
+            procChiamanteCamere = True
 
-         ' Seleziona la riga camere corrispondende.
-         dgvPrenotazioni.Rows(dgvCamere.CurrentRow.Index).Cells(dtpDataPlanning.Value.GetValueOrDefault.ToShortDateString).Selected = True
+            If procChiamanteData = True Or procChiamantePrenotazioni = True Then
+               procChiamanteData = False
+               procChiamantePrenotazioni = False
 
-         procChiamanteData = False
-         procChiamantePrenotazioni = False
-      End If
+               Exit Sub
+            End If
 
+            ' Seleziona la riga camere corrispondende.
+            SelezionaRigaCamera(dgvCamere)
+
+            ' Seleziona la riga camere corrispondende.
+            dgvPrenotazioni.Rows(dgvCamere.CurrentRow.Index).Cells(dtpDataPlanning.Value.GetValueOrDefault.ToShortDateString).Selected = True
+
+            procChiamanteData = False
+            procChiamantePrenotazioni = False
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    Private Sub dgvPrenotazioni_CurrentCellChanged(sender As Object, e As EventArgs) Handles dgvPrenotazioni.CurrentCellChanged
-      If dgvPrenotazioni.CurrentRow.Index >= dgvPrenotazioni.Rows.Count - 1 Then
-         Exit Sub
-      End If
-
-      ' Serve a non generare un errore.
-      If frmLoad = True Then
-         procChiamantePrenotazioni = True
-
-         If procChiamanteData = True Or procChiamanteCamere = True Then
-            procChiamanteData = False
-            procChiamanteCamere = False
-
+      Try
+         If dgvPrenotazioni.CurrentRow.Index >= dgvPrenotazioni.Rows.Count - 1 Then
             Exit Sub
          End If
 
-         ' Seleziona il giorno del calendario.
-         SelezionaGiorno()
+         ' Serve a non generare un errore.
+         If frmLoad = True Then
+            procChiamantePrenotazioni = True
 
-         ' Seleziona la riga camere corrispondende.
-         SelezionaRigaCamera(dgvPrenotazioni)
+            If procChiamanteData = True Or procChiamanteCamere = True Then
+               procChiamanteData = False
+               procChiamanteCamere = False
 
-         ' Seleziona la riga camere corrispondende.
-         dgvCamere.Rows(dgvPrenotazioni.CurrentRow.Index).Cells("Numero").Selected = True
+               Exit Sub
+            End If
 
-         procChiamanteData = False
-         procChiamanteCamere = False
-      End If
+            ' Seleziona il giorno del calendario.
+            SelezionaGiorno()
+
+            ' Seleziona la riga camere corrispondende.
+            SelezionaRigaCamera(dgvPrenotazioni)
+
+            ' Seleziona la riga camere corrispondende.
+            dgvCamere.Rows(dgvPrenotazioni.CurrentRow.Index).Cells("Numero").Selected = True
+
+            procChiamanteData = False
+            procChiamanteCamere = False
+         End If
+
+      Catch ex As NullReferenceException
+         Exit Sub
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
 
    End Sub
 
@@ -1549,6 +1576,5 @@ Public Class PlanningCamere
       End Try
 
    End Sub
-
 
 End Class
