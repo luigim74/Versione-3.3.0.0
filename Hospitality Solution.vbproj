@@ -212,6 +212,7 @@
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
@@ -421,6 +422,12 @@
       <DependentUpon>ReportViewer.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\Form\Hospitality\ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\StoricoPresenze.Designer.vb">
+      <DependentUpon>StoricoPresenze.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\StoricoPresenze.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Ristorante\AddebitaContoPos.vb">
@@ -981,6 +988,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\PrenCamera.resx">
       <DependentUpon>PrenCamera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\StoricoPresenze.resx">
+      <DependentUpon>StoricoPresenze.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\Articoli.resx">
       <DependentUpon>Articoli.vb</DependentUpon>

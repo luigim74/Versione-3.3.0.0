@@ -5,8 +5,8 @@ Public Class PlanningCamere
    Const NOME_TABELLA As String = "Camere"
    Const TAB_PRENOTAZIONI As String = "PrenCamere"
    Const ALTEZZA_PRENOTAZIONE As Short = 30
-   Const ALTEZZA_CELLA As Short = 32
-   Const LARGHEZZA_CELLA As Short = 40
+   Public Const ALTEZZA_CELLA As Short = 32
+   Public Const LARGHEZZA_CELLA As Short = 40
    Const LARGHEZZA_GRIGLIA_CAMERE As Short = 336
    Const LARGHEZZA_GRIGLIA_PRENOTAZIONI As Short = 14680
 
@@ -46,8 +46,8 @@ Public Class PlanningCamere
 
       ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
 
-      ' A_TODO: HOTEL - da modificare!
-      ReDim Prenotazioni(100)
+      ' Ridimensiona la variabile Prenotazioni con il numero di prenotazioni esistenti.
+      ReDim Prenotazioni(LeggiNumRecord(TAB_PRENOTAZIONI, cn, cmd) + 100)
 
    End Sub
 

@@ -741,6 +741,9 @@ Public Class frmDocumento
             ' NOTE.
             eui_txtNote.Text = .Note
 
+            ' Aggiorna la Barra di stato.
+            eui_lblStatoNumeroDoc.Text = eui_txtNumero.Text & "/" & eui_txtAnno.Text
+
             ' Verifica se il documento è stato contabilizzato disattivando i controlli per la modifica..
             DisattivaDocumento(.Stato)
 
@@ -2722,6 +2725,17 @@ Public Class frmDocumento
       End Try
    End Sub
 
+   Private Sub eui_txtAnno_TextChanged(sender As Object, e As EventArgs) Handles eui_txtAnno.TextChanged
+      Try
+         eui_lblStatoNumeroDoc.Text = eui_txtNumero.Text & "/" & eui_txtAnno.Text
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub eui_dtpData_ValueChanged(sender As Object, e As EventArgs) Handles eui_dtpData.ValueChanged
       Try
          eui_lblStatoDataDoc.Text = eui_dtpData.Value.GetValueOrDefault.ToShortDateString
@@ -3246,5 +3260,6 @@ Public Class frmDocumento
 
       End Try
    End Sub
+
 
 End Class
