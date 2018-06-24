@@ -852,6 +852,7 @@ Public Class frmDocumento
       Dim QTA As Integer = 1
 
       Try
+
          cn.Open()
 
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE RifDoc = " & id & " ORDER BY Id ASC", cn)

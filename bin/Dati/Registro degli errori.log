@@ -323,3 +323,20 @@ Nome parametro: columnName"
 "- NOME PROCEDURA:    in Hospitality_Solution.StoricoPresenze.StoricoPresenze_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 11"
 "
 "
+"*** 24/06/2018 - 17:18:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 12654"
+"
+"
+"*** 24/06/2018 - 17:19:20 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.StoricoPresenze.StoricoPresenze_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 12"
+"
+"
