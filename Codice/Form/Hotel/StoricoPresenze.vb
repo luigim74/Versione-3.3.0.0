@@ -131,13 +131,76 @@ Public Class StoricoPresenze
       End Try
    End Sub
 
+   Private Sub CaricaAnniPresenze()
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim annoTrovato As Boolean
+
+      Try
+         ' Pulisce la lista da eventuali anni.
+         eui_cmbAnno.Items.Clear()
+
+         ' Inserisce nella lista l'anno corrente.
+         eui_cmbAnno.Items.Add(Today.Year.ToString)
+
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_STRORICO_PRESENZE_CAMERE & " ORDER BY DataArrivo ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' Data Arrivo.
+            Dim dataArrivo As Date
+            If IsDBNull(dr.Item("DataArrivo")) = False Then
+               dataArrivo = Convert.ToDateTime(dr.Item("DataArrivo"))
+            Else
+               dataArrivo = Nothing
+            End If
+
+            Dim i As Integer
+            For i = 0 To eui_cmbAnno.Items.Count - 1
+
+               If dataArrivo.Year.ToString = eui_cmbAnno.Items(i).ToString Then
+                  annoTrovato = True
+                  Exit For
+               End If
+            Next
+
+            ' Se l'anno non è stato trovato nella lista lo inserisce.
+            If annoTrovato = False Then
+               eui_cmbAnno.Items.Add(dataArrivo.Year.ToString)
+            End If
+
+            annoTrovato = False
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+
    Private Sub StoricoPresenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona del prodotto.
          ImpostaIcona(Me)
 
+         ' Carica l'elenco degli anni in cui ci sono state presenze.
+         CaricaAnniPresenze()
+
+         ' Seleziona l'anno corrente.
+         eui_cmbAnno.SelectedItem = Today.Year.ToString
+
          ' Carica i dati nella griglia.
          LeggiStoricoPresenzeCamere()
+
+         dgvDettagli.Focus()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

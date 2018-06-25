@@ -22,38 +22,38 @@ Partial Class StoricoPresenze
    'Non modificarla mediante l'editor del codice.
    <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
-      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-      Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-      Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+      Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+      Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+      Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StoricoPresenze))
-      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_tpcPresenze = New Elegant.Ui.TabControl()
-      Me.TabPage1 = New Elegant.Ui.TabPage()
-      Me.TextBox1 = New Elegant.Ui.TextBox()
+      Me.tpElenco = New Elegant.Ui.TabPage()
+      Me.eui_txtTotalePresenze = New Elegant.Ui.TextBox()
       Me.Label2 = New Elegant.Ui.Label()
-      Me.eui_txtTotaleDocumento = New Elegant.Ui.TextBox()
+      Me.eui_txtTotaleOccupazione = New Elegant.Ui.TextBox()
       Me.Label18 = New Elegant.Ui.Label()
       Me.dgvDettagli = New System.Windows.Forms.DataGridView()
-      Me.TabPage2 = New Elegant.Ui.TabPage()
-      Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-      Me.Label1 = New Elegant.Ui.Label()
-      Me.eui_cmbTipoDocumento = New Elegant.Ui.ComboBox()
-      Me.eui_cmdStampa = New Elegant.Ui.Button()
-      Me.eui_cmdAnnulla = New Elegant.Ui.Button()
-      Me.Label3 = New Elegant.Ui.Label()
-      Me.ComboBox1 = New Elegant.Ui.ComboBox()
       Me.clnMese = New System.Windows.Forms.DataGridViewTextBoxColumn()
       Me.clnPresenze = New System.Windows.Forms.DataGridViewTextBoxColumn()
       Me.clnOccupazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.tpGrafico = New Elegant.Ui.TabPage()
+      Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+      Me.Label1 = New Elegant.Ui.Label()
+      Me.eui_cmbTipologia = New Elegant.Ui.ComboBox()
+      Me.eui_cmdStampa = New Elegant.Ui.Button()
+      Me.eui_cmdEsci = New Elegant.Ui.Button()
+      Me.Label3 = New Elegant.Ui.Label()
+      Me.eui_cmbAnno = New Elegant.Ui.ComboBox()
       CType(Me.eui_tpcPresenze, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage1.SuspendLayout()
+      Me.tpElenco.SuspendLayout()
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage2.SuspendLayout()
+      Me.tpGrafico.SuspendLayout()
       CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -72,205 +72,102 @@ Partial Class StoricoPresenze
       Me.eui_tpcPresenze.EqualTabWidth = True
       Me.eui_tpcPresenze.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcPresenze.Name = "eui_tpcPresenze"
-      Me.eui_tpcPresenze.SelectedTabPage = Me.TabPage1
-      Me.eui_tpcPresenze.Size = New System.Drawing.Size(525, 414)
+      Me.eui_tpcPresenze.SelectedTabPage = Me.tpElenco
+      Me.eui_tpcPresenze.Size = New System.Drawing.Size(532, 422)
       Me.eui_tpcPresenze.TabIndex = 1
-      Me.eui_tpcPresenze.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1, Me.TabPage2})
+      Me.eui_tpcPresenze.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpElenco, Me.tpGrafico})
       Me.eui_tpcPresenze.Text = " "
       '
-      'TabPage1
+      'tpElenco
       '
-      Me.TabPage1.ActiveControl = Nothing
-      Me.TabPage1.Controls.Add(Me.TextBox1)
-      Me.TabPage1.Controls.Add(Me.Label2)
-      Me.TabPage1.Controls.Add(Me.eui_txtTotaleDocumento)
-      Me.TabPage1.Controls.Add(Me.Label18)
-      Me.TabPage1.Controls.Add(Me.dgvDettagli)
-      Me.TabPage1.KeyTip = Nothing
-      Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(523, 393)
-      Me.TabPage1.TabIndex = 0
-      Me.TabPage1.Text = "Elenco"
+      Me.tpElenco.ActiveControl = Nothing
+      Me.tpElenco.Controls.Add(Me.eui_txtTotalePresenze)
+      Me.tpElenco.Controls.Add(Me.Label2)
+      Me.tpElenco.Controls.Add(Me.eui_txtTotaleOccupazione)
+      Me.tpElenco.Controls.Add(Me.Label18)
+      Me.tpElenco.Controls.Add(Me.dgvDettagli)
+      Me.tpElenco.KeyTip = Nothing
+      Me.tpElenco.Name = "tpElenco"
+      Me.tpElenco.Size = New System.Drawing.Size(530, 401)
+      Me.tpElenco.TabIndex = 0
+      Me.tpElenco.Text = "Elenco"
       '
-      'TextBox1
+      'eui_txtTotalePresenze
       '
-      Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.TextBox1.Id = "93e5be5f-7b2f-45ff-a3b6-f0e2c54977b0"
-      Me.TextBox1.Location = New System.Drawing.Point(103, 359)
-      Me.TextBox1.Name = "TextBox1"
-      Me.TextBox1.Size = New System.Drawing.Size(99, 21)
-      Me.TextBox1.TabIndex = 45
-      Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.TextBox1.TextEditorWidth = 93
+      Me.eui_txtTotalePresenze.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtTotalePresenze.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtTotalePresenze.Id = "93e5be5f-7b2f-45ff-a3b6-f0e2c54977b0"
+      Me.eui_txtTotalePresenze.Location = New System.Drawing.Point(110, 367)
+      Me.eui_txtTotalePresenze.Name = "eui_txtTotalePresenze"
+      Me.eui_txtTotalePresenze.Size = New System.Drawing.Size(99, 21)
+      Me.eui_txtTotalePresenze.TabIndex = 4
+      Me.eui_txtTotalePresenze.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.eui_txtTotalePresenze.TextEditorWidth = 93
       '
       'Label2
       '
       Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label2.Location = New System.Drawing.Point(15, 360)
+      Me.Label2.Location = New System.Drawing.Point(22, 368)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(79, 16)
-      Me.Label2.TabIndex = 46
+      Me.Label2.TabIndex = 3
       Me.Label2.Text = "Totale presenze:"
       '
-      'eui_txtTotaleDocumento
+      'eui_txtTotaleOccupazione
       '
-      Me.eui_txtTotaleDocumento.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtTotaleDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtTotaleDocumento.Id = "e683d444-c6d4-41ea-9bda-3901b401a822"
-      Me.eui_txtTotaleDocumento.Location = New System.Drawing.Point(418, 359)
-      Me.eui_txtTotaleDocumento.Name = "eui_txtTotaleDocumento"
-      Me.eui_txtTotaleDocumento.Size = New System.Drawing.Size(92, 21)
-      Me.eui_txtTotaleDocumento.TabIndex = 43
-      Me.eui_txtTotaleDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtTotaleDocumento.TextEditorWidth = 86
+      Me.eui_txtTotaleOccupazione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtTotaleOccupazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtTotaleOccupazione.Id = "e683d444-c6d4-41ea-9bda-3901b401a822"
+      Me.eui_txtTotaleOccupazione.Location = New System.Drawing.Point(425, 367)
+      Me.eui_txtTotaleOccupazione.Name = "eui_txtTotaleOccupazione"
+      Me.eui_txtTotaleOccupazione.Size = New System.Drawing.Size(92, 21)
+      Me.eui_txtTotaleOccupazione.TabIndex = 1
+      Me.eui_txtTotaleOccupazione.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.eui_txtTotaleOccupazione.TextEditorWidth = 86
       '
       'Label18
       '
       Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label18.Location = New System.Drawing.Point(238, 359)
+      Me.Label18.Location = New System.Drawing.Point(245, 367)
       Me.Label18.Name = "Label18"
       Me.Label18.Size = New System.Drawing.Size(167, 16)
-      Me.Label18.TabIndex = 44
+      Me.Label18.TabIndex = 0
       Me.Label18.Text = "Totale percentuale di occupazione:"
       '
       'dgvDettagli
       '
       Me.dgvDettagli.AllowUserToDeleteRows = False
-      DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-      Me.dgvDettagli.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+      Me.dgvDettagli.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
       Me.dgvDettagli.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dgvDettagli.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.dgvDettagli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
       Me.dgvDettagli.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clnMese, Me.clnPresenze, Me.clnOccupazione})
-      DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-      DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Orange
-      DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-      Me.dgvDettagli.DefaultCellStyle = DataGridViewCellStyle5
+      DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+      DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Orange
+      DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+      Me.dgvDettagli.DefaultCellStyle = DataGridViewCellStyle10
       Me.dgvDettagli.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
       Me.dgvDettagli.Location = New System.Drawing.Point(3, 3)
       Me.dgvDettagli.MultiSelect = False
       Me.dgvDettagli.Name = "dgvDettagli"
       Me.dgvDettagli.ReadOnly = True
       Me.dgvDettagli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-      Me.dgvDettagli.Size = New System.Drawing.Size(517, 341)
-      Me.dgvDettagli.TabIndex = 1
-      '
-      'TabPage2
-      '
-      Me.TabPage2.ActiveControl = Nothing
-      Me.TabPage2.Controls.Add(Me.Chart1)
-      Me.TabPage2.KeyTip = Nothing
-      Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(523, 393)
-      Me.TabPage2.TabIndex = 1
-      Me.TabPage2.Text = "Grafico"
-      '
-      'Chart1
-      '
-      Me.Chart1.BackColor = System.Drawing.SystemColors.AppWorkspace
-      ChartArea1.Name = "ChartArea1"
-      Me.Chart1.ChartAreas.Add(ChartArea1)
-      Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-      Legend1.Name = "Legend1"
-      Me.Chart1.Legends.Add(Legend1)
-      Me.Chart1.Location = New System.Drawing.Point(0, 0)
-      Me.Chart1.Name = "Chart1"
-      Series1.ChartArea = "ChartArea1"
-      Series1.Legend = "Legend1"
-      Series1.Name = "Series1"
-      Me.Chart1.Series.Add(Series1)
-      Me.Chart1.Size = New System.Drawing.Size(523, 393)
-      Me.Chart1.TabIndex = 0
-      Me.Chart1.Text = "Chart1"
-      '
-      'Label1
-      '
-      Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label1.Location = New System.Drawing.Point(546, 12)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(46, 16)
-      Me.Label1.TabIndex = 11
-      Me.Label1.Text = "Tipologia:"
-      '
-      'eui_cmbTipoDocumento
-      '
-      Me.eui_cmbTipoDocumento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbTipoDocumento.Editable = False
-      Me.eui_cmbTipoDocumento.FormattingEnabled = False
-      Me.eui_cmbTipoDocumento.Id = "e3bad87f-e4ea-4c52-87fc-b9ef1d206b88"
-      Me.eui_cmbTipoDocumento.Location = New System.Drawing.Point(546, 28)
-      Me.eui_cmbTipoDocumento.Name = "eui_cmbTipoDocumento"
-      Me.eui_cmbTipoDocumento.Size = New System.Drawing.Size(113, 21)
-      Me.eui_cmbTipoDocumento.Sorted = True
-      Me.eui_cmbTipoDocumento.TabIndex = 10
-      Me.eui_cmbTipoDocumento.TextEditorWidth = 94
-      '
-      'eui_cmdStampa
-      '
-      Me.eui_cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdStampa.Id = "63b7281d-2400-4a95-b56e-3706f3912fe3"
-      Me.eui_cmdStampa.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdStampa.Location = New System.Drawing.Point(546, 279)
-      Me.eui_cmdStampa.Name = "eui_cmdStampa"
-      Me.eui_cmdStampa.ScreenTip.Caption = "Stampa"
-      Me.eui_cmdStampa.ScreenTip.Text = "Salva e stampa il documento."
-      Me.eui_cmdStampa.Size = New System.Drawing.Size(114, 65)
-      Me.eui_cmdStampa.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdStampa.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdStampa.TabIndex = 12
-      Me.eui_cmdStampa.Text = "Stampa..."
-      Me.eui_cmdStampa.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      '
-      'eui_cmdAnnulla
-      '
-      Me.eui_cmdAnnulla.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.eui_cmdAnnulla.Id = "939bbe43-2558-40f8-9053-da695bc51ddd"
-      Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(546, 358)
-      Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
-      Me.eui_cmdAnnulla.ScreenTip.Caption = "Esci"
-      Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude il documento."
-      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(114, 65)
-      Me.eui_cmdAnnulla.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnnulla.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdAnnulla.TabIndex = 13
-      Me.eui_cmdAnnulla.Text = "Esci"
-      Me.eui_cmdAnnulla.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      '
-      'Label3
-      '
-      Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label3.Location = New System.Drawing.Point(546, 59)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(42, 16)
-      Me.Label3.TabIndex = 15
-      Me.Label3.Text = "Anno:"
-      '
-      'ComboBox1
-      '
-      Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.ComboBox1.Editable = False
-      Me.ComboBox1.FormattingEnabled = False
-      Me.ComboBox1.Id = "9a06333f-b42a-49f3-9cad-415d7360ffd5"
-      Me.ComboBox1.Location = New System.Drawing.Point(546, 75)
-      Me.ComboBox1.Name = "ComboBox1"
-      Me.ComboBox1.Size = New System.Drawing.Size(113, 21)
-      Me.ComboBox1.Sorted = True
-      Me.ComboBox1.TabIndex = 14
-      Me.ComboBox1.TextEditorWidth = 94
+      Me.dgvDettagli.Size = New System.Drawing.Size(524, 349)
+      Me.dgvDettagli.TabIndex = 0
       '
       'clnMese
       '
       Me.clnMese.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle2.NullValue = Nothing
-      Me.clnMese.DefaultCellStyle = DataGridViewCellStyle2
+      DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle7.NullValue = Nothing
+      Me.clnMese.DefaultCellStyle = DataGridViewCellStyle7
       Me.clnMese.HeaderText = "Mese"
       Me.clnMese.Name = "clnMese"
       Me.clnMese.ReadOnly = True
@@ -279,10 +176,10 @@ Partial Class StoricoPresenze
       '
       'clnPresenze
       '
-      DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-      DataGridViewCellStyle3.Format = "N0"
-      DataGridViewCellStyle3.NullValue = Nothing
-      Me.clnPresenze.DefaultCellStyle = DataGridViewCellStyle3
+      DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+      DataGridViewCellStyle8.Format = "N0"
+      DataGridViewCellStyle8.NullValue = Nothing
+      Me.clnPresenze.DefaultCellStyle = DataGridViewCellStyle8
       Me.clnPresenze.HeaderText = "Presenze"
       Me.clnPresenze.Name = "clnPresenze"
       Me.clnPresenze.ReadOnly = True
@@ -293,11 +190,11 @@ Partial Class StoricoPresenze
       '
       'clnOccupazione
       '
-      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-      DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red
-      DataGridViewCellStyle4.Format = "N2"
-      DataGridViewCellStyle4.NullValue = Nothing
-      Me.clnOccupazione.DefaultCellStyle = DataGridViewCellStyle4
+      DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+      DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red
+      DataGridViewCellStyle9.Format = "N2"
+      DataGridViewCellStyle9.NullValue = Nothing
+      Me.clnOccupazione.DefaultCellStyle = DataGridViewCellStyle9
       Me.clnOccupazione.HeaderText = "%  Occupazione"
       Me.clnOccupazione.Name = "clnOccupazione"
       Me.clnOccupazione.ReadOnly = True
@@ -305,27 +202,133 @@ Partial Class StoricoPresenze
       Me.clnOccupazione.ToolTipText = "Percentuale di occupazione"
       Me.clnOccupazione.Width = 120
       '
+      'tpGrafico
+      '
+      Me.tpGrafico.ActiveControl = Nothing
+      Me.tpGrafico.Controls.Add(Me.Chart1)
+      Me.tpGrafico.KeyTip = Nothing
+      Me.tpGrafico.Name = "tpGrafico"
+      Me.tpGrafico.Size = New System.Drawing.Size(530, 401)
+      Me.tpGrafico.TabIndex = 1
+      Me.tpGrafico.Text = "Grafico"
+      '
+      'Chart1
+      '
+      Me.Chart1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      ChartArea2.Name = "ChartArea1"
+      Me.Chart1.ChartAreas.Add(ChartArea2)
+      Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
+      Legend2.Name = "Legend1"
+      Me.Chart1.Legends.Add(Legend2)
+      Me.Chart1.Location = New System.Drawing.Point(0, 0)
+      Me.Chart1.Name = "Chart1"
+      Series2.ChartArea = "ChartArea1"
+      Series2.Legend = "Legend1"
+      Series2.Name = "Series1"
+      Me.Chart1.Series.Add(Series2)
+      Me.Chart1.Size = New System.Drawing.Size(530, 401)
+      Me.Chart1.TabIndex = 0
+      Me.Chart1.Text = "Chart1"
+      '
+      'Label1
+      '
+      Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label1.Location = New System.Drawing.Point(553, 12)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(46, 16)
+      Me.Label1.TabIndex = 11
+      Me.Label1.Text = "Tipologia:"
+      '
+      'eui_cmbTipologia
+      '
+      Me.eui_cmbTipologia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbTipologia.Editable = False
+      Me.eui_cmbTipologia.FormattingEnabled = False
+      Me.eui_cmbTipologia.Id = "e3bad87f-e4ea-4c52-87fc-b9ef1d206b88"
+      Me.eui_cmbTipologia.Items.AddRange(New Object() {"Hotel"})
+      Me.eui_cmbTipologia.Location = New System.Drawing.Point(553, 28)
+      Me.eui_cmbTipologia.Name = "eui_cmbTipologia"
+      Me.eui_cmbTipologia.Size = New System.Drawing.Size(113, 21)
+      Me.eui_cmbTipologia.Sorted = True
+      Me.eui_cmbTipologia.TabIndex = 0
+      Me.eui_cmbTipologia.Text = "Hotel"
+      Me.eui_cmbTipologia.TextEditorWidth = 94
+      '
+      'eui_cmdStampa
+      '
+      Me.eui_cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdStampa.Id = "63b7281d-2400-4a95-b56e-3706f3912fe3"
+      Me.eui_cmdStampa.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdStampa.Location = New System.Drawing.Point(553, 287)
+      Me.eui_cmdStampa.Name = "eui_cmdStampa"
+      Me.eui_cmdStampa.ScreenTip.Caption = "Stampa"
+      Me.eui_cmdStampa.ScreenTip.Text = "Salva e stampa il documento."
+      Me.eui_cmdStampa.Size = New System.Drawing.Size(114, 65)
+      Me.eui_cmdStampa.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdStampa.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdStampa.TabIndex = 2
+      Me.eui_cmdStampa.Text = "Stampa..."
+      Me.eui_cmdStampa.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      '
+      'eui_cmdEsci
+      '
+      Me.eui_cmdEsci.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.eui_cmdEsci.Id = "939bbe43-2558-40f8-9053-da695bc51ddd"
+      Me.eui_cmdEsci.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdEsci.Location = New System.Drawing.Point(553, 366)
+      Me.eui_cmdEsci.Name = "eui_cmdEsci"
+      Me.eui_cmdEsci.ScreenTip.Caption = "Esci"
+      Me.eui_cmdEsci.ScreenTip.Text = "Annula le modifiche e chiude il documento."
+      Me.eui_cmdEsci.Size = New System.Drawing.Size(114, 65)
+      Me.eui_cmdEsci.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnnulla.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdEsci.TabIndex = 3
+      Me.eui_cmdEsci.Text = "Esci"
+      Me.eui_cmdEsci.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      '
+      'Label3
+      '
+      Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label3.Location = New System.Drawing.Point(553, 59)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(42, 16)
+      Me.Label3.TabIndex = 15
+      Me.Label3.Text = "Anno:"
+      '
+      'eui_cmbAnno
+      '
+      Me.eui_cmbAnno.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbAnno.Editable = False
+      Me.eui_cmbAnno.FormattingEnabled = False
+      Me.eui_cmbAnno.Id = "9a06333f-b42a-49f3-9cad-415d7360ffd5"
+      Me.eui_cmbAnno.Location = New System.Drawing.Point(553, 75)
+      Me.eui_cmbAnno.Name = "eui_cmbAnno"
+      Me.eui_cmbAnno.Size = New System.Drawing.Size(113, 21)
+      Me.eui_cmbAnno.Sorted = True
+      Me.eui_cmbAnno.TabIndex = 1
+      Me.eui_cmbAnno.TextEditorWidth = 94
+      '
       'StoricoPresenze
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(669, 432)
+      Me.ClientSize = New System.Drawing.Size(676, 440)
       Me.Controls.Add(Me.Label3)
-      Me.Controls.Add(Me.ComboBox1)
-      Me.Controls.Add(Me.eui_cmdAnnulla)
+      Me.Controls.Add(Me.eui_cmbAnno)
+      Me.Controls.Add(Me.eui_cmdEsci)
       Me.Controls.Add(Me.eui_cmdStampa)
       Me.Controls.Add(Me.Label1)
-      Me.Controls.Add(Me.eui_cmbTipoDocumento)
+      Me.Controls.Add(Me.eui_cmbTipologia)
       Me.Controls.Add(Me.eui_tpcPresenze)
+      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.Name = "StoricoPresenze"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Storico Presenze"
       CType(Me.eui_tpcPresenze, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage1.ResumeLayout(False)
-      Me.TabPage1.PerformLayout()
+      Me.tpElenco.ResumeLayout(False)
+      Me.tpElenco.PerformLayout()
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage2.ResumeLayout(False)
+      Me.tpGrafico.ResumeLayout(False)
       CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
@@ -334,18 +337,18 @@ Partial Class StoricoPresenze
 
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents eui_tpcPresenze As Elegant.Ui.TabControl
-   Friend WithEvents TabPage1 As Elegant.Ui.TabPage
-   Friend WithEvents TabPage2 As Elegant.Ui.TabPage
+   Friend WithEvents tpElenco As Elegant.Ui.TabPage
+   Friend WithEvents tpGrafico As Elegant.Ui.TabPage
    Friend WithEvents Label1 As Elegant.Ui.Label
-   Friend WithEvents eui_cmbTipoDocumento As Elegant.Ui.ComboBox
+   Friend WithEvents eui_cmbTipologia As Elegant.Ui.ComboBox
    Friend WithEvents dgvDettagli As DataGridView
    Friend WithEvents eui_cmdStampa As Elegant.Ui.Button
-   Friend WithEvents eui_cmdAnnulla As Elegant.Ui.Button
+   Friend WithEvents eui_cmdEsci As Elegant.Ui.Button
    Friend WithEvents Label3 As Elegant.Ui.Label
-   Friend WithEvents ComboBox1 As Elegant.Ui.ComboBox
-   Friend WithEvents TextBox1 As Elegant.Ui.TextBox
+   Friend WithEvents eui_cmbAnno As Elegant.Ui.ComboBox
+   Friend WithEvents eui_txtTotalePresenze As Elegant.Ui.TextBox
    Friend WithEvents Label2 As Elegant.Ui.Label
-   Friend WithEvents eui_txtTotaleDocumento As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtTotaleOccupazione As Elegant.Ui.TextBox
    Friend WithEvents Label18 As Elegant.Ui.Label
    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 
