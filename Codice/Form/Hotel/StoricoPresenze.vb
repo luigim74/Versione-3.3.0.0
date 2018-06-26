@@ -7,15 +7,21 @@
 Public Class StoricoPresenze
 
    Const TAB_STRORICO_PRESENZE_CAMERE As String = "StoricoPresenzeCamere"
+   Private CFormatta As New ClsFormatta
 
    Private Sub LeggiStoricoPresenzeCamere()
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim Mese(11) As String
+      Dim numGiorniMese(11) As Integer
       Dim totalePersoneCamera As Integer
       Dim totalePersoneMese As Integer
+      Dim totaleOccupazione As Double
+      Dim numCamere As Integer
+      Dim numTotalePosti As Integer
 
       Try
+         ' Assegna i mesi alla matrice.
          Mese(0) = "Gennaio"
          Mese(1) = "Febbraio"
          Mese(2) = "Marzo"
@@ -28,6 +34,23 @@ Public Class StoricoPresenze
          Mese(9) = "Ottobre"
          Mese(10) = "Novembre"
          Mese(11) = "Dicembre"
+
+         ' Assegna il numero di giorni per ogni mese alla matrice.
+         numGiorniMese(0) = "31"
+         numGiorniMese(1) = "28"
+         numGiorniMese(2) = "31"
+         numGiorniMese(3) = "30"
+         numGiorniMese(4) = "31"
+         numGiorniMese(5) = "30"
+         numGiorniMese(6) = "31"
+         numGiorniMese(7) = "31"
+         numGiorniMese(8) = "30"
+         numGiorniMese(9) = "31"
+         numGiorniMese(10) = "30"
+         numGiorniMese(11) = "31"
+
+         ' Legge il numero totale di camere.
+         numCamere = LeggiNumCamere()
 
          cn.Open()
 
@@ -71,32 +94,26 @@ Public Class StoricoPresenze
                   numRagazzi = 0
                End If
 
-               '' Data Arrivo.
-               'If IsDBNull(dr.Item("DataArrivo")) = False Then
-               '   dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = dr.Item("DataArrivo")
-               'Else
-               '   dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = VALORE_ZERO
-               'End If
-
-               '' Sconto %.
-               'If IsDBNull(dr.Item("Sconto")) = False Then
-               '   dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = dr.Item("Sconto")
-               'Else
-               '   dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
-               'End If
-
-               '' Importo.
-               'If IsDBNull(dr.Item("ImportoNetto")) = False Then
-               '   dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = dr.Item("ImportoNetto")
-               'Else
-               '   dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
-               'End If
+               ' Numero notti.
+               Dim numNotti As Integer
+               If IsDBNull(dr.Item("NumeroNotti")) = False Then
+                  numNotti = Convert.ToInt32(dr.Item("NumeroNotti"))
+               Else
+                  numNotti = 0
+               End If
 
                ' Somma di tutti gli occupanti della camera.
-               totalePersoneCamera = numAdulti + numNeonati + numBambini + numRagazzi
+               totalePersoneCamera = (numAdulti + numNeonati + numBambini + numRagazzi) * numNotti
 
                ' Somma di tutti gli occupanti del mese.
                totalePersoneMese = totalePersoneMese + totalePersoneCamera
+
+               ' Calcola il numero totale di posti in un mese.
+               numTotalePosti = numCamere * numGiorniMese(i - 1)
+
+               ' Calcola la percentuale di occupazione in un mese.
+               totaleOccupazione = (totalePersoneMese / numTotalePosti) * 100
+
             Loop
 
             dgvDettagli.Focus()
@@ -110,15 +127,36 @@ Public Class StoricoPresenze
             ' Numero presenze.
             dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Value = totalePersoneMese.ToString
 
-            If totalePersoneMese > 10 Then
-               dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Style.ForeColor = Color.Red
+            ' Percentuale di occupazione.
+            If totaleOccupazione = 0 Then
+               dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Value = totaleOccupazione.ToString
+            Else
+               dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Value = CFormatta.FormattaNumeroDouble(totaleOccupazione)
             End If
 
-            ' Percentuale di occupazione.
-            dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Value = totalePersoneMese.ToString & ",00"
+            ' Assegna un colore in base ai valori.
+            Select Case totaleOccupazione
+               Case = 0
+                  dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Style.ForeColor = Color.Black
+                  dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Style.ForeColor = Color.Black
 
+               Case < 50
+                  dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Style.ForeColor = Color.Red
+                  dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Style.ForeColor = Color.Red
+
+               Case > 50
+                  dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Style.ForeColor = Color.Blue
+                  dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Style.ForeColor = Color.Blue
+
+               Case = 100
+                  dgvDettagli.CurrentRow.Cells(clnPresenze.Name).Style.ForeColor = Color.Green
+                  dgvDettagli.CurrentRow.Cells(clnOccupazione.Name).Style.ForeColor = Color.Green
+
+            End Select
+
+            ' Ripristina le variabili.
             totalePersoneMese = 0
-
+            totaleOccupazione = 0
          Next
 
       Catch ex As Exception
@@ -185,6 +223,79 @@ Public Class StoricoPresenze
       End Try
    End Sub
 
+   Private Sub CalcolaTotalePresenze()
+      Try
+         ' Importo.
+         Dim numPresenze As Integer
+
+         Dim i As Integer
+         For i = 0 To dgvDettagli.Rows.Count - 1
+            ' Somma tutte le presenze delle righe della griglia.
+            numPresenze = (numPresenze + Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnPresenze.Name).Value))
+         Next
+
+         ' Aggiorna i totali.
+         eui_txtTotalePresenze.Text = numPresenze.ToString
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CalcolaTotaleOccupazione()
+      Try
+         ' Importo.
+         Dim percOccupazione As Double
+
+         Dim i As Integer
+         For i = 0 To dgvDettagli.Rows.Count - 1
+            ' Somma tutte le presenze delle righe della griglia.
+            percOccupazione = (percOccupazione + Convert.ToDouble(dgvDettagli.Rows(i).Cells(clnOccupazione.Name).Value))
+         Next
+
+         ' Aggiorna i totali.
+         eui_txtTotaleOccupazione.Text = percOccupazione.ToString
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Function LeggiNumCamere() As Integer
+      Dim cn As New OleDbConnection(ConnString)
+      Dim sql As String
+      Dim cmd As New OleDbCommand(sql, cn)
+
+      Dim closeOnExit As Boolean
+      Dim numRec As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene il numero di record.
+         cmd.CommandText = "SELECT COUNT(*) FROM Camere"
+         numRec = CInt(cmd.ExecuteScalar())
+
+         Return numRec
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
 
    Private Sub StoricoPresenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
@@ -199,6 +310,12 @@ Public Class StoricoPresenze
 
          ' Carica i dati nella griglia.
          LeggiStoricoPresenzeCamere()
+
+         ' Somma tutti i valori della colonna Presenze.
+         CalcolaTotalePresenze()
+
+         ' SommaColonna tutti i valori della colonna % Occupazione.
+         CalcolaTotaleOccupazione()
 
          dgvDettagli.Focus()
 
