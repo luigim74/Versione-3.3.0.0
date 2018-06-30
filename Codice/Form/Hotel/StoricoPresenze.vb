@@ -9,7 +9,7 @@ Public Class StoricoPresenze
    Const TAB_STRORICO_PRESENZE_CAMERE As String = "StoricoPresenzeCamere"
    Private CFormatta As New ClsFormatta
 
-   Private Sub LeggiStoricoPresenzeCamere()
+   Private Sub LeggiStoricoPresenzeCamere(ByVal anno As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim Mese(11) As String
@@ -52,12 +52,16 @@ Public Class StoricoPresenze
          ' Legge il numero totale di camere.
          numCamere = LeggiNumCamere()
 
+         ' Restituisce il focus alla griglia e cancella eventuali valori.
+         dgvDettagli.Focus()
+         dgvDettagli.Rows.Clear()
+
          cn.Open()
 
          Dim i As Integer
          For i = 1 To 12
 
-            Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_STRORICO_PRESENZE_CAMERE & " WHERE Mese = " & i & " ORDER BY Id ASC", cn)
+            Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_STRORICO_PRESENZE_CAMERE & " WHERE Mese = " & i & "AND Anno = " & anno & " ORDER BY Id ASC", cn)
             Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
             Do While dr.Read()
@@ -189,17 +193,17 @@ Public Class StoricoPresenze
          Do While dr.Read()
 
             ' Data Arrivo.
-            Dim dataArrivo As Date
-            If IsDBNull(dr.Item("DataArrivo")) = False Then
-               dataArrivo = Convert.ToDateTime(dr.Item("DataArrivo"))
+            Dim anno As String
+            If IsDBNull(dr.Item("Anno")) = False Then
+               anno = dr.Item("Anno")
             Else
-               dataArrivo = Nothing
+               anno = String.Empty
             End If
 
             Dim i As Integer
             For i = 0 To eui_cmbAnno.Items.Count - 1
 
-               If dataArrivo.Year.ToString = eui_cmbAnno.Items(i).ToString Then
+               If anno = eui_cmbAnno.Items(i).ToString Then
                   annoTrovato = True
                   Exit For
                End If
@@ -207,7 +211,7 @@ Public Class StoricoPresenze
 
             ' Se l'anno non è stato trovato nella lista lo inserisce.
             If annoTrovato = False Then
-               eui_cmbAnno.Items.Add(dataArrivo.Year.ToString)
+               eui_cmbAnno.Items.Add(anno)
             End If
 
             annoTrovato = False
@@ -299,6 +303,7 @@ Public Class StoricoPresenze
 
    Private Sub StoricoPresenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
+
          ' Imposta l'icona del prodotto.
          ImpostaIcona(Me)
 
@@ -309,7 +314,7 @@ Public Class StoricoPresenze
          eui_cmbAnno.SelectedItem = Today.Year.ToString
 
          ' Carica i dati nella griglia.
-         LeggiStoricoPresenzeCamere()
+         LeggiStoricoPresenzeCamere(eui_cmbAnno.SelectedItem.ToString)
 
          ' Somma tutti i valori della colonna Presenze.
          CalcolaTotalePresenze()
@@ -317,6 +322,44 @@ Public Class StoricoPresenze
          ' SommaColonna tutti i valori della colonna % Occupazione.
          CalcolaTotaleOccupazione()
 
+         ' Restituisce il focus alla griglia.
+         dgvDettagli.Focus()
+
+         chartPresenze.Series.Item("Serie1").Points.Item(0).YValues.SetValue(300, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(0).Label = "300"
+
+         chartPresenze.Series.Item("Serie1").Points.Item(1).YValues.SetValue(500, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(2).YValues.SetValue(250, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(3).YValues.SetValue(100, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(4).YValues.SetValue(50, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(5).YValues.SetValue(900, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(6).YValues.SetValue(1000, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(7).YValues.SetValue(690, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(8).YValues.SetValue(400, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(9).YValues.SetValue(300, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(10).YValues.SetValue(120, 0)
+         chartPresenze.Series.Item("Serie1").Points.Item(11).YValues.SetValue(300, 0)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Private Sub eui_cmbAnno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbAnno.SelectedIndexChanged
+      Try
+         ' Carica i dati nella griglia.
+         LeggiStoricoPresenzeCamere(eui_cmbAnno.SelectedItem.ToString)
+
+         ' Somma tutti i valori della colonna Presenze.
+         CalcolaTotalePresenze()
+
+         ' SommaColonna tutti i valori della colonna % Occupazione.
+         CalcolaTotaleOccupazione()
+
+         ' Restituisce il focus alla griglia.
          dgvDettagli.Focus()
 
       Catch ex As Exception

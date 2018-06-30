@@ -278,6 +278,7 @@
     <Compile Include="Codice\Classi\ImpostazioniTavoliPOS.vb" />
     <Compile Include="Codice\Classi\MSolution.vb" />
     <Compile Include="Codice\Classi\AccessoriServizi.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeCamere.vb" />
     <Compile Include="Codice\Classi\StatoPiattiSQLite.vb" />
     <Compile Include="Codice\Classi\StatoComandeSQLite.vb" />
     <Compile Include="Codice\Classi\StatoTavoliSQLite.vb" />
