@@ -1,19 +1,21 @@
 ﻿' Nome form:            StoricoPresenze.
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       24/06/2018
-' Data ultima modifica: 24/06/2018
+' Data ultima modifica: 07/07/2018
 ' Descrizione:          Visualizza l'elenco storico delle presenze delle camere divise per mese, con grafico.
+
+Imports Elegant.Ui
 
 Public Class StoricoPresenze
 
    Const TAB_STRORICO_PRESENZE_CAMERE As String = "StoricoPresenzeCamere"
    Private CFormatta As New ClsFormatta
+   Dim Mese(11) As String
+   Dim numGiorniMese(11) As Integer
 
    Private Sub LeggiStoricoPresenzeCamere(ByVal anno As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
-      Dim Mese(11) As String
-      Dim numGiorniMese(11) As Integer
       Dim totalePersoneCamera As Integer
       Dim totalePersoneMese As Integer
       Dim totaleOccupazione As Double
@@ -229,7 +231,7 @@ Public Class StoricoPresenze
 
    Private Sub CalcolaTotalePresenze()
       Try
-         ' Importo.
+         ' Numero presenze..
          Dim numPresenze As Integer
 
          Dim i As Integer
@@ -301,9 +303,30 @@ Public Class StoricoPresenze
       End Try
    End Function
 
+   Private Sub GeneraGrafico()
+      Try
+         ' Elimina tutti gli eventuali punti della serie.
+         chartPresenze.Series.Item("Series1").Points.Clear()
+
+         ' Genera i dati dei mesi.
+         Dim i As Integer
+         For i = 0 To 11
+            ' Nome del mese.
+            chartPresenze.Series.Item("Series1").Points.Add(Convert.ToInt32(dgvDettagli.Rows.Item(i).Cells.Item(1).Value), 0).AxisLabel = Mese(i)
+
+            ' Numero presenze.
+            chartPresenze.Series.Item("Series1").Points.Item(i).YValues.SetValue(Convert.ToInt32(dgvDettagli.Rows.Item(i).Cells.Item(1).Value), 0)
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub StoricoPresenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
-
          ' Imposta l'icona del prodotto.
          ImpostaIcona(Me)
 
@@ -325,20 +348,8 @@ Public Class StoricoPresenze
          ' Restituisce il focus alla griglia.
          dgvDettagli.Focus()
 
-         chartPresenze.Series.Item("Serie1").Points.Item(0).YValues.SetValue(300, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(0).Label = "300"
-
-         chartPresenze.Series.Item("Serie1").Points.Item(1).YValues.SetValue(500, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(2).YValues.SetValue(250, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(3).YValues.SetValue(100, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(4).YValues.SetValue(50, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(5).YValues.SetValue(900, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(6).YValues.SetValue(1000, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(7).YValues.SetValue(690, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(8).YValues.SetValue(400, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(9).YValues.SetValue(300, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(10).YValues.SetValue(120, 0)
-         chartPresenze.Series.Item("Serie1").Points.Item(11).YValues.SetValue(300, 0)
+         ' Crea il grafico con i dati della griglia.
+         GeneraGrafico()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -362,6 +373,9 @@ Public Class StoricoPresenze
          ' Restituisce il focus alla griglia.
          dgvDettagli.Focus()
 
+         ' Crea il grafico con i dati della griglia.
+         GeneraGrafico()
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -369,4 +383,5 @@ Public Class StoricoPresenze
       End Try
 
    End Sub
+
 End Class
