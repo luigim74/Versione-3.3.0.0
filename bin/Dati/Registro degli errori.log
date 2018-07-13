@@ -467,3 +467,23 @@ Nome parametro: index"
    in Hospitality_Solution.StoricoPresenze.GeneraGrafico() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 308"
 "
 "
+"*** 13/07/2018 - 15:42:55 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\binImmagini\Hospitality.ico'."
+"- NOME PROCEDURA:    in System.Net.FileWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   in System.Net.FileWebRequest.GetResponse()
+   in iTextSharp.text.Image.GetInstance(Uri url, Boolean recoverFromImageError) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 374
+   in iTextSharp.text.Image.GetInstance(Uri url) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 360
+   in iTextSharp.text.Image.GetInstance(String filename) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 778
+   in Hospitality_Solution.GeneraPdf.GeneraFilePDF() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\GeneraPdf.vb:riga 42
+   in Hospitality_Solution.frmMain.eui_Strumenti_Esporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11354"
+"
+"
+"*** 13/07/2018 - 15:44:32 ***"
+"- DESCRIZIONE ERRORE: file:///D:/Montana Software - Progetti/Hospitality Solution/Versione 3.3.0.0/bin/Immagini/Hospitality.ico is not a recognized imageformat."
+"- NOME PROCEDURA:    in iTextSharp.text.Image.GetInstance(Uri url, Boolean recoverFromImageError) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 459
+   in iTextSharp.text.Image.GetInstance(Uri url) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 360
+   in iTextSharp.text.Image.GetInstance(String filename) in C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\iTextSharp\text\Image.cs:riga 778
+   in Hospitality_Solution.GeneraPdf.GeneraFilePDF() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\GeneraPdf.vb:riga 42
+   in Hospitality_Solution.frmMain.eui_Strumenti_Esporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11354"
+"
+"
