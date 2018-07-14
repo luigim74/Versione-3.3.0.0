@@ -33,6 +33,7 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_COSTO_CAMERA As Short = 18
    Public Const COLONNA_TASSA_SOGGIORNO As Short = 19
    Public Const COLONNA_TIPO_PAGAMENTO As Short = 20
+   Public Const COLONNA_ID_CLIENTE As Short = 21
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -1452,7 +1453,7 @@ Public Class ElencoPrenCamere
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
 
-         ' Id - Codice
+         ' 0 - Id 
          Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          codiceStyle.MappingName = "Id"
          codiceStyle.HeaderText = "Codice"
@@ -1461,7 +1462,7 @@ Public Class ElencoPrenCamere
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Numero
+         ' 1 - Numero
          Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          numeroStyle.MappingName = "Numero"
          numeroStyle.HeaderText = "Numero"
@@ -1470,7 +1471,7 @@ Public Class ElencoPrenCamere
          numeroStyle.Alignment = HorizontalAlignment.Right
          numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(numeroStyle)
-         'Data
+         ' 2 - Data
          Dim dataStyle As New DataGridTextBoxColumn
          dataStyle.MappingName = "Data"
          dataStyle.HeaderText = "Data"
@@ -1478,7 +1479,7 @@ Public Class ElencoPrenCamere
          dataStyle.NullText = ""
          dataStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataStyle)
-         ' Ragione Sociale / Cognome
+         ' 3 - Ragione Sociale / Cognome
          Dim intestatariostyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          intestatariostyle.MappingName = "Cognome"
          intestatariostyle.HeaderText = "Rag. Soc. / Cognome"
@@ -1486,7 +1487,7 @@ Public Class ElencoPrenCamere
          intestatariostyle.NullText = ""
          intestatariostyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(intestatariostyle)
-         ' Nome
+         ' 4 - Nome
          Dim nomestyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          nomestyle.MappingName = "Nome"
          nomestyle.HeaderText = "Nome"
@@ -1494,7 +1495,7 @@ Public Class ElencoPrenCamere
          nomestyle.NullText = ""
          nomestyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(nomestyle)
-         ' Data arrivo
+         ' 5 - Data arrivo
          Dim dataArrivoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          dataArrivoStyle.MappingName = "DataArrivo"
          dataArrivoStyle.HeaderText = "Data di arrivo"
@@ -1502,7 +1503,7 @@ Public Class ElencoPrenCamere
          dataArrivoStyle.NullText = ""
          dataArrivoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataArrivoStyle)
-         ' Data partenza
+         ' 6 - Data partenza
          Dim dataPartenzaStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Green)
          dataPartenzaStyle.MappingName = "DataPartenza"
          dataPartenzaStyle.HeaderText = "Data di partenza"
@@ -1510,7 +1511,7 @@ Public Class ElencoPrenCamere
          dataPartenzaStyle.NullText = ""
          dataPartenzaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataPartenzaStyle)
-         ' Numero notti.
+         ' 7 - Numero notti.
          Dim nottiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          nottiStyle.MappingName = "NumeroNotti"
          nottiStyle.HeaderText = "Notti"
@@ -1519,7 +1520,7 @@ Public Class ElencoPrenCamere
          nottiStyle.Alignment = HorizontalAlignment.Right
          nottiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(nottiStyle)
-         ' Adulti.
+         ' 8 - Adulti.
          Dim adultiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          adultiStyle.MappingName = "Adulti"
          adultiStyle.HeaderText = "Adulti"
@@ -1528,7 +1529,7 @@ Public Class ElencoPrenCamere
          adultiStyle.Alignment = HorizontalAlignment.Right
          adultiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(adultiStyle)
-         ' Neonati.
+         ' 9 - Neonati.
          Dim neonatiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          neonatiStyle.MappingName = "Neonati"
          neonatiStyle.HeaderText = "Neonati"
@@ -1537,7 +1538,7 @@ Public Class ElencoPrenCamere
          neonatiStyle.Alignment = HorizontalAlignment.Right
          neonatiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(neonatiStyle)
-         ' Bambini.
+         ' 10 - Bambini.
          Dim bambiniStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          bambiniStyle.MappingName = "Bambini"
          bambiniStyle.HeaderText = "Bambini"
@@ -1546,7 +1547,7 @@ Public Class ElencoPrenCamere
          bambiniStyle.Alignment = HorizontalAlignment.Right
          bambiniStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(bambiniStyle)
-         ' Ragazzi.
+         ' 11 - Ragazzi.
          Dim ragazziStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          ragazziStyle.MappingName = "Ragazzi"
          ragazziStyle.HeaderText = "Ragazzi"
@@ -1555,7 +1556,7 @@ Public Class ElencoPrenCamere
          ragazziStyle.Alignment = HorizontalAlignment.Right
          ragazziStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(ragazziStyle)
-         ' Numero camera.
+         ' 12 - Numero camera.
          Dim numCameraStyle As New DataGridTextBoxColumn
          numCameraStyle.MappingName = "NumeroCamera"
          numCameraStyle.HeaderText = "Camera"
@@ -1563,7 +1564,7 @@ Public Class ElencoPrenCamere
          numCameraStyle.NullText = ""
          numCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(numCameraStyle)
-         ' Arrangiamento.
+         ' 13 - Arrangiamento.
          Dim trattamentoPagStyle As New DataGridTextBoxColumn
          trattamentoPagStyle.MappingName = "Trattamento"
          trattamentoPagStyle.HeaderText = "Arrangiamento"
@@ -1571,7 +1572,7 @@ Public Class ElencoPrenCamere
          trattamentoPagStyle.NullText = ""
          trattamentoPagStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(trattamentoPagStyle)
-         ' Acconto.
+         ' 14 - Acconto.
          Dim accontoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          accontoStyle.MappingName = "AccontoCamera"
          accontoStyle.HeaderText = "Acconto"
@@ -1581,7 +1582,7 @@ Public Class ElencoPrenCamere
          accontoStyle.Alignment = HorizontalAlignment.Right
          accontoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(accontoStyle)
-         ' Totale conto
+         ' 15 - Totale conto
          Dim totContoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          totContoStyle.MappingName = "TotaleConto"
          totContoStyle.HeaderText = "Totale conto"
@@ -1591,7 +1592,7 @@ Public Class ElencoPrenCamere
          totContoStyle.Alignment = HorizontalAlignment.Right
          totContoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(totContoStyle)
-         ' Stato.
+         ' 16 - Stato.
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "Stato"
          statoStyle.HeaderText = "Stato prenotazione"
@@ -1599,7 +1600,7 @@ Public Class ElencoPrenCamere
          statoStyle.NullText = ""
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' Colore.
+         ' 17 - Colore.
          Dim coloreStyle As New CellaColorata(DataGrid1)
          coloreStyle.MappingName = "Colore"
          coloreStyle.HeaderText = "Colore"
@@ -1608,7 +1609,7 @@ Public Class ElencoPrenCamere
          coloreStyle.TextBox.BackColor = Color.White
          coloreStyle.TextBox.ForeColor = Color.White
          gridStyle.GridColumnStyles.Add(coloreStyle)
-         ' Costo camera.
+         ' 18 - Costo camera.
          Dim costoCameraStyle As New DataGridTextBoxColumn
          costoCameraStyle.MappingName = "CostoCamera"
          costoCameraStyle.HeaderText = "Costo"
@@ -1617,7 +1618,7 @@ Public Class ElencoPrenCamere
          costoCameraStyle.Format = "##,##0.00"
          costoCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(costoCameraStyle)
-         ' Tassa di soggiorno.
+         ' 19 - Tassa di soggiorno.
          Dim tassaSoggStyle As New DataGridTextBoxColumn
          tassaSoggStyle.MappingName = "TassaSoggiorno"
          tassaSoggStyle.HeaderText = "Tassa"
@@ -1626,7 +1627,7 @@ Public Class ElencoPrenCamere
          tassaSoggStyle.Format = "##,##0.00"
          tassaSoggStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tassaSoggStyle)
-         ' Tipo pagamento.
+         ' 20 - Tipo pagamento.
          Dim tipoPagStyle As New DataGridTextBoxColumn
          tipoPagStyle.MappingName = "Pagamento"
          tipoPagStyle.HeaderText = "Pagamento"
@@ -1634,7 +1635,14 @@ Public Class ElencoPrenCamere
          tipoPagStyle.NullText = ""
          tipoPagStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipoPagStyle)
-
+         ' 21 - Id Cliente.
+         Dim idClienteStyle As New DataGridTextBoxColumn
+         idClienteStyle.MappingName = "IdCliente"
+         idClienteStyle.HeaderText = "Codice Cliente"
+         idClienteStyle.Width = 0
+         idClienteStyle.NullText = ""
+         idClienteStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(idClienteStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)

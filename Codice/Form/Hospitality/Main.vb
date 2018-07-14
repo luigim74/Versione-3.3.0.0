@@ -590,6 +590,13 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Fattura = New Elegant.Ui.Button()
       Me.Separator23 = New Elegant.Ui.Separator()
       Me.eui_Strumenti_Documenti_Schedina = New Elegant.Ui.Button()
+      Me.RibbonGroup27 = New Elegant.Ui.RibbonGroup()
+      Me.eui_Strumenti_Documenti_Invia = New Elegant.Ui.Button()
+      Me.eui_Strumenti_Documenti_Esporta = New Elegant.Ui.DropDown()
+      Me.PopupMenu13 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdEsportaPdf = New Elegant.Ui.Button()
+      Me.Separator3 = New Elegant.Ui.Separator()
+      Me.eui_cmdEsportaHtml = New Elegant.Ui.Button()
       Me.eui_StrumentiSospesiBuoni = New Elegant.Ui.RibbonTabPage()
       Me.RibbonGroup20 = New Elegant.Ui.RibbonGroup()
       Me.eui_Strumenti_Sospesi_Filtra = New Elegant.Ui.ToggleButton()
@@ -828,13 +835,6 @@ Friend Class frmMain
       Me.RibbonTabPage2 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage1 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage4 = New Elegant.Ui.RibbonTabPage()
-      Me.RibbonGroup27 = New Elegant.Ui.RibbonGroup()
-      Me.eui_Strumenti_Documenti_Invia = New Elegant.Ui.Button()
-      Me.eui_Strumenti_Documenti_Esporta = New Elegant.Ui.DropDown()
-      Me.PopupMenu13 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.eui_cmdEsportaPdf = New Elegant.Ui.Button()
-      Me.Separator3 = New Elegant.Ui.Separator()
-      Me.eui_cmdEsportaHtml = New Elegant.Ui.Button()
       themeSelector = New Elegant.Ui.ThemeSelector(Me.components)
       CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -874,6 +874,9 @@ Friend Class frmMain
       Me.eui_StrumentiDocumenti.SuspendLayout()
       CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.RibbonGroup29.SuspendLayout()
+      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup27.SuspendLayout()
+      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.eui_StrumentiSospesiBuoni.SuspendLayout()
       CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -982,9 +985,6 @@ Friend Class frmMain
       CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup27.SuspendLayout()
-      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'picProg
@@ -1199,7 +1199,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1208, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1216, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -2261,11 +2261,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Nuovo.Id = "ec688adb-6632-4b6a-8e9f-93d7d0bbde7c"
       Me.eui_Strumenti_Nuovo.KeyTip = "N"
       Me.eui_Strumenti_Nuovo.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Nuovo.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Nuovo.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Nuovo.Location = New System.Drawing.Point(128, 2)
       Me.eui_Strumenti_Nuovo.Name = "eui_Strumenti_Nuovo"
       Me.eui_Strumenti_Nuovo.ScreenTip.Caption = "Nuovo"
       Me.eui_Strumenti_Nuovo.ScreenTip.Text = "Apre una finestra per l'inserimento di nuovi dati."
-      Me.eui_Strumenti_Nuovo.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Nuovo.Size = New System.Drawing.Size(41, 0)
       Me.eui_Strumenti_Nuovo.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Nuovo.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Nuovo.TabIndex = 0
       Me.eui_Strumenti_Nuovo.Text = "Nuovo"
@@ -2275,11 +2275,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Modifica.Id = "0f22e12b-43eb-415a-b344-bcb8d9dfaece"
       Me.eui_Strumenti_Modifica.KeyTip = "M"
       Me.eui_Strumenti_Modifica.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Modifica.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Modifica.Location = New System.Drawing.Point(48, 2)
+      Me.eui_Strumenti_Modifica.Location = New System.Drawing.Point(128, 2)
       Me.eui_Strumenti_Modifica.Name = "eui_Strumenti_Modifica"
       Me.eui_Strumenti_Modifica.ScreenTip.Caption = "Modifica"
       Me.eui_Strumenti_Modifica.ScreenTip.Text = "Apre una finestra per la modifica dei dati selezionati."
-      Me.eui_Strumenti_Modifica.Size = New System.Drawing.Size(51, 72)
+      Me.eui_Strumenti_Modifica.Size = New System.Drawing.Size(49, 0)
       Me.eui_Strumenti_Modifica.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Modifica.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Modifica.TabIndex = 3
       Me.eui_Strumenti_Modifica.Text = "Modifica"
@@ -2289,11 +2289,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Duplica.Id = "69f08b0a-99c0-49e0-8b87-545ae1ea299a"
       Me.eui_Strumenti_Duplica.KeyTip = "D"
       Me.eui_Strumenti_Duplica.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Duplica.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Duplica.Location = New System.Drawing.Point(101, 2)
+      Me.eui_Strumenti_Duplica.Location = New System.Drawing.Point(128, 2)
       Me.eui_Strumenti_Duplica.Name = "eui_Strumenti_Duplica"
       Me.eui_Strumenti_Duplica.ScreenTip.Caption = "Duplica"
       Me.eui_Strumenti_Duplica.ScreenTip.Text = "Duplica i dati selezionati."
-      Me.eui_Strumenti_Duplica.Size = New System.Drawing.Size(44, 72)
+      Me.eui_Strumenti_Duplica.Size = New System.Drawing.Size(45, 0)
       Me.eui_Strumenti_Duplica.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Duplica.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Duplica.TabIndex = 5
       Me.eui_Strumenti_Duplica.Text = "Duplica"
@@ -2303,11 +2303,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Elimina.Id = "5af7a3f4-dfc0-4ed3-8d5b-aa1ed1b0f8bf"
       Me.eui_Strumenti_Elimina.KeyTip = "E"
       Me.eui_Strumenti_Elimina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Elimina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Elimina.Location = New System.Drawing.Point(147, 2)
+      Me.eui_Strumenti_Elimina.Location = New System.Drawing.Point(128, 2)
       Me.eui_Strumenti_Elimina.Name = "eui_Strumenti_Elimina"
       Me.eui_Strumenti_Elimina.ScreenTip.Caption = "Elimina"
       Me.eui_Strumenti_Elimina.ScreenTip.Text = "Elimina i dati selezionati."
-      Me.eui_Strumenti_Elimina.Size = New System.Drawing.Size(43, 72)
+      Me.eui_Strumenti_Elimina.Size = New System.Drawing.Size(42, 0)
       Me.eui_Strumenti_Elimina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Elimina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Elimina.TabIndex = 1
       Me.eui_Strumenti_Elimina.Text = "Elimina"
@@ -2317,11 +2317,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Annulla.Id = "a2230725-5509-4355-846f-0126ee6faaf5"
       Me.eui_Strumenti_Annulla.KeyTip = "U"
       Me.eui_Strumenti_Annulla.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Annulla.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Annulla.Location = New System.Drawing.Point(192, 2)
+      Me.eui_Strumenti_Annulla.Location = New System.Drawing.Point(128, 2)
       Me.eui_Strumenti_Annulla.Name = "eui_Strumenti_Annulla"
       Me.eui_Strumenti_Annulla.ScreenTip.Caption = "Annulla documento"
       Me.eui_Strumenti_Annulla.ScreenTip.Text = "Annulla il documento selezionato e ripristina i dati contabili."
-      Me.eui_Strumenti_Annulla.Size = New System.Drawing.Size(45, 72)
+      Me.eui_Strumenti_Annulla.Size = New System.Drawing.Size(44, 0)
       Me.eui_Strumenti_Annulla.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Annulla.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Annulla.TabIndex = 7
       Me.eui_Strumenti_Annulla.Text = "Annulla"
@@ -2329,7 +2329,7 @@ Friend Class frmMain
       'Separator17
       '
       Me.Separator17.Id = "b023b9e3-3057-4879-995b-39dc62dfff2f"
-      Me.Separator17.Location = New System.Drawing.Point(240, 6)
+      Me.Separator17.Location = New System.Drawing.Point(129, 6)
       Me.Separator17.Name = "Separator17"
       Me.Separator17.Size = New System.Drawing.Size(3, 61)
       Me.Separator17.TabIndex = 2
@@ -2340,11 +2340,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Aggiorna.Id = "56f5a6fb-2aab-4640-9e45-4aee9e32019b"
       Me.eui_Strumenti_Aggiorna.KeyTip = "A"
       Me.eui_Strumenti_Aggiorna.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Aggiorna.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Aggiorna.Location = New System.Drawing.Point(246, 2)
+      Me.eui_Strumenti_Aggiorna.Location = New System.Drawing.Point(128, 74)
       Me.eui_Strumenti_Aggiorna.Name = "eui_Strumenti_Aggiorna"
       Me.eui_Strumenti_Aggiorna.ScreenTip.Caption = "Aggiorna"
       Me.eui_Strumenti_Aggiorna.ScreenTip.Text = "Esegue un aggiornamento sui dati."
-      Me.eui_Strumenti_Aggiorna.Size = New System.Drawing.Size(53, 72)
+      Me.eui_Strumenti_Aggiorna.Size = New System.Drawing.Size(51, 0)
       Me.eui_Strumenti_Aggiorna.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Aggiorna.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Aggiorna.TabIndex = 4
       Me.eui_Strumenti_Aggiorna.Text = "Aggiorna"
@@ -2352,7 +2352,7 @@ Friend Class frmMain
       'Separator16
       '
       Me.Separator16.Id = "2b0390c5-fe43-4f49-8e74-f0229a6468cc"
-      Me.Separator16.Location = New System.Drawing.Point(302, 6)
+      Me.Separator16.Location = New System.Drawing.Point(182, 6)
       Me.Separator16.Name = "Separator16"
       Me.Separator16.Size = New System.Drawing.Size(3, 61)
       Me.Separator16.TabIndex = 2
@@ -2363,11 +2363,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Esporta.Id = "e4d7d959-37c7-407a-a643-6b10c64c938d"
       Me.eui_Strumenti_Esporta.KeyTip = "S"
       Me.eui_Strumenti_Esporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Esporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Esporta.Location = New System.Drawing.Point(308, 2)
+      Me.eui_Strumenti_Esporta.Location = New System.Drawing.Point(181, 74)
       Me.eui_Strumenti_Esporta.Name = "eui_Strumenti_Esporta"
       Me.eui_Strumenti_Esporta.ScreenTip.Caption = "Esporta"
       Me.eui_Strumenti_Esporta.ScreenTip.Text = "Esporta i dati in diversi formati."
-      Me.eui_Strumenti_Esporta.Size = New System.Drawing.Size(43, 72)
+      Me.eui_Strumenti_Esporta.Size = New System.Drawing.Size(45, 0)
       Me.eui_Strumenti_Esporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Esporta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Esporta.TabIndex = 6
       Me.eui_Strumenti_Esporta.Text = "Esporta"
@@ -2389,11 +2389,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Stampa_Anteprima.Id = "3534b19c-ac6e-4fc8-b46f-9fefc2db756e"
       Me.eui_Strumenti_Stampa_Anteprima.KeyTip = "P"
       Me.eui_Strumenti_Stampa_Anteprima.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Stampa_Anteprima.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Stampa_Anteprima.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Stampa_Anteprima.Location = New System.Drawing.Point(29, 2)
       Me.eui_Strumenti_Stampa_Anteprima.Name = "eui_Strumenti_Stampa_Anteprima"
       Me.eui_Strumenti_Stampa_Anteprima.ScreenTip.Caption = "Anteprima di Stampa"
       Me.eui_Strumenti_Stampa_Anteprima.ScreenTip.Text = "Visualizza l'anteprima di stampa per l'elenco dati."
-      Me.eui_Strumenti_Stampa_Anteprima.Size = New System.Drawing.Size(60, 72)
+      Me.eui_Strumenti_Stampa_Anteprima.Size = New System.Drawing.Size(56, 0)
       Me.eui_Strumenti_Stampa_Anteprima.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Stampa_Anteprima.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Stampa_Anteprima.TabIndex = 0
       Me.eui_Strumenti_Stampa_Anteprima.Text = "Anteprima"
@@ -2403,11 +2403,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Stampa_Elenco.Id = "885fed30-0915-40ca-9d08-e218bc9de2fc"
       Me.eui_Strumenti_Stampa_Elenco.KeyTip = "T"
       Me.eui_Strumenti_Stampa_Elenco.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Stampa_Elenco.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Stampa_Elenco.Location = New System.Drawing.Point(66, 2)
+      Me.eui_Strumenti_Stampa_Elenco.Location = New System.Drawing.Point(29, 2)
       Me.eui_Strumenti_Stampa_Elenco.Name = "eui_Strumenti_Stampa_Elenco"
       Me.eui_Strumenti_Stampa_Elenco.ScreenTip.Caption = "Stampa Elenco"
       Me.eui_Strumenti_Stampa_Elenco.ScreenTip.Text = "Stampa l'elenco dati."
-      Me.eui_Strumenti_Stampa_Elenco.Size = New System.Drawing.Size(44, 72)
+      Me.eui_Strumenti_Stampa_Elenco.Size = New System.Drawing.Size(45, 0)
       Me.eui_Strumenti_Stampa_Elenco.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Stampa_Elenco.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Stampa_Elenco.TabIndex = 3
       Me.eui_Strumenti_Stampa_Elenco.Text = "Stampa"
@@ -2449,10 +2449,10 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_Tutte.Id = "13458d09-04c8-4314-b816-7bc12dc08cb7"
       Me.eui_Strumenti_Periodo_Tutte.KeyTip = "T"
       Me.eui_Strumenti_Periodo_Tutte.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Tutte.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_Tutte.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Periodo_Tutte.Location = New System.Drawing.Point(77, 2)
       Me.eui_Strumenti_Periodo_Tutte.Name = "eui_Strumenti_Periodo_Tutte"
       Me.eui_Strumenti_Periodo_Tutte.Pressed = True
-      Me.eui_Strumenti_Periodo_Tutte.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Periodo_Tutte.Size = New System.Drawing.Size(30, 0)
       Me.eui_Strumenti_Periodo_Tutte.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Tutte.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_Tutte.TabIndex = 7
       Me.eui_Strumenti_Periodo_Tutte.Text = "Tutti"
@@ -2460,7 +2460,7 @@ Friend Class frmMain
       'Separator20
       '
       Me.Separator20.Id = "f0314c1a-0a61-47b2-964d-8a602d54cd94"
-      Me.Separator20.Location = New System.Drawing.Point(49, 6)
+      Me.Separator20.Location = New System.Drawing.Point(78, 6)
       Me.Separator20.Name = "Separator20"
       Me.Separator20.Size = New System.Drawing.Size(3, 61)
       Me.Separator20.TabIndex = 5
@@ -2471,11 +2471,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_Anno.Id = "ef554c52-51ca-4dd1-8574-dc9b5cfc1aeb"
       Me.eui_Strumenti_Periodo_Anno.KeyTip = "A"
       Me.eui_Strumenti_Periodo_Anno.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Anno.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_Anno.Location = New System.Drawing.Point(55, 2)
+      Me.eui_Strumenti_Periodo_Anno.Location = New System.Drawing.Point(77, 74)
       Me.eui_Strumenti_Periodo_Anno.Name = "eui_Strumenti_Periodo_Anno"
       Me.eui_Strumenti_Periodo_Anno.ScreenTip.Caption = "Anno in corso"
       Me.eui_Strumenti_Periodo_Anno.ScreenTip.Text = "Visualizza solo i dati dell'anno in corso."
-      Me.eui_Strumenti_Periodo_Anno.Size = New System.Drawing.Size(46, 72)
+      Me.eui_Strumenti_Periodo_Anno.Size = New System.Drawing.Size(74, 0)
       Me.eui_Strumenti_Periodo_Anno.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Anno.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_Anno.TabIndex = 9
       Me.eui_Strumenti_Periodo_Anno.Text = "Anno in corso"
@@ -2485,11 +2485,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_Mese.Id = "a967bcab-51d2-459f-8016-bbb39d16ce4d"
       Me.eui_Strumenti_Periodo_Mese.KeyTip = "M"
       Me.eui_Strumenti_Periodo_Mese.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Mese.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_Mese.Location = New System.Drawing.Point(103, 2)
+      Me.eui_Strumenti_Periodo_Mese.Location = New System.Drawing.Point(77, 74)
       Me.eui_Strumenti_Periodo_Mese.Name = "eui_Strumenti_Periodo_Mese"
       Me.eui_Strumenti_Periodo_Mese.ScreenTip.Caption = "Mese in corso"
       Me.eui_Strumenti_Periodo_Mese.ScreenTip.Text = "Visualizza solo i dati del mese in corso."
-      Me.eui_Strumenti_Periodo_Mese.Size = New System.Drawing.Size(45, 72)
+      Me.eui_Strumenti_Periodo_Mese.Size = New System.Drawing.Size(75, 0)
       Me.eui_Strumenti_Periodo_Mese.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Mese.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_Mese.TabIndex = 9
       Me.eui_Strumenti_Periodo_Mese.Text = "Mese in corso"
@@ -2499,11 +2499,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_DalAl.Id = "38ab1e23-04d8-4a76-8ae3-2cb9354865ce"
       Me.eui_Strumenti_Periodo_DalAl.KeyTip = "D"
       Me.eui_Strumenti_Periodo_DalAl.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_DalAl.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_DalAl.Location = New System.Drawing.Point(150, 2)
+      Me.eui_Strumenti_Periodo_DalAl.Location = New System.Drawing.Point(77, 74)
       Me.eui_Strumenti_Periodo_DalAl.Name = "eui_Strumenti_Periodo_DalAl"
       Me.eui_Strumenti_Periodo_DalAl.ScreenTip.Caption = "Periodo"
       Me.eui_Strumenti_Periodo_DalAl.ScreenTip.Text = "Visualizza solo i dati del periodo selezionato."
-      Me.eui_Strumenti_Periodo_DalAl.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Periodo_DalAl.Size = New System.Drawing.Size(55, 0)
       Me.eui_Strumenti_Periodo_DalAl.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_DalAl.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_DalAl.TabIndex = 10
       Me.eui_Strumenti_Periodo_DalAl.Text = "Dal... Al..."
@@ -2511,7 +2511,7 @@ Friend Class frmMain
       'eui_Strumenti_Periodo_Sep1
       '
       Me.eui_Strumenti_Periodo_Sep1.Id = "7591c18c-c76a-4324-abf8-49b23cf67142"
-      Me.eui_Strumenti_Periodo_Sep1.Location = New System.Drawing.Point(195, 6)
+      Me.eui_Strumenti_Periodo_Sep1.Location = New System.Drawing.Point(155, 6)
       Me.eui_Strumenti_Periodo_Sep1.Name = "eui_Strumenti_Periodo_Sep1"
       Me.eui_Strumenti_Periodo_Sep1.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Periodo_Sep1.TabIndex = 11
@@ -2522,11 +2522,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_Arrivo.Id = "63e7b88e-a03f-4d28-af64-6086a8a9d358"
       Me.eui_Strumenti_Periodo_Arrivo.KeyTip = "I"
       Me.eui_Strumenti_Periodo_Arrivo.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Arrivo.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_Arrivo.Location = New System.Drawing.Point(201, 2)
+      Me.eui_Strumenti_Periodo_Arrivo.Location = New System.Drawing.Point(154, 74)
       Me.eui_Strumenti_Periodo_Arrivo.Name = "eui_Strumenti_Periodo_Arrivo"
       Me.eui_Strumenti_Periodo_Arrivo.ScreenTip.Caption = "In Arrivo oggi"
       Me.eui_Strumenti_Periodo_Arrivo.ScreenTip.Text = "Visualizza tutte le prenotazioni in arrivo oggi."
-      Me.eui_Strumenti_Periodo_Arrivo.Size = New System.Drawing.Size(49, 72)
+      Me.eui_Strumenti_Periodo_Arrivo.Size = New System.Drawing.Size(71, 0)
       Me.eui_Strumenti_Periodo_Arrivo.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Arrivo.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_Arrivo.TabIndex = 7
       Me.eui_Strumenti_Periodo_Arrivo.Text = "In Arrivo oggi"
@@ -2536,11 +2536,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Periodo_Partenza.Id = "bb229afd-d869-456c-b860-4b39f3d60389"
       Me.eui_Strumenti_Periodo_Partenza.KeyTip = "O"
       Me.eui_Strumenti_Periodo_Partenza.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Partenza.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Periodo_Partenza.Location = New System.Drawing.Point(252, 2)
+      Me.eui_Strumenti_Periodo_Partenza.Location = New System.Drawing.Point(154, 74)
       Me.eui_Strumenti_Periodo_Partenza.Name = "eui_Strumenti_Periodo_Partenza"
       Me.eui_Strumenti_Periodo_Partenza.ScreenTip.Caption = "In Partenza oggi"
       Me.eui_Strumenti_Periodo_Partenza.ScreenTip.Text = "Visualizza tutte le prenotazioni in partenza oggi."
-      Me.eui_Strumenti_Periodo_Partenza.Size = New System.Drawing.Size(62, 72)
+      Me.eui_Strumenti_Periodo_Partenza.Size = New System.Drawing.Size(86, 0)
       Me.eui_Strumenti_Periodo_Partenza.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Periodo_Partenza.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Periodo_Partenza.TabIndex = 8
       Me.eui_Strumenti_Periodo_Partenza.Text = "In Partenza oggi"
@@ -2561,11 +2561,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Visualizza_Presenze.Id = "07e3c8f2-dc55-42d8-bb1a-f05965817c79"
       Me.eui_Strumenti_Visualizza_Presenze.KeyTip = "S"
       Me.eui_Strumenti_Visualizza_Presenze.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Visualizza_Presenze.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Visualizza_Presenze.Location = New System.Drawing.Point(9, 2)
+      Me.eui_Strumenti_Visualizza_Presenze.Location = New System.Drawing.Point(4, 2)
       Me.eui_Strumenti_Visualizza_Presenze.Name = "eui_Strumenti_Visualizza_Presenze"
       Me.eui_Strumenti_Visualizza_Presenze.ScreenTip.Caption = "Storico presenze"
       Me.eui_Strumenti_Visualizza_Presenze.ScreenTip.Text = "Visualizza l'elenco strorico delle presenze."
-      Me.eui_Strumenti_Visualizza_Presenze.Size = New System.Drawing.Size(50, 72)
+      Me.eui_Strumenti_Visualizza_Presenze.Size = New System.Drawing.Size(89, 0)
       Me.eui_Strumenti_Visualizza_Presenze.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Visualizza_Presenze.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Visualizza_Presenze.TabIndex = 10
       Me.eui_Strumenti_Visualizza_Presenze.Text = "Storico Presenze"
@@ -2602,11 +2602,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Proforma.Id = "583195b5-3ccf-436e-a5d8-8c817995cb3f"
       Me.eui_Strumenti_Documenti_Proforma.KeyTip = "P"
       Me.eui_Strumenti_Documenti_Proforma.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(66, 2)
       Me.eui_Strumenti_Documenti_Proforma.Name = "eui_Strumenti_Documenti_Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Caption = "Stampa Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Text = "Stampa il conto Proforma per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(54, 72)
+      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(51, 0)
       Me.eui_Strumenti_Documenti_Proforma.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Proforma.TabIndex = 6
       Me.eui_Strumenti_Documenti_Proforma.Text = "Proforma"
@@ -2616,11 +2616,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Ricevuta.Id = "40fb78a2-d1a2-4d76-9d83-c420f1b36310"
       Me.eui_Strumenti_Documenti_Ricevuta.KeyTip = "R"
       Me.eui_Strumenti_Documenti_Ricevuta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(60, 2)
+      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(66, 2)
       Me.eui_Strumenti_Documenti_Ricevuta.Name = "eui_Strumenti_Documenti_Ricevuta"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Caption = "Ricevuta fiscale"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Text = "Stampa la Ricevuta fiscale per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(49, 72)
+      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(85, 0)
       Me.eui_Strumenti_Documenti_Ricevuta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Ricevuta.TabIndex = 3
       Me.eui_Strumenti_Documenti_Ricevuta.Text = "Ricevuta fiscale"
@@ -2630,11 +2630,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Fattura.Id = "ed4d06e2-69ee-46d8-8703-f665763e7b5e"
       Me.eui_Strumenti_Documenti_Fattura.KeyTip = "F"
       Me.eui_Strumenti_Documenti_Fattura.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(111, 2)
+      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(66, 2)
       Me.eui_Strumenti_Documenti_Fattura.Name = "eui_Strumenti_Documenti_Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Caption = "Stampa Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Text = "Stampa la Fattura per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 0)
       Me.eui_Strumenti_Documenti_Fattura.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Fattura.TabIndex = 0
       Me.eui_Strumenti_Documenti_Fattura.Text = "Fattura"
@@ -2642,7 +2642,7 @@ Friend Class frmMain
       'Separator23
       '
       Me.Separator23.Id = "4a143a9b-d4d1-4655-bc13-df4474f55c31"
-      Me.Separator23.Location = New System.Drawing.Point(156, 6)
+      Me.Separator23.Location = New System.Drawing.Point(67, 6)
       Me.Separator23.Name = "Separator23"
       Me.Separator23.Size = New System.Drawing.Size(3, 61)
       Me.Separator23.TabIndex = 4
@@ -2653,14 +2653,91 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Schedina.Id = "8ff6c145-83eb-4912-8e1f-214058db0341"
       Me.eui_Strumenti_Documenti_Schedina.KeyTip = "S"
       Me.eui_Strumenti_Documenti_Schedina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(162, 2)
+      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(66, 74)
       Me.eui_Strumenti_Documenti_Schedina.Name = "eui_Strumenti_Documenti_Schedina"
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Caption = "Schedina P. S."
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Text = "Stampa la Schedina di Pubbica Sicurezza per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(52, 72)
+      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(77, 0)
       Me.eui_Strumenti_Documenti_Schedina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Schedina.TabIndex = 5
       Me.eui_Strumenti_Documenti_Schedina.Text = "Schedina P.S."
+      '
+      'RibbonGroup27
+      '
+      Me.RibbonGroup27.Controls.Add(Me.eui_Strumenti_Documenti_Invia)
+      Me.RibbonGroup27.Controls.Add(Me.eui_Strumenti_Documenti_Esporta)
+      Me.RibbonGroup27.DialogLauncherButtonVisible = False
+      Me.RibbonGroup27.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.RibbonGroup27.Location = New System.Drawing.Point(224, 1)
+      Me.RibbonGroup27.Name = "RibbonGroup27"
+      Me.RibbonGroup27.Size = New System.Drawing.Size(98, 94)
+      Me.RibbonGroup27.TabIndex = 7
+      Me.RibbonGroup27.Text = "Prenotazione"
+      '
+      'eui_Strumenti_Documenti_Invia
+      '
+      Me.eui_Strumenti_Documenti_Invia.Id = "2a965849-ffda-43cb-b640-4df6903f74b0"
+      Me.eui_Strumenti_Documenti_Invia.KeyTip = "I"
+      Me.eui_Strumenti_Documenti_Invia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(22, 2)
+      Me.eui_Strumenti_Documenti_Invia.Name = "eui_Strumenti_Documenti_Invia"
+      Me.eui_Strumenti_Documenti_Invia.ScreenTip.Caption = "Invia prenotazione"
+      Me.eui_Strumenti_Documenti_Invia.ScreenTip.Text = "Invia la prenotazione selezionata tramite e-mail in formato PDF."
+      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(32, 0)
+      Me.eui_Strumenti_Documenti_Invia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_Strumenti_Documenti_Invia.TabIndex = 0
+      Me.eui_Strumenti_Documenti_Invia.Text = "Invia"
+      '
+      'eui_Strumenti_Documenti_Esporta
+      '
+      Me.eui_Strumenti_Documenti_Esporta.Id = "fb143d4e-04aa-4681-bdf0-22caf76abf9f"
+      Me.eui_Strumenti_Documenti_Esporta.KeyTip = "E"
+      Me.eui_Strumenti_Documenti_Esporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(22, 2)
+      Me.eui_Strumenti_Documenti_Esporta.Name = "eui_Strumenti_Documenti_Esporta"
+      Me.eui_Strumenti_Documenti_Esporta.Popup = Me.PopupMenu13
+      Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Caption = "Esporta prenotazione"
+      Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Text = "Esporta la prenotazione selezionata in vari formati."
+      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(53, 0)
+      Me.eui_Strumenti_Documenti_Esporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_Strumenti_Documenti_Esporta.TabIndex = 1
+      Me.eui_Strumenti_Documenti_Esporta.Text = "Esporta"
+      '
+      'PopupMenu13
+      '
+      Me.PopupMenu13.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdEsportaPdf, Me.Separator3, Me.eui_cmdEsportaHtml})
+      Me.PopupMenu13.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu13.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu13.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdEsportaPdf
+      '
+      Me.eui_cmdEsportaPdf.Id = "8ebf521e-f32a-472a-8435-b9e6176fd63b"
+      Me.eui_cmdEsportaPdf.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdEsportaPdf.Name = "eui_cmdEsportaPdf"
+      Me.eui_cmdEsportaPdf.Size = New System.Drawing.Size(151, 23)
+      Me.eui_cmdEsportaPdf.TabIndex = 3
+      Me.eui_cmdEsportaPdf.Text = "In formato PDF"
+      '
+      'Separator3
+      '
+      Me.Separator3.Id = "34fd3fb8-6f4e-4286-b900-84f8c6f21faf"
+      Me.Separator3.Location = New System.Drawing.Point(2, 25)
+      Me.Separator3.Name = "Separator3"
+      Me.Separator3.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator3.Size = New System.Drawing.Size(151, 5)
+      Me.Separator3.TabIndex = 4
+      Me.Separator3.Text = "Separator3"
+      '
+      'eui_cmdEsportaHtml
+      '
+      Me.eui_cmdEsportaHtml.Enabled = False
+      Me.eui_cmdEsportaHtml.Id = "e5cd08e2-c3c5-41cb-ac3a-50149c604df6"
+      Me.eui_cmdEsportaHtml.Location = New System.Drawing.Point(2, 30)
+      Me.eui_cmdEsportaHtml.Name = "eui_cmdEsportaHtml"
+      Me.eui_cmdEsportaHtml.Size = New System.Drawing.Size(151, 23)
+      Me.eui_cmdEsportaHtml.TabIndex = 5
+      Me.eui_cmdEsportaHtml.Text = "In formato HTML"
       '
       'eui_StrumentiSospesiBuoni
       '
@@ -2694,11 +2771,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Sospesi_Filtra.Id = "2bbbb142-390f-4244-a27e-f7d97951fc9a"
       Me.eui_Strumenti_Sospesi_Filtra.KeyTip = "S"
       Me.eui_Strumenti_Sospesi_Filtra.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Filtra.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Sospesi_Filtra.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Sospesi_Filtra.Location = New System.Drawing.Point(53, 2)
       Me.eui_Strumenti_Sospesi_Filtra.Name = "eui_Strumenti_Sospesi_Filtra"
       Me.eui_Strumenti_Sospesi_Filtra.ScreenTip.Caption = "Sospesi"
       Me.eui_Strumenti_Sospesi_Filtra.ScreenTip.Text = "Visualizza l'elenco dei documenti con importo in sospeso."
-      Me.eui_Strumenti_Sospesi_Filtra.Size = New System.Drawing.Size(43, 72)
+      Me.eui_Strumenti_Sospesi_Filtra.Size = New System.Drawing.Size(46, 0)
       Me.eui_Strumenti_Sospesi_Filtra.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Filtra.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Sospesi_Filtra.TabIndex = 8
       Me.eui_Strumenti_Sospesi_Filtra.Text = "Sospesi"
@@ -2706,7 +2783,7 @@ Friend Class frmMain
       'Separator10
       '
       Me.Separator10.Id = "cecacd73-3cd0-4b9b-b5b8-8c0d0abc80ec"
-      Me.Separator10.Location = New System.Drawing.Point(50, 6)
+      Me.Separator10.Location = New System.Drawing.Point(54, 6)
       Me.Separator10.Name = "Separator10"
       Me.Separator10.Size = New System.Drawing.Size(3, 61)
       Me.Separator10.TabIndex = 10
@@ -2717,11 +2794,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Sospesi_Incassa.Id = "8149d0aa-ab4d-47dc-882d-fde6c5636944"
       Me.eui_Strumenti_Sospesi_Incassa.KeyTip = "I"
       Me.eui_Strumenti_Sospesi_Incassa.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Incassa.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Sospesi_Incassa.Location = New System.Drawing.Point(56, 2)
+      Me.eui_Strumenti_Sospesi_Incassa.Location = New System.Drawing.Point(53, 74)
       Me.eui_Strumenti_Sospesi_Incassa.Name = "eui_Strumenti_Sospesi_Incassa"
       Me.eui_Strumenti_Sospesi_Incassa.ScreenTip.Caption = "Incassa sospeso"
       Me.eui_Strumenti_Sospesi_Incassa.ScreenTip.Text = "Apre una finestra per incassare l'importo in sospeso del documento selezionato."
-      Me.eui_Strumenti_Sospesi_Incassa.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Sospesi_Incassa.Size = New System.Drawing.Size(46, 0)
       Me.eui_Strumenti_Sospesi_Incassa.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Incassa.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Sospesi_Incassa.TabIndex = 8
       Me.eui_Strumenti_Sospesi_Incassa.Text = "Incassa"
@@ -2731,11 +2808,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Sospesi_Annulla.Id = "d87911c4-43c2-4ead-b840-d407567d4bfa"
       Me.eui_Strumenti_Sospesi_Annulla.KeyTip = "A"
       Me.eui_Strumenti_Sospesi_Annulla.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Annulla.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Sospesi_Annulla.Location = New System.Drawing.Point(100, 2)
+      Me.eui_Strumenti_Sospesi_Annulla.Location = New System.Drawing.Point(53, 74)
       Me.eui_Strumenti_Sospesi_Annulla.Name = "eui_Strumenti_Sospesi_Annulla"
       Me.eui_Strumenti_Sospesi_Annulla.ScreenTip.Caption = "Annulla sospeso"
       Me.eui_Strumenti_Sospesi_Annulla.ScreenTip.Text = "Annulla l'importo in sospeso del documento selezionato."
-      Me.eui_Strumenti_Sospesi_Annulla.Size = New System.Drawing.Size(45, 72)
+      Me.eui_Strumenti_Sospesi_Annulla.Size = New System.Drawing.Size(44, 0)
       Me.eui_Strumenti_Sospesi_Annulla.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Annulla.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Sospesi_Annulla.TabIndex = 7
       Me.eui_Strumenti_Sospesi_Annulla.Text = "Annulla"
@@ -2745,11 +2822,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Sospesi_Passa.Id = "0bb61b8d-9a7b-433b-9192-beda49cdbc13"
       Me.eui_Strumenti_Sospesi_Passa.KeyTip = "P"
       Me.eui_Strumenti_Sospesi_Passa.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Passa.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Sospesi_Passa.Location = New System.Drawing.Point(147, 2)
+      Me.eui_Strumenti_Sospesi_Passa.Location = New System.Drawing.Point(53, 74)
       Me.eui_Strumenti_Sospesi_Passa.Name = "eui_Strumenti_Sospesi_Passa"
       Me.eui_Strumenti_Sospesi_Passa.ScreenTip.Caption = "Passa in sospeso"
       Me.eui_Strumenti_Sospesi_Passa.ScreenTip.Text = "Passa l'importo del documento selezionato in sospeso."
-      Me.eui_Strumenti_Sospesi_Passa.Size = New System.Drawing.Size(46, 72)
+      Me.eui_Strumenti_Sospesi_Passa.Size = New System.Drawing.Size(91, 0)
       Me.eui_Strumenti_Sospesi_Passa.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Sospesi_Passa.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Sospesi_Passa.TabIndex = 9
       Me.eui_Strumenti_Sospesi_Passa.Text = "Passa in sospeso"
@@ -2769,12 +2846,12 @@ Friend Class frmMain
       Me.eui_Strumenti_Buoni_Pasto.Id = "c9385b76-e8e1-448b-8ba7-a7a494160ca0"
       Me.eui_Strumenti_Buoni_Pasto.KeyTip = "B"
       Me.eui_Strumenti_Buoni_Pasto.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Buoni_Pasto.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Buoni_Pasto.Location = New System.Drawing.Point(11, 2)
+      Me.eui_Strumenti_Buoni_Pasto.Location = New System.Drawing.Point(4, 2)
       Me.eui_Strumenti_Buoni_Pasto.Name = "eui_Strumenti_Buoni_Pasto"
       Me.eui_Strumenti_Buoni_Pasto.ScreenTip.Caption = "Apri Buoni pasto"
       Me.eui_Strumenti_Buoni_Pasto.ScreenTip.Text = "Apre una finestra con l'elenco dei buoni pasto contenuti nel documento selezionat" &
     "o."
-      Me.eui_Strumenti_Buoni_Pasto.Size = New System.Drawing.Size(60, 72)
+      Me.eui_Strumenti_Buoni_Pasto.Size = New System.Drawing.Size(95, 0)
       Me.eui_Strumenti_Buoni_Pasto.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Buoni_Pasto.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Buoni_Pasto.TabIndex = 7
       Me.eui_Strumenti_Buoni_Pasto.Text = "Apri Buoni pasto..."
@@ -3307,7 +3384,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1208, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1216, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -3732,7 +3809,7 @@ Friend Class frmMain
       Me.DropDown3.Popup = Me.PopupMenu1
       Me.DropDown3.ScreenTip.Caption = "Seleziona anagrafiche"
       Me.DropDown3.ScreenTip.Text = "Consente di selezionare le anagrafiche, ad esempio i clienti o i piatti."
-      Me.DropDown3.Size = New System.Drawing.Size(76, 72)
+      Me.DropDown3.Size = New System.Drawing.Size(122, 0)
       Me.DropDown3.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown3.SmallImages.Images"), System.Drawing.Image))})
       Me.DropDown3.TabIndex = 0
       Me.DropDown3.Text = "Seleziona anagrafiche"
@@ -3983,7 +4060,7 @@ Friend Class frmMain
       Me.DropDown1.Popup = Me.PopupMenu3
       Me.DropDown1.ScreenTip.Caption = "Seleziona tabelle"
       Me.DropDown1.ScreenTip.Text = "Consente di selezionare le tabelle dati, ad esempio nazioni o reparti."
-      Me.DropDown1.Size = New System.Drawing.Size(55, 72)
+      Me.DropDown1.Size = New System.Drawing.Size(97, 0)
       Me.DropDown1.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown1.SmallImages.Images"), System.Drawing.Image))})
       Me.DropDown1.TabIndex = 0
       Me.DropDown1.Text = "Seleziona tabelle"
@@ -4343,11 +4420,11 @@ Friend Class frmMain
       Me.eui_cmdArchiviImporta.Id = "c178a5ef-e947-46ac-8dfc-abc23a9e4f34"
       Me.eui_cmdArchiviImporta.KeyTip = "I"
       Me.eui_cmdArchiviImporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviImporta.Location = New System.Drawing.Point(4, 2)
+      Me.eui_cmdArchiviImporta.Location = New System.Drawing.Point(60, 2)
       Me.eui_cmdArchiviImporta.Name = "eui_cmdArchiviImporta"
       Me.eui_cmdArchiviImporta.ScreenTip.Caption = "Importa dati"
       Me.eui_cmdArchiviImporta.ScreenTip.Text = "Consente di importare dati da altri archivi."
-      Me.eui_cmdArchiviImporta.Size = New System.Drawing.Size(46, 72)
+      Me.eui_cmdArchiviImporta.Size = New System.Drawing.Size(64, 0)
       Me.eui_cmdArchiviImporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviImporta.TabIndex = 0
       Me.eui_cmdArchiviImporta.Text = "Importa dati"
@@ -4358,11 +4435,11 @@ Friend Class frmMain
       Me.eui_cmdArchiviBackup.Id = "e8fb8df1-ef53-4d07-b79c-07bdd519fb5f"
       Me.eui_cmdArchiviBackup.KeyTip = "B"
       Me.eui_cmdArchiviBackup.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviBackup.Location = New System.Drawing.Point(52, 2)
+      Me.eui_cmdArchiviBackup.Location = New System.Drawing.Point(60, 2)
       Me.eui_cmdArchiviBackup.Name = "eui_cmdArchiviBackup"
       Me.eui_cmdArchiviBackup.ScreenTip.Caption = "Backup dei dati"
       Me.eui_cmdArchiviBackup.ScreenTip.Text = "Consente di effettuare copie di sicurezza degli archivi."
-      Me.eui_cmdArchiviBackup.Size = New System.Drawing.Size(43, 72)
+      Me.eui_cmdArchiviBackup.Size = New System.Drawing.Size(83, 0)
       Me.eui_cmdArchiviBackup.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviBackup.TabIndex = 1
       Me.eui_cmdArchiviBackup.Text = "Backup dei dati"
@@ -4372,12 +4449,12 @@ Friend Class frmMain
       Me.eui_cmdArchiviPulizia.Id = "2f3faba2-356f-4602-a694-0de53831137b"
       Me.eui_cmdArchiviPulizia.KeyTip = "P"
       Me.eui_cmdArchiviPulizia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviPulizia.Location = New System.Drawing.Point(97, 2)
+      Me.eui_cmdArchiviPulizia.Location = New System.Drawing.Point(60, 2)
       Me.eui_cmdArchiviPulizia.Name = "eui_cmdArchiviPulizia"
       Me.eui_cmdArchiviPulizia.ScreenTip.Caption = "Pulizia degli archivi"
       Me.eui_cmdArchiviPulizia.ScreenTip.Text = "Consente di effettuare l'eliminazione dei dati per singola tabella presenti negli" &
     " archivi."
-      Me.eui_cmdArchiviPulizia.Size = New System.Drawing.Size(67, 72)
+      Me.eui_cmdArchiviPulizia.Size = New System.Drawing.Size(98, 0)
       Me.eui_cmdArchiviPulizia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviPulizia.TabIndex = 2
       Me.eui_cmdArchiviPulizia.Text = "Pulizia degli archivi"
@@ -4387,11 +4464,11 @@ Friend Class frmMain
       Me.eui_cmdArchiviCompatta.Id = "e849859a-d3f9-484a-a494-6ecad6c05a46"
       Me.eui_cmdArchiviCompatta.KeyTip = "C"
       Me.eui_cmdArchiviCompatta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviCompatta.Location = New System.Drawing.Point(166, 2)
+      Me.eui_cmdArchiviCompatta.Location = New System.Drawing.Point(60, 2)
       Me.eui_cmdArchiviCompatta.Name = "eui_cmdArchiviCompatta"
       Me.eui_cmdArchiviCompatta.ScreenTip.Caption = "Compatta e ripristina archivi"
       Me.eui_cmdArchiviCompatta.ScreenTip.Text = "Consente di effettuare la compattazione e il ripristino degli archivi."
-      Me.eui_cmdArchiviCompatta.Size = New System.Drawing.Size(88, 72)
+      Me.eui_cmdArchiviCompatta.Size = New System.Drawing.Size(138, 0)
       Me.eui_cmdArchiviCompatta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviCompatta.TabIndex = 3
       Me.eui_cmdArchiviCompatta.Text = "Compatta e ripristina archivi"
@@ -5075,10 +5152,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 676)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 679)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1208, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1216, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5090,7 +5167,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(611, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(619, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5167,7 +5244,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(611, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(619, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -5460,88 +5537,11 @@ Friend Class frmMain
       Me.RibbonTabPage4.TabIndex = 0
       Me.RibbonTabPage4.Text = "RibbonTabPage4"
       '
-      'RibbonGroup27
-      '
-      Me.RibbonGroup27.Controls.Add(Me.eui_Strumenti_Documenti_Invia)
-      Me.RibbonGroup27.Controls.Add(Me.eui_Strumenti_Documenti_Esporta)
-      Me.RibbonGroup27.DialogLauncherButtonVisible = False
-      Me.RibbonGroup27.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.RibbonGroup27.Location = New System.Drawing.Point(224, 1)
-      Me.RibbonGroup27.Name = "RibbonGroup27"
-      Me.RibbonGroup27.Size = New System.Drawing.Size(98, 94)
-      Me.RibbonGroup27.TabIndex = 7
-      Me.RibbonGroup27.Text = "Prenotazione"
-      '
-      'eui_Strumenti_Documenti_Invia
-      '
-      Me.eui_Strumenti_Documenti_Invia.Id = "2a965849-ffda-43cb-b640-4df6903f74b0"
-      Me.eui_Strumenti_Documenti_Invia.KeyTip = "I"
-      Me.eui_Strumenti_Documenti_Invia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(4, 2)
-      Me.eui_Strumenti_Documenti_Invia.Name = "eui_Strumenti_Documenti_Invia"
-      Me.eui_Strumenti_Documenti_Invia.ScreenTip.Caption = "Invia prenotazione"
-      Me.eui_Strumenti_Documenti_Invia.ScreenTip.Text = "Invia la prenotazione selezionata tramite e-mail in formato PDF."
-      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(42, 72)
-      Me.eui_Strumenti_Documenti_Invia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Invia.TabIndex = 0
-      Me.eui_Strumenti_Documenti_Invia.Text = "Invia"
-      '
-      'eui_Strumenti_Documenti_Esporta
-      '
-      Me.eui_Strumenti_Documenti_Esporta.Id = "fb143d4e-04aa-4681-bdf0-22caf76abf9f"
-      Me.eui_Strumenti_Documenti_Esporta.KeyTip = "E"
-      Me.eui_Strumenti_Documenti_Esporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(48, 2)
-      Me.eui_Strumenti_Documenti_Esporta.Name = "eui_Strumenti_Documenti_Esporta"
-      Me.eui_Strumenti_Documenti_Esporta.Popup = Me.PopupMenu13
-      Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Caption = "Esporta prenotazione"
-      Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Text = "Esporta la prenotazione selezionata in vari formati."
-      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(45, 72)
-      Me.eui_Strumenti_Documenti_Esporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Esporta.TabIndex = 1
-      Me.eui_Strumenti_Documenti_Esporta.Text = "Esporta"
-      '
-      'PopupMenu13
-      '
-      Me.PopupMenu13.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdEsportaPdf, Me.Separator3, Me.eui_cmdEsportaHtml})
-      Me.PopupMenu13.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-      Me.PopupMenu13.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-      Me.PopupMenu13.Size = New System.Drawing.Size(100, 100)
-      '
-      'eui_cmdEsportaPdf
-      '
-      Me.eui_cmdEsportaPdf.Id = "8ebf521e-f32a-472a-8435-b9e6176fd63b"
-      Me.eui_cmdEsportaPdf.Location = New System.Drawing.Point(2, 2)
-      Me.eui_cmdEsportaPdf.Name = "eui_cmdEsportaPdf"
-      Me.eui_cmdEsportaPdf.Size = New System.Drawing.Size(151, 23)
-      Me.eui_cmdEsportaPdf.TabIndex = 3
-      Me.eui_cmdEsportaPdf.Text = "In formato PDF"
-      '
-      'Separator3
-      '
-      Me.Separator3.Id = "34fd3fb8-6f4e-4286-b900-84f8c6f21faf"
-      Me.Separator3.Location = New System.Drawing.Point(2, 25)
-      Me.Separator3.Name = "Separator3"
-      Me.Separator3.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator3.Size = New System.Drawing.Size(151, 5)
-      Me.Separator3.TabIndex = 4
-      Me.Separator3.Text = "Separator3"
-      '
-      'eui_cmdEsportaHtml
-      '
-      Me.eui_cmdEsportaHtml.Enabled = False
-      Me.eui_cmdEsportaHtml.Id = "e5cd08e2-c3c5-41cb-ac3a-50149c604df6"
-      Me.eui_cmdEsportaHtml.Location = New System.Drawing.Point(2, 30)
-      Me.eui_cmdEsportaHtml.Name = "eui_cmdEsportaHtml"
-      Me.eui_cmdEsportaHtml.Size = New System.Drawing.Size(151, 23)
-      Me.eui_cmdEsportaHtml.TabIndex = 5
-      Me.eui_cmdEsportaHtml.Text = "In formato HTML"
-      '
       'frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1208, 698)
+      Me.ClientSize = New System.Drawing.Size(1216, 701)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -5600,6 +5600,10 @@ Friend Class frmMain
       CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup29.ResumeLayout(False)
       Me.RibbonGroup29.PerformLayout()
+      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.RibbonGroup27.ResumeLayout(False)
+      Me.RibbonGroup27.PerformLayout()
+      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiSospesiBuoni.ResumeLayout(False)
       Me.eui_StrumentiSospesiBuoni.PerformLayout()
@@ -5759,10 +5763,6 @@ Friend Class frmMain
       CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.RibbonGroup27.ResumeLayout(False)
-      Me.RibbonGroup27.PerformLayout()
-      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -5772,6 +5772,7 @@ Friend Class frmMain
 #Region "Dichiarazioni"
 
    Const NOME_TABELLA_AZIENDA As String = "Azienda"
+   Const NOME_TABELLA_CLIENTI As String = "Clienti"
    Const NOME_TABELLA_PREN As String = "Prenotazioni"
    Const NOME_TABELLA As String = "Operazioni"
    Const ANA_TAVOLI As String = "Tavoli"
@@ -11859,8 +11860,16 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Documenti_Invia_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia.Click
+      Try
+         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
+         InviaEmail(LeggiEmailMittente, LeggiEmailDestinatario)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
 
    End Sub
 
@@ -13126,13 +13135,15 @@ Friend Class frmMain
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          'err.GestisciErrore(ex.StackTrace, ex.Message)
          Exit Sub
-
       End Try
    End Sub
 
    Public Sub InviaDatiGiudizio(ByVal votoSemplicità As Decimal, ByVal votoUtilità As Decimal, ByVal votoGrafica As Decimal, ByVal commento As String)
       Try
          If WebCommunication.VerificaConnessione = True Then
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
 
             DatiConfig = New AppConfig
             DatiConfig.ConfigType = ConfigFileType.AppConfig
@@ -13183,6 +13194,56 @@ Friend Class frmMain
                                            "INFORMAZIONI DI SISTEMA: " & vbNewLine &
                                            "SISTEMA OPERATIVO: " & My.Computer.Info.OSFullName & " (" & versioneOS & ") - " & My.Computer.Info.OSVersion & " - " & My.Computer.Info.OSPlatform & vbNewLine
 
+            Dim messaggio As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage(eMailMittente, eMailDestinatario)
+            messaggio.Subject = oggetto
+            messaggio.Body = corpoMessaggio
+
+            Dim smtp As System.Net.Mail.SmtpClient = New System.Net.Mail.SmtpClient(nomeMailServer, 25)
+
+            smtp.Credentials = New System.Net.NetworkCredential(USER_NAME_MAIL_SERVER_SMTP, PWD_MAIL_SERVER_SMTP)
+
+            smtp.Send(messaggio)
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.Default
+
+            MessageBox.Show("Il tuo giudizio è stato inviato con successo! Ti ringraziamo per avere provato il nostro software.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Exit Sub
+      End Try
+   End Sub
+
+   Public Sub InviaEmail(ByVal eMailMittente As String, ByVal eMailDestinatario As String)
+      Try
+         If WebCommunication.VerificaConnessione = True Then
+
+            Dim nomeMailServer As String = NOME_MAIL_SERVER_SMTP
+
+            If eMailMittente = String.Empty Then
+               MessageBox.Show("E' necessario specificare un'e-mail per il mittente!" & vbNewLine &
+                               "Verificare nell'anagrafica 'Dati generali Azienda' la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               Exit Sub
+            End If
+
+            If eMailDestinatario = String.Empty Then
+               MessageBox.Show("E' necessario specificare un'e-mail per il destinatario!" & vbNewLine &
+                               "Verificare nell'anagrafica 'Cliente' intestatario della prenotazione la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               Exit Sub
+            End If
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            Dim oggetto As String = "Prenotazione N. 34239"
+
+            Dim corpoMessaggio As String = "Prenotazione"
+
             Dim File As String = "Data.pdf"
 
             Dim messaggio As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage(eMailMittente, eMailDestinatario)
@@ -13204,16 +13265,74 @@ Friend Class frmMain
 
             smtp.Send(messaggio)
 
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.Default
+
+            MessageBox.Show("E-mail inviata con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          End If
 
       Catch ex As Exception
 
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         'err.GestisciErrore(ex.StackTrace, ex.Message)
-         Exit Sub
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Exit Sub
       End Try
    End Sub
+
+   Private Function LeggiEmailMittente() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            If .Email.IsInterned("@") = String.Empty Then
+               Return String.Empty
+            Else
+               Return .Email
+            End If
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiEmailDestinatario() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+
+         With AClienti
+
+            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
+
+            If .Email.IsInterned("@") = String.Empty Then
+               Return String.Empty
+            Else
+               Return .Email
+            End If
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
 
    Private Sub CaricaInfoProdottiAttivi()
 

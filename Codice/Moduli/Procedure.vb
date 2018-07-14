@@ -3265,6 +3265,7 @@ Module Procedure
 
    End Sub
 
+   ' DA_FARE_A: Modificare!
    Public Sub ScriviEmail(ByVal indirizzo As String)
       Try
          If indirizzo = "" Then
@@ -3276,9 +3277,9 @@ Module Procedure
             Cursor.Current = Cursors.AppStarting
 
             Dim Web As New Varie.WebSolution
-            Dim allegato(-1) As String
+            Dim allegato As String() = {"ProvaPDF.pdf"}
 
-            Web.createEmail(Application.StartupPath & "\Documenti\" & "Email.eml", "", indirizzo, "", "", allegato)
+            Web.createEmail(Application.StartupPath & "\Documenti\" & "Email.eml", "info@montanasoftware.it", indirizzo, "Prenotazione N. 294004", "Questa è una e-mail.", allegato)
             Process.Start(Application.StartupPath & "\Documenti\" & "Email.eml")
 
             ' Modifica il cursore del mouse.
