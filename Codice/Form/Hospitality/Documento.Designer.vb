@@ -35,30 +35,6 @@ Partial Class frmDocumento
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDocumento))
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
-      Me.eui_tpDettagli = New Elegant.Ui.TabPage()
-      Me.eui_cmdImportaDoc = New Elegant.Ui.Button()
-      Me.eui_cmdCancellaTutto = New Elegant.Ui.Button()
-      Me.eui_cmdEliminaRiga = New Elegant.Ui.Button()
-      Me.DropDown1 = New Elegant.Ui.DropDown()
-      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.eui_cmdInsPiatti = New Elegant.Ui.Button()
-      Me.eui_cmdInsProdotti = New Elegant.Ui.Button()
-      Me.Separator2 = New Elegant.Ui.Separator()
-      Me.eui_cmdInsAccessori = New Elegant.Ui.Button()
-      Me.eui_cmdInsiServizi = New Elegant.Ui.Button()
-      Me.eui_cmdNuovaRiga = New Elegant.Ui.Button()
-      Me.dgvDettagli = New System.Windows.Forms.DataGridView()
-      Me.clnCodice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnDescrizione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnUm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnQta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnPrezzo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnSconto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnImporto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnRepartoIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnValoreSconto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-      Me.clnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
       Me.eui_tpGenerale = New Elegant.Ui.TabPage()
       Me.eui_txtNumProgressivo = New Elegant.Ui.TextBox()
       Me.eui_txtCameriere = New Elegant.Ui.TextBox()
@@ -97,6 +73,30 @@ Partial Class frmDocumento
       Me.eui_txtClienteNome = New Elegant.Ui.TextBox()
       Me.eui_cmbClienteCognome = New Elegant.Ui.ComboBox()
       Me.Label6 = New Elegant.Ui.Label()
+      Me.eui_tpDettagli = New Elegant.Ui.TabPage()
+      Me.eui_cmdImportaDoc = New Elegant.Ui.Button()
+      Me.eui_cmdCancellaTutto = New Elegant.Ui.Button()
+      Me.eui_cmdEliminaRiga = New Elegant.Ui.Button()
+      Me.DropDown1 = New Elegant.Ui.DropDown()
+      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdInsPiatti = New Elegant.Ui.Button()
+      Me.eui_cmdInsProdotti = New Elegant.Ui.Button()
+      Me.Separator2 = New Elegant.Ui.Separator()
+      Me.eui_cmdInsAccessori = New Elegant.Ui.Button()
+      Me.eui_cmdInsiServizi = New Elegant.Ui.Button()
+      Me.eui_cmdNuovaRiga = New Elegant.Ui.Button()
+      Me.dgvDettagli = New System.Windows.Forms.DataGridView()
+      Me.clnCodice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnDescrizione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnUm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnQta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnPrezzo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnSconto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnImporto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnRepartoIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnValoreSconto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.clnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
       Me.eui_tpTotali = New Elegant.Ui.TabPage()
       Me.Label36 = New Elegant.Ui.Label()
       Me.eui_txtTotaliRep4Imposta = New Elegant.Ui.TextBox()
@@ -173,10 +173,10 @@ Partial Class frmDocumento
       Me.eui_cmdEmettiStampa = New Elegant.Ui.Button()
       Me.eui_cmdTastiera = New Elegant.Ui.Button()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_tpGenerale.SuspendLayout()
       Me.eui_tpDettagli.SuspendLayout()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_tpGenerale.SuspendLayout()
       Me.eui_tpTotali.SuspendLayout()
       Me.eui_tpNote.SuspendLayout()
       CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,10 +205,433 @@ Partial Class frmDocumento
       Me.eui_tpcDocumento.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcDocumento.Name = "eui_tpcDocumento"
       Me.eui_tpcDocumento.SelectedTabPage = Me.eui_tpGenerale
-      Me.eui_tpcDocumento.Size = New System.Drawing.Size(659, 474)
+      Me.eui_tpcDocumento.Size = New System.Drawing.Size(668, 474)
       Me.eui_tpcDocumento.TabIndex = 0
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.eui_tpGenerale, Me.eui_tpDettagli, Me.eui_tpTotali, Me.eui_tpNote})
       Me.eui_tpcDocumento.Text = " "
+      '
+      'eui_tpGenerale
+      '
+      Me.eui_tpGenerale.ActiveControl = Nothing
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtNumProgressivo)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCameriere)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtTavolo)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtIdCliente)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmdNuovoCliente)
+      Me.eui_tpGenerale.Controls.Add(Me.Label41)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbIdCliente)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmdModificaCliente)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtOra)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbTipoPagamento)
+      Me.eui_tpGenerale.Controls.Add(Me.Label13)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCodiceFiscale)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtPartitaIva)
+      Me.eui_tpGenerale.Controls.Add(Me.Label11)
+      Me.eui_tpGenerale.Controls.Add(Me.Label12)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbCausaleDocumento)
+      Me.eui_tpGenerale.Controls.Add(Me.Label1)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtAnno)
+      Me.eui_tpGenerale.Controls.Add(Me.Label5)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtProvincia)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbTipoDocumento)
+      Me.eui_tpGenerale.Controls.Add(Me.Label3)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbStatoDocumento)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCap)
+      Me.eui_tpGenerale.Controls.Add(Me.Label2)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_dtpData)
+      Me.eui_tpGenerale.Controls.Add(Me.Label4)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCittà)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtNumero)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtIndirizzo)
+      Me.eui_tpGenerale.Controls.Add(Me.Label10)
+      Me.eui_tpGenerale.Controls.Add(Me.Label9)
+      Me.eui_tpGenerale.Controls.Add(Me.Label8)
+      Me.eui_tpGenerale.Controls.Add(Me.Label7)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_txtClienteNome)
+      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbClienteCognome)
+      Me.eui_tpGenerale.Controls.Add(Me.Label6)
+      Me.eui_tpGenerale.KeyTip = Nothing
+      Me.eui_tpGenerale.Name = "eui_tpGenerale"
+      Me.eui_tpGenerale.Size = New System.Drawing.Size(666, 453)
+      Me.eui_tpGenerale.TabIndex = 0
+      Me.eui_tpGenerale.Text = "Generale"
+      '
+      'eui_txtNumProgressivo
+      '
+      Me.eui_txtNumProgressivo.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtNumProgressivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtNumProgressivo.Id = "181f3d9d-f8bd-4437-9f5a-5dcb3fffd1a5"
+      Me.eui_txtNumProgressivo.Location = New System.Drawing.Point(72, 84)
+      Me.eui_txtNumProgressivo.Name = "eui_txtNumProgressivo"
+      Me.eui_txtNumProgressivo.Size = New System.Drawing.Size(75, 21)
+      Me.eui_txtNumProgressivo.TabIndex = 3
+      Me.eui_txtNumProgressivo.Text = "105"
+      Me.eui_txtNumProgressivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.eui_txtNumProgressivo.Visible = False
+      '
+      'eui_txtCameriere
+      '
+      Me.eui_txtCameriere.Id = "d418d228-3193-4bd2-a089-f1344ad8b0c6"
+      Me.eui_txtCameriere.Location = New System.Drawing.Point(71, 308)
+      Me.eui_txtCameriere.Name = "eui_txtCameriere"
+      Me.eui_txtCameriere.Size = New System.Drawing.Size(80, 21)
+      Me.eui_txtCameriere.TabIndex = 42
+      Me.eui_txtCameriere.TextEditorWidth = 74
+      Me.eui_txtCameriere.Visible = False
+      '
+      'eui_txtTavolo
+      '
+      Me.eui_txtTavolo.Id = "5bc44102-c309-40d8-83bd-2ae775389abe"
+      Me.eui_txtTavolo.Location = New System.Drawing.Point(71, 283)
+      Me.eui_txtTavolo.Name = "eui_txtTavolo"
+      Me.eui_txtTavolo.Size = New System.Drawing.Size(81, 21)
+      Me.eui_txtTavolo.TabIndex = 41
+      Me.eui_txtTavolo.TextEditorWidth = 75
+      Me.eui_txtTavolo.Visible = False
+      '
+      'eui_txtIdCliente
+      '
+      Me.eui_txtIdCliente.Id = "6c3d222b-6453-4dab-913d-8d16ce0dea55"
+      Me.eui_txtIdCliente.Location = New System.Drawing.Point(113, 135)
+      Me.eui_txtIdCliente.Name = "eui_txtIdCliente"
+      Me.eui_txtIdCliente.Size = New System.Drawing.Size(39, 21)
+      Me.eui_txtIdCliente.TabIndex = 40
+      Me.eui_txtIdCliente.TextEditorWidth = 33
+      Me.eui_txtIdCliente.Visible = False
+      '
+      'eui_cmdNuovoCliente
+      '
+      Me.eui_cmdNuovoCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdNuovoCliente.Id = "28ee9ae7-92bb-4bc9-8751-dc7ed0d79655"
+      Me.eui_cmdNuovoCliente.Location = New System.Drawing.Point(616, 158)
+      Me.eui_cmdNuovoCliente.Name = "eui_cmdNuovoCliente"
+      Me.eui_cmdNuovoCliente.ScreenTip.Caption = "Nuovo"
+      Me.eui_cmdNuovoCliente.ScreenTip.Text = "Apre la finestra per l'inserimento dei dati di un nuovo cliente."
+      Me.eui_cmdNuovoCliente.Size = New System.Drawing.Size(30, 21)
+      Me.eui_cmdNuovoCliente.TabIndex = 9
+      Me.eui_cmdNuovoCliente.Text = "+"
+      '
+      'Label41
+      '
+      Me.Label41.Location = New System.Drawing.Point(158, 28)
+      Me.Label41.Name = "Label41"
+      Me.Label41.Size = New System.Drawing.Size(11, 13)
+      Me.Label41.TabIndex = 38
+      Me.Label41.Text = "/"
+      '
+      'eui_cmbIdCliente
+      '
+      Me.eui_cmbIdCliente.Editable = False
+      Me.eui_cmbIdCliente.FormattingEnabled = False
+      Me.eui_cmbIdCliente.Id = "92ffe671-631c-47b2-b6e6-5079ba4fd5e3"
+      Me.eui_cmbIdCliente.Location = New System.Drawing.Point(71, 135)
+      Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
+      Me.eui_cmbIdCliente.Size = New System.Drawing.Size(30, 21)
+      Me.eui_cmbIdCliente.TabIndex = 37
+      Me.eui_cmbIdCliente.TextEditorWidth = 11
+      Me.eui_cmbIdCliente.Visible = False
+      '
+      'eui_cmdModificaCliente
+      '
+      Me.eui_cmdModificaCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdModificaCliente.Id = "8a17ba51-9706-441a-8d53-3f124a07092c"
+      Me.eui_cmdModificaCliente.Location = New System.Drawing.Point(585, 158)
+      Me.eui_cmdModificaCliente.Name = "eui_cmdModificaCliente"
+      Me.eui_cmdModificaCliente.ScreenTip.Caption = "Modifica"
+      Me.eui_cmdModificaCliente.ScreenTip.Text = "Apre la finestra di modifica dei dati del cliente selezionato."
+      Me.eui_cmdModificaCliente.Size = New System.Drawing.Size(30, 21)
+      Me.eui_cmdModificaCliente.TabIndex = 8
+      Me.eui_cmdModificaCliente.Text = "..."
+      '
+      'eui_txtOra
+      '
+      Me.eui_txtOra.Id = "d0685579-4dd6-45ac-88b5-7536c60ce1de"
+      Me.eui_txtOra.Location = New System.Drawing.Point(170, 84)
+      Me.eui_txtOra.Name = "eui_txtOra"
+      Me.eui_txtOra.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtOra.TabIndex = 4
+      Me.eui_txtOra.TextEditorWidth = 55
+      Me.eui_txtOra.Visible = False
+      '
+      'eui_cmbTipoPagamento
+      '
+      Me.eui_cmbTipoPagamento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbTipoPagamento.FormattingEnabled = False
+      Me.eui_cmbTipoPagamento.Id = "e0e7801f-9f9e-4759-9986-6317c12a9589"
+      Me.eui_cmbTipoPagamento.Location = New System.Drawing.Point(452, 254)
+      Me.eui_cmbTipoPagamento.Name = "eui_cmbTipoPagamento"
+      Me.eui_cmbTipoPagamento.Size = New System.Drawing.Size(194, 21)
+      Me.eui_cmbTipoPagamento.Sorted = True
+      Me.eui_cmbTipoPagamento.TabIndex = 15
+      Me.eui_cmbTipoPagamento.TextEditorWidth = 175
+      '
+      'Label13
+      '
+      Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label13.Location = New System.Drawing.Point(372, 254)
+      Me.Label13.Name = "Label13"
+      Me.Label13.Size = New System.Drawing.Size(57, 13)
+      Me.Label13.TabIndex = 35
+      Me.Label13.Text = "Pagamento:"
+      '
+      'eui_txtCodiceFiscale
+      '
+      Me.eui_txtCodiceFiscale.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtCodiceFiscale.Id = "7bbe9c34-2fb4-4be7-8b34-8a3bf7de247b"
+      Me.eui_txtCodiceFiscale.Location = New System.Drawing.Point(452, 222)
+      Me.eui_txtCodiceFiscale.MaxLength = 16
+      Me.eui_txtCodiceFiscale.Name = "eui_txtCodiceFiscale"
+      Me.eui_txtCodiceFiscale.Size = New System.Drawing.Size(194, 21)
+      Me.eui_txtCodiceFiscale.TabIndex = 14
+      Me.eui_txtCodiceFiscale.TextEditorWidth = 188
+      '
+      'eui_txtPartitaIva
+      '
+      Me.eui_txtPartitaIva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtPartitaIva.Id = "cc8e05ad-a451-418c-a92e-0e740c97071f"
+      Me.eui_txtPartitaIva.Location = New System.Drawing.Point(452, 190)
+      Me.eui_txtPartitaIva.MaxLength = 11
+      Me.eui_txtPartitaIva.Name = "eui_txtPartitaIva"
+      Me.eui_txtPartitaIva.Size = New System.Drawing.Size(194, 21)
+      Me.eui_txtPartitaIva.TabIndex = 13
+      Me.eui_txtPartitaIva.TextEditorWidth = 188
+      '
+      'Label11
+      '
+      Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label11.Location = New System.Drawing.Point(372, 222)
+      Me.Label11.Name = "Label11"
+      Me.Label11.Size = New System.Drawing.Size(69, 13)
+      Me.Label11.TabIndex = 31
+      Me.Label11.Text = "Codice fiscale:"
+      '
+      'Label12
+      '
+      Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label12.Location = New System.Drawing.Point(372, 190)
+      Me.Label12.Name = "Label12"
+      Me.Label12.Size = New System.Drawing.Size(53, 13)
+      Me.Label12.TabIndex = 30
+      Me.Label12.Text = "Partita IVA:"
+      '
+      'eui_cmbCausaleDocumento
+      '
+      Me.eui_cmbCausaleDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbCausaleDocumento.FormattingEnabled = False
+      Me.eui_cmbCausaleDocumento.Id = "780b4384-b4be-4d7d-b041-8a5cb40e071e"
+      Me.eui_cmbCausaleDocumento.Location = New System.Drawing.Point(364, 88)
+      Me.eui_cmbCausaleDocumento.Name = "eui_cmbCausaleDocumento"
+      Me.eui_cmbCausaleDocumento.Size = New System.Drawing.Size(282, 21)
+      Me.eui_cmbCausaleDocumento.Sorted = True
+      Me.eui_cmbCausaleDocumento.TabIndex = 5
+      Me.eui_cmbCausaleDocumento.TextEditorWidth = 255
+      '
+      'Label1
+      '
+      Me.Label1.Location = New System.Drawing.Point(272, 24)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(80, 16)
+      Me.Label1.TabIndex = 9
+      Me.Label1.Text = "Tipo documento:"
+      '
+      'eui_txtAnno
+      '
+      Me.eui_txtAnno.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtAnno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtAnno.Id = "86422bd2-acc3-4b17-bf5e-f83ec75186b6"
+      Me.eui_txtAnno.Location = New System.Drawing.Point(170, 24)
+      Me.eui_txtAnno.Name = "eui_txtAnno"
+      Me.eui_txtAnno.Size = New System.Drawing.Size(62, 21)
+      Me.eui_txtAnno.TabIndex = 1
+      Me.eui_txtAnno.Text = "2015"
+      Me.eui_txtAnno.TextEditorWidth = 56
+      '
+      'Label5
+      '
+      Me.Label5.Location = New System.Drawing.Point(272, 88)
+      Me.Label5.Name = "Label5"
+      Me.Label5.Size = New System.Drawing.Size(80, 16)
+      Me.Label5.TabIndex = 17
+      Me.Label5.Text = "Causale:"
+      '
+      'eui_txtProvincia
+      '
+      Me.eui_txtProvincia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtProvincia.Id = "3985392b-67f1-4adc-8b45-140adb998a16"
+      Me.eui_txtProvincia.Location = New System.Drawing.Point(315, 254)
+      Me.eui_txtProvincia.MaxLength = 2
+      Me.eui_txtProvincia.Name = "eui_txtProvincia"
+      Me.eui_txtProvincia.Size = New System.Drawing.Size(47, 21)
+      Me.eui_txtProvincia.TabIndex = 12
+      Me.eui_txtProvincia.TextEditorWidth = 40
+      '
+      'eui_cmbTipoDocumento
+      '
+      Me.eui_cmbTipoDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbTipoDocumento.Editable = False
+      Me.eui_cmbTipoDocumento.FormattingEnabled = False
+      Me.eui_cmbTipoDocumento.Id = "dc8327db-c9fa-4fa0-a3b7-59e884bacc1c"
+      Me.eui_cmbTipoDocumento.Location = New System.Drawing.Point(364, 24)
+      Me.eui_cmbTipoDocumento.Name = "eui_cmbTipoDocumento"
+      Me.eui_cmbTipoDocumento.Size = New System.Drawing.Size(282, 21)
+      Me.eui_cmbTipoDocumento.Sorted = True
+      Me.eui_cmbTipoDocumento.TabIndex = 3
+      Me.eui_cmbTipoDocumento.TextEditorWidth = 255
+      '
+      'Label3
+      '
+      Me.Label3.Location = New System.Drawing.Point(24, 24)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(40, 13)
+      Me.Label3.TabIndex = 11
+      Me.Label3.Text = "Numero:"
+      '
+      'eui_cmbStatoDocumento
+      '
+      Me.eui_cmbStatoDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbStatoDocumento.Editable = False
+      Me.eui_cmbStatoDocumento.FormattingEnabled = False
+      Me.eui_cmbStatoDocumento.Id = "76bfb2e5-46f8-4d6d-9a88-956a8c363518"
+      Me.eui_cmbStatoDocumento.Location = New System.Drawing.Point(364, 56)
+      Me.eui_cmbStatoDocumento.Name = "eui_cmbStatoDocumento"
+      Me.eui_cmbStatoDocumento.Size = New System.Drawing.Size(282, 21)
+      Me.eui_cmbStatoDocumento.TabIndex = 4
+      Me.eui_cmbStatoDocumento.TextEditorWidth = 255
+      '
+      'eui_txtCap
+      '
+      Me.eui_txtCap.Id = "4204a4af-49ab-4716-b653-f7f3501302a9"
+      Me.eui_txtCap.Location = New System.Drawing.Point(71, 254)
+      Me.eui_txtCap.MaxLength = 5
+      Me.eui_txtCap.Name = "eui_txtCap"
+      Me.eui_txtCap.Size = New System.Drawing.Size(81, 21)
+      Me.eui_txtCap.TabIndex = 12
+      Me.eui_txtCap.TextEditorWidth = 75
+      '
+      'Label2
+      '
+      Me.Label2.Location = New System.Drawing.Point(272, 56)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(80, 16)
+      Me.Label2.TabIndex = 10
+      Me.Label2.Text = "Stato:"
+      '
+      'eui_dtpData
+      '
+      Me.eui_dtpData.Id = "0ebeb455-6b17-4457-ae05-8c666915d35c"
+      Me.eui_dtpData.Location = New System.Drawing.Point(72, 56)
+      Me.eui_dtpData.Name = "eui_dtpData"
+      Me.eui_dtpData.Size = New System.Drawing.Size(160, 21)
+      Me.eui_dtpData.TabIndex = 2
+      Me.eui_dtpData.TextEditorWidth = 141
+      '
+      'Label4
+      '
+      Me.Label4.Location = New System.Drawing.Point(24, 56)
+      Me.Label4.Name = "Label4"
+      Me.Label4.Size = New System.Drawing.Size(32, 13)
+      Me.Label4.TabIndex = 12
+      Me.Label4.Text = "Data:"
+      '
+      'eui_txtCittà
+      '
+      Me.eui_txtCittà.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtCittà.Id = "22637545-03a0-4931-b455-632da50ff576"
+      Me.eui_txtCittà.Location = New System.Drawing.Point(72, 222)
+      Me.eui_txtCittà.Name = "eui_txtCittà"
+      Me.eui_txtCittà.Size = New System.Drawing.Size(290, 21)
+      Me.eui_txtCittà.TabIndex = 11
+      Me.eui_txtCittà.TextEditorWidth = 274
+      '
+      'eui_txtNumero
+      '
+      Me.eui_txtNumero.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtNumero.Id = "e3192374-fa23-4e8b-884d-eaecdbb68ab9"
+      Me.eui_txtNumero.Location = New System.Drawing.Point(72, 24)
+      Me.eui_txtNumero.Name = "eui_txtNumero"
+      Me.eui_txtNumero.Size = New System.Drawing.Size(75, 21)
+      Me.eui_txtNumero.TabIndex = 0
+      Me.eui_txtNumero.Text = "105"
+      Me.eui_txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'eui_txtIndirizzo
+      '
+      Me.eui_txtIndirizzo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtIndirizzo.Id = "b905ef6f-4b8d-440a-afca-5f359e1db5cc"
+      Me.eui_txtIndirizzo.Location = New System.Drawing.Point(72, 190)
+      Me.eui_txtIndirizzo.Name = "eui_txtIndirizzo"
+      Me.eui_txtIndirizzo.Size = New System.Drawing.Size(290, 21)
+      Me.eui_txtIndirizzo.TabIndex = 10
+      Me.eui_txtIndirizzo.TextEditorWidth = 274
+      '
+      'Label10
+      '
+      Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label10.Location = New System.Drawing.Point(258, 254)
+      Me.Label10.Name = "Label10"
+      Me.Label10.Size = New System.Drawing.Size(47, 13)
+      Me.Label10.TabIndex = 25
+      Me.Label10.Text = "Provincia:"
+      '
+      'Label9
+      '
+      Me.Label9.Location = New System.Drawing.Point(24, 222)
+      Me.Label9.Name = "Label9"
+      Me.Label9.Size = New System.Drawing.Size(32, 13)
+      Me.Label9.TabIndex = 24
+      Me.Label9.Text = "Città:"
+      '
+      'Label8
+      '
+      Me.Label8.Location = New System.Drawing.Point(23, 254)
+      Me.Label8.Name = "Label8"
+      Me.Label8.Size = New System.Drawing.Size(33, 13)
+      Me.Label8.TabIndex = 23
+      Me.Label8.Text = "C.A.P.:"
+      '
+      'Label7
+      '
+      Me.Label7.Location = New System.Drawing.Point(24, 190)
+      Me.Label7.Name = "Label7"
+      Me.Label7.Size = New System.Drawing.Size(41, 13)
+      Me.Label7.TabIndex = 22
+      Me.Label7.Text = "Indirizzo:"
+      '
+      'eui_txtClienteNome
+      '
+      Me.eui_txtClienteNome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtClienteNome.Id = "0c1086a1-ef0a-4fce-93c7-c93d5dae2b25"
+      Me.eui_txtClienteNome.Location = New System.Drawing.Point(372, 158)
+      Me.eui_txtClienteNome.Name = "eui_txtClienteNome"
+      Me.eui_txtClienteNome.Size = New System.Drawing.Size(212, 21)
+      Me.eui_txtClienteNome.TabIndex = 7
+      Me.eui_txtClienteNome.TextEditorWidth = 206
+      '
+      'eui_cmbClienteCognome
+      '
+      Me.eui_cmbClienteCognome.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbClienteCognome.FormattingEnabled = False
+      Me.eui_cmbClienteCognome.Id = "b3c44817-bd83-445f-87d4-1a655a058aa1"
+      Me.eui_cmbClienteCognome.Location = New System.Drawing.Point(72, 158)
+      Me.eui_cmbClienteCognome.Name = "eui_cmbClienteCognome"
+      Me.eui_cmbClienteCognome.Size = New System.Drawing.Size(290, 21)
+      Me.eui_cmbClienteCognome.TabIndex = 6
+      Me.eui_cmbClienteCognome.TextEditorWidth = 261
+      '
+      'Label6
+      '
+      Me.Label6.Location = New System.Drawing.Point(24, 158)
+      Me.Label6.Name = "Label6"
+      Me.Label6.Size = New System.Drawing.Size(33, 13)
+      Me.Label6.TabIndex = 20
+      Me.Label6.Text = "Clente:"
       '
       'eui_tpDettagli
       '
@@ -461,429 +884,6 @@ Partial Class frmDocumento
       Me.clnCategoria.HeaderText = "Categoria"
       Me.clnCategoria.Name = "clnCategoria"
       Me.clnCategoria.Visible = False
-      '
-      'eui_tpGenerale
-      '
-      Me.eui_tpGenerale.ActiveControl = Nothing
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtNumProgressivo)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCameriere)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtTavolo)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtIdCliente)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmdNuovoCliente)
-      Me.eui_tpGenerale.Controls.Add(Me.Label41)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbIdCliente)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmdModificaCliente)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtOra)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbTipoPagamento)
-      Me.eui_tpGenerale.Controls.Add(Me.Label13)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCodiceFiscale)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtPartitaIva)
-      Me.eui_tpGenerale.Controls.Add(Me.Label11)
-      Me.eui_tpGenerale.Controls.Add(Me.Label12)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbCausaleDocumento)
-      Me.eui_tpGenerale.Controls.Add(Me.Label1)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtAnno)
-      Me.eui_tpGenerale.Controls.Add(Me.Label5)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtProvincia)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbTipoDocumento)
-      Me.eui_tpGenerale.Controls.Add(Me.Label3)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbStatoDocumento)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCap)
-      Me.eui_tpGenerale.Controls.Add(Me.Label2)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_dtpData)
-      Me.eui_tpGenerale.Controls.Add(Me.Label4)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtCittà)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtNumero)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtIndirizzo)
-      Me.eui_tpGenerale.Controls.Add(Me.Label10)
-      Me.eui_tpGenerale.Controls.Add(Me.Label9)
-      Me.eui_tpGenerale.Controls.Add(Me.Label8)
-      Me.eui_tpGenerale.Controls.Add(Me.Label7)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_txtClienteNome)
-      Me.eui_tpGenerale.Controls.Add(Me.eui_cmbClienteCognome)
-      Me.eui_tpGenerale.Controls.Add(Me.Label6)
-      Me.eui_tpGenerale.KeyTip = Nothing
-      Me.eui_tpGenerale.Name = "eui_tpGenerale"
-      Me.eui_tpGenerale.Size = New System.Drawing.Size(657, 453)
-      Me.eui_tpGenerale.TabIndex = 0
-      Me.eui_tpGenerale.Text = "Generale"
-      '
-      'eui_txtNumProgressivo
-      '
-      Me.eui_txtNumProgressivo.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtNumProgressivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtNumProgressivo.Id = "181f3d9d-f8bd-4437-9f5a-5dcb3fffd1a5"
-      Me.eui_txtNumProgressivo.Location = New System.Drawing.Point(72, 84)
-      Me.eui_txtNumProgressivo.Name = "eui_txtNumProgressivo"
-      Me.eui_txtNumProgressivo.Size = New System.Drawing.Size(75, 21)
-      Me.eui_txtNumProgressivo.TabIndex = 3
-      Me.eui_txtNumProgressivo.Text = "105"
-      Me.eui_txtNumProgressivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtNumProgressivo.Visible = False
-      '
-      'eui_txtCameriere
-      '
-      Me.eui_txtCameriere.Id = "d418d228-3193-4bd2-a089-f1344ad8b0c6"
-      Me.eui_txtCameriere.Location = New System.Drawing.Point(71, 308)
-      Me.eui_txtCameriere.Name = "eui_txtCameriere"
-      Me.eui_txtCameriere.Size = New System.Drawing.Size(80, 21)
-      Me.eui_txtCameriere.TabIndex = 42
-      Me.eui_txtCameriere.TextEditorWidth = 74
-      Me.eui_txtCameriere.Visible = False
-      '
-      'eui_txtTavolo
-      '
-      Me.eui_txtTavolo.Id = "5bc44102-c309-40d8-83bd-2ae775389abe"
-      Me.eui_txtTavolo.Location = New System.Drawing.Point(71, 283)
-      Me.eui_txtTavolo.Name = "eui_txtTavolo"
-      Me.eui_txtTavolo.Size = New System.Drawing.Size(81, 21)
-      Me.eui_txtTavolo.TabIndex = 41
-      Me.eui_txtTavolo.TextEditorWidth = 75
-      Me.eui_txtTavolo.Visible = False
-      '
-      'eui_txtIdCliente
-      '
-      Me.eui_txtIdCliente.Id = "6c3d222b-6453-4dab-913d-8d16ce0dea55"
-      Me.eui_txtIdCliente.Location = New System.Drawing.Point(113, 135)
-      Me.eui_txtIdCliente.Name = "eui_txtIdCliente"
-      Me.eui_txtIdCliente.Size = New System.Drawing.Size(39, 21)
-      Me.eui_txtIdCliente.TabIndex = 40
-      Me.eui_txtIdCliente.TextEditorWidth = 33
-      Me.eui_txtIdCliente.Visible = False
-      '
-      'eui_cmdNuovoCliente
-      '
-      Me.eui_cmdNuovoCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdNuovoCliente.Id = "28ee9ae7-92bb-4bc9-8751-dc7ed0d79655"
-      Me.eui_cmdNuovoCliente.Location = New System.Drawing.Point(607, 158)
-      Me.eui_cmdNuovoCliente.Name = "eui_cmdNuovoCliente"
-      Me.eui_cmdNuovoCliente.ScreenTip.Caption = "Nuovo"
-      Me.eui_cmdNuovoCliente.ScreenTip.Text = "Apre la finestra per l'inserimento dei dati di un nuovo cliente."
-      Me.eui_cmdNuovoCliente.Size = New System.Drawing.Size(30, 21)
-      Me.eui_cmdNuovoCliente.TabIndex = 9
-      Me.eui_cmdNuovoCliente.Text = "+"
-      '
-      'Label41
-      '
-      Me.Label41.Location = New System.Drawing.Point(158, 28)
-      Me.Label41.Name = "Label41"
-      Me.Label41.Size = New System.Drawing.Size(11, 13)
-      Me.Label41.TabIndex = 38
-      Me.Label41.Text = "/"
-      '
-      'eui_cmbIdCliente
-      '
-      Me.eui_cmbIdCliente.Editable = False
-      Me.eui_cmbIdCliente.FormattingEnabled = False
-      Me.eui_cmbIdCliente.Id = "92ffe671-631c-47b2-b6e6-5079ba4fd5e3"
-      Me.eui_cmbIdCliente.Location = New System.Drawing.Point(71, 135)
-      Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
-      Me.eui_cmbIdCliente.Size = New System.Drawing.Size(30, 21)
-      Me.eui_cmbIdCliente.TabIndex = 37
-      Me.eui_cmbIdCliente.TextEditorWidth = 11
-      Me.eui_cmbIdCliente.Visible = False
-      '
-      'eui_cmdModificaCliente
-      '
-      Me.eui_cmdModificaCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdModificaCliente.Id = "8a17ba51-9706-441a-8d53-3f124a07092c"
-      Me.eui_cmdModificaCliente.Location = New System.Drawing.Point(576, 158)
-      Me.eui_cmdModificaCliente.Name = "eui_cmdModificaCliente"
-      Me.eui_cmdModificaCliente.ScreenTip.Caption = "Modifica"
-      Me.eui_cmdModificaCliente.ScreenTip.Text = "Apre la finestra di modifica dei dati del cliente selezionato."
-      Me.eui_cmdModificaCliente.Size = New System.Drawing.Size(30, 21)
-      Me.eui_cmdModificaCliente.TabIndex = 8
-      Me.eui_cmdModificaCliente.Text = "..."
-      '
-      'eui_txtOra
-      '
-      Me.eui_txtOra.Id = "d0685579-4dd6-45ac-88b5-7536c60ce1de"
-      Me.eui_txtOra.Location = New System.Drawing.Point(170, 84)
-      Me.eui_txtOra.Name = "eui_txtOra"
-      Me.eui_txtOra.Size = New System.Drawing.Size(61, 21)
-      Me.eui_txtOra.TabIndex = 4
-      Me.eui_txtOra.TextEditorWidth = 55
-      Me.eui_txtOra.Visible = False
-      '
-      'eui_cmbTipoPagamento
-      '
-      Me.eui_cmbTipoPagamento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbTipoPagamento.FormattingEnabled = False
-      Me.eui_cmbTipoPagamento.Id = "e0e7801f-9f9e-4759-9986-6317c12a9589"
-      Me.eui_cmbTipoPagamento.Location = New System.Drawing.Point(443, 254)
-      Me.eui_cmbTipoPagamento.Name = "eui_cmbTipoPagamento"
-      Me.eui_cmbTipoPagamento.Size = New System.Drawing.Size(194, 21)
-      Me.eui_cmbTipoPagamento.Sorted = True
-      Me.eui_cmbTipoPagamento.TabIndex = 15
-      Me.eui_cmbTipoPagamento.TextEditorWidth = 175
-      '
-      'Label13
-      '
-      Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label13.Location = New System.Drawing.Point(363, 254)
-      Me.Label13.Name = "Label13"
-      Me.Label13.Size = New System.Drawing.Size(57, 13)
-      Me.Label13.TabIndex = 35
-      Me.Label13.Text = "Pagamento:"
-      '
-      'eui_txtCodiceFiscale
-      '
-      Me.eui_txtCodiceFiscale.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtCodiceFiscale.Id = "7bbe9c34-2fb4-4be7-8b34-8a3bf7de247b"
-      Me.eui_txtCodiceFiscale.Location = New System.Drawing.Point(443, 222)
-      Me.eui_txtCodiceFiscale.MaxLength = 16
-      Me.eui_txtCodiceFiscale.Name = "eui_txtCodiceFiscale"
-      Me.eui_txtCodiceFiscale.Size = New System.Drawing.Size(194, 21)
-      Me.eui_txtCodiceFiscale.TabIndex = 14
-      Me.eui_txtCodiceFiscale.TextEditorWidth = 188
-      '
-      'eui_txtPartitaIva
-      '
-      Me.eui_txtPartitaIva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtPartitaIva.Id = "cc8e05ad-a451-418c-a92e-0e740c97071f"
-      Me.eui_txtPartitaIva.Location = New System.Drawing.Point(443, 190)
-      Me.eui_txtPartitaIva.MaxLength = 11
-      Me.eui_txtPartitaIva.Name = "eui_txtPartitaIva"
-      Me.eui_txtPartitaIva.Size = New System.Drawing.Size(194, 21)
-      Me.eui_txtPartitaIva.TabIndex = 13
-      Me.eui_txtPartitaIva.TextEditorWidth = 188
-      '
-      'Label11
-      '
-      Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label11.Location = New System.Drawing.Point(363, 222)
-      Me.Label11.Name = "Label11"
-      Me.Label11.Size = New System.Drawing.Size(69, 13)
-      Me.Label11.TabIndex = 31
-      Me.Label11.Text = "Codice fiscale:"
-      '
-      'Label12
-      '
-      Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label12.Location = New System.Drawing.Point(363, 190)
-      Me.Label12.Name = "Label12"
-      Me.Label12.Size = New System.Drawing.Size(53, 13)
-      Me.Label12.TabIndex = 30
-      Me.Label12.Text = "Partita IVA:"
-      '
-      'eui_cmbCausaleDocumento
-      '
-      Me.eui_cmbCausaleDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbCausaleDocumento.FormattingEnabled = False
-      Me.eui_cmbCausaleDocumento.Id = "780b4384-b4be-4d7d-b041-8a5cb40e071e"
-      Me.eui_cmbCausaleDocumento.Location = New System.Drawing.Point(364, 88)
-      Me.eui_cmbCausaleDocumento.Name = "eui_cmbCausaleDocumento"
-      Me.eui_cmbCausaleDocumento.Size = New System.Drawing.Size(273, 21)
-      Me.eui_cmbCausaleDocumento.Sorted = True
-      Me.eui_cmbCausaleDocumento.TabIndex = 5
-      Me.eui_cmbCausaleDocumento.TextEditorWidth = 255
-      '
-      'Label1
-      '
-      Me.Label1.Location = New System.Drawing.Point(272, 24)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(80, 16)
-      Me.Label1.TabIndex = 9
-      Me.Label1.Text = "Tipo documento:"
-      '
-      'eui_txtAnno
-      '
-      Me.eui_txtAnno.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtAnno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtAnno.Id = "86422bd2-acc3-4b17-bf5e-f83ec75186b6"
-      Me.eui_txtAnno.Location = New System.Drawing.Point(170, 24)
-      Me.eui_txtAnno.Name = "eui_txtAnno"
-      Me.eui_txtAnno.Size = New System.Drawing.Size(62, 21)
-      Me.eui_txtAnno.TabIndex = 1
-      Me.eui_txtAnno.Text = "2015"
-      Me.eui_txtAnno.TextEditorWidth = 56
-      '
-      'Label5
-      '
-      Me.Label5.Location = New System.Drawing.Point(272, 88)
-      Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(80, 16)
-      Me.Label5.TabIndex = 17
-      Me.Label5.Text = "Causale:"
-      '
-      'eui_txtProvincia
-      '
-      Me.eui_txtProvincia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtProvincia.Id = "3985392b-67f1-4adc-8b45-140adb998a16"
-      Me.eui_txtProvincia.Location = New System.Drawing.Point(306, 254)
-      Me.eui_txtProvincia.MaxLength = 2
-      Me.eui_txtProvincia.Name = "eui_txtProvincia"
-      Me.eui_txtProvincia.Size = New System.Drawing.Size(47, 21)
-      Me.eui_txtProvincia.TabIndex = 12
-      Me.eui_txtProvincia.TextEditorWidth = 40
-      '
-      'eui_cmbTipoDocumento
-      '
-      Me.eui_cmbTipoDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbTipoDocumento.Editable = False
-      Me.eui_cmbTipoDocumento.FormattingEnabled = False
-      Me.eui_cmbTipoDocumento.Id = "dc8327db-c9fa-4fa0-a3b7-59e884bacc1c"
-      Me.eui_cmbTipoDocumento.Location = New System.Drawing.Point(364, 24)
-      Me.eui_cmbTipoDocumento.Name = "eui_cmbTipoDocumento"
-      Me.eui_cmbTipoDocumento.Size = New System.Drawing.Size(273, 21)
-      Me.eui_cmbTipoDocumento.Sorted = True
-      Me.eui_cmbTipoDocumento.TabIndex = 3
-      Me.eui_cmbTipoDocumento.TextEditorWidth = 255
-      '
-      'Label3
-      '
-      Me.Label3.Location = New System.Drawing.Point(24, 24)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(40, 13)
-      Me.Label3.TabIndex = 11
-      Me.Label3.Text = "Numero:"
-      '
-      'eui_cmbStatoDocumento
-      '
-      Me.eui_cmbStatoDocumento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbStatoDocumento.Editable = False
-      Me.eui_cmbStatoDocumento.FormattingEnabled = False
-      Me.eui_cmbStatoDocumento.Id = "76bfb2e5-46f8-4d6d-9a88-956a8c363518"
-      Me.eui_cmbStatoDocumento.Location = New System.Drawing.Point(364, 56)
-      Me.eui_cmbStatoDocumento.Name = "eui_cmbStatoDocumento"
-      Me.eui_cmbStatoDocumento.Size = New System.Drawing.Size(273, 21)
-      Me.eui_cmbStatoDocumento.TabIndex = 4
-      Me.eui_cmbStatoDocumento.TextEditorWidth = 255
-      '
-      'eui_txtCap
-      '
-      Me.eui_txtCap.Id = "4204a4af-49ab-4716-b653-f7f3501302a9"
-      Me.eui_txtCap.Location = New System.Drawing.Point(71, 254)
-      Me.eui_txtCap.MaxLength = 5
-      Me.eui_txtCap.Name = "eui_txtCap"
-      Me.eui_txtCap.Size = New System.Drawing.Size(81, 21)
-      Me.eui_txtCap.TabIndex = 12
-      Me.eui_txtCap.TextEditorWidth = 75
-      '
-      'Label2
-      '
-      Me.Label2.Location = New System.Drawing.Point(272, 56)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(80, 16)
-      Me.Label2.TabIndex = 10
-      Me.Label2.Text = "Stato:"
-      '
-      'eui_dtpData
-      '
-      Me.eui_dtpData.Id = "0ebeb455-6b17-4457-ae05-8c666915d35c"
-      Me.eui_dtpData.Location = New System.Drawing.Point(72, 56)
-      Me.eui_dtpData.Name = "eui_dtpData"
-      Me.eui_dtpData.Size = New System.Drawing.Size(160, 21)
-      Me.eui_dtpData.TabIndex = 2
-      Me.eui_dtpData.TextEditorWidth = 141
-      '
-      'Label4
-      '
-      Me.Label4.Location = New System.Drawing.Point(24, 56)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(32, 13)
-      Me.Label4.TabIndex = 12
-      Me.Label4.Text = "Data:"
-      '
-      'eui_txtCittà
-      '
-      Me.eui_txtCittà.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtCittà.Id = "22637545-03a0-4931-b455-632da50ff576"
-      Me.eui_txtCittà.Location = New System.Drawing.Point(72, 222)
-      Me.eui_txtCittà.Name = "eui_txtCittà"
-      Me.eui_txtCittà.Size = New System.Drawing.Size(281, 21)
-      Me.eui_txtCittà.TabIndex = 11
-      Me.eui_txtCittà.TextEditorWidth = 274
-      '
-      'eui_txtNumero
-      '
-      Me.eui_txtNumero.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtNumero.Id = "e3192374-fa23-4e8b-884d-eaecdbb68ab9"
-      Me.eui_txtNumero.Location = New System.Drawing.Point(72, 24)
-      Me.eui_txtNumero.Name = "eui_txtNumero"
-      Me.eui_txtNumero.Size = New System.Drawing.Size(75, 21)
-      Me.eui_txtNumero.TabIndex = 0
-      Me.eui_txtNumero.Text = "105"
-      Me.eui_txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'eui_txtIndirizzo
-      '
-      Me.eui_txtIndirizzo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtIndirizzo.Id = "b905ef6f-4b8d-440a-afca-5f359e1db5cc"
-      Me.eui_txtIndirizzo.Location = New System.Drawing.Point(72, 190)
-      Me.eui_txtIndirizzo.Name = "eui_txtIndirizzo"
-      Me.eui_txtIndirizzo.Size = New System.Drawing.Size(281, 21)
-      Me.eui_txtIndirizzo.TabIndex = 10
-      Me.eui_txtIndirizzo.TextEditorWidth = 274
-      '
-      'Label10
-      '
-      Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label10.Location = New System.Drawing.Point(249, 254)
-      Me.Label10.Name = "Label10"
-      Me.Label10.Size = New System.Drawing.Size(47, 13)
-      Me.Label10.TabIndex = 25
-      Me.Label10.Text = "Provincia:"
-      '
-      'Label9
-      '
-      Me.Label9.Location = New System.Drawing.Point(24, 222)
-      Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(32, 13)
-      Me.Label9.TabIndex = 24
-      Me.Label9.Text = "Città:"
-      '
-      'Label8
-      '
-      Me.Label8.Location = New System.Drawing.Point(23, 254)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(33, 13)
-      Me.Label8.TabIndex = 23
-      Me.Label8.Text = "C.A.P.:"
-      '
-      'Label7
-      '
-      Me.Label7.Location = New System.Drawing.Point(24, 190)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(41, 13)
-      Me.Label7.TabIndex = 22
-      Me.Label7.Text = "Indirizzo:"
-      '
-      'eui_txtClienteNome
-      '
-      Me.eui_txtClienteNome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtClienteNome.Id = "0c1086a1-ef0a-4fce-93c7-c93d5dae2b25"
-      Me.eui_txtClienteNome.Location = New System.Drawing.Point(363, 158)
-      Me.eui_txtClienteNome.Name = "eui_txtClienteNome"
-      Me.eui_txtClienteNome.Size = New System.Drawing.Size(212, 21)
-      Me.eui_txtClienteNome.TabIndex = 7
-      Me.eui_txtClienteNome.TextEditorWidth = 206
-      '
-      'eui_cmbClienteCognome
-      '
-      Me.eui_cmbClienteCognome.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbClienteCognome.FormattingEnabled = False
-      Me.eui_cmbClienteCognome.Id = "b3c44817-bd83-445f-87d4-1a655a058aa1"
-      Me.eui_cmbClienteCognome.Location = New System.Drawing.Point(72, 158)
-      Me.eui_cmbClienteCognome.Name = "eui_cmbClienteCognome"
-      Me.eui_cmbClienteCognome.Size = New System.Drawing.Size(281, 21)
-      Me.eui_cmbClienteCognome.TabIndex = 6
-      Me.eui_cmbClienteCognome.TextEditorWidth = 261
-      '
-      'Label6
-      '
-      Me.Label6.Location = New System.Drawing.Point(24, 158)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(33, 13)
-      Me.Label6.TabIndex = 20
-      Me.Label6.Text = "Clente:"
       '
       'eui_tpTotali
       '
@@ -1368,10 +1368,10 @@ Partial Class frmDocumento
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 613)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 624)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(865, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(882, 22)
       Me.StatusBar1.TabIndex = 3
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -1385,7 +1385,7 @@ Partial Class frmDocumento
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(731, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(748, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -1453,7 +1453,7 @@ Partial Class frmDocumento
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane4)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(731, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(748, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -1485,7 +1485,7 @@ Partial Class frmDocumento
       Me.eui_cmdAnteprima.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdAnteprima.Id = "a24f06e9-0d6d-457c-a692-06d6a31b5a4c"
       Me.eui_cmdAnteprima.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(686, 28)
+      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(695, 28)
       Me.eui_cmdAnteprima.Name = "eui_cmdAnteprima"
       Me.eui_cmdAnteprima.ScreenTip.Caption = "Anteprima"
       Me.eui_cmdAnteprima.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
@@ -1500,7 +1500,7 @@ Partial Class frmDocumento
       Me.eui_cmdEmetti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdEmetti.Id = "61543a85-ab7b-43e0-8dda-63529664b486"
       Me.eui_cmdEmetti.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdEmetti.Location = New System.Drawing.Point(686, 176)
+      Me.eui_cmdEmetti.Location = New System.Drawing.Point(695, 176)
       Me.eui_cmdEmetti.Name = "eui_cmdEmetti"
       Me.eui_cmdEmetti.ScreenTip.Caption = "Emetti"
       Me.eui_cmdEmetti.ScreenTip.Text = "Salva ed emette il documento eseguendo le operazioni contabili."
@@ -1516,7 +1516,7 @@ Partial Class frmDocumento
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "d2bb7da2-7c9a-4b81-aa16-2c2fd422f903"
       Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(686, 346)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(695, 346)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Esci"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude il documento."
@@ -1531,7 +1531,7 @@ Partial Class frmDocumento
       Me.eui_cmdSalva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalva.Id = "2111b041-6033-4a54-af47-7da5c5a57e2b"
       Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdSalva.Location = New System.Drawing.Point(686, 273)
+      Me.eui_cmdSalva.Location = New System.Drawing.Point(695, 273)
       Me.eui_cmdSalva.Name = "eui_cmdSalva"
       Me.eui_cmdSalva.ScreenTip.Caption = "Salva"
       Me.eui_cmdSalva.ScreenTip.Text = "Salva il documento."
@@ -1589,7 +1589,7 @@ Partial Class frmDocumento
       '
       Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImposta.Id = "47893f1f-16cc-4c5c-9f18-80cc5dfafc75"
-      Me.eui_txtImposta.Location = New System.Drawing.Point(408, 527)
+      Me.eui_txtImposta.Location = New System.Drawing.Point(417, 527)
       Me.eui_txtImposta.Name = "eui_txtImposta"
       Me.eui_txtImposta.Size = New System.Drawing.Size(124, 21)
       Me.eui_txtImposta.TabIndex = 3
@@ -1600,7 +1600,7 @@ Partial Class frmDocumento
       '
       Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImponibile.Id = "db7f65dd-91d0-44b9-81e5-988cf080c183"
-      Me.eui_txtImponibile.Location = New System.Drawing.Point(275, 527)
+      Me.eui_txtImponibile.Location = New System.Drawing.Point(284, 527)
       Me.eui_txtImponibile.Name = "eui_txtImponibile"
       Me.eui_txtImponibile.Size = New System.Drawing.Size(124, 21)
       Me.eui_txtImponibile.TabIndex = 2
@@ -1610,7 +1610,7 @@ Partial Class frmDocumento
       'Label16
       '
       Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label16.Location = New System.Drawing.Point(408, 511)
+      Me.Label16.Location = New System.Drawing.Point(417, 511)
       Me.Label16.Name = "Label16"
       Me.Label16.Size = New System.Drawing.Size(56, 16)
       Me.Label16.TabIndex = 39
@@ -1619,7 +1619,7 @@ Partial Class frmDocumento
       'Label17
       '
       Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label17.Location = New System.Drawing.Point(275, 511)
+      Me.Label17.Location = New System.Drawing.Point(284, 511)
       Me.Label17.Name = "Label17"
       Me.Label17.Size = New System.Drawing.Size(56, 16)
       Me.Label17.TabIndex = 38
@@ -1630,7 +1630,7 @@ Partial Class frmDocumento
       Me.eui_txtTotaleDocumento.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotaleDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotaleDocumento.Id = "95402abc-858c-4074-bcbe-42aba8a8657b"
-      Me.eui_txtTotaleDocumento.Location = New System.Drawing.Point(543, 527)
+      Me.eui_txtTotaleDocumento.Location = New System.Drawing.Point(552, 527)
       Me.eui_txtTotaleDocumento.Name = "eui_txtTotaleDocumento"
       Me.eui_txtTotaleDocumento.Size = New System.Drawing.Size(124, 21)
       Me.eui_txtTotaleDocumento.TabIndex = 4
@@ -1640,7 +1640,7 @@ Partial Class frmDocumento
       'Label18
       '
       Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label18.Location = New System.Drawing.Point(543, 511)
+      Me.Label18.Location = New System.Drawing.Point(552, 511)
       Me.Label18.Name = "Label18"
       Me.Label18.Size = New System.Drawing.Size(56, 16)
       Me.Label18.TabIndex = 42
@@ -1651,7 +1651,7 @@ Partial Class frmDocumento
       Me.eui_cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdStampa.Id = "3f5dd41d-365c-44ff-9339-5f43d19c42a9"
       Me.eui_cmdStampa.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdStampa.Location = New System.Drawing.Point(686, 493)
+      Me.eui_cmdStampa.Location = New System.Drawing.Point(695, 493)
       Me.eui_cmdStampa.Name = "eui_cmdStampa"
       Me.eui_cmdStampa.ScreenTip.Caption = "Stampa"
       Me.eui_cmdStampa.ScreenTip.Text = "Salva e stampa il documento."
@@ -1667,7 +1667,7 @@ Partial Class frmDocumento
       Me.eui_cmdEmettiStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdEmettiStampa.Id = "39cac427-b8a2-4ffc-8fc8-a532a1f414e9"
       Me.eui_cmdEmettiStampa.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdEmettiStampa.Location = New System.Drawing.Point(686, 102)
+      Me.eui_cmdEmettiStampa.Location = New System.Drawing.Point(695, 102)
       Me.eui_cmdEmettiStampa.Name = "eui_cmdEmettiStampa"
       Me.eui_cmdEmettiStampa.ScreenTip.Caption = "Emetti"
       Me.eui_cmdEmettiStampa.ScreenTip.Text = "Salva, stampa ed emette il documento eseguendo le operazioni contabili."
@@ -1681,7 +1681,7 @@ Partial Class frmDocumento
       '
       Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdTastiera.Id = "03b32c49-16f5-47ce-837d-3771218e7e99"
-      Me.eui_cmdTastiera.Location = New System.Drawing.Point(686, 417)
+      Me.eui_cmdTastiera.Location = New System.Drawing.Point(695, 417)
       Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
       Me.eui_cmdTastiera.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
@@ -1697,7 +1697,7 @@ Partial Class frmDocumento
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(865, 635)
+      Me.ClientSize = New System.Drawing.Size(882, 646)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_cmdEmettiStampa)
       Me.Controls.Add(Me.eui_txtTotaleDocumento)
@@ -1722,11 +1722,11 @@ Partial Class frmDocumento
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Conto"
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_tpGenerale.ResumeLayout(False)
+      Me.eui_tpGenerale.PerformLayout()
       Me.eui_tpDettagli.ResumeLayout(False)
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.eui_tpGenerale.ResumeLayout(False)
-      Me.eui_tpGenerale.PerformLayout()
       Me.eui_tpTotali.ResumeLayout(False)
       Me.eui_tpTotali.PerformLayout()
       Me.eui_tpNote.ResumeLayout(False)

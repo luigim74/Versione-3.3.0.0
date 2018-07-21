@@ -11863,14 +11863,15 @@ Friend Class frmMain
    Private Sub eui_Strumenti_Documenti_Invia_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia.Click
       Try
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         InviaEmail(LeggiEmailMittente, LeggiEmailDestinatario)
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiPrenotazione, CreaMessaggio, String.Empty)
+
+         frmEmail.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub eui_cmdEsportaPdf_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaPdf.Click
@@ -13219,67 +13220,6 @@ Friend Class frmMain
       End Try
    End Sub
 
-   Public Sub InviaEmail(ByVal eMailMittente As String, ByVal eMailDestinatario As String)
-      Try
-         If WebCommunication.VerificaConnessione = True Then
-
-            Dim nomeMailServer As String = NOME_MAIL_SERVER_SMTP
-
-            If eMailMittente = String.Empty Then
-               MessageBox.Show("E' necessario specificare un'e-mail per il mittente!" & vbNewLine &
-                               "Verificare nell'anagrafica 'Dati generali Azienda' la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-               Exit Sub
-            End If
-
-            If eMailDestinatario = String.Empty Then
-               MessageBox.Show("E' necessario specificare un'e-mail per il destinatario!" & vbNewLine &
-                               "Verificare nell'anagrafica 'Cliente' intestatario della prenotazione la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-               Exit Sub
-            End If
-
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.AppStarting
-
-            Dim oggetto As String = "Prenotazione N. 34239"
-
-            Dim corpoMessaggio As String = "Prenotazione"
-
-            Dim File As String = "Data.pdf"
-
-            Dim messaggio As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage(eMailMittente, eMailDestinatario)
-            messaggio.Subject = oggetto
-            messaggio.Body = corpoMessaggio
-
-            Dim Data As System.Net.Mail.Attachment = New System.Net.Mail.Attachment(File, System.Net.Mime.MediaTypeNames.Application.Octet)
-
-            Dim disposition As System.Net.Mime.ContentDisposition = Data.ContentDisposition
-            disposition.CreationDate = System.IO.File.GetCreationTime(File)
-            disposition.ModificationDate = System.IO.File.GetLastWriteTime(File)
-            disposition.ReadDate = System.IO.File.GetLastAccessTime(File)
-
-            messaggio.Attachments.Add(Data)
-
-            Dim smtp As System.Net.Mail.SmtpClient = New System.Net.Mail.SmtpClient(nomeMailServer, 25)
-
-            smtp.Credentials = New System.Net.NetworkCredential(USER_NAME_MAIL_SERVER_SMTP, PWD_MAIL_SERVER_SMTP)
-
-            smtp.Send(messaggio)
-
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.Default
-
-            MessageBox.Show("E-mail inviata con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-         End If
-
-      Catch ex As Exception
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Exit Sub
-      End Try
-   End Sub
-
    Private Function LeggiEmailMittente() As String
       Try
          Dim AAzienda As New Anagrafiche.Azienda(ConnString)
@@ -13293,6 +13233,30 @@ Friend Class frmMain
             Else
                Return .Email
             End If
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNomeDestinatario() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+
+         With AClienti
+
+            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
+
+            Return .Nome & " " & .Cognome
 
          End With
 
@@ -13333,6 +13297,51 @@ Friend Class frmMain
       End Try
 
    End Function
+
+   Private Function LeggiDatiPrenotazione() As String
+      Try
+         Dim numPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUMERO_PREN)
+         Dim dataPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA)
+         Dim strOggetto As String = "Riepilogo Prenotazione N. " & numPren & " del " & dataPren
+
+         Return strOggetto
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function CreaMessaggio() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Dim messaggio As String = "Gentile " & LeggiNomeDestinatario() & "," & vbNewLine & vbNewLine &
+                                      "Alleghiamo alla presente il documento in oggetto." & vbNewLine &
+                                      "Con l'occasione, porgiamo distinti saluti." & vbNewLine & vbNewLine &
+                                      .RagSociale & vbNewLine & vbNewLine &
+                                      "Telefono: " & .Telefono & vbNewLine &
+                                      "Internet: " & .Internet
+            Return messaggio
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
 
    Private Sub CaricaInfoProdottiAttivi()
 
