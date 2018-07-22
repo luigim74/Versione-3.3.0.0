@@ -28,7 +28,6 @@ Partial Class InvioEmail
       Me.StatusBarNotificationsArea1 = New Elegant.Ui.StatusBarNotificationsArea()
       Me.StatusBarPane2 = New Elegant.Ui.StatusBarPane()
       Me.StatusBarControlsArea1 = New Elegant.Ui.StatusBarControlsArea()
-      Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
       Me.eui_txtMittente = New Elegant.Ui.TextBox()
       Me.eui_txtDestinatario = New Elegant.Ui.TextBox()
       Me.eui_txtOggetto = New Elegant.Ui.TextBox()
@@ -44,9 +43,11 @@ Partial Class InvioEmail
       Me.eui_cmdSalva = New Elegant.Ui.Button()
       Me.eui_cmdAllegaFile = New Elegant.Ui.Button()
       Me.eui_cmdInvia = New Elegant.Ui.Button()
+      Me.PictureBox19 = New Elegant.Ui.PictureBox()
+      Me.eui_Informazioni = New Elegant.Ui.Label()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
-      Me.StatusBarControlsArea1.SuspendLayout()
+      Me.StatusBarPane2.SuspendLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage1.SuspendLayout()
       Me.SuspendLayout()
@@ -62,10 +63,10 @@ Partial Class InvioEmail
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 445)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 456)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(692, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(700, 22)
       Me.StatusBar1.TabIndex = 1
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -77,37 +78,29 @@ Partial Class InvioEmail
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(620, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(680, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
       '
+      Me.StatusBarPane2.Controls.Add(Me.PictureBox19)
+      Me.StatusBarPane2.Controls.Add(Me.eui_Informazioni)
       Me.StatusBarPane2.Location = New System.Drawing.Point(0, 0)
       Me.StatusBarPane2.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarPane2.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarPane2.Name = "StatusBarPane2"
-      Me.StatusBarPane2.Size = New System.Drawing.Size(20, 22)
+      Me.StatusBarPane2.Size = New System.Drawing.Size(287, 22)
       Me.StatusBarPane2.TabIndex = 0
       '
       'StatusBarControlsArea1
       '
-      Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane1)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(620, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(680, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
-      Me.StatusBarControlsArea1.Size = New System.Drawing.Size(72, 22)
+      Me.StatusBarControlsArea1.Size = New System.Drawing.Size(20, 22)
       Me.StatusBarControlsArea1.TabIndex = 0
-      '
-      'StatusBarPane1
-      '
-      Me.StatusBarPane1.Location = New System.Drawing.Point(0, 0)
-      Me.StatusBarPane1.MaximumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane1.MinimumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane1.Name = "StatusBarPane1"
-      Me.StatusBarPane1.Size = New System.Drawing.Size(20, 22)
-      Me.StatusBarPane1.TabIndex = 0
       '
       'eui_txtMittente
       '
@@ -259,7 +252,7 @@ Partial Class InvioEmail
       Me.eui_cmdAllegaFile.ScreenTip.Caption = "Emetti"
       Me.eui_cmdAllegaFile.ScreenTip.Text = "Salva ed emette il documento eseguendo le operazioni contabili."
       Me.eui_cmdAllegaFile.Size = New System.Drawing.Size(120, 39)
-      Me.eui_cmdAllegaFile.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdEmetti.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdAllegaFile.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAllegaFile.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdAllegaFile.TabIndex = 7
       Me.eui_cmdAllegaFile.Text = "Allega file"
       '
@@ -273,16 +266,36 @@ Partial Class InvioEmail
       Me.eui_cmdInvia.ScreenTip.Caption = "Emetti"
       Me.eui_cmdInvia.ScreenTip.Text = "Salva ed emette il documento eseguendo le operazioni contabili."
       Me.eui_cmdInvia.Size = New System.Drawing.Size(120, 39)
-      Me.eui_cmdInvia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("Button1.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdInvia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdInvia.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdInvia.TabIndex = 4
       Me.eui_cmdInvia.Text = "Invia"
+      '
+      'PictureBox19
+      '
+      Me.PictureBox19.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
+      Me.PictureBox19.Location = New System.Drawing.Point(2, 3)
+      Me.PictureBox19.Name = "PictureBox19"
+      Me.PictureBox19.Size = New System.Drawing.Size(16, 16)
+      Me.PictureBox19.SizeMode = Elegant.Ui.PictureBoxSizeMode.StretchImage
+      Me.PictureBox19.TabIndex = 5
+      Me.PictureBox19.TabStop = False
+      Me.PictureBox19.Text = "PictureBox19"
+      '
+      'eui_Informazioni
+      '
+      Me.eui_Informazioni.Location = New System.Drawing.Point(21, 5)
+      Me.eui_Informazioni.Name = "eui_Informazioni"
+      Me.eui_Informazioni.Size = New System.Drawing.Size(231, 13)
+      Me.eui_Informazioni.TabIndex = 4
+      Me.eui_Informazioni.Text = "Inviato il 20/07/2018 alle 21.30 a Luigi Montana."
       '
       'InvioEmail
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(692, 467)
+      Me.ClientSize = New System.Drawing.Size(700, 478)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdAllegaFile)
       Me.Controls.Add(Me.eui_cmdSalva)
@@ -305,8 +318,8 @@ Partial Class InvioEmail
       Me.StatusBar1.PerformLayout()
       Me.StatusBarNotificationsArea1.ResumeLayout(False)
       Me.StatusBarNotificationsArea1.PerformLayout()
-      Me.StatusBarControlsArea1.ResumeLayout(False)
-      Me.StatusBarControlsArea1.PerformLayout()
+      Me.StatusBarPane2.ResumeLayout(False)
+      Me.StatusBarPane2.PerformLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage1.ResumeLayout(False)
       Me.TabPage1.PerformLayout()
@@ -320,7 +333,6 @@ Partial Class InvioEmail
    Friend WithEvents StatusBarNotificationsArea1 As Elegant.Ui.StatusBarNotificationsArea
    Friend WithEvents StatusBarPane2 As Elegant.Ui.StatusBarPane
    Friend WithEvents StatusBarControlsArea1 As Elegant.Ui.StatusBarControlsArea
-   Friend WithEvents StatusBarPane1 As Elegant.Ui.StatusBarPane
    Friend WithEvents TabControl1 As Elegant.Ui.TabControl
    Friend WithEvents eui_txtAllegati As Elegant.Ui.TextBox
    Friend WithEvents eui_txtOggetto As Elegant.Ui.TextBox
@@ -336,4 +348,6 @@ Partial Class InvioEmail
    Friend WithEvents eui_cmdSalva As Elegant.Ui.Button
    Friend WithEvents eui_cmdAllegaFile As Elegant.Ui.Button
    Friend WithEvents eui_cmdInvia As Elegant.Ui.Button
+   Friend WithEvents PictureBox19 As Elegant.Ui.PictureBox
+   Friend WithEvents eui_Informazioni As Elegant.Ui.Label
 End Class

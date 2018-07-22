@@ -322,6 +322,7 @@ Module Dichiarazioni
    Public Const CAR_ANAG_CAMERE As String = "Attendere prego. Caricamento dell'elenco camere in corso..."
    Public Const CAR_REPORTS As String = "Attendere prego. Caricamento del Report in corso..."
    Public Const CAR_CAP As String = "Attendere prego. Caricamento dell'elenco CAP in corso..."
+   Public Const CAR_EMAIL As String = "Attendere prego. Caricamento dell'elenco Email inviate in corso..."
    Public Const CAR_MESSAGGI As String = "Attendere prego. Caricamento dell'elenco Messaggi ai reparti in corso..."
    Public Const CAR_ANAG_OPERAZIONI As String = "Attendere prego. Caricamento del Registro operazioni in corso..."
    Public Const CAR_ANAG_OPERATORI As String = "Attendere prego. Caricamento dell'elenco Operatori in corso..."
@@ -557,6 +558,7 @@ Module Dichiarazioni
    Public g_frmStatoPren As frmElencoDati
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
+   Public g_frmEmail As ElencoEmail
 
    ' Dati di accesso dell'operatore.
    Public Structure strOperatore

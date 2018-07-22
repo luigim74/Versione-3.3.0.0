@@ -91,6 +91,8 @@
          eui_txtMessaggio.Text = eMail_Messaggio
          eui_txtAllegati.Text = eMail_allegati
 
+         eui_Informazioni.Text = "Inviato il 20/07/2018 alle ore 21.30 a Luigi Montana (luigi.m@montanasoftware.it)."
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)

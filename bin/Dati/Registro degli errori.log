@@ -493,3 +493,213 @@ Nome parametro: index"
    in Hospitality_Solution.frmMain.InviaEmail(String eMailMittente, String eMailDestinatario) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13256"
 "
 "
+"*** 22/07/2018 - 16:58:22 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.ElencoEmail.LeggiDatiConfig() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 680"
+"
+"
+"*** 22/07/2018 - 16:58:25 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroOspitiArrivo(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2151"
+"
+"
+"*** 22/07/2018 - 16:58:27 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroOspitiInCasa(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2229"
+"
+"
+"*** 22/07/2018 - 16:58:28 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroOspitiPartenza(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2190"
+"
+"
+"*** 22/07/2018 - 16:58:29 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroCamereInConsegna(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2322"
+"
+"
+"*** 22/07/2018 - 16:58:29 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroCamereOccupate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2268"
+"
+"
+"*** 22/07/2018 - 16:58:30 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoEmail.LeggiNumeroCamereLiberate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 2295"
+"
+"
+"*** 22/07/2018 - 16:58:31 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoEmail.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 917"
+"
+"
+"*** 22/07/2018 - 16:58:33 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:34 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:34 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:35 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:36 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:36 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:37 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoEmail.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 1398"
+"
+"
+"*** 22/07/2018 - 16:58:37 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoEmail.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 917"
+"
+"
+"*** 22/07/2018 - 16:58:38 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:39 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:39 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:40 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:40 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:41 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1085"
+"
+"
+"*** 22/07/2018 - 16:58:41 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoEmail.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 1398"
+"
+"
+"*** 22/07/2018 - 16:58:42 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoEmail.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 1398"
+"
+"
