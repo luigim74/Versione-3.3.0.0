@@ -1,8 +1,13 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Nome form:            ElencoPrenCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/08/2014
-' Data ultima modifica: 10/04/2018
+' Data ultima modifica: 23/07/2018
 ' Descrizione:          Elenco prenotazioni camere.
+
+' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -916,12 +921,6 @@ Public Class ElencoPrenCamere
 
          ' Salva il numero di pagina corrente.
          pagCorrente = n
-
-         ' Abilita/disabilita i pulsanti.
-         'Primo.Enabled = (n > 1)
-         'Precedente.Enabled = (n > 1)
-         'Successivo.Enabled = (n < numPagine)
-         'Ultimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2182,36 +2181,40 @@ Public Class ElencoPrenCamere
       'End If
    End Sub
 
-   ' DA_FARE_A: Modificare!
-   Private Sub dtpDal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'AggiornaDatiPeriodo()
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Private Sub dtpAl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'AggiornaDatiPeriodo()
-   End Sub
 
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Nuovo()
-      ' Apre la finestra per l'inserimento di nuovi dati.
-      ApriDati(Me.Name, "")
+      Try
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati(Me.Name, String.Empty)
 
-      ' Se nella tabella non ci sono record disattiva i pulsanti.
-      ConvalidaDati()
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
 
-      ' Registra loperazione effettuata dall'operatore identificato.
-      'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Modifica()
-      ' Apre la finestra Cliente per la modifica dei dati.
-      ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+      Try
+         ' Apre la finestra Cliente per la modifica dei dati.
+         ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
 
-      ' Registra loperazione effettuata dall'operatore identificato.
-      'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    Public Function LeggiNumeroOspitiArrivo(ByVal tabella As String) As Integer

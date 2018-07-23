@@ -1,11 +1,13 @@
+#Region " DATI FILE.VB "
 ' ******************************************************************
 ' Nome form:            ElencoEmail
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       22/07/2018
-' Data ultima modifica: 22/07/2018
+' Data ultima modifica: 23/07/2018
 ' Descrizione:          Elenco delle E-mail inviate dal programma.
 '
 ' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -17,24 +19,16 @@ Public Class ElencoEmail
 
    Public Const TAB_EMAIL As String = "Email"
 
-   Public Const COLONNA_ID_DOC As Short = 0
-   Public Const COLONNA_NUMERO_PREN As Short = 1
-   Public Const COLONNA_DATA As Short = 2
-   Public Const COLONNA_COGNOME As Short = 3
-   Public Const COLONNA_NOME As Short = 4
-   Public Const COLONNA_DATA_ARRIVO As Short = 5
-   Public Const COLONNA_DATA_PARTENZA As Short = 6
-   Public Const COLONNA_NOTTI As Short = 7
-   Public Const COLONNA_ADULTI As Short = 8
-   Public Const COLONNA_NEONATI As Short = 9
-   Public Const COLONNA_BAMBINI As Short = 10
-   Public Const COLONNA_RAGAZZI As Short = 11
-   Public Const COLONNA_ARRANGIAMENTO As Short = 13
-   Public Const COLONNA_IMPORTO_TOTALE As Short = 15
-   Public Const COLONNA_COSTO_CAMERA As Short = 18
-   Public Const COLONNA_TASSA_SOGGIORNO As Short = 19
-   Public Const COLONNA_TIPO_PAGAMENTO As Short = 20
-   Public Const COLONNA_ID_CLIENTE As Short = 21
+   Public Const COLONNA_ID As Short = 0
+   Public Const COLONNA_DESTINATARIO As Short = 1
+   Public Const COLONNA_COGNOME As Short = 2
+   Public Const COLONNA_NOME As Short = 3
+   Public Const COLONNA_OGGETTO As Short = 4
+   Public Const COLONNA_DATA_INVIO As Short = 5
+   Public Const COLONNA_ORA_INVIO As Short = 6
+   Public Const COLONNA_STATO As Short = 7
+   Public Const COLONNA_CATEGORIA As Short = 8
+   Public Const COLONNA_ID_CLIENTE As Short = 10
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -95,74 +89,23 @@ Public Class ElencoEmail
    Friend WithEvents TestoRicerca As System.Windows.Forms.TextBox
    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-   Friend WithEvents Panel2 As System.Windows.Forms.Panel
-   Public WithEvents txtTotaleNotti As System.Windows.Forms.TextBox
-   Friend WithEvents Label6 As System.Windows.Forms.Label
-   Friend WithEvents Label3 As System.Windows.Forms.Label
-   Public WithEvents txtTotaleAdulti As System.Windows.Forms.TextBox
    Friend WithEvents lblCampo As System.Windows.Forms.Label
    Friend WithEvents lblTesto As System.Windows.Forms.Label
-   Public WithEvents txtTotaleImporto As System.Windows.Forms.TextBox
-   Friend WithEvents Label1 As System.Windows.Forms.Label
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
-   Public WithEvents txtCamereConsegna As System.Windows.Forms.TextBox
-   Friend WithEvents Label7 As System.Windows.Forms.Label
-   Public WithEvents txtCamereOccupate As System.Windows.Forms.TextBox
-   Friend WithEvents Label8 As System.Windows.Forms.Label
-   Public WithEvents txtCamereLibere As System.Windows.Forms.TextBox
-   Friend WithEvents Label9 As System.Windows.Forms.Label
-   Public WithEvents txtOspitiPartenza As System.Windows.Forms.TextBox
-   Friend WithEvents Label5 As System.Windows.Forms.Label
-   Public WithEvents txtOspitiCasa As System.Windows.Forms.TextBox
-   Friend WithEvents Label4 As System.Windows.Forms.Label
-   Public WithEvents txtOspitiArrivo As System.Windows.Forms.TextBox
-   Friend WithEvents Label2 As System.Windows.Forms.Label
-   Public WithEvents txtTotaleRagazzi As System.Windows.Forms.TextBox
-   Friend WithEvents Label12 As System.Windows.Forms.Label
-   Public WithEvents txtTotaleBambini As System.Windows.Forms.TextBox
-   Friend WithEvents Label11 As System.Windows.Forms.Label
-   Public WithEvents txtTotaleNeonati As System.Windows.Forms.TextBox
-   Friend WithEvents Label10 As System.Windows.Forms.Label
 
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElencoPrenCamere))
+      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElencoEmail))
       Me.DataGrid1 = New System.Windows.Forms.DataGrid()
       Me.Panel1 = New System.Windows.Forms.Panel()
       Me.TestoRicerca = New System.Windows.Forms.TextBox()
-      Me.txtCamereConsegna = New System.Windows.Forms.TextBox()
-      Me.Label7 = New System.Windows.Forms.Label()
-      Me.txtCamereOccupate = New System.Windows.Forms.TextBox()
-      Me.Label8 = New System.Windows.Forms.Label()
-      Me.txtCamereLibere = New System.Windows.Forms.TextBox()
-      Me.Label9 = New System.Windows.Forms.Label()
-      Me.txtOspitiPartenza = New System.Windows.Forms.TextBox()
-      Me.Label5 = New System.Windows.Forms.Label()
-      Me.txtOspitiCasa = New System.Windows.Forms.TextBox()
-      Me.Label4 = New System.Windows.Forms.Label()
-      Me.txtOspitiArrivo = New System.Windows.Forms.TextBox()
-      Me.Label2 = New System.Windows.Forms.Label()
       Me.CampoRicerca = New System.Windows.Forms.ComboBox()
       Me.lblCampo = New System.Windows.Forms.Label()
       Me.lblTesto = New System.Windows.Forms.Label()
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-      Me.Panel2 = New System.Windows.Forms.Panel()
-      Me.txtTotaleRagazzi = New System.Windows.Forms.TextBox()
-      Me.Label12 = New System.Windows.Forms.Label()
-      Me.txtTotaleBambini = New System.Windows.Forms.TextBox()
-      Me.Label11 = New System.Windows.Forms.Label()
-      Me.txtTotaleNeonati = New System.Windows.Forms.TextBox()
-      Me.Label10 = New System.Windows.Forms.Label()
-      Me.txtTotaleImporto = New System.Windows.Forms.TextBox()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.txtTotaleAdulti = New System.Windows.Forms.TextBox()
-      Me.Label3 = New System.Windows.Forms.Label()
-      Me.txtTotaleNotti = New System.Windows.Forms.TextBox()
-      Me.Label6 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel1.SuspendLayout()
-      Me.Panel2.SuspendLayout()
       Me.SuspendLayout()
       '
       'DataGrid1
@@ -177,35 +120,23 @@ Public Class ElencoEmail
       Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 120)
+      Me.DataGrid1.Location = New System.Drawing.Point(0, 63)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(952, 324)
+      Me.DataGrid1.Size = New System.Drawing.Size(693, 254)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
       Me.Panel1.Controls.Add(Me.TestoRicerca)
-      Me.Panel1.Controls.Add(Me.txtCamereConsegna)
-      Me.Panel1.Controls.Add(Me.Label7)
-      Me.Panel1.Controls.Add(Me.txtCamereOccupate)
-      Me.Panel1.Controls.Add(Me.Label8)
-      Me.Panel1.Controls.Add(Me.txtCamereLibere)
-      Me.Panel1.Controls.Add(Me.Label9)
-      Me.Panel1.Controls.Add(Me.txtOspitiPartenza)
-      Me.Panel1.Controls.Add(Me.Label5)
-      Me.Panel1.Controls.Add(Me.txtOspitiCasa)
-      Me.Panel1.Controls.Add(Me.Label4)
-      Me.Panel1.Controls.Add(Me.txtOspitiArrivo)
-      Me.Panel1.Controls.Add(Me.Label2)
       Me.Panel1.Controls.Add(Me.CampoRicerca)
       Me.Panel1.Controls.Add(Me.lblCampo)
       Me.Panel1.Controls.Add(Me.lblTesto)
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(960, 120)
+      Me.Panel1.Size = New System.Drawing.Size(694, 63)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -214,191 +145,14 @@ Public Class ElencoEmail
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(690, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(424, 20)
       Me.TestoRicerca.TabIndex = 7
-      '
-      'txtCamereConsegna
-      '
-      Me.txtCamereConsegna.AcceptsReturn = True
-      Me.txtCamereConsegna.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCamereConsegna.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCamereConsegna.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCamereConsegna.ForeColor = System.Drawing.Color.Red
-      Me.txtCamereConsegna.Location = New System.Drawing.Point(168, 88)
-      Me.txtCamereConsegna.MaxLength = 0
-      Me.txtCamereConsegna.Name = "txtCamereConsegna"
-      Me.txtCamereConsegna.ReadOnly = True
-      Me.txtCamereConsegna.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCamereConsegna.Size = New System.Drawing.Size(72, 20)
-      Me.txtCamereConsegna.TabIndex = 5
-      Me.txtCamereConsegna.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label7
-      '
-      Me.Label7.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label7.AutoSize = True
-      Me.Label7.BackColor = System.Drawing.Color.Transparent
-      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label7.ForeColor = System.Drawing.Color.White
-      Me.Label7.Location = New System.Drawing.Point(16, 88)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(143, 15)
-      Me.Label7.TabIndex = 55684
-      Me.Label7.Text = "Camere in consegna:"
-      '
-      'txtCamereOccupate
-      '
-      Me.txtCamereOccupate.AcceptsReturn = True
-      Me.txtCamereOccupate.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCamereOccupate.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCamereOccupate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCamereOccupate.ForeColor = System.Drawing.Color.Blue
-      Me.txtCamereOccupate.Location = New System.Drawing.Point(384, 88)
-      Me.txtCamereOccupate.MaxLength = 0
-      Me.txtCamereOccupate.Name = "txtCamereOccupate"
-      Me.txtCamereOccupate.ReadOnly = True
-      Me.txtCamereOccupate.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCamereOccupate.Size = New System.Drawing.Size(72, 20)
-      Me.txtCamereOccupate.TabIndex = 4
-      Me.txtCamereOccupate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label8
-      '
-      Me.Label8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label8.AutoSize = True
-      Me.Label8.BackColor = System.Drawing.Color.Transparent
-      Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label8.ForeColor = System.Drawing.Color.White
-      Me.Label8.Location = New System.Drawing.Point(256, 88)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(123, 15)
-      Me.Label8.TabIndex = 55682
-      Me.Label8.Text = "Camere occupate:"
-      '
-      'txtCamereLibere
-      '
-      Me.txtCamereLibere.AcceptsReturn = True
-      Me.txtCamereLibere.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCamereLibere.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCamereLibere.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCamereLibere.ForeColor = System.Drawing.Color.Green
-      Me.txtCamereLibere.Location = New System.Drawing.Point(600, 88)
-      Me.txtCamereLibere.MaxLength = 0
-      Me.txtCamereLibere.Name = "txtCamereLibere"
-      Me.txtCamereLibere.ReadOnly = True
-      Me.txtCamereLibere.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCamereLibere.Size = New System.Drawing.Size(72, 20)
-      Me.txtCamereLibere.TabIndex = 3
-      Me.txtCamereLibere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label9
-      '
-      Me.Label9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label9.AutoSize = True
-      Me.Label9.BackColor = System.Drawing.Color.Transparent
-      Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label9.ForeColor = System.Drawing.Color.White
-      Me.Label9.Location = New System.Drawing.Point(472, 88)
-      Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(114, 15)
-      Me.Label9.TabIndex = 55680
-      Me.Label9.Text = "Camere liberate:"
-      '
-      'txtOspitiPartenza
-      '
-      Me.txtOspitiPartenza.AcceptsReturn = True
-      Me.txtOspitiPartenza.BackColor = System.Drawing.SystemColors.Window
-      Me.txtOspitiPartenza.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtOspitiPartenza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtOspitiPartenza.ForeColor = System.Drawing.Color.Green
-      Me.txtOspitiPartenza.Location = New System.Drawing.Point(600, 64)
-      Me.txtOspitiPartenza.MaxLength = 0
-      Me.txtOspitiPartenza.Name = "txtOspitiPartenza"
-      Me.txtOspitiPartenza.ReadOnly = True
-      Me.txtOspitiPartenza.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtOspitiPartenza.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiPartenza.TabIndex = 2
-      Me.txtOspitiPartenza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label5
-      '
-      Me.Label5.AutoSize = True
-      Me.Label5.BackColor = System.Drawing.Color.Transparent
-      Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label5.ForeColor = System.Drawing.Color.White
-      Me.Label5.Location = New System.Drawing.Point(472, 64)
-      Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(124, 15)
-      Me.Label5.TabIndex = 55678
-      Me.Label5.Text = "Ospiti in partenza:"
-      '
-      'txtOspitiCasa
-      '
-      Me.txtOspitiCasa.AcceptsReturn = True
-      Me.txtOspitiCasa.BackColor = System.Drawing.SystemColors.Window
-      Me.txtOspitiCasa.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtOspitiCasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtOspitiCasa.ForeColor = System.Drawing.Color.Blue
-      Me.txtOspitiCasa.Location = New System.Drawing.Point(384, 64)
-      Me.txtOspitiCasa.MaxLength = 0
-      Me.txtOspitiCasa.Name = "txtOspitiCasa"
-      Me.txtOspitiCasa.ReadOnly = True
-      Me.txtOspitiCasa.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtOspitiCasa.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiCasa.TabIndex = 1
-      Me.txtOspitiCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label4
-      '
-      Me.Label4.AutoSize = True
-      Me.Label4.BackColor = System.Drawing.Color.Transparent
-      Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(256, 64)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(98, 15)
-      Me.Label4.TabIndex = 55676
-      Me.Label4.Text = "Ospiti in casa:"
-      '
-      'txtOspitiArrivo
-      '
-      Me.txtOspitiArrivo.AcceptsReturn = True
-      Me.txtOspitiArrivo.BackColor = System.Drawing.SystemColors.Window
-      Me.txtOspitiArrivo.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtOspitiArrivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtOspitiArrivo.ForeColor = System.Drawing.Color.Red
-      Me.txtOspitiArrivo.Location = New System.Drawing.Point(168, 64)
-      Me.txtOspitiArrivo.MaxLength = 0
-      Me.txtOspitiArrivo.Name = "txtOspitiArrivo"
-      Me.txtOspitiArrivo.ReadOnly = True
-      Me.txtOspitiArrivo.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtOspitiArrivo.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiArrivo.TabIndex = 0
-      Me.txtOspitiArrivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label2
-      '
-      Me.Label2.AutoSize = True
-      Me.Label2.BackColor = System.Drawing.Color.Transparent
-      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(16, 64)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(104, 15)
-      Me.Label2.TabIndex = 55674
-      Me.Label2.Text = "Ospiti in arrivo:"
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(714, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(448, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
       Me.CampoRicerca.TabIndex = 8
@@ -410,7 +164,7 @@ Public Class ElencoEmail
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(714, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(448, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -436,236 +190,31 @@ Public Class ElencoEmail
       '
       Me.PrintDocument1.DocumentName = "Risorse.rpt"
       '
-      'Panel2
-      '
-      Me.Panel2.BackColor = System.Drawing.Color.Gray
-      Me.Panel2.Controls.Add(Me.txtTotaleRagazzi)
-      Me.Panel2.Controls.Add(Me.Label12)
-      Me.Panel2.Controls.Add(Me.txtTotaleBambini)
-      Me.Panel2.Controls.Add(Me.Label11)
-      Me.Panel2.Controls.Add(Me.txtTotaleNeonati)
-      Me.Panel2.Controls.Add(Me.Label10)
-      Me.Panel2.Controls.Add(Me.txtTotaleImporto)
-      Me.Panel2.Controls.Add(Me.Label1)
-      Me.Panel2.Controls.Add(Me.txtTotaleAdulti)
-      Me.Panel2.Controls.Add(Me.Label3)
-      Me.Panel2.Controls.Add(Me.txtTotaleNotti)
-      Me.Panel2.Controls.Add(Me.Label6)
-      Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 458)
-      Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(960, 35)
-      Me.Panel2.TabIndex = 13
-      '
-      'txtTotaleRagazzi
-      '
-      Me.txtTotaleRagazzi.AcceptsReturn = True
-      Me.txtTotaleRagazzi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleRagazzi.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleRagazzi.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleRagazzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleRagazzi.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(709, 11)
-      Me.txtTotaleRagazzi.MaxLength = 0
-      Me.txtTotaleRagazzi.Name = "txtTotaleRagazzi"
-      Me.txtTotaleRagazzi.ReadOnly = True
-      Me.txtTotaleRagazzi.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleRagazzi.Size = New System.Drawing.Size(48, 20)
-      Me.txtTotaleRagazzi.TabIndex = 4
-      Me.txtTotaleRagazzi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label12
-      '
-      Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label12.AutoSize = True
-      Me.Label12.BackColor = System.Drawing.Color.Transparent
-      Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label12.ForeColor = System.Drawing.Color.White
-      Me.Label12.Location = New System.Drawing.Point(644, 11)
-      Me.Label12.Name = "Label12"
-      Me.Label12.Size = New System.Drawing.Size(63, 15)
-      Me.Label12.TabIndex = 244
-      Me.Label12.Text = "Ragazzi:"
-      '
-      'txtTotaleBambini
-      '
-      Me.txtTotaleBambini.AcceptsReturn = True
-      Me.txtTotaleBambini.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleBambini.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleBambini.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleBambini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleBambini.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleBambini.Location = New System.Drawing.Point(581, 11)
-      Me.txtTotaleBambini.MaxLength = 0
-      Me.txtTotaleBambini.Name = "txtTotaleBambini"
-      Me.txtTotaleBambini.ReadOnly = True
-      Me.txtTotaleBambini.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleBambini.Size = New System.Drawing.Size(48, 20)
-      Me.txtTotaleBambini.TabIndex = 3
-      Me.txtTotaleBambini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label11
-      '
-      Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label11.AutoSize = True
-      Me.Label11.BackColor = System.Drawing.Color.Transparent
-      Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label11.ForeColor = System.Drawing.Color.White
-      Me.Label11.Location = New System.Drawing.Point(516, 11)
-      Me.Label11.Name = "Label11"
-      Me.Label11.Size = New System.Drawing.Size(64, 15)
-      Me.Label11.TabIndex = 242
-      Me.Label11.Text = "Bambini:"
-      '
-      'txtTotaleNeonati
-      '
-      Me.txtTotaleNeonati.AcceptsReturn = True
-      Me.txtTotaleNeonati.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleNeonati.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleNeonati.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleNeonati.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleNeonati.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleNeonati.Location = New System.Drawing.Point(453, 11)
-      Me.txtTotaleNeonati.MaxLength = 0
-      Me.txtTotaleNeonati.Name = "txtTotaleNeonati"
-      Me.txtTotaleNeonati.ReadOnly = True
-      Me.txtTotaleNeonati.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleNeonati.Size = New System.Drawing.Size(48, 20)
-      Me.txtTotaleNeonati.TabIndex = 2
-      Me.txtTotaleNeonati.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label10
-      '
-      Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label10.AutoSize = True
-      Me.Label10.BackColor = System.Drawing.Color.Transparent
-      Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label10.ForeColor = System.Drawing.Color.White
-      Me.Label10.Location = New System.Drawing.Point(388, 11)
-      Me.Label10.Name = "Label10"
-      Me.Label10.Size = New System.Drawing.Size(61, 15)
-      Me.Label10.TabIndex = 240
-      Me.Label10.Text = "Neonati:"
-      '
-      'txtTotaleImporto
-      '
-      Me.txtTotaleImporto.AcceptsReturn = True
-      Me.txtTotaleImporto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleImporto.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleImporto.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleImporto.Location = New System.Drawing.Point(826, 11)
-      Me.txtTotaleImporto.MaxLength = 0
-      Me.txtTotaleImporto.Name = "txtTotaleImporto"
-      Me.txtTotaleImporto.ReadOnly = True
-      Me.txtTotaleImporto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleImporto.Size = New System.Drawing.Size(120, 20)
-      Me.txtTotaleImporto.TabIndex = 5
-      Me.txtTotaleImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label1
-      '
-      Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label1.AutoSize = True
-      Me.Label1.BackColor = System.Drawing.Color.Transparent
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(772, 11)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(51, 15)
-      Me.Label1.TabIndex = 238
-      Me.Label1.Text = "Totale:"
-      '
-      'txtTotaleAdulti
-      '
-      Me.txtTotaleAdulti.AcceptsReturn = True
-      Me.txtTotaleAdulti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleAdulti.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleAdulti.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleAdulti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleAdulti.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleAdulti.Location = New System.Drawing.Point(325, 11)
-      Me.txtTotaleAdulti.MaxLength = 0
-      Me.txtTotaleAdulti.Name = "txtTotaleAdulti"
-      Me.txtTotaleAdulti.ReadOnly = True
-      Me.txtTotaleAdulti.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleAdulti.Size = New System.Drawing.Size(48, 20)
-      Me.txtTotaleAdulti.TabIndex = 1
-      Me.txtTotaleAdulti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label3
-      '
-      Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label3.AutoSize = True
-      Me.Label3.BackColor = System.Drawing.Color.Transparent
-      Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(276, 11)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(47, 15)
-      Me.Label3.TabIndex = 236
-      Me.Label3.Text = "Adulti:"
-      '
-      'txtTotaleNotti
-      '
-      Me.txtTotaleNotti.AcceptsReturn = True
-      Me.txtTotaleNotti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleNotti.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleNotti.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleNotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleNotti.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleNotti.Location = New System.Drawing.Point(178, 11)
-      Me.txtTotaleNotti.MaxLength = 0
-      Me.txtTotaleNotti.Name = "txtTotaleNotti"
-      Me.txtTotaleNotti.ReadOnly = True
-      Me.txtTotaleNotti.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleNotti.Size = New System.Drawing.Size(80, 20)
-      Me.txtTotaleNotti.TabIndex = 0
-      Me.txtTotaleNotti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label6
-      '
-      Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label6.AutoSize = True
-      Me.Label6.BackColor = System.Drawing.Color.Transparent
-      Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(132, 11)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(41, 15)
-      Me.Label6.TabIndex = 16
-      Me.Label6.Text = "Notti:"
-      '
       'formFrameSkinner
       '
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'ElencoPrenCamere
+      'ElencoEmail
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(960, 493)
-      Me.Controls.Add(Me.Panel2)
+      Me.ClientSize = New System.Drawing.Size(694, 319)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.Name = "ElencoPrenCamere"
+      Me.Name = "ElencoEmail"
       Me.ShowInTaskbar = False
       Me.Text = "Elenco prenotazioni camere"
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.Panel1.ResumeLayout(False)
       Me.Panel1.PerformLayout()
-      Me.Panel2.ResumeLayout(False)
-      Me.Panel2.PerformLayout()
       Me.ResumeLayout(False)
 
    End Sub
 
 #End Region
-   ' DA_FARE_A: TERMINARE!
-   ' DA_FARE_A: Creare le varie voci nel file di configurazione.
+
    Private Sub LeggiDatiConfig()
       Try
          ' Nel caso la directory corrente venga cambiata.
@@ -777,7 +326,7 @@ Public Class ElencoEmail
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
 
          ' Apre la connessione.
          cn.Open()
@@ -816,7 +365,7 @@ Public Class ElencoEmail
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
 
          ' Apre la connessione.
          cn.Open()
@@ -920,12 +469,6 @@ Public Class ElencoEmail
          ' Salva il numero di pagina corrente.
          pagCorrente = n
 
-         ' Abilita/disabilita i pulsanti.
-         'Primo.Enabled = (n > 1)
-         'Precedente.Enabled = (n > 1)
-         'Successivo.Enabled = (n < numPagine)
-         'Ultimo.Enabled = (n < numPagine)
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -943,17 +486,16 @@ Public Class ElencoEmail
          Dim Risposta As Short
          Dim sql As String
 
-         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_PREN)
-         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA)
          Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
          Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
          Dim descrizione As String
 
-         If Nome = String.Empty Then
-            descrizione = Cognome & " numero " & Numero & " del " & Data
-         Else
-            descrizione = Cognome & " " & Nome & " numero " & Numero & " del " & Data
-         End If
+         ' DA_FARE_A: Modificare!
+         'If Nome = String.Empty Then
+         '   descrizione = Cognome & " numero " & Numero & " del " & Data
+         'Else
+         '   descrizione = Cognome & " " & Nome & " numero " & Numero & " del " & Data
+         'End If
 
          ' Chiede conferma per l'eliminazione.
          Risposta = MsgBox("Si desidera eliminare la prenotazione del Cliente """ & descrizione & """?" &
@@ -1080,9 +622,6 @@ Public Class ElencoEmail
             End Select
          End If
 
-         ' Aggiorna i valori per gli Ospiti e le camere.
-         AggiornaValoriOspiti()
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1140,9 +679,6 @@ Public Class ElencoEmail
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1176,9 +712,6 @@ Public Class ElencoEmail
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1210,9 +743,6 @@ Public Class ElencoEmail
 
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
-
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1246,9 +776,6 @@ Public Class ElencoEmail
             ' Aggiorna il titolo della finestra.
             AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
-            ' Somma i valori delle colonne.
-            SommaValoriColonne()
-
          End If
 
       Catch ex As Exception
@@ -1280,9 +807,6 @@ Public Class ElencoEmail
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1312,26 +836,11 @@ Public Class ElencoEmail
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Private Sub SommaValoriColonne()
-      ' Somma i valori delle rispettive colonne.
-      txtTotaleNotti.Text = SommaColonna(DataGrid1, COLONNA_NOTTI, numRecord).ToString
-      txtTotaleAdulti.Text = SommaColonna(DataGrid1, COLONNA_ADULTI, numRecord).ToString
-      txtTotaleNeonati.Text = SommaColonna(DataGrid1, COLONNA_NEONATI, numRecord).ToString
-      txtTotaleBambini.Text = SommaColonna(DataGrid1, COLONNA_BAMBINI, numRecord).ToString
-      txtTotaleRagazzi.Text = SommaColonna(DataGrid1, COLONNA_RAGAZZI, numRecord).ToString
-
-      txtTotaleImporto.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_TOTALE, numRecord))
    End Sub
 
    ' DA_FARE_A: Modificare!
@@ -1392,16 +901,14 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & " " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4) & " - Prenotazione N. " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) & " del " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
+            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) & " " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & " - " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
          Else
-            DataGrid1.CaptionText = ""
+            DataGrid1.CaptionText = String.Empty
          End If
 
       Catch ex As Exception
@@ -1479,31 +986,23 @@ Public Class ElencoEmail
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' 1 - Mittente
-         Dim mittenteStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         mittenteStyle.MappingName = "Mittente"
-         mittenteStyle.HeaderText = "Da"
-         mittenteStyle.Width = 100
-         mittenteStyle.NullText = String.Empty
-         mittenteStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(mittenteStyle)
-         ' 2 - Destinatario
-         Dim destinatarioStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         ' 1 - Destinatario
+         Dim destinatarioStyle As New DataGridTextBoxColumn
          destinatarioStyle.MappingName = "Destinatario"
          destinatarioStyle.HeaderText = "A"
-         destinatarioStyle.Width = 100
+         destinatarioStyle.Width = 200
          destinatarioStyle.NullText = String.Empty
-         destinatarioStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         destinatarioStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(destinatarioStyle)
-         ' 3 - Ragione Sociale / Cognome
+         ' 2 - Ragione Sociale / Cognome
          Dim intestatariostyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          intestatariostyle.MappingName = "Cognome"
          intestatariostyle.HeaderText = "Cognome"
-         intestatariostyle.Width = 150
+         intestatariostyle.Width = 120
          intestatariostyle.NullText = String.Empty
          intestatariostyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(intestatariostyle)
-         ' 4 - Nome
+         ' 3 - Nome
          Dim nomestyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          nomestyle.MappingName = "Nome"
          nomestyle.HeaderText = "Nome"
@@ -1511,47 +1010,49 @@ Public Class ElencoEmail
          nomestyle.NullText = String.Empty
          nomestyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(nomestyle)
-         ' 5 - Oggetto
+         ' 4 - Oggetto
          Dim dataStyle As New DataGridTextBoxColumn
          dataStyle.MappingName = "Oggetto"
          dataStyle.HeaderText = "Oggetto"
-         dataStyle.Width = 150
+         dataStyle.Width = 300
          dataStyle.NullText = String.Empty
          dataStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataStyle)
-         ' 4 - Data invio
+         ' 5 - Data invio
          Dim dataInvioStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          dataInvioStyle.MappingName = "DataInvio"
          dataInvioStyle.HeaderText = "Data di invio"
-         dataInvioStyle.Width = 60
+         dataInvioStyle.Width = 70
          dataInvioStyle.NullText = String.Empty
+         dataInvioStyle.Alignment = HorizontalAlignment.Center
          dataInvioStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataInvioStyle)
-         ' 5 - Ora invio
+         ' 6 - Ora invio
          Dim oraInvioStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Green)
          oraInvioStyle.MappingName = "OraInvio"
          oraInvioStyle.HeaderText = "Ora di invio"
-         oraInvioStyle.Width = 50
+         oraInvioStyle.Width = 70
          oraInvioStyle.NullText = String.Empty
+         oraInvioStyle.Alignment = HorizontalAlignment.Center
          oraInvioStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(oraInvioStyle)
-         ' 6 - Stato
+         ' 7 - Stato
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "Stato"
          statoStyle.HeaderText = "Stato"
-         statoStyle.Width = 50
+         statoStyle.Width = 70
          statoStyle.NullText = String.Empty
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 7 - Categoria
+         ' 8 - Categoria
          Dim categoriaStyle As New DataGridTextBoxColumn
          categoriaStyle.MappingName = "Categoria"
          categoriaStyle.HeaderText = "Categoria"
-         categoriaStyle.Width = 100
+         categoriaStyle.Width = 120
          categoriaStyle.NullText = String.Empty
          categoriaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(categoriaStyle)
-         ' 8 - Colore.
+         ' 9 - Colore.
          Dim coloreStyle As New CellaColorata(DataGrid1)
          coloreStyle.MappingName = "Colore"
          coloreStyle.HeaderText = "Colore"
@@ -1560,7 +1061,7 @@ Public Class ElencoEmail
          coloreStyle.TextBox.BackColor = Color.White
          coloreStyle.TextBox.ForeColor = Color.White
          gridStyle.GridColumnStyles.Add(coloreStyle)
-         ' 9 - Id Cliente.
+         ' 10 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
          idClienteStyle.MappingName = "IdCliente"
          idClienteStyle.HeaderText = "Codice Cliente"
@@ -1579,7 +1080,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Private Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -1589,27 +1089,15 @@ Public Class ElencoEmail
          Select Case campoRicerca
             Case "Codice"
                campoRicerca = "Id"
-            Case "Rag, Soc. / Cognome"
-               campoRicerca = "Cognome"
-            Case "Data di arrivo"
-               campoRicerca = "DataArrivo"
-            Case "Data di partenza"
-               campoRicerca = "DataPartenza"
-            Case "Notti"
-               campoRicerca = "NumeroNotti"
-            Case "Arrangiamento"
-               campoRicerca = "Trattamento"
-            Case "Acconto"
-               campoRicerca = "AccontoCamera"
-            Case "Totale conto"
-               campoRicerca = "TotaleConto"
-            Case "Camera"
-               campoRicerca = "NumeroCamera"
-            Case "Stato prenotazione"
-               campoRicerca = "Stato"
+            Case "A"
+               campoRicerca = "Destinatario"
+            Case "Data di invio"
+               campoRicerca = "DataInvio"
+            Case "Ora di invio"
+               campoRicerca = "OraInvio"
          End Select
 
-         If testoRicerca <> "" Then
+         If testoRicerca <> String.Empty Then
             ' Rimuove eventuali filtri impostati.
             g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
@@ -1635,15 +1123,12 @@ Public Class ElencoEmail
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY DataArrivo ASC", TAB_EMAIL)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY DataInvio ASC", TAB_EMAIL)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati(TAB_EMAIL, sql)
          End If
-
-         ' Somma i valori delle colonne.
-         SommaValoriColonne()
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
@@ -1652,7 +1137,7 @@ Public Class ElencoEmail
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1661,26 +1146,17 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Private Sub CaricaCampiRic()
       Try
          CampoRicerca.Items.Add("Codice")
-         CampoRicerca.Items.Add("Numero")
-         CampoRicerca.Items.Add("Data")
-         CampoRicerca.Items.Add("Rag, Soc. / Cognome")
+         CampoRicerca.Items.Add("A")
+         CampoRicerca.Items.Add("Cognome")
          CampoRicerca.Items.Add("Nome")
-         CampoRicerca.Items.Add("Data di arrivo")
-         CampoRicerca.Items.Add("Data di partenza")
-         CampoRicerca.Items.Add("Notti")
-         CampoRicerca.Items.Add("Adulti")
-         CampoRicerca.Items.Add("Neonati")
-         CampoRicerca.Items.Add("Bambini")
-         CampoRicerca.Items.Add("Ragazzi")
-         CampoRicerca.Items.Add("Arrangiamento")
-         CampoRicerca.Items.Add("Acconto")
-         CampoRicerca.Items.Add("Totale conto")
-         CampoRicerca.Items.Add("Camera")
-         CampoRicerca.Items.Add("Stato prenotazione")
+         CampoRicerca.Items.Add("Oggetto")
+         CampoRicerca.Items.Add("Data di invio")
+         CampoRicerca.Items.Add("Ora di invio")
+         CampoRicerca.Items.Add("Stato")
+         CampoRicerca.Items.Add("Categoria")
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1862,6 +1338,7 @@ Public Class ElencoEmail
 
          DatiConfig = New AppConfig
          DatiConfig.ConfigType = ConfigFileType.AppConfig
+
          ' Imposta le dimensioni del form.
          LeggiDatiConfig()
 
@@ -1881,11 +1358,7 @@ Public Class ElencoEmail
          ConvalidaDati()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
-
-         ' DA_FARE_A: Modificare!
-         ' Aggiorna i valori per gli Ospiti e le camere.
-         'AggiornaValoriOspiti()
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -2106,251 +1579,39 @@ Public Class ElencoEmail
       'End If
    End Sub
 
-   ' DA_FARE_A: Modificare!
-   Private Sub dtpDal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'AggiornaDatiPeriodo()
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Private Sub dtpAl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'AggiornaDatiPeriodo()
-   End Sub
-
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Nuovo()
-      ' Apre la finestra per l'inserimento di nuovi dati.
-      ApriDati(Me.Name, "")
+      Try
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati(Me.Name, String.Empty)
 
-      ' Se nella tabella non ci sono record disattiva i pulsanti.
-      ConvalidaDati()
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
 
-      ' Registra loperazione effettuata dall'operatore identificato.
-      'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Modifica()
-      ' Apre la finestra Cliente per la modifica dei dati.
-      ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
-
-      ' Registra loperazione effettuata dall'operatore identificato.
-      'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroOspitiArrivo(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
       Try
-         cn.Open()
+         ' Apre la finestra Cliente per la modifica dei dati.
+         ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE DataArrivo = #" & dataCorrente & "# ORDER BY Id ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            ' Calcola il numero di persone totali.
-            Dim adulti As Integer = Convert.ToInt32(dr.Item("Adulti"))
-            Dim ragazzi As Integer = Convert.ToInt32(dr.Item("Ragazzi"))
-            Dim bambini As Integer = Convert.ToInt32(dr.Item("Bambini"))
-            Dim neonati As Integer = Convert.ToInt32(dr.Item("Neonati"))
-            Dim numPersone As Integer = adulti + ragazzi + bambini + neonati
-
-            ' Calcola il totale degli ospiti.
-            totaleOspiti = totaleOspiti + numPersone
-         Loop
-
-         Return totaleOspiti
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return 0
-
-      Finally
-         cn.Close()
-
       End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroOspitiPartenza(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE DataPartenza = #" & dataCorrente & "# ORDER BY Id ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            ' Calcola il numero di persone totali.
-            Dim adulti As Integer = Convert.ToInt32(dr.Item("Adulti"))
-            Dim ragazzi As Integer = Convert.ToInt32(dr.Item("Ragazzi"))
-            Dim bambini As Integer = Convert.ToInt32(dr.Item("Bambini"))
-            Dim neonati As Integer = Convert.ToInt32(dr.Item("Neonati"))
-            Dim numPersone As Integer = adulti + ragazzi + bambini + neonati
-
-            ' Calcola il totale degli ospiti.
-            totaleOspiti = totaleOspiti + numPersone
-         Loop
-
-         Return totaleOspiti
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroOspitiInCasa(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE DataArrivo < #" & dataCorrente & "# AND DataPartenza > #" & dataCorrente & "# ORDER BY Id ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            ' Calcola il numero di persone totali.
-            Dim adulti As Integer = Convert.ToInt32(dr.Item("Adulti"))
-            Dim ragazzi As Integer = Convert.ToInt32(dr.Item("Ragazzi"))
-            Dim bambini As Integer = Convert.ToInt32(dr.Item("Bambini"))
-            Dim neonati As Integer = Convert.ToInt32(dr.Item("Neonati"))
-            Dim numPersone As Integer = adulti + ragazzi + bambini + neonati
-
-            ' Calcola il totale degli ospiti.
-            totaleOspiti = totaleOspiti + numPersone
-         Loop
-
-         Return totaleOspiti
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroCamereOccupate(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleCamereOccupate As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE DataArrivo < #" & dataCorrente & "# AND DataPartenza > #" & dataCorrente & "#", cn)
-         totaleCamereOccupate = Convert.ToInt32(cmd.ExecuteScalar())
-
-         Return totaleCamereOccupate
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroCamereLiberate(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleCamereLiberate As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE DataPartenza = #" & dataCorrente & "#", cn)
-         totaleCamereLiberate = Convert.ToInt32(cmd.ExecuteScalar())
-
-         Return totaleCamereLiberate
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Public Function LeggiNumeroCamereInConsegna(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleCamereInConsegna As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE DataArrivo = #" & dataCorrente & "#", cn)
-         totaleCamereInConsegna = Convert.ToInt32(cmd.ExecuteScalar())
-
-         Return totaleCamereInConsegna
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Modificare!
-   Private Sub AggiornaValoriOspiti()
-      ' Legge il numero di ospiti in arrivo oggi.
-      txtOspitiArrivo.Text = LeggiNumeroOspitiArrivo(TAB_EMAIL)
-      ' Legge il numero di ospiti in casa.
-      txtOspitiCasa.Text = LeggiNumeroOspitiInCasa(TAB_EMAIL)
-      ' Legge il numero di ospiti in partenza oggi.
-      txtOspitiPartenza.Text = LeggiNumeroOspitiPartenza(TAB_EMAIL)
-
-      ' Legge il numero di camere in consegna oggi.
-      txtCamereConsegna.Text = LeggiNumeroCamereInConsegna(TAB_EMAIL)
-      ' Legge il numero di camere occupate oggi.
-      txtCamereOccupate.Text = LeggiNumeroCamereOccupate(TAB_EMAIL)
-      ' Legge il numero di camere occupate oggi.
-      txtCamereLibere.Text = LeggiNumeroCamereLiberate(TAB_EMAIL)
    End Sub
 
 End Class

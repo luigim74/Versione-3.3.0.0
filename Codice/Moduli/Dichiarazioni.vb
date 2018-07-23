@@ -342,6 +342,9 @@ Module Dichiarazioni
    ' GESTIONE DOCUMENTI.
    Public Const TITOLO_FINESTRA_ELENCO_DOCUMENTI As String = "Elenco Documenti"
 
+   ' E-MAIL.
+   Public Const TITOLO_FINESTRA_ELENCO_EMAIL As String = "Elenco E-mail inviate"
+
 #Region "Registro Operazioni "
 
    ' Stringhe per identificare i moduli.
