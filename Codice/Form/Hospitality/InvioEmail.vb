@@ -97,8 +97,11 @@
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
 
+      End Try
    End Sub
 
 End Class

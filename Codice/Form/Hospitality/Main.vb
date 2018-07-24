@@ -9596,7 +9596,6 @@ Friend Class frmMain
       End Try
    End Sub
 
-
    Public Sub ApriMessaggi()
       Try
          ' Se il form non è aperto lo apre.
@@ -10815,7 +10814,6 @@ Friend Class frmMain
       AggiungiFormMenuSeleziona()
    End Sub
 
-
    Private Sub eui_cmdArchiviTabelleTipoRisorse_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdArchiviTabelleTipoRisorse.Click
       ' Apre la tabella dati selezionata.
       ApriTabelle("Tipologie")
@@ -11445,6 +11443,9 @@ Friend Class frmMain
                g_frmDocumento = New frmDocumento("ElencoDoc", "Conto", String.Empty)
                g_frmDocumento.ShowDialog()
 
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.Nuovo()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11475,6 +11476,9 @@ Friend Class frmMain
 
                g_frmDocumento = New frmDocumento("ElencoDoc", g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 4), g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 0))
                g_frmDocumento.ShowDialog()
+
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.Modifica()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -11528,6 +11532,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.EliminaDatiDocumento()
 
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.EliminaDati(ElencoEmail.TAB_EMAIL, g_frmEmail.DataGrid1.Item(g_frmEmail.DataGrid1.CurrentCell.RowNumber, 0))
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11578,6 +11585,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.AggiornaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.AggiornaDati()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11607,6 +11617,8 @@ Friend Class frmMain
 
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
                ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
+
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -11638,6 +11650,8 @@ Friend Class frmMain
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
                ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
 
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11667,6 +11681,8 @@ Friend Class frmMain
 
                ' Stampa il documento selezionato nell'elenco.
                g_frmDocumenti.StampaDocumento(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -11713,6 +11729,17 @@ Friend Class frmMain
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.FiltraDati(g_frmDocumenti.eui_txtTestoRicerca.Text, g_frmDocumenti.eui_cmbCampoRicerca.Text)
 
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Arrivo.Pressed = False
+               eui_Strumenti_Periodo_Partenza.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               g_frmEmail.AggiornaDatiTutte()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11751,6 +11778,16 @@ Friend Class frmMain
                g_frmDocumenti.filtroDati = "Anno"
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.AggiornaDatiAnno()
+
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Arrivo.Pressed = False
+               eui_Strumenti_Periodo_Partenza.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               g_frmEmail.AggiornaDatiAnno()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -11791,6 +11828,16 @@ Friend Class frmMain
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.AggiornaDatiMese()
 
+            Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Arrivo.Pressed = False
+               eui_Strumenti_Periodo_Partenza.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               g_frmEmail.AggiornaDatiMese()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -11827,6 +11874,15 @@ Friend Class frmMain
                g_frmDocumenti.filtroDati = "Periodo"
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.AggiornaDatiPeriodo()
+
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Arrivo.Pressed = False
+               eui_Strumenti_Periodo_Partenza.Pressed = False
+               g_frmEmail.AggiornaDatiPeriodo()
 
                ' Inserire qui il codice per gestire le altre finestre.
 

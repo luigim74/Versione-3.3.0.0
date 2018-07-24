@@ -890,9 +890,10 @@ Public Class ElencoEmail
             End If
          End If
 
-         'g_frmEmail = New InvioEmail
-         'g_frmPrenCamera.Tag = val
-         'g_frmPrenCamera.ShowDialog()
+         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
+         'g_frmEmail = New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, String.Empty)
+         g_frmEmail.Tag = val
+         g_frmEmail.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1267,19 +1268,19 @@ Public Class ElencoEmail
       g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
       g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
       g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
-      g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
-      g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = True
-      g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = True
+      g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
 
       ' Visualizza.
-      g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = True
-      g_frmMain.eui_rib_Visualizza.Visible = True
+      g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
+      g_frmMain.eui_rib_Visualizza.Visible = False
 
 #End Region
 
 #Region "Documenti "
       ' TabPage.
-      g_frmMain.eui_StrumentiDocumenti.Visible = True
+      g_frmMain.eui_StrumentiDocumenti.Visible = False
 
 #End Region
 
@@ -1583,7 +1584,15 @@ Public Class ElencoEmail
    Public Sub Nuovo()
       Try
          ' Apre la finestra per l'inserimento di nuovi dati.
-         ApriDati(Me.Name, String.Empty)
+         ' ApriDati(Me.Name, String.Empty)
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
+         Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+         frmEmail.Tag = String.Empty
+         frmEmail.ShowDialog()
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
@@ -1601,8 +1610,16 @@ Public Class ElencoEmail
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Modifica()
       Try
-         ' Apre la finestra Cliente per la modifica dei dati.
-         ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+         ' Apre la finestra per la modifica dei dati.
+         'ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+
+         ' Modifica il cursore del mouse.
+         'Cursor.Current = Cursors.AppStarting
+
+         '' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
+         'Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+         'frmEmail.Tag = CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
+         'frmEmail.ShowDialog()
 
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
