@@ -3,7 +3,7 @@
 ' Nome form:            ElencoPrenCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/08/2014
-' Data ultima modifica: 23/07/2018
+' Data ultima modifica: 28/07/2018
 ' Descrizione:          Elenco prenotazioni camere.
 
 ' ******************************************************************
@@ -675,8 +675,8 @@ Public Class ElencoPrenCamere
          Environment.CurrentDirectory = Application.StartupPath
 
          ' A_TODO: HOTEL - da modificare!
-         If DatiConfig.GetValue("FiltroPeriodo") <> "" Then
-            filtroDati = DatiConfig.GetValue("FiltroPeriodo")
+         If DatiConfig.GetValue("FiltroPeriodoCamere") <> "" Then
+            filtroDati = DatiConfig.GetValue("FiltroPeriodoCamere")
          Else
             filtroDati = "Tutti"
          End If
@@ -723,7 +723,7 @@ Public Class ElencoPrenCamere
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         DatiConfig.SetValue("FiltroPeriodo", filtroDati)
+         DatiConfig.SetValue("FiltroPeriodoCamere", filtroDati)
          DatiConfig.SetValue("WSPrenCamere", Me.WindowState)
          DatiConfig.SetValue("PrenCamereX", Me.Location.X)
          DatiConfig.SetValue("PrenCamereY", Me.Location.Y)
@@ -772,87 +772,6 @@ Public Class ElencoPrenCamere
       'End Try
 
    End Function
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub EliminaDettagliDocumento()
-      Try
-         Dim rifDoc As Integer
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE RifDoc = {1}", "DettagliDoc", rifDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Sub
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub EliminaDocumento()
-      Try
-         Dim rifDoc As Integer
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE Id = {1}", "Documenti", rifDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-         ' Aggiorna la lista dati.
-         AggiornaDati()
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Sub
 
    Public Sub LeggiDati(ByVal tabella As String, ByVal sql As String)
       Try
@@ -1016,23 +935,6 @@ Public Class ElencoPrenCamere
          ' Chiude la connessione.
          cn.Close()
 
-         'If tbrSospesi.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiSospesi()
-         'ElseIf tbrMese.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiMese()
-         'ElseIf tbrAnno.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiAnno()
-         'ElseIf tbrPeriodo.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiPeriodo()
-         'Else
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDati()
-         'End If
-
          ' Aggiorna la griglia dati.
          AggiornaDati()
 
@@ -1041,7 +943,6 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Public Sub AggiornaDati()
       Try
          If TestoRicerca.Text <> "" Then
@@ -1084,36 +985,6 @@ Public Class ElencoPrenCamere
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub VisualizzaDate()
-      'lblAl.Location = New Point(lblAl.Location.X, 8)
-      'lblDal.Location = New Point(lblDal.Location.X, 8)
-      'dtpAl.Location = New Point(dtpAl.Location.X, 8)
-      'dtpDal.Location = New Point(dtpDal.Location.X, 8)
-      'lblAl.Visible = True
-      'lblDal.Visible = True
-      'dtpAl.Visible = True
-      'dtpDal.Visible = True
-
-      'lblTesto.Visible = False
-      'lblCampo.Visible = False
-      'TestoRicerca.Visible = False
-      'CampoRicerca.Visible = False
-   End Sub
-
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub NascondiDate()
-      'lblAl.Visible = False
-      'lblDal.Visible = False
-      'dtpAl.Visible = False
-      'dtpDal.Visible = False
-
-      lblTesto.Visible = True
-      lblCampo.Visible = True
-      TestoRicerca.Visible = True
-      CampoRicerca.Visible = True
    End Sub
 
    Public Sub AggiornaDatiTutte()
@@ -1396,47 +1267,6 @@ Public Class ElencoPrenCamere
 
       End Try
    End Sub
-
-   Private Function LeggiNumeroMax(ByVal tabella As String, ByVal tipoDoc As String) As Integer
-      Dim closeOnExit As Boolean
-      Dim numRec As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Ottiene il numero di record.
-         'cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM {0} WHERE TipoDoc = '{1}'", tabella, tipoDoc)
-
-         ' Ottiene i dati per l'anno corrente.
-         Dim Anno As String = Year(Now)
-         Dim primoGiornoAnno As String = CFormatta.FormattaData("01/01/" & Anno)
-         Dim numUltimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
-         Dim ultimoGiornoAnno As String = CFormatta.FormattaData(numUltimoGiornoAnno & "/12/" & Anno)
-
-         cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM {0} WHERE TipoDoc = '{1}' AND DataDoc BETWEEN #{2}# AND #{3}#", tabella, tipoDoc, primoGiornoAnno, ultimoGiornoAnno)
-
-         If IsDBNull(cmd.ExecuteScalar()) = False Then
-            numRec = CInt(cmd.ExecuteScalar())
-         Else
-            numRec = 0
-         End If
-
-         Return numRec
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
 
    Public Sub AggTitoloFinestra(ByVal titolo As String)
       Try

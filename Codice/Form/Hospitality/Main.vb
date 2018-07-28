@@ -12055,7 +12055,8 @@ Friend Class frmMain
    Private Sub eui_Strumenti_Documenti_Invia_Riepilogo_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Riepilogo.Click
       Try
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, String.Empty)
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, String.Empty,
+                                        LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
 
@@ -12070,7 +12071,8 @@ Friend Class frmMain
    Private Sub eui_Strumenti_Documenti_Invia_Acconto_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Acconto.Click
       Try
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiAccontoPrenotazione, CreaMessaggio, String.Empty)
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiAccontoPrenotazione, CreaMessaggio, String.Empty,
+                                        LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
 
@@ -12086,7 +12088,8 @@ Friend Class frmMain
    Private Sub eui_Strumenti_Documenti_Invia_Caparra_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Caparra.Click
       Try
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiCaparraPrenotazione, CreaMessaggio, String.Empty)
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiCaparraPrenotazione, CreaMessaggio, String.Empty,
+                                        LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
 
@@ -13444,7 +13447,7 @@ Friend Class frmMain
       End Try
    End Sub
 
-   Private Function LeggiEmailMittente() As String
+   Public Function LeggiEmailMittente() As String
       Try
          Dim AAzienda As New Anagrafiche.Azienda(ConnString)
 
@@ -13457,30 +13460,6 @@ Friend Class frmMain
             Else
                Return .Email
             End If
-
-         End With
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return String.Empty
-
-      End Try
-
-   End Function
-
-   Private Function LeggiNomeDestinatario() As String
-      Try
-         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
-
-         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
-
-         With AClienti
-
-            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
-
-            Return .Nome & " " & .Cognome
 
          End With
 
@@ -13511,6 +13490,94 @@ Friend Class frmMain
             End If
 
          End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNomeCompletoDestinatario() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+
+         With AClienti
+
+            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
+
+            Return .Nome & " " & .Cognome
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNomeDestinatario() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+
+         With AClienti
+
+            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
+
+            Return .Nome
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiCognomeDestinatario() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+
+         With AClienti
+
+            .LeggiDati(NOME_TABELLA_CLIENTI, idCliente)
+
+            Return .Cognome
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiIdCliente() As String
+      Try
+         Dim idCliente As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_CLIENTE)
+
+         Return idCliente
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -13576,8 +13643,6 @@ Friend Class frmMain
 
    End Function
 
-
-
    Private Function CreaMessaggio() As String
       Try
          Dim AAzienda As New Anagrafiche.Azienda(ConnString)
@@ -13585,7 +13650,7 @@ Friend Class frmMain
          With AAzienda
             .LeggiDati(NOME_TABELLA_AZIENDA)
 
-            Dim messaggio As String = "Gentile " & LeggiNomeDestinatario() & "," & vbNewLine & vbNewLine &
+            Dim messaggio As String = "Gentile " & LeggiNomeCompletoDestinatario() & "," & vbNewLine & vbNewLine &
                                       "Alleghiamo alla presente il documento in oggetto." & vbNewLine &
                                       "Con l'occasione, porgiamo distinti saluti." & vbNewLine & vbNewLine &
                                       .RagSociale & vbNewLine & vbNewLine &

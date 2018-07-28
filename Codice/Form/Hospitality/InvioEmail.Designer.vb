@@ -27,6 +27,8 @@ Partial Class InvioEmail
       Me.StatusBar1 = New Elegant.Ui.StatusBar()
       Me.StatusBarNotificationsArea1 = New Elegant.Ui.StatusBarNotificationsArea()
       Me.StatusBarPane2 = New Elegant.Ui.StatusBarPane()
+      Me.PictureBox19 = New Elegant.Ui.PictureBox()
+      Me.eui_Informazioni = New Elegant.Ui.Label()
       Me.StatusBarControlsArea1 = New Elegant.Ui.StatusBarControlsArea()
       Me.eui_txtMittente = New Elegant.Ui.TextBox()
       Me.eui_txtDestinatario = New Elegant.Ui.TextBox()
@@ -43,8 +45,13 @@ Partial Class InvioEmail
       Me.eui_cmdSalva = New Elegant.Ui.Button()
       Me.eui_cmdAllegaFile = New Elegant.Ui.Button()
       Me.eui_cmdInvia = New Elegant.Ui.Button()
-      Me.PictureBox19 = New Elegant.Ui.PictureBox()
-      Me.eui_Informazioni = New Elegant.Ui.Label()
+      Me.eui_txtCognome = New Elegant.Ui.TextBox()
+      Me.eui_txtOraInvio = New Elegant.Ui.TextBox()
+      Me.eui_txtIdCliente = New Elegant.Ui.TextBox()
+      Me.eui_txtDataInvio = New Elegant.Ui.TextBox()
+      Me.eui_txtStato = New Elegant.Ui.TextBox()
+      Me.eui_txtCategoria = New Elegant.Ui.TextBox()
+      Me.eui_txtNome = New Elegant.Ui.TextBox()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
       Me.StatusBarPane2.SuspendLayout()
@@ -63,10 +70,10 @@ Partial Class InvioEmail
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 456)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 506)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(700, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(724, 22)
       Me.StatusBar1.TabIndex = 1
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -78,7 +85,7 @@ Partial Class InvioEmail
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(680, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(704, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -92,10 +99,30 @@ Partial Class InvioEmail
       Me.StatusBarPane2.Size = New System.Drawing.Size(287, 22)
       Me.StatusBarPane2.TabIndex = 0
       '
+      'PictureBox19
+      '
+      Me.PictureBox19.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
+      Me.PictureBox19.Location = New System.Drawing.Point(2, 3)
+      Me.PictureBox19.Name = "PictureBox19"
+      Me.PictureBox19.Size = New System.Drawing.Size(16, 16)
+      Me.PictureBox19.SizeMode = Elegant.Ui.PictureBoxSizeMode.StretchImage
+      Me.PictureBox19.TabIndex = 5
+      Me.PictureBox19.TabStop = False
+      Me.PictureBox19.Text = "PictureBox19"
+      '
+      'eui_Informazioni
+      '
+      Me.eui_Informazioni.Location = New System.Drawing.Point(21, 5)
+      Me.eui_Informazioni.Name = "eui_Informazioni"
+      Me.eui_Informazioni.Size = New System.Drawing.Size(231, 13)
+      Me.eui_Informazioni.TabIndex = 4
+      Me.eui_Informazioni.Text = "Inviato il 20/07/2018 alle 21.30 a Luigi Montana."
+      '
       'StatusBarControlsArea1
       '
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(680, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(704, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -109,7 +136,7 @@ Partial Class InvioEmail
       Me.eui_txtMittente.Id = "9011353d-a173-4211-b7dd-29bc596c81d9"
       Me.eui_txtMittente.Location = New System.Drawing.Point(81, 9)
       Me.eui_txtMittente.Name = "eui_txtMittente"
-      Me.eui_txtMittente.Size = New System.Drawing.Size(468, 21)
+      Me.eui_txtMittente.Size = New System.Drawing.Size(476, 21)
       Me.eui_txtMittente.TabIndex = 0
       Me.eui_txtMittente.TextEditorWidth = 593
       '
@@ -120,7 +147,7 @@ Partial Class InvioEmail
       Me.eui_txtDestinatario.Id = "6ab5f488-b5a2-4511-9193-113cce88e36e"
       Me.eui_txtDestinatario.Location = New System.Drawing.Point(81, 35)
       Me.eui_txtDestinatario.Name = "eui_txtDestinatario"
-      Me.eui_txtDestinatario.Size = New System.Drawing.Size(468, 21)
+      Me.eui_txtDestinatario.Size = New System.Drawing.Size(476, 21)
       Me.eui_txtDestinatario.TabIndex = 1
       Me.eui_txtDestinatario.TextEditorWidth = 593
       '
@@ -131,7 +158,7 @@ Partial Class InvioEmail
       Me.eui_txtOggetto.Id = "d2d36a2b-2e99-4bf8-9cc9-33fb02fee0c5"
       Me.eui_txtOggetto.Location = New System.Drawing.Point(81, 62)
       Me.eui_txtOggetto.Name = "eui_txtOggetto"
-      Me.eui_txtOggetto.Size = New System.Drawing.Size(468, 21)
+      Me.eui_txtOggetto.Size = New System.Drawing.Size(476, 21)
       Me.eui_txtOggetto.TabIndex = 2
       Me.eui_txtOggetto.TextEditorWidth = 593
       '
@@ -143,7 +170,7 @@ Partial Class InvioEmail
       Me.eui_txtAllegati.Location = New System.Drawing.Point(81, 89)
       Me.eui_txtAllegati.Multiline = True
       Me.eui_txtAllegati.Name = "eui_txtAllegati"
-      Me.eui_txtAllegati.Size = New System.Drawing.Size(468, 86)
+      Me.eui_txtAllegati.Size = New System.Drawing.Size(476, 86)
       Me.eui_txtAllegati.TabIndex = 3
       Me.eui_txtAllegati.TextEditorWidth = 372
       '
@@ -155,8 +182,8 @@ Partial Class InvioEmail
       Me.TabControl1.Location = New System.Drawing.Point(0, 188)
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedTabPage = Me.TabPage1
-      Me.TabControl1.Size = New System.Drawing.Size(692, 257)
-      Me.TabControl1.TabIndex = 6
+      Me.TabControl1.Size = New System.Drawing.Size(724, 315)
+      Me.TabControl1.TabIndex = 4
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1})
       Me.TabControl1.Text = "TabControl1"
       '
@@ -166,7 +193,7 @@ Partial Class InvioEmail
       Me.TabPage1.Controls.Add(Me.eui_txtMessaggio)
       Me.TabPage1.KeyTip = Nothing
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(690, 236)
+      Me.TabPage1.Size = New System.Drawing.Size(722, 294)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Messaggio"
       '
@@ -177,7 +204,7 @@ Partial Class InvioEmail
       Me.eui_txtMessaggio.Location = New System.Drawing.Point(0, 0)
       Me.eui_txtMessaggio.Multiline = True
       Me.eui_txtMessaggio.Name = "eui_txtMessaggio"
-      Me.eui_txtMessaggio.Size = New System.Drawing.Size(690, 236)
+      Me.eui_txtMessaggio.Size = New System.Drawing.Size(722, 294)
       Me.eui_txtMessaggio.TabIndex = 0
       Me.eui_txtMessaggio.TextEditorWidth = 790
       '
@@ -219,13 +246,13 @@ Partial Class InvioEmail
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "8b59c6d8-d387-4a57-b565-aeb3ed3dde9a"
       Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(563, 93)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(571, 93)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Esci"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude il documento."
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(120, 39)
       Me.eui_cmdAnnulla.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnnulla.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdAnnulla.TabIndex = 6
+      Me.eui_cmdAnnulla.TabIndex = 7
       Me.eui_cmdAnnulla.Text = "Annulla"
       '
       'eui_cmdSalva
@@ -233,13 +260,13 @@ Partial Class InvioEmail
       Me.eui_cmdSalva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalva.Id = "0e02334c-1eaa-4c90-b151-b3bf2232591a"
       Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdSalva.Location = New System.Drawing.Point(563, 51)
+      Me.eui_cmdSalva.Location = New System.Drawing.Point(571, 51)
       Me.eui_cmdSalva.Name = "eui_cmdSalva"
       Me.eui_cmdSalva.ScreenTip.Caption = "Salva"
       Me.eui_cmdSalva.ScreenTip.Text = "Salva il documento."
       Me.eui_cmdSalva.Size = New System.Drawing.Size(120, 39)
       Me.eui_cmdSalva.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdSalva.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdSalva.TabIndex = 5
+      Me.eui_cmdSalva.TabIndex = 6
       Me.eui_cmdSalva.Text = "Salva"
       '
       'eui_cmdAllegaFile
@@ -247,13 +274,13 @@ Partial Class InvioEmail
       Me.eui_cmdAllegaFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdAllegaFile.Id = "84fe1553-fd8a-4625-ad32-47331fbc3a63"
       Me.eui_cmdAllegaFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdAllegaFile.Location = New System.Drawing.Point(563, 135)
+      Me.eui_cmdAllegaFile.Location = New System.Drawing.Point(571, 135)
       Me.eui_cmdAllegaFile.Name = "eui_cmdAllegaFile"
       Me.eui_cmdAllegaFile.ScreenTip.Caption = "Emetti"
       Me.eui_cmdAllegaFile.ScreenTip.Text = "Salva ed emette il documento eseguendo le operazioni contabili."
       Me.eui_cmdAllegaFile.Size = New System.Drawing.Size(120, 39)
       Me.eui_cmdAllegaFile.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAllegaFile.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdAllegaFile.TabIndex = 7
+      Me.eui_cmdAllegaFile.TabIndex = 8
       Me.eui_cmdAllegaFile.Text = "Allega file"
       '
       'eui_cmdInvia
@@ -261,41 +288,100 @@ Partial Class InvioEmail
       Me.eui_cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdInvia.Id = "5cc6dc80-e953-465d-9d21-2bcaa657e76a"
       Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdInvia.Location = New System.Drawing.Point(563, 9)
+      Me.eui_cmdInvia.Location = New System.Drawing.Point(571, 9)
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
       Me.eui_cmdInvia.ScreenTip.Caption = "Emetti"
       Me.eui_cmdInvia.ScreenTip.Text = "Salva ed emette il documento eseguendo le operazioni contabili."
       Me.eui_cmdInvia.Size = New System.Drawing.Size(120, 39)
       Me.eui_cmdInvia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdInvia.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdInvia.TabIndex = 4
+      Me.eui_cmdInvia.TabIndex = 5
       Me.eui_cmdInvia.Text = "Invia"
       '
-      'PictureBox19
+      'eui_txtCognome
       '
-      Me.PictureBox19.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
-      Me.PictureBox19.Location = New System.Drawing.Point(2, 3)
-      Me.PictureBox19.Name = "PictureBox19"
-      Me.PictureBox19.Size = New System.Drawing.Size(16, 16)
-      Me.PictureBox19.SizeMode = Elegant.Ui.PictureBoxSizeMode.StretchImage
-      Me.PictureBox19.TabIndex = 5
-      Me.PictureBox19.TabStop = False
-      Me.PictureBox19.Text = "PictureBox19"
+      Me.eui_txtCognome.Id = "dd8848a3-87be-40e0-a6b3-12a0f302ec04"
+      Me.eui_txtCognome.Location = New System.Drawing.Point(117, 180)
+      Me.eui_txtCognome.Name = "eui_txtCognome"
+      Me.eui_txtCognome.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtCognome.TabIndex = 13
+      Me.eui_txtCognome.TextEditorWidth = 55
+      Me.eui_txtCognome.Visible = False
       '
-      'eui_Informazioni
+      'eui_txtOraInvio
       '
-      Me.eui_Informazioni.Location = New System.Drawing.Point(21, 5)
-      Me.eui_Informazioni.Name = "eui_Informazioni"
-      Me.eui_Informazioni.Size = New System.Drawing.Size(231, 13)
-      Me.eui_Informazioni.TabIndex = 4
-      Me.eui_Informazioni.Text = "Inviato il 20/07/2018 alle 21.30 a Luigi Montana."
+      Me.eui_txtOraInvio.Id = "9e2ac949-39c8-4cd9-8137-1eec83e1862e"
+      Me.eui_txtOraInvio.Location = New System.Drawing.Point(306, 180)
+      Me.eui_txtOraInvio.Name = "eui_txtOraInvio"
+      Me.eui_txtOraInvio.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtOraInvio.TabIndex = 14
+      Me.eui_txtOraInvio.TextEditorWidth = 55
+      Me.eui_txtOraInvio.Visible = False
+      '
+      'eui_txtIdCliente
+      '
+      Me.eui_txtIdCliente.Id = "0b6048db-0cc2-4c03-978c-b79091a1f1ca"
+      Me.eui_txtIdCliente.Location = New System.Drawing.Point(369, 180)
+      Me.eui_txtIdCliente.Name = "eui_txtIdCliente"
+      Me.eui_txtIdCliente.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtIdCliente.TabIndex = 16
+      Me.eui_txtIdCliente.TextEditorWidth = 55
+      Me.eui_txtIdCliente.Visible = False
+      '
+      'eui_txtDataInvio
+      '
+      Me.eui_txtDataInvio.Id = "5457f700-6ac2-430d-be30-19cb518ddafd"
+      Me.eui_txtDataInvio.Location = New System.Drawing.Point(243, 180)
+      Me.eui_txtDataInvio.Name = "eui_txtDataInvio"
+      Me.eui_txtDataInvio.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtDataInvio.TabIndex = 17
+      Me.eui_txtDataInvio.TextEditorWidth = 55
+      Me.eui_txtDataInvio.Visible = False
+      '
+      'eui_txtStato
+      '
+      Me.eui_txtStato.Id = "e98b4f3c-8e71-48e0-8255-b8f9af40e3af"
+      Me.eui_txtStato.Location = New System.Drawing.Point(432, 180)
+      Me.eui_txtStato.Name = "eui_txtStato"
+      Me.eui_txtStato.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtStato.TabIndex = 18
+      Me.eui_txtStato.TextEditorWidth = 55
+      Me.eui_txtStato.Visible = False
+      '
+      'eui_txtCategoria
+      '
+      Me.eui_txtCategoria.Id = "89f77783-4654-483f-8725-a9430a763079"
+      Me.eui_txtCategoria.Location = New System.Drawing.Point(495, 180)
+      Me.eui_txtCategoria.Name = "eui_txtCategoria"
+      Me.eui_txtCategoria.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtCategoria.TabIndex = 19
+      Me.eui_txtCategoria.TextEditorWidth = 55
+      Me.eui_txtCategoria.Visible = False
+      '
+      'eui_txtNome
+      '
+      Me.eui_txtNome.Id = "cc4420e8-8c2e-4045-a8e1-4ae1326e35ed"
+      Me.eui_txtNome.Location = New System.Drawing.Point(180, 180)
+      Me.eui_txtNome.Name = "eui_txtNome"
+      Me.eui_txtNome.Size = New System.Drawing.Size(61, 21)
+      Me.eui_txtNome.TabIndex = 15
+      Me.eui_txtNome.TextEditorWidth = 55
+      Me.eui_txtNome.Visible = False
       '
       'InvioEmail
       '
+      Me.AcceptButton = Me.eui_cmdInvia
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(700, 478)
+      Me.CancelButton = Me.eui_cmdAnnulla
+      Me.ClientSize = New System.Drawing.Size(724, 528)
+      Me.Controls.Add(Me.eui_txtCategoria)
+      Me.Controls.Add(Me.eui_txtStato)
+      Me.Controls.Add(Me.eui_txtDataInvio)
+      Me.Controls.Add(Me.eui_txtIdCliente)
+      Me.Controls.Add(Me.eui_txtNome)
+      Me.Controls.Add(Me.eui_txtOraInvio)
+      Me.Controls.Add(Me.eui_txtCognome)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdAllegaFile)
       Me.Controls.Add(Me.eui_cmdSalva)
@@ -350,4 +436,11 @@ Partial Class InvioEmail
    Friend WithEvents eui_cmdInvia As Elegant.Ui.Button
    Friend WithEvents PictureBox19 As Elegant.Ui.PictureBox
    Friend WithEvents eui_Informazioni As Elegant.Ui.Label
+   Friend WithEvents eui_txtOraInvio As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtCognome As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtIdCliente As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtCategoria As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtStato As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtDataInvio As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtNome As Elegant.Ui.TextBox
 End Class

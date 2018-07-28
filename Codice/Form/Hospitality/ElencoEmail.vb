@@ -3,7 +3,7 @@
 ' Nome form:            ElencoEmail
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       22/07/2018
-' Data ultima modifica: 23/07/2018
+' Data ultima modifica: 28/07/2018
 ' Descrizione:          Elenco delle E-mail inviate dal programma.
 '
 ' ******************************************************************
@@ -29,6 +29,9 @@ Public Class ElencoEmail
    Public Const COLONNA_STATO As Short = 7
    Public Const COLONNA_CATEGORIA As Short = 8
    Public Const COLONNA_ID_CLIENTE As Short = 10
+   Public Const COLONNA_MITTENTE As Short = 11
+   Public Const COLONNA_MESSAGGIO As Short = 12
+   Public Const COLONNA_ALLEGATI As Short = 13
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -220,12 +223,11 @@ Public Class ElencoEmail
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         ' DA_FARE_A: Valutare!
-         'If DatiConfig.GetValue("FiltroPeriodo") <> "" Then
-         '   filtroDati = DatiConfig.GetValue("FiltroPeriodo")
-         'Else
-         '   filtroDati = "Tutti"
-         'End If
+         If DatiConfig.GetValue("FiltroPeriodoEmail") <> "" Then
+            filtroDati = DatiConfig.GetValue("FiltroPeriodoEmail")
+         Else
+            filtroDati = "Tutti"
+         End If
 
          If DatiConfig.GetValue("WSEmail") = CStr(FormWindowState.Maximized) Then
             Me.WindowState = FormWindowState.Maximized
@@ -269,8 +271,7 @@ Public Class ElencoEmail
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         ' DA_FARE_A: Valutare!
-         ' DatiConfig.SetValue("FiltroPeriodo", filtroDati)
+         DatiConfig.SetValue("FiltroPeriodoEmail", filtroDati)
          DatiConfig.SetValue("WSEmail", Me.WindowState)
          DatiConfig.SetValue("EmailX", Me.Location.X)
          DatiConfig.SetValue("EmailY", Me.Location.Y)
@@ -319,87 +320,6 @@ Public Class ElencoEmail
       'End Try
 
    End Function
-
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub EliminaDettagliDocumento()
-      Try
-         Dim rifDoc As Integer
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE RifDoc = {1}", "DettagliDoc", rifDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Sub
-
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub EliminaDocumento()
-      Try
-         Dim rifDoc As Integer
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE Id = {1}", "Documenti", rifDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-         ' Aggiorna la lista dati.
-         AggiornaDati()
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Sub
 
    Public Sub LeggiDati(ByVal tabella As String, ByVal sql As String)
       Try
@@ -486,19 +406,10 @@ Public Class ElencoEmail
          Dim Risposta As Short
          Dim sql As String
 
-         Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
-         Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
-         Dim descrizione As String
-
-         ' DA_FARE_A: Modificare!
-         'If Nome = String.Empty Then
-         '   descrizione = Cognome & " numero " & Numero & " del " & Data
-         'Else
-         '   descrizione = Cognome & " " & Nome & " numero " & Numero & " del " & Data
-         'End If
+         Dim destinatario As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DESTINATARIO)
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera eliminare la prenotazione del Cliente """ & descrizione & """?" &
+         Risposta = MsgBox("Si desidera eliminare l'e-mail inviata a """ & destinatario & """?" &
                            vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -516,32 +427,6 @@ Public Class ElencoEmail
 
             ' Esegue il comando.
             Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-            ' Elimina i dati degli Occupanti per la prenotazione.
-            '-------------------------------------------------------------------------------
-            ' Crea la stringa di eliminazione.
-            sql = String.Format("DELETE FROM PrenCamereOccupanti WHERE RifPren = {0}", id)
-
-            ' Crea il comando per la connessione corrente.
-            Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
-
-            ' Esegue il comando.
-            Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
-            '-------------------------------------------------------------------------------
-
-            ' Elimina i dati degli Addebiti per la prenotazione.
-            '-------------------------------------------------------------------------------
-            ' Crea la stringa di eliminazione.
-            sql = String.Format("DELETE FROM PrenCamereAddebiti WHERE RifPren = {0}", id)
-
-            ' Crea il comando per la connessione corrente.
-            Dim cmdDelete2 As New OleDbCommand(sql, cn, tr)
-
-            ' Esegue il comando.
-            Dim Record2 As Integer = cmdDelete2.ExecuteNonQuery()
-            '-------------------------------------------------------------------------------
-
-            ' A_TODO: Inserire qui il codice per eliminare anche gli Allegati.
 
             ' Conferma la transazione.
             tr.Commit()
@@ -562,23 +447,6 @@ Public Class ElencoEmail
          ' Chiude la connessione.
          cn.Close()
 
-         'If tbrSospesi.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiSospesi()
-         'ElseIf tbrMese.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiMese()
-         'ElseIf tbrAnno.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiAnno()
-         'ElseIf tbrPeriodo.Pushed = True Then
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDatiPeriodo()
-         'Else
-         '   ' Aggiorna la griglia dati.
-         '   AggiornaDati()
-         'End If
-
          ' Aggiorna la griglia dati.
          AggiornaDati()
 
@@ -587,7 +455,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub AggiornaDati()
       Try
          If TestoRicerca.Text <> String.Empty Then
@@ -629,36 +496,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub VisualizzaDate()
-      'lblAl.Location = New Point(lblAl.Location.X, 8)
-      'lblDal.Location = New Point(lblDal.Location.X, 8)
-      'dtpAl.Location = New Point(dtpAl.Location.X, 8)
-      'dtpDal.Location = New Point(dtpDal.Location.X, 8)
-      'lblAl.Visible = True
-      'lblDal.Visible = True
-      'dtpAl.Visible = True
-      'dtpDal.Visible = True
-
-      'lblTesto.Visible = False
-      'lblCampo.Visible = False
-      'TestoRicerca.Visible = False
-      'CampoRicerca.Visible = False
-   End Sub
-
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub NascondiDate()
-      'lblAl.Visible = False
-      'lblDal.Visible = False
-      'dtpAl.Visible = False
-      'dtpDal.Visible = False
-
-      lblTesto.Visible = True
-      lblCampo.Visible = True
-      TestoRicerca.Visible = True
-      CampoRicerca.Visible = True
-   End Sub
-
    ' DA_FARE: Modificare!
    Public Sub AggiornaDatiTutte()
       Try
@@ -666,7 +503,7 @@ Public Class ElencoEmail
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL)
+         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -699,7 +536,7 @@ Public Class ElencoEmail
          Dim ultimoGiornoMese As String = DateTime.DaysInMonth(anno, mese)
          Dim fineMese As String = CFormatta.FormattaData(ultimoGiornoMese & "/" & mese & "/" & anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, inizioMese, fineMese)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataInvio BETWEEN #{2}# AND #{3}# ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, inizioMese, fineMese)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -731,7 +568,7 @@ Public Class ElencoEmail
          Dim ultimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
          Dim fineAnno As String = CFormatta.FormattaData(ultimoGiornoAnno & "/12/" & Anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, inizioAnno, fineAnno)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataInvio BETWEEN #{2}# AND #{3}# ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, inizioAnno, fineAnno)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -763,7 +600,7 @@ Public Class ElencoEmail
             ' Crea la stringa di selezione dei dati.
             Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
             Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, dataDal, dataAl)
+            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataInvio BETWEEN #{2}# AND #{3}# ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
 
@@ -785,71 +622,11 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
-   Public Sub AggiornaDatiArrivoOggi()
-      Try
-         ' Rimuove i dati di un'eventuale ricerca.
-         TestoRicerca.Text = String.Empty
-
-         ' Crea la stringa di selezione dei dati.
-         Dim oggi As String = Today.ToShortDateString
-
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo = #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, oggi)
-         repSql = sql
-         LeggiDati("(" & sql & ")", sql)
-
-         ' Se nella tabella non ci sono record disattiva i pulsanti.
-         ConvalidaDati()
-
-         ' Aggiorna l'intestazione della griglia dati.
-         AggIntGriglia()
-
-         ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Public Sub AggiornaDatiPartenzaOggi()
-      Try
-         ' Rimuove i dati di un'eventuale ricerca.
-         TestoRicerca.Text = String.Empty
-
-         ' Crea la stringa di selezione dei dati.
-         Dim oggi As String = Today.ToShortDateString
-
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY Numero ASC", DIM_PAGINA_GRANDE, TAB_EMAIL, oggi)
-         repSql = sql
-         LeggiDati("(" & sql & ")", sql)
-
-         ' Se nella tabella non ci sono record disattiva i pulsanti.
-         ConvalidaDati()
-
-         ' Aggiorna l'intestazione della griglia dati.
-         AggIntGriglia()
-
-         ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   ' DA_FARE_A: Modificare!
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
          g_frmMain.eui_Strumenti_Modifica.Enabled = False
          g_frmMain.eui_Strumenti_Elimina.Enabled = False
-         g_frmMain.eui_Strumenti_Duplica.Enabled = False
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = False
          g_frmMain.eui_Strumenti_Esporta.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
@@ -858,7 +635,6 @@ Public Class ElencoEmail
          ' Attiva i pulsanti appropriati.
          g_frmMain.eui_Strumenti_Modifica.Enabled = True
          g_frmMain.eui_Strumenti_Elimina.Enabled = True
-         g_frmMain.eui_Strumenti_Duplica.Enabled = False
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = True
          g_frmMain.eui_Strumenti_Esporta.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
@@ -866,48 +642,19 @@ Public Class ElencoEmail
       End If
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub ConvalidaDati()
+      ' DA_FARE_A: Modificare!
       'If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
       ImpostaComandi()
       'End If
    End Sub
 
-   ' DA_FARE_A: Modificare!
-   Private Sub ApriDati(ByVal nomeFrm As String, ByVal val As String)
-      Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
-
-         ' Per la versione demo.
-         ' Se è un nuovo inserimento verifica il numero dei record.
-         If val = String.Empty Then
-            If g_VerDemo = True Then
-               ' Test per la versione demo.
-               If VerificaNumRecord(LeggiNumRecord(TAB_EMAIL)) = True Then
-                  Exit Sub
-               End If
-            End If
-         End If
-
-         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         'g_frmEmail = New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, String.Empty)
-         g_frmEmail.Tag = val
-         g_frmEmail.ShowDialog()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) & " " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & " - " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
+            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME) & " " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME) & " - " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DESTINATARIO))
          Else
             DataGrid1.CaptionText = String.Empty
          End If
@@ -918,48 +665,6 @@ Public Class ElencoEmail
 
       End Try
    End Sub
-
-   ' DA_FARE_A: Modificare!
-   Private Function LeggiNumeroMax(ByVal tabella As String, ByVal tipoDoc As String) As Integer
-      Dim closeOnExit As Boolean
-      Dim numRec As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Ottiene il numero di record.
-         'cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM {0} WHERE TipoDoc = '{1}'", tabella, tipoDoc)
-
-         ' Ottiene i dati per l'anno corrente.
-         Dim Anno As String = Year(Now)
-         Dim primoGiornoAnno As String = CFormatta.FormattaData("01/01/" & Anno)
-         Dim numUltimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
-         Dim ultimoGiornoAnno As String = CFormatta.FormattaData(numUltimoGiornoAnno & "/12/" & Anno)
-
-         cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM {0} WHERE TipoDoc = '{1}' AND DataDoc BETWEEN #{2}# AND #{3}#", tabella, tipoDoc, primoGiornoAnno, ultimoGiornoAnno)
-
-         If IsDBNull(cmd.ExecuteScalar()) = False Then
-            numRec = CInt(cmd.ExecuteScalar())
-         Else
-            numRec = 0
-         End If
-
-         Return numRec
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
 
    Public Sub AggTitoloFinestra(ByVal titolo As String)
       Try
@@ -996,29 +701,29 @@ Public Class ElencoEmail
          destinatarioStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(destinatarioStyle)
          ' 2 - Ragione Sociale / Cognome
-         Dim intestatariostyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         intestatariostyle.MappingName = "Cognome"
-         intestatariostyle.HeaderText = "Cognome"
-         intestatariostyle.Width = 120
-         intestatariostyle.NullText = String.Empty
-         intestatariostyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(intestatariostyle)
+         Dim cognomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         cognomeStyle.MappingName = "Cognome"
+         cognomeStyle.HeaderText = "Cognome"
+         cognomeStyle.Width = 120
+         cognomeStyle.NullText = String.Empty
+         cognomeStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(cognomeStyle)
          ' 3 - Nome
-         Dim nomestyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomestyle.MappingName = "Nome"
+         Dim nomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         nomeStyle.MappingName = "Nome"
          nomestyle.HeaderText = "Nome"
          nomestyle.Width = 100
          nomestyle.NullText = String.Empty
          nomestyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(nomestyle)
          ' 4 - Oggetto
-         Dim dataStyle As New DataGridTextBoxColumn
-         dataStyle.MappingName = "Oggetto"
-         dataStyle.HeaderText = "Oggetto"
-         dataStyle.Width = 300
-         dataStyle.NullText = String.Empty
-         dataStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataStyle)
+         Dim oggettoStyle As New DataGridTextBoxColumn
+         oggettoStyle.MappingName = "Oggetto"
+         oggettoStyle.HeaderText = "Oggetto"
+         oggettoStyle.Width = 300
+         oggettoStyle.NullText = String.Empty
+         oggettoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(oggettoStyle)
          ' 5 - Data invio
          Dim dataInvioStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          dataInvioStyle.MappingName = "DataInvio"
@@ -1070,6 +775,30 @@ Public Class ElencoEmail
          idClienteStyle.NullText = String.Empty
          idClienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(idClienteStyle)
+         ' 11 - Mittente.
+         Dim mittenteStyle As New DataGridTextBoxColumn
+         mittenteStyle.MappingName = "Mittente"
+         mittenteStyle.HeaderText = "Da"
+         mittenteStyle.Width = 0
+         mittenteStyle.NullText = String.Empty
+         mittenteStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(mittenteStyle)
+         ' 12 - Messaggio.
+         Dim messaggioStyle As New DataGridTextBoxColumn
+         messaggioStyle.MappingName = "Messaggio"
+         messaggioStyle.HeaderText = "Messaggio"
+         messaggioStyle.Width = 0
+         messaggioStyle.NullText = String.Empty
+         messaggioStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(messaggioStyle)
+         ' 13 - Allegati.
+         Dim allegatiStyle As New DataGridTextBoxColumn
+         allegatiStyle.MappingName = "Allegati"
+         allegatiStyle.HeaderText = "Allegati"
+         allegatiStyle.Width = 0
+         allegatiStyle.NullText = String.Empty
+         allegatiStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(messaggioStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -1103,8 +832,6 @@ Public Class ElencoEmail
             g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Arrivo.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Partenza.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
@@ -1119,8 +846,6 @@ Public Class ElencoEmail
             g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = True
             g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Arrivo.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Partenza.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
@@ -1331,7 +1056,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub ElencoEmail_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
@@ -1569,8 +1293,8 @@ Public Class ElencoEmail
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
+      ' DA_FARE_A: Modificare!
       'If Modifica.Enabled = True Then
       '   ' Registra loperazione efettuata dall'operatore identificato.
       '   registraModifica()
@@ -1580,23 +1304,21 @@ Public Class ElencoEmail
       'End If
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub Nuovo()
       Try
-         ' Apre la finestra per l'inserimento di nuovi dati.
-         ' ApriDati(Me.Name, String.Empty)
-
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+         ' Apre la finestra Invio e-mail per un nuovo messaggio.
+         Dim frmEmail As New InvioEmail(g_frmMain.LeggiEmailMittente, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+
          frmEmail.Tag = String.Empty
          frmEmail.ShowDialog()
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' DA_FARE_A: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1607,20 +1329,31 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub Modifica()
       Try
-         ' Apre la finestra per la modifica dei dati.
-         'ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+         'Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
 
-         ' Modifica il cursore del mouse.
-         'Cursor.Current = Cursors.AppStarting
+         ' DA_FARE_A: Cancellare!
+         'Dim eMail_Mittente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_MITTENTE)
+         'Dim eMail_Destinatario As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DESTINATARIO)
+         'Dim eMail_Oggetto As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_OGGETTO)
+         'Dim eMail_Messaggio As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_MESSAGGIO)
+         'Dim eMail_allegati As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ALLEGATI)
 
-         '' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         'Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
-         'frmEmail.Tag = CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
-         'frmEmail.ShowDialog()
+         'Dim eMail_Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
+         'Dim eMail_data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_INVIO)
+         'Dim eMail_ora As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ORA_INVIO)
+         'Dim eMail_nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
+         'Dim eMail_cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
 
+         ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
+         Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+
+         frmEmail.Tag = Convert.ToString(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID))
+         frmEmail.ShowDialog()
+
+         ' DA_FARE_A: Terminare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 

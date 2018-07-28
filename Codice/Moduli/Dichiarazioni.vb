@@ -345,6 +345,14 @@ Module Dichiarazioni
    ' E-MAIL.
    Public Const TITOLO_FINESTRA_ELENCO_EMAIL As String = "Elenco E-mail inviate"
 
+#Region "Categorie E-mail "
+
+   Public Const CATEGORIA_PREN_CAMERE As String = "Prenotazione"
+   Public Const CATEGORIA_ARCHIVI As String = "Archivi"
+
+#End Region
+
+
 #Region "Registro Operazioni "
 
    ' Stringhe per identificare i moduli.

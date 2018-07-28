@@ -2546,6 +2546,7 @@ Public Class frmPrenCamera
             ' Verifica la presenza di un nome Intestatario.
             If cmbCognome.Text = String.Empty Then
                MessageBox.Show("Inserire un nominativo per l'intestatario della prenotazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               cmbCognome.Focus()
                Exit Sub
             End If
 
@@ -2603,7 +2604,7 @@ Public Class frmPrenCamera
          CaricaLista(cmbPagamento, TAB_PAGAMENTO)
          CaricaLista(cmbStatoPren, TAB_STATO_PREN)
 
-         If Me.Tag <> "" Then
+         If Me.Tag <> String.Empty Then
             With IPren
                ' Comando Modifica.
 

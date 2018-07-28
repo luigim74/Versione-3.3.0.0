@@ -8,7 +8,7 @@ Public Class Email
    Public Oggetto As String
    Public DataInvio As String
    Public OraInvio As String
-   Public IdCliente As Integer
+   Public IdCliente As String
    Public Cognome As String
    Public Nome As String
    Public Stato As String
@@ -54,17 +54,17 @@ Public Class Email
          End If
 
          If IsDBNull(ds.Tables(tabella).Rows(0)("Mittente")) = False Then
-            Me.Mittente = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Mittente"))
+            Me.Mittente = ds.Tables(tabella).Rows(0)("Mittente")
          Else
             Me.Mittente = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Destinatario")) = False Then
-            Me.Destinatario = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Destinatario"))
+            Me.Destinatario = ds.Tables(tabella).Rows(0)("Destinatario")
          Else
             Me.Destinatario = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Oggetto")) = False Then
-            Me.Oggetto = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Oggetto"))
+            Me.Oggetto = ds.Tables(tabella).Rows(0)("Oggetto")
          Else
             Me.Oggetto = String.Empty
          End If
@@ -79,9 +79,9 @@ Public Class Email
             Me.OraInvio = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("IdCliente")) = False Then
-            Me.IdCliente = Convert.ToInt32(ds.Tables(tabella).Rows(0)("IdCliente"))
+            Me.IdCliente = ds.Tables(tabella).Rows(0)("IdCliente")
          Else
-            Me.IdCliente = 0
+            Me.IdCliente = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Cognome")) = False Then
             Me.Cognome = ds.Tables(tabella).Rows(0)("Cognome").ToString
