@@ -20,3 +20,69 @@
    in Hospitality_Solution.Email.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Email.vb:riga 165"
 "
 "
+"*** 29/07/2018 - 13:27:34 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.eui_Strumenti_Periodo_Mese_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11818"
+"
+"
+"*** 29/07/2018 - 13:27:38 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.eui_Strumenti_Periodo_DalAl_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11866"
+"
+"
+"*** 29/07/2018 - 15:01:33 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.InvioEmail.ModificaStatoEmail(String tabella, String codice, String data, String ora, String stato) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\InvioEmail.vb:riga 174"
+"
+"
+"*** 29/07/2018 - 15:09:12 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.InvioEmail.ModificaStatoEmail(String tabella, String codice, String data, String ora, String stato) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\InvioEmail.vb:riga 174"
+"
+"
+"*** 29/07/2018 - 15:37:48 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.InvioEmail.InviaEmail(String eMailMittente, String eMailDestinatario, String eMailOggetto, String eMailMessaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\InvioEmail.vb:riga 117"
+"
+"
+"*** 29/07/2018 - 16:11:02 ***"
+"- DESCRIZIONE ERRORE: Caratteri non validi nel percorso."
+"- NOME PROCEDURA:    in System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   in System.IO.Path.GetFileName(String path)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   in System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   in System.Net.Mail.Attachment..ctor(String fileName, String mediaType)
+   in Hospitality_Solution.InvioEmail.InviaEmail(String eMailMittente, String eMailDestinatario, String eMailOggetto, String eMailMessaggio, String eMailAllegati) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\InvioEmail.vb:riga 121"
+"
+"
+"*** 29/07/2018 - 16:12:31 ***"
+"- DESCRIZIONE ERRORE: Caratteri non validi nel percorso."
+"- NOME PROCEDURA:    in System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   in System.IO.Path.GetFileName(String path)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   in System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   in System.Net.Mail.Attachment..ctor(String fileName, String mediaType)
+   in Hospitality_Solution.InvioEmail.InviaEmail(String eMailMittente, String eMailDestinatario, String eMailOggetto, String eMailMessaggio, String eMailAllegati) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\InvioEmail.vb:riga 121"
+"
+"
+"*** 29/07/2018 - 17:16:19 ***"
+"- DESCRIZIONE ERRORE: Unknown error (0x80040906)"
+"- NOME PROCEDURA:    in System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   in System.Diagnostics.Process.Start()
+   in System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   in System.Diagnostics.Process.Start(String fileName)
+   in Hospitality_Solution.frmMain.lnkSupporto_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 14591"
+"
+"

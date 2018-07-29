@@ -1,4 +1,17 @@
-﻿Public Class InvioEmail
+﻿#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome form:            InvioEmail
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       22/07/2018
+' Data ultima modifica: 29/07/2018
+' Descrizione:          Finestra per l'invio delle E-mail.
+'
+' ******************************************************************
+#End Region
+
+Imports System.IO
+
+Public Class InvioEmail
 
    Const NOME_TABELLA As String = "Email"
    Const TITOLO_FINESTRA = "Invio E-mail"
@@ -44,8 +57,8 @@
             ' Assegna i dati dei campi della classe alle caselle di testo.
             .Mittente = eui_txtMittente.Text
             .Destinatario = eui_txtDestinatario.Text
-            .Oggetto = FormattaApici(eui_txtOggetto.Text)
-            .Messaggio = FormattaApici(eui_txtMessaggio.Text)
+            .Oggetto = eui_txtOggetto.Text
+            .Messaggio = eui_txtMessaggio.Text
             .Allegati = eui_txtAllegati.Text
             .Cognome = eui_txtCognome.Text
             .Nome = eui_txtNome.Text
@@ -84,45 +97,47 @@
       End Try
    End Function
 
-   Public Sub InviaEmail(ByVal eMailMittente As String, ByVal eMailDestinatario As String)
+   Public Function InviaEmail(ByVal eMailMittente As String, ByVal eMailDestinatario As String, ByVal eMailOggetto As String, ByVal eMailMessaggio As String, ByVal eMailAllegati As String) As Boolean
       Try
          If WebCommunication.VerificaConnessione = True Then
 
             Dim nomeMailServer As String = NOME_MAIL_SERVER_SMTP
 
             If eMailMittente = String.Empty Then
-               MessageBox.Show("E' necessario specificare un'e-mail per il mittente!" & vbNewLine &
+               MessageBox.Show("E' necessario specificare un'indirizzo e-mail per il mittente!" & vbNewLine &
                                "Verificare nell'anagrafica 'Dati generali Azienda' la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-               Exit Sub
+               eui_txtMittente.Focus()
+               Return False
             End If
 
             If eMailDestinatario = String.Empty Then
-               MessageBox.Show("E' necessario specificare un'e-mail per il destinatario!" & vbNewLine &
-                               "Verificare nell'anagrafica 'Cliente' intestatario della prenotazione la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-               Exit Sub
+               MessageBox.Show("E' necessario specificare un'indirizzo e-mail per il destinatario!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               eui_txtDestinatario.Focus()
+               Return False
             End If
 
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.AppStarting
-
-            Dim oggetto As String = "Prenotazione N. 34239"
-
-            Dim corpoMessaggio As String = "Prenotazione"
-
-            Dim File As String = "Data.pdf"
+            If eMailOggetto = String.Empty Then
+               MessageBox.Show("E' necessario specificare l'oggetto del messaggio!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               eui_txtOggetto.Focus()
+               Return False
+            End If
 
             Dim messaggio As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage(eMailMittente, eMailDestinatario)
-            messaggio.Subject = oggetto
-            messaggio.Body = corpoMessaggio
+            messaggio.Subject = eMailOggetto
+            messaggio.Body = eMailMessaggio
 
-            Dim Data As System.Net.Mail.Attachment = New System.Net.Mail.Attachment(File, System.Net.Mime.MediaTypeNames.Application.Octet)
+            Dim nomeFile As String() = eMailAllegati.Split(";")
+            Dim Data(nomeFile.Length - 1) As System.Net.Mail.Attachment
 
-            Dim disposition As System.Net.Mime.ContentDisposition = Data.ContentDisposition
-            disposition.CreationDate = System.IO.File.GetCreationTime(File)
-            disposition.ModificationDate = System.IO.File.GetLastWriteTime(File)
-            disposition.ReadDate = System.IO.File.GetLastAccessTime(File)
-
-            messaggio.Attachments.Add(Data)
+            Dim i As Integer
+            For i = 0 To nomeFile.Length - 1
+               Data(i) = New System.Net.Mail.Attachment(nomeFile(i), System.Net.Mime.MediaTypeNames.Application.Octet)
+               Dim disposition As System.Net.Mime.ContentDisposition = Data(i).ContentDisposition
+               disposition.CreationDate = System.IO.File.GetCreationTime(nomeFile(i))
+               disposition.ModificationDate = System.IO.File.GetLastWriteTime(nomeFile(i))
+               disposition.ReadDate = System.IO.File.GetLastAccessTime(nomeFile(i))
+               messaggio.Attachments.Add(Data(i))
+            Next
 
             Dim smtp As System.Net.Mail.SmtpClient = New System.Net.Mail.SmtpClient(nomeMailServer, 25)
 
@@ -130,10 +145,7 @@
 
             smtp.Send(messaggio)
 
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.Default
-
-            MessageBox.Show("E-mail inviata con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return True
          End If
 
       Catch ex As Exception
@@ -141,7 +153,80 @@
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Exit Sub
+         Return False
+      End Try
+   End Function
+
+   Public Sub ModificaStatoEmail(ByVal tabella As String, ByVal codice As String, ByVal data As String, ByVal ora As String, ByVal stato As String)
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} " &
+                             "SET DataInvio = @DataInvio, " &
+                             "OraInvio = @OraInvio, " &
+                             "Stato = @Stato " &
+                             "WHERE Id = {1}",
+                             tabella,
+                             codice)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+         cmdUpdate.Parameters.AddWithValue("@DataInvio", data)
+         cmdUpdate.Parameters.AddWithValue("@OraInvio", ora)
+         cmdUpdate.Parameters.AddWithValue("@Stato", stato)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Sub
+
+   Private Sub InserisciAllegati(ByVal allegati As String)
+      Try
+         ' Imposta la finesta di dialogo.
+         OpenFileDialog1.Filter = "Tutti i file |*.*"
+         OpenFileDialog1.FilterIndex = 1
+         OpenFileDialog1.FileName = String.Empty
+
+         ' Salva il percorso del file selezionato.
+         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+
+            ' Inserisce il nome del file nella lista degli allegati.
+            If allegati = String.Empty Then
+               eui_txtAllegati.Text = OpenFileDialog1.FileName
+            Else
+               eui_txtAllegati.Text = allegati & ";" & OpenFileDialog1.FileName
+            End If
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
       End Try
    End Sub
 
@@ -173,7 +258,7 @@
 
                ' Messaggio barra di stato.
                If .DataInvio <> String.Empty Then
-                  eui_Informazioni.Text = "Inviato il " & .DataInvio & " alle ore " & .OraInvio & "." '& " a " & eMail_nome & " " & eMail_cognome & " (" & eMail_Destinatario & ")."
+                  eui_Informazioni.Text = "Inviato il " & .DataInvio & " alle ore " & .OraInvio & "."
                Else
                   eui_Informazioni.Text = "Da inviare."
                End If
@@ -190,7 +275,7 @@
             eui_txtDestinatario.Text = eMail_Destinatario
             eui_txtOggetto.Text = eMail_Oggetto
             eui_txtMessaggio.Text = eMail_Messaggio
-            eui_txtAllegati.Text = eMail_allegati
+            eui_txtAllegati.Text = eMail_Allegati
             eui_txtCognome.Text = eMail_Cognome
             eui_txtNome.Text = eMail_Nome
             eui_txtIdCliente.Text = eMail_IdCliente
@@ -222,21 +307,64 @@
    End Sub
 
    Private Sub eui_cmdInvia_Click(sender As Object, e As EventArgs) Handles eui_cmdInvia.Click
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
 
+         ' Salva i dati nel database.
+         If SalvaDati() = True Then
+
+            ' Invia l'e-mail.
+            If InviaEmail(eui_txtMittente.Text, eui_txtDestinatario.Text, eui_txtOggetto.Text, eui_txtMessaggio.Text, eui_txtAllegati.Text) = True Then
+
+               ' Se è una nuova e-mail.
+               If Me.Tag = String.Empty Then
+                  Me.Tag = LeggiUltimoRecord(NOME_TABELLA)
+               End If
+
+               ' Modifica lo stato dell'e-mail in Inviata.
+               ModificaStatoEmail(NOME_TABELLA, Me.Tag, Now.ToShortDateString, Now.ToShortTimeString, "Inviata")
+
+               ' Aggiorna la griglia dati.
+               g_frmEmail.AggiornaDati()
+
+               ' Chiude la finestra.
+               Me.Close()
+            End If
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+      End Try
    End Sub
 
    Private Sub eui_cmdSalva_Click(sender As Object, e As EventArgs) Handles eui_cmdSalva.Click
       Try
+         ' Verifica la presenza di un Mittente.
+         If eui_txtMittente.Text = String.Empty Then
+            MessageBox.Show("E' necessario specificare un'indirizzo e-mail per il mittente!" & vbNewLine &
+                            "Verificare nell'anagrafica 'Dati generali Azienda' la presenza di un'indirizzo e-mail valido.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_txtMittente.Focus()
+            Exit Sub
+         End If
+
          ' Verifica la presenza di un Destinatario.
          If eui_txtDestinatario.Text = String.Empty Then
-            MessageBox.Show("Specificare il destinatario del messaggio.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("E' necessario specificare un'indirizzo e-mail per il destinatario!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             eui_txtDestinatario.Focus()
             Exit Sub
          End If
 
          ' Verifica la presenza di un Oggetto.
          If eui_txtOggetto.Text = String.Empty Then
-            MessageBox.Show("Specificare l'oggetto del messaggio.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("E' necessario specificare l'oggetto del messaggio!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             eui_txtOggetto.Focus()
             Exit Sub
          End If
@@ -270,7 +398,15 @@
    End Sub
 
    Private Sub eui_cmdAllegaFile_Click(sender As Object, e As EventArgs) Handles eui_cmdAllegaFile.Click
+      Try
+         ' Allega un file al messaggio.
+         InserisciAllegati(eui_txtAllegati.Text)
 
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 End Class

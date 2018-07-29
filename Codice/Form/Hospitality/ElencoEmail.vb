@@ -3,7 +3,7 @@
 ' Nome form:            ElencoEmail
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       22/07/2018
-' Data ultima modifica: 28/07/2018
+' Data ultima modifica: 29/07/2018
 ' Descrizione:          Elenco delle E-mail inviate dal programma.
 '
 ' ******************************************************************
@@ -27,11 +27,11 @@ Public Class ElencoEmail
    Public Const COLONNA_DATA_INVIO As Short = 5
    Public Const COLONNA_ORA_INVIO As Short = 6
    Public Const COLONNA_STATO As Short = 7
-   Public Const COLONNA_CATEGORIA As Short = 8
-   Public Const COLONNA_ID_CLIENTE As Short = 10
-   Public Const COLONNA_MITTENTE As Short = 11
-   Public Const COLONNA_MESSAGGIO As Short = 12
-   Public Const COLONNA_ALLEGATI As Short = 13
+   Public Const COLONNA_ALLEGATI As Short = 8
+   Public Const COLONNA_CATEGORIA As Short = 9
+   Public Const COLONNA_ID_CLIENTE As Short = 11
+   Public Const COLONNA_MITTENTE As Short = 12
+   Public Const COLONNA_MESSAGGIO As Short = 13
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -400,7 +400,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
@@ -496,7 +495,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: Modificare!
    Public Sub AggiornaDatiTutte()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -505,6 +503,7 @@ Public Class ElencoEmail
          ' Crea la stringa di selezione dei dati.
          sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataInvio ASC", DIM_PAGINA_GRANDE, TAB_EMAIL)
          repSql = sql
+
          LeggiDati("(" & sql & ")", sql)
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
@@ -514,7 +513,7 @@ Public Class ElencoEmail
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -523,7 +522,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: Modificare!
    Public Sub AggiornaDatiMese()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -547,7 +545,7 @@ Public Class ElencoEmail
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -556,7 +554,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: Modificare!
    Public Sub AggiornaDatiAnno()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -579,7 +576,7 @@ Public Class ElencoEmail
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -588,7 +585,6 @@ Public Class ElencoEmail
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -611,7 +607,7 @@ Public Class ElencoEmail
             AggIntGriglia()
 
             ' Aggiorna il titolo della finestra.
-            AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+            AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_EMAIL)
 
          End If
 
@@ -684,21 +680,21 @@ Public Class ElencoEmail
          gridStyle.MappingName = tabella
 
          ' 0 - Id 
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         Dim codiceStyle As New DataGridTextBoxColumn
          codiceStyle.MappingName = "Id"
          codiceStyle.HeaderText = "Codice"
          codiceStyle.Width = 50
          codiceStyle.NullText = String.Empty
          codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         codiceStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(codiceStyle)
          ' 1 - Destinatario
-         Dim destinatarioStyle As New DataGridTextBoxColumn
+         Dim destinatarioStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          destinatarioStyle.MappingName = "Destinatario"
          destinatarioStyle.HeaderText = "A"
          destinatarioStyle.Width = 200
          destinatarioStyle.NullText = String.Empty
-         destinatarioStyle.TextBox.BackColor = Color.White
+         destinatarioStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(destinatarioStyle)
          ' 2 - Ragione Sociale / Cognome
          Dim cognomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
@@ -750,15 +746,23 @@ Public Class ElencoEmail
          statoStyle.NullText = String.Empty
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 8 - Categoria
+         ' 8 - Allegati.
+         Dim allegatiStyle As New DataGridTextBoxColumn
+         allegatiStyle.MappingName = "Allegati"
+         allegatiStyle.HeaderText = "Allegati"
+         allegatiStyle.Width = 100
+         allegatiStyle.NullText = String.Empty
+         allegatiStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(allegatiStyle)
+         ' 9 - Categoria
          Dim categoriaStyle As New DataGridTextBoxColumn
          categoriaStyle.MappingName = "Categoria"
          categoriaStyle.HeaderText = "Categoria"
-         categoriaStyle.Width = 120
+         categoriaStyle.Width = 100
          categoriaStyle.NullText = String.Empty
          categoriaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(categoriaStyle)
-         ' 9 - Colore.
+         ' 10 - Colore.
          Dim coloreStyle As New CellaColorata(DataGrid1)
          coloreStyle.MappingName = "Colore"
          coloreStyle.HeaderText = "Colore"
@@ -767,7 +771,7 @@ Public Class ElencoEmail
          coloreStyle.TextBox.BackColor = Color.White
          coloreStyle.TextBox.ForeColor = Color.White
          gridStyle.GridColumnStyles.Add(coloreStyle)
-         ' 10 - Id Cliente.
+         ' 11 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
          idClienteStyle.MappingName = "IdCliente"
          idClienteStyle.HeaderText = "Codice Cliente"
@@ -775,7 +779,7 @@ Public Class ElencoEmail
          idClienteStyle.NullText = String.Empty
          idClienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(idClienteStyle)
-         ' 11 - Mittente.
+         ' 12 - Mittente.
          Dim mittenteStyle As New DataGridTextBoxColumn
          mittenteStyle.MappingName = "Mittente"
          mittenteStyle.HeaderText = "Da"
@@ -783,21 +787,13 @@ Public Class ElencoEmail
          mittenteStyle.NullText = String.Empty
          mittenteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(mittenteStyle)
-         ' 12 - Messaggio.
+         ' 13 - Messaggio.
          Dim messaggioStyle As New DataGridTextBoxColumn
          messaggioStyle.MappingName = "Messaggio"
          messaggioStyle.HeaderText = "Messaggio"
          messaggioStyle.Width = 0
          messaggioStyle.NullText = String.Empty
          messaggioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(messaggioStyle)
-         ' 13 - Allegati.
-         Dim allegatiStyle As New DataGridTextBoxColumn
-         allegatiStyle.MappingName = "Allegati"
-         allegatiStyle.HeaderText = "Allegati"
-         allegatiStyle.Width = 0
-         allegatiStyle.NullText = String.Empty
-         allegatiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(messaggioStyle)
 
          DataGrid1.TableStyles.Clear()

@@ -11734,8 +11734,6 @@ Friend Class frmMain
                sender.Pressed = True
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_Anno.Pressed = False
-               eui_Strumenti_Periodo_Arrivo.Pressed = False
-               eui_Strumenti_Periodo_Partenza.Pressed = False
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiTutte()
@@ -11783,8 +11781,6 @@ Friend Class frmMain
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False
                eui_Strumenti_Periodo_Mese.Pressed = False
-               eui_Strumenti_Periodo_Arrivo.Pressed = False
-               eui_Strumenti_Periodo_Partenza.Pressed = False
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiAnno()
@@ -11828,12 +11824,10 @@ Friend Class frmMain
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.AggiornaDatiMese()
 
-            Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
+            Case TITOLO_FINESTRA_ELENCO_EMAIL
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False
                eui_Strumenti_Periodo_Anno.Pressed = False
-               eui_Strumenti_Periodo_Arrivo.Pressed = False
-               eui_Strumenti_Periodo_Partenza.Pressed = False
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiMese()
@@ -11880,8 +11874,6 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Tutte.Pressed = False
                eui_Strumenti_Periodo_Anno.Pressed = False
                eui_Strumenti_Periodo_Mese.Pressed = False
-               eui_Strumenti_Periodo_Arrivo.Pressed = False
-               eui_Strumenti_Periodo_Partenza.Pressed = False
                g_frmEmail.AggiornaDatiPeriodo()
 
                ' Inserire qui il codice per gestire le altre finestre.
