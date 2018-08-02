@@ -325,8 +325,10 @@ Public Class InvioEmail
                ' Modifica lo stato dell'e-mail in Inviata.
                ModificaStatoEmail(NOME_TABELLA, Me.Tag, Now.ToShortDateString, Now.ToShortTimeString, "Inviata")
 
-               ' Aggiorna la griglia dati.
-               g_frmEmail.AggiornaDati()
+               If IsNothing(g_frmEmail) = False Then
+                  ' Aggiorna la griglia dati.
+                  g_frmEmail.AggiornaDati()
+               End If
 
                ' Chiude la finestra.
                Me.Close()
@@ -372,12 +374,14 @@ Public Class InvioEmail
          ' Salva i dati nel database.
          If SalvaDati() = True Then
 
-            ' Aggiorna la griglia dati.
-            g_frmEmail.AggiornaDati()
+            If IsNothing(g_frmEmail) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmEmail.AggiornaDati()
+            End If
 
             ' Chiude la finestra.
             Me.Close()
-         End If
+            End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

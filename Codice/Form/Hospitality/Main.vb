@@ -1,7 +1,7 @@
 ' Nome form:            frmMain
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 22/07/2018
+' Data ultima modifica: 02/08/2018
 ' Descrizione:          Form MDI principale.
 
 Option Strict Off
@@ -12,6 +12,8 @@ Imports System.Data.OleDb
 Imports System.Reflection.Assembly
 Imports Elegant.Ui
 Imports System.Data.SQLite
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
 
 Friend Class frmMain
    Inherits System.Windows.Forms.Form
@@ -5887,6 +5889,7 @@ Friend Class frmMain
    Private DatiConfig As AppConfig
    Private Pwd As String
    Private impostaListaModuli As Boolean = False
+   Private CFormatta As New ClsFormatta
 
 #End Region
 
@@ -12046,8 +12049,16 @@ Friend Class frmMain
    ' DA_FARE_A: Terminare con allegati!
    Private Sub eui_Strumenti_Documenti_Invia_Riepilogo_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Riepilogo.Click
       Try
+         ' Genera il file Riepilogo prenotazione in formato PDF.
+         Dim percorsoFilePDF As String = GeneraRiepilogoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda, LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda,
+                                                                 LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
+                                                                 LeggiArrivoPrenotazione, LeggiPartenzaPrenotazione, LeggiNottiPrenotazione,
+                                                                 LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
+                                                                 LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
+                                                                 LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione)
+
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, String.Empty,
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, percorsoFilePDF,
                                         LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
@@ -13439,6 +13450,156 @@ Friend Class frmMain
       End Try
    End Sub
 
+#Region "Hotel - Prenotazione PDF "
+
+   Public Function LeggiLogoAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return .PercorsoImg
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiRagSocialeAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return .RagSociale
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiIndirizzoAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return .Indirizzo
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiCapAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return .Cap & " " & .Città & " " & .Provincia
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiPivaAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return "P. Iva: " & .Piva
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiTelFaxAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return "Tel: " & .Telefono & " Fax: " & .Fax
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiEmailAzienda() As String
+      Try
+         Dim AAzienda As New Anagrafiche.Azienda(ConnString)
+
+         With AAzienda
+
+            .LeggiDati(NOME_TABELLA_AZIENDA)
+
+            Return .Email
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+
    Public Function LeggiEmailMittente() As String
       Try
          Dim AAzienda As New Anagrafiche.Azienda(ConnString)
@@ -13581,6 +13742,274 @@ Friend Class frmMain
 
    End Function
 
+   Private Function LeggiNumPrenotazione() As String
+      Try
+         Dim numPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUMERO_PREN)
+
+         Return numPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiArrivoPrenotazione() As String
+      Try
+         Dim arrivoPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_ARRIVO)
+
+         Return arrivoPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiPartenzaPrenotazione() As String
+      Try
+         Dim partenzaPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_PARTENZA)
+
+         Return partenzaPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNottiPrenotazione() As String
+      Try
+         Dim partenzaPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NOTTI)
+
+         Return partenzaPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiAdultiPrenotazione() As String
+      Try
+         Dim adultiPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ADULTI)
+
+         Return adultiPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNeonatiPrenotazione() As String
+      Try
+         Dim NeonatiPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NEONATI)
+
+         Return NeonatiPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiBambiniPrenotazione() As String
+      Try
+         Dim BambiniPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_BAMBINI)
+
+         Return BambiniPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiRagazziPrenotazione() As String
+      Try
+         Dim RagazziPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_RAGAZZI)
+
+         Return RagazziPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNumCameraPrenotazione() As String
+      Try
+         Dim numCameraPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUM_CAMERA)
+
+         Return numCameraPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiTipoCameraPrenotazione() As String
+      Try
+         Dim tipoCameraPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_TIPO_CAMERA)
+
+         Return tipoCameraPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiArrangiamentoPrenotazione() As String
+      Try
+         Dim arrangiamentoPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ARRANGIAMENTO)
+
+         Return arrangiamentoPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiTotaleImportoPrenotazione() As String
+      Try
+         Dim totalePren As Double
+
+         If IsNumeric(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_IMPORTO_TOTALE)) = True Then
+            totalePren = Convert.ToDouble(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_IMPORTO_TOTALE))
+         Else
+            totalePren = 0
+         End If
+
+         Return CFormatta.FormattaNumeroDouble(totalePren)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiAccontoPrenotazione() As String
+      Try
+         Dim accontoPren As Double
+
+         If IsNumeric(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ACCONTO)) = True Then
+            accontoPren = Convert.ToDouble(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ACCONTO))
+         Else
+            accontoPren = 0
+         End If
+
+         Return CFormatta.FormattaNumeroDouble(accontoPren)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiSaldoPrenotazione() As String
+      Try
+         Dim totalePren As Double
+         Dim accontoPren As Double
+         Dim saldoPren As Double
+
+         If IsNumeric(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_IMPORTO_TOTALE)) = True Then
+            totalePren = Convert.ToDouble(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_IMPORTO_TOTALE))
+         Else
+            totalePren = 0
+         End If
+
+         If IsNumeric(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ACCONTO)) = True Then
+            accontoPren = Convert.ToDouble(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ACCONTO))
+         Else
+            accontoPren = 0
+         End If
+
+         saldoPren = totalePren - accontoPren
+
+         Return CFormatta.FormattaNumeroDouble(saldoPren)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiNotePrenotazione() As String
+      Try
+         Dim notePren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NOTE)
+
+         Return notePren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
    Private Function LeggiDatiRiepilogoPrenotazione() As String
       Try
          Dim numPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_NUMERO_PREN)
@@ -13660,6 +14089,8 @@ Friend Class frmMain
 
       End Try
    End Function
+
+#End Region
 
    Private Sub CaricaInfoProdottiAttivi()
 

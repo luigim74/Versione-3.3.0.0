@@ -33,12 +33,16 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_NEONATI As Short = 9
    Public Const COLONNA_BAMBINI As Short = 10
    Public Const COLONNA_RAGAZZI As Short = 11
+   Public Const COLONNA_NUM_CAMERA As Short = 12
    Public Const COLONNA_ARRANGIAMENTO As Short = 13
+   Public Const COLONNA_ACCONTO As Short = 14
    Public Const COLONNA_IMPORTO_TOTALE As Short = 15
    Public Const COLONNA_COSTO_CAMERA As Short = 18
    Public Const COLONNA_TASSA_SOGGIORNO As Short = 19
    Public Const COLONNA_TIPO_PAGAMENTO As Short = 20
    Public Const COLONNA_ID_CLIENTE As Short = 21
+   Public Const COLONNA_TIPO_CAMERA As Short = 22
+   Public Const COLONNA_NOTE As Short = 23
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -1127,7 +1131,7 @@ Public Class ElencoPrenCamere
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         Dim oggi As String = Today.ToShortDateString
+         Dim oggi As String = CFormatta.FormattaData(Today)
 
          sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo = #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
          repSql = sql
@@ -1158,7 +1162,7 @@ Public Class ElencoPrenCamere
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         Dim oggi As String = Today.ToShortDateString
+         Dim oggi As String = CFormatta.FormattaData(Today)
 
          sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY Numero ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
          repSql = sql
@@ -1476,6 +1480,22 @@ Public Class ElencoPrenCamere
          idClienteStyle.NullText = ""
          idClienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(idClienteStyle)
+         ' 22 - Descrizione Camera.
+         Dim tipoCameraStyle As New DataGridTextBoxColumn
+         tipoCameraStyle.MappingName = "DescrizioneCamera"
+         tipoCameraStyle.HeaderText = "Tipologia camera"
+         tipoCameraStyle.Width = 0
+         tipoCameraStyle.NullText = ""
+         tipoCameraStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tipoCameraStyle)
+         ' 23 - Note.
+         Dim noteStyle As New DataGridTextBoxColumn
+         noteStyle.MappingName = "Note"
+         noteStyle.HeaderText = "Note"
+         noteStyle.Width = 0
+         noteStyle.NullText = ""
+         noteStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(noteStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -2051,7 +2071,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
@@ -2089,7 +2109,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
@@ -2127,7 +2147,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleOspiti As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
@@ -2165,7 +2185,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleCamereOccupate As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
@@ -2191,7 +2211,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleCamereLiberate As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
@@ -2217,7 +2237,7 @@ Public Class ElencoPrenCamere
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim totaleCamereInConsegna As Integer
-      Dim dataCorrente As String = Today.ToShortDateString
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
