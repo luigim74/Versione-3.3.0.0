@@ -1834,7 +1834,7 @@ Public Class frmDocumento
          Dim ragazzi As Integer = Convert.ToInt32(g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_RAGAZZI))
          Dim persone As Integer = adulti + neonati + bambini + ragazzi
 
-         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = Today.ToShortDateString & "- Pren. N. " & numeroPren & " (Sogg. dal " & dataArrivo & " al " & dataPartenza & ") - (" & arraggiamento & " / Persone: " & persone.ToString & ")"
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = Today.ToShortDateString & " - Pren. N. " & numeroPren & " (Sogg. dal " & dataArrivo & " al " & dataPartenza & ") - (" & arraggiamento & " / Persone: " & persone.ToString & ")"
 
          ' Unità di misura.
          dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = "GG"

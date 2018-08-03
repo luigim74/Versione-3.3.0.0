@@ -1330,19 +1330,6 @@ Public Class ElencoEmail
          'Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         ' DA_FARE_A: Cancellare!
-         'Dim eMail_Mittente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_MITTENTE)
-         'Dim eMail_Destinatario As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DESTINATARIO)
-         'Dim eMail_Oggetto As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_OGGETTO)
-         'Dim eMail_Messaggio As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_MESSAGGIO)
-         'Dim eMail_allegati As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ALLEGATI)
-
-         'Dim eMail_Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID)
-         'Dim eMail_data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_INVIO)
-         'Dim eMail_ora As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ORA_INVIO)
-         'Dim eMail_nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
-         'Dim eMail_cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
-
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
          Dim frmEmail As New InvioEmail(String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
 

@@ -1,4 +1,15 @@
-﻿Imports System.IO
+﻿#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome modulo:          GeneraPdf
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/07/2018
+' Data ultima modifica: 03/08/2018
+' Descrizione:          Form MDI principale.
+
+' ******************************************************************
+#End Region
+
+Imports System.IO
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 
@@ -68,10 +79,9 @@ Module GeneraPdf
                                            ByVal Cliente As String, ByVal eMailCliente As String, ByVal arrivo As String, ByVal partenza As String, ByVal notti As String,
                                            ByVal adulti As String, ByVal neonati As String, ByVal bambini As String, ByVal ragazzi As String,
                                            ByVal numCamera As String, ByVal tipoCamera As String, ByVal arrangiamento As String,
-                                           ByVal importo As String, ByVal acconto As String, ByVal saldo As String, ByVal note As String) As String
+                                           ByVal importo As String, ByVal acconto As String, ByVal saldo As String, ByVal note As String, ByVal percorsoFilePDF As String) As String
       Try
-         Const SPAZIO As String = "                    "
-         Dim percorsoFilePDF As String = Application.StartupPath & "\Documenti\Riepilogo prenotazione_" & numPren & ".pdf"
+         Dim SPAZIO As String = Space(20)
 
          ' Crea un documento
          Dim Documento As New Document(PageSize.A4)
@@ -345,8 +355,402 @@ Module GeneraPdf
       End Try
    End Function
 
+   Public Function GeneraRicevutaCaparraPren_PDF(ByVal percorsoLogo As String, ByVal ragSociale As String, ByVal indirizzo As String, ByVal città As String,
+                                                 ByVal pIva As String, ByVal telFax As String, ByVal eMail As String, ByVal numPren As String, ByVal dataPren As String,
+                                                 ByVal cliente As String, ByVal arrivo As String, ByVal partenza As String, ByVal acconto As String) As String
+      Try
+         Dim SPAZIO As String = Space(20)
+         Dim percorsoFilePDF As String = Application.StartupPath & "\Documenti\Ricevuta caparra prenotazione_" & numPren & ".pdf"
+
+         ' Crea un documento
+         Dim Documento As New Document(PageSize.A4)
+
+         ' Ottengo un istanza dell'oggetto PdfWriter
+         PdfWriter.GetInstance(Documento, New FileStream(percorsoFilePDF, FileMode.Create))
+
+         ' Apro il documento
+         Documento.Open()
+
+         ' Logo.
+         Dim logo = Image.GetInstance(percorsoLogo)
+         logo.Alignment = Image.ALIGN_CENTER
+         Documento.Add(logo)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Ragione Sociale.
+         Dim ragioneSocialeFont = FontFactory.GetFont("Arial", 14, Font.BOLD, BaseColor.BLACK)
+         Dim phrRagioneSociale As New Phrase(ragSociale, ragioneSocialeFont)
+         Documento.Add(phrRagioneSociale)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Indirizzo.
+         Dim viaFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrVia As New Phrase(indirizzo, viaFont)
+         Documento.Add(phrVia)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim capFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCap As New Phrase(città, capFont)
+         Documento.Add(phrCap)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim pIvaFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrPIva As New Phrase(pIva, pIvaFont)
+         Documento.Add(phrPIva)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim telFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrTel As New Phrase(telFax, telFont)
+         Documento.Add(phrTel)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim MailFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLUE)
+         Dim phrmail As New Phrase(eMail, MailFont)
+         Documento.Add(phrmail)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Titolo.
+         Dim titoloFont = FontFactory.GetFont("Arial", 16, Font.BOLD, BaseColor.ORANGE)
+         Dim parTitolo As New Paragraph("*** Ricevuta per Caparra confirmatoria ***", titoloFont)
+         parTitolo.Alignment = Element.ALIGN_CENTER
+         Documento.Add(parTitolo)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente As New Phrase("Il/La signor/a ", clienteFont)
+         Documento.Add(phrCliente)
+
+         Dim valClienteFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValCliente As New Phrase(cliente, valClienteFont)
+         Documento.Add(phrValCliente)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome struttura.
+         Dim strutturaFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura As New Phrase("consegna, a titolo di caparra confirmatoria, alla struttura ", strutturaFont)
+         Documento.Add(phrStruttura)
+
+         Dim valStrutturaFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValStruttura As New Phrase(ragSociale, valStrutturaFont)
+         Documento.Add(phrValStruttura)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Acconto.
+         Dim accontoFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrAcconto As New Phrase("che riceve e rilascia quietanza, la somma di euro ", accontoFont)
+         Documento.Add(phrAcconto)
+
+         Dim valAccontoFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValAcconto As New Phrase("€ " & acconto & ", ", valAccontoFont)
+         Documento.Add(phrValAcconto)
+
+         ' Numero prenotazione.
+         Dim numeroFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrNumero As New Phrase("che verrà imputata alla prestazione dovuta, ovvero alla prenotazione numero ", numeroFont)
+         Documento.Add(phrNumero)
+
+         Dim valNumeroFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValNumero As New Phrase(numPren, valNumeroFont)
+         Documento.Add(phrValNumero)
+
+         ' Data e ora prenotazione.
+         Dim dataFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrData As New Phrase(" del ", dataFont)
+         Documento.Add(phrData)
+
+         Dim valDataFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValData As New Phrase(dataPren, valDataFont)
+         Documento.Add(phrValData)
+
+         ' Arrivo.
+         Dim arrivoFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrArrivo As New Phrase(" con data di arrivo ", arrivoFont)
+         Documento.Add(phrArrivo)
+
+         Dim valArrivoFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValArrivo As New Phrase(arrivo, valArrivoFont)
+         Documento.Add(phrValArrivo)
+
+         ' Partenza.
+         Dim partenzaFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrPartenza As New Phrase(" e partenza ", partenzaFont)
+         Documento.Add(phrPartenza)
+
+         Dim valPartenzaFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValPartenza As New Phrase(partenza & ".", valPartenzaFont)
+         Documento.Add(phrValPartenza)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente1 As New Phrase("Nel caso di inadempimento da parte del/la signor/a ", clienteFont1)
+         Documento.Add(phrCliente1)
+
+         Dim valClienteFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValCliente1 As New Phrase(cliente & ",", valClienteFont1)
+         Documento.Add(phrValCliente1)
+
+         ' Nome struttura.
+         Dim strutturaFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura1 As New Phrase(" la struttura ", strutturaFont1)
+         Documento.Add(phrStruttura1)
+
+         Dim valStrutturaFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValStruttura1 As New Phrase(ragSociale & " ha diritto a trattenere la somma ricevuta o a restituirla e ad agire ai sensi dell'art. 1453 del Codice civile.", valStrutturaFont1)
+         Documento.Add(phrValStruttura1)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente2 As New Phrase("Nel caso di inadempimento della struttura ", clienteFont2)
+         Documento.Add(phrCliente2)
+
+         Dim valClienteFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValCliente2 As New Phrase(ragSociale & ",", valClienteFont2)
+         Documento.Add(phrValCliente2)
+
+         ' Nome struttura.
+         Dim strutturaFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura2 As New Phrase(" quest'ultima dovrà restituire al/la signor/a ", strutturaFont2)
+         Documento.Add(phrStruttura2)
+
+         Dim valStrutturaFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValStruttura2 As New Phrase(cliente & " il doppio della suddetta somma.", valStrutturaFont2)
+         Documento.Add(phrValStruttura2)
+
+         ' Chiudo il documento
+         Documento.Close()
+
+         If File.Exists(percorsoFilePDF) = True Then
+            Return percorsoFilePDF
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function GeneraRicevutaAccontoPren_PDF(ByVal percorsoLogo As String, ByVal ragSociale As String, ByVal indirizzo As String, ByVal città As String,
+                                                 ByVal pIva As String, ByVal telFax As String, ByVal eMail As String, ByVal numPren As String, ByVal dataPren As String,
+                                                 ByVal cliente As String, ByVal arrivo As String, ByVal partenza As String, ByVal acconto As String) As String
+      Try
+         Dim SPAZIO As String = Space(20)
+         Dim percorsoFilePDF As String = Application.StartupPath & "\Documenti\Ricevuta acconto prenotazione_" & numPren & ".pdf"
+
+         ' Crea un documento
+         Dim Documento As New Document(PageSize.A4)
+
+         ' Ottengo un istanza dell'oggetto PdfWriter
+         PdfWriter.GetInstance(Documento, New FileStream(percorsoFilePDF, FileMode.Create))
+
+         ' Apro il documento
+         Documento.Open()
+
+         ' Logo.
+         Dim logo = Image.GetInstance(percorsoLogo)
+         logo.Alignment = Image.ALIGN_CENTER
+         Documento.Add(logo)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Ragione Sociale.
+         Dim ragioneSocialeFont = FontFactory.GetFont("Arial", 14, Font.BOLD, BaseColor.BLACK)
+         Dim phrRagioneSociale As New Phrase(ragSociale, ragioneSocialeFont)
+         Documento.Add(phrRagioneSociale)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Indirizzo.
+         Dim viaFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrVia As New Phrase(indirizzo, viaFont)
+         Documento.Add(phrVia)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim capFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCap As New Phrase(città, capFont)
+         Documento.Add(phrCap)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim pIvaFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrPIva As New Phrase(pIva, pIvaFont)
+         Documento.Add(phrPIva)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim telFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLACK)
+         Dim phrTel As New Phrase(telFax, telFont)
+         Documento.Add(phrTel)
+
+         Documento.Add(Chunk.NEWLINE)
+
+         Dim MailFont = FontFactory.GetFont("Arial", 10, Font.NORMAL, BaseColor.BLUE)
+         Dim phrmail As New Phrase(eMail, MailFont)
+         Documento.Add(phrmail)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Titolo.
+         Dim titoloFont = FontFactory.GetFont("Arial", 16, Font.BOLD, BaseColor.ORANGE)
+         Dim parTitolo As New Paragraph("*** Ricevuta per Acconto prenotazione ***", titoloFont)
+         parTitolo.Alignment = Element.ALIGN_CENTER
+         Documento.Add(parTitolo)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente As New Phrase("Il/La signor/a ", clienteFont)
+         Documento.Add(phrCliente)
+
+         Dim valClienteFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValCliente As New Phrase(cliente, valClienteFont)
+         Documento.Add(phrValCliente)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome struttura.
+         Dim strutturaFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura As New Phrase("consegna, a titolo di acconto, alla struttura ", strutturaFont)
+         Documento.Add(phrStruttura)
+
+         Dim valStrutturaFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValStruttura As New Phrase(ragSociale, valStrutturaFont)
+         Documento.Add(phrValStruttura)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Acconto.
+         Dim accontoFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrAcconto As New Phrase("che riceve e rilascia quietanza, la somma di euro ", accontoFont)
+         Documento.Add(phrAcconto)
+
+         Dim valAccontoFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValAcconto As New Phrase("€ " & acconto & ", ", valAccontoFont)
+         Documento.Add(phrValAcconto)
+
+         ' Numero prenotazione.
+         Dim numeroFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrNumero As New Phrase("che verrà imputata alla prestazione dovuta, ovvero alla prenotazione numero ", numeroFont)
+         Documento.Add(phrNumero)
+
+         Dim valNumeroFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValNumero As New Phrase(numPren, valNumeroFont)
+         Documento.Add(phrValNumero)
+
+         ' Data e ora prenotazione.
+         Dim dataFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrData As New Phrase(" del ", dataFont)
+         Documento.Add(phrData)
+
+         Dim valDataFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValData As New Phrase(dataPren, valDataFont)
+         Documento.Add(phrValData)
+
+         ' Arrivo.
+         Dim arrivoFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrArrivo As New Phrase(" con data di arrivo ", arrivoFont)
+         Documento.Add(phrArrivo)
+
+         Dim valArrivoFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValArrivo As New Phrase(arrivo, valArrivoFont)
+         Documento.Add(phrValArrivo)
+
+         ' Partenza.
+         Dim partenzaFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrPartenza As New Phrase(" e partenza ", partenzaFont)
+         Documento.Add(phrPartenza)
+
+         Dim valPartenzaFont = FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)
+         Dim phrValPartenza As New Phrase(partenza & ".", valPartenzaFont)
+         Documento.Add(phrValPartenza)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente1 As New Phrase("Nel caso di inadempimento da parte del/la signor/a ", clienteFont1)
+         Documento.Add(phrCliente1)
+
+         Dim valClienteFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValCliente1 As New Phrase(cliente & ",", valClienteFont1)
+         Documento.Add(phrValCliente1)
+
+         ' Nome struttura.
+         Dim strutturaFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura1 As New Phrase(" la struttura ", strutturaFont1)
+         Documento.Add(phrStruttura1)
+
+         Dim valStrutturaFont1 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValStruttura1 As New Phrase(ragSociale & " ha il dovere di restituire la somma ricevuta.", valStrutturaFont1)
+         Documento.Add(phrValStruttura1)
+
+         Documento.Add(Chunk.NEWLINE)
+         Documento.Add(Chunk.NEWLINE)
+
+         ' Nome Cliente.
+         Dim clienteFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrCliente2 As New Phrase("Nel caso di inadempimento della struttura ", clienteFont2)
+         Documento.Add(phrCliente2)
+
+         Dim valClienteFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValCliente2 As New Phrase(ragSociale & ",", valClienteFont2)
+         Documento.Add(phrValCliente2)
+
+         ' Nome struttura.
+         Dim strutturaFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrStruttura2 As New Phrase(" quest'ultima dovrà restituire al/la signor/a ", strutturaFont2)
+         Documento.Add(phrStruttura2)
+
+         Dim valStrutturaFont2 = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)
+         Dim phrValStruttura2 As New Phrase(cliente & " la suddetta somma.", valStrutturaFont2)
+         Documento.Add(phrValStruttura2)
+
+         ' Chiudo il documento
+         Documento.Close()
+
+         If File.Exists(percorsoFilePDF) = True Then
+            Return percorsoFilePDF
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
 #End Region
-
-
 
 End Module

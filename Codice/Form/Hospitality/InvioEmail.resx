@@ -120,6 +120,12 @@
   <metadata name="formFrameSkinner.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_cmdAnnulla.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="eui_cmdAnnulla.SmallImages.Images" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -165,6 +171,30 @@
         gg==
 </value>
   </data>
+  <metadata name="eui_txtCategoria.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtStato.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtDataInvio.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtIdCliente.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtNome.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtOraInvio.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtCognome.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_cmdInvia.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="eui_cmdInvia.SmallImages.Images" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -241,6 +271,9 @@
         SQWfLcV4w/MLvPVhNnbvUyNZWPfXH/q6AK+9/uMAHh5/AuM78Y4A8kjyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="eui_cmdAllegaFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="eui_cmdAllegaFile.SmallImages.Images" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -267,6 +300,9 @@
         rkJggg==
 </value>
   </data>
+  <metadata name="eui_cmdSalva.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="eui_cmdSalva.SmallImages.Images" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -340,6 +376,74 @@
         9uLeCfv+BSDJVtDBHTOyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TabControl1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TabPage1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtMessaggio.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtAllegati.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtOggetto.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtDestinatario.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="eui_txtMittente.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StatusBar1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StatusBarNotificationsArea1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StatusBarPane2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PictureBox19.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PictureBox19.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
+        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACcklE
+        QVQ4T52T3UvTURjH9y9EdtPM6a0kpNVFImwT3Y/eRqJggWGUhqvmdKF50agUk3L25ls4LxaWxJj621y+
+        LG2Izr3kXJa2ShYIGRFUI7QoL76d5+hsv+imfvCFw3me7+ec5znPTwZAImO1UcPUwuRjim2I1rSn+TM/
+        0ZjKZG5sbFq13nuA4dEn8AeecdGa9ihGOZQrAWyYezo7LXCN+GEVF1Hb9RFnb8e4yq6/R2vvSziHp0E5
+        lBuHxAFmCoijL9BkXcKxhi+o6/7OQutfZdsKcvULqGyeh80VjkPMLCTjNdPV6OT67igKTMsovLgEfesK
+        ou9W8fUHUN78GdnlYajPhKC7GoL4yBsvR0OAFqrPYo/gQE0U2guL0Na+RvGlD8g//wmCcRkZx98ipzyE
+        fSemsbdkAtcsM7wn5CWAj5pkaIlAqJqHYCAtwGKLsBt8w9raT5TWuLBd+RCK/H6mPhTo3byx5CVAjDp9
+        uHoOat0scnVhZJ8McsCbVxEOqGpwY8uuNsjVIuQqG9IP9fPXIe8mQDgXRM6pIPaUTCIlX5QATDcmsDWr
+        nZmdkCv7kH5QlAB4CaWmIDKPepAmiOy6dgnA2DCOpMw27FANI1k5CG3FmKQE3sSmrhmk7XciJW+AnbR+
+        g/nncxxQVjvCAO1QKN1QqNy4cisgaSJ/RseQF4WGcSjyHAzg4AAyrwNGsW13F1JVHhTrfeh3Tv1+RhoG
+        tuCD1Cs+RZHBg2TVEOrMATgeR+Eai6KoQkRS1l1m9qPHPisdpA3A5igPDE6h/k4AR3ST2KnpQIbQgYLT
+        93H55gw72fv3UU6A/N/PlCgW/IffGbJfMUye8eXDyuYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="eui_Informazioni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StatusBarControlsArea1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABABcAMDACAAEAAQAwAwAAdgEAACAgAgABAAEAMAEAAKYEAAAQEAIAAQABALAAAADWBQAAAAAQAAEA
@@ -4701,35 +4805,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAABwAA
 </value>
   </data>
-  <metadata name="PictureBox19.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="eui_Informazioni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PictureBox19.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PictureBox19.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
-        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACcklE
-        QVQ4T52T3UvTURjH9y9EdtPM6a0kpNVFImwT3Y/eRqJggWGUhqvmdKF50agUk3L25ls4LxaWxJj621y+
-        LG2Izr3kXJa2ShYIGRFUI7QoL76d5+hsv+imfvCFw3me7+ec5znPTwZAImO1UcPUwuRjim2I1rSn+TM/
-        0ZjKZG5sbFq13nuA4dEn8AeecdGa9ihGOZQrAWyYezo7LXCN+GEVF1Hb9RFnb8e4yq6/R2vvSziHp0E5
-        lBuHxAFmCoijL9BkXcKxhi+o6/7OQutfZdsKcvULqGyeh80VjkPMLCTjNdPV6OT67igKTMsovLgEfesK
-        ou9W8fUHUN78GdnlYajPhKC7GoL4yBsvR0OAFqrPYo/gQE0U2guL0Na+RvGlD8g//wmCcRkZx98ipzyE
-        fSemsbdkAtcsM7wn5CWAj5pkaIlAqJqHYCAtwGKLsBt8w9raT5TWuLBd+RCK/H6mPhTo3byx5CVAjDp9
-        uHoOat0scnVhZJ8McsCbVxEOqGpwY8uuNsjVIuQqG9IP9fPXIe8mQDgXRM6pIPaUTCIlX5QATDcmsDWr
-        nZmdkCv7kH5QlAB4CaWmIDKPepAmiOy6dgnA2DCOpMw27FANI1k5CG3FmKQE3sSmrhmk7XciJW+AnbR+
-        g/nncxxQVjvCAO1QKN1QqNy4cisgaSJ/RseQF4WGcSjyHAzg4AAyrwNGsW13F1JVHhTrfeh3Tv1+RhoG
-        tuCD1Cs+RZHBg2TVEOrMATgeR+Eai6KoQkRS1l1m9qPHPisdpA3A5igPDE6h/k4AR3ST2KnpQIbQgYLT
-        93H55gw72fv3UU6A/N/PlCgW/IffGbJfMUye8eXDyuYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="eui_Informazioni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>169, 17</value>
   </metadata>

@@ -1,8 +1,13 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Nome form:            frmMain
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 02/08/2018
+' Data ultima modifica: 03/08/2018
 ' Descrizione:          Form MDI principale.
+
+' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On
@@ -12046,16 +12051,16 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Terminare con allegati!
    Private Sub eui_Strumenti_Documenti_Invia_Riepilogo_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Riepilogo.Click
       Try
          ' Genera il file Riepilogo prenotazione in formato PDF.
          Dim percorsoFilePDF As String = GeneraRiepilogoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda, LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda,
                                                                  LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
-                                                                 LeggiArrivoPrenotazione, LeggiPartenzaPrenotazione, LeggiNottiPrenotazione,
+                                                                 LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
                                                                  LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
                                                                  LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
-                                                                 LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione)
+                                                                 LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
+                                                                 Application.StartupPath & "\Documenti\Riepilogo prenotazione_" & LeggiNumPrenotazione() & ".pdf")
 
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
          Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, percorsoFilePDF,
@@ -12070,11 +12075,15 @@ Friend Class frmMain
       End Try
    End Sub
 
-   ' DA_FARE_A: Terminare con allegati!
    Private Sub eui_Strumenti_Documenti_Invia_Acconto_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Acconto.Click
       Try
+         ' Genera il file Ricevuta Acconto in formato PDF.
+         Dim percorsoFilePDF As String = GeneraRicevutaAccontoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda,
+                                                                       LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda, LeggiNumPrenotazione, LeggiDataPrenotazione(True),
+                                                                       LeggiNomeCompletoDestinatario, LeggiArrivoPrenotazione(True), LeggiPartenzaPrenotazione(True), LeggiAccontoPrenotazione)
+
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiAccontoPrenotazione, CreaMessaggio, String.Empty,
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiAccontoPrenotazione, CreaMessaggio, percorsoFilePDF,
                                         LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
@@ -12087,11 +12096,15 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Terminare con allegati!
    Private Sub eui_Strumenti_Documenti_Invia_Caparra_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Invia_Caparra.Click
       Try
+         ' Genera il file Ricevuta Caparra confirmatoria in formato PDF.
+         Dim percorsoFilePDF As String = GeneraRicevutaCaparraPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda,
+                                                                       LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda, LeggiNumPrenotazione, LeggiDataPrenotazione(True),
+                                                                       LeggiNomeCompletoDestinatario, LeggiArrivoPrenotazione(True), LeggiPartenzaPrenotazione(True), LeggiAccontoPrenotazione)
+
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
-         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiCaparraPrenotazione, CreaMessaggio, String.Empty,
+         Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiCaparraPrenotazione, CreaMessaggio, percorsoFilePDF,
                                         LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
@@ -12104,9 +12117,31 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Sviluppare.
    Private Sub eui_cmdEsportaPdf_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaPdf.Click
+      Try
+         ' Imposta la finesta di dialogo.
+         SaveFileDialog1.Filter = "Formato PDF |*.pdf"
+         SaveFileDialog1.FilterIndex = 1
+         SaveFileDialog1.FileName = "Riepilogo prenotazione_" & LeggiNumPrenotazione() & ".pdf"
 
+         ' Salva il percorso del file selezionato.
+         If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+
+            ' Genera il file.
+            Dim percorsoFilePDF As String = GeneraRiepilogoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda, LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda,
+                                                                 LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
+                                                                 LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
+                                                                 LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
+                                                                 LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
+                                                                 LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
+                                                                 SaveFileDialog1.FileName)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 #End Region
@@ -13599,7 +13634,6 @@ Friend Class frmMain
       End Try
    End Function
 
-
    Public Function LeggiEmailMittente() As String
       Try
          Dim AAzienda As New Anagrafiche.Azienda(ConnString)
@@ -13758,9 +13792,46 @@ Friend Class frmMain
 
    End Function
 
-   Private Function LeggiArrivoPrenotazione() As String
+   Private Function LeggiDataPrenotazione(ByVal dataLunga As Boolean) As String
+      Try
+         Dim dataPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA)
+         Dim data As Date
+
+         If dataLunga = True Then
+            If IsDate(dataPren) = True Then
+               data = Convert.ToDateTime(dataPren)
+               dataPren = data.ToLongDateString
+            Else
+               dataPren = String.Empty
+            End If
+
+         End If
+
+         Return dataPren
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+
+   End Function
+
+   Private Function LeggiArrivoPrenotazione(ByVal dataLunga As Boolean) As String
       Try
          Dim arrivoPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_ARRIVO)
+         Dim data As Date
+
+         If dataLunga = True Then
+            If IsDate(arrivoPren) = True Then
+               data = Convert.ToDateTime(arrivoPren)
+               arrivoPren = data.ToLongDateString
+            Else
+               arrivoPren = String.Empty
+            End If
+         End If
 
          Return arrivoPren
 
@@ -13774,9 +13845,19 @@ Friend Class frmMain
 
    End Function
 
-   Private Function LeggiPartenzaPrenotazione() As String
+   Private Function LeggiPartenzaPrenotazione(ByVal dataLunga As Boolean) As String
       Try
          Dim partenzaPren As String = g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_DATA_PARTENZA)
+         Dim data As Date
+
+         If dataLunga = True Then
+            If IsDate(partenzaPren) = True Then
+               data = Convert.ToDateTime(partenzaPren)
+               partenzaPren = data.ToLongDateString
+            Else
+               partenzaPren = String.Empty
+            End If
+         End If
 
          Return partenzaPren
 
