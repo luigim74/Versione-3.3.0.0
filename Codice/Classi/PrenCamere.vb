@@ -30,6 +30,7 @@ Public Class PrenCamere
    Public ApplicaSconto As String
    Public Sconto As String
    Public Servizio As String
+   Public Schedina As String
    Public Colore As Integer
    Public Note As String
 
@@ -203,6 +204,11 @@ Public Class PrenCamere
          Else
             Me.Servizio = VALORE_ZERO
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Schedina")) = False Then
+            Me.Schedina = ds.Tables(tabella).Rows(0)("Schedina").ToString
+         Else
+            Me.Schedina = String.Empty
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
             Me.Colore = ds.Tables(tabella).Rows(0)("Colore")
          Else
@@ -237,10 +243,10 @@ Public Class PrenCamere
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " &
                                               "Trattamento, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, TassaSoggiorno, AccontoCamera, " &
-                                              "TotaleConto, ApplicaSconto, Sconto, Servizio, Colore, [Note]) " &
+                                              "TotaleConto, ApplicaSconto, Sconto, Servizio, Schedina, Colore, [Note]) " &
                                        "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " &
                                               "@Trattamento, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @TassaSoggiorno, @AccontoCamera, " &
-                                              "@TotaleConto, @ApplicaSconto, @Sconto, @Servizio, @Colore, @Note)", tabella)
+                                              "@TotaleConto, @ApplicaSconto, @Sconto, @Servizio, @Schedina, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -272,6 +278,7 @@ Public Class PrenCamere
          cmdInsert.Parameters.AddWithValue("@ApplicaSconto", Me.ApplicaSconto)
          cmdInsert.Parameters.AddWithValue("@Sconto", Me.Sconto)
          cmdInsert.Parameters.AddWithValue("@Servizio", Me.Servizio)
+         cmdInsert.Parameters.AddWithValue("@Schedina", Me.Schedina)
          cmdInsert.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdInsert.Parameters.AddWithValue("@Note", Me.Note)
 
@@ -338,6 +345,7 @@ Public Class PrenCamere
                              "ApplicaSconto = @ApplicaSconto, " &
                              "Sconto = @Sconto, " &
                              "Servizio = @Servizio, " &
+                             "Schedina = @Schedina, " &
                              "Colore = @Colore, " &
                              "[Note] = @Note " &
                              "WHERE Id = {1}",
@@ -374,6 +382,7 @@ Public Class PrenCamere
          cmdUpdate.Parameters.AddWithValue("@ApplicaSconto", Me.ApplicaSconto)
          cmdUpdate.Parameters.AddWithValue("@Sconto", Me.Sconto)
          cmdUpdate.Parameters.AddWithValue("@Servizio", Me.Servizio)
+         cmdUpdate.Parameters.AddWithValue("@Schedina", Me.Schedina)
          cmdUpdate.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdUpdate.Parameters.AddWithValue("@Note", Me.Note)
 
