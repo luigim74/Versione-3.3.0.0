@@ -9140,6 +9140,40 @@ Friend Class frmMain
       End Try
    End Sub
 
+   Public Sub ApriSchedinePS()
+      Try
+         ' Se il form non è aperto lo apre.
+         If IsNothing(g_frmSchedinePS) = True Then
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = CAR_ANAG_PREN_CAMERE
+
+            ConnStringAnagrafiche = CreaConnString(PercorsoDB)
+
+            g_frmSchedinePS = New ElencoSchedinePS()
+            g_frmSchedinePS.MdiParent = Me
+
+            ' Visualizza l'anagrafica clienti.
+            g_frmSchedinePS.Show()
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = LeggiDatiRivenditore()
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.Default
+         Else
+            ' Altrimenti lo attiva.
+            g_frmSchedinePS.Activate()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
    Public Sub ApriPrenCamere()
       Try
          ' Se il form non è aperto lo apre.
@@ -12047,7 +12081,13 @@ Friend Class frmMain
       End Try
    End Sub
 
+   ' DA_FARE: Sviluppare!
    Private Sub eui_Strumenti_Documenti_Schedina_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Schedina.Click
+      ' Apre l'elenco prenotazioni Camere.
+      ApriSchedinePS()
+
+      ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
+      AggiungiFormMenuSeleziona()
 
    End Sub
 

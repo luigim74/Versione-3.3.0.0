@@ -282,6 +282,7 @@
     <Compile Include="Codice\Classi\MSolution.vb" />
     <Compile Include="Codice\Classi\AccessoriServizi.vb" />
     <Compile Include="Codice\Classi\Email.vb" />
+    <Compile Include="Codice\Classi\SchedinaPS.vb" />
     <Compile Include="Codice\Classi\StoricoPresenzeCamere.vb" />
     <Compile Include="Codice\Classi\StatoPiattiSQLite.vb" />
     <Compile Include="Codice\Classi\StatoComandeSQLite.vb" />
@@ -436,6 +437,9 @@
       <DependentUpon>ReportViewer.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\Form\Hospitality\ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\ElencoSchedinePS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Hotel\StoricoPresenze.Designer.vb">
@@ -985,6 +989,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\Camere.resx">
       <DependentUpon>Camere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\ElencoSchedinePS.resx">
+      <DependentUpon>ElencoSchedinePS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\FiltroPeriodo.resx">
       <DependentUpon>FiltroPeriodo.vb</DependentUpon>

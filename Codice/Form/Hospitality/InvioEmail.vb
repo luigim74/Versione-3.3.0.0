@@ -381,7 +381,7 @@ Public Class InvioEmail
 
             ' Chiude la finestra.
             Me.Close()
-            End If
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

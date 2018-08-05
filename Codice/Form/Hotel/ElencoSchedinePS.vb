@@ -1,13 +1,14 @@
 #Region " DATI FILE.VB "
 
 ' ******************************************************************
-' Nome form:            ElencoPrenCamere
+' Nome form:            ElencoSchedinePS
 ' Autore:               Luigi Montana, Montana Software
-' Data creazione:       23/08/2014
-' Data ultima modifica: 28/07/2018
-' Descrizione:          Elenco prenotazioni camere.
+' Data creazione:       05/08/2018
+' Data ultima modifica: 05/08/2018
+' Descrizione:          Elenco Schedine di pubblica sicurezza.
 
 ' Elenco Attivita:
+' DA_FARE_A: Terminare!
 
 ' ******************************************************************
 
@@ -18,12 +19,14 @@ Option Explicit On
 
 Imports System.Data.OleDb
 
-Public Class ElencoPrenCamere
+Public Class ElencoSchedinePS
    Inherits System.Windows.Forms.Form
 
-   Public Const TAB_PRENOTAZIONI As String = "PrenCamere"
+   Public Const TAB_SCHEDINE As String = "SchedinePS"
+   ' DA_FARE_A: Cancellare!
    Public Const TAB_CAMERE As String = "Camere"
 
+   ' DA_FARE_A: Modificare!
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_PREN As Short = 1
    Public Const COLONNA_DATA As Short = 2
@@ -81,7 +84,7 @@ Public Class ElencoPrenCamere
       'Chiamata richiesta da Progettazione Windows Form.
       InitializeComponent()
 
-      dt = ds.Tables.Add(TAB_PRENOTAZIONI)
+      dt = ds.Tables.Add(TAB_SCHEDINE)
 
    End Sub
 
@@ -192,7 +195,7 @@ Public Class ElencoPrenCamere
       Me.DataGrid1.Location = New System.Drawing.Point(0, 120)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(840, 344)
+      Me.DataGrid1.Size = New System.Drawing.Size(952, 324)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -217,7 +220,7 @@ Public Class ElencoPrenCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(840, 120)
+      Me.Panel1.Size = New System.Drawing.Size(960, 120)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -226,7 +229,7 @@ Public Class ElencoPrenCamere
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(570, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(690, 20)
       Me.TestoRicerca.TabIndex = 7
       '
       'txtCamereConsegna
@@ -410,7 +413,7 @@ Public Class ElencoPrenCamere
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(594, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(714, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
       Me.CampoRicerca.TabIndex = 8
@@ -422,7 +425,7 @@ Public Class ElencoPrenCamere
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(594, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(714, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -464,9 +467,9 @@ Public Class ElencoPrenCamere
       Me.Panel2.Controls.Add(Me.txtTotaleNotti)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 466)
+      Me.Panel2.Location = New System.Drawing.Point(0, 458)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(840, 35)
+      Me.Panel2.Size = New System.Drawing.Size(960, 35)
       Me.Panel2.TabIndex = 13
       '
       'txtTotaleRagazzi
@@ -477,7 +480,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleRagazzi.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleRagazzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleRagazzi.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(589, 11)
+      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(709, 11)
       Me.txtTotaleRagazzi.MaxLength = 0
       Me.txtTotaleRagazzi.Name = "txtTotaleRagazzi"
       Me.txtTotaleRagazzi.ReadOnly = True
@@ -493,7 +496,7 @@ Public Class ElencoPrenCamere
       Me.Label12.BackColor = System.Drawing.Color.Transparent
       Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label12.ForeColor = System.Drawing.Color.White
-      Me.Label12.Location = New System.Drawing.Point(524, 11)
+      Me.Label12.Location = New System.Drawing.Point(644, 11)
       Me.Label12.Name = "Label12"
       Me.Label12.Size = New System.Drawing.Size(63, 15)
       Me.Label12.TabIndex = 244
@@ -507,7 +510,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleBambini.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleBambini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleBambini.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleBambini.Location = New System.Drawing.Point(461, 11)
+      Me.txtTotaleBambini.Location = New System.Drawing.Point(581, 11)
       Me.txtTotaleBambini.MaxLength = 0
       Me.txtTotaleBambini.Name = "txtTotaleBambini"
       Me.txtTotaleBambini.ReadOnly = True
@@ -523,7 +526,7 @@ Public Class ElencoPrenCamere
       Me.Label11.BackColor = System.Drawing.Color.Transparent
       Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label11.ForeColor = System.Drawing.Color.White
-      Me.Label11.Location = New System.Drawing.Point(396, 11)
+      Me.Label11.Location = New System.Drawing.Point(516, 11)
       Me.Label11.Name = "Label11"
       Me.Label11.Size = New System.Drawing.Size(64, 15)
       Me.Label11.TabIndex = 242
@@ -537,7 +540,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNeonati.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNeonati.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNeonati.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleNeonati.Location = New System.Drawing.Point(333, 11)
+      Me.txtTotaleNeonati.Location = New System.Drawing.Point(453, 11)
       Me.txtTotaleNeonati.MaxLength = 0
       Me.txtTotaleNeonati.Name = "txtTotaleNeonati"
       Me.txtTotaleNeonati.ReadOnly = True
@@ -553,7 +556,7 @@ Public Class ElencoPrenCamere
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label10.ForeColor = System.Drawing.Color.White
-      Me.Label10.Location = New System.Drawing.Point(268, 11)
+      Me.Label10.Location = New System.Drawing.Point(388, 11)
       Me.Label10.Name = "Label10"
       Me.Label10.Size = New System.Drawing.Size(61, 15)
       Me.Label10.TabIndex = 240
@@ -567,7 +570,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleImporto.Location = New System.Drawing.Point(706, 11)
+      Me.txtTotaleImporto.Location = New System.Drawing.Point(826, 11)
       Me.txtTotaleImporto.MaxLength = 0
       Me.txtTotaleImporto.Name = "txtTotaleImporto"
       Me.txtTotaleImporto.ReadOnly = True
@@ -583,7 +586,7 @@ Public Class ElencoPrenCamere
       Me.Label1.BackColor = System.Drawing.Color.Transparent
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(652, 11)
+      Me.Label1.Location = New System.Drawing.Point(772, 11)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(51, 15)
       Me.Label1.TabIndex = 238
@@ -597,7 +600,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleAdulti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleAdulti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleAdulti.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleAdulti.Location = New System.Drawing.Point(205, 11)
+      Me.txtTotaleAdulti.Location = New System.Drawing.Point(325, 11)
       Me.txtTotaleAdulti.MaxLength = 0
       Me.txtTotaleAdulti.Name = "txtTotaleAdulti"
       Me.txtTotaleAdulti.ReadOnly = True
@@ -613,7 +616,7 @@ Public Class ElencoPrenCamere
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(156, 11)
+      Me.Label3.Location = New System.Drawing.Point(276, 11)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(47, 15)
       Me.Label3.TabIndex = 236
@@ -627,7 +630,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNotti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNotti.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleNotti.Location = New System.Drawing.Point(58, 11)
+      Me.txtTotaleNotti.Location = New System.Drawing.Point(178, 11)
       Me.txtTotaleNotti.MaxLength = 0
       Me.txtTotaleNotti.Name = "txtTotaleNotti"
       Me.txtTotaleNotti.ReadOnly = True
@@ -643,7 +646,7 @@ Public Class ElencoPrenCamere
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(12, 11)
+      Me.Label6.Location = New System.Drawing.Point(132, 11)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(41, 15)
       Me.Label6.TabIndex = 16
@@ -658,7 +661,7 @@ Public Class ElencoPrenCamere
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(840, 501)
+      Me.ClientSize = New System.Drawing.Size(960, 493)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
@@ -682,37 +685,37 @@ Public Class ElencoPrenCamere
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         If DatiConfig.GetValue("FiltroPeriodoCamere") <> "" Then
-            filtroDati = DatiConfig.GetValue("FiltroPeriodoCamere")
+         If DatiConfig.GetValue("FiltroPeriodoSchedine") <> "" Then
+            filtroDati = DatiConfig.GetValue("FiltroPeriodoSchedine")
          Else
             filtroDati = "Tutti"
          End If
 
-         If DatiConfig.GetValue("WSPrenCamere") = CStr(FormWindowState.Maximized) Then
+         If DatiConfig.GetValue("WSSchedine") = CStr(FormWindowState.Maximized) Then
             Me.WindowState = FormWindowState.Maximized
             Exit Sub
-         ElseIf DatiConfig.GetValue("WSPrenCamere") = CStr(FormWindowState.Minimized) Then
+         ElseIf DatiConfig.GetValue("WSSchedine") = CStr(FormWindowState.Minimized) Then
             Me.WindowState = FormWindowState.Minimized
             Exit Sub
          Else
-            If DatiConfig.GetValue("APrenCamere") <> "" Then
-               Me.Height = CInt(DatiConfig.GetValue("APrenCamere"))
+            If DatiConfig.GetValue("ASchedine") <> "" Then
+               Me.Height = CInt(DatiConfig.GetValue("ASchedine"))
             Else
                Me.Height = FORM_ALTEZZA
             End If
 
-            If DatiConfig.GetValue("LPrenCamere") <> "" Then
-               Me.Width = CInt(DatiConfig.GetValue("LPrenCamere"))
+            If DatiConfig.GetValue("LSchedine") <> "" Then
+               Me.Width = CInt(DatiConfig.GetValue("LSchedine"))
             Else
                Me.Width = FORM_LARGHEZZA
             End If
 
-            If DatiConfig.GetValue("PrenCamereX") <> "" Then
-               Me.Location = New Point(CInt(DatiConfig.GetValue("PrenCamereX")), Me.Location.Y)
+            If DatiConfig.GetValue("SchedineX") <> "" Then
+               Me.Location = New Point(CInt(DatiConfig.GetValue("SchedineX")), Me.Location.Y)
             End If
 
-            If DatiConfig.GetValue("PrenCamereY") <> "" Then
-               Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("PrenCamereY")))
+            If DatiConfig.GetValue("SchedineY") <> "" Then
+               Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("SchedineY")))
             End If
 
             Exit Sub
@@ -730,12 +733,12 @@ Public Class ElencoPrenCamere
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         DatiConfig.SetValue("FiltroPeriodoCamere", filtroDati)
-         DatiConfig.SetValue("WSPrenCamere", Me.WindowState)
-         DatiConfig.SetValue("PrenCamereX", Me.Location.X)
-         DatiConfig.SetValue("PrenCamereY", Me.Location.Y)
-         DatiConfig.SetValue("APrenCamere", Me.Height)
-         DatiConfig.SetValue("LPrenCamere", Me.Width)
+         DatiConfig.SetValue("FiltroPeriodoSchedine", filtroDati)
+         DatiConfig.SetValue("WSSchedine", Me.WindowState)
+         DatiConfig.SetValue("SchedineX", Me.Location.X)
+         DatiConfig.SetValue("SchedineY", Me.Location.Y)
+         DatiConfig.SetValue("ASchedine", Me.Height)
+         DatiConfig.SetValue("LSchedine", Me.Width)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -744,7 +747,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' DA_FARE_A: HOTEL - da modificare!
+   ' DA_FARE_B: Modificare!
    Public Function ImpostaFunzioniOperatore(ByVal wnd As String) As Boolean
       'Try
       '   Select Case wnd
@@ -859,6 +862,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
@@ -925,7 +929,7 @@ Public Class ElencoPrenCamere
             ' Conferma la transazione.
             tr.Commit()
 
-            ' DA_FARE_A: Modificare!
+            ' A_TODO: HOTEL - da modificare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
          End If
@@ -958,7 +962,7 @@ Public Class ElencoPrenCamere
             FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
          Else
             ' Calcola il numero delle pagine da visualizzare.
-            LeggiNumPagine(TAB_PRENOTAZIONI)
+            LeggiNumPagine(TAB_SCHEDINE)
 
             ' Collega la tabella clienti al controllo griglia dati.
             DataGrid1.DataSource = dt
@@ -983,6 +987,7 @@ Public Class ElencoPrenCamere
             End Select
          End If
 
+         ' DA_FARE: Cancellare!
          ' Aggiorna i valori per gli Ospiti e le camere.
          AggiornaValoriOspiti()
 
@@ -993,13 +998,14 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiTutte()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI)
+         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1010,7 +1016,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Somma i valori delle colonne.
          SommaValoriColonne()
@@ -1022,6 +1028,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiMese()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1034,7 +1041,7 @@ Public Class ElencoPrenCamere
          Dim ultimoGiornoMese As String = DateTime.DaysInMonth(anno, mese)
          Dim fineMese As String = CFormatta.FormattaData(ultimoGiornoMese & "/" & mese & "/" & anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, inizioMese, fineMese)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioMese, fineMese)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1045,7 +1052,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Somma i valori delle colonne.
          SommaValoriColonne()
@@ -1057,6 +1064,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiAnno()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1068,7 +1076,7 @@ Public Class ElencoPrenCamere
          Dim ultimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
          Dim fineAnno As String = CFormatta.FormattaData(ultimoGiornoAnno & "/12/" & Anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, inizioAnno, fineAnno)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioAnno, fineAnno)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1079,7 +1087,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Somma i valori delle colonne.
          SommaValoriColonne()
@@ -1091,6 +1099,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1102,7 +1111,7 @@ Public Class ElencoPrenCamere
             ' Crea la stringa di selezione dei dati.
             Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
             Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, dataDal, dataAl)
+            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
 
@@ -1113,7 +1122,7 @@ Public Class ElencoPrenCamere
             AggIntGriglia()
 
             ' Aggiorna il titolo della finestra.
-            AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+            AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
             ' Somma i valori delle colonne.
             SommaValoriColonne()
@@ -1127,6 +1136,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiArrivoOggi()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1135,7 +1145,7 @@ Public Class ElencoPrenCamere
          ' Crea la stringa di selezione dei dati.
          Dim oggi As String = CFormatta.FormattaData(Today)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo = #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo = #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, oggi)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1146,7 +1156,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Somma i valori delle colonne.
          SommaValoriColonne()
@@ -1158,6 +1168,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiPartenzaOggi()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1166,7 +1177,7 @@ Public Class ElencoPrenCamere
          ' Crea la stringa di selezione dei dati.
          Dim oggi As String = CFormatta.FormattaData(Today)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY Numero ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY Numero ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, oggi)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1177,7 +1188,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Somma i valori delle colonne.
          SommaValoriColonne()
@@ -1189,6 +1200,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Private Sub SommaValoriColonne()
       ' Somma i valori delle rispettive colonne.
       txtTotaleNotti.Text = SommaColonna(DataGrid1, COLONNA_NOTTI, numRecord).ToString
@@ -1200,6 +1212,7 @@ Public Class ElencoPrenCamere
       txtTotaleImporto.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_TOTALE, numRecord))
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
@@ -1222,13 +1235,14 @@ Public Class ElencoPrenCamere
       End If
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
+   ' DA_FARE_B: Modificare!
    Public Sub ConvalidaDati()
       'If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
       ImpostaComandi()
       'End If
    End Sub
 
+   ' DA_FARE: Modificare!
    Private Sub ApriDati(ByVal nomeFrm As String, ByVal val As String)
       Try
          ' Modifica il cursore del mouse.
@@ -1239,7 +1253,7 @@ Public Class ElencoPrenCamere
          If val = String.Empty Then
             If g_VerDemo = True Then
                ' Test per la versione demo.
-               If VerificaNumRecord(LeggiNumRecord(TAB_PRENOTAZIONI)) = True Then
+               If VerificaNumRecord(LeggiNumRecord(TAB_SCHEDINE)) = True Then
                   Exit Sub
                End If
             End If
@@ -1256,6 +1270,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE: Verificare!
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
@@ -1287,6 +1302,7 @@ Public Class ElencoPrenCamere
 
    End Sub
 
+   ' DA_FARE_A: Modificare!
    Private Sub CreaColonne(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
@@ -1310,31 +1326,39 @@ Public Class ElencoPrenCamere
          numeroStyle.Alignment = HorizontalAlignment.Right
          numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(numeroStyle)
-         ' 2 - Data
-         Dim dataStyle As New DataGridTextBoxColumn
-         dataStyle.MappingName = "Data"
-         dataStyle.HeaderText = "Data"
-         dataStyle.Width = 80
-         dataStyle.NullText = ""
-         dataStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataStyle)
-         ' 3 - Ragione Sociale / Cognome
-         Dim intestatariostyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         intestatariostyle.MappingName = "Cognome"
-         intestatariostyle.HeaderText = "Rag. Soc. / Cognome"
-         intestatariostyle.Width = 150
+         ' 2 - Numero camera.
+         Dim numCameraStyle As New DataGridTextBoxColumn
+         numCameraStyle.MappingName = "NumCamera"
+         numCameraStyle.HeaderText = "Camera"
+         numCameraStyle.Width = 60
+         numCameraStyle.NullText = ""
+         numCameraStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(numCameraStyle)
+         ' 3 - Ragione Sociale / Cognome.
+         Dim intestatarioStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         intestatarioStyle.MappingName = "Cognome"
+         intestatarioStyle.HeaderText = "Cognome"
+         intestatarioStyle.Width = 150
          intestatariostyle.NullText = ""
          intestatariostyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(intestatariostyle)
-         ' 4 - Nome
-         Dim nomestyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomestyle.MappingName = "Nome"
+         ' 4 - Nome.
+         Dim nomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         nomeStyle.MappingName = "Nome"
          nomestyle.HeaderText = "Nome"
          nomestyle.Width = 100
          nomestyle.NullText = ""
          nomestyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(nomestyle)
-         ' 5 - Data arrivo
+         ' 5 - Tipologia Cliente.
+         Dim tipologiaStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         tipologiaStyle.MappingName = "TipologiaCliente"
+         tipologiaStyle.HeaderText = "Tipologia cliente"
+         tipologiaStyle.Width = 100
+         tipologiaStyle.NullText = ""
+         tipologiaStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(tipologiaStyle)
+         ' 6 - Data arrivo
          Dim dataArrivoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          dataArrivoStyle.MappingName = "DataArrivo"
          dataArrivoStyle.HeaderText = "Data di arrivo"
@@ -1342,7 +1366,7 @@ Public Class ElencoPrenCamere
          dataArrivoStyle.NullText = ""
          dataArrivoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataArrivoStyle)
-         ' 6 - Data partenza
+         ' 7 - Data partenza
          Dim dataPartenzaStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Green)
          dataPartenzaStyle.MappingName = "DataPartenza"
          dataPartenzaStyle.HeaderText = "Data di partenza"
@@ -1350,140 +1374,23 @@ Public Class ElencoPrenCamere
          dataPartenzaStyle.NullText = ""
          dataPartenzaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataPartenzaStyle)
-         ' 7 - Numero notti.
-         Dim nottiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         nottiStyle.MappingName = "NumeroNotti"
-         nottiStyle.HeaderText = "Notti"
-         nottiStyle.Width = 50
-         nottiStyle.NullText = ""
-         nottiStyle.Alignment = HorizontalAlignment.Right
-         nottiStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nottiStyle)
-         ' 8 - Adulti.
-         Dim adultiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
-         adultiStyle.MappingName = "Adulti"
-         adultiStyle.HeaderText = "Adulti"
-         adultiStyle.Width = 50
-         adultiStyle.NullText = ""
-         adultiStyle.Alignment = HorizontalAlignment.Right
-         adultiStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(adultiStyle)
-         ' 9 - Neonati.
-         Dim neonatiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
-         neonatiStyle.MappingName = "Neonati"
-         neonatiStyle.HeaderText = "Neonati"
-         neonatiStyle.Width = 50
-         neonatiStyle.NullText = ""
-         neonatiStyle.Alignment = HorizontalAlignment.Right
-         neonatiStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(neonatiStyle)
-         ' 10 - Bambini.
-         Dim bambiniStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
-         bambiniStyle.MappingName = "Bambini"
-         bambiniStyle.HeaderText = "Bambini"
-         bambiniStyle.Width = 50
-         bambiniStyle.NullText = ""
-         bambiniStyle.Alignment = HorizontalAlignment.Right
-         bambiniStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(bambiniStyle)
-         ' 11 - Ragazzi.
-         Dim ragazziStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
-         ragazziStyle.MappingName = "Ragazzi"
-         ragazziStyle.HeaderText = "Ragazzi"
-         ragazziStyle.Width = 50
-         ragazziStyle.NullText = ""
-         ragazziStyle.Alignment = HorizontalAlignment.Right
-         ragazziStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(ragazziStyle)
-         ' 12 - Numero camera.
-         Dim numCameraStyle As New DataGridTextBoxColumn
-         numCameraStyle.MappingName = "NumeroCamera"
-         numCameraStyle.HeaderText = "Camera"
-         numCameraStyle.Width = 60
-         numCameraStyle.NullText = ""
-         numCameraStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(numCameraStyle)
-         ' 13 - Arrangiamento.
-         Dim trattamentoPagStyle As New DataGridTextBoxColumn
-         trattamentoPagStyle.MappingName = "Trattamento"
-         trattamentoPagStyle.HeaderText = "Arrangiamento"
-         trattamentoPagStyle.Width = 150
-         trattamentoPagStyle.NullText = ""
-         trattamentoPagStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(trattamentoPagStyle)
-         ' 14 - Acconto.
-         Dim accontoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         accontoStyle.MappingName = "AccontoCamera"
-         accontoStyle.HeaderText = "Acconto"
-         accontoStyle.Width = 80
-         accontoStyle.NullText = ""
-         accontoStyle.Format = "##,##0.00"
-         accontoStyle.Alignment = HorizontalAlignment.Right
-         accontoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(accontoStyle)
-         ' 15 - Totale conto
-         Dim totContoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         totContoStyle.MappingName = "TotaleConto"
-         totContoStyle.HeaderText = "Totale conto"
-         totContoStyle.Width = 80
-         totContoStyle.NullText = ""
-         totContoStyle.Format = "##,##0.00"
-         totContoStyle.Alignment = HorizontalAlignment.Right
-         totContoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(totContoStyle)
-         ' 16 - Schedina PS.
-         Dim schedinaStyle As New DataGridTextBoxColumn
-         schedinaStyle.MappingName = "Schedina"
-         schedinaStyle.HeaderText = "Schedina"
-         schedinaStyle.Width = 80
-         schedinaStyle.NullText = ""
-         schedinaStyle.Alignment = HorizontalAlignment.Center
-         schedinaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(schedinaStyle)
-         ' 17 - Stato.
+         ' 8 - Stato.
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "Stato"
-         statoStyle.HeaderText = "Stato prenotazione"
-         statoStyle.Width = 140
+         statoStyle.HeaderText = "Stato"
+         statoStyle.Width = 100
          statoStyle.NullText = ""
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 18 - Colore.
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "Colore"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-         ' 19 - Costo camera.
-         Dim costoCameraStyle As New DataGridTextBoxColumn
-         costoCameraStyle.MappingName = "CostoCamera"
-         costoCameraStyle.HeaderText = "Costo"
-         costoCameraStyle.Width = 0
-         costoCameraStyle.NullText = ""
-         costoCameraStyle.Format = "##,##0.00"
-         costoCameraStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(costoCameraStyle)
-         ' 20 - Tassa di soggiorno.
-         Dim tassaSoggStyle As New DataGridTextBoxColumn
-         tassaSoggStyle.MappingName = "TassaSoggiorno"
-         tassaSoggStyle.HeaderText = "Tassa"
-         tassaSoggStyle.Width = 0
-         tassaSoggStyle.NullText = ""
-         tassaSoggStyle.Format = "##,##0.00"
-         tassaSoggStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tassaSoggStyle)
-         ' 21 - Tipo pagamento.
-         Dim tipoPagStyle As New DataGridTextBoxColumn
-         tipoPagStyle.MappingName = "Pagamento"
-         tipoPagStyle.HeaderText = "Pagamento"
-         tipoPagStyle.Width = 0
-         tipoPagStyle.NullText = ""
-         tipoPagStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoPagStyle)
-         ' 22 - Id Cliente.
+         ' 9 - Data Stampa.
+         Dim dataStampaStyle As New DataGridTextBoxColumn
+         dataStampaStyle.MappingName = "DataStampa"
+         dataStampaStyle.HeaderText = "Data di stampa"
+         dataStampaStyle.Width = 90
+         dataStampaStyle.NullText = ""
+         dataStampaStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(dataStampaStyle)
+         ' 10 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
          idClienteStyle.MappingName = "IdCliente"
          idClienteStyle.HeaderText = "Codice Cliente"
@@ -1491,22 +1398,6 @@ Public Class ElencoPrenCamere
          idClienteStyle.NullText = ""
          idClienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(idClienteStyle)
-         ' 23 - Descrizione Camera.
-         Dim tipoCameraStyle As New DataGridTextBoxColumn
-         tipoCameraStyle.MappingName = "DescrizioneCamera"
-         tipoCameraStyle.HeaderText = "Tipologia camera"
-         tipoCameraStyle.Width = 0
-         tipoCameraStyle.NullText = ""
-         tipoCameraStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoCameraStyle)
-         ' 24 - Note.
-         Dim noteStyle As New DataGridTextBoxColumn
-         noteStyle.MappingName = "Note"
-         noteStyle.HeaderText = "Note"
-         noteStyle.Width = 0
-         noteStyle.NullText = ""
-         noteStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(noteStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -1518,6 +1409,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE_A: Modificare!
    Private Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -1527,24 +1419,16 @@ Public Class ElencoPrenCamere
          Select Case campoRicerca
             Case "Codice"
                campoRicerca = "Id"
-            Case "Rag, Soc. / Cognome"
-               campoRicerca = "Cognome"
+            Case "Camera"
+               campoRicerca = "NumCamera"
+            Case "Tipologia"
+               campoRicerca = "TipologiaCliente"
             Case "Data di arrivo"
                campoRicerca = "DataArrivo"
             Case "Data di partenza"
                campoRicerca = "DataPartenza"
-            Case "Notti"
-               campoRicerca = "NumeroNotti"
-            Case "Arrangiamento"
-               campoRicerca = "Trattamento"
-            Case "Acconto"
-               campoRicerca = "AccontoCamera"
-            Case "Totale conto"
-               campoRicerca = "TotaleConto"
-            Case "Camera"
-               campoRicerca = "NumeroCamera"
-            Case "Stato prenotazione"
-               campoRicerca = "Stato"
+            Case "Data di stampa"
+               campoRicerca = "DataStampa"
          End Select
 
          If testoRicerca <> "" Then
@@ -1558,8 +1442,8 @@ Public Class ElencoPrenCamere
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
             ' Crea la stringa sql.
-            sql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_PRENOTAZIONI, campoRicerca, campoRicerca)
-            repSql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_PRENOTAZIONI, campoRicerca, campoRicerca)
+            sql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_SCHEDINE, campoRicerca, campoRicerca)
+            repSql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_SCHEDINE, campoRicerca, campoRicerca)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati("(" & sql & ")", sql)
@@ -1573,11 +1457,11 @@ Public Class ElencoPrenCamere
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY DataArrivo ASC", TAB_PRENOTAZIONI)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY DataArrivo ASC", TAB_SCHEDINE)
 
             ' Legge i dati e ottiene il numero totale dei record.
-            LeggiDati(TAB_PRENOTAZIONI, sql)
+            LeggiDati(TAB_SCHEDINE, sql)
          End If
 
          ' Somma i valori delle colonne.
@@ -1590,7 +1474,7 @@ Public Class ElencoPrenCamere
          AggIntGriglia()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1599,26 +1483,19 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   ' DA_FARE_A: Modificare!
    Private Sub CaricaCampiRic()
       Try
          CampoRicerca.Items.Add("Codice")
          CampoRicerca.Items.Add("Numero")
-         CampoRicerca.Items.Add("Data")
-         CampoRicerca.Items.Add("Rag, Soc. / Cognome")
+         CampoRicerca.Items.Add("Camera")
+         CampoRicerca.Items.Add("Cognome")
          CampoRicerca.Items.Add("Nome")
+         CampoRicerca.Items.Add("Tipologia cliente")
          CampoRicerca.Items.Add("Data di arrivo")
          CampoRicerca.Items.Add("Data di partenza")
-         CampoRicerca.Items.Add("Notti")
-         CampoRicerca.Items.Add("Adulti")
-         CampoRicerca.Items.Add("Neonati")
-         CampoRicerca.Items.Add("Bambini")
-         CampoRicerca.Items.Add("Ragazzi")
-         CampoRicerca.Items.Add("Arrangiamento")
-         CampoRicerca.Items.Add("Acconto")
-         CampoRicerca.Items.Add("Totale conto")
-         CampoRicerca.Items.Add("Camera")
-         CampoRicerca.Items.Add("Stato prenotazione")
-         CampoRicerca.Items.Add("Schedina")
+         CampoRicerca.Items.Add("Stato")
+         CampoRicerca.Items.Add("Data di stampa")
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1654,7 +1531,7 @@ Public Class ElencoPrenCamere
       End Try
    End Function
 
-   ' DA_FARE_A: HOTEL - da modificare!
+   ' DA_FARE: Modificare!
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
 
@@ -1695,7 +1572,8 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   Private Sub ElencoPrenCamere_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
+   ' DA_FARE_A: Verificare!
+   Private Sub ElencoSchedinePS_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
@@ -1758,7 +1636,8 @@ Public Class ElencoPrenCamere
 
    End Sub
 
-   Private Sub ElencoPrenCamere_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+   ' DA_FARE_A: Verificare!
+   Private Sub ElencoSchedinePS_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
       g_frmMain.rtgStrumentiModifica.Visible = False
@@ -1767,7 +1646,7 @@ Public Class ElencoPrenCamere
 
    End Sub
 
-   Private Sub ElencoPrenCamere_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+   Private Sub ElencoSchedinePS_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       Try
          SalvaDatiConfig()
 
@@ -1775,13 +1654,13 @@ Public Class ElencoPrenCamere
          Me.WindowState = FormWindowState.Minimized
 
          ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
-         g_frmMain.RimuoviFormMenuSeleziona(g_frmPrenCamere)
+         g_frmMain.RimuoviFormMenuSeleziona(g_frmSchedinePS)
 
          ' Distrugge l'oggetto e libera le risorse.
-         g_frmPrenCamere.Dispose()
-         g_frmPrenCamere = Nothing
+         g_frmSchedinePS.Dispose()
+         g_frmSchedinePS = Nothing
 
-         ' DA_FARE_A: Modificare!
+         ' DA_FARE_B: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Chiudi, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1791,8 +1670,8 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
-   Private Sub ElencoPrenCamere_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+   ' DA_FARE_A: Verificare!
+   Private Sub ElencoSchedinePS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
@@ -1804,7 +1683,7 @@ Public Class ElencoPrenCamere
          LeggiDatiConfig()
 
          ' Crea le colonne della griglia dati.
-         CreaColonne(TAB_PRENOTAZIONI)
+         CreaColonne(TAB_SCHEDINE)
 
          ' Carica l'elenco dei campi di ricerca.
          CaricaCampiRic()
@@ -1819,7 +1698,7 @@ Public Class ElencoPrenCamere
          ConvalidaDati()
 
          ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_SCHEDINE_PS)
 
          ' Aggiorna i valori per gli Ospiti e le camere.
          AggiornaValoriOspiti()
@@ -1827,7 +1706,7 @@ Public Class ElencoPrenCamere
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
-         ' DA_FARE_A: Modificare!
+         ' DA_FARE_B: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1843,7 +1722,7 @@ Public Class ElencoPrenCamere
       AggIntGriglia()
    End Sub
 
-   ' DA_FARE_A: Modificare!
+   ' DA_FARE: Modificare!
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
       Select Case e.Button.Tag
          Case "Tutti"
@@ -1944,13 +1823,13 @@ Public Class ElencoPrenCamere
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            StampaDocumento(PERCORSO_REP_DOC, TAB_PRENOTAZIONI, repSql)
+            StampaDocumento(PERCORSO_REP_DOC, TAB_SCHEDINE, repSql)
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            g_frmMain.ApriReports(repSql, TAB_PRENOTAZIONI, PERCORSO_REP_DOC)
+            g_frmMain.ApriReports(repSql, TAB_SCHEDINE, PERCORSO_REP_DOC)
 
          Case "Primo"
             '' Crea la stringa sql.
@@ -2032,8 +1911,9 @@ Public Class ElencoPrenCamere
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   ' DA_FARE_A: Modificare!
+   ' DA_FARE_B: Modificare!
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
+
       'If Modifica.Enabled = True Then
       '   ' Registra loperazione efettuata dall'operatore identificato.
       '   registraModifica()
@@ -2043,8 +1923,7 @@ Public Class ElencoPrenCamere
       'End If
    End Sub
 
-
-   ' DA_FARE: HOTEL - da modificare!
+   ' DA_FARE_B: Modificare!
    Public Sub Nuovo()
       Try
          ' Apre la finestra per l'inserimento di nuovi dati.
@@ -2063,7 +1942,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
+   ' DA_FARE_B: Modificare!
    Public Sub Modifica()
       Try
          ' Apre la finestra Cliente per la modifica dei dati.
@@ -2273,18 +2152,18 @@ Public Class ElencoPrenCamere
 
    Private Sub AggiornaValoriOspiti()
       ' Legge il numero di ospiti in arrivo oggi.
-      txtOspitiArrivo.Text = LeggiNumeroOspitiArrivo(TAB_PRENOTAZIONI)
+      txtOspitiArrivo.Text = LeggiNumeroOspitiArrivo(TAB_SCHEDINE)
       ' Legge il numero di ospiti in casa.
-      txtOspitiCasa.Text = LeggiNumeroOspitiInCasa(TAB_PRENOTAZIONI)
+      txtOspitiCasa.Text = LeggiNumeroOspitiInCasa(TAB_SCHEDINE)
       ' Legge il numero di ospiti in partenza oggi.
-      txtOspitiPartenza.Text = LeggiNumeroOspitiPartenza(TAB_PRENOTAZIONI)
+      txtOspitiPartenza.Text = LeggiNumeroOspitiPartenza(TAB_SCHEDINE)
 
       ' Legge il numero di camere in consegna oggi.
-      txtCamereConsegna.Text = LeggiNumeroCamereInConsegna(TAB_PRENOTAZIONI)
+      txtCamereConsegna.Text = LeggiNumeroCamereInConsegna(TAB_SCHEDINE)
       ' Legge il numero di camere occupate oggi.
-      txtCamereOccupate.Text = LeggiNumeroCamereOccupate(TAB_PRENOTAZIONI)
+      txtCamereOccupate.Text = LeggiNumeroCamereOccupate(TAB_SCHEDINE)
       ' Legge il numero di camere occupate oggi.
-      txtCamereLibere.Text = LeggiNumeroCamereLiberate(TAB_PRENOTAZIONI)
+      txtCamereLibere.Text = LeggiNumeroCamereLiberate(TAB_SCHEDINE)
    End Sub
 
 End Class

@@ -316,6 +316,7 @@ Module Dichiarazioni
    Public Const CAR_ANAG_TIPOLOGIE_UTILIZZO_RISORSE As String = "Attendere prego. Caricamento dell'elenco Tipologie di utilizzo Risorse in corso..."
    Public Const CAR_ANAG_ACCESSORI_SERVIZI As String = "Attendere prego. Caricamento dell'elenco Accessori e Servizi in corso..."
    Public Const CAR_ANAG_PREN_RISORSE As String = "Attendere prego. Caricamento dell'elenco Prenotazioni risorse in corso..."
+   Public Const CAR_ANAG_SCHEDINE_PS As String = "Attendere prego. Caricamento dell'elenco Schedine P.S. in corso..."
    Public Const CAR_ANAG_PREN_CAMERE As String = "Attendere prego. Caricamento dell'elenco Prenotazioni camere in corso..."
    Public Const CAR_PLANNING_P As String = "Attendere prego. Caricamento Planning di periodo delle risorse in corso..."
    Public Const CAR_PLANNING_CAMERE As String = "Attendere prego. Caricamento Planning di periodo delle camere in corso..."
@@ -338,6 +339,7 @@ Module Dichiarazioni
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"
    Public Const TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE As String = "Elenco Listini camere"
+   Public Const TITOLO_FINESTRA_ELENCO_SCHEDINE_PS As String = "Elenco Schedine P.S."
 
    ' GESTIONE DOCUMENTI.
    Public Const TITOLO_FINESTRA_ELENCO_DOCUMENTI As String = "Elenco Documenti"
@@ -567,6 +569,7 @@ Module Dichiarazioni
    Public g_frmPrenCamere As ElencoPrenCamere
    Public g_frmPrenCamera As frmPrenCamera
    Public g_frmStatoPren As frmElencoDati
+   Public g_frmSchedinePS As ElencoSchedinePS
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
    Public g_frmEmail As ElencoEmail
