@@ -191,3 +191,16 @@
    in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13049"
 "
 "
+"*** 11/08/2018 - 17:41:37 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in Hospitality_Solution.PrenCamere.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 11/08/2018 - 17:41:39 ***"
+"- DESCRIZIONE ERRORE: '01/01/0001 00:00:00' non è un valore valido per 'Value'. 'Value' deve essere compreso tra 'MinDate' e 'MaxDate'.
+Nome parametro: Value"
+"- NOME PROCEDURA:    in System.Windows.Forms.DateTimePicker.set_Value(DateTime value)
+   in Hospitality_Solution.frmPrenCamera.frmPrenCamera_Load(Object sender, EventArgs e)"
+"
+"

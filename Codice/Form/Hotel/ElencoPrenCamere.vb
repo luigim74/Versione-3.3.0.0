@@ -6,6 +6,7 @@
 ' Data creazione:       23/08/2014
 ' Data ultima modifica: 28/07/2018
 ' Descrizione:          Elenco prenotazioni camere.
+' Note:
 
 ' Elenco Attivita:
 
@@ -871,13 +872,13 @@ Public Class ElencoPrenCamere
          Dim descrizione As String
 
          If Nome = String.Empty Then
-            descrizione = Cognome & " numero " & Numero & " del " & Data
+            descrizione = "'" & Cognome & "' numero " & Numero & " del " & Data
          Else
-            descrizione = Cognome & " " & Nome & " numero " & Numero & " del " & Data
+            descrizione = "'" & Cognome & " " & Nome & "' numero " & Numero & " del " & Data
          End If
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera eliminare la prenotazione del Cliente """ & descrizione & """?" &
+         Risposta = MsgBox("Si desidera eliminare la prenotazione del Cliente " & descrizione & "?" &
                            vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -1743,6 +1744,19 @@ Public Class ElencoPrenCamere
       ' TabPage.
       g_frmMain.eui_StrumentiDocumenti.Visible = True
 
+      ' Stampa.
+      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
+
+      ' Documento.
+      g_frmMain.eui_cmdEsportaPdf.Enabled = True
+      g_frmMain.eui_cmdEsportaHtml.Enabled = False
+      g_frmMain.eui_cmdEsportaTxt.Enabled = False
+
+
 #End Region
 
 #Region "Sospesi / Buoni pasto "
@@ -1846,80 +1860,6 @@ Public Class ElencoPrenCamere
    ' DA_FARE_A: Modificare!
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
       Select Case e.Button.Tag
-         Case "Tutti"
-            'tbrPeriodo.Pushed = False
-            'tbrMese.Pushed = False
-            'tbrAnno.Pushed = False
-            'tbrSospesi.Pushed = False
-            'filtroDati = "Tutti"
-            'NascondiDate()
-            'TestoRicerca.Text = ""
-            '' Filtra i dati in base al testo digitato.
-            'FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
-
-         Case "Sospesi"
-            'tbrTutti.Pushed = False
-            'tbrPeriodo.Pushed = False
-            'tbrMese.Pushed = False
-            'tbrAnno.Pushed = False
-            'filtroDati = "Sospesi"
-            'NascondiDate()
-            'TestoRicerca.Text = ""
-            'AggiornaDatiSospesi()
-
-         Case "Periodo"
-            'tbrTutti.Pushed = False
-            'tbrMese.Pushed = False
-            'tbrAnno.Pushed = False
-            'tbrSospesi.Pushed = False
-            'filtroDati = "Periodo"
-            'VisualizzaDate()
-            'TestoRicerca.Text = ""
-            'AggiornaDatiPeriodo()
-
-         Case "Mese"
-            'tbrTutti.Pushed = False
-            'tbrPeriodo.Pushed = False
-            'tbrAnno.Pushed = False
-            'tbrSospesi.Pushed = False
-            'filtroDati = "Mese"
-            'NascondiDate()
-            'TestoRicerca.Text = ""
-            'AggiornaDatiMese()
-
-         Case "Anno"
-            'tbrTutti.Pushed = False
-            'tbrPeriodo.Pushed = False
-            'tbrMese.Pushed = False
-            'tbrSospesi.Pushed = False
-            'filtroDati = "Anno"
-            'NascondiDate()
-            'TestoRicerca.Text = ""
-            'AggiornaDatiAnno()
-
-         Case "Annulla"
-            ' Annulla l'ultimo documento selezionato.
-            'AnnullaDocumento()
-
-         Case "Nuovo"
-            '' Apre la finestra per l'inserimento di nuovi dati.
-            'ApriDati("")
-
-            '' Se nella tabella non ci sono record disattiva i pulsanti.
-            'ConvalidaDati()
-
-         Case "Modifica"
-            '' Apre la finestra per l'inserimento di nuovi dati.
-            'ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
-
-         Case "Elimina"
-            ' NON UTILIZZATA.
-            ' Elimina il valore selezionato.
-            'EliminaDati(TAB_DOCUMENTI, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
-
-         Case "Buoni"
-            ' Apre l'elenco dei buoni contenuti nel documento selezionato.
-            'ApriElencoBuoni()
 
          Case "Sospeso"
             ' Apre la finestra per l'incasso del sospeso.
@@ -1930,15 +1870,6 @@ Public Class ElencoPrenCamere
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
             frm.ShowDialog()
-
-         Case "PassaSospeso"
-            ' Apre la finestra per l'incasso del sospeso.
-            'PassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0), _
-            '             DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7))
-
-         Case "AnnullaSospeso"
-            ' Apre la finestra per l'incasso del sospeso.
-            'AnnullaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
 
          Case "Stampa"
             ' Registra loperazione effettuata dall'operatore identificato.
@@ -1952,73 +1883,10 @@ Public Class ElencoPrenCamere
 
             g_frmMain.ApriReports(repSql, TAB_PRENOTAZIONI, PERCORSO_REP_DOC)
 
-         Case "Primo"
-            '' Crea la stringa sql.
-            'sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id", dimPagina, TAB_ACQUISTI)
-
-            '' Visualizza la prima pagina di dati.
-            'VisualizzaPagina(1, sql)
-
-            '' Visualizza un'intestazione per la griglia dati.
-            'AggIntGriglia()
-
-         Case "Precedente"
-            '' Crea la stringa sql.
-            'sql = String.Format("SELECT * FROM {0} WHERE Id IN (SELECT TOP {1} Id FROM {2} WHERE Id < {3} ORDER BY Id DESC) ORDER BY Id", TAB_ACQUISTI, dimPagina, TAB_ACQUISTI, dt.Rows(0)("Id"))
-
-            '' Visualizza la pagina di dati precedente.
-            'VisualizzaPagina(pagCorrente - 1, sql)
-
-            '' Visualizza un'intestazione per la griglia dati.
-            'AggIntGriglia()
-
-         Case "Successivo"
-            '' Crea la stringa sql.
-            'sql = String.Format("SELECT TOP {0} * FROM {1} WHERE Id > {2} ORDER BY Id", dimPagina, TAB_ACQUISTI, dt.Rows(dt.Rows.Count - 1)("Id"))
-
-            '' Visualizza la pagina di dati successiva.
-            'VisualizzaPagina(pagCorrente + 1, sql)
-
-            '' Visualizza un'intestazione per la griglia dati.
-            'AggIntGriglia()
-
-         Case "Ultimo"
-            'Dim num As Integer = numRecord - dimPagina * (numPagine - 1)
-
-            '' Crea la stringa sql.
-            'sql = String.Format("SELECT * FROM {0} WHERE Id IN (SELECT TOP {1} Id FROM {2} ORDER BY Id DESC) ORDER BY Id", TAB_ACQUISTI, num, TAB_ACQUISTI)
-
-            '' Visualizza l'ultima pagina di dati.
-            'VisualizzaPagina(numPagine, sql)
-
-            '' Visualizza un'intestazione per la griglia dati.
-            'AggIntGriglia()
-
          Case "Aggiorna"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            'If tbrSospesi.Pushed = True Then
-            '   ' Aggiorna la griglia dati.
-            '   AggiornaDatiSospesi()
-            '   Exit Sub
-            'ElseIf tbrMese.Pushed = True Then
-            '   ' Aggiorna la griglia dati.
-            '   AggiornaDatiMese()
-            '   Exit Sub
-            'ElseIf tbrAnno.Pushed = True Then
-            '   ' Aggiorna la griglia dati.
-            '   AggiornaDatiAnno()
-            '   Exit Sub
-            'ElseIf tbrPeriodo.Pushed = True Then
-            '   ' Aggiorna la griglia dati.
-            '   AggiornaDatiPeriodo()
-            '   Exit Sub
-            'Else
-            '   ' Aggiorna la griglia dati.
-            '   AggiornaDati()
-            '   Exit Sub
-            'End If
       End Select
    End Sub
 
