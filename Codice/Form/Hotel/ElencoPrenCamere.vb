@@ -1748,8 +1748,8 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = True
-      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
-      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
 
       ' Documento.
       g_frmMain.eui_cmdEsportaPdf.Enabled = True

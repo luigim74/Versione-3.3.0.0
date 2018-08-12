@@ -33,11 +33,12 @@ Public Class ElencoSchedinePS
    Public Const COLONNA_COGNOME As Short = 3
    Public Const COLONNA_NOME As Short = 4
    Public Const COLONNA_TIPO_CLIENTE As Short = 5
-   Public Const COLONNA_DATA_ARRIVO As Short = 6
-   Public Const COLONNA_DATA_PARTENZA As Short = 7
-   Public Const COLONNA_STATO As Short = 8
-   Public Const COLONNA_DATA_STAMPA As Short = 9
-   Public Const COLONNA_ID_CLIENTE As Short = 10
+   Public Const COLONNA_NUMERO_PREN As Short = 6
+   Public Const COLONNA_DATA_ARRIVO As Short = 7
+   Public Const COLONNA_DATA_PARTENZA As Short = 8
+   Public Const COLONNA_STATO As Short = 9
+   Public Const COLONNA_DATA_STAMPA As Short = 10
+   Public Const COLONNA_ID_CLIENTE As Short = 11
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -745,7 +746,7 @@ Public Class ElencoSchedinePS
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
 
-         ' 0 - Id 
+         ' 0 - Id.
          Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          codiceStyle.MappingName = "Id"
          codiceStyle.HeaderText = "Codice"
@@ -754,11 +755,11 @@ Public Class ElencoSchedinePS
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' 1 - Numero schedina
+         ' 1 - Numero schedina.
          Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          numeroStyle.MappingName = "Numero"
          numeroStyle.HeaderText = "Numero"
-         numeroStyle.Width = 60
+         numeroStyle.Width = 70
          numeroStyle.NullText = ""
          numeroStyle.Alignment = HorizontalAlignment.Right
          numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
@@ -795,7 +796,16 @@ Public Class ElencoSchedinePS
          tipologiaStyle.NullText = ""
          tipologiaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipologiaStyle)
-         ' 6 - Data arrivo
+         ' 6 - Numero prenotazione.
+         Dim numeroPrenStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         numeroPrenStyle.MappingName = "NumPren"
+         numeroPrenStyle.HeaderText = "Numero Pren."
+         numeroPrenStyle.Width = 80
+         numeroPrenStyle.NullText = ""
+         numeroPrenStyle.Alignment = HorizontalAlignment.Right
+         numeroPrenStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(numeroPrenStyle)
+         ' 7 - Data arrivo
          Dim dataArrivoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          dataArrivoStyle.MappingName = "DataArrivo"
          dataArrivoStyle.HeaderText = "Data di arrivo"
@@ -803,7 +813,7 @@ Public Class ElencoSchedinePS
          dataArrivoStyle.NullText = ""
          dataArrivoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataArrivoStyle)
-         ' 7 - Data partenza
+         ' 8 - Data partenza
          Dim dataPartenzaStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Green)
          dataPartenzaStyle.MappingName = "DataPartenza"
          dataPartenzaStyle.HeaderText = "Data di partenza"
@@ -811,7 +821,7 @@ Public Class ElencoSchedinePS
          dataPartenzaStyle.NullText = ""
          dataPartenzaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataPartenzaStyle)
-         ' 8 - Stato.
+         ' 9 - Stato.
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "Stato"
          statoStyle.HeaderText = "Stato"
@@ -819,7 +829,7 @@ Public Class ElencoSchedinePS
          statoStyle.NullText = ""
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 9 - Data Stampa.
+         ' 10 - Data Stampa.
          Dim dataStampaStyle As New DataGridTextBoxColumn
          dataStampaStyle.MappingName = "DataStampa"
          dataStampaStyle.HeaderText = "Data di stampa"
@@ -827,7 +837,7 @@ Public Class ElencoSchedinePS
          dataStampaStyle.NullText = ""
          dataStampaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataStampaStyle)
-         ' 10 - Id Cliente.
+         ' 11 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
          idClienteStyle.MappingName = "IdCliente"
          idClienteStyle.HeaderText = "Codice Cliente"
@@ -856,10 +866,14 @@ Public Class ElencoSchedinePS
          Select Case campoRicerca
             Case "Codice"
                campoRicerca = "Id"
+            Case "Numero schedina"
+               campoRicerca = "Numero"
             Case "Camera"
                campoRicerca = "NumCamera"
             Case "Tipologia"
                campoRicerca = "TipologiaCliente"
+            Case "Numero prenotazione"
+               campoRicerca = "NumPren"
             Case "Data di arrivo"
                campoRicerca = "DataArrivo"
             Case "Data di partenza"
@@ -916,11 +930,12 @@ Public Class ElencoSchedinePS
    Private Sub CaricaCampiRic()
       Try
          CampoRicerca.Items.Add("Codice")
-         CampoRicerca.Items.Add("Numero")
+         CampoRicerca.Items.Add("Numero schedina")
          CampoRicerca.Items.Add("Camera")
          CampoRicerca.Items.Add("Cognome")
          CampoRicerca.Items.Add("Nome")
          CampoRicerca.Items.Add("Tipologia cliente")
+         CampoRicerca.Items.Add("Numero prenotazione")
          CampoRicerca.Items.Add("Data di arrivo")
          CampoRicerca.Items.Add("Data di partenza")
          CampoRicerca.Items.Add("Stato")

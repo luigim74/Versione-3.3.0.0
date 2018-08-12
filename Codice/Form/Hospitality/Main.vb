@@ -1227,7 +1227,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1057, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1065, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -1439,7 +1439,7 @@ Friend Class frmMain
       Me.Label24.ForeColor = System.Drawing.Color.DimGray
       Me.Label24.Location = New System.Drawing.Point(416, 464)
       Me.Label24.Name = "Label24"
-      Me.Label24.Size = New System.Drawing.Size(255, 16)
+      Me.Label24.Size = New System.Drawing.Size(249, 16)
       Me.Label24.TabIndex = 36
       Me.Label24.Text = "Informazioni su Hospitality Solution"
       '
@@ -1460,7 +1460,7 @@ Friend Class frmMain
       Me.Label26.ForeColor = System.Drawing.Color.DimGray
       Me.Label26.Location = New System.Drawing.Point(416, 339)
       Me.Label26.Name = "Label26"
-      Me.Label26.Size = New System.Drawing.Size(126, 16)
+      Me.Label26.Size = New System.Drawing.Size(124, 16)
       Me.Label26.TabIndex = 34
       Me.Label26.Text = "Dettagli prodotto"
       '
@@ -1498,7 +1498,7 @@ Friend Class frmMain
       Me.Label23.ForeColor = System.Drawing.Color.DimGray
       Me.Label23.Location = New System.Drawing.Point(416, 88)
       Me.Label23.Name = "Label23"
-      Me.Label23.Size = New System.Drawing.Size(200, 16)
+      Me.Label23.Size = New System.Drawing.Size(193, 16)
       Me.Label23.TabIndex = 29
       Me.Label23.Text = "Hospitality Solution Suite 3"
       '
@@ -1518,7 +1518,7 @@ Friend Class frmMain
       Me.Label22.ForeColor = System.Drawing.Color.DimGray
       Me.Label22.Location = New System.Drawing.Point(416, 132)
       Me.Label22.Name = "Label22"
-      Me.Label22.Size = New System.Drawing.Size(114, 16)
+      Me.Label22.Size = New System.Drawing.Size(112, 16)
       Me.Label22.TabIndex = 27
       Me.Label22.Text = "Prodotti attivati"
       '
@@ -1578,7 +1578,7 @@ Friend Class frmMain
       Me.Label21.ForeColor = System.Drawing.Color.DimGray
       Me.Label21.Location = New System.Drawing.Point(24, 361)
       Me.Label21.Name = "Label21"
-      Me.Label21.Size = New System.Drawing.Size(321, 16)
+      Me.Label21.Size = New System.Drawing.Size(313, 16)
       Me.Label21.TabIndex = 7
       Me.Label21.Text = "Strumenti per l'utilizzo di Hospitality Solution"
       '
@@ -1589,7 +1589,7 @@ Friend Class frmMain
       Me.Label20.ForeColor = System.Drawing.Color.DimGray
       Me.Label20.Location = New System.Drawing.Point(24, 24)
       Me.Label20.Name = "Label20"
-      Me.Label20.Size = New System.Drawing.Size(72, 16)
+      Me.Label20.Size = New System.Drawing.Size(71, 16)
       Me.Label20.TabIndex = 6
       Me.Label20.Text = "Supporto"
       '
@@ -2052,7 +2052,7 @@ Friend Class frmMain
       Me.Label9.ForeColor = System.Drawing.Color.DimGray
       Me.Label9.Location = New System.Drawing.Point(144, 544)
       Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(206, 16)
+      Me.Label9.Size = New System.Drawing.Size(201, 16)
       Me.Label9.TabIndex = 14
       Me.Label9.Text = "Compatta e ripristina archivi"
       '
@@ -2072,7 +2072,7 @@ Friend Class frmMain
       Me.Label7.ForeColor = System.Drawing.Color.DimGray
       Me.Label7.Location = New System.Drawing.Point(144, 408)
       Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(146, 16)
+      Me.Label7.Size = New System.Drawing.Size(143, 16)
       Me.Label7.TabIndex = 12
       Me.Label7.Text = "Pulizia degli archivi"
       '
@@ -2092,7 +2092,7 @@ Friend Class frmMain
       Me.Label5.ForeColor = System.Drawing.Color.DimGray
       Me.Label5.Location = New System.Drawing.Point(144, 280)
       Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(119, 16)
+      Me.Label5.Size = New System.Drawing.Size(116, 16)
       Me.Label5.TabIndex = 10
       Me.Label5.Text = "Backup dei dati"
       '
@@ -2157,7 +2157,7 @@ Friend Class frmMain
       Me.Label2.ForeColor = System.Drawing.Color.DimGray
       Me.Label2.Location = New System.Drawing.Point(144, 128)
       Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(241, 16)
+      Me.Label2.Size = New System.Drawing.Size(232, 16)
       Me.Label2.TabIndex = 4
       Me.Label2.Text = "Che cosa è Hospitality Solution?"
       '
@@ -2606,7 +2606,7 @@ Friend Class frmMain
       Me.eui_StrumentiDocumenti.KeyTip = Nothing
       Me.eui_StrumentiDocumenti.Location = New System.Drawing.Point(0, 0)
       Me.eui_StrumentiDocumenti.Name = "eui_StrumentiDocumenti"
-      Me.eui_StrumentiDocumenti.Size = New System.Drawing.Size(1057, 99)
+      Me.eui_StrumentiDocumenti.Size = New System.Drawing.Size(1065, 99)
       Me.eui_StrumentiDocumenti.TabIndex = 0
       Me.eui_StrumentiDocumenti.Text = "Documenti"
       '
@@ -3465,7 +3465,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1057, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1065, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -5274,10 +5274,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 697)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 700)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1057, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1065, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5289,7 +5289,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(460, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(468, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5366,7 +5366,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(460, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(468, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -5663,7 +5663,7 @@ Friend Class frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1057, 719)
+      Me.ClientSize = New System.Drawing.Size(1065, 722)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)

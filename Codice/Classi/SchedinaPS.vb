@@ -6,9 +6,9 @@
 ' Data creazione:       05/08/2018
 ' Data ultima modifica: 05/08/2018
 ' Descrizione:          Classe Schedina PS.
+' Note:
 
 ' Elenco Attivita:
-' DA_FARE_A: Testare Classe Schedina PS.
 
 ' ******************************************************************
 
@@ -17,7 +17,7 @@
 Public Class SchedinaPS
 
    Public Codice As Integer
-   Public Numero As Integer
+   Public Numero As String
    Public IdComponente As Integer
    Public IdCliente As Integer
    Public TipologiaCliente As String
@@ -39,7 +39,7 @@ Public Class SchedinaPS
    Public DataArrivo As String
    Public DataPartenza As String
    Public Permanenza As Integer
-   Public NumeroCamera As String
+   Public NumCamera As String
    Public NumPren As String
    Public Stato As String
    Public DataStampa As String
@@ -82,7 +82,7 @@ Public Class SchedinaPS
          If IsDBNull(ds.Tables(tabella).Rows(0)("Numero")) = False Then
             Me.Numero = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Numero"))
          Else
-            Me.Numero = 0
+            Me.Numero = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("IdComponente")) = False Then
             Me.IdComponente = Convert.ToInt32(ds.Tables(tabella).Rows(0)("IdComponente"))
@@ -190,10 +190,10 @@ Public Class SchedinaPS
          Else
             Me.Permanenza = 0
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("NumeroCamera")) = False Then
-            Me.NumeroCamera = ds.Tables(tabella).Rows(0)("NumeroCamera").ToString
+         If IsDBNull(ds.Tables(tabella).Rows(0)("NumCamera")) = False Then
+            Me.NumCamera = ds.Tables(tabella).Rows(0)("NumCamera").ToString
          Else
-            Me.NumeroCamera = String.Empty
+            Me.NumCamera = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("NumPren")) = False Then
             Me.NumPren = ds.Tables(tabella).Rows(0)("NumPren").ToString
@@ -235,10 +235,10 @@ Public Class SchedinaPS
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (Numero, IdComponente, IdCliente, TipologiaCliente, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Cittadinanza, " &
                                               "TipoDoc, NumeroDoc, RilasciatoDoc, ComuneRilascioDoc, DataRilascioDoc, DataScadenzaDoc, NazioneRilascioDoc, DataArrivo, DataPartenza, Permanenza, " &
-                                              "NumeroCamera, NumPren, Stato, DataStampa) " &
+                                              "NumCamera, NumPren, Stato, DataStampa) " &
                                        "VALUES(@Numero, @IdComponente, @IdCliente, @TipologiaCliente, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Cittadinanza, " &
                                               "@TipoDoc, @NumeroDoc, @RilasciatoDoc, @ComuneRilascioDoc, @DataRilascioDoc, @DataScadenzaDoc, @NazioneRilascioDoc, @DataArrivo, @DataPartenza, @Permanenza, " &
-                                              "@NumeroCamera, @NumPren, @Stato, @DataStampa)", tabella)
+                                              "@NumCamera, @NumPren, @Stato, @DataStampa)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -256,6 +256,7 @@ Public Class SchedinaPS
          cmdInsert.Parameters.AddWithValue("@NazioneNascita", Me.NazioneNascita)
          cmdInsert.Parameters.AddWithValue("@Cittadinanza", Me.Cittadinanza)
          cmdInsert.Parameters.AddWithValue("@TipoDoc", Me.TipoDoc)
+         cmdInsert.Parameters.AddWithValue("@NumeroDoc", Me.NumeroDoc)
          cmdInsert.Parameters.AddWithValue("@RilasciatoDoc", Me.RilasciatoDoc)
          cmdInsert.Parameters.AddWithValue("@ComuneRilascioDoc", Me.ComuneRilascioDoc)
          cmdInsert.Parameters.AddWithValue("@DataRilascioDoc", Me.DataRilascioDoc)
@@ -264,7 +265,7 @@ Public Class SchedinaPS
          cmdInsert.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdInsert.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
          cmdInsert.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
-         cmdInsert.Parameters.AddWithValue("@NumeroCamera", Me.NumeroCamera)
+         cmdInsert.Parameters.AddWithValue("@NumCamera", Me.NumCamera)
          cmdInsert.Parameters.AddWithValue("@NumPren", Me.NumPren)
          cmdInsert.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdInsert.Parameters.AddWithValue("@DataStampa", Me.DataStampa)
@@ -327,7 +328,7 @@ Public Class SchedinaPS
                              "DataArrivo = @DataArrivo, " &
                              "DataPartenza = @DataPartenza, " &
                              "Permanenza = @Permanenza, " &
-                             "NumeroCamera = @NumeroCamera, " &
+                             "NumCamera = @NumCamera, " &
                              "NumPren = @NumPren, " &
                              "Stato = @Stato, " &
                              "DataStampa = @DataStampa " &
@@ -360,7 +361,7 @@ Public Class SchedinaPS
          cmdUpdate.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdUpdate.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
          cmdUpdate.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
-         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", Me.NumeroCamera)
+         cmdUpdate.Parameters.AddWithValue("@NumCamera", Me.NumCamera)
          cmdUpdate.Parameters.AddWithValue("@NumPren", Me.NumPren)
          cmdUpdate.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdUpdate.Parameters.AddWithValue("@DataStampa", Me.DataStampa)

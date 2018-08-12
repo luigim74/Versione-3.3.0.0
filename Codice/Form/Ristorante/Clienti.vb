@@ -288,7 +288,7 @@ Public Class frmClienti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(590, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(600, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -333,7 +333,7 @@ Public Class frmClienti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(590, 20)
+      Me.Panel1.Size = New System.Drawing.Size(600, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -360,7 +360,7 @@ Public Class frmClienti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(590, 341)
+      Me.TabControl1.Size = New System.Drawing.Size(600, 351)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -406,7 +406,7 @@ Public Class frmClienti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(582, 315)
+      Me.TabPage1.Size = New System.Drawing.Size(592, 325)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -887,7 +887,7 @@ Public Class frmClienti
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
       Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage2.Size = New System.Drawing.Size(582, 315)
+      Me.TabPage2.Size = New System.Drawing.Size(592, 325)
       Me.TabPage2.TabIndex = 7
       Me.TabPage2.Text = "Dati personali"
       '
@@ -929,9 +929,9 @@ Public Class frmClienti
       Me.Label33.Location = New System.Drawing.Point(296, 200)
       Me.Label33.Name = "Label33"
       Me.Label33.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label33.Size = New System.Drawing.Size(62, 13)
+      Me.Label33.Size = New System.Drawing.Size(68, 13)
       Me.Label33.TabIndex = 251
-      Me.Label33.Text = "Nazionalità:"
+      Me.Label33.Text = "Cittadinanza:"
       '
       'cmbNazioneNascita
       '
@@ -1596,7 +1596,7 @@ Public Class frmClienti
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(590, 387)
+      Me.ClientSize = New System.Drawing.Size(600, 397)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
