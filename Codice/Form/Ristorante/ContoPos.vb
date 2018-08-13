@@ -3348,20 +3348,22 @@ Public Class ContoPos
             .PIva = txtPIva.Text
             .CodFiscale = txtCodiceFiscale.Text
             .CodAzienda = String.Empty
-
             .Coperto = CFormatta.FormattaNumeroDouble(txtCoperto.Text)
+
             .Sconto = CFormatta.FormattaNumeroDouble(valSconto)
             If txtValSconto.Text.Contains("%") = True Then
                .TipoSconto = "%"
             Else
                .TipoSconto = String.Empty
             End If
+
             .Servizio = CFormatta.FormattaNumeroDouble(valServizio)
             If txtServizio.Text.Contains("%") = True Then
                .TipoServizio = "%"
             Else
                .TipoServizio = String.Empty
             End If
+
             .Contanti = CFormatta.FormattaNumeroDouble(txtContanti.Text)
             .Carte = CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
             .BuoniPasto = CFormatta.FormattaNumeroDouble(txtBuoni.Text)
@@ -3407,6 +3409,20 @@ Public Class ContoPos
                Dim valTotaleImponibile3 As Double
                Dim valTotaleImponibile4 As Double
 
+               Dim valCopertoDiviso As Double
+               Dim valServizioDiviso As Double
+               Dim valScontoDiviso As Double
+               Dim valCoperto As Double = CFormatta.FormattaNumeroDouble(txtCoperto.Text)
+
+               ' COPERTO - Divide il valore del COPERTO per il numero di elementi (Piatti) presenti nella lista.
+               valCopertoDiviso = valCoperto / lstvDettagli.Items.Count
+
+               ' SERVIZIO - Divide il valore del SERVIZIO per il numero di elementi (Piatti) presenti nella lista.
+               valServizioDiviso = valServizio / lstvDettagli.Items.Count
+
+               ' SCONTO - Divide il valore dello SCONTO per il numero di elementi (Piatti) presenti nella lista.
+               valScontoDiviso = valSconto / lstvDettagli.Items.Count
+
                ' Somma tutti gli importi delle righe del documento.
                Dim j As Integer
                For j = 0 To lstvDettagli.Items.Count - 1
@@ -3414,24 +3430,28 @@ Public Class ContoPos
                   Select Case VerificaAliquotaIva(lstvDettagli.Items(j).SubItems(5).Text)
                      Case "Reparto 1"
                         importo1 = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
+                        importo1 = (importo1 + valCopertoDiviso + valServizioDiviso) - valScontoDiviso
                         percIva1 = Convert.ToInt32(lstvDettagli.Items(j).SubItems(5).Text)
                         valTotaleImponibile1 = valTotaleImponibile1 + CalcolaImponibileIva(percIva1.ToString, importo1)
                         valTotaleImpostaRep1 = CalcolaPercentuale(valTotaleImponibile1, percIva1)
 
                      Case "Reparto 2"
                         importo2 = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
+                        importo2 = (importo2 + valCopertoDiviso + valServizioDiviso) - valScontoDiviso
                         percIva2 = Convert.ToInt32(lstvDettagli.Items(j).SubItems(5).Text)
                         valTotaleImponibile2 = valTotaleImponibile2 + CalcolaImponibileIva(percIva2.ToString, importo2)
                         valTotaleImpostaRep2 = CalcolaPercentuale(valTotaleImponibile2, percIva2)
 
                      Case "Reparto 3"
                         importo3 = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
+                        importo3 = (importo3 + valCopertoDiviso + valServizioDiviso) - valScontoDiviso
                         percIva3 = Convert.ToInt32(lstvDettagli.Items(j).SubItems(5).Text)
                         valTotaleImponibile3 = valTotaleImponibile3 + CalcolaImponibileIva(percIva3.ToString, importo3)
                         valTotaleImpostaRep3 = CalcolaPercentuale(valTotaleImponibile3, percIva3)
 
                      Case "Reparto 4"
                         importo4 = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
+                        importo4 = (importo4 + valCopertoDiviso + valServizioDiviso) - valScontoDiviso
                         percIva4 = Convert.ToInt32(lstvDettagli.Items(j).SubItems(5).Text)
                         valTotaleImponibile4 = valTotaleImponibile4 + CalcolaImponibileIva(percIva4.ToString, importo4)
                         valTotaleImpostaRep4 = CalcolaPercentuale(valTotaleImponibile4, percIva4)
@@ -3573,42 +3593,6 @@ Public Class ContoPos
          Next
 
          If eui_cmdTipoConto.Text.ToUpper <> "ALLA ROMANA" Then
-            ' SALVA I DETTAGLI PER LO SCONTO.
-            If Doc.Sconto <> VALORE_ZERO Then
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di inserimento.
-               sql = String.Format("INSERT INTO {0} (RifDoc, CodiceArticolo, Descrizione, Unit‡Misura, Quantit‡, ValoreUnitario, Sconto, ImportoNetto, AliquotaIva, Categoria) " &
-                                   "VALUES(@RifDoc, @CodiceArticolo, @Descrizione, @Unit‡Misura, @Quantit‡, @ValoreUnitario, @Sconto, @ImportoNetto, @AliquotaIva, @Categoria)", TAB_DETTAGLI_DOC)
-
-               ' Crea il comando per la connessione corrente.
-               Dim cmdInsert As New OleDbCommand(sql, cn, tr)
-
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
-               cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
-
-               If Doc.TipoSconto <> String.Empty Then
-                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SCONTO " & txtValSconto.Text)
-               Else
-                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SCONTO")
-               End If
-
-               cmdInsert.Parameters.AddWithValue("@Unit‡Misura", String.Empty)
-               cmdInsert.Parameters.AddWithValue("@Quantit‡", "1")
-               cmdInsert.Parameters.AddWithValue("@ValoreUnitario", "-" & Doc.Sconto) ' B_TODO: Modifica per Retail.
-               cmdInsert.Parameters.AddWithValue("@Sconto", VALORE_ZERO)
-               cmdInsert.Parameters.AddWithValue("@ImportoNetto", "-" & Doc.Sconto)
-               cmdInsert.Parameters.AddWithValue("@AliquotaIva", 0)
-               cmdInsert.Parameters.AddWithValue("@Categoria", String.Empty)
-
-               ' Esegue il comando.
-               Dim Record As Integer = cmdInsert.ExecuteNonQuery()
-               ' Conferma transazione.
-               tr.Commit()
-            End If
-         End If
-
-         If eui_cmdTipoConto.Text.ToUpper <> "ALLA ROMANA" Then
             ' SALVA I DETTAGLI PER IL SERVIZIO.
             If Doc.Servizio <> VALORE_ZERO Then
                ' Avvia una transazione.
@@ -3634,6 +3618,42 @@ Public Class ContoPos
                cmdInsert.Parameters.AddWithValue("@ValoreUnitario", Doc.Servizio) ' B_TODO: Modifica per Retail.
                cmdInsert.Parameters.AddWithValue("@Sconto", VALORE_ZERO)
                cmdInsert.Parameters.AddWithValue("@ImportoNetto", Doc.Servizio)
+               cmdInsert.Parameters.AddWithValue("@AliquotaIva", 0)
+               cmdInsert.Parameters.AddWithValue("@Categoria", String.Empty)
+
+               ' Esegue il comando.
+               Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+               ' Conferma transazione.
+               tr.Commit()
+            End If
+         End If
+
+         If eui_cmdTipoConto.Text.ToUpper <> "ALLA ROMANA" Then
+            ' SALVA I DETTAGLI PER LO SCONTO.
+            If Doc.Sconto <> VALORE_ZERO Then
+               ' Avvia una transazione.
+               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+               ' Crea la stringa di inserimento.
+               sql = String.Format("INSERT INTO {0} (RifDoc, CodiceArticolo, Descrizione, Unit‡Misura, Quantit‡, ValoreUnitario, Sconto, ImportoNetto, AliquotaIva, Categoria) " &
+                                   "VALUES(@RifDoc, @CodiceArticolo, @Descrizione, @Unit‡Misura, @Quantit‡, @ValoreUnitario, @Sconto, @ImportoNetto, @AliquotaIva, @Categoria)", TAB_DETTAGLI_DOC)
+
+               ' Crea il comando per la connessione corrente.
+               Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
+
+               If Doc.TipoSconto <> String.Empty Then
+                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SCONTO " & txtValSconto.Text)
+               Else
+                  cmdInsert.Parameters.AddWithValue("@Descrizione", "SCONTO")
+               End If
+
+               cmdInsert.Parameters.AddWithValue("@Unit‡Misura", String.Empty)
+               cmdInsert.Parameters.AddWithValue("@Quantit‡", "1")
+               cmdInsert.Parameters.AddWithValue("@ValoreUnitario", "-" & Doc.Sconto) ' B_TODO: Modifica per Retail.
+               cmdInsert.Parameters.AddWithValue("@Sconto", VALORE_ZERO)
+               cmdInsert.Parameters.AddWithValue("@ImportoNetto", "-" & Doc.Sconto)
                cmdInsert.Parameters.AddWithValue("@AliquotaIva", 0)
                cmdInsert.Parameters.AddWithValue("@Categoria", String.Empty)
 

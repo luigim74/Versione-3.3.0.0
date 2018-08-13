@@ -298,3 +298,18 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.ElencoSchedinePS.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 716"
 "
 "
+"*** 13/08/2018 - 17:12:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13182"
+"
+"
+"*** 13/08/2018 - 17:21:22 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\ContoPos.vb:riga 4550"
+"
+"
