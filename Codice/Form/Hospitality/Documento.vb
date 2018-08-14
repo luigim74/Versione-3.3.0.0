@@ -1441,12 +1441,12 @@ Public Class frmDocumento
                      If IsNothing(dgvDettagli.Rows(J).Cells(clnCategoria.Name).Value) = False Then
                         .CategoriaPiatto = dgvDettagli.Rows(J).Cells(clnCategoria.Name).Value.ToString
                      Else
-                        .CategoriaPiatto = String.Empty
+                        .CategoriaPiatto = "Nessuna"
                      End If
                      If IsNothing(dgvDettagli.Rows(J).Cells(clnIva.Name).Value) = False Then
                         .AliquotaIva = dgvDettagli.Rows(J).Cells(clnIva.Name).Value.ToString
                      Else
-                        .AliquotaIva = String.Empty
+                        .AliquotaIva = 0
                      End If
                      ' DA_FARE_B: Aggiungere il reparto se si vuole fare inviare le comade dal punto cassa.
                      'If IsNothing(dgvDettagli.Rows(j).Cells(clnReparto.Name).Value) = False Then
@@ -1590,31 +1590,55 @@ Public Class frmDocumento
          Dim valTotaleImponibile3 As Double
          Dim valTotaleImponibile4 As Double
 
+         Dim numTotaleImporti As Integer
+         Dim valScontoDiviso As Double
+         Dim valTotaleSconto As Double
+
+         Dim j As Integer
+         For j = 0 To dgvDettagli.Rows.Count - 2
+            ' Verifica se l'importo è uno sconto (valore negativo).
+            If IsNumeric(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value) = True And dgvDettagli.Rows(j).Cells(clnImporto.Name).Value.ToString.Contains("-") = True Then
+               valTotaleSconto = valTotaleSconto + Convert.ToDouble(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value)
+
+            ElseIf IsNumeric(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value) = True And dgvDettagli.Rows(j).Cells(clnImporto.Name).Value.ToString <> VALORE_ZERO Then
+               ' Conta il numero degli importi validi. 
+               numTotaleImporti += 1
+            End If
+         Next
+
+         ' SCONTO - Divide il valore dello SCONTO per il numero di elementi (Piatti) presenti nella lista.
+         valScontoDiviso = valTotaleSconto / numTotaleImporti
+
          ' Somma tutti gli importi delle righe del documento.
          Dim i As Integer
          For i = 0 To dgvDettagli.Rows.Count - 1
 
             Select Case dgvDettagli.Rows(i).Cells(clnRepartoIva.Name).Value
+
                Case "Reparto 1"
                   importo1 = Convert.ToDouble(dgvDettagli.Rows(i).Cells(clnImporto.Name).Value)
+                  importo1 = (importo1 + valScontoDiviso)
                   percIva1 = Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnIva.Name).Value)
                   valTotaleImponibile1 = valTotaleImponibile1 + CalcolaImponibileIva(percIva1.ToString, importo1)
                   valTotaleImpostaRep1 = CalcolaPercentuale(valTotaleImponibile1, percIva1)
 
                Case "Reparto 2"
                   importo2 = Convert.ToDouble(dgvDettagli.Rows(i).Cells(clnImporto.Name).Value)
+                  importo2 = (importo2 + valScontoDiviso)
                   percIva2 = Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnIva.Name).Value)
                   valTotaleImponibile2 = valTotaleImponibile2 + CalcolaImponibileIva(percIva2.ToString, importo2)
                   valTotaleImpostaRep2 = CalcolaPercentuale(valTotaleImponibile2, percIva2)
 
                Case "Reparto 3"
                   importo3 = Convert.ToDouble(dgvDettagli.Rows(i).Cells(clnImporto.Name).Value)
+                  importo3 = (importo3 + valScontoDiviso)
                   percIva3 = Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnIva.Name).Value)
                   valTotaleImponibile3 = valTotaleImponibile3 + CalcolaImponibileIva(percIva3.ToString, importo3)
                   valTotaleImpostaRep3 = CalcolaPercentuale(valTotaleImponibile3, percIva3)
 
                Case "Reparto 4"
                   importo4 = Convert.ToDouble(dgvDettagli.Rows(i).Cells(clnImporto.Name).Value)
+                  importo4 = (importo4 + valScontoDiviso)
                   percIva4 = Convert.ToInt32(dgvDettagli.Rows(i).Cells(clnIva.Name).Value)
                   valTotaleImponibile4 = valTotaleImponibile4 + CalcolaImponibileIva(percIva4.ToString, importo4)
                   valTotaleImpostaRep4 = CalcolaPercentuale(valTotaleImponibile4, percIva4)
@@ -2591,11 +2615,19 @@ Public Class frmDocumento
 
                Case STATO_DOC_EMESSO
                   ' Modifica lo stato del documento.
-                  ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO_STAMPATO)
+                  If Me.Tag <> String.Empty Then
+                     ModificaStatoDocumento(TAB_DOCUMENTI, Me.Tag, STATO_DOC_EMESSO_STAMPATO)
+                  Else
+                     ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO_STAMPATO)
+                  End If
 
                Case Else
                   ' Modifica lo stato del documento.
-                  ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_STAMPATO)
+                  If Me.Tag <> String.Empty Then
+                     ModificaStatoDocumento(TAB_DOCUMENTI, Me.Tag, STATO_DOC_STAMPATO)
+                  Else
+                     ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_STAMPATO)
+                  End If
 
             End Select
          Else
@@ -2655,7 +2687,11 @@ Public Class frmDocumento
             SalvaStatistiche(True)
 
             ' Modifica lo stato del documento.
-            ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO_STAMPATO)
+            If Me.Tag <> String.Empty Then
+               ModificaStatoDocumento(TAB_DOCUMENTI, Me.Tag, STATO_DOC_EMESSO_STAMPATO)
+            Else
+               ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO_STAMPATO)
+            End If
 
             MessageBox.Show("Tutte le operazioni contabili sono state eseguite!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -2693,7 +2729,11 @@ Public Class frmDocumento
             SalvaStatistiche(True)
 
             ' Modifica lo stato del documento.
-            ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO)
+            If Me.Tag <> String.Empty Then
+               ModificaStatoDocumento(TAB_DOCUMENTI, Me.Tag, STATO_DOC_EMESSO)
+            Else
+               ModificaStatoDocumento(TAB_DOCUMENTI, LeggiUltimoRecord(TAB_DOCUMENTI), STATO_DOC_EMESSO)
+            End If
 
             If IsNothing(g_frmDocumenti) = False Then
                ' Aggiorna la griglia dati.

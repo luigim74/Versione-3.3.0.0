@@ -1,8 +1,18 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 03/01/2018
-' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
+' Data ultima modifica: 14/08/2018
+' Descrizione:          Elenco documenti emessi..
+' Note:
+
+' Elenco Attivita:
+
+' DA_FARE_A Sviluppare! Aggiungere campo 'Chiuso' per l'elenco documenti.
+
+' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -18,10 +28,10 @@ Public Class ElencoDoc
    Const COLONNA_ID_DOC As Short = 0
    Const COLONNA_NUMERO_DOC As Short = 1
    Const COLONNA_DATA_DOC As Short = 2
-    Const COLONNA_TIPO_DOC As Short = 4
-    Const COLONNA_INTESTATARIO As Short = 5
-    Const COLONNA_STATO_DOC As Short = 6
-    Const COLONNA_IMPORTO_TOTALE As Short = 9 '6 '7
+   Const COLONNA_TIPO_DOC As Short = 4
+   Const COLONNA_INTESTATARIO As Short = 5
+   Const COLONNA_STATO_DOC As Short = 6
+   Const COLONNA_IMPORTO_TOTALE As Short = 9 '6 '7
    Const COLONNA_IMPORTO_SOSPESO As Short = 10 '7 '8
    Const COLONNA_IMPORTO_IMPONIBILE As Short = 11 '7 '8
    Const COLONNA_IMPORTO_IMPOSTA As Short = 12 '7 '8

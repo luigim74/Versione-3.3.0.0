@@ -3323,9 +3323,9 @@ Public Class ContoPos
             .Ora = g_frmPos.lblOra.Text
             .Tipo = tipoDocumento
             .Stato = "Emesso e stampato"
-                .Causale = "Vendita da ristorante"
+            .Causale = "Vendita da ristorante"
 
-                Select Case tipoCliente
+            Select Case tipoCliente
                Case Cliente.Azienda
                   ' Viene aggiunta la lettera A per identificare le Aziende.
                   ' Codice aggiunto dopo la creazione della nuova anagrafica Aziende.
@@ -3369,7 +3369,7 @@ Public Class ContoPos
             .BuoniPasto = CFormatta.FormattaNumeroDouble(txtBuoni.Text)
             .BuoniPastoIncassare = CFormatta.FormattaNumeroDouble(txtBuoni.Text)
             .Note = String.Empty
-            .Chiuso = "Sì"
+            .Chiuso = "No"
 
             If txtCartaCredito.Text <> VALORE_ZERO Then
                .TipoPagamento = eui_cmdTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
@@ -3409,25 +3409,36 @@ Public Class ContoPos
                Dim valTotaleImponibile3 As Double
                Dim valTotaleImponibile4 As Double
 
+               Dim numTotaleImporti As Integer
                Dim valCopertoDiviso As Double
                Dim valServizioDiviso As Double
                Dim valScontoDiviso As Double
                Dim valCoperto As Double = CFormatta.FormattaNumeroDouble(txtCoperto.Text)
 
+               Dim K As Integer
+               For K = 0 To lstvDettagli.Items.Count - 1
+                  ' Conta il numero degli importi validi. 
+                  If IsNumeric(lstvDettagli.Items(K).SubItems(4).Text) = True And lstvDettagli.Items(K).SubItems(4).Text <> VALORE_ZERO Then
+                     ' Conta il numero degli importi validi. 
+                     numTotaleImporti += 1
+                  End If
+               Next
+
                ' COPERTO - Divide il valore del COPERTO per il numero di elementi (Piatti) presenti nella lista.
-               valCopertoDiviso = valCoperto / lstvDettagli.Items.Count
+               valCopertoDiviso = valCoperto / numTotaleImporti
 
                ' SERVIZIO - Divide il valore del SERVIZIO per il numero di elementi (Piatti) presenti nella lista.
-               valServizioDiviso = valServizio / lstvDettagli.Items.Count
+               valServizioDiviso = valServizio / numTotaleImporti
 
                ' SCONTO - Divide il valore dello SCONTO per il numero di elementi (Piatti) presenti nella lista.
-               valScontoDiviso = valSconto / lstvDettagli.Items.Count
+               valScontoDiviso = valSconto / numTotaleImporti
 
                ' Somma tutti gli importi delle righe del documento.
                Dim j As Integer
                For j = 0 To lstvDettagli.Items.Count - 1
 
                   Select Case VerificaAliquotaIva(lstvDettagli.Items(j).SubItems(5).Text)
+
                      Case "Reparto 1"
                         importo1 = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
                         importo1 = (importo1 + valCopertoDiviso + valServizioDiviso) - valScontoDiviso

@@ -2271,7 +2271,7 @@ Partial Public Class HospitalityDataSet
             Me.columnId.AllowDBNull = false
             Me.columnId.Unique = true
             Me.columnCodiceArticolo.MaxLength = 100
-            Me.columnDescrizione.MaxLength = 100
+            Me.columnDescrizione.MaxLength = 255
             Me.columnUnitàMisura.MaxLength = 50
             Me.columnCategoria.MaxLength = 50
         End Sub

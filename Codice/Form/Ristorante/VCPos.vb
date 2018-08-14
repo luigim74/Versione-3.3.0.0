@@ -3471,7 +3471,14 @@ Public Class frmPos
                Else
                   .IdCategoria = "0"
                End If
-               .DesCategoria = FormattaApici(lstvDettagli.Items(i).SubItems(6).Text)
+
+               ' Se non esiste un valore per il campo Descrizione Categoria.
+               If lstvDettagli.Items(i).SubItems(6).Text = String.Empty Then
+                  .DesCategoria = "Nessuna"
+               Else
+                  .DesCategoria = FormattaApici(lstvDettagli.Items(i).SubItems(6).Text)
+               End If
+
                .IdPiatto = lstvDettagli.Items(i).SubItems(5).Text
                .DesPiatto = FormattaApici(lstvDettagli.Items(i).SubItems(2).Text)
                .IdTavolo = "0"

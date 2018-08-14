@@ -771,6 +771,7 @@ Public Class IncassaSospeso
         End Try
     End Sub
 
+   ' DA_FARE: Verificare! SalvaDocumento.
    Private Sub SalvaDocumento()
       Try
          Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento)
@@ -822,8 +823,8 @@ Public Class IncassaSospeso
             .Carte = VALORE_ZERO
             .BuoniPasto = VALORE_ZERO
             .BuoniPastoIncassare = VALORE_ZERO
-            .Chiuso = "Sì"
-            .Note = ""
+            .Chiuso = "No"
+            .Note = String.Empty
             .TipoPagamento = String.Empty
             .Tavolo = String.Empty
             .Cameriere = String.Empty

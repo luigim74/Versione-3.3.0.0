@@ -840,7 +840,7 @@
   <xs:element name="HospitalityDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HospitalityDataSet" msprop:Generator_UserDSName="HospitalityDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Azienda" msprop:Generator_TableClassName="AziendaDataTable" msprop:Generator_TableVarName="tableAzienda" msprop:Generator_TablePropName="Azienda" msprop:Generator_RowDeletingName="AziendaRowDeleting" msprop:Generator_RowChangingName="AziendaRowChanging" msprop:Generator_RowEvHandlerName="AziendaRowChangeEventHandler" msprop:Generator_RowDeletedName="AziendaRowDeleted" msprop:Generator_UserTableName="Azienda" msprop:Generator_RowChangedName="AziendaRowChanged" msprop:Generator_RowEvArgName="AziendaRowChangeEvent" msprop:Generator_RowClassName="AziendaRow">
+        <xs:element name="Azienda" msprop:Generator_TableClassName="AziendaDataTable" msprop:Generator_TableVarName="tableAzienda" msprop:Generator_RowChangedName="AziendaRowChanged" msprop:Generator_TablePropName="Azienda" msprop:Generator_RowDeletingName="AziendaRowDeleting" msprop:Generator_RowChangingName="AziendaRowChanging" msprop:Generator_RowEvHandlerName="AziendaRowChangeEventHandler" msprop:Generator_RowDeletedName="AziendaRowDeleted" msprop:Generator_RowClassName="AziendaRow" msprop:Generator_UserTableName="Azienda" msprop:Generator_RowEvArgName="AziendaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1030,7 +1030,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Documenti" msprop:Generator_TableClassName="DocumentiDataTable" msprop:Generator_TableVarName="tableDocumenti" msprop:Generator_TablePropName="Documenti" msprop:Generator_RowDeletingName="DocumentiRowDeleting" msprop:Generator_RowChangingName="DocumentiRowChanging" msprop:Generator_RowEvHandlerName="DocumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentiRowDeleted" msprop:Generator_UserTableName="Documenti" msprop:Generator_RowChangedName="DocumentiRowChanged" msprop:Generator_RowEvArgName="DocumentiRowChangeEvent" msprop:Generator_RowClassName="DocumentiRow">
+        <xs:element name="Documenti" msprop:Generator_TableClassName="DocumentiDataTable" msprop:Generator_TableVarName="tableDocumenti" msprop:Generator_RowChangedName="DocumentiRowChanged" msprop:Generator_TablePropName="Documenti" msprop:Generator_RowDeletingName="DocumentiRowDeleting" msprop:Generator_RowChangingName="DocumentiRowChanging" msprop:Generator_RowEvHandlerName="DocumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentiRowDeleted" msprop:Generator_RowClassName="DocumentiRow" msprop:Generator_UserTableName="Documenti" msprop:Generator_RowEvArgName="DocumentiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1211,7 +1211,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DettagliDoc" msprop:Generator_TableClassName="DettagliDocDataTable" msprop:Generator_TableVarName="tableDettagliDoc" msprop:Generator_TablePropName="DettagliDoc" msprop:Generator_RowDeletingName="DettagliDocRowDeleting" msprop:Generator_RowChangingName="DettagliDocRowChanging" msprop:Generator_RowEvHandlerName="DettagliDocRowChangeEventHandler" msprop:Generator_RowDeletedName="DettagliDocRowDeleted" msprop:Generator_UserTableName="DettagliDoc" msprop:Generator_RowChangedName="DettagliDocRowChanged" msprop:Generator_RowEvArgName="DettagliDocRowChangeEvent" msprop:Generator_RowClassName="DettagliDocRow">
+        <xs:element name="DettagliDoc" msprop:Generator_TableClassName="DettagliDocDataTable" msprop:Generator_TableVarName="tableDettagliDoc" msprop:Generator_RowChangedName="DettagliDocRowChanged" msprop:Generator_TablePropName="DettagliDoc" msprop:Generator_RowDeletingName="DettagliDocRowDeleting" msprop:Generator_RowChangingName="DettagliDocRowChanging" msprop:Generator_RowEvHandlerName="DettagliDocRowChangeEventHandler" msprop:Generator_RowDeletedName="DettagliDocRowDeleted" msprop:Generator_RowClassName="DettagliDocRow" msprop:Generator_UserTableName="DettagliDoc" msprop:Generator_RowEvArgName="DettagliDocRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1226,7 +1226,7 @@
               <xs:element name="Descrizione" msprop:Generator_ColumnVarNameInTable="columnDescrizione" msprop:Generator_ColumnPropNameInRow="Descrizione" msprop:Generator_ColumnPropNameInTable="DescrizioneColumn" msprop:Generator_UserColumnName="Descrizione" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -1252,7 +1252,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StoricoPresenzeCamere" msprop:Generator_TableClassName="StoricoPresenzeCamereDataTable" msprop:Generator_TableVarName="tableStoricoPresenzeCamere" msprop:Generator_TablePropName="StoricoPresenzeCamere" msprop:Generator_RowDeletingName="StoricoPresenzeCamereRowDeleting" msprop:Generator_RowChangingName="StoricoPresenzeCamereRowChanging" msprop:Generator_RowEvHandlerName="StoricoPresenzeCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="StoricoPresenzeCamereRowDeleted" msprop:Generator_UserTableName="StoricoPresenzeCamere" msprop:Generator_RowChangedName="StoricoPresenzeCamereRowChanged" msprop:Generator_RowEvArgName="StoricoPresenzeCamereRowChangeEvent" msprop:Generator_RowClassName="StoricoPresenzeCamereRow">
+        <xs:element name="StoricoPresenzeCamere" msprop:Generator_TableClassName="StoricoPresenzeCamereDataTable" msprop:Generator_TableVarName="tableStoricoPresenzeCamere" msprop:Generator_RowChangedName="StoricoPresenzeCamereRowChanged" msprop:Generator_TablePropName="StoricoPresenzeCamere" msprop:Generator_RowDeletingName="StoricoPresenzeCamereRowDeleting" msprop:Generator_RowChangingName="StoricoPresenzeCamereRowChanging" msprop:Generator_RowEvHandlerName="StoricoPresenzeCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="StoricoPresenzeCamereRowDeleted" msprop:Generator_RowClassName="StoricoPresenzeCamereRow" msprop:Generator_UserTableName="StoricoPresenzeCamere" msprop:Generator_RowEvArgName="StoricoPresenzeCamereRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

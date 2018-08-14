@@ -1,3 +1,19 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome form:            Chiusura
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       13/08/2010
+' Data ultima modifica: 14/08/2018
+' Descrizione:          Finestra per effettuare la chiusura giornaliera di tutti i documenti emessi.
+' Note:
+
+' Elenco Attivita:
+
+' DA_FARE_A Sviluppare! Aggiungere campo 'Chiuso' per l'elenco documenti.
+
+' ******************************************************************
+#End Region
+
 Imports System.Data
 Imports System.Data.OleDb
 
@@ -9,6 +25,9 @@ Public Class Chiusura
    Const DOC_FATTURA As String = "Fattura"
    Const DOC_RICEVUTA As String = "Ricevuta Fiscale"
    Const DOC_SCONTRINO As String = "Scontrino"
+
+   Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
+   Const STATO_DOC_EMESSO As String = "Emesso"
 
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
@@ -413,7 +432,7 @@ Public Class Chiusura
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa 
-         sql = String.Format("UPDATE {0} SET Chiuso = @Chiuso WHERE Chiuso = 'No'", tabella)
+         sql = String.Format("UPDATE {0} SET Chiuso = @Chiuso WHERE (Chiuso = 'No') AND (StatoDoc LIKE '{1}%')", tabella, STATO_DOC_EMESSO)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
@@ -453,7 +472,7 @@ Public Class Chiusura
          End If
 
          ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE (Chiuso = 'No') AND (TipoDoc = '{1}')", tabella, tipoDoc)
+         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE (Chiuso = 'No') AND (TipoDoc = '{1}') AND (StatoDoc LIKE '{2}%')", tabella, tipoDoc, STATO_DOC_EMESSO)
          numRec = Convert.ToInt32(cmd.ExecuteScalar())
 
          Return numRec
@@ -481,7 +500,7 @@ Public Class Chiusura
          End If
 
          ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT SUM(TotDoc) FROM {0} WHERE (Chiuso = 'No')AND (TipoDoc = '{1}')", tabella, tipoDoc)
+         cmd.CommandText = String.Format("SELECT SUM(TotDoc) FROM {0} WHERE (Chiuso = 'No') AND (TipoDoc = '{1}') AND (StatoDoc LIKE '{2}%')", tabella, tipoDoc, STATO_DOC_EMESSO)
          If IsDBNull(cmd.ExecuteScalar()) = False Then
             valTotale = Convert.ToDouble(cmd.ExecuteScalar())
          Else
@@ -513,7 +532,7 @@ Public Class Chiusura
          End If
 
          ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT SUM(SospesoIncassare) FROM {0} WHERE (Chiuso = 'No')", tabella)
+         cmd.CommandText = String.Format("SELECT SUM(SospesoIncassare) FROM {0} WHERE (Chiuso = 'No') AND (StatoDoc LIKE '{1}%')", tabella, STATO_DOC_EMESSO)
          If IsDBNull(cmd.ExecuteScalar()) = False Then
             valTotale = Convert.ToDouble(cmd.ExecuteScalar())
          Else
@@ -545,7 +564,7 @@ Public Class Chiusura
          End If
 
          ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT SUM(BuoniPastoIncassare) FROM {0} WHERE (Chiuso = 'No')", tabella)
+         cmd.CommandText = String.Format("SELECT SUM(BuoniPastoIncassare) FROM {0} WHERE (Chiuso = 'No') AND (StatoDoc LIKE '{1}%')", tabella, STATO_DOC_EMESSO)
          If IsDBNull(cmd.ExecuteScalar()) = False Then
             valTotale = Convert.ToDouble(cmd.ExecuteScalar())
          Else
@@ -591,16 +610,16 @@ Public Class Chiusura
          End If
 
          If IsNumeric(txtFatture.Text) = False Then
-            txtFatture.Text = "0,00"
+            txtFatture.Text = VALORE_ZERO
          End If
          If IsNumeric(txtRicevute.Text) = False Then
-            txtRicevute.Text = "0,00"
+            txtRicevute.Text = VALORE_ZERO
          End If
          If IsNumeric(txtScontrini.Text) = False Then
-            txtScontrini.Text = "0,00"
+            txtScontrini.Text = VALORE_ZERO
          End If
          If IsNumeric(txtNonIncassato.Text) = False Then
-            txtNonIncassato.Text = "0,00"
+            txtNonIncassato.Text = VALORE_ZERO
          End If
 
          SalvaChiusuraDoc(TABELLA_DOCUMENTI)

@@ -2420,6 +2420,7 @@ Public Class frmAziende
       End Try
    End Sub
 
+   ' DA_FARE: Verificare! SalvaDocumento.
    Private Sub SalvaDocumento()
       Try
          ' Valore ID per l'Azienda o Buono pasto.
@@ -2481,7 +2482,7 @@ Public Class frmAziende
             .Sospeso = VALORE_ZERO
             .SospesoIncassare = VALORE_ZERO
             .TotDoc = valDaPagare
-            .Chiuso = "Sì"
+            .Chiuso = "No"
             .Note = FormattaApici(txtNoteDoc.Text)
 
             ' Calcola l'IVA.

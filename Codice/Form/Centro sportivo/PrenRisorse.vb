@@ -4050,6 +4050,7 @@ Public Class frmPrenRisorse
 
    End Function
 
+   ' DA_FARE: Verificare! SalvaDocumento.
    Private Function SalvaDocumento() As Boolean
       Try
          Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento)
@@ -4110,7 +4111,7 @@ Public Class frmPrenRisorse
             .Carte = VALORE_ZERO
             .BuoniPasto = VALORE_ZERO
             .BuoniPastoIncassare = VALORE_ZERO
-            .Chiuso = "Sì"
+            .Chiuso = "No"
             .Note = String.Empty
 
             .TipoPagamento = cmbPagamento.Text
