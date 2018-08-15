@@ -3,13 +3,11 @@
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 14/08/2018
+' Data ultima modifica: 15/08/2018
 ' Descrizione:          Elenco documenti emessi..
 ' Note:
 
 ' Elenco Attivita:
-
-' DA_FARE_A Sviluppare! Aggiungere campo 'Chiuso' per l'elenco documenti.
 
 ' ******************************************************************
 #End Region
@@ -31,13 +29,14 @@ Public Class ElencoDoc
    Const COLONNA_TIPO_DOC As Short = 4
    Const COLONNA_INTESTATARIO As Short = 5
    Const COLONNA_STATO_DOC As Short = 6
-   Const COLONNA_IMPORTO_TOTALE As Short = 9 '6 '7
-   Const COLONNA_IMPORTO_SOSPESO As Short = 10 '7 '8
-   Const COLONNA_IMPORTO_IMPONIBILE As Short = 11 '7 '8
-   Const COLONNA_IMPORTO_IMPOSTA As Short = 12 '7 '8
-   Const COLONNA_IMPORTO_SOSPESO_INC As Short = 14
-   Const COLONNA_IMPORTO_BUONI As Short = 13 '10 '11
-   Const COLONNA_IMPORTO_BUONI_INC As Short = 15
+   Const COLONNA_IMPORTO_TOTALE As Short = 9
+   Const COLONNA_IMPORTO_SOSPESO As Short = 10
+   Const COLONNA_IMPORTO_IMPONIBILE As Short = 11
+   Const COLONNA_IMPORTO_IMPOSTA As Short = 12
+   Const COLONNA_IMPORTO_BUONI As Short = 13
+   Const COLONNA_CONTABILIZZATO As Short = 14
+   Const COLONNA_IMPORTO_SOSPESO_INC As Short = 15
+   Const COLONNA_IMPORTO_BUONI_INC As Short = 16
 
    Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
    Const TIPO_DOC_FF As String = "Fattura"
@@ -2077,7 +2076,7 @@ Public Class ElencoDoc
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
 
-         ' Id - Codice
+         ' 0 Id - Codice
          Dim codiceStyle As New DataGridTextBoxColumn
          codiceStyle.MappingName = "Id"
          codiceStyle.HeaderText = "Codice"
@@ -2086,7 +2085,7 @@ Public Class ElencoDoc
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Numero documento
+         ' 1 Numero documento
          Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          numeroStyle.MappingName = "NumDoc"
          numeroStyle.HeaderText = "Numero."
@@ -2096,7 +2095,7 @@ Public Class ElencoDoc
          numeroStyle.Alignment = HorizontalAlignment.Right
          numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(numeroStyle)
-         ' Data documento
+         ' 2 Data documento
          Dim dataStyle As New DataGridTextBoxColumn
          dataStyle.MappingName = "DataDoc"
          dataStyle.HeaderText = "Data"
@@ -2105,7 +2104,7 @@ Public Class ElencoDoc
          dataStyle.Alignment = HorizontalAlignment.Center
          dataStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataStyle)
-         ' Ora documento
+         ' 3 Ora documento
          Dim oraStyle As New DataGridTextBoxColumn
          oraStyle.MappingName = "OraDoc"
          oraStyle.HeaderText = "Ora"
@@ -2114,7 +2113,7 @@ Public Class ElencoDoc
          oraStyle.Alignment = HorizontalAlignment.Left
          oraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(oraStyle)
-         ' Documento
+         ' 4 Documento
          Dim documentoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          documentoStyle.MappingName = "TipoDoc"
          documentoStyle.HeaderText = "Tipo documento"
@@ -2122,7 +2121,7 @@ Public Class ElencoDoc
          documentoStyle.NullText = ""
          documentoStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(documentoStyle)
-         ' Cliente
+         ' 5 Cliente
          Dim clienteStyle As New DataGridTextBoxColumn
          clienteStyle.MappingName = "Cliente"
          clienteStyle.HeaderText = "Intestatario"
@@ -2130,7 +2129,7 @@ Public Class ElencoDoc
          clienteStyle.NullText = ""
          clienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(clienteStyle)
-         ' Stato
+         ' 6 Stato
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "StatoDoc"
          statoStyle.HeaderText = "Stato"
@@ -2138,7 +2137,7 @@ Public Class ElencoDoc
          statoStyle.NullText = ""
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' Causale
+         ' 7 Causale
          Dim causaleStyle As New DataGridTextBoxColumn
          causaleStyle.MappingName = "CausaleDoc"
          causaleStyle.HeaderText = "Causale"
@@ -2146,7 +2145,7 @@ Public Class ElencoDoc
          causaleStyle.NullText = ""
          causaleStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(causaleStyle)
-         ' Tipo pagamento
+         ' 8 Tipo pagamento
          Dim tipoPagStyle As New DataGridTextBoxColumn
          tipoPagStyle.MappingName = "TipoPagamento"
          tipoPagStyle.HeaderText = "Tipo pagamento"
@@ -2154,7 +2153,7 @@ Public Class ElencoDoc
          tipoPagStyle.NullText = ""
          tipoPagStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipoPagStyle)
-         ' Totale documento
+         ' 9 Totale documento
          Dim totDocStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          totDocStyle.MappingName = "TotDoc"
          totDocStyle.HeaderText = "Totale."
@@ -2164,7 +2163,7 @@ Public Class ElencoDoc
          totDocStyle.Alignment = HorizontalAlignment.Right
          totDocStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(totDocStyle)
-         ' Sospeso
+         ' 10 Sospeso
          Dim sospesoStyle As New DataGridTextBoxColumn
          sospesoStyle.MappingName = "Sospeso"
          sospesoStyle.HeaderText = "Sospeso."
@@ -2174,7 +2173,7 @@ Public Class ElencoDoc
          sospesoStyle.Alignment = HorizontalAlignment.Right
          sospesoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(sospesoStyle)
-         ' Imponibile
+         ' 11 Imponibile
          Dim imponibileStyle As New DataGridTextBoxColumn
          imponibileStyle.MappingName = "Imponibile"
          imponibileStyle.HeaderText = "Imponibile."
@@ -2184,7 +2183,7 @@ Public Class ElencoDoc
          imponibileStyle.Alignment = HorizontalAlignment.Right
          imponibileStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(imponibileStyle)
-         'Imposta
+         ' 12 Imposta
          Dim impostaStyle As New DataGridTextBoxColumn
          impostaStyle.MappingName = "Imposta"
          impostaStyle.HeaderText = "Imposta. "
@@ -2194,7 +2193,7 @@ Public Class ElencoDoc
          impostaStyle.Alignment = HorizontalAlignment.Right
          impostaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(impostaStyle)
-         ' Buoni pasto
+         ' 13 Buoni pasto
          Dim buoniStyle As New DataGridTextBoxColumn
          buoniStyle.MappingName = "BuoniPasto"
          buoniStyle.HeaderText = "Buoni pasto."
@@ -2204,7 +2203,16 @@ Public Class ElencoDoc
          buoniStyle.Alignment = HorizontalAlignment.Right
          buoniStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(buoniStyle)
-         ' Sospeso da incassare
+         ' 14 Chiuso.
+         Dim chiusoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         chiusoStyle.MappingName = "Chiuso"
+         chiusoStyle.HeaderText = "Contabilizzato"
+         chiusoStyle.Width = 100
+         chiusoStyle.NullText = ""
+         chiusoStyle.Alignment = HorizontalAlignment.Center
+         chiusoStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         gridStyle.GridColumnStyles.Add(chiusoStyle)
+         ' 15 Sospeso da incassare
          Dim sospesoIncStyle As New DataGridTextBoxColumn
          sospesoIncStyle.MappingName = "SospesoIncassare"
          sospesoIncStyle.HeaderText = ""
@@ -2213,7 +2221,7 @@ Public Class ElencoDoc
          sospesoIncStyle.Alignment = HorizontalAlignment.Right
          sospesoIncStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(sospesoIncStyle)
-         ' Buoni pasto da incassare
+         ' 16 Buoni pasto da incassare
          Dim buoniIncStyle As New DataGridTextBoxColumn
          buoniIncStyle.MappingName = "BuoniPastoIncassare"
          buoniIncStyle.HeaderText = ""
@@ -2279,6 +2287,8 @@ Public Class ElencoDoc
                campoRicerca = "BuoniPasto"
             Case "Tipo pagamento"
                campoRicerca = "TipoPagamento"
+            Case "Contabilizzato"
+               campoRicerca = "Chiuso"
          End Select
 
          If testoRicerca <> String.Empty Then
@@ -2351,6 +2361,7 @@ Public Class ElencoDoc
          eui_cmbCampoRicerca.Items.Add("Imponibile")
          eui_cmbCampoRicerca.Items.Add("Imposta")
          eui_cmbCampoRicerca.Items.Add("Buoni pasto")
+         eui_cmbCampoRicerca.Items.Add("Contabilizzato")
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

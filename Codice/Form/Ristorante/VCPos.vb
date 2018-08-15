@@ -4289,7 +4289,7 @@ Public Class frmPos
                ' DialogResult = Cancel
                If numeroContoDoc = String.Empty Then
                   ' Pulsante esci.
-                  BtnCancellaTutto()
+                  ' DA_FARE_B: BtnCancellaTutto() - Non utilizzata per mantenere i piatti nel punto cassa quando si esce dal conto senza stampare un documento.
                Else
                   ' Parcheggia il conto.
                   If IsNothing(g_frmVCTavoli) = False Then

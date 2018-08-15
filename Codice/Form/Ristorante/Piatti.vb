@@ -1,8 +1,16 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Nome form:            frmPiatti
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/04/2006
-' Data ultima modifica: 02/12/2017
+' Data ultima modifica: 15/08/2018
 ' Descrizione:          Anagrafica Piatti.
+' Note:
+
+' Elenco Attivita:
+
+' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -1036,29 +1044,33 @@ Public Class frmPiatti
                .ValVenduto = VALORE_ZERO
             End If
             If IsNumeric(txtListino1.Text) Then
-               .Listino1 = CFormatta.FormattaEuro(txtListino1.Text)
+               .Listino1 = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtListino1.Text))
             Else
                .Listino1 = VALORE_ZERO
             End If
             If IsNumeric(txtListino2.Text) Then
-               .Listino2 = CFormatta.FormattaEuro(txtListino2.Text)
+               .Listino2 = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtListino2.Text))
             Else
                .Listino2 = VALORE_ZERO
             End If
             If IsNumeric(txtListino3.Text) Then
-               .Listino3 = CFormatta.FormattaEuro(txtListino3.Text)
+               .Listino3 = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtListino3.Text))
             Else
                .Listino3 = VALORE_ZERO
             End If
             If IsNumeric(txtListino4.Text) Then
-               .Listino4 = CFormatta.FormattaEuro(txtListino4.Text)
+               .Listino4 = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtListino4.Text))
             Else
                .Listino4 = VALORE_ZERO
             End If
 
-            .AliquotaIva = cmbAliquotaIva.Text
+            If .Immagine = String.Empty Then
+               .Immagine = String.Empty
+            End If
 
-            .Note = FormattaApici(txtNote.Text)
+            If .Icona = String.Empty Then
+               .Icona = String.Empty
+            End If
 
             If chkVariazione.Checked = True Then
                .Variazione = "Sì"
@@ -1071,6 +1083,9 @@ Public Class frmPiatti
             Else
                .EscludiMenu = "No"
             End If
+
+            .AliquotaIva = cmbAliquotaIva.Text
+            .Note = FormattaApici(txtNote.Text)
 
             .ColoreSfondo = cmdColoreSfondo.BackColor.ToArgb
             .ColoreTesto = cmdColoreTesto.BackColor.ToArgb
@@ -1551,25 +1566,25 @@ Public Class frmPiatti
 
    Private Sub txtListino1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtListino1.LostFocus
       If IsNumeric(sender.Text) Then
-         sender.Text = CFormatta.FormattaEuro(sender.Text)
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
 
    Private Sub txtListino2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtListino2.LostFocus
       If IsNumeric(sender.Text) Then
-         sender.Text = CFormatta.FormattaEuro(sender.Text)
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
 
    Private Sub txtListino3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtListino3.LostFocus
       If IsNumeric(sender.Text) Then
-         sender.Text = CFormatta.FormattaEuro(sender.Text)
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
 
    Private Sub txtListino4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtListino4.LostFocus
       If IsNumeric(sender.Text) Then
-         sender.Text = CFormatta.FormattaEuro(sender.Text)
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
 

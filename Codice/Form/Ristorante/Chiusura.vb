@@ -9,8 +9,6 @@
 
 ' Elenco Attivita:
 
-' DA_FARE_A Sviluppare! Aggiungere campo 'Chiuso' per l'elenco documenti.
-
 ' ******************************************************************
 #End Region
 
@@ -642,6 +640,11 @@ Public Class Chiusura
                   .FiltraDati("Tutti")
                End If
             End With
+         End If
+
+         If IsNothing(g_frmDocumenti) = False Then
+            ' Aggiorna la griglia dati.
+            g_frmDocumenti.AggiornaDati()
          End If
 
          ' Serve a registrare l'operazione ANNULLA nell'evento Closed.

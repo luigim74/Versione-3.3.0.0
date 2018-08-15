@@ -863,7 +863,13 @@ Public Class DivisioneContoPOS
 
          Dim y As Integer
          For y = 0 To g_frmPos.lstvDettagli.Items.Count - 1
-            qtàTotale = qtàTotale + Convert.ToInt32(g_frmPos.lstvDettagli.Items(y).SubItems(1).Text)
+            If IsNumeric(g_frmPos.lstvDettagli.Items(y).SubItems(1).Text) = True Then
+               ' Piatto con quantità.
+               qtàTotale = qtàTotale + Convert.ToInt32(g_frmPos.lstvDettagli.Items(y).SubItems(1).Text)
+            Else
+               ' Variazione senza quantità.
+               qtàTotale = qtàTotale + 1
+            End If
          Next
 
          Return qtàTotale + valNumCoperti
@@ -1122,7 +1128,13 @@ Public Class DivisioneContoPOS
 
          Dim y As Integer
          For y = 0 To g_frmContoPos.lstvDettagliCopia.Items.Count - 1
-            qtàTotale = Convert.ToInt32(g_frmContoPos.lstvDettagliCopia.Items(y).SubItems(1).Text)
+            If IsNumeric(g_frmContoPos.lstvDettagliCopia.Items(y).SubItems(1).Text) = True Then
+               ' Piatto con quantità.
+               qtàTotale = Convert.ToInt32(g_frmContoPos.lstvDettagliCopia.Items(y).SubItems(1).Text)
+            Else
+               ' Variazione senza quantità.
+               qtàTotale = 1
+            End If
 
             If qtàTotale > 1 Then
 
