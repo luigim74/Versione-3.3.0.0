@@ -316,6 +316,8 @@ Public Class frmOpzioni
       Me.Label35 = New System.Windows.Forms.Label()
       Me.tbpCamere = New System.Windows.Forms.TabPage()
       Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+      Me.txtDescrizioneTassaSogg = New System.Windows.Forms.TextBox()
+      Me.Label54 = New System.Windows.Forms.Label()
       Me.ckbApplicaTassaRagazzi = New System.Windows.Forms.CheckBox()
       Me.ckbApplicaTassaNeonati = New System.Windows.Forms.CheckBox()
       Me.txtTassaSoggiorno = New System.Windows.Forms.TextBox()
@@ -461,8 +463,6 @@ Public Class frmOpzioni
       Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-      Me.Label54 = New System.Windows.Forms.Label()
-      Me.txtDescrizioneTassaSogg = New System.Windows.Forms.TextBox()
       Me.tabOpzioni.SuspendLayout()
       Me.tbpGenerali.SuspendLayout()
       Me.GroupBox5.SuspendLayout()
@@ -1279,6 +1279,27 @@ Public Class frmOpzioni
       Me.GroupBox9.TabIndex = 2
       Me.GroupBox9.TabStop = False
       Me.GroupBox9.Text = "Tassa di Soggiorno"
+      '
+      'txtDescrizioneTassaSogg
+      '
+      Me.txtDescrizioneTassaSogg.ForeColor = System.Drawing.Color.Black
+      Me.txtDescrizioneTassaSogg.Location = New System.Drawing.Point(27, 80)
+      Me.txtDescrizioneTassaSogg.Name = "txtDescrizioneTassaSogg"
+      Me.txtDescrizioneTassaSogg.Size = New System.Drawing.Size(293, 20)
+      Me.txtDescrizioneTassaSogg.TabIndex = 1
+      '
+      'Label54
+      '
+      Me.Label54.AutoSize = True
+      Me.Label54.BackColor = System.Drawing.Color.Transparent
+      Me.Label54.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label54.ForeColor = System.Drawing.Color.Black
+      Me.Label54.Location = New System.Drawing.Point(24, 64)
+      Me.Label54.Name = "Label54"
+      Me.Label54.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label54.Size = New System.Drawing.Size(134, 13)
+      Me.Label54.TabIndex = 189
+      Me.Label54.Text = "Descrizione nei documenti:"
       '
       'ckbApplicaTassaRagazzi
       '
@@ -2823,34 +2844,13 @@ Public Class frmOpzioni
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'Label54
-      '
-      Me.Label54.AutoSize = True
-      Me.Label54.BackColor = System.Drawing.Color.Transparent
-      Me.Label54.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label54.ForeColor = System.Drawing.Color.Black
-      Me.Label54.Location = New System.Drawing.Point(24, 64)
-      Me.Label54.Name = "Label54"
-      Me.Label54.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label54.Size = New System.Drawing.Size(134, 13)
-      Me.Label54.TabIndex = 189
-      Me.Label54.Text = "Descrizione nei documenti:"
-      '
-      'txtDescrizioneTassaSogg
-      '
-      Me.txtDescrizioneTassaSogg.ForeColor = System.Drawing.Color.Black
-      Me.txtDescrizioneTassaSogg.Location = New System.Drawing.Point(27, 80)
-      Me.txtDescrizioneTassaSogg.Name = "txtDescrizioneTassaSogg"
-      Me.txtDescrizioneTassaSogg.Size = New System.Drawing.Size(293, 20)
-      Me.txtDescrizioneTassaSogg.TabIndex = 1
-      '
       'frmOpzioni
       '
       Me.AcceptButton = Me.cmdOK
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(782, 566)
+      Me.ClientSize = New System.Drawing.Size(792, 576)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -2860,7 +2860,7 @@ Public Class frmOpzioni
       Me.Name = "frmOpzioni"
       Me.ShowInTaskbar = False
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      Me.Text = "Opzioni"
+      Me.Text = "Opzioni di configurazione"
       Me.tabOpzioni.ResumeLayout(False)
       Me.tbpGenerali.ResumeLayout(False)
       Me.tbpGenerali.PerformLayout()
@@ -2912,10 +2912,11 @@ Public Class frmOpzioni
    Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
    Const TIPO_DOC_FF As String = "Fattura"
    Const TAB_DOC As String = "Documenti"
+   Const TAB_SCHEDINE As String = "SchedinePS"
 
-    Const NUMERO_DOC As Integer = 25
+   Const NUMERO_DOC As Integer = 25
 
-    Const DIM_PAGINA As String = "50"
+   Const DIM_PAGINA As String = "50"
 
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
@@ -3810,17 +3811,17 @@ Public Class frmOpzioni
             ckbApplicaTassaRagazzi.Checked = False
          End If
 
-         ' A_TODO: HOTEL - da modificare!
-         ' Schedine PS / Mod. ISTAT C59
-         'txtNumeroFattura.Text = DatiConfig.GetValue("NumeroFattura")
-         'If IsNumeric(txtNumeroFattura.Text) = False Then
-         '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_FF)
-         '   If num = 0 Then
-         '      txtNumeroFattura.Text = "1"
-         '   Else
-         '      txtNumeroFattura.Text = (num + 1).ToString
-         '   End If
-         'End If
+         ' Schedine PS / Mod .ISTAT C59
+         txtNumeroSchedinaPS.Text = DatiConfig.GetValue("NumeroSchedina")
+         If IsNumeric(txtNumeroSchedinaPS.Text) = False Then
+            Dim num As Integer = LeggiNumeroMaxSchedine(TAB_SCHEDINE)
+            If num = 0 Then
+               txtNumeroSchedinaPS.Text = "1"
+            Else
+               txtNumeroSchedinaPS.Text = (num + 1).ToString
+            End If
+         End If
+
          'txtNumeroRicevuta.Text = DatiConfig.GetValue("NumeroRicevuta")
          'If IsNumeric(txtNumeroRicevuta.Text) = False Then
          '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_RF)
@@ -4387,6 +4388,7 @@ Public Class frmOpzioni
             DatiConfig.SetValue("DescrizioneTassaSoggHotel", txtDescrizioneTassaSogg.Text)
          End If
 
+         ' DA_FARE: Verificare!
          ' Applica Tassa di soggiorno Neonati.
          DatiConfig.SetValue("ApplicaTassaNeonati", ckbApplicaTassaNeonati.Checked)
          'ApplicaTassaNeonati = ckbApplicaTassaNeonati.Checked
@@ -4400,17 +4402,18 @@ Public Class frmOpzioni
          'ApplicaTassaRagazzi = ckbApplicaTassaRagazzi.Checked
 
          ' Schedine PS / Mod. ISTAT C59
-         'If IsNumeric(txtNumeroFattura.Text) = False Then
-         '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_FF)
-         '   If num = 0 Then
-         '      DatiConfig.SetValue("NumeroFattura", "1")
-         '   Else
-         '      DatiConfig.SetValue("NumeroFattura", (num + 1).ToString)
-         '   End If
-         'Else
-         '   DatiConfig.SetValue("NumeroFattura", txtNumeroFattura.Text)
-         'End If
+         If IsNumeric(txtNumeroSchedinaPS.Text) = False Then
+            Dim num As Integer = LeggiNumeroMaxSchedine(TAB_SCHEDINE)
+            If num = 0 Then
+               DatiConfig.SetValue("NumeroSchedina", "1")
+            Else
+               DatiConfig.SetValue("NumeroSchedina", (num + 1).ToString)
+            End If
+         Else
+            DatiConfig.SetValue("NumeroSchedina", txtNumeroSchedinaPS.Text)
+         End If
 
+         ' DA_FARE: Terminare!
          'If IsNumeric(txtNumeroRicevuta.Text) = False Then
          '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_RF)
          '   If num = 0 Then
@@ -4838,6 +4841,45 @@ Public Class frmOpzioni
          Dim ultimoGiornoAnno As String = CFormatta.FormattaData(numUltimoGiornoAnno & "/12/" & Anno)
 
          cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM {0} WHERE TipoDoc = '{1}' AND DataDoc BETWEEN #{2}# AND #{3}#", tabella, tipoDoc, primoGiornoAnno, ultimoGiornoAnno)
+
+         If IsDBNull(cmd.ExecuteScalar()) = False Then
+            numRec = CInt(cmd.ExecuteScalar())
+         Else
+            numRec = 0
+         End If
+
+         Return numRec
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
+   Private Function LeggiNumeroMaxSchedine(ByVal tabella As String) As Integer
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+      Dim cmd As New OleDbCommand(sql, cn)
+
+      Dim closeOnExit As Boolean
+      Dim numRec As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene il numero di record.
+         cmd.CommandText = String.Format("SELECT MAX(Numero) FROM {0}", tabella)
 
          If IsDBNull(cmd.ExecuteScalar()) = False Then
             numRec = CInt(cmd.ExecuteScalar())
@@ -5648,38 +5690,38 @@ Public Class frmOpzioni
 
    Public Sub CaricaListaReports(ByVal cmb As ComboBox)
       Try
-            Dim documenti(NUMERO_DOC) As String
+         Dim documenti(NUMERO_DOC) As String
 
-            documenti(0) = REPORT_RICEVUTA_A4_DOPPIA
-            documenti(1) = REPORT_RICEVUTA_A5
-            documenti(2) = REPORT_RICEVUTA_A6
-            documenti(3) = REPORT_FATTURA_A4_DOPPIA
-            documenti(4) = REPORT_FATTURA_A4
-            documenti(5) = REPORT_FATTURA_A4_IVA_MULTIPLA
-            documenti(6) = REPORT_PROFORMA_A4_DOPPIA
-            documenti(7) = REPORT_PROFORMA_A5
-            documenti(8) = REPORT_PROFORMA_A6
-            documenti(9) = REPORT_COMANDA_REPARTI
-            documenti(10) = REPORT_COMANDA_CLIENTI
-            documenti(11) = REPORT_COMANDA_REPARTI_KUBEII
-            documenti(12) = REPORT_COMANDA_CLIENTI_KUBEII
-            documenti(13) = REPORT_RICEVUTA_BELLA_NAPOLI
-            documenti(14) = REPORT_FATTURA_BELLA_NAPOLI
-            documenti(15) = REPORT_PROFORMA_BELLA_NAPOLI
-            documenti(16) = REPORT_PROFORMA_KUBEII
-            documenti(17) = REPORT_RICEVUTA_A4_DOPPIA_CENTRO_SPORTIVO
-            documenti(18) = REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO
-            documenti(19) = REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO
-            documenti(20) = REPORT_RICEVUTA_CELIDE
-            documenti(21) = REPORT_FATTURA_CELIDE
-            documenti(22) = REPORT_PROFORMA_CELIDE
-            documenti(23) = REPORT_RICEVUTA_FORCHETTA_DORO
-            documenti(24) = REPORT_FATTURA_FORCHETTA_DORO
-            documenti(25) = REPORT_PROFORMA_FORCHETTA_DORO
-            'documenti(26) = REPORT_RICEVUTA_KUBEII
-            'documenti(27) = REPORT_FATTURA_KUBEII
+         documenti(0) = REPORT_RICEVUTA_A4_DOPPIA
+         documenti(1) = REPORT_RICEVUTA_A5
+         documenti(2) = REPORT_RICEVUTA_A6
+         documenti(3) = REPORT_FATTURA_A4_DOPPIA
+         documenti(4) = REPORT_FATTURA_A4
+         documenti(5) = REPORT_FATTURA_A4_IVA_MULTIPLA
+         documenti(6) = REPORT_PROFORMA_A4_DOPPIA
+         documenti(7) = REPORT_PROFORMA_A5
+         documenti(8) = REPORT_PROFORMA_A6
+         documenti(9) = REPORT_COMANDA_REPARTI
+         documenti(10) = REPORT_COMANDA_CLIENTI
+         documenti(11) = REPORT_COMANDA_REPARTI_KUBEII
+         documenti(12) = REPORT_COMANDA_CLIENTI_KUBEII
+         documenti(13) = REPORT_RICEVUTA_BELLA_NAPOLI
+         documenti(14) = REPORT_FATTURA_BELLA_NAPOLI
+         documenti(15) = REPORT_PROFORMA_BELLA_NAPOLI
+         documenti(16) = REPORT_PROFORMA_KUBEII
+         documenti(17) = REPORT_RICEVUTA_A4_DOPPIA_CENTRO_SPORTIVO
+         documenti(18) = REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO
+         documenti(19) = REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO
+         documenti(20) = REPORT_RICEVUTA_CELIDE
+         documenti(21) = REPORT_FATTURA_CELIDE
+         documenti(22) = REPORT_PROFORMA_CELIDE
+         documenti(23) = REPORT_RICEVUTA_FORCHETTA_DORO
+         documenti(24) = REPORT_FATTURA_FORCHETTA_DORO
+         documenti(25) = REPORT_PROFORMA_FORCHETTA_DORO
+         'documenti(26) = REPORT_RICEVUTA_KUBEII
+         'documenti(27) = REPORT_FATTURA_KUBEII
 
-            Dim i As Integer
+         Dim i As Integer
          For i = 0 To NUMERO_DOC
             cmb.Items.Add(documenti(i))
          Next
@@ -5747,9 +5789,6 @@ Public Class frmOpzioni
 
    Private Sub frmOpzioni_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
-
          DatiConfig = New AppConfig
          DatiConfig.ConfigType = ConfigFileType.AppConfig
 
@@ -5859,6 +5898,9 @@ Public Class frmOpzioni
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_OPZIONI, MODULO_OPZIONI)
 
+         ' Visualizza un messaggio nella barra di stato.
+         g_frmMain.eui_Informazioni.Text = g_frmMain.LeggiDatiRivenditore()
+
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.Default
 
@@ -5954,8 +5996,8 @@ Public Class frmOpzioni
    Private Sub chkAbilitaPalmareAndroid_Click(sender As Object, e As EventArgs) Handles chkAbilitaPalmareAndroid.Click
       ' Se viene abilitata la gestione dei palmari richiede l'iserimento di un percorso di rete. 
       If chkAbilitaPalmareAndroid.Checked = True And txtPercorsoRetePalmare.Text = "" Then
-         MessageBox.Show("Se si abilita la gestione dei palmari è necessario specificare un percorso di lavoro per lo scambio dei dati." & vbCrLf & _
-                         "In caso contrario i dispositivi palmari non potranno inviare e ricevere informazioni.", _
+         MessageBox.Show("Se si abilita la gestione dei palmari è necessario specificare un percorso di lavoro per lo scambio dei dati." & vbCrLf &
+                         "In caso contrario i dispositivi palmari non potranno inviare e ricevere informazioni.",
                          NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
          txtPercorsoRetePalmare.Focus()
@@ -5977,8 +6019,8 @@ Public Class frmOpzioni
    Private Sub chkAbilitaPalmareWindows_Click(sender As Object, e As EventArgs) Handles chkAbilitaPalmareWindows.Click
       ' Se viene abilitata la gestione dei palmari richiede l'iserimento di un percorso di rete. 
       If chkAbilitaPalmareWindows.Checked = True And txtPercorsoRetePalmare.Text = "" Then
-         MessageBox.Show("Se si abilita la gestione dei palmari è necessario specificare un percorso di lavoro per lo scambio dei dati." & vbCrLf & _
-                         "In caso contrario i dispositivi palmari non potranno inviare e ricevere informazioni.", _
+         MessageBox.Show("Se si abilita la gestione dei palmari è necessario specificare un percorso di lavoro per lo scambio dei dati." & vbCrLf &
+                         "In caso contrario i dispositivi palmari non potranno inviare e ricevere informazioni.",
                          NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
          txtPercorsoRetePalmare.Focus()
@@ -6534,7 +6576,6 @@ Public Class frmOpzioni
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub chkNumeroRicevuta_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkNumeroRicevuta.CheckedChanged
@@ -6546,7 +6587,6 @@ Public Class frmOpzioni
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub txtNumeroFattura_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumeroFattura.KeyPress
@@ -6603,5 +6643,25 @@ Public Class frmOpzioni
       e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
    End Sub
 
+   Private Sub ckbNumeroSchedinaPS_CheckedChanged(sender As Object, e As EventArgs) Handles ckbNumeroSchedinaPS.CheckedChanged
+      Try
+         txtNumeroSchedinaPS.Enabled = ckbNumeroSchedinaPS.Checked
 
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub ckbNumeroModC59_CheckedChanged(sender As Object, e As EventArgs) Handles ckbNumeroModC59.CheckedChanged
+      Try
+         txtNumeroModC59.Enabled = ckbNumeroModC59.Checked
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
 End Class

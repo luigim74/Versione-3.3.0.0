@@ -183,14 +183,15 @@ Public Class frmPrenCamera
    Public WithEvents txtTotaleImporto As TextBox
    Friend WithEvents ColumnHeader2 As ColumnHeader
    Friend WithEvents ckbSchedina As CheckBox
+   Friend WithEvents cmdNuovoIntestatario As Button
    Friend WithEvents eui_cmdElimina As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup7 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup8 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -199,6 +200,7 @@ Public Class frmPrenCamera
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmdNuovoIntestatario = New System.Windows.Forms.Button()
       Me.ckbSchedina = New System.Windows.Forms.CheckBox()
       Me.nudNeonati = New System.Windows.Forms.NumericUpDown()
       Me.Label21 = New System.Windows.Forms.Label()
@@ -349,7 +351,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(585, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(605, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -383,7 +385,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(585, 20)
+      Me.Panel1.Size = New System.Drawing.Size(605, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -410,12 +412,13 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(585, 583)
+      Me.TabControl1.Size = New System.Drawing.Size(605, 603)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmdNuovoIntestatario)
       Me.TabPage1.Controls.Add(Me.ckbSchedina)
       Me.TabPage1.Controls.Add(Me.nudNeonati)
       Me.TabPage1.Controls.Add(Me.Label21)
@@ -452,9 +455,22 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(577, 557)
+      Me.TabPage1.Size = New System.Drawing.Size(597, 577)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'cmdNuovoIntestatario
+      '
+      Me.cmdNuovoIntestatario.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.cmdNuovoIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmdNuovoIntestatario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+      Me.cmdNuovoIntestatario.Location = New System.Drawing.Point(496, 119)
+      Me.cmdNuovoIntestatario.Name = "cmdNuovoIntestatario"
+      Me.cmdNuovoIntestatario.Size = New System.Drawing.Size(24, 22)
+      Me.cmdNuovoIntestatario.TabIndex = 8
+      Me.cmdNuovoIntestatario.Tag = ""
+      Me.cmdNuovoIntestatario.Text = "+"
+      Me.ToolTip1.SetToolTip(Me.cmdNuovoIntestatario, "Apre la finestra Clienti per un nuovo inserimento.")
       '
       'ckbSchedina
       '
@@ -462,7 +478,7 @@ Public Class frmPrenCamera
       Me.ckbSchedina.Location = New System.Drawing.Point(112, 254)
       Me.ckbSchedina.Name = "ckbSchedina"
       Me.ckbSchedina.Size = New System.Drawing.Size(94, 17)
-      Me.ckbSchedina.TabIndex = 15
+      Me.ckbSchedina.TabIndex = 16
       Me.ckbSchedina.Text = "Schedina P.S."
       Me.ckbSchedina.UseVisualStyleBackColor = True
       '
@@ -472,7 +488,7 @@ Public Class frmPrenCamera
       Me.nudNeonati.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
       Me.nudNeonati.Name = "nudNeonati"
       Me.nudNeonati.Size = New System.Drawing.Size(48, 20)
-      Me.nudNeonati.TabIndex = 9
+      Me.nudNeonati.TabIndex = 10
       '
       'Label21
       '
@@ -493,7 +509,7 @@ Public Class frmPrenCamera
       Me.nudRagazzi.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
       Me.nudRagazzi.Name = "nudRagazzi"
       Me.nudRagazzi.Size = New System.Drawing.Size(48, 20)
-      Me.nudRagazzi.TabIndex = 11
+      Me.nudRagazzi.TabIndex = 12
       '
       'Label19
       '
@@ -511,7 +527,7 @@ Public Class frmPrenCamera
       'cmbNome
       '
       Me.cmbNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbNome.Location = New System.Drawing.Point(520, 120)
+      Me.cmbNome.Location = New System.Drawing.Point(526, 120)
       Me.cmbNome.Name = "cmbNome"
       Me.cmbNome.Size = New System.Drawing.Size(24, 21)
       Me.cmbNome.TabIndex = 237
@@ -538,7 +554,7 @@ Public Class frmPrenCamera
       Me.txtNome.Name = "txtNome"
       Me.txtNome.ReadOnly = True
       Me.txtNome.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNome.Size = New System.Drawing.Size(146, 20)
+      Me.txtNome.Size = New System.Drawing.Size(125, 20)
       Me.txtNome.TabIndex = 6
       Me.txtNome.TabStop = False
       '
@@ -563,9 +579,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 301)
+      Me.Panel2.Location = New System.Drawing.Point(0, 321)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(577, 256)
+      Me.Panel2.Size = New System.Drawing.Size(597, 256)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -696,7 +712,7 @@ Public Class frmPrenCamera
       Me.nudBambini.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
       Me.nudBambini.Name = "nudBambini"
       Me.nudBambini.Size = New System.Drawing.Size(48, 20)
-      Me.nudBambini.TabIndex = 10
+      Me.nudBambini.TabIndex = 11
       '
       'nudAdulti
       '
@@ -705,7 +721,7 @@ Public Class frmPrenCamera
       Me.nudAdulti.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
       Me.nudAdulti.Name = "nudAdulti"
       Me.nudAdulti.Size = New System.Drawing.Size(48, 20)
-      Me.nudAdulti.TabIndex = 8
+      Me.nudAdulti.TabIndex = 9
       Me.nudAdulti.ThousandsSeparator = True
       Me.nudAdulti.Value = New Decimal(New Integer() {1, 0, 0, 0})
       '
@@ -751,7 +767,7 @@ Public Class frmPrenCamera
       Me.txtDescrizioneCamera.ReadOnly = True
       Me.txtDescrizioneCamera.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtDescrizioneCamera.Size = New System.Drawing.Size(264, 20)
-      Me.txtDescrizioneCamera.TabIndex = 13
+      Me.txtDescrizioneCamera.TabIndex = 14
       Me.txtDescrizioneCamera.TabStop = False
       '
       'cmbNumeroCamera
@@ -761,7 +777,7 @@ Public Class frmPrenCamera
       Me.cmbNumeroCamera.Location = New System.Drawing.Point(112, 184)
       Me.cmbNumeroCamera.Name = "cmbNumeroCamera"
       Me.cmbNumeroCamera.Size = New System.Drawing.Size(136, 21)
-      Me.cmbNumeroCamera.TabIndex = 12
+      Me.cmbNumeroCamera.TabIndex = 13
       '
       'Label11
       '
@@ -854,20 +870,20 @@ Public Class frmPrenCamera
       Me.cmbTrattamento.Location = New System.Drawing.Point(112, 216)
       Me.cmbTrattamento.Name = "cmbTrattamento"
       Me.cmbTrattamento.Size = New System.Drawing.Size(408, 21)
-      Me.cmbTrattamento.TabIndex = 14
+      Me.cmbTrattamento.TabIndex = 15
       '
       'cmdApriIntestatario
       '
       Me.cmdApriIntestatario.FlatStyle = System.Windows.Forms.FlatStyle.System
       Me.cmdApriIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmdApriIntestatario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdApriIntestatario.Location = New System.Drawing.Point(496, 119)
+      Me.cmdApriIntestatario.Location = New System.Drawing.Point(476, 119)
       Me.cmdApriIntestatario.Name = "cmdApriIntestatario"
       Me.cmdApriIntestatario.Size = New System.Drawing.Size(24, 22)
       Me.cmdApriIntestatario.TabIndex = 7
       Me.cmdApriIntestatario.Tag = ""
       Me.cmdApriIntestatario.Text = "..."
-      Me.ToolTip1.SetToolTip(Me.cmdApriIntestatario, "Apre la finestra Clienti per un nuovo inserimento.")
+      Me.ToolTip1.SetToolTip(Me.cmdApriIntestatario, "Apre la finestra Clienti per la modifica dei dati.")
       '
       'cmbTipologia
       '
@@ -956,7 +972,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(577, 557)
+      Me.TabPage3.Size = New System.Drawing.Size(587, 567)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -986,7 +1002,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(577, 456)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(587, 456)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1042,7 +1058,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(567, 547)
+      Me.TabPage4.Size = New System.Drawing.Size(587, 567)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1173,19 +1189,19 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice, Me.clnAliquotaIva, Me.clnCategoria, Me.ColumnHeader2})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup1.Header = "Articoli vari"
-      ListViewGroup1.Name = "ListViewGroup1"
-      ListViewGroup2.Header = "Accessori"
-      ListViewGroup2.Name = "ListViewGroup2"
-      ListViewGroup3.Header = "Servizi"
-      ListViewGroup3.Name = "ListViewGroup3"
-      ListViewGroup4.Header = "Bar/Ristorante"
-      ListViewGroup4.Name = "ListViewGroup4"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4})
+      ListViewGroup5.Header = "Articoli vari"
+      ListViewGroup5.Name = "ListViewGroup1"
+      ListViewGroup6.Header = "Accessori"
+      ListViewGroup6.Name = "ListViewGroup2"
+      ListViewGroup7.Header = "Servizi"
+      ListViewGroup7.Name = "ListViewGroup3"
+      ListViewGroup8.Header = "Bar/Ristorante"
+      ListViewGroup8.Name = "ListViewGroup4"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup5, ListViewGroup6, ListViewGroup7, ListViewGroup8})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(567, 461)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(587, 461)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1266,7 +1282,7 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(567, 547)
+      Me.TabPage7.Size = New System.Drawing.Size(587, 567)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
       '
@@ -1656,7 +1672,7 @@ Public Class frmPrenCamera
       Me.TabPage5.Controls.Add(Me.lvwAllegati)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(567, 547)
+      Me.TabPage5.Size = New System.Drawing.Size(587, 567)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
@@ -1695,7 +1711,7 @@ Public Class frmPrenCamera
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(567, 456)
+      Me.lvwAllegati.Size = New System.Drawing.Size(587, 456)
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
       Me.lvwAllegati.View = System.Windows.Forms.View.Details
@@ -1736,7 +1752,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(567, 547)
+      Me.TabPage6.Size = New System.Drawing.Size(587, 567)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1753,7 +1769,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(567, 547)
+      Me.txtNote.Size = New System.Drawing.Size(587, 567)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1769,7 +1785,7 @@ Public Class frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(585, 629)
+      Me.ClientSize = New System.Drawing.Size(605, 649)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -2733,7 +2749,6 @@ Public Class frmPrenCamera
                .LeggiDati(NOME_TABELLA, Me.Tag)
 
                ' Assegna i dati dei campi della classe alle caselle di testo.
-               '.idcliente = 
                txtCodice.Text = .Codice
                txtNumero.Text = .Numero
                dtpData.Value = Convert.ToDateTime(.Data)
@@ -2935,10 +2950,10 @@ Public Class frmPrenCamera
       MessageBox.Show("Per assegnare un colore alla prenotazione selezionare un valore nella casella 'Stato prenotazione'.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
    End Sub
 
-   Private Sub cmdApriIntestatario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdApriIntestatario.Click
+   Private Sub cmdNuovoIntestatario_Click(sender As Object, e As EventArgs) Handles cmdNuovoIntestatario.Click
       Try
          ' Se è stato inserito un nuovo cliente...
-         If ApriClienti("") = True Then
+         If ApriClienti(String.Empty) = True Then
             CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
 
             cmbCognome.Text = String.Empty
@@ -2952,6 +2967,26 @@ Public Class frmPrenCamera
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
+   End Sub
+
+   Private Sub cmdApriIntestatario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdApriIntestatario.Click
+      Try
+         ' Modifica cliente esistente...
+         If ApriClienti(cmbIdCliente.Text) = True Then
+            CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
+
+            cmbCognome.Text = String.Empty
+            cmbNome.Text = String.Empty
+            txtNome.Text = String.Empty
+            cmbIdCliente.Text = String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
    End Sub
 
    Private Sub cmbStatoPren_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbStatoPren.SelectedIndexChanged

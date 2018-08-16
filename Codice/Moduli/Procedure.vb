@@ -408,7 +408,8 @@ Module Procedure
       End Try
    End Sub
 
-   Public Sub CaricaListaClienti(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal tabella As String)
+   ' DA_FARE_B: Non dovrebbe essere utilizzata. Verificare!
+   Public Sub CaricaListaClienti(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal tabella As String, ByVal cmb0 As Boolean)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 

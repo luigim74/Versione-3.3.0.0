@@ -681,8 +681,7 @@ Public Class ElencoSchedinePS
       'End If
    End Sub
 
-   ' DA_FARE: Modificare!
-   Private Sub ApriDati(ByVal nomeFrm As String, ByVal val As String)
+   Private Sub ApriDati(ByVal val As String)
       Try
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
@@ -698,9 +697,9 @@ Public Class ElencoSchedinePS
             End If
          End If
 
-         g_frmPrenCamera = New frmPrenCamera(nomeFrm)
-         g_frmPrenCamera.Tag = val
-         g_frmPrenCamera.ShowDialog()
+         Dim frm As New frmSchedinaPS()
+         frm.Tag = val
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -830,12 +829,12 @@ Public Class ElencoSchedinePS
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
          ' 10 - Data Stampa.
-         Dim dataStampaStyle As New DataGridTextBoxColumn
+         Dim dataStampaStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          dataStampaStyle.MappingName = "DataStampa"
          dataStampaStyle.HeaderText = "Data di stampa"
          dataStampaStyle.Width = 90
          dataStampaStyle.NullText = ""
-         dataStampaStyle.TextBox.BackColor = Color.White
+         dataStampaStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(dataStampaStyle)
          ' 11 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
@@ -1224,7 +1223,7 @@ Public Class ElencoSchedinePS
    Public Sub Nuovo()
       Try
          ' Apre la finestra per l'inserimento di nuovi dati.
-         ApriDati(Me.Name, String.Empty)
+         ApriDati(String.Empty)
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
@@ -1243,7 +1242,7 @@ Public Class ElencoSchedinePS
    Public Sub Modifica()
       Try
          ' Apre la finestra Cliente per la modifica dei dati.
-         ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+         ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
 
          ' DA_FARE_B: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.

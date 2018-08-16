@@ -2348,7 +2348,6 @@ Public Class frmDocumento
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub eui_cmbClienteCognome_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbClienteCognome.SelectedIndexChanged
@@ -3301,6 +3300,5 @@ Public Class frmDocumento
 
       End Try
    End Sub
-
 
 End Class

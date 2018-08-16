@@ -333,6 +333,7 @@ Module Dichiarazioni
    Public Const CAR_TAB_STAGIONI As String = "Attendere prego. Caricamento delle Stagioni in corso..."
    Public Const DB_NON_COMPATIBILE As String = "Il file archivio selezionato non risulta compatibile con la versione in uso del programma."
    Public Const SALVA_BKP As String = "Attendere prego. Salvataggio della copia di Backup degli archivi in corso..."
+   Public Const CAR_OPZIONI As String = "Attendere prego. Caricamento della finestra Opzioni di configurazione in corso..."
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
 
@@ -787,7 +788,7 @@ Module Dichiarazioni
    ' Testo che compare nel titolo del programma.
    Public Const VER_DEMO As String = "VERSIONE DIMOSTRATIVA"
    ' Numero di serie del prodotto. (VERSIONE_FILE - VERSIONE_PRODOTTO - DATA_RILASCIO - ORA_RILASCIO)
-   Public Const NUMERO_SERIE As String = "03200-003-1903018-13056"
+   Public Const NUMERO_SERIE As String = "03220-003-1608018-01045"
    ' Numero di elementi inseribili per la versione demo.
    Public Const NUM_ELEMENTI_DEMO As Integer = 16
    ' File per la data di installazione.

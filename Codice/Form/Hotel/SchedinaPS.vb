@@ -9,6 +9,7 @@
 
 ' Elenco Attivita:
 
+' DA_FARE: Sviluppare! Aggiungere comando per modificare il cliente.
 ' DA_FARE: Sviluppare! Aggiungere Tabella Componenti.
 
 ' ******************************************************************
@@ -25,15 +26,11 @@ Public Class frmSchedinaPS
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New(ByVal nomeFrm As String)
+   Public Sub New()
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
       InitializeComponent()
-
-      ' DA_FARE: Cancellare!
-      ' Nome della finestra che ha effettuato la chiamata.
-      tipoFrm = nomeFrm
 
       'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
 
@@ -82,12 +79,12 @@ Public Class frmSchedinaPS
    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
    Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
-   Public WithEvents txtTotaleAddebitiExtra As System.Windows.Forms.TextBox
+   Public WithEvents txtLuogoNascita As System.Windows.Forms.TextBox
    Public WithEvents Label6 As System.Windows.Forms.Label
    Friend WithEvents cmdInserisciOccupanti As Elegant.Ui.Button
    Friend WithEvents cmdEliminaOccupanti As Elegant.Ui.Button
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Friend WithEvents cmbStatoPren As System.Windows.Forms.ComboBox
+   Friend WithEvents cmbStato As System.Windows.Forms.ComboBox
    Public WithEvents Label13 As System.Windows.Forms.Label
    Friend WithEvents Panel2 As System.Windows.Forms.Panel
    Public WithEvents lblPartenza As System.Windows.Forms.Label
@@ -98,39 +95,39 @@ Public Class frmSchedinaPS
    Friend WithEvents mcDataArrivo As System.Windows.Forms.MonthCalendar
    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
    Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents DateTimePicker1 As DateTimePicker
+   Friend WithEvents dtpDataStampa As DateTimePicker
    Public WithEvents Label3 As Label
-   Public WithEvents TextBox1 As TextBox
+   Public WithEvents txtNumeroPren As TextBox
    Public WithEvents Label8 As Label
    Friend WithEvents cmbNome As ComboBox
    Friend WithEvents cmbIdCliente As ComboBox
    Public WithEvents txtNome As TextBox
    Friend WithEvents cmbCognome As ComboBox
-   Friend WithEvents dtpData As DateTimePicker
+   Friend WithEvents dtpDataNascita As DateTimePicker
    Public WithEvents Label7 As Label
    Friend WithEvents cmdApriIntestatario As Button
    Public WithEvents Label20 As Label
-   Friend WithEvents ComboBox1 As ComboBox
+   Friend WithEvents cmbSesso As ComboBox
    Public WithEvents Label4 As Label
    Public WithEvents Label1 As Label
-   Friend WithEvents ComboBox3 As ComboBox
+   Friend WithEvents cmbCittadinanza As ComboBox
    Public WithEvents Label21 As Label
-   Friend WithEvents ComboBox2 As ComboBox
+   Friend WithEvents cmbNazioneNascita As ComboBox
    Public WithEvents Label19 As Label
-   Public WithEvents TextBox2 As TextBox
-   Public WithEvents txtTassaSoggiorno As TextBox
+   Public WithEvents txtProvNascita As TextBox
+   Public WithEvents txtComuneRilascioDoc As TextBox
    Public WithEvents Label29 As Label
-   Public WithEvents txtPrezzoCamera As TextBox
+   Public WithEvents txtNumeroDoc As TextBox
    Public WithEvents Label16 As Label
    Public WithEvents Label17 As Label
-   Friend WithEvents cmbListino As ComboBox
+   Friend WithEvents cmbTipoDoc As ComboBox
    Public WithEvents Label9 As Label
-   Friend WithEvents cmbPagamento As ComboBox
    Public WithEvents Label2 As Label
-   Friend WithEvents DateTimePicker2 As DateTimePicker
-   Friend WithEvents ComboBox4 As ComboBox
+   Friend WithEvents dtpDataRilascioDoc As DateTimePicker
+   Friend WithEvents cmbNazioneRilascioDoc As ComboBox
    Public WithEvents Label35 As Label
    Friend WithEvents ColumnHeader1 As ColumnHeader
+   Public WithEvents txtRilasciatoDaDoc As TextBox
    Public WithEvents Label10 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -143,6 +140,10 @@ Public Class frmSchedinaPS
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.txtNumeroPren = New System.Windows.Forms.TextBox()
+      Me.Label8 = New System.Windows.Forms.Label()
+      Me.dtpDataStampa = New System.Windows.Forms.DateTimePicker()
+      Me.Label3 = New System.Windows.Forms.Label()
       Me.Panel2 = New System.Windows.Forms.Panel()
       Me.mcDataArrivo = New System.Windows.Forms.MonthCalendar()
       Me.txtNumeroNotti = New System.Windows.Forms.TextBox()
@@ -150,7 +151,7 @@ Public Class frmSchedinaPS
       Me.lblPartenza = New System.Windows.Forms.Label()
       Me.lblArrivo = New System.Windows.Forms.Label()
       Me.mcDataPartenza = New System.Windows.Forms.MonthCalendar()
-      Me.cmbStatoPren = New System.Windows.Forms.ComboBox()
+      Me.cmbStato = New System.Windows.Forms.ComboBox()
       Me.Label13 = New System.Windows.Forms.Label()
       Me.txtNumero = New System.Windows.Forms.TextBox()
       Me.Label12 = New System.Windows.Forms.Label()
@@ -158,6 +159,39 @@ Public Class frmSchedinaPS
       Me.Label11 = New System.Windows.Forms.Label()
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label5 = New System.Windows.Forms.Label()
+      Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.cmbCittadinanza = New System.Windows.Forms.ComboBox()
+      Me.Label21 = New System.Windows.Forms.Label()
+      Me.cmbNazioneNascita = New System.Windows.Forms.ComboBox()
+      Me.Label19 = New System.Windows.Forms.Label()
+      Me.txtProvNascita = New System.Windows.Forms.TextBox()
+      Me.Label10 = New System.Windows.Forms.Label()
+      Me.cmbSesso = New System.Windows.Forms.ComboBox()
+      Me.Label4 = New System.Windows.Forms.Label()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.cmbNome = New System.Windows.Forms.ComboBox()
+      Me.cmbIdCliente = New System.Windows.Forms.ComboBox()
+      Me.txtNome = New System.Windows.Forms.TextBox()
+      Me.cmbCognome = New System.Windows.Forms.ComboBox()
+      Me.dtpDataNascita = New System.Windows.Forms.DateTimePicker()
+      Me.Label7 = New System.Windows.Forms.Label()
+      Me.cmdApriIntestatario = New System.Windows.Forms.Button()
+      Me.Label20 = New System.Windows.Forms.Label()
+      Me.txtLuogoNascita = New System.Windows.Forms.TextBox()
+      Me.Label6 = New System.Windows.Forms.Label()
+      Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.txtRilasciatoDaDoc = New System.Windows.Forms.TextBox()
+      Me.cmbNazioneRilascioDoc = New System.Windows.Forms.ComboBox()
+      Me.Label35 = New System.Windows.Forms.Label()
+      Me.dtpDataRilascioDoc = New System.Windows.Forms.DateTimePicker()
+      Me.txtComuneRilascioDoc = New System.Windows.Forms.TextBox()
+      Me.Label29 = New System.Windows.Forms.Label()
+      Me.txtNumeroDoc = New System.Windows.Forms.TextBox()
+      Me.Label16 = New System.Windows.Forms.Label()
+      Me.Label17 = New System.Windows.Forms.Label()
+      Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
+      Me.Label9 = New System.Windows.Forms.Label()
+      Me.Label2 = New System.Windows.Forms.Label()
       Me.TabPage3 = New System.Windows.Forms.TabPage()
       Me.cmdInserisciOccupanti = New Elegant.Ui.Button()
       Me.cmdEliminaOccupanti = New Elegant.Ui.Button()
@@ -165,60 +199,23 @@ Public Class frmSchedinaPS
       Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.TabPage4 = New System.Windows.Forms.TabPage()
-      Me.txtTotaleAddebitiExtra = New System.Windows.Forms.TextBox()
-      Me.Label6 = New System.Windows.Forms.Label()
-      Me.TabPage5 = New System.Windows.Forms.TabPage()
       Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-      Me.Label3 = New System.Windows.Forms.Label()
-      Me.TextBox1 = New System.Windows.Forms.TextBox()
-      Me.Label8 = New System.Windows.Forms.Label()
-      Me.cmbNome = New System.Windows.Forms.ComboBox()
-      Me.cmbIdCliente = New System.Windows.Forms.ComboBox()
-      Me.txtNome = New System.Windows.Forms.TextBox()
-      Me.cmbCognome = New System.Windows.Forms.ComboBox()
-      Me.dtpData = New System.Windows.Forms.DateTimePicker()
-      Me.Label7 = New System.Windows.Forms.Label()
-      Me.cmdApriIntestatario = New System.Windows.Forms.Button()
-      Me.Label20 = New System.Windows.Forms.Label()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-      Me.Label4 = New System.Windows.Forms.Label()
-      Me.TextBox2 = New System.Windows.Forms.TextBox()
-      Me.Label10 = New System.Windows.Forms.Label()
-      Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-      Me.Label19 = New System.Windows.Forms.Label()
-      Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-      Me.Label21 = New System.Windows.Forms.Label()
-      Me.txtTassaSoggiorno = New System.Windows.Forms.TextBox()
-      Me.Label29 = New System.Windows.Forms.Label()
-      Me.txtPrezzoCamera = New System.Windows.Forms.TextBox()
-      Me.Label16 = New System.Windows.Forms.Label()
-      Me.Label17 = New System.Windows.Forms.Label()
-      Me.cmbListino = New System.Windows.Forms.ComboBox()
-      Me.Label9 = New System.Windows.Forms.Label()
-      Me.cmbPagamento = New System.Windows.Forms.ComboBox()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-      Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-      Me.Label35 = New System.Windows.Forms.Label()
-      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
       Me.Panel2.SuspendLayout()
-      Me.TabPage3.SuspendLayout()
       Me.TabPage4.SuspendLayout()
       Me.TabPage5.SuspendLayout()
+      Me.TabPage3.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -233,7 +230,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(565, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(605, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -267,7 +264,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(565, 20)
+      Me.Panel1.Size = New System.Drawing.Size(605, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -292,18 +289,18 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(565, 398)
+      Me.TabControl1.Size = New System.Drawing.Size(605, 424)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage1.Controls.Add(Me.TextBox1)
+      Me.TabPage1.Controls.Add(Me.txtNumeroPren)
       Me.TabPage1.Controls.Add(Me.Label8)
-      Me.TabPage1.Controls.Add(Me.DateTimePicker1)
+      Me.TabPage1.Controls.Add(Me.dtpDataStampa)
       Me.TabPage1.Controls.Add(Me.Label3)
       Me.TabPage1.Controls.Add(Me.Panel2)
-      Me.TabPage1.Controls.Add(Me.cmbStatoPren)
+      Me.TabPage1.Controls.Add(Me.cmbStato)
       Me.TabPage1.Controls.Add(Me.Label13)
       Me.TabPage1.Controls.Add(Me.txtNumero)
       Me.TabPage1.Controls.Add(Me.Label12)
@@ -314,9 +311,62 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(557, 372)
+      Me.TabPage1.Size = New System.Drawing.Size(597, 398)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
+      '
+      'txtNumeroPren
+      '
+      Me.txtNumeroPren.AcceptsReturn = True
+      Me.txtNumeroPren.BackColor = System.Drawing.SystemColors.Window
+      Me.txtNumeroPren.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtNumeroPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtNumeroPren.ForeColor = System.Drawing.Color.Black
+      Me.txtNumeroPren.Location = New System.Drawing.Point(386, 55)
+      Me.txtNumeroPren.MaxLength = 0
+      Me.txtNumeroPren.Name = "txtNumeroPren"
+      Me.txtNumeroPren.ReadOnly = True
+      Me.txtNumeroPren.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtNumeroPren.Size = New System.Drawing.Size(134, 20)
+      Me.txtNumeroPren.TabIndex = 3
+      Me.txtNumeroPren.TabStop = False
+      '
+      'Label8
+      '
+      Me.Label8.AutoSize = True
+      Me.Label8.BackColor = System.Drawing.Color.Transparent
+      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label8.ForeColor = System.Drawing.Color.Black
+      Me.Label8.Location = New System.Drawing.Point(269, 59)
+      Me.Label8.Name = "Label8"
+      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label8.Size = New System.Drawing.Size(111, 13)
+      Me.Label8.TabIndex = 245
+      Me.Label8.Text = "Numero prenotazione:"
+      '
+      'dtpDataStampa
+      '
+      Me.dtpDataStampa.Checked = False
+      Me.dtpDataStampa.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+      Me.dtpDataStampa.Location = New System.Drawing.Point(386, 92)
+      Me.dtpDataStampa.Name = "dtpDataStampa"
+      Me.dtpDataStampa.ShowCheckBox = True
+      Me.dtpDataStampa.Size = New System.Drawing.Size(134, 20)
+      Me.dtpDataStampa.TabIndex = 5
+      Me.dtpDataStampa.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
+      '
+      'Label3
+      '
+      Me.Label3.AutoSize = True
+      Me.Label3.BackColor = System.Drawing.Color.Transparent
+      Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label3.ForeColor = System.Drawing.Color.Black
+      Me.Label3.Location = New System.Drawing.Point(269, 95)
+      Me.Label3.Name = "Label3"
+      Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label3.Size = New System.Drawing.Size(81, 13)
+      Me.Label3.TabIndex = 243
+      Me.Label3.Text = "Data di stampa:"
       '
       'Panel2
       '
@@ -328,9 +378,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 137)
+      Me.Panel2.Location = New System.Drawing.Point(0, 163)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(557, 235)
+      Me.Panel2.Size = New System.Drawing.Size(597, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -356,7 +406,7 @@ Public Class frmSchedinaPS
       Me.txtNumeroNotti.ReadOnly = True
       Me.txtNumeroNotti.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNumeroNotti.Size = New System.Drawing.Size(80, 20)
-      Me.txtNumeroNotti.TabIndex = 3
+      Me.txtNumeroNotti.TabIndex = 2
       Me.txtNumeroNotti.TabStop = False
       Me.txtNumeroNotti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
@@ -410,14 +460,15 @@ Public Class frmSchedinaPS
       Me.mcDataPartenza.ShowTodayCircle = False
       Me.mcDataPartenza.TabIndex = 1
       '
-      'cmbStatoPren
+      'cmbStato
       '
-      Me.cmbStatoPren.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbStatoPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbStatoPren.Location = New System.Drawing.Point(118, 92)
-      Me.cmbStatoPren.Name = "cmbStatoPren"
-      Me.cmbStatoPren.Size = New System.Drawing.Size(134, 21)
-      Me.cmbStatoPren.TabIndex = 4
+      Me.cmbStato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbStato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbStato.Items.AddRange(New Object() {"Inserita", "Inviata", "Stampata"})
+      Me.cmbStato.Location = New System.Drawing.Point(118, 92)
+      Me.cmbStato.Name = "cmbStato"
+      Me.cmbStato.Size = New System.Drawing.Size(134, 21)
+      Me.cmbStato.TabIndex = 4
       '
       'Label13
       '
@@ -442,11 +493,11 @@ Public Class frmSchedinaPS
       Me.txtNumero.Location = New System.Drawing.Point(386, 20)
       Me.txtNumero.MaxLength = 0
       Me.txtNumero.Name = "txtNumero"
-      Me.txtNumero.ReadOnly = True
       Me.txtNumero.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNumero.Size = New System.Drawing.Size(134, 20)
       Me.txtNumero.TabIndex = 1
       Me.txtNumero.TabStop = False
+      Me.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label12
       '
@@ -468,7 +519,7 @@ Public Class frmSchedinaPS
       Me.cmbNumeroCamera.Location = New System.Drawing.Point(118, 55)
       Me.cmbNumeroCamera.Name = "cmbNumeroCamera"
       Me.cmbNumeroCamera.Size = New System.Drawing.Size(134, 21)
-      Me.cmbNumeroCamera.TabIndex = 12
+      Me.cmbNumeroCamera.TabIndex = 2
       '
       'Label11
       '
@@ -513,223 +564,140 @@ Public Class frmSchedinaPS
       Me.Label5.TabIndex = 164
       Me.Label5.Text = "Codice:"
       '
-      'TabPage3
-      '
-      Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage3.Controls.Add(Me.cmdInserisciOccupanti)
-      Me.TabPage3.Controls.Add(Me.cmdEliminaOccupanti)
-      Me.TabPage3.Controls.Add(Me.lvwOccupanti)
-      Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-      Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(557, 372)
-      Me.TabPage3.TabIndex = 7
-      Me.TabPage3.Text = "Altri componenti"
-      '
-      'cmdInserisciOccupanti
-      '
-      Me.cmdInserisciOccupanti.Id = "5cb4629d-8026-4d6c-9815-611d4bacb7c7"
-      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(336, 335)
-      Me.cmdInserisciOccupanti.Name = "cmdInserisciOccupanti"
-      Me.cmdInserisciOccupanti.Size = New System.Drawing.Size(104, 32)
-      Me.cmdInserisciOccupanti.TabIndex = 1
-      Me.cmdInserisciOccupanti.Text = "&Inserisci"
-      '
-      'cmdEliminaOccupanti
-      '
-      Me.cmdEliminaOccupanti.Id = "f4c880ee-0846-4e54-a486-3bc390ef19a6"
-      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(448, 335)
-      Me.cmdEliminaOccupanti.Name = "cmdEliminaOccupanti"
-      Me.cmdEliminaOccupanti.Size = New System.Drawing.Size(104, 32)
-      Me.cmdEliminaOccupanti.TabIndex = 2
-      Me.cmdEliminaOccupanti.Text = "&Elimina"
-      '
-      'lvwOccupanti
-      '
-      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader14, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader13, Me.ColumnHeader12})
-      Me.lvwOccupanti.Dock = System.Windows.Forms.DockStyle.Top
-      Me.lvwOccupanti.FullRowSelect = True
-      Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
-      Me.lvwOccupanti.MultiSelect = False
-      Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(557, 332)
-      Me.lvwOccupanti.TabIndex = 0
-      Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
-      Me.lvwOccupanti.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader14
-      '
-      Me.ColumnHeader14.Text = "Indice"
-      Me.ColumnHeader14.Width = 0
-      '
-      'ColumnHeader7
-      '
-      Me.ColumnHeader7.Text = "Cognome"
-      Me.ColumnHeader7.Width = 100
-      '
-      'ColumnHeader8
-      '
-      Me.ColumnHeader8.Text = "Nome"
-      Me.ColumnHeader8.Width = 100
-      '
-      'ColumnHeader9
-      '
-      Me.ColumnHeader9.Text = "Data di Nascita"
-      Me.ColumnHeader9.Width = 90
-      '
-      'ColumnHeader10
-      '
-      Me.ColumnHeader10.Text = "Luogo di Nascita"
-      Me.ColumnHeader10.Width = 120
-      '
-      'ColumnHeader13
-      '
-      Me.ColumnHeader13.Text = "Nazionalità"
-      Me.ColumnHeader13.Width = 75
-      '
-      'ColumnHeader12
-      '
-      Me.ColumnHeader12.Text = "Codice"
-      Me.ColumnHeader12.Width = 0
-      '
       'TabPage4
       '
       Me.TabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage4.Controls.Add(Me.ComboBox3)
+      Me.TabPage4.Controls.Add(Me.cmbCittadinanza)
       Me.TabPage4.Controls.Add(Me.Label21)
-      Me.TabPage4.Controls.Add(Me.ComboBox2)
+      Me.TabPage4.Controls.Add(Me.cmbNazioneNascita)
       Me.TabPage4.Controls.Add(Me.Label19)
-      Me.TabPage4.Controls.Add(Me.TextBox2)
+      Me.TabPage4.Controls.Add(Me.txtProvNascita)
       Me.TabPage4.Controls.Add(Me.Label10)
-      Me.TabPage4.Controls.Add(Me.ComboBox1)
+      Me.TabPage4.Controls.Add(Me.cmbSesso)
       Me.TabPage4.Controls.Add(Me.Label4)
       Me.TabPage4.Controls.Add(Me.Label1)
       Me.TabPage4.Controls.Add(Me.cmbNome)
       Me.TabPage4.Controls.Add(Me.cmbIdCliente)
       Me.TabPage4.Controls.Add(Me.txtNome)
       Me.TabPage4.Controls.Add(Me.cmbCognome)
-      Me.TabPage4.Controls.Add(Me.dtpData)
+      Me.TabPage4.Controls.Add(Me.dtpDataNascita)
       Me.TabPage4.Controls.Add(Me.Label7)
       Me.TabPage4.Controls.Add(Me.cmdApriIntestatario)
       Me.TabPage4.Controls.Add(Me.Label20)
-      Me.TabPage4.Controls.Add(Me.txtTotaleAddebitiExtra)
+      Me.TabPage4.Controls.Add(Me.txtLuogoNascita)
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(557, 372)
+      Me.TabPage4.Size = New System.Drawing.Size(587, 388)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
       '
-      'txtTotaleAddebitiExtra
+      'cmbCittadinanza
       '
-      Me.txtTotaleAddebitiExtra.AcceptsReturn = True
-      Me.txtTotaleAddebitiExtra.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTotaleAddebitiExtra.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleAddebitiExtra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleAddebitiExtra.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleAddebitiExtra.Location = New System.Drawing.Point(125, 188)
-      Me.txtTotaleAddebitiExtra.MaxLength = 0
-      Me.txtTotaleAddebitiExtra.Name = "txtTotaleAddebitiExtra"
-      Me.txtTotaleAddebitiExtra.ReadOnly = True
-      Me.txtTotaleAddebitiExtra.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleAddebitiExtra.Size = New System.Drawing.Size(160, 20)
-      Me.txtTotaleAddebitiExtra.TabIndex = 5
-      Me.txtTotaleAddebitiExtra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.cmbCittadinanza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbCittadinanza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbCittadinanza.Location = New System.Drawing.Point(379, 223)
+      Me.cmbCittadinanza.Name = "cmbCittadinanza"
+      Me.cmbCittadinanza.Size = New System.Drawing.Size(127, 21)
+      Me.cmbCittadinanza.TabIndex = 8
       '
-      'Label6
+      'Label21
       '
-      Me.Label6.AutoSize = True
-      Me.Label6.BackColor = System.Drawing.Color.Transparent
-      Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(21, 188)
-      Me.Label6.Name = "Label6"
-      Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label6.Size = New System.Drawing.Size(88, 13)
-      Me.Label6.TabIndex = 246
-      Me.Label6.Text = "Luogo di nascita:"
+      Me.Label21.AutoSize = True
+      Me.Label21.BackColor = System.Drawing.Color.Transparent
+      Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label21.ForeColor = System.Drawing.Color.Black
+      Me.Label21.Location = New System.Drawing.Point(305, 223)
+      Me.Label21.Name = "Label21"
+      Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label21.Size = New System.Drawing.Size(68, 13)
+      Me.Label21.TabIndex = 263
+      Me.Label21.Text = "Cittadinanza:"
       '
-      'TabPage5
+      'cmbNazioneNascita
       '
-      Me.TabPage5.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage5.Controls.Add(Me.ComboBox4)
-      Me.TabPage5.Controls.Add(Me.Label35)
-      Me.TabPage5.Controls.Add(Me.DateTimePicker2)
-      Me.TabPage5.Controls.Add(Me.txtTassaSoggiorno)
-      Me.TabPage5.Controls.Add(Me.Label29)
-      Me.TabPage5.Controls.Add(Me.txtPrezzoCamera)
-      Me.TabPage5.Controls.Add(Me.Label16)
-      Me.TabPage5.Controls.Add(Me.Label17)
-      Me.TabPage5.Controls.Add(Me.cmbListino)
-      Me.TabPage5.Controls.Add(Me.Label9)
-      Me.TabPage5.Controls.Add(Me.cmbPagamento)
-      Me.TabPage5.Controls.Add(Me.Label2)
-      Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-      Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(557, 372)
-      Me.TabPage5.TabIndex = 4
-      Me.TabPage5.Text = "Documento di riconoscimento"
+      Me.cmbNazioneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbNazioneNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbNazioneNascita.Location = New System.Drawing.Point(125, 223)
+      Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
+      Me.cmbNazioneNascita.Size = New System.Drawing.Size(160, 21)
+      Me.cmbNazioneNascita.TabIndex = 7
       '
-      'ErrorProvider1
+      'Label19
       '
-      Me.ErrorProvider1.ContainerControl = Me
+      Me.Label19.AutoSize = True
+      Me.Label19.BackColor = System.Drawing.Color.Transparent
+      Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label19.ForeColor = System.Drawing.Color.Black
+      Me.Label19.Location = New System.Drawing.Point(21, 223)
+      Me.Label19.Name = "Label19"
+      Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label19.Size = New System.Drawing.Size(97, 13)
+      Me.Label19.TabIndex = 261
+      Me.Label19.Text = "Nazione di nascita:"
       '
-      'formFrameSkinner
+      'txtProvNascita
       '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
+      Me.txtProvNascita.AcceptsReturn = True
+      Me.txtProvNascita.BackColor = System.Drawing.SystemColors.Window
+      Me.txtProvNascita.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtProvNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtProvNascita.ForeColor = System.Drawing.Color.Black
+      Me.txtProvNascita.Location = New System.Drawing.Point(411, 188)
+      Me.txtProvNascita.MaxLength = 0
+      Me.txtProvNascita.Name = "txtProvNascita"
+      Me.txtProvNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtProvNascita.Size = New System.Drawing.Size(94, 20)
+      Me.txtProvNascita.TabIndex = 6
       '
-      'DateTimePicker1
+      'Label10
       '
-      Me.DateTimePicker1.Checked = False
-      Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.DateTimePicker1.Location = New System.Drawing.Point(386, 92)
-      Me.DateTimePicker1.Name = "DateTimePicker1"
-      Me.DateTimePicker1.ShowCheckBox = True
-      Me.DateTimePicker1.Size = New System.Drawing.Size(134, 20)
-      Me.DateTimePicker1.TabIndex = 242
-      Me.DateTimePicker1.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
+      Me.Label10.AutoSize = True
+      Me.Label10.BackColor = System.Drawing.Color.Transparent
+      Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label10.ForeColor = System.Drawing.Color.Black
+      Me.Label10.Location = New System.Drawing.Point(305, 188)
+      Me.Label10.Name = "Label10"
+      Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label10.Size = New System.Drawing.Size(102, 13)
+      Me.Label10.TabIndex = 259
+      Me.Label10.Text = "Provincia di nascita:"
       '
-      'Label3
+      'cmbSesso
       '
-      Me.Label3.AutoSize = True
-      Me.Label3.BackColor = System.Drawing.Color.Transparent
-      Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(269, 95)
-      Me.Label3.Name = "Label3"
-      Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label3.Size = New System.Drawing.Size(81, 13)
-      Me.Label3.TabIndex = 243
-      Me.Label3.Text = "Data di stampa:"
+      Me.cmbSesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbSesso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbSesso.Items.AddRange(New Object() {"M", "F"})
+      Me.cmbSesso.Location = New System.Drawing.Point(124, 95)
+      Me.cmbSesso.Name = "cmbSesso"
+      Me.cmbSesso.Size = New System.Drawing.Size(53, 21)
+      Me.cmbSesso.TabIndex = 3
       '
-      'TextBox1
+      'Label4
       '
-      Me.TextBox1.AcceptsReturn = True
-      Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-      Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.TextBox1.ForeColor = System.Drawing.Color.Red
-      Me.TextBox1.Location = New System.Drawing.Point(386, 55)
-      Me.TextBox1.MaxLength = 0
-      Me.TextBox1.Name = "TextBox1"
-      Me.TextBox1.ReadOnly = True
-      Me.TextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.TextBox1.Size = New System.Drawing.Size(134, 20)
-      Me.TextBox1.TabIndex = 244
-      Me.TextBox1.TabStop = False
+      Me.Label4.AutoSize = True
+      Me.Label4.BackColor = System.Drawing.Color.Transparent
+      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label4.ForeColor = System.Drawing.Color.Black
+      Me.Label4.Location = New System.Drawing.Point(21, 96)
+      Me.Label4.Name = "Label4"
+      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label4.Size = New System.Drawing.Size(39, 13)
+      Me.Label4.TabIndex = 257
+      Me.Label4.Text = "Sesso:"
       '
-      'Label8
+      'Label1
       '
-      Me.Label8.AutoSize = True
-      Me.Label8.BackColor = System.Drawing.Color.Transparent
-      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label8.ForeColor = System.Drawing.Color.Black
-      Me.Label8.Location = New System.Drawing.Point(269, 59)
-      Me.Label8.Name = "Label8"
-      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label8.Size = New System.Drawing.Size(111, 13)
-      Me.Label8.TabIndex = 245
-      Me.Label8.Text = "Numero prenotazione:"
+      Me.Label1.AutoSize = True
+      Me.Label1.BackColor = System.Drawing.Color.Transparent
+      Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label1.ForeColor = System.Drawing.Color.Black
+      Me.Label1.Location = New System.Drawing.Point(22, 61)
+      Me.Label1.Name = "Label1"
+      Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label1.Size = New System.Drawing.Size(38, 13)
+      Me.Label1.TabIndex = 255
+      Me.Label1.Text = "Nome:"
       '
       'cmbNome
       '
@@ -762,7 +730,7 @@ Public Class frmSchedinaPS
       Me.txtNome.ReadOnly = True
       Me.txtNome.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNome.Size = New System.Drawing.Size(357, 20)
-      Me.txtNome.TabIndex = 249
+      Me.txtNome.TabIndex = 1
       Me.txtNome.TabStop = False
       '
       'cmbCognome
@@ -772,18 +740,18 @@ Public Class frmSchedinaPS
       Me.cmbCognome.Location = New System.Drawing.Point(124, 22)
       Me.cmbCognome.Name = "cmbCognome"
       Me.cmbCognome.Size = New System.Drawing.Size(381, 21)
-      Me.cmbCognome.TabIndex = 248
+      Me.cmbCognome.TabIndex = 0
       '
-      'dtpData
+      'dtpDataNascita
       '
-      Me.dtpData.Checked = False
-      Me.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.dtpData.Location = New System.Drawing.Point(124, 150)
-      Me.dtpData.Name = "dtpData"
-      Me.dtpData.ShowCheckBox = True
-      Me.dtpData.Size = New System.Drawing.Size(112, 20)
-      Me.dtpData.TabIndex = 247
-      Me.dtpData.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
+      Me.dtpDataNascita.Checked = False
+      Me.dtpDataNascita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+      Me.dtpDataNascita.Location = New System.Drawing.Point(124, 150)
+      Me.dtpDataNascita.Name = "dtpDataNascita"
+      Me.dtpDataNascita.ShowCheckBox = True
+      Me.dtpDataNascita.Size = New System.Drawing.Size(112, 20)
+      Me.dtpDataNascita.TabIndex = 4
+      Me.dtpDataNascita.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
       '
       'Label7
       '
@@ -806,7 +774,7 @@ Public Class frmSchedinaPS
       Me.cmdApriIntestatario.Location = New System.Drawing.Point(482, 58)
       Me.cmdApriIntestatario.Name = "cmdApriIntestatario"
       Me.cmdApriIntestatario.Size = New System.Drawing.Size(24, 22)
-      Me.cmdApriIntestatario.TabIndex = 250
+      Me.cmdApriIntestatario.TabIndex = 2
       Me.cmdApriIntestatario.Tag = ""
       Me.cmdApriIntestatario.Text = "..."
       Me.ToolTip1.SetToolTip(Me.cmdApriIntestatario, "Apre la finestra Clienti per un nuovo inserimento.")
@@ -824,131 +792,114 @@ Public Class frmSchedinaPS
       Me.Label20.TabIndex = 251
       Me.Label20.Text = "Cognome:"
       '
-      'Label1
+      'txtLuogoNascita
       '
-      Me.Label1.AutoSize = True
-      Me.Label1.BackColor = System.Drawing.Color.Transparent
-      Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(22, 61)
-      Me.Label1.Name = "Label1"
-      Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label1.Size = New System.Drawing.Size(38, 13)
-      Me.Label1.TabIndex = 255
-      Me.Label1.Text = "Nome:"
+      Me.txtLuogoNascita.AcceptsReturn = True
+      Me.txtLuogoNascita.BackColor = System.Drawing.SystemColors.Window
+      Me.txtLuogoNascita.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtLuogoNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtLuogoNascita.ForeColor = System.Drawing.Color.Black
+      Me.txtLuogoNascita.Location = New System.Drawing.Point(125, 188)
+      Me.txtLuogoNascita.MaxLength = 0
+      Me.txtLuogoNascita.Name = "txtLuogoNascita"
+      Me.txtLuogoNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtLuogoNascita.Size = New System.Drawing.Size(160, 20)
+      Me.txtLuogoNascita.TabIndex = 5
       '
-      'ComboBox1
+      'Label6
       '
-      Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.ComboBox1.Location = New System.Drawing.Point(124, 95)
-      Me.ComboBox1.Name = "ComboBox1"
-      Me.ComboBox1.Size = New System.Drawing.Size(53, 21)
-      Me.ComboBox1.TabIndex = 256
+      Me.Label6.AutoSize = True
+      Me.Label6.BackColor = System.Drawing.Color.Transparent
+      Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label6.ForeColor = System.Drawing.Color.Black
+      Me.Label6.Location = New System.Drawing.Point(21, 188)
+      Me.Label6.Name = "Label6"
+      Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label6.Size = New System.Drawing.Size(88, 13)
+      Me.Label6.TabIndex = 246
+      Me.Label6.Text = "Luogo di nascita:"
       '
-      'Label4
+      'TabPage5
       '
-      Me.Label4.AutoSize = True
-      Me.Label4.BackColor = System.Drawing.Color.Transparent
-      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(21, 96)
-      Me.Label4.Name = "Label4"
-      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label4.Size = New System.Drawing.Size(39, 13)
-      Me.Label4.TabIndex = 257
-      Me.Label4.Text = "Sesso:"
+      Me.TabPage5.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage5.Controls.Add(Me.txtRilasciatoDaDoc)
+      Me.TabPage5.Controls.Add(Me.cmbNazioneRilascioDoc)
+      Me.TabPage5.Controls.Add(Me.Label35)
+      Me.TabPage5.Controls.Add(Me.dtpDataRilascioDoc)
+      Me.TabPage5.Controls.Add(Me.txtComuneRilascioDoc)
+      Me.TabPage5.Controls.Add(Me.Label29)
+      Me.TabPage5.Controls.Add(Me.txtNumeroDoc)
+      Me.TabPage5.Controls.Add(Me.Label16)
+      Me.TabPage5.Controls.Add(Me.Label17)
+      Me.TabPage5.Controls.Add(Me.cmbTipoDoc)
+      Me.TabPage5.Controls.Add(Me.Label9)
+      Me.TabPage5.Controls.Add(Me.Label2)
+      Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage5.Name = "TabPage5"
+      Me.TabPage5.Size = New System.Drawing.Size(587, 388)
+      Me.TabPage5.TabIndex = 4
+      Me.TabPage5.Text = "Documento di riconoscimento"
       '
-      'TextBox2
+      'txtRilasciatoDaDoc
       '
-      Me.TextBox2.AcceptsReturn = True
-      Me.TextBox2.BackColor = System.Drawing.SystemColors.Window
-      Me.TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.TextBox2.ForeColor = System.Drawing.Color.Red
-      Me.TextBox2.Location = New System.Drawing.Point(413, 188)
-      Me.TextBox2.MaxLength = 0
-      Me.TextBox2.Name = "TextBox2"
-      Me.TextBox2.ReadOnly = True
-      Me.TextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.TextBox2.Size = New System.Drawing.Size(94, 20)
-      Me.TextBox2.TabIndex = 258
-      Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.txtRilasciatoDaDoc.AcceptsReturn = True
+      Me.txtRilasciatoDaDoc.BackColor = System.Drawing.SystemColors.Window
+      Me.txtRilasciatoDaDoc.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtRilasciatoDaDoc.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtRilasciatoDaDoc.Location = New System.Drawing.Point(389, 100)
+      Me.txtRilasciatoDaDoc.MaxLength = 0
+      Me.txtRilasciatoDaDoc.Name = "txtRilasciatoDaDoc"
+      Me.txtRilasciatoDaDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtRilasciatoDaDoc.Size = New System.Drawing.Size(149, 20)
+      Me.txtRilasciatoDaDoc.TabIndex = 5
       '
-      'Label10
+      'cmbNazioneRilascioDoc
       '
-      Me.Label10.AutoSize = True
-      Me.Label10.BackColor = System.Drawing.Color.Transparent
-      Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label10.ForeColor = System.Drawing.Color.Black
-      Me.Label10.Location = New System.Drawing.Point(305, 188)
-      Me.Label10.Name = "Label10"
-      Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label10.Size = New System.Drawing.Size(102, 13)
-      Me.Label10.TabIndex = 259
-      Me.Label10.Text = "Provincia di nascita:"
+      Me.cmbNazioneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(389, 63)
+      Me.cmbNazioneRilascioDoc.Name = "cmbNazioneRilascioDoc"
+      Me.cmbNazioneRilascioDoc.Size = New System.Drawing.Size(149, 21)
+      Me.cmbNazioneRilascioDoc.TabIndex = 3
       '
-      'ComboBox2
+      'Label35
       '
-      Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.ComboBox2.Location = New System.Drawing.Point(125, 223)
-      Me.ComboBox2.Name = "ComboBox2"
-      Me.ComboBox2.Size = New System.Drawing.Size(160, 21)
-      Me.ComboBox2.TabIndex = 260
+      Me.Label35.AutoSize = True
+      Me.Label35.BackColor = System.Drawing.Color.Transparent
+      Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label35.ForeColor = System.Drawing.Color.Black
+      Me.Label35.Location = New System.Drawing.Point(288, 65)
+      Me.Label35.Name = "Label35"
+      Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label35.Size = New System.Drawing.Size(95, 13)
+      Me.Label35.TabIndex = 301
+      Me.Label35.Text = "Nazione di rilascio:"
       '
-      'Label19
+      'dtpDataRilascioDoc
       '
-      Me.Label19.AutoSize = True
-      Me.Label19.BackColor = System.Drawing.Color.Transparent
-      Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label19.ForeColor = System.Drawing.Color.Black
-      Me.Label19.Location = New System.Drawing.Point(21, 223)
-      Me.Label19.Name = "Label19"
-      Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label19.Size = New System.Drawing.Size(97, 13)
-      Me.Label19.TabIndex = 261
-      Me.Label19.Text = "Nazione di nascita:"
+      Me.dtpDataRilascioDoc.Checked = False
+      Me.dtpDataRilascioDoc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+      Me.dtpDataRilascioDoc.Location = New System.Drawing.Point(113, 100)
+      Me.dtpDataRilascioDoc.Name = "dtpDataRilascioDoc"
+      Me.dtpDataRilascioDoc.ShowCheckBox = True
+      Me.dtpDataRilascioDoc.Size = New System.Drawing.Size(161, 20)
+      Me.dtpDataRilascioDoc.TabIndex = 4
+      Me.dtpDataRilascioDoc.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
       '
-      'ComboBox3
+      'txtComuneRilascioDoc
       '
-      Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.ComboBox3.Location = New System.Drawing.Point(379, 223)
-      Me.ComboBox3.Name = "ComboBox3"
-      Me.ComboBox3.Size = New System.Drawing.Size(127, 21)
-      Me.ComboBox3.TabIndex = 262
-      '
-      'Label21
-      '
-      Me.Label21.AutoSize = True
-      Me.Label21.BackColor = System.Drawing.Color.Transparent
-      Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label21.ForeColor = System.Drawing.Color.Black
-      Me.Label21.Location = New System.Drawing.Point(305, 223)
-      Me.Label21.Name = "Label21"
-      Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label21.Size = New System.Drawing.Size(68, 13)
-      Me.Label21.TabIndex = 263
-      Me.Label21.Text = "Cittadinanza:"
-      '
-      'txtTassaSoggiorno
-      '
-      Me.txtTassaSoggiorno.AcceptsReturn = True
-      Me.txtTassaSoggiorno.BackColor = System.Drawing.SystemColors.Window
-      Me.txtTassaSoggiorno.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTassaSoggiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTassaSoggiorno.ForeColor = System.Drawing.Color.Blue
-      Me.txtTassaSoggiorno.Location = New System.Drawing.Point(361, 67)
-      Me.txtTassaSoggiorno.MaxLength = 0
-      Me.txtTassaSoggiorno.Name = "txtTassaSoggiorno"
-      Me.txtTassaSoggiorno.ReadOnly = True
-      Me.txtTassaSoggiorno.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTassaSoggiorno.Size = New System.Drawing.Size(161, 20)
-      Me.txtTassaSoggiorno.TabIndex = 285
-      Me.txtTassaSoggiorno.TabStop = False
-      Me.txtTassaSoggiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.txtTassaSoggiorno.Visible = False
+      Me.txtComuneRilascioDoc.AcceptsReturn = True
+      Me.txtComuneRilascioDoc.BackColor = System.Drawing.SystemColors.Window
+      Me.txtComuneRilascioDoc.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtComuneRilascioDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtComuneRilascioDoc.ForeColor = System.Drawing.Color.Black
+      Me.txtComuneRilascioDoc.Location = New System.Drawing.Point(113, 63)
+      Me.txtComuneRilascioDoc.MaxLength = 0
+      Me.txtComuneRilascioDoc.Name = "txtComuneRilascioDoc"
+      Me.txtComuneRilascioDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtComuneRilascioDoc.Size = New System.Drawing.Size(161, 20)
+      Me.txtComuneRilascioDoc.TabIndex = 2
+      Me.txtComuneRilascioDoc.TabStop = False
+      Me.txtComuneRilascioDoc.Visible = False
       '
       'Label29
       '
@@ -956,7 +907,7 @@ Public Class frmSchedinaPS
       Me.Label29.BackColor = System.Drawing.Color.Transparent
       Me.Label29.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label29.ForeColor = System.Drawing.Color.Black
-      Me.Label29.Location = New System.Drawing.Point(260, 69)
+      Me.Label29.Location = New System.Drawing.Point(12, 65)
       Me.Label29.Name = "Label29"
       Me.Label29.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label29.Size = New System.Drawing.Size(95, 13)
@@ -964,20 +915,19 @@ Public Class frmSchedinaPS
       Me.Label29.Text = "Comune di rilascio:"
       Me.Label29.Visible = False
       '
-      'txtPrezzoCamera
+      'txtNumeroDoc
       '
-      Me.txtPrezzoCamera.BackColor = System.Drawing.SystemColors.Window
-      Me.txtPrezzoCamera.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtPrezzoCamera.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtPrezzoCamera.ForeColor = System.Drawing.Color.Red
-      Me.txtPrezzoCamera.Location = New System.Drawing.Point(361, 23)
-      Me.txtPrezzoCamera.MaxLength = 0
-      Me.txtPrezzoCamera.Name = "txtPrezzoCamera"
-      Me.txtPrezzoCamera.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtPrezzoCamera.Size = New System.Drawing.Size(161, 20)
-      Me.txtPrezzoCamera.TabIndex = 261
-      Me.txtPrezzoCamera.TabStop = False
-      Me.txtPrezzoCamera.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.txtNumeroDoc.BackColor = System.Drawing.SystemColors.Window
+      Me.txtNumeroDoc.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtNumeroDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtNumeroDoc.ForeColor = System.Drawing.Color.Black
+      Me.txtNumeroDoc.Location = New System.Drawing.Point(389, 22)
+      Me.txtNumeroDoc.MaxLength = 0
+      Me.txtNumeroDoc.Name = "txtNumeroDoc"
+      Me.txtNumeroDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtNumeroDoc.Size = New System.Drawing.Size(150, 20)
+      Me.txtNumeroDoc.TabIndex = 1
+      Me.txtNumeroDoc.TabStop = False
       '
       'Label16
       '
@@ -985,7 +935,7 @@ Public Class frmSchedinaPS
       Me.Label16.BackColor = System.Drawing.Color.Transparent
       Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label16.ForeColor = System.Drawing.Color.Black
-      Me.Label16.Location = New System.Drawing.Point(16, 100)
+      Me.Label16.Location = New System.Drawing.Point(12, 100)
       Me.Label16.Name = "Label16"
       Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label16.Size = New System.Drawing.Size(68, 13)
@@ -998,20 +948,20 @@ Public Class frmSchedinaPS
       Me.Label17.BackColor = System.Drawing.Color.Transparent
       Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label17.ForeColor = System.Drawing.Color.Black
-      Me.Label17.Location = New System.Drawing.Point(260, 25)
+      Me.Label17.Location = New System.Drawing.Point(288, 22)
       Me.Label17.Name = "Label17"
       Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label17.Size = New System.Drawing.Size(47, 13)
       Me.Label17.TabIndex = 273
       Me.Label17.Text = "Numero:"
       '
-      'cmbListino
+      'cmbTipoDoc
       '
-      Me.cmbListino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbListino.Location = New System.Drawing.Point(105, 22)
-      Me.cmbListino.Name = "cmbListino"
-      Me.cmbListino.Size = New System.Drawing.Size(149, 21)
-      Me.cmbListino.TabIndex = 259
+      Me.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipoDoc.Location = New System.Drawing.Point(113, 22)
+      Me.cmbTipoDoc.Name = "cmbTipoDoc"
+      Me.cmbTipoDoc.Size = New System.Drawing.Size(161, 21)
+      Me.cmbTipoDoc.TabIndex = 0
       '
       'Label9
       '
@@ -1026,67 +976,116 @@ Public Class frmSchedinaPS
       Me.Label9.TabIndex = 272
       Me.Label9.Text = "Tipo documento:"
       '
-      'cmbPagamento
-      '
-      Me.cmbPagamento.Location = New System.Drawing.Point(105, 65)
-      Me.cmbPagamento.Name = "cmbPagamento"
-      Me.cmbPagamento.Size = New System.Drawing.Size(149, 21)
-      Me.cmbPagamento.TabIndex = 260
-      '
       'Label2
       '
       Me.Label2.AutoSize = True
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(16, 69)
+      Me.Label2.Location = New System.Drawing.Point(288, 100)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(71, 13)
       Me.Label2.TabIndex = 271
       Me.Label2.Text = "Rilasciato da:"
       '
-      'DateTimePicker2
+      'TabPage3
       '
-      Me.DateTimePicker2.Checked = False
-      Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.DateTimePicker2.Location = New System.Drawing.Point(105, 100)
-      Me.DateTimePicker2.Name = "DateTimePicker2"
-      Me.DateTimePicker2.ShowCheckBox = True
-      Me.DateTimePicker2.Size = New System.Drawing.Size(149, 20)
-      Me.DateTimePicker2.TabIndex = 287
-      Me.DateTimePicker2.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
+      Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage3.Controls.Add(Me.cmdInserisciOccupanti)
+      Me.TabPage3.Controls.Add(Me.cmdEliminaOccupanti)
+      Me.TabPage3.Controls.Add(Me.lvwOccupanti)
+      Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage3.Name = "TabPage3"
+      Me.TabPage3.Size = New System.Drawing.Size(587, 388)
+      Me.TabPage3.TabIndex = 7
+      Me.TabPage3.Text = "Altri componenti"
       '
-      'ComboBox4
+      'cmdInserisciOccupanti
       '
-      Me.ComboBox4.Location = New System.Drawing.Point(362, 100)
-      Me.ComboBox4.Name = "ComboBox4"
-      Me.ComboBox4.Size = New System.Drawing.Size(160, 21)
-      Me.ComboBox4.TabIndex = 300
+      Me.cmdInserisciOccupanti.Id = "5cb4629d-8026-4d6c-9815-611d4bacb7c7"
+      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(346, 331)
+      Me.cmdInserisciOccupanti.Name = "cmdInserisciOccupanti"
+      Me.cmdInserisciOccupanti.Size = New System.Drawing.Size(104, 32)
+      Me.cmdInserisciOccupanti.TabIndex = 1
+      Me.cmdInserisciOccupanti.Text = "&Inserisci"
       '
-      'Label35
+      'cmdEliminaOccupanti
       '
-      Me.Label35.AutoSize = True
-      Me.Label35.BackColor = System.Drawing.Color.Transparent
-      Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label35.ForeColor = System.Drawing.Color.Black
-      Me.Label35.Location = New System.Drawing.Point(261, 100)
-      Me.Label35.Name = "Label35"
-      Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label35.Size = New System.Drawing.Size(95, 13)
-      Me.Label35.TabIndex = 301
-      Me.Label35.Text = "Nazione di rilascio:"
+      Me.cmdEliminaOccupanti.Id = "f4c880ee-0846-4e54-a486-3bc390ef19a6"
+      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(458, 331)
+      Me.cmdEliminaOccupanti.Name = "cmdEliminaOccupanti"
+      Me.cmdEliminaOccupanti.Size = New System.Drawing.Size(104, 32)
+      Me.cmdEliminaOccupanti.TabIndex = 2
+      Me.cmdEliminaOccupanti.Text = "&Elimina"
+      '
+      'lvwOccupanti
+      '
+      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader14, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader13, Me.ColumnHeader12})
+      Me.lvwOccupanti.Dock = System.Windows.Forms.DockStyle.Top
+      Me.lvwOccupanti.FullRowSelect = True
+      Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
+      Me.lvwOccupanti.MultiSelect = False
+      Me.lvwOccupanti.Name = "lvwOccupanti"
+      Me.lvwOccupanti.Size = New System.Drawing.Size(587, 327)
+      Me.lvwOccupanti.TabIndex = 0
+      Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
+      Me.lvwOccupanti.View = System.Windows.Forms.View.Details
+      '
+      'ColumnHeader14
+      '
+      Me.ColumnHeader14.Text = "Indice"
+      Me.ColumnHeader14.Width = 0
+      '
+      'ColumnHeader7
+      '
+      Me.ColumnHeader7.Text = "Cognome"
+      Me.ColumnHeader7.Width = 100
+      '
+      'ColumnHeader8
+      '
+      Me.ColumnHeader8.Text = "Nome"
+      Me.ColumnHeader8.Width = 100
       '
       'ColumnHeader1
       '
       Me.ColumnHeader1.Text = "Sesso"
       Me.ColumnHeader1.Width = 50
       '
+      'ColumnHeader9
+      '
+      Me.ColumnHeader9.Text = "Data di Nascita"
+      Me.ColumnHeader9.Width = 90
+      '
+      'ColumnHeader10
+      '
+      Me.ColumnHeader10.Text = "Luogo di Nascita"
+      Me.ColumnHeader10.Width = 120
+      '
+      'ColumnHeader13
+      '
+      Me.ColumnHeader13.Text = "Nazionalità"
+      Me.ColumnHeader13.Width = 75
+      '
+      'ColumnHeader12
+      '
+      Me.ColumnHeader12.Text = "Codice"
+      Me.ColumnHeader12.Width = 0
+      '
+      'ErrorProvider1
+      '
+      Me.ErrorProvider1.ContainerControl = Me
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(565, 444)
+      Me.ClientSize = New System.Drawing.Size(605, 470)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1105,11 +1104,11 @@ Public Class frmSchedinaPS
       Me.TabPage1.PerformLayout()
       Me.Panel2.ResumeLayout(False)
       Me.Panel2.PerformLayout()
-      Me.TabPage3.ResumeLayout(False)
       Me.TabPage4.ResumeLayout(False)
       Me.TabPage4.PerformLayout()
       Me.TabPage5.ResumeLayout(False)
       Me.TabPage5.PerformLayout()
+      Me.TabPage3.ResumeLayout(False)
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
@@ -1119,11 +1118,15 @@ Public Class frmSchedinaPS
 #End Region
 
    ' DA_FARE: Modificare!
-   Public IPren As New PrenCamere
-   Public IPrenOccupanti As New PrenCamereOccupanti
+   Public CSchedina As New SchedinaPS
+   Public CSchedinaComponenti As New PrenCamereOccupanti
 
    Const NOME_TABELLA As String = "SchedinePS"
    Const TAB_CLIENTI As String = "Clienti"
+   Const TAB_CAMERE As String = "Camere"
+   Const TAB_NAZIONI As String = "Nazioni"
+   Const TAB_DOC_IDENTITA As String = "DocIdentità"
+
    ' DA_FARE: Modificare!
    Const TAB_PREN_OCCUPANTI As String = "PrenCamereOccupanti"
 
@@ -1131,19 +1134,11 @@ Public Class frmSchedinaPS
    Private CConvalida As New ConvalidaKeyPress
    Private DatiConfig As AppConfig
 
-
-   ' DA_FARE: Cancellare!
-   ' Il tipo di finestra che ha effettuato la chiamata.
-   Dim tipoFrm As String
-
    ' DA_FARE: Verificare!
    ' Servono a sapere se il periodo di prenotazione è stato modificato.
    Dim numCameraPren As String
    Dim dataArrivoPren As Date
    Dim dataPartenzaPren As Date
-
-   ' Serve a sapere se il form è stato caricato.
-   Dim loadForm As Boolean = False
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -1250,6 +1245,7 @@ Public Class frmSchedinaPS
       'End Try
    End Function
 
+   ' DA_FARE: Verificare!
    Private Function SalvaOccupanti(ByVal id As String) As Boolean
       ' Salva i dati per il Tavolo selezionato.
       Try
@@ -1261,7 +1257,7 @@ Public Class frmSchedinaPS
             idPren = LeggiUltimaPren(NOME_TABELLA)
          End If
 
-         With IPrenOccupanti
+         With CSchedinaComponenti
             .EliminaDati(TAB_PREN_OCCUPANTI, idPren)
 
             Dim i As Integer
@@ -1409,7 +1405,7 @@ Public Class frmSchedinaPS
       Dim CClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
 
       ' Legge i dati del cliente.
-      CClienti.LeggiDati("Clienti", IPren.IdCliente)
+      CClienti.LeggiDati("Clienti", CSchedina.IdCliente)
 
       Try
          With CSchedina
@@ -1503,9 +1499,9 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   Private Sub LeggiOccupanti()
+   Private Sub LeggiComponenti()
       Try
-         With IPrenOccupanti
+         With CSchedinaComponenti
             .LeggiDati(lvwOccupanti, TAB_PREN_OCCUPANTI, Me.Tag)
          End With
 
@@ -1981,16 +1977,8 @@ Public Class frmSchedinaPS
                   '   EliminaScedinePS(txtNumero.Text)
                   'End If
 
-                  Select Case tipoFrm
-                     Case ElencoPrenCamere.Name
-                        ' Aggiorna la griglia dati.
-                        g_frmPrenCamere.AggiornaDati()
-
-                     Case PlanningCamere.Name
-                        ' Aggiorna il Planning con eventuali nuove camere e prentazioni..
-                        g_frmPlanningCamere.AggiornaPlanning()
-
-                  End Select
+                  ' Aggiorna la griglia dati.
+                  g_frmSchedinePS.AggiornaDati()
 
                   ' Chiude la finestra.
                   Me.Close()
@@ -2005,180 +1993,114 @@ Public Class frmSchedinaPS
       End Select
    End Sub
 
-   Private Sub frmPrenCamera_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-      'Try
-      '   ' Imposta l'icona della finestra in base al prodotto installato.
-      '   ImpostaIcona(Me)
+   Private Sub frmSchedinaPS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+      Try
+         ' Imposta l'icona della finestra in base al prodotto installato.
+         ImpostaIcona(Me)
 
-      '   ' Carica le liste.
-      '   CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
-      '   CaricaListaCamere(cmbNumeroCamera, TAB_CAMERE)
-      '   CaricaLista(cmbListino, cmbIdListino, TAB_LISTINO)
-      '   CaricaLista(cmbPagamento, TAB_PAGAMENTO)
-      '   CaricaLista(cmbStatoPren, TAB_STATO_PREN)
+         ' Carica le liste.
+         CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
+         CaricaListaCamere(cmbNumeroCamera, TAB_CAMERE)
+         CaricaLista(cmbNazioneNascita, TAB_NAZIONI)
+         CaricaLista(cmbCittadinanza, TAB_NAZIONI)
+         CaricaLista(cmbNazioneRilascioDoc, TAB_NAZIONI)
+         CaricaLista(cmbTipoDoc, TAB_DOC_IDENTITA)
 
-      '   If Me.Tag <> String.Empty Then
-      '      With IPren
-      '         ' Comando Modifica.
+         If Me.Tag <> String.Empty Then
+            With CSchedina
+               ' Comando Modifica.
 
-      '         ' Visualizza i dati nei rispettivi campi.
-      '         .LeggiDati(NOME_TABELLA, Me.Tag)
+               ' Visualizza i dati nei rispettivi campi.
+               .LeggiDati(NOME_TABELLA, Me.Tag)
 
-      '         ' Assegna i dati dei campi della classe alle caselle di testo.
-      '         '.idcliente = 
-      '         txtCodice.Text = .Codice
-      '         txtNumero.Text = .Numero
-      '         dtpData.Value = Convert.ToDateTime(.Data)
-      '         cmbTipologia.Text = .Tipologia
-      '         cmbStatoPren.Text = .Stato
-      '         cmbCognome.Text = .Cognome
-      '         txtNome.Text = .Nome
-      '         cmbListino.Text = .Listino
-      '         nudAdulti.Value = Convert.ToDecimal(.Adulti)
-      '         nudNeonati.Value = Convert.ToDecimal(.Neonati)
-      '         nudBambini.Value = Convert.ToDecimal(.Bambini)
-      '         nudRagazzi.Value = Convert.ToDecimal(.Ragazzi)
-      '         cmbNumeroCamera.Text = .NumeroCamera
-      '         txtDescrizioneCamera.Text = .DescrizioneCamera
-      '         cmbTrattamento.Text = .Trattamento
-      '         mcDataArrivo.SetDate(Convert.ToDateTime(.DataArrivo))
-      '         mcDataPartenza.SetDate(Convert.ToDateTime(.DataPartenza))
-      '         dtpOraArrivo.Value = Convert.ToDateTime(.OraArrivo)
-      '         txtNumeroNotti.Text = .NumeroNotti.ToString
-      '         cmbPagamento.Text = .Pagamento
-      '         txtPrezzoCamera.Text = CFormatta.FormattaNumeroDouble(.CostoCamera)
-      '         txtTassaSoggiorno.Text = CFormatta.FormattaNumeroDouble(.TassaSoggiorno)
-      '         txtAccontoCamera.Text = CFormatta.FormattaNumeroDouble(.AccontoCamera)
-      '         txtTotaleConto.Text = CFormatta.FormattaNumeroDouble(.TotaleConto)
-      '         txtTotaleConto.Text = CFormatta.FormattaNumeroDouble(.ApplicaSconto)
-      '         'cmbApplicaSconto.SelectedIndex = Convert.ToInt32(.ApplicaSconto)
+               ' Assegna i dati dei campi della classe alle caselle di testo.
+               txtCodice.Text = .Codice
+               txtNumero.Text = .Numero
+               cmbCognome.Text = .Cognome
+               txtNome.Text = .Nome
+               cmbSesso.Text = .Sesso
 
-      '         If IsNumeric(.Sconto) = True Then
-      '            txtSconto.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Sconto))
-      '         Else
-      '            txtSconto.Text = VALORE_ZERO
-      '         End If
-      '         If IsNumeric(.Servizio) = True Then
-      '            txtServizio.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Servizio))
-      '         Else
-      '            txtServizio.Text = VALORE_ZERO
-      '         End If
+               If .DataNascita <> String.Empty Then
+                  dtpDataNascita.Value = Convert.ToDateTime(.DataNascita)
+               End If
 
-      '         If .Schedina <> String.Empty Then
-      '            ckbSchedina.Checked = True
-      '         Else
-      '            ckbSchedina.Checked = False
-      '         End If
+               txtLuogoNascita.Text = .LuogoNascita
+               txtProvNascita.Text = .ProvNascita
+               cmbNazioneNascita.Text = .NazioneNascita
+               cmbCittadinanza.Text = .Cittadinanza
+               cmbTipoDoc.Text = .TipoDoc
+               txtNumeroDoc.Text = .NumeroDoc
+               txtRilasciatoDaDoc.Text = .RilasciatoDoc
+               txtComuneRilascioDoc.Text = .ComuneRilascioDoc
 
-      '         txtNote.Text = .Note
+               If .DataRilascioDoc <> String.Empty Then
+                  dtpDataRilascioDoc.Value = Convert.ToDateTime(.DataRilascioDoc)
+               End If
 
-      '         If .Colore <> 0 Then
-      '            cmdColore.BackColor = Color.FromArgb(.Colore)
-      '         End If
+               cmbNazioneRilascioDoc.Text = .NazioneRilascioDoc
+               mcDataArrivo.SetDate(Convert.ToDateTime(.DataArrivo))
+               mcDataPartenza.SetDate(Convert.ToDateTime(.DataPartenza))
+               txtNumeroNotti.Text = .Permanenza.ToString
+               cmbNumeroCamera.Text = .NumCamera
+               txtNumeroPren.Text = .NumPren
+               cmbStato.Text = .Stato
 
-      '         ' Aggiorna la nuova data di arrivo.
-      '         lblArrivo.Text = "Arrivo: " & Convert.ToDateTime(.DataArrivo).ToLongDateString
-      '         ' Aggiorna la nuova data di partenza.
-      '         lblPartenza.Text = "Partenza: " & Convert.ToDateTime(.DataPartenza).ToLongDateString
+               If .DataStampa <> String.Empty Then
+                  dtpDataStampa.Value = Convert.ToDateTime(.DataStampa)
+               End If
 
-      '         ' Carica eventuali clienti occupanti.
-      '         LeggiOccupanti()
+               ' Aggiorna la nuova data di arrivo.
+               lblArrivo.Text = "Arrivo: " & Convert.ToDateTime(.DataArrivo).ToLongDateString
+               ' Aggiorna la nuova data di partenza.
+               lblPartenza.Text = "Partenza: " & Convert.ToDateTime(.DataPartenza).ToLongDateString
 
-      '         ' Carica eventuali addebiti extra.
-      '         LeggiAddebitiExtra()
-      '         CalcolaTotaleAddebiti()
+               ' Carica eventuali clienti occupanti.
+               LeggiComponenti()
 
-      '         ' Legge il Sevizio.
-      '         LeggiServizio()
+            End With
+         Else
+            ' Comando Nuovo.
 
-      '         ' Salva i dati per verificare se la prenotazione è cambiata.
-      '         numCameraPren = .NumeroCamera
-      '         dataArrivoPren = Convert.ToDateTime(.DataArrivo)
-      '         dataPartenzaPren = Convert.ToDateTime(.DataPartenza)
+            ' Genera il numero progressivo.
+            txtNumero.Text = String.Empty
 
-      '      End With
-      '   Else
-      '      ' Comando Nuovo.
+            ' Seleziona il valore Inserita.
+            cmbStato.SelectedIndex = 0
 
-      '      ' Genera il numero progressivo.
-      '      txtNumero.Text = LeggiUltimoRecord(NOME_TABELLA, "Numero") + 1
-      '      ' Data prenotazione - Oggi.
-      '      dtpData.Value = Today
-      '      ' Seleziona il valore Individuale.
-      '      cmbTipologia.SelectedIndex = 0
-      '      ' Seleziona il valore Solo Pernottamento.
-      '      cmbTrattamento.SelectedIndex = 0
+            ' Data e ora di arrivo
+            mcDataArrivo.SetDate(Today)
+            mcDataPartenza.MinDate = Today.AddDays(1)
+            mcDataPartenza.SetDate(Today.AddDays(1))
 
-      '      Select Case tipoFrm
-      '         Case ElencoPrenCamere.Name
-      '            ' Data e ora di arrivo
-      '            mcDataArrivo.SetDate(Today)
-      '            mcDataPartenza.MinDate = Today.AddDays(1)
-      '            mcDataPartenza.SetDate(Today.AddDays(1))
-      '            ' Aggiorna la nuova data di arrivo.
-      '            lblArrivo.Text = "Arrivo: " & Today.ToLongDateString
-      '            ' Aggiorna la nuova data di partenza.
-      '            lblPartenza.Text = "Partenza: " & Today.AddDays(1).ToLongDateString
-      '            ' Aggiorna il numero delle notti.
-      '            txtNumeroNotti.Text = CalcolaNumGiorni(Today, mcDataPartenza.SelectionRange.Start.Date).ToString
+            ' Aggiorna la nuova data di arrivo.
+            lblArrivo.Text = "Arrivo: " & Today.ToLongDateString
+            ' Aggiorna la nuova data di partenza.
+            lblPartenza.Text = "Partenza: " & Today.AddDays(1).ToLongDateString
+            ' Aggiorna il numero delle notti.
+            txtNumeroNotti.Text = CalcolaNumGiorni(Today, mcDataPartenza.SelectionRange.Start.Date).ToString
 
-      '         Case PlanningCamere.Name
-      '            Dim data As Date = Convert.ToDateTime(g_frmPlanningCamere.dgvPrenotazioni.Columns(g_frmPlanningCamere.dgvPrenotazioni.CurrentCell.ColumnIndex).Name).Date
+         End If
 
-      '            ' Data e ora di arrivo
-      '            mcDataArrivo.SetDate(data)
-      '            mcDataPartenza.MinDate = data.AddDays(1)
-      '            mcDataPartenza.SetDate(data.AddDays(1))
-      '            ' Aggiorna la nuova data di arrivo.
-      '            lblArrivo.Text = "Arrivo: " & data.ToLongDateString
-      '            ' Aggiorna la nuova data di partenza.
-      '            lblPartenza.Text = "Partenza: " & data.AddDays(1).ToLongDateString
-      '            ' Aggiorna il numero delle notti.
-      '            txtNumeroNotti.Text = CalcolaNumGiorni(data, mcDataPartenza.SelectionRange.Start.Date).ToString
-      '            ' Assegna il numero di camera selezionato dal Planning.
-      '            cmbNumeroCamera.Text = g_frmPlanningCamere.dgvCamere.Rows(g_frmPlanningCamere.dgvPrenotazioni.CurrentCell.RowIndex).Cells("Numero").Value
+         ' Genera l'intestazione con i dati del form.
+         If txtNumero.Text <> String.Empty Then
+            lblIntestazione.Text = VisIntestazione("Schedina N. " & txtNumero.Text, cmbCognome.Text, txtNome.Text)
+         Else
+            lblIntestazione.Text = VisIntestazione(txtNumero.Text, cmbCognome.Text, txtNome.Text)
+         End If
 
-      '      End Select
+         ' Imposta lo stato attivo.
+         txtNumero.Focus()
 
-      '      ' Ora corrente.
-      '      dtpOraArrivo.Value = Now
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      '      ' Contabile.
-      '      txtPrezzoCamera.Text = VALORE_ZERO
-      '      txtTotaleCostoCamera.Text = VALORE_ZERO
-      '      txtTotaleAddebiti.Text = VALORE_ZERO
-      '      txtSconto.Text = VALORE_ZERO
-      '      txtServizio.Text = VALORE_ZERO
-      '      txtTotaleTassaSoggiorno.Text = VALORE_ZERO
-      '      txtTotaleConto.Text = VALORE_ZERO
-      '      txtAccontoCamera.Text = VALORE_ZERO
-      '      txtTotaleImporto.Text = VALORE_ZERO
-      '      ckbSchedina.Checked = False
-      '      'cmbApplicaSconto.SelectedIndex = 0
+      Finally
 
-      '   End If
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
 
-      '   ' Carica la lista delle degli allegati.
-      '   ConvalidaAllegati()
-
-      '   ' Genera l'intestazione con i dati del form.
-      '   lblIntestazione.Text = VisIntestazione(txtNumero.Text, cmbCognome.Text, txtNome.Text)
-
-      '   ' Imposta lo stato attivo.
-      '   txtNumero.Focus()
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'Finally
-
-      '   ' Modifica il cursore del mouse.
-      '   Cursor.Current = Cursors.Default
-
-      '   ' Serve a sapere se il form è stato caricato.
-      '   loadForm = True
-      'End Try
+      End Try
    End Sub
 
    ' DA_FARE_A: HOTEL - da modificare!
@@ -2206,7 +2128,7 @@ Public Class frmSchedinaPS
 
          Case 3
             ' Contabile.
-            cmbListino.Focus()
+            cmbTipoDoc.Focus()
 
             ' Inserisce il prezzo della camera in base al Listino elezionato.
             ApplicaListino()
@@ -2246,7 +2168,7 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   Private Sub cmbStatoPren_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbStatoPren.SelectedIndexChanged
+   Private Sub cmbStatoPren_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbStato.SelectedIndexChanged
       'Try
       '   cmdColore.BackColor = Color.FromArgb(AssegnaColore(cmbStatoPren.Text, TAB_STATO_PREN))
       '   IPren.Colore = Convert.ToString(cmdColore.BackColor.ToArgb)
@@ -2275,9 +2197,6 @@ Public Class frmSchedinaPS
             ' Aggiorna il numero delle notti.
             txtNumeroNotti.Text = CalcolaNumGiorni(e.Start.Date, mcDataPartenza.SelectionRange.Start.Date).ToString
 
-            ' Inserisce il prezzo della camera in base al Listino elezionato.
-            ApplicaListino()
-
             Exit Sub
          End If
 
@@ -2286,9 +2205,6 @@ Public Class frmSchedinaPS
 
          ' Aggiorna il numero delle notti.
          txtNumeroNotti.Text = CalcolaNumGiorni(e.Start.Date, mcDataPartenza.SelectionRange.Start.Date).ToString
-
-         ' Inserisce il prezzo della camera in base al Listino elezionato.
-         ApplicaListino()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2305,9 +2221,6 @@ Public Class frmSchedinaPS
 
          ' Aggiorna il numero delle notti.
          txtNumeroNotti.Text = CalcolaNumGiorni(mcDataArrivo.SelectionRange.Start.Date, e.Start.Date).ToString
-
-         ' Inserisce il prezzo della camera in base al Listino elezionato.
-         'ApplicaListino()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2772,54 +2685,6 @@ Public Class frmSchedinaPS
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   Private Sub cmbListino_SelectedIndexChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
-   End Sub
-
-   Private Sub cmbTrattamento_SelectedIndexChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
-   End Sub
-
-   Private Sub nudAdulti_ValueChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
-   End Sub
-
-   Private Sub nudNeonati_ValueChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
-   End Sub
-
-   Private Sub nudBambini_ValueChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
-   End Sub
-
-   Private Sub nudRagazzi_ValueChanged(sender As Object, e As EventArgs)
-      ' Inserisce il prezzo della camera in base al Listino elezionato.
-      If loadForm = True Then
-         ApplicaListino()
-      End If
-
    End Sub
 
    Private Function LeggiBassaStagione1(ByVal dataPren As Date) As String

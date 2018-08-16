@@ -1911,7 +1911,6 @@ Public Class ElencoPrenCamere
       'End If
    End Sub
 
-
    ' DA_FARE: HOTEL - da modificare!
    Public Sub Nuovo()
       Try

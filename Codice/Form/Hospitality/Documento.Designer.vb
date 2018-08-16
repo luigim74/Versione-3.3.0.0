@@ -644,7 +644,7 @@ Partial Class frmDocumento
       Me.eui_tpDettagli.Controls.Add(Me.dgvDettagli)
       Me.eui_tpDettagli.KeyTip = Nothing
       Me.eui_tpDettagli.Name = "eui_tpDettagli"
-      Me.eui_tpDettagli.Size = New System.Drawing.Size(657, 453)
+      Me.eui_tpDettagli.Size = New System.Drawing.Size(666, 453)
       Me.eui_tpDettagli.TabIndex = 1
       Me.eui_tpDettagli.Text = "Dettagli"
       '
@@ -665,7 +665,7 @@ Partial Class frmDocumento
       '
       Me.eui_cmdCancellaTutto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdCancellaTutto.Id = "a64e0446-1db7-4144-9b7c-e1251124234a"
-      Me.eui_cmdCancellaTutto.Location = New System.Drawing.Point(559, 411)
+      Me.eui_cmdCancellaTutto.Location = New System.Drawing.Point(568, 411)
       Me.eui_cmdCancellaTutto.Name = "eui_cmdCancellaTutto"
       Me.eui_cmdCancellaTutto.Size = New System.Drawing.Size(95, 29)
       Me.eui_cmdCancellaTutto.TabIndex = 5
@@ -675,7 +675,7 @@ Partial Class frmDocumento
       '
       Me.eui_cmdEliminaRiga.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdEliminaRiga.Id = "ffdf7dee-e67d-4bb1-8383-e023e9410042"
-      Me.eui_cmdEliminaRiga.Location = New System.Drawing.Point(455, 411)
+      Me.eui_cmdEliminaRiga.Location = New System.Drawing.Point(464, 411)
       Me.eui_cmdEliminaRiga.Name = "eui_cmdEliminaRiga"
       Me.eui_cmdEliminaRiga.Size = New System.Drawing.Size(95, 29)
       Me.eui_cmdEliminaRiga.TabIndex = 4
@@ -750,7 +750,7 @@ Partial Class frmDocumento
       '
       Me.eui_cmdNuovaRiga.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdNuovaRiga.Id = "009b3784-161a-4521-84d6-77d07b88a7dd"
-      Me.eui_cmdNuovaRiga.Location = New System.Drawing.Point(350, 411)
+      Me.eui_cmdNuovaRiga.Location = New System.Drawing.Point(359, 411)
       Me.eui_cmdNuovaRiga.Name = "eui_cmdNuovaRiga"
       Me.eui_cmdNuovaRiga.Size = New System.Drawing.Size(95, 29)
       Me.eui_cmdNuovaRiga.TabIndex = 3
@@ -779,7 +779,7 @@ Partial Class frmDocumento
       Me.dgvDettagli.MultiSelect = False
       Me.dgvDettagli.Name = "dgvDettagli"
       Me.dgvDettagli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-      Me.dgvDettagli.Size = New System.Drawing.Size(648, 403)
+      Me.dgvDettagli.Size = New System.Drawing.Size(657, 403)
       Me.dgvDettagli.TabIndex = 0
       '
       'clnCodice
@@ -930,7 +930,7 @@ Partial Class frmDocumento
       Me.eui_tpTotali.Dock = System.Windows.Forms.DockStyle.Fill
       Me.eui_tpTotali.KeyTip = Nothing
       Me.eui_tpTotali.Name = "eui_tpTotali"
-      Me.eui_tpTotali.Size = New System.Drawing.Size(726, 499)
+      Me.eui_tpTotali.Size = New System.Drawing.Size(666, 453)
       Me.eui_tpTotali.TabIndex = 3
       Me.eui_tpTotali.Text = "Totali"
       '
@@ -1304,7 +1304,7 @@ Partial Class frmDocumento
       Me.eui_tpNote.Controls.Add(Me.eui_txtNote)
       Me.eui_tpNote.KeyTip = Nothing
       Me.eui_tpNote.Name = "eui_tpNote"
-      Me.eui_tpNote.Size = New System.Drawing.Size(726, 499)
+      Me.eui_tpNote.Size = New System.Drawing.Size(666, 453)
       Me.eui_tpNote.TabIndex = 2
       Me.eui_tpNote.Text = "Note"
       '
@@ -1315,7 +1315,7 @@ Partial Class frmDocumento
       Me.eui_txtNote.Location = New System.Drawing.Point(0, 0)
       Me.eui_txtNote.Multiline = True
       Me.eui_txtNote.Name = "eui_txtNote"
-      Me.eui_txtNote.Size = New System.Drawing.Size(726, 499)
+      Me.eui_txtNote.Size = New System.Drawing.Size(666, 453)
       Me.eui_txtNote.TabIndex = 0
       Me.eui_txtNote.TextEditorWidth = 653
       '
@@ -1368,10 +1368,10 @@ Partial Class frmDocumento
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 624)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 635)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(882, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(890, 22)
       Me.StatusBar1.TabIndex = 3
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -1385,7 +1385,7 @@ Partial Class frmDocumento
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(748, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(756, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -1453,7 +1453,7 @@ Partial Class frmDocumento
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane4)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(748, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(756, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -1697,7 +1697,7 @@ Partial Class frmDocumento
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(882, 646)
+      Me.ClientSize = New System.Drawing.Size(890, 657)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_cmdEmettiStampa)
       Me.Controls.Add(Me.eui_txtTotaleDocumento)
