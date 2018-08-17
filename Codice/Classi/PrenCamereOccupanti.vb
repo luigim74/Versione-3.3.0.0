@@ -3,13 +3,15 @@ Imports System.Data.OleDb
 Public Class PrenCamereOccupanti
 
    Public RifPren As Integer
-   Public CodiceCliente As String = String.Empty
-   Public Cognome As String = String.Empty
-   Public Nome As String = String.Empty
-   Public DataNascita As String = String.Empty
-   Public LuogoNascita As String = String.Empty
-   Public ProvNascita As String = String.Empty
-   Public Nazionalità As String = String.Empty
+   Public CodiceCliente As String
+   Public Cognome As String
+   Public Nome As String
+   Public Sesso As String
+   Public DataNascita As String
+   Public LuogoNascita As String
+   Public ProvNascita As String
+   Public Nazionalità As String
+   Public Permanenza As Integer
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -53,6 +55,12 @@ Public Class PrenCamereOccupanti
             Else
                Me.Nome = String.Empty
             End If
+            ' Sesso.
+            If IsDBNull(dr.Item("Sesso")) = False Then
+               Me.Sesso = dr.Item("Sesso").ToString
+            Else
+               Me.Sesso = String.Empty
+            End If
             ' Data di nascita.
             If IsDBNull(dr.Item("DataNascita")) = False Then
                Me.DataNascita = dr.Item("DataNascita").ToString
@@ -76,6 +84,12 @@ Public Class PrenCamereOccupanti
                Me.Nazionalità = dr.Item("Nazionalità").ToString
             Else
                Me.Nazionalità = String.Empty
+            End If
+            ' Permanenza.
+            If IsDBNull(dr.Item("Permanenza")) = False Then
+               Me.Permanenza = dr.Item("Permanenza").ToString
+            Else
+               Me.Permanenza = 0
             End If
          Loop
 
@@ -123,6 +137,12 @@ Public Class PrenCamereOccupanti
             Else
                lst.Items(i).SubItems.Add("")
             End If
+            ' Sesso.
+            If IsDBNull(dr.Item("Sesso")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("Sesso").ToString)
+            Else
+               lst.Items(i).SubItems.Add("")
+            End If
             ' DataNascita.
             If IsDBNull(dr.Item("DataNascita")) = False Then
                lst.Items(i).SubItems.Add(dr.Item("DataNascita").ToString)
@@ -147,29 +167,18 @@ Public Class PrenCamereOccupanti
             Else
                lst.Items(i).SubItems.Add("")
             End If
+            ' Permanenza.
+            If IsDBNull(dr.Item("Permanenza")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("Permanenza").ToString)
+            Else
+               lst.Items(i).SubItems.Add("")
+            End If
             ' Codice Cliente.
             If IsDBNull(dr.Item("CodiceCliente")) = False Then
                lst.Items(i).SubItems.Add(dr.Item("CodiceCliente").ToString)
             Else
                lst.Items(i).SubItems.Add("")
             End If
-
-            'lst.Items(i).BackColor = Color.MediumSeaGreen
-            'lst.Items(i).ForeColor = Color.FromArgb(Convert.ToInt32(dr.Item("Colore")))
-            'lst.Items(i).Font = New Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic)
-
-            ' Stabilisce il gruppo di appartenenza.
-            'Dim valGruppo As Short
-            'Select Case dr.Item("Gruppo").ToString
-            '   Case "Accessori"
-            '      valGruppo = 1
-            '   Case "Servizi"
-            '      valGruppo = 2
-            '   Case Else ' Articoli vari
-            '      valGruppo = 0
-            'End Select
-
-            'lst.Items(i).Group = lst.Groups.Item(valGruppo)
 
             i = i + 1
 
@@ -200,8 +209,8 @@ Public Class PrenCamereOccupanti
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, Cognome, Nome, DataNascita, LuogoNascita, ProvNascita, Nazionalità) " & _
-                                       "VALUES(@RifPren, @CodiceCliente, @Cognome, @Nome, @DataNascita, @LuogoNascita, @ProvNascita, @Nazionalità)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, Nazionalità, Permanenza) " &
+                                       "VALUES(@RifPren, @CodiceCliente, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @Nazionalità, @Permanenza)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -210,10 +219,12 @@ Public Class PrenCamereOccupanti
          cmdInsert.Parameters.AddWithValue("@CodiceCliente", Me.CodiceCliente)
          cmdInsert.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdInsert.Parameters.AddWithValue("@Nome", Me.Nome)
+         cmdInsert.Parameters.AddWithValue("@Sesso", Me.Sesso)
          cmdInsert.Parameters.AddWithValue("@DataNascita", Me.DataNascita)
          cmdInsert.Parameters.AddWithValue("@LuogoNascita", Me.LuogoNascita)
          cmdInsert.Parameters.AddWithValue("@ProvNascita", Me.ProvNascita)
          cmdInsert.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdInsert.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -250,17 +261,19 @@ Public Class PrenCamereOccupanti
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET RifPren = @RifPren, " & _
-                             "CodiceCliente = @CodiceCliente, " & _
-                             "Cognome = @Cognome, " & _
-                             "Nome = @Nome, " & _
-                             "DataNascita = @DataNascita, " & _
-                             "LuogoNascita = @LuogoNascita, " & _
-                             "ProvNascita = @ProvNascita, " & _
-                             "Nazionalità = @Nazionalità " & _
-                             "WHERE RifPren = {1}", _
-                             tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET RifPren = @RifPren, " &
+                             "CodiceCliente = @CodiceCliente, " &
+                             "Cognome = @Cognome, " &
+                             "Nome = @Nome, " &
+                             "Sesso = @Sesso, " &
+                             "DataNascita = @DataNascita, " &
+                             "LuogoNascita = @LuogoNascita, " &
+                             "ProvNascita = @ProvNascita, " &
+                             "Nazionalità = @Nazionalità, " &
+                             "Permanenza = @Permanenza " &
+                             "WHERE RifPren = {1}",
+                             tabella,
                              codPren)
 
          ' Crea il comando per la connessione corrente.
@@ -270,10 +283,12 @@ Public Class PrenCamereOccupanti
          cmdUpdate.Parameters.AddWithValue("@CodiceCliente", Me.CodiceCliente)
          cmdUpdate.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdUpdate.Parameters.AddWithValue("@Nome", Me.Nome)
+         cmdUpdate.Parameters.AddWithValue("@Sesso", Me.Sesso)
          cmdUpdate.Parameters.AddWithValue("@DataNascita", Me.DataNascita)
          cmdUpdate.Parameters.AddWithValue("@LuogoNascita", Me.LuogoNascita)
          cmdUpdate.Parameters.AddWithValue("@ProvNascita", Me.ProvNascita)
          cmdUpdate.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdUpdate.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

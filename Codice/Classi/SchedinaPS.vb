@@ -17,8 +17,7 @@
 Public Class SchedinaPS
 
    Public Codice As Integer
-   Public Numero As String
-   Public IdComponente As Integer
+   Public Numero As Integer
    Public IdCliente As Integer
    Public TipologiaCliente As String
    Public Cognome As String
@@ -82,12 +81,7 @@ Public Class SchedinaPS
          If IsDBNull(ds.Tables(tabella).Rows(0)("Numero")) = False Then
             Me.Numero = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Numero"))
          Else
-            Me.Numero = String.Empty
-         End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("IdComponente")) = False Then
-            Me.IdComponente = Convert.ToInt32(ds.Tables(tabella).Rows(0)("IdComponente"))
-         Else
-            Me.IdComponente = 0
+            Me.Numero = 0
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("IdCliente")) = False Then
             Me.IdCliente = Convert.ToInt32(ds.Tables(tabella).Rows(0)("IdCliente"))
@@ -233,10 +227,10 @@ Public Class SchedinaPS
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Numero, IdComponente, IdCliente, TipologiaCliente, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Cittadinanza, " &
+         sql = String.Format("INSERT INTO {0} (Numero, IdCliente, TipologiaCliente, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Cittadinanza, " &
                                               "TipoDoc, NumeroDoc, RilasciatoDoc, ComuneRilascioDoc, DataRilascioDoc, DataScadenzaDoc, NazioneRilascioDoc, DataArrivo, DataPartenza, Permanenza, " &
                                               "NumCamera, NumPren, Stato, DataStampa) " &
-                                       "VALUES(@Numero, @IdComponente, @IdCliente, @TipologiaCliente, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Cittadinanza, " &
+                                       "VALUES(@Numero, @IdCliente, @TipologiaCliente, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Cittadinanza, " &
                                               "@TipoDoc, @NumeroDoc, @RilasciatoDoc, @ComuneRilascioDoc, @DataRilascioDoc, @DataScadenzaDoc, @NazioneRilascioDoc, @DataArrivo, @DataPartenza, @Permanenza, " &
                                               "@NumCamera, @NumPren, @Stato, @DataStampa)", tabella)
 
@@ -244,7 +238,6 @@ Public Class SchedinaPS
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
          cmdInsert.Parameters.AddWithValue("@Numero", Me.Numero)
-         cmdInsert.Parameters.AddWithValue("@IdComponente", Me.IdComponente)
          cmdInsert.Parameters.AddWithValue("@IdCliente", Me.IdCliente)
          cmdInsert.Parameters.AddWithValue("@TipologiaCliente", Me.TipologiaCliente)
          cmdInsert.Parameters.AddWithValue("@Cognome", Me.Cognome)
@@ -307,7 +300,6 @@ Public Class SchedinaPS
          ' Crea la stringa di eliminazione.
          sql = String.Format("UPDATE {0} " &
                              "SET Numero = @Numero, " &
-                             "IdComponente = @IdComponente, " &
                              "IdCliente = @IdCliente, " &
                              "TipologiaCliente = @TipologiaCliente, " &
                              "Cognome = @Cognome, " &
@@ -341,7 +333,6 @@ Public Class SchedinaPS
 
          cmdUpdate.Parameters.AddWithValue("@IdCliente", Me.IdCliente)
          cmdUpdate.Parameters.AddWithValue("@Numero", Me.Numero)
-         cmdUpdate.Parameters.AddWithValue("@IdComponente", Me.IdComponente)
          cmdUpdate.Parameters.AddWithValue("@IdCliente", Me.IdCliente)
          cmdUpdate.Parameters.AddWithValue("@TipologiaCliente", Me.TipologiaCliente)
          cmdUpdate.Parameters.AddWithValue("@Cognome", Me.Cognome)

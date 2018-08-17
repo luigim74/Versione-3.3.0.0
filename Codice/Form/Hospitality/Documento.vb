@@ -1793,19 +1793,21 @@ Public Class frmDocumento
 
          Dim AClienti As New Anagrafiche.Cliente(ConnString)
 
-         AClienti.LeggiDati(ANA_CLIENTI, eui_cmbIdCliente.Text)
+         With AClienti
+            .LeggiDati(ANA_CLIENTI, eui_cmbIdCliente.Text)
 
-         eui_txtClienteNome.Text = AClienti.Nome
-         eui_txtIndirizzo.Text = AClienti.Indirizzo1
-         eui_txtCittà.Text = AClienti.Città
-         eui_txtCap.Text = AClienti.Cap
-         eui_txtProvincia.Text = AClienti.Provincia
-         eui_txtPartitaIva.Text = AClienti.PIva
-         eui_txtCodiceFiscale.Text = AClienti.CodFisc
-         eui_txtSconto.Text = AClienti.Sconto
+            eui_txtClienteNome.Text = .Nome
+            eui_txtIndirizzo.Text = .Indirizzo1
+            eui_txtCittà.Text = .Città
+            eui_txtCap.Text = .Cap
+            eui_txtProvincia.Text = .Provincia
+            eui_txtPartitaIva.Text = .PIva
+            eui_txtCodiceFiscale.Text = .CodFisc
+            eui_txtSconto.Text = .Sconto
 
-         ' DA_FARE_A: Valutare se leggere l'aliquota iva del cliente
-         'eui_txtIva.Text = AClienti.Iva
+            ' DA_FARE_A: Valutare se leggere l'aliquota iva del cliente
+            'eui_txtIva.Text = .Iva
+         End With
 
          If eui_txtClienteNome.Text <> String.Empty Then
             eui_lblStatoClienteDoc.Text = eui_cmbClienteCognome.Text & " - " & eui_txtClienteNome.Text
@@ -2351,10 +2353,8 @@ Public Class frmDocumento
    End Sub
 
    Private Sub eui_cmbClienteCognome_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbClienteCognome.SelectedIndexChanged
-
       ' Legge tutti i dati anagrafici del cliente selezionato.
       CaricaDatiCliente()
-
    End Sub
 
    Private Sub eui_cmbTipoDocumento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbTipoDocumento.SelectedIndexChanged

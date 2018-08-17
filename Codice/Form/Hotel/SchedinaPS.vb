@@ -3,13 +3,12 @@
 ' Nome form:            frmSchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/08/2018
-' Data ultima modifica: 13/08/2018
+' Data ultima modifica: 17/08/2018
 ' Descrizione:          Anagrafica Schedine pubblica sicurezza.
 ' Note:
 
 ' Elenco Attivita:
 
-' DA_FARE: Sviluppare! Aggiungere comando per modificare il cliente.
 ' DA_FARE: Sviluppare! Aggiungere Tabella Componenti.
 
 ' ******************************************************************
@@ -128,6 +127,9 @@ Public Class frmSchedinaPS
    Public WithEvents Label35 As Label
    Friend WithEvents ColumnHeader1 As ColumnHeader
    Public WithEvents txtRilasciatoDaDoc As TextBox
+   Friend WithEvents cmdNuovoIntestatario As Button
+   Friend WithEvents cmbTipologia As ComboBox
+   Public WithEvents Label14 As Label
    Public WithEvents Label10 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -160,6 +162,7 @@ Public Class frmSchedinaPS
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label5 = New System.Windows.Forms.Label()
       Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.cmdNuovoIntestatario = New System.Windows.Forms.Button()
       Me.cmbCittadinanza = New System.Windows.Forms.ComboBox()
       Me.Label21 = New System.Windows.Forms.Label()
       Me.cmbNazioneNascita = New System.Windows.Forms.ComboBox()
@@ -209,6 +212,8 @@ Public Class frmSchedinaPS
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.cmbTipologia = New System.Windows.Forms.ComboBox()
+      Me.Label14 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -230,7 +235,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(605, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(635, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -264,7 +269,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(605, 20)
+      Me.Panel1.Size = New System.Drawing.Size(635, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -289,7 +294,7 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(605, 424)
+      Me.TabControl1.Size = New System.Drawing.Size(635, 454)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -311,7 +316,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(597, 398)
+      Me.TabPage1.Size = New System.Drawing.Size(627, 428)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -378,9 +383,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 163)
+      Me.Panel2.Location = New System.Drawing.Point(0, 193)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(597, 235)
+      Me.Panel2.Size = New System.Drawing.Size(627, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -567,6 +572,9 @@ Public Class frmSchedinaPS
       'TabPage4
       '
       Me.TabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage4.Controls.Add(Me.cmbTipologia)
+      Me.TabPage4.Controls.Add(Me.Label14)
+      Me.TabPage4.Controls.Add(Me.cmdNuovoIntestatario)
       Me.TabPage4.Controls.Add(Me.cmbCittadinanza)
       Me.TabPage4.Controls.Add(Me.Label21)
       Me.TabPage4.Controls.Add(Me.cmbNazioneNascita)
@@ -588,9 +596,22 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(587, 388)
+      Me.TabPage4.Size = New System.Drawing.Size(627, 428)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
+      '
+      'cmdNuovoIntestatario
+      '
+      Me.cmdNuovoIntestatario.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.cmdNuovoIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmdNuovoIntestatario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+      Me.cmdNuovoIntestatario.Location = New System.Drawing.Point(482, 58)
+      Me.cmdNuovoIntestatario.Name = "cmdNuovoIntestatario"
+      Me.cmdNuovoIntestatario.Size = New System.Drawing.Size(24, 22)
+      Me.cmdNuovoIntestatario.TabIndex = 3
+      Me.cmdNuovoIntestatario.Tag = ""
+      Me.cmdNuovoIntestatario.Text = "+"
+      Me.ToolTip1.SetToolTip(Me.cmdNuovoIntestatario, "Apre la finestra Clienti per un nuovo inserimento.")
       '
       'cmbCittadinanza
       '
@@ -599,7 +620,7 @@ Public Class frmSchedinaPS
       Me.cmbCittadinanza.Location = New System.Drawing.Point(379, 223)
       Me.cmbCittadinanza.Name = "cmbCittadinanza"
       Me.cmbCittadinanza.Size = New System.Drawing.Size(127, 21)
-      Me.cmbCittadinanza.TabIndex = 8
+      Me.cmbCittadinanza.TabIndex = 10
       '
       'Label21
       '
@@ -621,7 +642,7 @@ Public Class frmSchedinaPS
       Me.cmbNazioneNascita.Location = New System.Drawing.Point(125, 223)
       Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
       Me.cmbNazioneNascita.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazioneNascita.TabIndex = 7
+      Me.cmbNazioneNascita.TabIndex = 9
       '
       'Label19
       '
@@ -648,7 +669,7 @@ Public Class frmSchedinaPS
       Me.txtProvNascita.Name = "txtProvNascita"
       Me.txtProvNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtProvNascita.Size = New System.Drawing.Size(94, 20)
-      Me.txtProvNascita.TabIndex = 6
+      Me.txtProvNascita.TabIndex = 8
       '
       'Label10
       '
@@ -671,7 +692,7 @@ Public Class frmSchedinaPS
       Me.cmbSesso.Location = New System.Drawing.Point(124, 95)
       Me.cmbSesso.Name = "cmbSesso"
       Me.cmbSesso.Size = New System.Drawing.Size(53, 21)
-      Me.cmbSesso.TabIndex = 3
+      Me.cmbSesso.TabIndex = 4
       '
       'Label4
       '
@@ -702,7 +723,7 @@ Public Class frmSchedinaPS
       'cmbNome
       '
       Me.cmbNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbNome.Location = New System.Drawing.Point(511, 58)
+      Me.cmbNome.Location = New System.Drawing.Point(512, 58)
       Me.cmbNome.Name = "cmbNome"
       Me.cmbNome.Size = New System.Drawing.Size(24, 21)
       Me.cmbNome.TabIndex = 254
@@ -729,7 +750,7 @@ Public Class frmSchedinaPS
       Me.txtNome.Name = "txtNome"
       Me.txtNome.ReadOnly = True
       Me.txtNome.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNome.Size = New System.Drawing.Size(357, 20)
+      Me.txtNome.Size = New System.Drawing.Size(336, 20)
       Me.txtNome.TabIndex = 1
       Me.txtNome.TabStop = False
       '
@@ -750,7 +771,7 @@ Public Class frmSchedinaPS
       Me.dtpDataNascita.Name = "dtpDataNascita"
       Me.dtpDataNascita.ShowCheckBox = True
       Me.dtpDataNascita.Size = New System.Drawing.Size(112, 20)
-      Me.dtpDataNascita.TabIndex = 4
+      Me.dtpDataNascita.TabIndex = 6
       Me.dtpDataNascita.Value = New Date(2005, 8, 17, 15, 37, 0, 654)
       '
       'Label7
@@ -771,7 +792,7 @@ Public Class frmSchedinaPS
       Me.cmdApriIntestatario.FlatStyle = System.Windows.Forms.FlatStyle.System
       Me.cmdApriIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmdApriIntestatario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdApriIntestatario.Location = New System.Drawing.Point(482, 58)
+      Me.cmdApriIntestatario.Location = New System.Drawing.Point(460, 58)
       Me.cmdApriIntestatario.Name = "cmdApriIntestatario"
       Me.cmdApriIntestatario.Size = New System.Drawing.Size(24, 22)
       Me.cmdApriIntestatario.TabIndex = 2
@@ -804,7 +825,7 @@ Public Class frmSchedinaPS
       Me.txtLuogoNascita.Name = "txtLuogoNascita"
       Me.txtLuogoNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtLuogoNascita.Size = New System.Drawing.Size(160, 20)
-      Me.txtLuogoNascita.TabIndex = 5
+      Me.txtLuogoNascita.TabIndex = 7
       '
       'Label6
       '
@@ -836,7 +857,7 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(587, 388)
+      Me.TabPage5.Size = New System.Drawing.Size(627, 428)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
       '
@@ -997,7 +1018,7 @@ Public Class frmSchedinaPS
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(587, 388)
+      Me.TabPage3.Size = New System.Drawing.Size(617, 418)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -1027,7 +1048,7 @@ Public Class frmSchedinaPS
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(587, 327)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(617, 327)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1081,11 +1102,34 @@ Public Class frmSchedinaPS
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'cmbTipologia
+      '
+      Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipologia.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo"})
+      Me.cmbTipologia.Location = New System.Drawing.Point(394, 96)
+      Me.cmbTipologia.Name = "cmbTipologia"
+      Me.cmbTipologia.Size = New System.Drawing.Size(112, 21)
+      Me.cmbTipologia.TabIndex = 5
+      '
+      'Label14
+      '
+      Me.Label14.AutoSize = True
+      Me.Label14.BackColor = System.Drawing.Color.Transparent
+      Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label14.ForeColor = System.Drawing.Color.Black
+      Me.Label14.Location = New System.Drawing.Point(305, 99)
+      Me.Label14.Name = "Label14"
+      Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label14.Size = New System.Drawing.Size(79, 13)
+      Me.Label14.TabIndex = 266
+      Me.Label14.Text = "Tipo alloggiato:"
+      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(605, 470)
+      Me.ClientSize = New System.Drawing.Size(635, 500)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1410,10 +1454,9 @@ Public Class frmSchedinaPS
       Try
          With CSchedina
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Numero = String.Empty
-            .IdComponente = 0
+            .Numero = 0
             .IdCliente = CClienti.Codice
-            '.TipologiaCliente = cmbTipologia.Text
+            .TipologiaCliente = cmbTipologia.Text
             .Cognome = CClienti.Cognome
             .Nome = CClienti.Nome
             .Sesso = CClienti.Sesso
@@ -1936,6 +1979,54 @@ Public Class frmSchedinaPS
       'End If
    End Sub
 
+   Private Sub CaricaDatiCliente()
+      Try
+         ' Legge il nome relativo alla lista Cognome.
+         cmbIdCliente.SelectedIndex = cmbCognome.SelectedIndex
+
+         Dim AClienti As New Anagrafiche.Cliente(ConnString)
+
+         With AClienti
+            .LeggiDati(TAB_CLIENTI, cmbIdCliente.Text)
+
+            ' DATI ANAGRAFICI.
+            txtNome.Text = .Nome
+            cmbSesso.Text = .Sesso
+
+            If IsDate(.DataNascita) Then
+               dtpDataNascita.Value = Convert.ToDateTime(.DataNascita)
+            Else
+               dtpDataNascita.Value = Today
+               dtpDataNascita.Checked = False
+            End If
+
+            txtLuogoNascita.Text = .LuogoNascita
+            txtProvNascita.Text = .ProvNascita
+            cmbNazioneNascita.Text = .NazioneNascita
+            cmbCittadinanza.Text = .Nazionalit‡
+
+            ' DOCUMENTO DI RICONOSCIMENTO.
+            cmbTipoDoc.Text = .TipoDoc
+            txtNumeroDoc.Text = .NumeroDocIdentit‡
+            txtComuneRilascioDoc.Text = .Citt‡RilascioDoc
+            cmbNazioneRilascioDoc.Text = .NazioneRilascioDoc
+            txtRilasciatoDaDoc.Text = .RilasciatoDa
+
+            If .DataRilascioDoc <> String.Empty Then
+               dtpDataRilascioDoc.Value = Convert.ToDateTime(.DataRilascioDoc)
+            Else
+               dtpDataRilascioDoc.Value = Today
+               dtpDataRilascioDoc.Checked = False
+            End If
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
       Select Case e.Button.Tag
          Case "Salva"
@@ -2104,7 +2195,7 @@ Public Class frmSchedinaPS
    End Sub
 
    ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub frmPrenCamera_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+   Private Sub frmSchedinaPS_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       If Me.Tag <> "0" Then
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_GESTIONE_PREN_RISORSE)
@@ -2144,21 +2235,74 @@ Public Class frmSchedinaPS
       End Select
    End Sub
 
-   Private Sub cmdColore_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      'ModificaColore()
-      MessageBox.Show("Per assegnare un colore alla prenotazione selezionare un valore nella casella 'Stato prenotazione'.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-   End Sub
-
-   Private Sub cmdApriIntestatario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+   Private Sub cmdNuovoIntestatario_Click(sender As Object, e As EventArgs) Handles cmdNuovoIntestatario.Click
       Try
          ' Se Ë stato inserito un nuovo cliente...
-         If ApriClienti("") = True Then
-            CaricaListaClienti(cmbCognome, cmbNome, cmbIdCliente, TAB_CLIENTI)
+         If ApriClienti(String.Empty) = True Then
+            CaricaListaClienti(cmbCognome, cmbIdCliente, TAB_CLIENTI)
 
-            cmbCognome.Text = String.Empty
-            cmbNome.Text = String.Empty
-            txtNome.Text = String.Empty
+            ' DATI ANAGRAFICI.
             cmbIdCliente.Text = String.Empty
+            cmbCognome.Text = String.Empty
+            txtNome.Text = String.Empty
+            cmbSesso.Text = "M"
+
+            dtpDataNascita.Value = Today
+            dtpDataNascita.Checked = False
+
+            txtLuogoNascita.Text = String.Empty
+            txtProvNascita.Text = String.Empty
+            cmbNazioneNascita.Text = String.Empty
+            cmbCittadinanza.Text = String.Empty
+
+            ' DOCUMENTO DI RICONOSCIMENTO.
+            cmbTipoDoc.Text = String.Empty
+            txtNumeroDoc.Text = String.Empty
+            txtComuneRilascioDoc.Text = String.Empty
+            cmbNazioneRilascioDoc.Text = String.Empty
+            txtRilasciatoDaDoc.Text = String.Empty
+
+            dtpDataRilascioDoc.Value = Today
+            dtpDataRilascioDoc.Checked = False
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub cmdApriIntestatario_Click(sender As Object, e As EventArgs) Handles cmdApriIntestatario.Click
+      Try
+         ' Modifica cliente esistente...
+         If ApriClienti(cmbIdCliente.Text) = True Then
+            CaricaListaClienti(cmbCognome, cmbIdCliente, TAB_CLIENTI)
+
+            ' DATI ANAGRAFICI.
+            cmbIdCliente.Text = String.Empty
+            cmbCognome.Text = String.Empty
+            txtNome.Text = String.Empty
+            cmbSesso.Text = "M"
+
+            dtpDataNascita.Value = Today
+            dtpDataNascita.Checked = False
+
+            txtLuogoNascita.Text = String.Empty
+            txtProvNascita.Text = String.Empty
+            cmbNazioneNascita.Text = String.Empty
+            cmbCittadinanza.Text = String.Empty
+
+            ' DOCUMENTO DI RICONOSCIMENTO.
+            cmbTipoDoc.Text = String.Empty
+            txtNumeroDoc.Text = String.Empty
+            txtComuneRilascioDoc.Text = String.Empty
+            cmbNazioneRilascioDoc.Text = String.Empty
+            txtRilasciatoDaDoc.Text = String.Empty
+
+            dtpDataRilascioDoc.Value = Today
+            dtpDataRilascioDoc.Checked = False
          End If
 
       Catch ex As Exception
@@ -2248,38 +2392,23 @@ Public Class frmSchedinaPS
 
    End Sub
 
-   Private Sub cmbCognome_SelectedIndexChanged(sender As System.Object, e As System.EventArgs)
+   Private Sub cmbCognome_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbCognome.SelectedIndexChanged
       Try
          ' Legge il nome relativo alla lista Cognome.
-         cmbIdCliente.SelectedIndex = cmbCognome.SelectedIndex
-         cmbNome.SelectedIndex = cmbCognome.SelectedIndex
-         txtNome.Text = cmbNome.Text
+         CaricaDatiCliente()
 
          ' Genera l'intestazione con i dati del form.
-         lblIntestazione.Text = VisIntestazione(txtNumero.Text, cmbCognome.Text, txtNome.Text)
-
-         ' Se Ë impostata l'aliquota Iva per il cliente... Altrimenti viene utilzzata quella di reparto.
-         'Dim valIva As String = CFormatta.FormattaEuro(LeggiIvaCliente(ANA_CLIENTI, cmbIdCliente.Text))
-         'If valIva <> VALORE_ZERO Then
-         '   txtIva.Text = valIva
-         'End If
-
-         Dim valSconto As String = LeggiScontoCliente(TAB_CLIENTI, cmbIdCliente.Text)
-
-         'If IsNumeric(valSconto) = True Then
-         '   txtSconto.Text = CFormatta.FormattaEuro(Convert.ToDecimal(valSconto)) '& "%"
-         'Else
-         '   txtSconto.Text = VALORE_ZERO
-         'End If
-
-         CalcolaTotaleConto()
+         If txtNumero.Text <> String.Empty Then
+            lblIntestazione.Text = VisIntestazione("Schedina N. " & txtNumero.Text, cmbCognome.Text, txtNome.Text)
+         Else
+            lblIntestazione.Text = VisIntestazione(txtNumero.Text, cmbCognome.Text, txtNome.Text)
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub txtPrezzoCamera_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
