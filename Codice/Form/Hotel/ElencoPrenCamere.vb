@@ -41,13 +41,16 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_ARRANGIAMENTO As Short = 13
    Public Const COLONNA_ACCONTO As Short = 14
    Public Const COLONNA_IMPORTO_TOTALE As Short = 15
-   Public Const COLONNA_SCHEDINA As Short = 16
-   Public Const COLONNA_COSTO_CAMERA As Short = 19
-   Public Const COLONNA_TASSA_SOGGIORNO As Short = 20
-   Public Const COLONNA_TIPO_PAGAMENTO As Short = 21
-   Public Const COLONNA_ID_CLIENTE As Short = 22
-   Public Const COLONNA_TIPO_CAMERA As Short = 23
-   Public Const COLONNA_NOTE As Short = 24
+   Public Const COLONNA_GRUPPO As Short = 16
+   Public Const COLONNA_AGENZIA As Short = 17
+   Public Const COLONNA_CANALE As Short = 18
+   Public Const COLONNA_SCHEDINA As Short = 19
+   Public Const COLONNA_COSTO_CAMERA As Short = 22
+   Public Const COLONNA_TASSA_SOGGIORNO As Short = 23
+   Public Const COLONNA_TIPO_PAGAMENTO As Short = 24
+   Public Const COLONNA_ID_CLIENTE As Short = 25
+   Public Const COLONNA_TIPO_CAMERA As Short = 24
+   Public Const COLONNA_NOTE As Short = 27
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -1432,7 +1435,34 @@ Public Class ElencoPrenCamere
          totContoStyle.Alignment = HorizontalAlignment.Right
          totContoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(totContoStyle)
-         ' 16 - Schedina PS.
+         ' 16 - Gruppo.
+         Dim gruppoStyle As New DataGridTextBoxColumn
+         gruppoStyle.MappingName = "Gruppo"
+         gruppoStyle.HeaderText = "Gruppo"
+         gruppoStyle.Width = 100
+         gruppoStyle.NullText = ""
+         gruppoStyle.Alignment = HorizontalAlignment.Left
+         gruppoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(gruppoStyle)
+         ' 17 - Agenzia.
+         Dim agenziaStyle As New DataGridTextBoxColumn
+         agenziaStyle.MappingName = "Agenzia"
+         agenziaStyle.HeaderText = "Agenzia"
+         agenziaStyle.Width = 100
+         agenziaStyle.NullText = ""
+         agenziaStyle.Alignment = HorizontalAlignment.Left
+         agenziaStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(agenziaStyle)
+         ' 18 - Canale vendita.
+         Dim canaleStyle As New DataGridTextBoxColumn
+         canaleStyle.MappingName = "CanaleVendita"
+         canaleStyle.HeaderText = "Provenienza"
+         canaleStyle.Width = 100
+         canaleStyle.NullText = ""
+         canaleStyle.Alignment = HorizontalAlignment.Left
+         canaleStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(canaleStyle)
+         ' 19 - Schedina PS.
          Dim schedinaStyle As New DataGridTextBoxColumn
          schedinaStyle.MappingName = "Schedina"
          schedinaStyle.HeaderText = "Schedina"
@@ -1441,7 +1471,7 @@ Public Class ElencoPrenCamere
          schedinaStyle.Alignment = HorizontalAlignment.Center
          schedinaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(schedinaStyle)
-         ' 17 - Stato.
+         ' 20 - Stato.
          Dim statoStyle As New DataGridTextBoxColumn
          statoStyle.MappingName = "Stato"
          statoStyle.HeaderText = "Stato prenotazione"
@@ -1449,7 +1479,7 @@ Public Class ElencoPrenCamere
          statoStyle.NullText = ""
          statoStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 18 - Colore.
+         ' 21 - Colore.
          Dim coloreStyle As New CellaColorata(DataGrid1)
          coloreStyle.MappingName = "Colore"
          coloreStyle.HeaderText = "Colore"
@@ -1458,7 +1488,7 @@ Public Class ElencoPrenCamere
          coloreStyle.TextBox.BackColor = Color.White
          coloreStyle.TextBox.ForeColor = Color.White
          gridStyle.GridColumnStyles.Add(coloreStyle)
-         ' 19 - Costo camera.
+         ' 22 - Costo camera.
          Dim costoCameraStyle As New DataGridTextBoxColumn
          costoCameraStyle.MappingName = "CostoCamera"
          costoCameraStyle.HeaderText = "Costo"
@@ -1467,7 +1497,7 @@ Public Class ElencoPrenCamere
          costoCameraStyle.Format = "##,##0.00"
          costoCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(costoCameraStyle)
-         ' 20 - Tassa di soggiorno.
+         ' 23 - Tassa di soggiorno.
          Dim tassaSoggStyle As New DataGridTextBoxColumn
          tassaSoggStyle.MappingName = "TassaSoggiorno"
          tassaSoggStyle.HeaderText = "Tassa"
@@ -1476,7 +1506,7 @@ Public Class ElencoPrenCamere
          tassaSoggStyle.Format = "##,##0.00"
          tassaSoggStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tassaSoggStyle)
-         ' 21 - Tipo pagamento.
+         ' 24 - Tipo pagamento.
          Dim tipoPagStyle As New DataGridTextBoxColumn
          tipoPagStyle.MappingName = "Pagamento"
          tipoPagStyle.HeaderText = "Pagamento"
@@ -1484,7 +1514,7 @@ Public Class ElencoPrenCamere
          tipoPagStyle.NullText = ""
          tipoPagStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipoPagStyle)
-         ' 22 - Id Cliente.
+         ' 25 - Id Cliente.
          Dim idClienteStyle As New DataGridTextBoxColumn
          idClienteStyle.MappingName = "IdCliente"
          idClienteStyle.HeaderText = "Codice Cliente"
@@ -1492,7 +1522,7 @@ Public Class ElencoPrenCamere
          idClienteStyle.NullText = ""
          idClienteStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(idClienteStyle)
-         ' 23 - Descrizione Camera.
+         ' 26 - Descrizione Camera.
          Dim tipoCameraStyle As New DataGridTextBoxColumn
          tipoCameraStyle.MappingName = "DescrizioneCamera"
          tipoCameraStyle.HeaderText = "Tipologia camera"
@@ -1500,7 +1530,7 @@ Public Class ElencoPrenCamere
          tipoCameraStyle.NullText = ""
          tipoCameraStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipoCameraStyle)
-         ' 24 - Note.
+         ' 27 - Note.
          Dim noteStyle As New DataGridTextBoxColumn
          noteStyle.MappingName = "Note"
          noteStyle.HeaderText = "Note"
@@ -1546,6 +1576,8 @@ Public Class ElencoPrenCamere
                campoRicerca = "NumeroCamera"
             Case "Stato prenotazione"
                campoRicerca = "Stato"
+            Case "Canale di provenienza"
+               campoRicerca = "CanaleVendita"
          End Select
 
          If testoRicerca <> "" Then
@@ -1614,10 +1646,13 @@ Public Class ElencoPrenCamere
          CampoRicerca.Items.Add("Neonati")
          CampoRicerca.Items.Add("Bambini")
          CampoRicerca.Items.Add("Ragazzi")
+         CampoRicerca.Items.Add("Camera")
          CampoRicerca.Items.Add("Arrangiamento")
          CampoRicerca.Items.Add("Acconto")
          CampoRicerca.Items.Add("Totale conto")
-         CampoRicerca.Items.Add("Camera")
+         CampoRicerca.Items.Add("Gruppo")
+         CampoRicerca.Items.Add("Agenzia")
+         CampoRicerca.Items.Add("Canale di provenienza")
          CampoRicerca.Items.Add("Stato prenotazione")
          CampoRicerca.Items.Add("Schedina")
 

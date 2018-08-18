@@ -17,6 +17,9 @@ Public Class PrenCamere
    Public NumeroCamera As String
    Public DescrizioneCamera As String
    Public Trattamento As String
+   Public Gruppo As String
+   Public Agenzia As String
+   Public CanaleVendita As String
    Public DataArrivo As String
    Public DataPartenza As String
    Public OraArrivo As String
@@ -139,6 +142,21 @@ Public Class PrenCamere
          Else
             Me.Trattamento = ""
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Gruppo")) = False Then
+            Me.Gruppo = ds.Tables(tabella).Rows(0)("Gruppo").ToString
+         Else
+            Me.Gruppo = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Agenzia")) = False Then
+            Me.Agenzia = ds.Tables(tabella).Rows(0)("Agenzia").ToString
+         Else
+            Me.Agenzia = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("CanaleVendita")) = False Then
+            Me.CanaleVendita = ds.Tables(tabella).Rows(0)("CanaleVendita").ToString
+         Else
+            Me.CanaleVendita = ""
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("DataArrivo")) = False Then
             Me.DataArrivo = ds.Tables(tabella).Rows(0)("DataArrivo").ToString
          Else
@@ -242,10 +260,10 @@ Public Class PrenCamere
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " &
-                                              "Trattamento, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, TassaSoggiorno, AccontoCamera, " &
+                                              "Trattamento, Gruppo, Agenzia, CanaleVendita, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, TassaSoggiorno, AccontoCamera, " &
                                               "TotaleConto, ApplicaSconto, Sconto, Servizio, Schedina, Colore, [Note]) " &
                                        "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " &
-                                              "@Trattamento, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @TassaSoggiorno, @AccontoCamera, " &
+                                              "@Trattamento, @Gruppo, @Agenzia, @CanaleVendita, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @TassaSoggiorno, @AccontoCamera, " &
                                               "@TotaleConto, @ApplicaSconto, @Sconto, @Servizio, @Schedina, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
@@ -265,6 +283,9 @@ Public Class PrenCamere
          cmdInsert.Parameters.AddWithValue("@NumeroCamera", Me.NumeroCamera)
          cmdInsert.Parameters.AddWithValue("@DescrizioneCamera", Me.DescrizioneCamera)
          cmdInsert.Parameters.AddWithValue("@Trattamento", Me.Trattamento)
+         cmdInsert.Parameters.AddWithValue("@Gruppo", Me.Gruppo)
+         cmdInsert.Parameters.AddWithValue("@Agenzia", Me.Agenzia)
+         cmdInsert.Parameters.AddWithValue("@CanaleVendita", Me.CanaleVendita)
          cmdInsert.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdInsert.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
          cmdInsert.Parameters.AddWithValue("@OraArrivo", Me.OraArrivo)
@@ -332,6 +353,9 @@ Public Class PrenCamere
                              "NumeroCamera = @NumeroCamera, " &
                              "DescrizioneCamera = @DescrizioneCamera, " &
                              "Trattamento = @Trattamento, " &
+                             "Gruppo = @Gruppo, " &
+                             "Agenzia = @Agenzia, " &
+                             "CanaleVendita = @CanaleVendita, " &
                              "DataArrivo = @DataArrivo, " &
                              "DataPartenza = @DataPartenza, " &
                              "OraArrivo = @OraArrivo, " &
@@ -369,6 +393,9 @@ Public Class PrenCamere
          cmdUpdate.Parameters.AddWithValue("@NumeroCamera", Me.NumeroCamera)
          cmdUpdate.Parameters.AddWithValue("@DescrizioneCamera", Me.DescrizioneCamera)
          cmdUpdate.Parameters.AddWithValue("@Trattamento", Me.Trattamento)
+         cmdUpdate.Parameters.AddWithValue("@Gruppo", Me.Gruppo)
+         cmdUpdate.Parameters.AddWithValue("@Agenzia", Me.Agenzia)
+         cmdUpdate.Parameters.AddWithValue("@CanaleVendita", Me.CanaleVendita)
          cmdUpdate.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdUpdate.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
          cmdUpdate.Parameters.AddWithValue("@OraArrivo", Me.OraArrivo)
@@ -409,5 +436,4 @@ Public Class PrenCamere
       End Try
 
    End Function
-
 End Class

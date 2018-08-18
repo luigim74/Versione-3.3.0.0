@@ -1,8 +1,20 @@
+#Region " DATI FILE.VB "
+
+' ********************************************************************************
 ' Nome form:            frmTabelle
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 07/08/2006
+' Data ultima modifica: 18/08/2018
 ' Descrizione:          Form per la visualizzazione dei dati di tutte le tabelle.
+' Note:
+
+' Elenco Attivita:
+
+' DA_FARE_A: Inserire Gruppi, Agenzie, Canali nel menu Archivi / tabelle.
+
+' ********************************************************************************
+
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -494,6 +506,8 @@ Public Class TabelleDati
                   Elimina.Enabled = True
                End If
 
+               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
+
          End Select
 
          Return Nuovo.Enabled
@@ -861,18 +875,23 @@ Public Class TabelleDati
                If ImpostaFunzioniOperatore(Finestra.TipologieCamere) = True Then
                   ImpostaComandi()
                End If
+
             Case "UbicazioniCamere"
                If ImpostaFunzioniOperatore(Finestra.UbicazioniCamere) = True Then
                   ImpostaComandi()
                End If
+
             Case "PosizioniCamere"
                If ImpostaFunzioniOperatore(Finestra.PosizioniCamere) = True Then
                   ImpostaComandi()
                End If
+
             Case "DocIdentità"
                If ImpostaFunzioniOperatore(Finestra.DocIdentità) = True Then
                   ImpostaComandi()
                End If
+
+               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
 
          End Select
 
@@ -940,6 +959,10 @@ Public Class TabelleDati
             Case "DocIdentità"
                ' Imposta il titolo della tabella.
                Me.Text = "Documenti d'identità" & " (n° totale: " & numRecord & ")"
+
+            Case "CanaliVendita"
+               ' Imposta il titolo della tabella.
+               Me.Text = "Canali di provenienza" & " (n° totale: " & numRecord & ")"
 
             Case Else
                ' Imposta il titolo della tabella.
@@ -1028,6 +1051,8 @@ Public Class TabelleDati
             Case "DocIdentità"
                strDescrizione = STR_TABELLA_DOC_IDENTITA
                strModulo = MODULO_TABELLA_DOC_IDENTITA
+
+               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
 
          End Select
 
@@ -1162,6 +1187,15 @@ Public Class TabelleDati
                g_frmMain.rtgGestionaleAmica.Visible = False
 
             Case "DocIdentità"
+               g_frmMain.rtgGestionaleAmica.Visible = False
+
+            Case "Gruppi"
+               g_frmMain.rtgGestionaleAmica.Visible = False
+
+            Case "Agenzie"
+               g_frmMain.rtgGestionaleAmica.Visible = False
+
+            Case "CanaliVendita"
                g_frmMain.rtgGestionaleAmica.Visible = False
 
          End Select
