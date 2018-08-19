@@ -10,6 +10,7 @@
 ' Elenco Attivita:
 
 ' DA_FARE: Sviluppare! Aggiungere Tabella Componenti.
+' DA_FARE: Modificare lo Storico presenze prelevando i dati dalle schedine e non dalle prenotazioni.
 
 ' ******************************************************************
 #End Region
@@ -1476,6 +1477,7 @@ Public Class frmSchedinaPS
             .DataPartenza = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
             .Permanenza = txtNumeroNotti.Text
             .NumCamera = cmbNumeroCamera.Text
+            .IdPren = 0
             .NumPren = txtNumero.Text
             .Stato = "Inserita"
             .DataStampa = String.Empty

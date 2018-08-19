@@ -1,3 +1,19 @@
+#Region " DATI FILE.VB "
+
+' ******************************************************************
+' Nome Modulo:          Dichiarazioni
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2005
+' Data ultima modifica: 19/08/2018
+' Descrizione:          Modulo per le dichiarazioni delle variabili e costanto globali.
+' Note:
+
+' Elenco Attivita:
+
+' ******************************************************************
+
+#End Region
+
 Imports System.Data.OleDb
 
 Module Dichiarazioni
@@ -431,6 +447,9 @@ Module Dichiarazioni
    Public Const MODULO_TABELLA_POSIZIONI_CAMERE As String = "TABELLA POSIZIONI CAMERE"
    Public Const MODULO_TABELLA_STATO_PREN As String = "TABELLA STATO PRENOTAZIONI"
    Public Const MODULO_TABELLA_DOC_IDENTITA As String = "TABELLA DOCUMENTI IDENTITA"
+   Public Const MODULO_TABELLA_GRUPPI_OSPITI As String = "TABELLA GRUPPI"
+   Public Const MODULO_TABELLA_AGENZIE As String = "TABELLA AGENZIE"
+   Public Const MODULO_TABELLA_CANALI As String = "TABELLA CANALI DI PROVENIENZA"
 
    ' Stringhe per la descrizione delle operazioni.
    Public Const STR_HOSPITALITY As String = "Hospitality Solution."
@@ -502,6 +521,9 @@ Module Dichiarazioni
    Public Const STR_TABELLA_POSIZIONI_CAMERE As String = "la tabella Documenti d'identità."
    Public Const STR_TABELLA_STATO_PREN As String = "la tabella Stato prenotazioni."
    Public Const STR_TABELLA_DOC_IDENTITA As String = "la tabella Stato prenotazioni."
+   Public Const STR_TABELLA_GRUPPI As String = "la tabella Gruppi."
+   Public Const STR_TABELLA_AGENZIE As String = "la tabella Agenzie."
+   Public Const STR_TABELLA_CANALI As String = "la tabella Canali di provenienza."
 
 #End Region
 
@@ -933,6 +955,9 @@ Module Dichiarazioni
       PlanningCamere = 62
       StatoPren = 63
       DocIdentità = 64
+      GruppiOspiti = 65
+      Agenzie = 66
+      CanaliVendita = 67
 
    End Enum
 

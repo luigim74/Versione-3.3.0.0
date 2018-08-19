@@ -891,7 +891,20 @@ Public Class TabelleDati
                   ImpostaComandi()
                End If
 
-               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
+            Case "GruppiOspiti"
+               If ImpostaFunzioniOperatore(Finestra.GruppiOspiti) = True Then
+                  ImpostaComandi()
+               End If
+
+            Case "Agenzie"
+               If ImpostaFunzioniOperatore(Finestra.Agenzie) = True Then
+                  ImpostaComandi()
+               End If
+
+            Case "CanaliVendite"
+               If ImpostaFunzioniOperatore(Finestra.CanaliVendita) = True Then
+                  ImpostaComandi()
+               End If
 
          End Select
 
@@ -959,6 +972,10 @@ Public Class TabelleDati
             Case "DocIdentità"
                ' Imposta il titolo della tabella.
                Me.Text = "Documenti d'identità" & " (n° totale: " & numRecord & ")"
+
+            Case "GruppiOspiti"
+               ' Imposta il titolo della tabella.
+               Me.Text = "Gruppi" & " (n° totale: " & numRecord & ")"
 
             Case "CanaliVendita"
                ' Imposta il titolo della tabella.
@@ -1052,7 +1069,17 @@ Public Class TabelleDati
                strDescrizione = STR_TABELLA_DOC_IDENTITA
                strModulo = MODULO_TABELLA_DOC_IDENTITA
 
-               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
+            Case "GruppiOspiti"
+               strDescrizione = STR_TABELLA_GRUPPI
+               strModulo = MODULO_TABELLA_GRUPPI_OSPITI
+
+            Case "Agenzie"
+               strDescrizione = STR_TABELLA_AGENZIE
+               strModulo = MODULO_TABELLA_AGENZIE
+
+            Case "CanaliVendita"
+               strDescrizione = STR_TABELLA_CANALI
+               strModulo = MODULO_TABELLA_CANALI
 
          End Select
 

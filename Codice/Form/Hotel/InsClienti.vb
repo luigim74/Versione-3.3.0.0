@@ -303,6 +303,13 @@ Public Class frmInsClienti
          ' Carica l'elenco dei clienti.
          CaricaClienti()
 
+         ' Imposta il numero dei giorni di permanenza al valore della prenotazione.
+         If IsNumeric(Me.Tag) = True Then
+            nudPermanenza.Value = Convert.ToDecimal(Me.Tag)
+         Else
+            nudPermanenza.Value = 0
+         End If
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -482,6 +489,12 @@ Public Class frmInsClienti
    Private Sub cmdInserisci_Click(sender As System.Object, e As System.EventArgs) Handles cmdInserisci.Click
       Try
          If lvwClienti.Items.Count <> 0 Then
+
+            If nudPermanenza.Value = 0 Then
+               MessageBox.Show("Inserire il numero dei giorni di permanenza!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               nudPermanenza.Focus()
+               Exit Sub
+            End If
 
             lvwClienti.Focus()
 

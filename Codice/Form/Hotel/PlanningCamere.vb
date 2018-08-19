@@ -668,7 +668,7 @@ Public Class PlanningCamere
       End Try
    End Sub
 
-   Public Sub DisegnaPrenotazione(ByVal Id As Integer, ByVal numero As String, ByVal numCamera As String, ByVal intestatario As String, ByVal persone As Integer, ByVal tipologia As String, ByVal stato As String, ByVal trattamento As String,
+   Public Sub DisegnaPrenotazione(ByVal Id As Integer, ByVal numero As String, ByVal numCamera As String, ByVal intestatario As String, ByVal gruppo As String, ByVal persone As Integer, ByVal tipologia As String, ByVal stato As String, ByVal trattamento As String,
                                   ByVal dataArrivo As String, ByVal dataPartenza As String, ByVal numNotti As Integer, ByVal note As String,
                                   ByVal totaleCamera As String, ByVal totaleAddebiti As String, ByVal acconto As String, ByVal totaleConto As String, ByVal colore As Integer)
       Try
@@ -748,7 +748,13 @@ Public Class PlanningCamere
          End Select
 
          Prenotazioni(NumPren).TextButtonAlign = ContentAlignment.MiddleLeft
-         Prenotazioni(NumPren).TextButton = intestatario
+
+         If gruppo <> String.Empty Then
+            Prenotazioni(NumPren).TextButton = intestatario & " [Gruppo " & gruppo & "]"
+         Else
+            Prenotazioni(NumPren).TextButton = intestatario
+         End If
+
          Prenotazioni(NumPren).CornerRadius = 8
          Prenotazioni(NumPren).Tag = ""
 
@@ -760,7 +766,8 @@ Public Class PlanningCamere
                                  "Persone: " & persone.ToString & vbCrLf &
                                  "Tipologia: " & tipologia & vbCrLf &
                                  "Stato: " & stato & vbCrLf &
-                                 "Trattamento: " & trattamento & vbCrLf & vbCrLf &
+                                 "Trattamento: " & trattamento & vbCrLf &
+                                 "Gruppo: " & gruppo & vbCrLf & vbCrLf &
                                  "Arrivo: " & dataArrivo & vbCrLf &
                                  "Partenza: " & dataPartenza & vbCrLf &
                                  "Notti: " & numNotti & vbCrLf & vbCrLf &
@@ -973,7 +980,7 @@ Public Class PlanningCamere
             Dim numNotti As Integer = Convert.ToInt32(dr.Item("NumeroNotti"))
             Dim totCamera As Double = ((costoCamera * adulti) * numNotti)
 
-            DisegnaPrenotazione(dr.Item("Id"), dr.Item("Numero"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
+            DisegnaPrenotazione(dr.Item("Id"), dr.Item("Numero"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), dr.Item("Gruppo").ToString, numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
                                 dr.Item("DataArrivo"), dr.Item("DataPartenza"), dr.Item("NumeroNotti"), dr.Item("Note"),
                                 CFormatta.FormattaEuro(totCamera), CalcolaTotaleAddebiti(dr.Item("Id")), CFormatta.FormattaEuro(dr.Item("AccontoCamera")), CFormatta.FormattaEuro(dr.Item("TotaleConto")), dr.Item("Colore"))
          Loop
@@ -1470,6 +1477,11 @@ Public Class PlanningCamere
 
       End Try
 
+   End Sub
+
+   Private Sub dgvPrenotazioni_DoubleClick(sender As Object, e As EventArgs) Handles dgvPrenotazioni.DoubleClick
+      ' Apre una nuova prenotazione.
+      ApriDatiPrenotazione(Me.Name, "")
    End Sub
 
    Private Sub dtpDataPlanning_ValueChanged(sender As Object, e As EventArgs) Handles dtpDataPlanning.ValueChanged
