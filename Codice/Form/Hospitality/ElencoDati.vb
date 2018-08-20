@@ -1500,8 +1500,8 @@ Public Class frmElencoDati
 
          Select Case TipoElenco
             Case Elenco.Clienti
-               Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
+               Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
+               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
 
                ' Registra l'operazione.
                strDescrizione = "(" & Cognome & " " & Nome & ")"
@@ -1510,7 +1510,7 @@ Public Class frmElencoDati
                Risposta = MsgBox("Si desidera eliminare la scheda di """ & Cognome & " " & Nome &
                                  """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
             Case Elenco.Aziende
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
+               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
 
                ' Registra l'operazione.
                strDescrizione = "(" & ragSoc & ")"
@@ -2269,15 +2269,6 @@ Public Class frmElencoDati
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-
-         ' Titolo
-         Dim titoloStyle As New DataGridTextBoxColumn
-         titoloStyle.MappingName = "Titolo"
-         titoloStyle.HeaderText = "Titolo"
-         titoloStyle.Width = 75
-         titoloStyle.NullText = ""
-         titoloStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(titoloStyle)
          ' Cognome
          Dim cognomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          cognomeStyle.MappingName = "Cognome"
@@ -2350,6 +2341,14 @@ Public Class frmElencoDati
          dataNascitaStyle.NullText = ""
          dataNascitaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(dataNascitaStyle)
+         ' Tipo Alloggiato
+         Dim tipoAlloggiatoStyle As New DataGridTextBoxColumn
+         tipoAlloggiatoStyle.MappingName = "TipoAlloggiato"
+         tipoAlloggiatoStyle.HeaderText = "Tipo cliente"
+         tipoAlloggiatoStyle.Width = 100
+         tipoAlloggiatoStyle.NullText = ""
+         tipoAlloggiatoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tipoAlloggiatoStyle)
          ' Tel. ufficio
          Dim telUfficioStyle As New DataGridTextBoxColumn
          telUfficioStyle.MappingName = "TelUfficio"
@@ -2423,14 +2422,6 @@ Public Class frmElencoDati
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Titolo
-         Dim titoloStyle As New DataGridTextBoxColumn
-         titoloStyle.MappingName = "Titolo"
-         titoloStyle.HeaderText = "Titolo"
-         titoloStyle.Width = 75
-         titoloStyle.NullText = ""
-         titoloStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(titoloStyle)
          ' Ragione sociale
          Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          ragSocStyle.MappingName = "RagSociale"
@@ -3660,6 +3651,8 @@ Public Class frmElencoDati
                campoRicerca = "Evidenzia"
             Case "Stato prenotazione"
                campoRicerca = "Stato"
+            Case "Tipo cliente"
+               campoRicerca = "TipoAlloggiato"
          End Select
 
          If testoRicerca <> "" Then
@@ -3700,9 +3693,9 @@ Public Class frmElencoDati
          Select Case TipoElenco
             Case Elenco.Clienti
                CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Titolo")
                CampoRicerca.Items.Add("Rag. Soc. / Cognome")
                CampoRicerca.Items.Add("Nome")
+               CampoRicerca.Items.Add("Tipo cliente")
                CampoRicerca.Items.Add("Data di nascita")
                CampoRicerca.Items.Add("Indirizzo")
                CampoRicerca.Items.Add("C.A.P.")
@@ -3719,7 +3712,6 @@ Public Class frmElencoDati
 
             Case Elenco.Aziende
                CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Titolo")
                CampoRicerca.Items.Add("Ragione sociale")
                CampoRicerca.Items.Add("Indirizzo")
                CampoRicerca.Items.Add("C.A.P.")

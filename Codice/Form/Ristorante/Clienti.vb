@@ -150,6 +150,8 @@ Public Class frmClienti
    Public WithEvents Label28 As System.Windows.Forms.Label
    Public WithEvents Label27 As System.Windows.Forms.Label
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+   Public WithEvents Label35 As Label
+   Friend WithEvents cmbTipoAlloggiato As ComboBox
    Public WithEvents txtIva As System.Windows.Forms.TextBox
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -263,6 +265,8 @@ Public Class frmClienti
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.Label35 = New System.Windows.Forms.Label()
+      Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -288,7 +292,7 @@ Public Class frmClienti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(610, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(630, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -333,7 +337,7 @@ Public Class frmClienti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(610, 20)
+      Me.Panel1.Size = New System.Drawing.Size(630, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -360,7 +364,7 @@ Public Class frmClienti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(610, 361)
+      Me.TabControl1.Size = New System.Drawing.Size(630, 381)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -406,7 +410,7 @@ Public Class frmClienti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(602, 335)
+      Me.TabPage1.Size = New System.Drawing.Size(622, 355)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -860,6 +864,8 @@ Public Class frmClienti
       'TabPage2
       '
       Me.TabPage2.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage2.Controls.Add(Me.cmbTipoAlloggiato)
+      Me.TabPage2.Controls.Add(Me.Label35)
       Me.TabPage2.Controls.Add(Me.cmbSesso)
       Me.TabPage2.Controls.Add(Me.Label34)
       Me.TabPage2.Controls.Add(Me.cmbNazionalit‡)
@@ -887,7 +893,7 @@ Public Class frmClienti
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
       Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage2.Size = New System.Drawing.Size(602, 335)
+      Me.TabPage2.Size = New System.Drawing.Size(622, 355)
       Me.TabPage2.TabIndex = 7
       Me.TabPage2.Text = "Dati personali"
       '
@@ -895,10 +901,10 @@ Public Class frmClienti
       '
       Me.cmbSesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbSesso.Items.AddRange(New Object() {"M", "F"})
-      Me.cmbSesso.Location = New System.Drawing.Point(400, 168)
+      Me.cmbSesso.Location = New System.Drawing.Point(403, 204)
       Me.cmbSesso.Name = "cmbSesso"
       Me.cmbSesso.Size = New System.Drawing.Size(48, 21)
-      Me.cmbSesso.TabIndex = 9
+      Me.cmbSesso.TabIndex = 10
       '
       'Label34
       '
@@ -906,7 +912,7 @@ Public Class frmClienti
       Me.Label34.BackColor = System.Drawing.Color.Transparent
       Me.Label34.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label34.ForeColor = System.Drawing.Color.Black
-      Me.Label34.Location = New System.Drawing.Point(296, 168)
+      Me.Label34.Location = New System.Drawing.Point(299, 204)
       Me.Label34.Name = "Label34"
       Me.Label34.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label34.Size = New System.Drawing.Size(39, 13)
@@ -915,10 +921,10 @@ Public Class frmClienti
       '
       'cmbNazionalit‡
       '
-      Me.cmbNazionalit‡.Location = New System.Drawing.Point(400, 200)
+      Me.cmbNazionalit‡.Location = New System.Drawing.Point(403, 236)
       Me.cmbNazionalit‡.Name = "cmbNazionalit‡"
       Me.cmbNazionalit‡.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazionalit‡.TabIndex = 11
+      Me.cmbNazionalit‡.TabIndex = 12
       '
       'Label33
       '
@@ -926,7 +932,7 @@ Public Class frmClienti
       Me.Label33.BackColor = System.Drawing.Color.Transparent
       Me.Label33.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label33.ForeColor = System.Drawing.Color.Black
-      Me.Label33.Location = New System.Drawing.Point(296, 200)
+      Me.Label33.Location = New System.Drawing.Point(299, 236)
       Me.Label33.Name = "Label33"
       Me.Label33.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label33.Size = New System.Drawing.Size(68, 13)
@@ -935,10 +941,10 @@ Public Class frmClienti
       '
       'cmbNazioneNascita
       '
-      Me.cmbNazioneNascita.Location = New System.Drawing.Point(120, 200)
+      Me.cmbNazioneNascita.Location = New System.Drawing.Point(123, 236)
       Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
       Me.cmbNazioneNascita.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazioneNascita.TabIndex = 10
+      Me.cmbNazioneNascita.TabIndex = 11
       '
       'Label32
       '
@@ -946,7 +952,7 @@ Public Class frmClienti
       Me.Label32.BackColor = System.Drawing.Color.Transparent
       Me.Label32.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label32.ForeColor = System.Drawing.Color.Black
-      Me.Label32.Location = New System.Drawing.Point(16, 200)
+      Me.Label32.Location = New System.Drawing.Point(23, 236)
       Me.Label32.Name = "Label32"
       Me.Label32.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label32.Size = New System.Drawing.Size(97, 13)
@@ -959,12 +965,12 @@ Public Class frmClienti
       Me.txtProvNascita.BackColor = System.Drawing.SystemColors.Window
       Me.txtProvNascita.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtProvNascita.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtProvNascita.Location = New System.Drawing.Point(400, 136)
+      Me.txtProvNascita.Location = New System.Drawing.Point(403, 172)
       Me.txtProvNascita.MaxLength = 2
       Me.txtProvNascita.Name = "txtProvNascita"
       Me.txtProvNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtProvNascita.Size = New System.Drawing.Size(48, 20)
-      Me.txtProvNascita.TabIndex = 7
+      Me.txtProvNascita.TabIndex = 8
       '
       'txtLuogoNascita
       '
@@ -972,12 +978,12 @@ Public Class frmClienti
       Me.txtLuogoNascita.BackColor = System.Drawing.SystemColors.Window
       Me.txtLuogoNascita.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtLuogoNascita.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtLuogoNascita.Location = New System.Drawing.Point(120, 136)
+      Me.txtLuogoNascita.Location = New System.Drawing.Point(123, 172)
       Me.txtLuogoNascita.MaxLength = 0
       Me.txtLuogoNascita.Name = "txtLuogoNascita"
       Me.txtLuogoNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtLuogoNascita.Size = New System.Drawing.Size(160, 20)
-      Me.txtLuogoNascita.TabIndex = 6
+      Me.txtLuogoNascita.TabIndex = 7
       '
       'Label28
       '
@@ -985,7 +991,7 @@ Public Class frmClienti
       Me.Label28.BackColor = System.Drawing.Color.Transparent
       Me.Label28.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label28.ForeColor = System.Drawing.Color.Black
-      Me.Label28.Location = New System.Drawing.Point(296, 136)
+      Me.Label28.Location = New System.Drawing.Point(299, 172)
       Me.Label28.Name = "Label28"
       Me.Label28.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label28.Size = New System.Drawing.Size(51, 13)
@@ -998,7 +1004,7 @@ Public Class frmClienti
       Me.Label27.BackColor = System.Drawing.Color.Transparent
       Me.Label27.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label27.ForeColor = System.Drawing.Color.Black
-      Me.Label27.Location = New System.Drawing.Point(16, 136)
+      Me.Label27.Location = New System.Drawing.Point(23, 172)
       Me.Label27.Name = "Label27"
       Me.Label27.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label27.Size = New System.Drawing.Size(88, 13)
@@ -1009,28 +1015,28 @@ Public Class frmClienti
       '
       Me.dtpDataNascita.Checked = False
       Me.dtpDataNascita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.dtpDataNascita.Location = New System.Drawing.Point(120, 168)
+      Me.dtpDataNascita.Location = New System.Drawing.Point(123, 204)
       Me.dtpDataNascita.Name = "dtpDataNascita"
       Me.dtpDataNascita.ShowCheckBox = True
       Me.dtpDataNascita.Size = New System.Drawing.Size(160, 20)
-      Me.dtpDataNascita.TabIndex = 8
+      Me.dtpDataNascita.TabIndex = 9
       '
       'dtpDataRilascioDoc
       '
       Me.dtpDataRilascioDoc.Checked = False
       Me.dtpDataRilascioDoc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.dtpDataRilascioDoc.Location = New System.Drawing.Point(120, 88)
+      Me.dtpDataRilascioDoc.Location = New System.Drawing.Point(123, 124)
       Me.dtpDataRilascioDoc.Name = "dtpDataRilascioDoc"
       Me.dtpDataRilascioDoc.ShowCheckBox = True
       Me.dtpDataRilascioDoc.Size = New System.Drawing.Size(160, 20)
-      Me.dtpDataRilascioDoc.TabIndex = 4
+      Me.dtpDataRilascioDoc.TabIndex = 5
       '
       'cmbNazioneRilascioDoc
       '
-      Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(400, 56)
+      Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(403, 92)
       Me.cmbNazioneRilascioDoc.Name = "cmbNazioneRilascioDoc"
       Me.cmbNazioneRilascioDoc.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazioneRilascioDoc.TabIndex = 3
+      Me.cmbNazioneRilascioDoc.TabIndex = 4
       '
       'Label26
       '
@@ -1038,7 +1044,7 @@ Public Class frmClienti
       Me.Label26.BackColor = System.Drawing.Color.Transparent
       Me.Label26.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label26.ForeColor = System.Drawing.Color.Black
-      Me.Label26.Location = New System.Drawing.Point(296, 56)
+      Me.Label26.Location = New System.Drawing.Point(299, 92)
       Me.Label26.Name = "Label26"
       Me.Label26.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label26.Size = New System.Drawing.Size(95, 13)
@@ -1051,12 +1057,12 @@ Public Class frmClienti
       Me.txtRilasciatoDaDoc.BackColor = System.Drawing.SystemColors.Window
       Me.txtRilasciatoDaDoc.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtRilasciatoDaDoc.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtRilasciatoDaDoc.Location = New System.Drawing.Point(400, 88)
+      Me.txtRilasciatoDaDoc.Location = New System.Drawing.Point(403, 124)
       Me.txtRilasciatoDaDoc.MaxLength = 0
       Me.txtRilasciatoDaDoc.Name = "txtRilasciatoDaDoc"
       Me.txtRilasciatoDaDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtRilasciatoDaDoc.Size = New System.Drawing.Size(160, 20)
-      Me.txtRilasciatoDaDoc.TabIndex = 5
+      Me.txtRilasciatoDaDoc.TabIndex = 6
       '
       'Label25
       '
@@ -1064,7 +1070,7 @@ Public Class frmClienti
       Me.Label25.BackColor = System.Drawing.Color.Transparent
       Me.Label25.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label25.ForeColor = System.Drawing.Color.Black
-      Me.Label25.Location = New System.Drawing.Point(20, 56)
+      Me.Label25.Location = New System.Drawing.Point(23, 92)
       Me.Label25.Name = "Label25"
       Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label25.Size = New System.Drawing.Size(95, 13)
@@ -1077,12 +1083,12 @@ Public Class frmClienti
       Me.txtCitt‡RilascioDoc.BackColor = System.Drawing.SystemColors.Window
       Me.txtCitt‡RilascioDoc.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCitt‡RilascioDoc.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCitt‡RilascioDoc.Location = New System.Drawing.Point(120, 56)
+      Me.txtCitt‡RilascioDoc.Location = New System.Drawing.Point(123, 92)
       Me.txtCitt‡RilascioDoc.MaxLength = 0
       Me.txtCitt‡RilascioDoc.Name = "txtCitt‡RilascioDoc"
       Me.txtCitt‡RilascioDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCitt‡RilascioDoc.Size = New System.Drawing.Size(160, 20)
-      Me.txtCitt‡RilascioDoc.TabIndex = 2
+      Me.txtCitt‡RilascioDoc.TabIndex = 3
       '
       'Label24
       '
@@ -1090,7 +1096,7 @@ Public Class frmClienti
       Me.Label24.BackColor = System.Drawing.Color.Transparent
       Me.Label24.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label24.ForeColor = System.Drawing.Color.Black
-      Me.Label24.Location = New System.Drawing.Point(20, 88)
+      Me.Label24.Location = New System.Drawing.Point(23, 124)
       Me.Label24.Name = "Label24"
       Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label24.Size = New System.Drawing.Size(79, 13)
@@ -1103,7 +1109,7 @@ Public Class frmClienti
       Me.Label23.BackColor = System.Drawing.Color.Transparent
       Me.Label23.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label23.ForeColor = System.Drawing.Color.Black
-      Me.Label23.Location = New System.Drawing.Point(296, 24)
+      Me.Label23.Location = New System.Drawing.Point(299, 60)
       Me.Label23.Name = "Label23"
       Me.Label23.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label23.Size = New System.Drawing.Size(47, 13)
@@ -1116,12 +1122,12 @@ Public Class frmClienti
       Me.txtNumeroDoc.BackColor = System.Drawing.SystemColors.Window
       Me.txtNumeroDoc.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtNumeroDoc.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtNumeroDoc.Location = New System.Drawing.Point(400, 24)
+      Me.txtNumeroDoc.Location = New System.Drawing.Point(403, 60)
       Me.txtNumeroDoc.MaxLength = 0
       Me.txtNumeroDoc.Name = "txtNumeroDoc"
       Me.txtNumeroDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNumeroDoc.Size = New System.Drawing.Size(160, 20)
-      Me.txtNumeroDoc.TabIndex = 1
+      Me.txtNumeroDoc.TabIndex = 2
       '
       'Label20
       '
@@ -1129,7 +1135,7 @@ Public Class frmClienti
       Me.Label20.BackColor = System.Drawing.Color.Transparent
       Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label20.ForeColor = System.Drawing.Color.Black
-      Me.Label20.Location = New System.Drawing.Point(296, 88)
+      Me.Label20.Location = New System.Drawing.Point(299, 124)
       Me.Label20.Name = "Label20"
       Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label20.Size = New System.Drawing.Size(71, 13)
@@ -1138,10 +1144,10 @@ Public Class frmClienti
       '
       'cmbTipoDoc
       '
-      Me.cmbTipoDoc.Location = New System.Drawing.Point(120, 24)
+      Me.cmbTipoDoc.Location = New System.Drawing.Point(123, 60)
       Me.cmbTipoDoc.Name = "cmbTipoDoc"
       Me.cmbTipoDoc.Size = New System.Drawing.Size(160, 21)
-      Me.cmbTipoDoc.TabIndex = 0
+      Me.cmbTipoDoc.TabIndex = 1
       '
       'Label19
       '
@@ -1149,7 +1155,7 @@ Public Class frmClienti
       Me.Label19.BackColor = System.Drawing.Color.Transparent
       Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label19.ForeColor = System.Drawing.Color.Black
-      Me.Label19.Location = New System.Drawing.Point(20, 24)
+      Me.Label19.Location = New System.Drawing.Point(23, 60)
       Me.Label19.Name = "Label19"
       Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label19.Size = New System.Drawing.Size(87, 13)
@@ -1162,7 +1168,7 @@ Public Class frmClienti
       Me.Label29.BackColor = System.Drawing.Color.Transparent
       Me.Label29.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label29.ForeColor = System.Drawing.Color.Black
-      Me.Label29.Location = New System.Drawing.Point(16, 168)
+      Me.Label29.Location = New System.Drawing.Point(23, 204)
       Me.Label29.Name = "Label29"
       Me.Label29.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label29.Size = New System.Drawing.Size(81, 13)
@@ -1188,7 +1194,7 @@ Public Class frmClienti
       Me.tbpAllegati.Controls.Add(Me.Label11)
       Me.tbpAllegati.Location = New System.Drawing.Point(4, 22)
       Me.tbpAllegati.Name = "tbpAllegati"
-      Me.tbpAllegati.Size = New System.Drawing.Size(592, 325)
+      Me.tbpAllegati.Size = New System.Drawing.Size(612, 345)
       Me.tbpAllegati.TabIndex = 2
       Me.tbpAllegati.Text = "Tel./Internet"
       Me.tbpAllegati.ToolTipText = "Dati sul telefono e Internet"
@@ -1378,7 +1384,7 @@ Public Class frmClienti
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(592, 325)
+      Me.TabPage4.Size = New System.Drawing.Size(612, 345)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1418,7 +1424,7 @@ Public Class frmClienti
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(592, 256)
+      Me.lvwAllegati.Size = New System.Drawing.Size(612, 256)
       Me.lvwAllegati.SmallImageList = Me.ImageList1
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
@@ -1460,7 +1466,7 @@ Public Class frmClienti
       Me.tbpStatGioco.Controls.Add(Me.Panel2)
       Me.tbpStatGioco.Location = New System.Drawing.Point(4, 22)
       Me.tbpStatGioco.Name = "tbpStatGioco"
-      Me.tbpStatGioco.Size = New System.Drawing.Size(592, 325)
+      Me.tbpStatGioco.Size = New System.Drawing.Size(612, 345)
       Me.tbpStatGioco.TabIndex = 6
       Me.tbpStatGioco.Text = "Statistiche di gioco"
       Me.tbpStatGioco.UseVisualStyleBackColor = True
@@ -1480,7 +1486,7 @@ Public Class frmClienti
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(592, 285)
+      Me.DataGrid1.Size = New System.Drawing.Size(612, 305)
       Me.DataGrid1.TabIndex = 233
       '
       'Panel2
@@ -1493,7 +1499,7 @@ Public Class frmClienti
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel2.Location = New System.Drawing.Point(0, 0)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(592, 40)
+      Me.Panel2.Size = New System.Drawing.Size(612, 40)
       Me.Panel2.TabIndex = 232
       '
       'txtTotPartite
@@ -1561,7 +1567,7 @@ Public Class frmClienti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(592, 325)
+      Me.TabPage6.Size = New System.Drawing.Size(612, 345)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1579,7 +1585,7 @@ Public Class frmClienti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(592, 325)
+      Me.txtNote.Size = New System.Drawing.Size(612, 345)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1591,12 +1597,35 @@ Public Class frmClienti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'Label35
+      '
+      Me.Label35.AutoSize = True
+      Me.Label35.BackColor = System.Drawing.Color.Transparent
+      Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label35.ForeColor = System.Drawing.Color.Black
+      Me.Label35.Location = New System.Drawing.Point(23, 28)
+      Me.Label35.Name = "Label35"
+      Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label35.Size = New System.Drawing.Size(65, 13)
+      Me.Label35.TabIndex = 255
+      Me.Label35.Text = "Tipo cliente:"
+      '
+      'cmbTipoAlloggiato
+      '
+      Me.cmbTipoAlloggiato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipoAlloggiato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipoAlloggiato.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo", "Familiare", "Menbro Gruppo"})
+      Me.cmbTipoAlloggiato.Location = New System.Drawing.Point(123, 25)
+      Me.cmbTipoAlloggiato.Name = "cmbTipoAlloggiato"
+      Me.cmbTipoAlloggiato.Size = New System.Drawing.Size(160, 21)
+      Me.cmbTipoAlloggiato.TabIndex = 0
+      '
       'frmClienti
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(610, 407)
+      Me.ClientSize = New System.Drawing.Size(630, 427)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1682,13 +1711,13 @@ Public Class frmClienti
 
    Private Sub InserisciImmagine()
       Try
-         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" & _
-                                  "Bmp (Bitmap di Windows)|*.Bmp|" & _
-                                  "Gif |*.Gif|" & _
-                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" & _
-                                  "Png |*.Png|" & _
-                                  "Tga |*.Tga|" & _
-                                  "Tiff |*.Tiff|" & _
+         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" &
+                                  "Bmp (Bitmap di Windows)|*.Bmp|" &
+                                  "Gif |*.Gif|" &
+                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" &
+                                  "Png |*.Png|" &
+                                  "Tga |*.Tga|" &
+                                  "Tiff |*.Tiff|" &
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
@@ -1731,7 +1760,7 @@ Public Class frmClienti
          Dim Documento As String = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf & _
+         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf &
                            "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -1976,7 +2005,7 @@ Public Class frmClienti
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase("Partita del " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) & "  -  " & _
+            DataGrid1.CaptionText = Strings.UCase("Partita del " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) & "  -  " &
                                                   "Minuti di gioco:  " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3))
          Else
             DataGrid1.CaptionText = ""
@@ -2041,8 +2070,9 @@ Public Class frmClienti
             .Note = FormattaApici(txtNote.Text)
 
             ' Dati personali.
-            .TipoDoc = cmbTipoDoc.Text ' FormattaApici(cmbTipoDoc.Text)
-            .NumeroDocIdentit‡ = FormattaApici(txtNumeroDoc.Text)
+            .TipoAlloggiato = cmbTipoAlloggiato.Text
+            .TipoDoc = cmbTipoDoc.Text
+            .NumeroDocIdentit‡ = txtNumeroDoc.Text
             If dtpDataRilascioDoc.Checked = True Then
                .DataRilascioDoc = dtpDataRilascioDoc.Text
             Else
@@ -2289,6 +2319,7 @@ Public Class frmClienti
                txtNote.Text = .Note
 
                ' Dati personali.
+               cmbTipoAlloggiato.Text = .TipoAlloggiato
                cmbTipoDoc.Text = .TipoDoc
                txtNumeroDoc.Text = .NumeroDocIdentit‡
 
@@ -2355,6 +2386,8 @@ Public Class frmClienti
             ConvalidaAllegati()
          Else
             ' In caso di nuovo inserimento dati imposta i valori di default.
+            cmbTipoAlloggiato.SelectedIndex = 0
+
             txtSconto.Text = VALORE_ZERO
             txtIva.Text = VALORE_ZERO
 
@@ -2380,9 +2413,11 @@ Public Class frmClienti
 
          CreaColonneStat(TAB_STAT)
          CaricaStat(TAB_STAT)
+
          ' Totale partite giocate.
          numRecord = LeggiNumRecord(TAB_STAT)
          txtTotPartite.Text = numRecord.ToString
+
          ' Totale ore giocate.
          ' A_TODO: MODIFICHE ASD AGON
          txtTotOre.Text = SommaCampo(TAB_STAT) ' CalcolaOreGiocate(SommaCampo(TAB_STAT))

@@ -29,6 +29,7 @@ Module Dichiarazioni
    'Public Declare Function VbCEFClose Lib "CeFdll.dll" (ByRef lpdwSysError As Integer) As Integer
 
    ' Dimensioni per il form Main.
+
    Public Const FORM_MAIN_LARGHEZZA As Integer = 920
    Public Const FORM_MAIN_ALTEZZA As Integer = 600
 

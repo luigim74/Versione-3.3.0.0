@@ -163,6 +163,8 @@ Public Class frmSchedinaPS
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label5 = New System.Windows.Forms.Label()
       Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.cmbTipologia = New System.Windows.Forms.ComboBox()
+      Me.Label14 = New System.Windows.Forms.Label()
       Me.cmdNuovoIntestatario = New System.Windows.Forms.Button()
       Me.cmbCittadinanza = New System.Windows.Forms.ComboBox()
       Me.Label21 = New System.Windows.Forms.Label()
@@ -213,8 +215,6 @@ Public Class frmSchedinaPS
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.cmbTipologia = New System.Windows.Forms.ComboBox()
-      Me.Label14 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -236,7 +236,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(635, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(645, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -270,7 +270,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(635, 20)
+      Me.Panel1.Size = New System.Drawing.Size(645, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -295,7 +295,7 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(635, 454)
+      Me.TabControl1.Size = New System.Drawing.Size(645, 464)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -317,7 +317,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(627, 428)
+      Me.TabPage1.Size = New System.Drawing.Size(637, 438)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -384,9 +384,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 193)
+      Me.Panel2.Location = New System.Drawing.Point(0, 203)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(627, 235)
+      Me.Panel2.Size = New System.Drawing.Size(637, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -597,9 +597,32 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(627, 428)
+      Me.TabPage4.Size = New System.Drawing.Size(637, 438)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
+      '
+      'cmbTipologia
+      '
+      Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipologia.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo"})
+      Me.cmbTipologia.Location = New System.Drawing.Point(394, 96)
+      Me.cmbTipologia.Name = "cmbTipologia"
+      Me.cmbTipologia.Size = New System.Drawing.Size(112, 21)
+      Me.cmbTipologia.TabIndex = 5
+      '
+      'Label14
+      '
+      Me.Label14.AutoSize = True
+      Me.Label14.BackColor = System.Drawing.Color.Transparent
+      Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label14.ForeColor = System.Drawing.Color.Black
+      Me.Label14.Location = New System.Drawing.Point(305, 99)
+      Me.Label14.Name = "Label14"
+      Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label14.Size = New System.Drawing.Size(79, 13)
+      Me.Label14.TabIndex = 266
+      Me.Label14.Text = "Tipo alloggiato:"
       '
       'cmdNuovoIntestatario
       '
@@ -616,7 +639,6 @@ Public Class frmSchedinaPS
       '
       'cmbCittadinanza
       '
-      Me.cmbCittadinanza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbCittadinanza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbCittadinanza.Location = New System.Drawing.Point(379, 223)
       Me.cmbCittadinanza.Name = "cmbCittadinanza"
@@ -638,7 +660,6 @@ Public Class frmSchedinaPS
       '
       'cmbNazioneNascita
       '
-      Me.cmbNazioneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbNazioneNascita.Location = New System.Drawing.Point(125, 223)
       Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
@@ -858,7 +879,7 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(627, 428)
+      Me.TabPage5.Size = New System.Drawing.Size(637, 438)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
       '
@@ -877,7 +898,6 @@ Public Class frmSchedinaPS
       '
       'cmbNazioneRilascioDoc
       '
-      Me.cmbNazioneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(389, 63)
       Me.cmbNazioneRilascioDoc.Name = "cmbNazioneRilascioDoc"
       Me.cmbNazioneRilascioDoc.Size = New System.Drawing.Size(149, 21)
@@ -979,7 +999,6 @@ Public Class frmSchedinaPS
       '
       'cmbTipoDoc
       '
-      Me.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbTipoDoc.Location = New System.Drawing.Point(113, 22)
       Me.cmbTipoDoc.Name = "cmbTipoDoc"
       Me.cmbTipoDoc.Size = New System.Drawing.Size(161, 21)
@@ -1019,7 +1038,7 @@ Public Class frmSchedinaPS
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(617, 418)
+      Me.TabPage3.Size = New System.Drawing.Size(637, 438)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -1049,7 +1068,7 @@ Public Class frmSchedinaPS
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(617, 327)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(637, 327)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1103,34 +1122,11 @@ Public Class frmSchedinaPS
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'cmbTipologia
-      '
-      Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbTipologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbTipologia.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo"})
-      Me.cmbTipologia.Location = New System.Drawing.Point(394, 96)
-      Me.cmbTipologia.Name = "cmbTipologia"
-      Me.cmbTipologia.Size = New System.Drawing.Size(112, 21)
-      Me.cmbTipologia.TabIndex = 5
-      '
-      'Label14
-      '
-      Me.Label14.AutoSize = True
-      Me.Label14.BackColor = System.Drawing.Color.Transparent
-      Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label14.ForeColor = System.Drawing.Color.Black
-      Me.Label14.Location = New System.Drawing.Point(305, 99)
-      Me.Label14.Name = "Label14"
-      Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label14.Size = New System.Drawing.Size(79, 13)
-      Me.Label14.TabIndex = 266
-      Me.Label14.Text = "Tipo alloggiato:"
-      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(635, 500)
+      Me.ClientSize = New System.Drawing.Size(645, 510)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -2144,6 +2140,7 @@ Public Class frmSchedinaPS
 
                ' Aggiorna la nuova data di arrivo.
                lblArrivo.Text = "Arrivo: " & Convert.ToDateTime(.DataArrivo).ToLongDateString
+
                ' Aggiorna la nuova data di partenza.
                lblPartenza.Text = "Partenza: " & Convert.ToDateTime(.DataPartenza).ToLongDateString
 
@@ -2154,8 +2151,9 @@ Public Class frmSchedinaPS
          Else
             ' Comando Nuovo.
 
+            ' DA_FARE: Modificare! generare il numero progressivo.
             ' Genera il numero progressivo.
-            txtNumero.Text = String.Empty
+            txtNumero.Text = "0"
 
             ' Seleziona il valore Inserita.
             cmbStato.SelectedIndex = 0
@@ -2167,8 +2165,10 @@ Public Class frmSchedinaPS
 
             ' Aggiorna la nuova data di arrivo.
             lblArrivo.Text = "Arrivo: " & Today.ToLongDateString
+
             ' Aggiorna la nuova data di partenza.
             lblPartenza.Text = "Partenza: " & Today.AddDays(1).ToLongDateString
+
             ' Aggiorna il numero delle notti.
             txtNumeroNotti.Text = CalcolaNumGiorni(Today, mcDataPartenza.SelectionRange.Start.Date).ToString
 

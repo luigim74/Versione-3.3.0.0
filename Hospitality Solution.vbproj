@@ -1192,6 +1192,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="bin\Immagini\Hospitality.ico" />
     <None Include="Dataset1.xsc">
@@ -1245,6 +1246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Interop.HSS.dll" />
+    <None Include="Resources\NewContentPage_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="CrystalDecisions.CrystalReports.Engine">

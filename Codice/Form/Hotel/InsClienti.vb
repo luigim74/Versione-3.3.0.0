@@ -56,6 +56,7 @@ Public Class frmInsClienti
    Friend WithEvents nudPermanenza As Elegant.Ui.NumericUpDown
    Friend WithEvents Label1 As Elegant.Ui.Label
    Friend WithEvents ColumnHeader2 As ColumnHeader
+   Friend WithEvents ColumnHeader3 As ColumnHeader
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -72,16 +73,17 @@ Public Class frmInsClienti
       Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.cmdAnnulla = New Elegant.Ui.Button()
-      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Label1 = New Elegant.Ui.Label()
       Me.nudPermanenza = New Elegant.Ui.NumericUpDown()
       Me.cmdModifica = New Elegant.Ui.Button()
+      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.nudPermanenza, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
@@ -105,7 +107,7 @@ Public Class frmInsClienti
       'cmdInserisci
       '
       Me.cmdInserisci.Id = "c1e102ea-84d7-4e3c-8acf-9fe3c5e5ebb0"
-      Me.cmdInserisci.Location = New System.Drawing.Point(802, 58)
+      Me.cmdInserisci.Location = New System.Drawing.Point(907, 60)
       Me.cmdInserisci.Name = "cmdInserisci"
       Me.cmdInserisci.Size = New System.Drawing.Size(104, 50)
       Me.cmdInserisci.TabIndex = 2
@@ -114,7 +116,7 @@ Public Class frmInsClienti
       'cmdNuovo
       '
       Me.cmdNuovo.Id = "449d9c97-e7e9-4436-94bb-d3035dd05b42"
-      Me.cmdNuovo.Location = New System.Drawing.Point(802, 407)
+      Me.cmdNuovo.Location = New System.Drawing.Point(907, 409)
       Me.cmdNuovo.Name = "cmdNuovo"
       Me.cmdNuovo.Size = New System.Drawing.Size(104, 50)
       Me.cmdNuovo.TabIndex = 4
@@ -122,14 +124,14 @@ Public Class frmInsClienti
       '
       'lvwClienti
       '
-      Me.lvwClienti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader2, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader13, Me.ColumnHeader12})
+      Me.lvwClienti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader2, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader13, Me.ColumnHeader3, Me.ColumnHeader12})
       Me.lvwClienti.Dock = System.Windows.Forms.DockStyle.Left
       Me.lvwClienti.FullRowSelect = True
       Me.lvwClienti.Location = New System.Drawing.Point(0, 0)
       Me.lvwClienti.MultiSelect = False
       Me.lvwClienti.Name = "lvwClienti"
       Me.lvwClienti.ShowGroups = False
-      Me.lvwClienti.Size = New System.Drawing.Size(792, 527)
+      Me.lvwClienti.Size = New System.Drawing.Size(894, 531)
       Me.lvwClienti.TabIndex = 0
       Me.lvwClienti.UseCompatibleStateImageBehavior = False
       Me.lvwClienti.View = System.Windows.Forms.View.Details
@@ -148,6 +150,11 @@ Public Class frmInsClienti
       '
       Me.ColumnHeader8.Text = "Nome"
       Me.ColumnHeader8.Width = 100
+      '
+      'ColumnHeader2
+      '
+      Me.ColumnHeader2.Text = "Sesso"
+      Me.ColumnHeader2.Width = 50
       '
       'ColumnHeader9
       '
@@ -178,20 +185,15 @@ Public Class frmInsClienti
       '
       Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.cmdAnnulla.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
-      Me.cmdAnnulla.Location = New System.Drawing.Point(802, 120)
+      Me.cmdAnnulla.Location = New System.Drawing.Point(907, 122)
       Me.cmdAnnulla.Name = "cmdAnnulla"
       Me.cmdAnnulla.Size = New System.Drawing.Size(104, 50)
       Me.cmdAnnulla.TabIndex = 3
       Me.cmdAnnulla.Text = "&Annulla"
       '
-      'ColumnHeader2
-      '
-      Me.ColumnHeader2.Text = "Sesso"
-      Me.ColumnHeader2.Width = 50
-      '
       'Label1
       '
-      Me.Label1.Location = New System.Drawing.Point(802, 9)
+      Me.Label1.Location = New System.Drawing.Point(907, 11)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(92, 16)
       Me.Label1.TabIndex = 4
@@ -201,7 +203,7 @@ Public Class frmInsClienti
       '
       Me.nudPermanenza.BannerTextStyle = System.Drawing.FontStyle.Regular
       Me.nudPermanenza.Id = "995cbfb5-eb8e-436e-b831-add285dc2de0"
-      Me.nudPermanenza.Location = New System.Drawing.Point(802, 25)
+      Me.nudPermanenza.Location = New System.Drawing.Point(907, 27)
       Me.nudPermanenza.Name = "nudPermanenza"
       Me.nudPermanenza.Size = New System.Drawing.Size(104, 21)
       Me.nudPermanenza.TabIndex = 1
@@ -211,11 +213,16 @@ Public Class frmInsClienti
       'cmdModifica
       '
       Me.cmdModifica.Id = "aab3f02f-946d-4c46-8a83-c8b121184f6d"
-      Me.cmdModifica.Location = New System.Drawing.Point(802, 469)
+      Me.cmdModifica.Location = New System.Drawing.Point(907, 471)
       Me.cmdModifica.Name = "cmdModifica"
       Me.cmdModifica.Size = New System.Drawing.Size(104, 50)
       Me.cmdModifica.TabIndex = 5
       Me.cmdModifica.Text = "&Modifica"
+      '
+      'ColumnHeader3
+      '
+      Me.ColumnHeader3.Text = "Tipo Cliente"
+      Me.ColumnHeader3.Width = 100
       '
       'frmInsClienti
       '
@@ -223,7 +230,7 @@ Public Class frmInsClienti
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(915, 527)
+      Me.ClientSize = New System.Drawing.Size(1022, 531)
       Me.Controls.Add(Me.cmdModifica)
       Me.Controls.Add(Me.nudPermanenza)
       Me.Controls.Add(Me.Label1)
@@ -386,6 +393,13 @@ Public Class frmInsClienti
                lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add("")
             End If
 
+            ' Tipo alloggiato.
+            If IsDBNull(dr.Item("TipoAlloggiato")) = False Then
+               lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add(dr.Item("TipoAlloggiato"))
+            Else
+               lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add("")
+            End If
+
             ' Codice.
             lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add(dr.Item("Id"))
 
@@ -469,6 +483,13 @@ Public Class frmInsClienti
                ' Giorni di permanenza.
                .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(nudPermanenza.Value.ToString)
 
+               ' Tipo alloggiato.
+               If IsDBNull(dr.Item("TipoAlloggiato")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("TipoAlloggiato"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
                ' Codice.
                .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Id"))
 
@@ -499,7 +520,7 @@ Public Class frmInsClienti
             lvwClienti.Focus()
 
             ' Inserisce il cliente selezionato nel'elenco degli occupanti.
-            InserisciCliente(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(8).Text)
+            InserisciCliente(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(9).Text)
 
             lvwClienti.Focus()
 
@@ -532,7 +553,7 @@ Public Class frmInsClienti
    Private Sub cmdModifica_Click(sender As Object, e As EventArgs) Handles cmdModifica.Click
       Try
          ' Apre l'anagrafica Clienti per la modifica.
-         If ApriClienti(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(8).Text) = True Then
+         If ApriClienti(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(9).Text) = True Then
             CaricaClienti()
          End If
 

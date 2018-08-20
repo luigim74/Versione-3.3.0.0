@@ -592,6 +592,7 @@ Namespace Anagrafiche
       Public ProvNascita As String = String.Empty
       Public NazioneNascita As String = String.Empty
       Public Nazionalit‡ As String = String.Empty
+      Public TipoAlloggiato As String = String.Empty
       Public TipoDoc As String = String.Empty
       Public NumeroDocIdentit‡ As String = String.Empty
       Public DataRilascioDoc As String = String.Empty
@@ -780,6 +781,11 @@ Namespace Anagrafiche
                Me.Nazionalit‡ = ds.Tables(tabella).Rows(0)("Nazionalit‡")
             Else
                Me.Nazionalit‡ = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TipoAlloggiato")) = False Then
+               Me.TipoAlloggiato = ds.Tables(tabella).Rows(0)("TipoAlloggiato")
+            Else
+               Me.TipoAlloggiato = ""
             End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("TipoDoc")) = False Then
                Me.TipoDoc = ds.Tables(tabella).Rows(0)("TipoDoc")
@@ -992,17 +998,17 @@ Namespace Anagrafiche
             ' Avvia una transazione.
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
             ' Crea la stringa di eliminazione.
-            sql = String.Format("INSERT INTO {0} (Mastro, Titolo, Nome, Cognome, Sesso, Indirizzo, Cap, Citt‡, Provincia, Regione, Nazione, CodFisc, Piva, " & _
-                                                 "DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Nazionalit‡, " & _
-                                                 "TipoDoc, NumeroDocIdentit‡, DataRilascioDoc, RilasciatoDa, Citt‡RilascioDoc, NazioneRilascioDoc, " & _
-                                                 "Disabile, InvioCorrisp, Obsoleto, TelCasa, TelUfficio, Cell, Fax, Email, Internet, " & _
-                                                 "CartaCredito, TitolareCarta, NumCarta, ScadenzaCarta, TipoCliente, TipoPagamento, Strutture, Targa, Intestatario," & _
-                                                 "[Note], Immagine, Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, Iva, Sconto, NumeroDoc) " & _
-                                          "VALUES(@Mastro, @Titolo, @Nome, @Cognome, @Sesso, @Indirizzo, @Cap, @Citt‡, @Provincia, @Regione, @Nazione, @CodFisc, @Piva, " & _
-                                                 "@DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Nazionalit‡, " & _
-                                                 "@TipoDoc, @NumeroDocIdentit‡, @DataRilascioDoc, @RilasciatoDa, @Citt‡RilascioDoc, @NazioneRilascioDoc, " & _
-                                                 "@Disabile, @InvioCorrisp, @Obsoleto, @TelCasa, @TelUfficio, @Cell, @Fax, @Email, @Internet, " & _
-                                                 "@CartaCredito, @TitolareCarta, @NumCarta, @ScadenzaCarta, @TipoCliente, @TipoPagamento, @Strutture, @Targa, @Intestatario," & _
+            sql = String.Format("INSERT INTO {0} (Mastro, Titolo, Nome, Cognome, Sesso, Indirizzo, Cap, Citt‡, Provincia, Regione, Nazione, CodFisc, Piva, " &
+                                                 "DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Nazionalit‡, " &
+                                                 "TipoAlloggiato, TipoDoc, NumeroDocIdentit‡, DataRilascioDoc, RilasciatoDa, Citt‡RilascioDoc, NazioneRilascioDoc, " &
+                                                 "Disabile, InvioCorrisp, Obsoleto, TelCasa, TelUfficio, Cell, Fax, Email, Internet, " &
+                                                 "CartaCredito, TitolareCarta, NumCarta, ScadenzaCarta, TipoCliente, TipoPagamento, Strutture, Targa, Intestatario," &
+                                                 "[Note], Immagine, Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, Iva, Sconto, NumeroDoc) " &
+                                          "VALUES(@Mastro, @Titolo, @Nome, @Cognome, @Sesso, @Indirizzo, @Cap, @Citt‡, @Provincia, @Regione, @Nazione, @CodFisc, @Piva, " &
+                                                 "@DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Nazionalit‡, " &
+                                                 "@TipoAlloggiato, @TipoDoc, @NumeroDocIdentit‡, @DataRilascioDoc, @RilasciatoDa, @Citt‡RilascioDoc, @NazioneRilascioDoc, " &
+                                                 "@Disabile, @InvioCorrisp, @Obsoleto, @TelCasa, @TelUfficio, @Cell, @Fax, @Email, @Internet, " &
+                                                 "@CartaCredito, @TitolareCarta, @NumCarta, @ScadenzaCarta, @TipoCliente, @TipoPagamento, @Strutture, @Targa, @Intestatario," &
                                                  "@Note, @Immagine, @Mercato, @Canale, @Lingua, @Professione, @NoteVideo, @NoteStampa, @Privacy, @InsPS, @NumComp, @Iva, @Sconto, @NumeroDoc)", tabella)
 
             ' Crea il comando per la connessione corrente.
@@ -1026,6 +1032,7 @@ Namespace Anagrafiche
             cmdInsert.Parameters.Add("@ProvNascita", Me.ProvNascita)
             cmdInsert.Parameters.Add("@NazioneNascita", Me.NazioneNascita)
             cmdInsert.Parameters.Add("@Nazionalit‡", Me.Nazionalit‡)
+            cmdInsert.Parameters.Add("@TipoAlloggiato", Me.TipoAlloggiato)
             cmdInsert.Parameters.Add("@TipoDoc", Me.TipoDoc)
             cmdInsert.Parameters.Add("@NumeroDocIdentit‡", Me.NumeroDocIdentit‡)
             cmdInsert.Parameters.Add("@DataRilascioDoc", Me.DataRilascioDoc)
@@ -1102,65 +1109,66 @@ Namespace Anagrafiche
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
             ' Crea la stringa di eliminazione.
-            sql = String.Format("UPDATE {0} " & _
-                                "SET Mastro = @Mastro, " & _
-                                "Titolo = @Titolo, " & _
-                                "Nome = @Nome, " & _
-                                "Cognome = @Cognome, " & _
-                                "Sesso = @Sesso, " & _
-                                "Indirizzo = @Indirizzo, " & _
-                                "Cap = @Cap, " & _
-                                "Citt‡ = @Citt‡, " & _
-                                "Provincia = @Provincia, " & _
-                                "Regione = @Regione, " & _
-                                "Nazione = @Nazione, " & _
-                                "CodFisc = @CodFisc, " & _
-                                "Piva = @Piva, " & _
-                                "DataNascita = @DataNascita, " & _
-                                "LuogoNascita = @LuogoNascita, " & _
-                                "ProvNascita = @ProvNascita, " & _
-                                "NazioneNascita = @NazioneNascita, " & _
-                                "Nazionalit‡ = @Nazionalit‡, " & _
-                                "TipoDoc = @TipoDoc, " & _
-                                "NumeroDocIdentit‡ = @NumeroDocIdentit‡, " & _
-                                "DataRilascioDoc = @DataRilascioDoc, " & _
-                                "RilasciatoDa = @RilasciatoDa, " & _
-                                "Citt‡RilascioDoc = @Citt‡RilascioDoc, " & _
-                                "NazioneRilascioDoc = @NazioneRilascioDoc, " & _
-                                "Disabile = @Disabile, " & _
-                                "InvioCorrisp = @InvioCorrisp, " & _
-                                "Obsoleto = @Obsoleto, " & _
-                                "TelCasa = @TelCasa, " & _
-                                "TelUfficio = @TelUfficio, " & _
-                                "Cell = @Cell, " & _
-                                "Fax = @Fax, " & _
-                                "Email = @Email, " & _
-                                "Internet = @Internet, " & _
-                                "CartaCredito = @CartaCredito, " & _
-                                "TitolareCarta = @TitolareCarta, " & _
-                                "NumCarta = @NumCarta, " & _
-                                "ScadenzaCarta = @ScadenzaCarta, " & _
-                                "TipoCliente = @TipoCliente, " & _
-                                "TipoPagamento = @TipoPagamento, " & _
-                                "Strutture = @Strutture, " & _
-                                "Targa = @Targa, " & _
-                                "Intestatario = @Intestatario, " & _
-                                "[Note] = @Note, " & _
-                                "Immagine = @Immagine, " & _
-                                "Mercato = @Mercato, " & _
-                                "Canale = @Canale, " & _
-                                "Lingua = @Lingua, " & _
-                                "Professione = @Professione, " & _
-                                "[NoteVideo] = @NoteVideo, " & _
-                                "[NoteStampa] = @NoteStampa, " & _
-                                "Privacy = @Privacy, " & _
-                                "InsPS = @InsPS, " & _
-                                "NumComp = @NumComp, " & _
-                                "Iva = @Iva, " & _
-                                "Sconto = @Sconto, " & _
-                                "NumeroDoc = @NumeroDoc " & _
-                                "WHERE Id = {1}", _
-                                 tabella, _
+            sql = String.Format("UPDATE {0} " &
+                                "SET Mastro = @Mastro, " &
+                                "Titolo = @Titolo, " &
+                                "Nome = @Nome, " &
+                                "Cognome = @Cognome, " &
+                                "Sesso = @Sesso, " &
+                                "Indirizzo = @Indirizzo, " &
+                                "Cap = @Cap, " &
+                                "Citt‡ = @Citt‡, " &
+                                "Provincia = @Provincia, " &
+                                "Regione = @Regione, " &
+                                "Nazione = @Nazione, " &
+                                "CodFisc = @CodFisc, " &
+                                "Piva = @Piva, " &
+                                "DataNascita = @DataNascita, " &
+                                "LuogoNascita = @LuogoNascita, " &
+                                "ProvNascita = @ProvNascita, " &
+                                "NazioneNascita = @NazioneNascita, " &
+                                "Nazionalit‡ = @Nazionalit‡, " &
+                                "TipoAlloggiato = @TipoAlloggiato, " &
+                                "TipoDoc = @TipoDoc, " &
+                                "NumeroDocIdentit‡ = @NumeroDocIdentit‡, " &
+                                "DataRilascioDoc = @DataRilascioDoc, " &
+                                "RilasciatoDa = @RilasciatoDa, " &
+                                "Citt‡RilascioDoc = @Citt‡RilascioDoc, " &
+                                "NazioneRilascioDoc = @NazioneRilascioDoc, " &
+                                "Disabile = @Disabile, " &
+                                "InvioCorrisp = @InvioCorrisp, " &
+                                "Obsoleto = @Obsoleto, " &
+                                "TelCasa = @TelCasa, " &
+                                "TelUfficio = @TelUfficio, " &
+                                "Cell = @Cell, " &
+                                "Fax = @Fax, " &
+                                "Email = @Email, " &
+                                "Internet = @Internet, " &
+                                "CartaCredito = @CartaCredito, " &
+                                "TitolareCarta = @TitolareCarta, " &
+                                "NumCarta = @NumCarta, " &
+                                "ScadenzaCarta = @ScadenzaCarta, " &
+                                "TipoCliente = @TipoCliente, " &
+                                "TipoPagamento = @TipoPagamento, " &
+                                "Strutture = @Strutture, " &
+                                "Targa = @Targa, " &
+                                "Intestatario = @Intestatario, " &
+                                "[Note] = @Note, " &
+                                "Immagine = @Immagine, " &
+                                "Mercato = @Mercato, " &
+                                "Canale = @Canale, " &
+                                "Lingua = @Lingua, " &
+                                "Professione = @Professione, " &
+                                "[NoteVideo] = @NoteVideo, " &
+                                "[NoteStampa] = @NoteStampa, " &
+                                "Privacy = @Privacy, " &
+                                "InsPS = @InsPS, " &
+                                "NumComp = @NumComp, " &
+                                "Iva = @Iva, " &
+                                "Sconto = @Sconto, " &
+                                "NumeroDoc = @NumeroDoc " &
+                                "WHERE Id = {1}",
+                                 tabella,
                                  codice)
 
 
@@ -1185,6 +1193,7 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@ProvNascita", Me.ProvNascita)
             cmdUpdate.Parameters.Add("@NazioneNascita", Me.NazioneNascita)
             cmdUpdate.Parameters.Add("@Nazionalit‡", Me.Nazionalit‡)
+            cmdUpdate.Parameters.Add("@TipoAlloggiato", Me.TipoAlloggiato)
             cmdUpdate.Parameters.Add("@TipoDoc", Me.TipoDoc)
             cmdUpdate.Parameters.Add("@NumeroDocIdentit‡", Me.NumeroDocIdentit‡)
             cmdUpdate.Parameters.Add("@DataRilascioDoc", Me.DataRilascioDoc)

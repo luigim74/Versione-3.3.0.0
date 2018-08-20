@@ -631,3 +631,26 @@ Nome parametro: MinDate"
    in Hospitality_Solution.frmPrenCamera.EliminaScedinePS(String idPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2305"
 "
 "
+"*** 20/08/2018 - 14:59:29 ***"
+"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.PrenCamere.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 417"
+"
+"
+"*** 20/08/2018 - 16:13:50 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Non paga'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.frmInsClienti.InserisciCliente(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 426"
+"
+"
