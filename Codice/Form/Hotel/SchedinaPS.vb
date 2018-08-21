@@ -2158,6 +2158,9 @@ Public Class frmSchedinaPS
             ' Seleziona il valore Inserita.
             cmbStato.SelectedIndex = 0
 
+            ' Seleziona il valore Nessuna.
+            cmbNumeroCamera.SelectedIndex = 0
+
             ' Data e ora di arrivo
             mcDataArrivo.SetDate(Today)
             mcDataPartenza.MinDate = Today.AddDays(1)

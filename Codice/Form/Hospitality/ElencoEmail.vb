@@ -992,6 +992,9 @@ Public Class ElencoEmail
       g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = False
 
       ' Visualizza.
       g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False

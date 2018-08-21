@@ -723,6 +723,8 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Disponibile = 'Sì' ORDER BY Numero ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
+         cmb.Items.Add("Nessuna")
+
          Do While dr.Read
             cmb.Items.Add(dr.Item("Numero"))
          Loop

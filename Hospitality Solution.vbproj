@@ -1246,6 +1246,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Interop.HSS.dll" />
+    <None Include="Resources\DiscardChanges.png" />
+    <None Include="Resources\CancelApproval_32x32.png" />
+    <None Include="Resources\Delete-PermissionHH.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\attach_file.png" />
     <None Include="Resources\NewContentPage_32x32.png" />
   </ItemGroup>
   <ItemGroup>

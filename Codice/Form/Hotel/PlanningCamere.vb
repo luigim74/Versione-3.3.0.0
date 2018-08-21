@@ -749,7 +749,7 @@ Public Class PlanningCamere
 
          Prenotazioni(NumPren).TextButtonAlign = ContentAlignment.MiddleLeft
 
-         If gruppo <> String.Empty Then
+         If gruppo <> String.Empty And gruppo <> Space(1) Then
             Prenotazioni(NumPren).TextButton = intestatario & " [Gruppo " & gruppo & "]"
          Else
             Prenotazioni(NumPren).TextButton = intestatario
@@ -776,6 +776,8 @@ Public Class PlanningCamere
                                  "Acconto: € " & acconto & vbCrLf &
                                  "Totale soggiorno: € " & totaleConto & vbCrLf & vbCrLf &
                                  "Note: " & note
+
+         ' DA_FARE_B: Sviluppare! Aggiungere anche l'elenco dei componenti.
 
          pnlPrenotazioni.Controls.Add(Prenotazioni(NumPren))
 

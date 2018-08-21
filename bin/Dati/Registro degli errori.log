@@ -654,3 +654,380 @@ Nome parametro: MinDate"
    in Hospitality_Solution.frmInsClienti.InserisciCliente(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 426"
 "
 "
+"*** 21/08/2018 - 15:29:45 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella proposizione FROM."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
+"
+"
+"*** 21/08/2018 - 15:29:48 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = "" ORDER BY DataArrivo ASC'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
+"
+"
+"*** 21/08/2018 - 15:30:03 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
+"
+"
+"*** 21/08/2018 - 15:30:05 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
+"
+"
+"*** 21/08/2018 - 15:30:05 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:30:06 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:30:07 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:30:08 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:30:08 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:30:09 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:04 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
+"
+"
+"*** 21/08/2018 - 15:36:43 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
+"
+"
+"*** 21/08/2018 - 15:36:45 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
+"
+"
+"*** 21/08/2018 - 15:36:46 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
+"
+"
+"*** 21/08/2018 - 15:36:47 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:47 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:47 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:47 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:48 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:36:48 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:40:51 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '0''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
+"
+"
+"*** 21/08/2018 - 15:41:08 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '0''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
+"
+"
+"*** 21/08/2018 - 15:41:09 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
+"
+"
+"*** 21/08/2018 - 15:41:11 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
+"
+"
+"*** 21/08/2018 - 15:41:11 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:41:12 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:41:12 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:41:12 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:41:13 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 15:41:14 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: rowIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
+"
+"
+"*** 21/08/2018 - 16:41:22 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 921"
+"
+"
+"*** 21/08/2018 - 16:41:27 ***"
+"- DESCRIZIONE ERRORE: Errore non specificato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 921"
+"
+"
+"*** 21/08/2018 - 16:53:23 ***"
+"- DESCRIZIONE ERRORE:  "
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
+"
+"
+"*** 21/08/2018 - 16:54:50 ***"
+"- DESCRIZIONE ERRORE:  "
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
+"
+"
+"*** 21/08/2018 - 16:54:55 ***"
+"- DESCRIZIONE ERRORE:  "
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
+"
+"
+"*** 21/08/2018 - 18:25:28 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroOspitiPartenza(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2259"
+"
+"
+"*** 21/08/2018 - 18:25:36 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroOspitiPartenza(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2259"
+"
+"
+"*** 21/08/2018 - 18:25:37 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataArrivo <= #8/21/2018# AND DataPartenza >= #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereOccupate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2335"
+"
+"
+"*** 21/08/2018 - 18:25:38 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereLiberate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2361"
+"
+"
+"*** 21/08/2018 - 18:25:39 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataArrivo <= #8/21/2018# AND DataPartenza >= #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereOccupate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2335"
+"
+"
+"*** 21/08/2018 - 18:25:39 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereLiberate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2361"
+"
+"
+"*** 21/08/2018 - 18:41:05 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Camere.Numero"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Camera.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Camera.vb:riga 236"
+"
+"

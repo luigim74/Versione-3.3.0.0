@@ -1512,49 +1512,49 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-    Public Sub AggiornaDatiPeriodo()
-        Try
-            ' Rimuove i dati di un'eventuale ricerca.
-            eui_txtTestoRicerca.Text = String.Empty
+   Public Sub AggiornaDatiPeriodo()
+      Try
+         ' Rimuove i dati di un'eventuale ricerca.
+         eui_txtTestoRicerca.Text = String.Empty
 
-            Dim frmFiltroPerido As New FiltroPeriodo()
-            If frmFiltroPerido.ShowDialog = Windows.Forms.DialogResult.OK Then
+         Dim frmFiltroPerido As New FiltroPeriodo()
+         If frmFiltroPerido.ShowDialog = Windows.Forms.DialogResult.OK Then
 
-                ' Crea la stringa di selezione dei dati.
-                Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
-                Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-                sql = String.Format("Select TOP {0} * FROM {1} WHERE DataDoc BETWEEN #{2}# And #{3}# ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_DOCUMENTI, dataDal, dataAl)
-                repSql = sql
-                LeggiDati("(" & sql & ")", sql)
+            ' Crea la stringa di selezione dei dati.
+            Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
+            Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
+            sql = String.Format("Select TOP {0} * FROM {1} WHERE DataDoc BETWEEN #{2}# And #{3}# ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_DOCUMENTI, dataDal, dataAl)
+            repSql = sql
+            LeggiDati("(" & sql & ")", sql)
 
-                ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-                AttivaDisattivaSospeso()
-                AttivaDisattivaPassaSospeso()
-                AttivaDisattivaAnnullaSospeso()
-                AttivaDisattivaBuoni()
-                AttivaDisattivaAnnullaDoc()
+            ' Se nella tabella non ci sono record disattiva i pulsanti.
+            ConvalidaDati()
 
-                ' Se nella tabella non ci sono record disattiva i pulsanti.
-                ConvalidaDati()
+            ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+            AttivaDisattivaSospeso()
+            AttivaDisattivaPassaSospeso()
+            AttivaDisattivaAnnullaSospeso()
+            AttivaDisattivaBuoni()
+            AttivaDisattivaAnnullaDoc()
 
-                ' Aggiorna l'intestazione della griglia dati.
-                AggIntGriglia()
+            ' Aggiorna l'intestazione della griglia dati.
+            AggIntGriglia()
 
-                ' Aggiorna il titolo della finestra.
-                AggTitoloFinestra(TITOLO_FINESTRA)
+            ' Aggiorna il titolo della finestra.
+            AggTitoloFinestra(TITOLO_FINESTRA)
 
-                ' Somma i valori della colonna Importo.
-                SommaImporti()
-            End If
+            ' Somma i valori della colonna Importo.
+            SommaImporti()
+         End If
 
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-        End Try
-    End Sub
+      End Try
+   End Sub
 
-    Public Sub AggiornaDatiMese()
+   Public Sub AggiornaDatiMese()
       Try
          ' Crea la stringa di selezione dei dati.
          Dim Anno As String = Year(Now)
@@ -1873,7 +1873,6 @@ Public Class ElencoDoc
 
             Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
             Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO_DOC)
-            'Dim ultimoNumeroDoc As Integer = LeggiNumeroMax(TAB_DOCUMENTI, tipoDoc)
 
             Select Case tipoDoc
                Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
@@ -1901,58 +1900,64 @@ Public Class ElencoDoc
    End Sub
 
    Public Sub AnnullaDocumento()
-      Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-      Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-      Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-      Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-      Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE)
+      Try
+         Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
+         Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
+         Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE)
 
-      ' Chiede conferma per l'annullamento.
-      Dim risposta As Integer
-      risposta = MessageBox.Show("Si desidera annullare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " & vbCrLf & vbCrLf &
-                                 "Confermando l'operazione verranno ripristinati i valori per le " &
-                                 "giacenze di magazzino degli Articoli e le Statistiche di vendita. Eventuali Buoni pasto contenuti " &
-                                 "nel documento non ancora fatturati verranno annullati. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-      If risposta = vbYes Then
-         RipristinaIngredientiScaricati()
-         RipristinaStatistiche()
+         ' Chiede conferma per l'annullamento.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Si desidera annullare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " & vbCrLf & vbCrLf &
+                                    "Confermando l'operazione verranno ripristinati i valori per le " &
+                                    "giacenze di magazzino degli Articoli e le Statistiche di vendita. Eventuali Buoni pasto contenuti " &
+                                    "nel documento non ancora fatturati verranno annullati. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         If risposta = vbYes Then
+            RipristinaIngredientiScaricati()
+            RipristinaStatistiche()
 
-         ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-         If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_BUONI_INC) <> VALORE_ZERO Then
-            If RipristinaBuoniPasto() = True Then
-               EliminaBuoniPasto()
+            ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
+            If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_BUONI_INC) <> VALORE_ZERO Then
+               If RipristinaBuoniPasto() = True Then
+                  EliminaBuoniPasto()
+               End If
             End If
+         Else
+            Exit Sub
          End If
-      Else
-         Exit Sub
-      End If
 
-      ' Chiede conferma per l'eliminazione.
-      risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ è stato annullato! " & vbCrLf & vbCrLf &
-                           "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-      If risposta = vbNo Then
-         EliminaDettagliDocumento()
-         EliminaDocumento()
+         ' Chiede conferma per l'eliminazione.
+         risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ è stato annullato! " & vbCrLf & vbCrLf &
+                              "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         If risposta = vbNo Then
+            EliminaDettagliDocumento()
+            EliminaDocumento()
 
-      Else
-         ModificaStatoDocumento(TAB_DOCUMENTI, Id, STATO_DOC_ANNULLATO)
-      End If
+         Else
+            ModificaStatoDocumento(TAB_DOCUMENTI, Id, STATO_DOC_ANNULLATO)
+         End If
 
-      ' QUESTA PROCEDURA NON E' PIU' NECESSARIA. 
-      ' Salva il Numero del documento annullato come prossimo numero da stampare rendendolo nuovamente disponibile.
-      'RipristinaNumeroDocFiscaleConfig(TAB_DOCUMENTI, Documento, Numero)
+         ' QUESTA PROCEDURA NON E' PIU' NECESSARIA. 
+         ' Salva il Numero del documento annullato come prossimo numero da stampare rendendolo nuovamente disponibile.
+         'RipristinaNumeroDocFiscaleConfig(TAB_DOCUMENTI, Documento, Numero)
 
-      ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-      AttivaDisattivaSospeso()
-      AttivaDisattivaPassaSospeso()
-      AttivaDisattivaAnnullaSospeso()
-      AttivaDisattivaBuoni()
-      AttivaDisattivaAnnullaDoc()
+         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+         AttivaDisattivaSospeso()
+         AttivaDisattivaPassaSospeso()
+         AttivaDisattivaAnnullaSospeso()
+         AttivaDisattivaBuoni()
+         AttivaDisattivaAnnullaDoc()
 
-      ' Registra loperazione effettuata dall'operatore identificato.
-      Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
-      g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+         ' Registra loperazione effettuata dall'operatore identificato.
+         Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
+         g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    Public Function ModificaStatoDocumento(ByVal tabella As String, ByVal codice As String, ByVal stato As String) As Boolean
@@ -2661,6 +2666,9 @@ Public Class ElencoDoc
       g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = False
 
       ' Visualizza.
       g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False

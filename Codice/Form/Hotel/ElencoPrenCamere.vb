@@ -45,12 +45,15 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_AGENZIA As Short = 17
    Public Const COLONNA_CANALE As Short = 18
    Public Const COLONNA_SCHEDINA As Short = 19
+   Public Const COLONNA_STATO As Short = 20
    Public Const COLONNA_COSTO_CAMERA As Short = 22
    Public Const COLONNA_TASSA_SOGGIORNO As Short = 23
    Public Const COLONNA_TIPO_PAGAMENTO As Short = 24
    Public Const COLONNA_ID_CLIENTE As Short = 25
    Public Const COLONNA_TIPO_CAMERA As Short = 24
    Public Const COLONNA_NOTE As Short = 27
+
+   Const STATO_PREN_ANNULLATA As String = "Annullata"
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -196,7 +199,7 @@ Public Class ElencoPrenCamere
       Me.DataGrid1.Location = New System.Drawing.Point(0, 120)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(840, 344)
+      Me.DataGrid1.Size = New System.Drawing.Size(848, 359)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -221,7 +224,7 @@ Public Class ElencoPrenCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(840, 120)
+      Me.Panel1.Size = New System.Drawing.Size(856, 120)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -230,8 +233,8 @@ Public Class ElencoPrenCamere
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(570, 20)
-      Me.TestoRicerca.TabIndex = 7
+      Me.TestoRicerca.Size = New System.Drawing.Size(586, 20)
+      Me.TestoRicerca.TabIndex = 0
       '
       'txtCamereConsegna
       '
@@ -277,7 +280,7 @@ Public Class ElencoPrenCamere
       Me.txtCamereOccupate.ReadOnly = True
       Me.txtCamereOccupate.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCamereOccupate.Size = New System.Drawing.Size(72, 20)
-      Me.txtCamereOccupate.TabIndex = 4
+      Me.txtCamereOccupate.TabIndex = 6
       Me.txtCamereOccupate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label8
@@ -302,13 +305,13 @@ Public Class ElencoPrenCamere
       Me.txtCamereLibere.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCamereLibere.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtCamereLibere.ForeColor = System.Drawing.Color.Green
-      Me.txtCamereLibere.Location = New System.Drawing.Point(600, 88)
+      Me.txtCamereLibere.Location = New System.Drawing.Point(613, 88)
       Me.txtCamereLibere.MaxLength = 0
       Me.txtCamereLibere.Name = "txtCamereLibere"
       Me.txtCamereLibere.ReadOnly = True
       Me.txtCamereLibere.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCamereLibere.Size = New System.Drawing.Size(72, 20)
-      Me.txtCamereLibere.TabIndex = 3
+      Me.txtCamereLibere.TabIndex = 7
       Me.txtCamereLibere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label9
@@ -322,9 +325,9 @@ Public Class ElencoPrenCamere
       Me.Label9.ForeColor = System.Drawing.Color.White
       Me.Label9.Location = New System.Drawing.Point(472, 88)
       Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(114, 15)
+      Me.Label9.Size = New System.Drawing.Size(135, 15)
       Me.Label9.TabIndex = 55680
-      Me.Label9.Text = "Camere liberate:"
+      Me.Label9.Text = "Camere da liberare:"
       '
       'txtOspitiPartenza
       '
@@ -333,13 +336,13 @@ Public Class ElencoPrenCamere
       Me.txtOspitiPartenza.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtOspitiPartenza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtOspitiPartenza.ForeColor = System.Drawing.Color.Green
-      Me.txtOspitiPartenza.Location = New System.Drawing.Point(600, 64)
+      Me.txtOspitiPartenza.Location = New System.Drawing.Point(613, 64)
       Me.txtOspitiPartenza.MaxLength = 0
       Me.txtOspitiPartenza.Name = "txtOspitiPartenza"
       Me.txtOspitiPartenza.ReadOnly = True
       Me.txtOspitiPartenza.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtOspitiPartenza.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiPartenza.TabIndex = 2
+      Me.txtOspitiPartenza.TabIndex = 4
       Me.txtOspitiPartenza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label5
@@ -367,7 +370,7 @@ Public Class ElencoPrenCamere
       Me.txtOspitiCasa.ReadOnly = True
       Me.txtOspitiCasa.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtOspitiCasa.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiCasa.TabIndex = 1
+      Me.txtOspitiCasa.TabIndex = 3
       Me.txtOspitiCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label4
@@ -395,7 +398,7 @@ Public Class ElencoPrenCamere
       Me.txtOspitiArrivo.ReadOnly = True
       Me.txtOspitiArrivo.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtOspitiArrivo.Size = New System.Drawing.Size(72, 20)
-      Me.txtOspitiArrivo.TabIndex = 0
+      Me.txtOspitiArrivo.TabIndex = 2
       Me.txtOspitiArrivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label2
@@ -414,10 +417,10 @@ Public Class ElencoPrenCamere
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(594, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(613, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
-      Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
-      Me.CampoRicerca.TabIndex = 8
+      Me.CampoRicerca.Size = New System.Drawing.Size(229, 21)
+      Me.CampoRicerca.TabIndex = 1
       '
       'lblCampo
       '
@@ -426,7 +429,7 @@ Public Class ElencoPrenCamere
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(594, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(610, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -468,9 +471,9 @@ Public Class ElencoPrenCamere
       Me.Panel2.Controls.Add(Me.txtTotaleNotti)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 466)
+      Me.Panel2.Location = New System.Drawing.Point(0, 482)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(840, 35)
+      Me.Panel2.Size = New System.Drawing.Size(856, 35)
       Me.Panel2.TabIndex = 13
       '
       'txtTotaleRagazzi
@@ -481,7 +484,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleRagazzi.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleRagazzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleRagazzi.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(589, 11)
+      Me.txtTotaleRagazzi.Location = New System.Drawing.Point(605, 11)
       Me.txtTotaleRagazzi.MaxLength = 0
       Me.txtTotaleRagazzi.Name = "txtTotaleRagazzi"
       Me.txtTotaleRagazzi.ReadOnly = True
@@ -497,7 +500,7 @@ Public Class ElencoPrenCamere
       Me.Label12.BackColor = System.Drawing.Color.Transparent
       Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label12.ForeColor = System.Drawing.Color.White
-      Me.Label12.Location = New System.Drawing.Point(524, 11)
+      Me.Label12.Location = New System.Drawing.Point(540, 11)
       Me.Label12.Name = "Label12"
       Me.Label12.Size = New System.Drawing.Size(63, 15)
       Me.Label12.TabIndex = 244
@@ -511,7 +514,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleBambini.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleBambini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleBambini.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleBambini.Location = New System.Drawing.Point(461, 11)
+      Me.txtTotaleBambini.Location = New System.Drawing.Point(477, 11)
       Me.txtTotaleBambini.MaxLength = 0
       Me.txtTotaleBambini.Name = "txtTotaleBambini"
       Me.txtTotaleBambini.ReadOnly = True
@@ -527,7 +530,7 @@ Public Class ElencoPrenCamere
       Me.Label11.BackColor = System.Drawing.Color.Transparent
       Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label11.ForeColor = System.Drawing.Color.White
-      Me.Label11.Location = New System.Drawing.Point(396, 11)
+      Me.Label11.Location = New System.Drawing.Point(412, 11)
       Me.Label11.Name = "Label11"
       Me.Label11.Size = New System.Drawing.Size(64, 15)
       Me.Label11.TabIndex = 242
@@ -541,7 +544,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNeonati.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNeonati.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNeonati.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleNeonati.Location = New System.Drawing.Point(333, 11)
+      Me.txtTotaleNeonati.Location = New System.Drawing.Point(349, 11)
       Me.txtTotaleNeonati.MaxLength = 0
       Me.txtTotaleNeonati.Name = "txtTotaleNeonati"
       Me.txtTotaleNeonati.ReadOnly = True
@@ -557,7 +560,7 @@ Public Class ElencoPrenCamere
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label10.ForeColor = System.Drawing.Color.White
-      Me.Label10.Location = New System.Drawing.Point(268, 11)
+      Me.Label10.Location = New System.Drawing.Point(284, 11)
       Me.Label10.Name = "Label10"
       Me.Label10.Size = New System.Drawing.Size(61, 15)
       Me.Label10.TabIndex = 240
@@ -571,7 +574,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleImporto.Location = New System.Drawing.Point(706, 11)
+      Me.txtTotaleImporto.Location = New System.Drawing.Point(722, 11)
       Me.txtTotaleImporto.MaxLength = 0
       Me.txtTotaleImporto.Name = "txtTotaleImporto"
       Me.txtTotaleImporto.ReadOnly = True
@@ -587,7 +590,7 @@ Public Class ElencoPrenCamere
       Me.Label1.BackColor = System.Drawing.Color.Transparent
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(652, 11)
+      Me.Label1.Location = New System.Drawing.Point(668, 11)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(51, 15)
       Me.Label1.TabIndex = 238
@@ -601,7 +604,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleAdulti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleAdulti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleAdulti.ForeColor = System.Drawing.Color.Blue
-      Me.txtTotaleAdulti.Location = New System.Drawing.Point(205, 11)
+      Me.txtTotaleAdulti.Location = New System.Drawing.Point(221, 11)
       Me.txtTotaleAdulti.MaxLength = 0
       Me.txtTotaleAdulti.Name = "txtTotaleAdulti"
       Me.txtTotaleAdulti.ReadOnly = True
@@ -617,7 +620,7 @@ Public Class ElencoPrenCamere
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(156, 11)
+      Me.Label3.Location = New System.Drawing.Point(172, 11)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(47, 15)
       Me.Label3.TabIndex = 236
@@ -631,7 +634,7 @@ Public Class ElencoPrenCamere
       Me.txtTotaleNotti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotaleNotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotaleNotti.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleNotti.Location = New System.Drawing.Point(58, 11)
+      Me.txtTotaleNotti.Location = New System.Drawing.Point(74, 11)
       Me.txtTotaleNotti.MaxLength = 0
       Me.txtTotaleNotti.Name = "txtTotaleNotti"
       Me.txtTotaleNotti.ReadOnly = True
@@ -647,7 +650,7 @@ Public Class ElencoPrenCamere
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(12, 11)
+      Me.Label6.Location = New System.Drawing.Point(28, 11)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(41, 15)
       Me.Label6.TabIndex = 16
@@ -662,7 +665,7 @@ Public Class ElencoPrenCamere
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(840, 501)
+      Me.ClientSize = New System.Drawing.Size(856, 517)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
@@ -929,6 +932,9 @@ Public Class ElencoPrenCamere
             ' Conferma la transazione.
             tr.Commit()
 
+            ' Attiva/disattiva il pulsante annulla.
+            AttivaDisattivaAnnullaPren()
+
             ' DA_FARE_A: Modificare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
@@ -950,6 +956,11 @@ Public Class ElencoPrenCamere
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
+
+         If IsNothing(g_frmPlanningCamere) = False Then
+            ' Aggiorna la griglia dati.
+            g_frmPlanningCamere.AggiornaPlanning()
+         End If
       End Try
    End Sub
 
@@ -1010,6 +1021,9 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1045,6 +1059,9 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1079,6 +1096,9 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1109,6 +1129,9 @@ Public Class ElencoPrenCamere
             sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
+
+            ' Attiva/disattiva il pulsante annulla.
+            AttivaDisattivaAnnullaPren()
 
             ' Se nella tabella non ci sono record disattiva i pulsanti.
             ConvalidaDati()
@@ -1146,6 +1169,9 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1170,12 +1196,83 @@ Public Class ElencoPrenCamere
          ' Crea la stringa di selezione dei dati.
          Dim oggi As String = CFormatta.FormattaData(Today)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY Numero ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza = #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+
+         ' Somma i valori delle colonne.
+         SommaValoriColonne()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiPrenTerminate()
+      Try
+         ' Rimuove i dati di un'eventuale ricerca.
+         TestoRicerca.Text = String.Empty
+
+         ' Crea la stringa di selezione dei dati.
+         Dim oggi As String = CFormatta.FormattaData(Today)
+
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza < #{2}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi)
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
+
+         ' Somma i valori delle colonne.
+         SommaValoriColonne()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiPrenNonAssegnate()
+      Try
+         ' Rimuove i dati di un'eventuale ricerca.
+         TestoRicerca.Text = String.Empty
+
+         ' Crea la stringa di selezione dei dati.
+         Dim oggi As String = CFormatta.FormattaData(Today)
+
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza >= #{2}# AND NumeroCamera = '{3}' ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi, "Nessuna")
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaPren()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1210,6 +1307,7 @@ Public Class ElencoPrenCamere
          g_frmMain.eui_Strumenti_Modifica.Enabled = False
          g_frmMain.eui_Strumenti_Elimina.Enabled = False
          g_frmMain.eui_Strumenti_Duplica.Enabled = False
+         g_frmMain.eui_Strumenti_Annulla.Enabled = False
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = False
          g_frmMain.eui_Strumenti_Esporta.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
@@ -1218,7 +1316,8 @@ Public Class ElencoPrenCamere
          ' Attiva i pulsanti appropriati.
          g_frmMain.eui_Strumenti_Modifica.Enabled = True
          g_frmMain.eui_Strumenti_Elimina.Enabled = True
-         g_frmMain.eui_Strumenti_Duplica.Enabled = False
+         g_frmMain.eui_Strumenti_Duplica.Enabled = True
+         g_frmMain.eui_Strumenti_Annulla.Enabled = True
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = True
          g_frmMain.eui_Strumenti_Esporta.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
@@ -1252,6 +1351,116 @@ Public Class ElencoPrenCamere
          g_frmPrenCamera = New frmPrenCamera(nomeFrm)
          g_frmPrenCamera.Tag = val
          g_frmPrenCamera.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AttivaDisattivaAnnullaPren()
+      Try
+         ' Attiva/disattiva il pulsante per annullare un documento.
+         If numRecord <> 0 Then
+
+            Dim numCamera As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUM_CAMERA)
+            Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO)
+
+            If numCamera = String.Empty And statoDoc.ToUpper = STATO_PREN_ANNULLATA.ToUpper Then
+               g_frmMain.eui_Strumenti_Annulla.Enabled = False
+            Else
+               g_frmMain.eui_Strumenti_Annulla.Enabled = True
+            End If
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Function ModificaStatoPren(ByVal tabella As String, ByVal codice As String) As Boolean
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} SET Stato = @Stato, NumeroCamera = @NumeroCamera WHERE Id = {1}", tabella, codice)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+         cmdUpdate.Parameters.AddWithValue("@StatoDoc", STATO_PREN_ANNULLATA)
+         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", String.Empty)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Function
+
+   Public Sub AnnullaPrenotazione()
+      Try
+         Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA)
+         Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME)
+         Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
+         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_PREN)
+
+         ' Chiede conferma per l'annullamento.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Si desidera annullare la prenotazione del cliente '" & Nome & " " & Cognome & "' n. " & Numero & " del " & Data & "? " & vbCrLf & vbCrLf &
+                                 "Confermando l'operazione la prenotazione sarà contrassegnata come 'Annullata' e l'assegnazione della Camera sarà eliminata. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         If risposta = vbYes Then
+            ModificaStatoPren(TAB_PRENOTAZIONI, Id)
+         Else
+            Exit Sub
+         End If
+
+         ' Aggiorna la griglia dati.
+         AggiornaDati()
+
+         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+         AttivaDisattivaAnnullaPren()
+
+         If IsNothing(g_frmPlanningCamere) = False Then
+            ' Aggiorna la griglia dati.
+            g_frmPlanningCamere.AggiornaPlanning()
+         End If
+
+         ' DA_FARE_B: Sviluppare!
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
+         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1306,13 +1515,13 @@ Public Class ElencoPrenCamere
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
          ' 1 - Numero
-         Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          numeroStyle.MappingName = "Numero"
          numeroStyle.HeaderText = "Numero"
          numeroStyle.Width = 60
          numeroStyle.NullText = ""
          numeroStyle.Alignment = HorizontalAlignment.Right
-         numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         numeroStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(numeroStyle)
          ' 2 - Data
          Dim dataStyle As New DataGridTextBoxColumn
@@ -1364,7 +1573,7 @@ Public Class ElencoPrenCamere
          nottiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(nottiStyle)
          ' 8 - Adulti.
-         Dim adultiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         Dim adultiStyle As New DataGridTextBoxColumn
          adultiStyle.MappingName = "Adulti"
          adultiStyle.HeaderText = "Adulti"
          adultiStyle.Width = 50
@@ -1373,7 +1582,7 @@ Public Class ElencoPrenCamere
          adultiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(adultiStyle)
          ' 9 - Neonati.
-         Dim neonatiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         Dim neonatiStyle As New DataGridTextBoxColumn
          neonatiStyle.MappingName = "Neonati"
          neonatiStyle.HeaderText = "Neonati"
          neonatiStyle.Width = 50
@@ -1382,7 +1591,7 @@ Public Class ElencoPrenCamere
          neonatiStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(neonatiStyle)
          ' 10 - Bambini.
-         Dim bambiniStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         Dim bambiniStyle As New DataGridTextBoxColumn
          bambiniStyle.MappingName = "Bambini"
          bambiniStyle.HeaderText = "Bambini"
          bambiniStyle.Width = 50
@@ -1391,7 +1600,7 @@ Public Class ElencoPrenCamere
          bambiniStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(bambiniStyle)
          ' 11 - Ragazzi.
-         Dim ragazziStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         Dim ragazziStyle As New DataGridTextBoxColumn
          ragazziStyle.MappingName = "Ragazzi"
          ragazziStyle.HeaderText = "Ragazzi"
          ragazziStyle.Width = 50
@@ -1400,12 +1609,12 @@ Public Class ElencoPrenCamere
          ragazziStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(ragazziStyle)
          ' 12 - Numero camera.
-         Dim numCameraStyle As New DataGridTextBoxColumn
+         Dim numCameraStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          numCameraStyle.MappingName = "NumeroCamera"
          numCameraStyle.HeaderText = "Camera"
          numCameraStyle.Width = 60
          numCameraStyle.NullText = ""
-         numCameraStyle.TextBox.BackColor = Color.White
+         numCameraStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(numCameraStyle)
          ' 13 - Arrangiamento.
          Dim trattamentoPagStyle As New DataGridTextBoxColumn
@@ -1589,6 +1798,8 @@ Public Class ElencoPrenCamere
             g_frmMain.eui_Strumenti_Periodo_Partenza.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Pressed = False
+            g_frmMain.eui_Strumenti_Periodo_Terminate.Pressed = False
 
             ' Crea la stringa sql.
             sql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_PRENOTAZIONI, campoRicerca, campoRicerca)
@@ -1605,6 +1816,8 @@ Public Class ElencoPrenCamere
             g_frmMain.eui_Strumenti_Periodo_Partenza.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Pressed = False
+            g_frmMain.eui_Strumenti_Periodo_Terminate.Pressed = False
 
             sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI)
             repSql = String.Format("SELECT * FROM {0} ORDER BY DataArrivo ASC", TAB_PRENOTAZIONI)
@@ -1618,6 +1831,9 @@ Public Class ElencoPrenCamere
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante Annulla.
+         AttivaDisattivaAnnullaPren()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1744,9 +1960,9 @@ Public Class ElencoPrenCamere
       ' Dati.
       g_frmMain.eui_Strumenti_Nuovo.Visible = True
       g_frmMain.eui_Strumenti_Modifica.Visible = True
-      g_frmMain.eui_Strumenti_Duplica.Visible = False
+      g_frmMain.eui_Strumenti_Duplica.Visible = True
       g_frmMain.eui_Strumenti_Elimina.Visible = True
-      g_frmMain.eui_Strumenti_Annulla.Visible = False
+      g_frmMain.eui_Strumenti_Annulla.Visible = True
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
       g_frmMain.eui_Strumenti_Esporta.Visible = True
 
@@ -1768,6 +1984,9 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
       g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = True
       g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = True
+      g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = True
+      g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = True
+      g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
 
       ' Visualizza.
       g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = True
@@ -1867,6 +2086,11 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         If g_frmMain.eui_Strumenti_Modifica.Enabled = True Then
+            ' Attiva/disattiva il pulsante per annullare un documento.
+            AttivaDisattivaAnnullaPren()
+         End If
+
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_PREN_CAMERE)
 
@@ -1890,6 +2114,9 @@ Public Class ElencoPrenCamere
    Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGrid1.CurrentCellChanged
       ' Visualizza un'intestazione per la griglia dati.
       AggIntGriglia()
+
+      ' Attiva/disattiva il pulsante per annullare la prenotazione.
+      AttivaDisattivaAnnullaPren()
    End Sub
 
    ' DA_FARE_A: Modificare!
@@ -2019,44 +2246,6 @@ Public Class ElencoPrenCamere
       End Try
    End Function
 
-   Public Function LeggiNumeroOspitiPartenza(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleOspiti As Integer
-      Dim dataCorrente As String = CFormatta.FormattaData(Today)
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE DataPartenza = #" & dataCorrente & "# ORDER BY Id ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            ' Calcola il numero di persone totali.
-            Dim adulti As Integer = Convert.ToInt32(dr.Item("Adulti"))
-            Dim ragazzi As Integer = Convert.ToInt32(dr.Item("Ragazzi"))
-            Dim bambini As Integer = Convert.ToInt32(dr.Item("Bambini"))
-            Dim neonati As Integer = Convert.ToInt32(dr.Item("Neonati"))
-            Dim numPersone As Integer = adulti + ragazzi + bambini + neonati
-
-            ' Calcola il totale degli ospiti.
-            totaleOspiti = totaleOspiti + numPersone
-         Loop
-
-         Return totaleOspiti
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
    Public Function LeggiNumeroOspitiInCasa(ByVal tabella As String) As Integer
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
@@ -2066,7 +2255,7 @@ Public Class ElencoPrenCamere
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE DataArrivo < #" & dataCorrente & "# AND DataPartenza > #" & dataCorrente & "# ORDER BY Id ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumeroCamera <> 'Nessuna' AND DataArrivo <= #" & dataCorrente & "# AND DataPartenza >= #" & dataCorrente & "# ORDER BY Id ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -2095,45 +2284,31 @@ Public Class ElencoPrenCamere
       End Try
    End Function
 
-   Public Function LeggiNumeroCamereOccupate(ByVal tabella As String) As Integer
+   Public Function LeggiNumeroOspitiPartenza(ByVal tabella As String) As Integer
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
-      Dim totaleCamereOccupate As Integer
+      Dim totaleOspiti As Integer
       Dim dataCorrente As String = CFormatta.FormattaData(Today)
 
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE DataArrivo < #" & dataCorrente & "# AND DataPartenza > #" & dataCorrente & "#", cn)
-         totaleCamereOccupate = Convert.ToInt32(cmd.ExecuteScalar())
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumeroCamera <> 'Nessuna' AND DataPartenza = #" & dataCorrente & "# ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         Return totaleCamereOccupate
+         Do While dr.Read()
+            ' Calcola il numero di persone totali.
+            Dim adulti As Integer = Convert.ToInt32(dr.Item("Adulti"))
+            Dim ragazzi As Integer = Convert.ToInt32(dr.Item("Ragazzi"))
+            Dim bambini As Integer = Convert.ToInt32(dr.Item("Bambini"))
+            Dim neonati As Integer = Convert.ToInt32(dr.Item("Neonati"))
+            Dim numPersone As Integer = adulti + ragazzi + bambini + neonati
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+            ' Calcola il totale degli ospiti.
+            totaleOspiti = totaleOspiti + numPersone
+         Loop
 
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   Public Function LeggiNumeroCamereLiberate(ByVal tabella As String) As Integer
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim totaleCamereLiberate As Integer
-      Dim dataCorrente As String = CFormatta.FormattaData(Today)
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE DataPartenza = #" & dataCorrente & "#", cn)
-         totaleCamereLiberate = Convert.ToInt32(cmd.ExecuteScalar())
-
-         Return totaleCamereLiberate
+         Return totaleOspiti
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2160,6 +2335,58 @@ Public Class ElencoPrenCamere
          totaleCamereInConsegna = Convert.ToInt32(cmd.ExecuteScalar())
 
          Return totaleCamereInConsegna
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiNumeroCamereOccupate(ByVal tabella As String) As Integer
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim totaleCamereOccupate As Integer
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE NumeroCamera <> 'Nessuna' AND DataArrivo <= #" & dataCorrente & "# AND DataPartenza >= #" & dataCorrente & "#", cn)
+         totaleCamereOccupate = Convert.ToInt32(cmd.ExecuteScalar())
+
+         Return totaleCamereOccupate
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiNumeroCamereLiberate(ByVal tabella As String) As Integer
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim totaleCamereLiberate As Integer
+      Dim dataCorrente As String = CFormatta.FormattaData(Today)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE NumeroCamera <> 'Nessuna' AND DataPartenza = #" & dataCorrente & "#", cn)
+         totaleCamereLiberate = Convert.ToInt32(cmd.ExecuteScalar())
+
+         Return totaleCamereLiberate
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

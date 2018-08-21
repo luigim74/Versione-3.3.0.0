@@ -2508,72 +2508,77 @@ Public Class frmPrenCamera
 
    ' DA_FARE_A: Verificare il funzionamento della procedura 'VerificaDisponibilit‡Camera'.
    Private Function VerificaDisponibilit‡Camera1(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Integer
-      Dim closeOnExit As Boolean
-      Dim numRec As Integer
+      'Dim closeOnExit As Boolean
+      'Dim numRec As Integer
 
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
+      'Try
+      '   ' Se necessario apre la connessione.
+      '   If cn.State = ConnectionState.Closed Then
+      '      cn.Open()
+      '      closeOnExit = True
+      '   End If
 
-         ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
-                                         "WHERE NumeroCamera = '{1}' " &
-                                         "AND (DataArrivo BETWEEN #{2}# AND #{3}#)",
-                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal), CFormatta.FormattaData_IT(dataAl.AddDays(-1)))
+      '   ' Ottiene il numero di record.
+      '   cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
+      '                                   "WHERE NumeroCamera = '{1}' " &
+      '                                   "AND (DataArrivo BETWEEN #{2}# AND #{3}#)",
+      '                                   NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal), CFormatta.FormattaData_IT(dataAl.AddDays(-1)))
 
-         numRec = CInt(cmd.ExecuteScalar())
+      '   numRec = CInt(cmd.ExecuteScalar())
 
-         ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
-         Dim numRecDataArrivo As Integer
-         If Me.Tag <> String.Empty Then
-            numRecDataArrivo = numRec - 1
-         Else
-            numRecDataArrivo = numRec
-         End If
+      '   ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
+      '   Dim numRecDataArrivo As Integer
+      '   If Me.Tag <> String.Empty Then
+      '      numRecDataArrivo = numRec - 1
+      '   Else
+      '      numRecDataArrivo = numRec
+      '   End If
 
-         numRec = 0
+      '   numRec = 0
 
-         ' Chiude la connessione.
-         cn.Close()
+      '   ' Chiude la connessione.
+      '   cn.Close()
 
-         If numRecDataArrivo = 0 Then
-            cn.Open()
+      '   If numRecDataArrivo = 0 Then
+      '      cn.Open()
 
-            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
-                                         "WHERE NumeroCamera = '{1}' " &
-                                         "AND (DataPartenza BETWEEN #{2}# AND #{3}#)",
-                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal.AddDays(1)), CFormatta.FormattaData_IT(dataAl))
+      '      cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
+      '                                   "WHERE NumeroCamera = '{1}' " &
+      '                                   "AND (DataPartenza BETWEEN #{2}# AND #{3}#)",
+      '                                   NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal.AddDays(1)), CFormatta.FormattaData_IT(dataAl))
 
-            numRec = CInt(cmd.ExecuteScalar())
+      '      numRec = CInt(cmd.ExecuteScalar())
 
-            ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
-            If Me.Tag <> String.Empty Then
-               Return numRec - 1
-            Else
-               Return numRec
-            End If
-         Else
-            Return numRecDataArrivo
-         End If
+      '      ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
+      '      If Me.Tag <> String.Empty Then
+      '         Return numRec - 1
+      '      Else
+      '         Return numRec
+      '      End If
+      '   Else
+      '      Return numRecDataArrivo
+      '   End If
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return 0
+      '   Return 0
 
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
+      'Finally
+      '   ' Chiude la connessione.
+      '   cn.Close()
 
-      End Try
+      'End Try
    End Function
 
    Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
       Try
+         ' Se il numero della camera non Ë stato assegnato non verifica la disponibilit‡. 
+         If numeroCamera = "Nessuna" Then
+            Return False
+         End If
+
          ' In caso di prenotazione esistente se il periodo e la camera non sono cambiati non verifica la disponibilit‡ della camera. 
          If numCameraPren = numeroCamera And dataArrivoPren = dataDal And dataPartenzaPren = dataAl Then
             Return False
@@ -2837,9 +2842,19 @@ Public Class frmPrenCamera
                         ' Aggiorna la griglia dati.
                         g_frmPrenCamere.AggiornaDati()
 
+                        If IsNothing(g_frmPlanningCamere) = False Then
+                           ' Aggiorna la griglia dati.
+                           g_frmPlanningCamere.AggiornaPlanning()
+                        End If
+
                      Case PlanningCamere.Name
                         ' Aggiorna il Planning con eventuali nuove camere e prentazioni..
                         g_frmPlanningCamere.AggiornaPlanning()
+
+                        If IsNothing(g_frmPrenCamere) = False Then
+                           ' Aggiorna la griglia dati.
+                           g_frmPrenCamere.AggiornaDati()
+                        End If
 
                   End Select
 
@@ -2962,6 +2977,8 @@ Public Class frmPrenCamera
             dtpData.Value = Today
             ' Seleziona il valore Individuale.
             cmbTipologia.SelectedIndex = 0
+            ' Seleziona il valore Nessuna.
+            cmbNumeroCamera.SelectedIndex = 0
             ' Seleziona il valore Solo Pernottamento.
             cmbTrattamento.SelectedIndex = 0
 

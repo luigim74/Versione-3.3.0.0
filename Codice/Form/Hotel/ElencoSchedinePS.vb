@@ -532,7 +532,7 @@ Public Class ElencoSchedinePS
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
+         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -565,7 +565,7 @@ Public Class ElencoSchedinePS
          Dim ultimoGiornoMese As String = DateTime.DaysInMonth(anno, mese)
          Dim fineMese As String = CFormatta.FormattaData(ultimoGiornoMese & "/" & mese & "/" & anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioMese, fineMese)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioMese, fineMese)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -597,7 +597,7 @@ Public Class ElencoSchedinePS
          Dim ultimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
          Dim fineAnno As String = CFormatta.FormattaData(ultimoGiornoAnno & "/12/" & Anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioAnno, fineAnno)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioAnno, fineAnno)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -629,7 +629,7 @@ Public Class ElencoSchedinePS
             ' Crea la stringa di selezione dei dati.
             Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
             Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, dataDal, dataAl)
+            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
 
@@ -903,8 +903,8 @@ Public Class ElencoSchedinePS
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY DataArrivo ASC", TAB_SCHEDINE)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY Id DESC", TAB_SCHEDINE)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati(TAB_SCHEDINE, sql)
@@ -1053,6 +1053,9 @@ Public Class ElencoSchedinePS
       g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
       g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+      g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = False
 
       ' Visualizza.
       g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False

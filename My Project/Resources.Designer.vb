@@ -61,6 +61,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property attach_file() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("attach_file", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
         '''</summary>
         Friend ReadOnly Property bar_Ico() As System.Drawing.Icon
@@ -503,12 +513,52 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property CancelApproval_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("CancelApproval_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
         '''</summary>
         Friend ReadOnly Property chef_Ico() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("chef_Ico", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property clock() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("clock", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Delete_PermissionHH() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Delete-PermissionHH", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property DiscardChanges() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DiscardChanges", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
