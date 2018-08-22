@@ -339,7 +339,6 @@ Public Class SchedinaPS
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
-         cmdUpdate.Parameters.AddWithValue("@IdCliente", Me.IdCliente)
          cmdUpdate.Parameters.AddWithValue("@Numero", Me.Numero)
          cmdUpdate.Parameters.AddWithValue("@IdCliente", Me.IdCliente)
          cmdUpdate.Parameters.AddWithValue("@TipologiaCliente", Me.TipologiaCliente)
@@ -352,6 +351,7 @@ Public Class SchedinaPS
          cmdUpdate.Parameters.AddWithValue("@NazioneNascita", Me.NazioneNascita)
          cmdUpdate.Parameters.AddWithValue("@Cittadinanza", Me.Cittadinanza)
          cmdUpdate.Parameters.AddWithValue("@TipoDoc", Me.TipoDoc)
+         cmdUpdate.Parameters.AddWithValue("@NumeroDoc", Me.NumeroDoc)
          cmdUpdate.Parameters.AddWithValue("@RilasciatoDoc", Me.RilasciatoDoc)
          cmdUpdate.Parameters.AddWithValue("@ComuneRilascioDoc", Me.ComuneRilascioDoc)
          cmdUpdate.Parameters.AddWithValue("@DataRilascioDoc", Me.DataRilascioDoc)

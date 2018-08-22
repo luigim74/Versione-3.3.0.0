@@ -1174,7 +1174,7 @@ Public Class frmDocumento
             Dim valDaPagare As Double = Convert.ToDouble(eui_txtTotaleDocumento.Text)
 
             ' Verifica l'esistenza di un numero per il documento.
-            If eui_txtNumero.Text <> String.Empty Then
+            If eui_txtNumero.Text <> String.Empty And eui_txtNumero.Text <> "0" Then
                .Numero = Convert.ToInt32(eui_txtNumero.Text)
             Else
                MessageBox.Show("Non è possibile salvare il documento senza una numerazione valida! Verrà utilizzato l'ultimo numero disponibile.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -2395,6 +2395,8 @@ Public Class frmDocumento
          CaricaListaStatoDoc()
 
          eui_txtNumero.Text = NumeroDocumento.ToString
+         eui_txtNumProgressivo.Text = NumeroDocumento.ToString
+
          Me.Text = eui_cmbTipoDocumento.Text & statoDoc
 
       Catch ex As Exception

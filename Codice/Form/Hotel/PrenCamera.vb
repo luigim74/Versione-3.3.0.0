@@ -3,7 +3,7 @@
 ' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 04/08/2018
+' Data ultima modifica: 22/08/2018
 ' Descrizione:          Anagrafica Prenotazioni Camere.
 ' Note:
 '
@@ -195,10 +195,10 @@ Public Class frmPrenCamera
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup13 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup14 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup15 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup16 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -268,6 +268,7 @@ Public Class frmPrenCamera
       Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.TabPage4 = New System.Windows.Forms.TabPage()
       Me.eui_Quantit‡Meno = New Elegant.Ui.Button()
@@ -338,7 +339,6 @@ Public Class frmPrenCamera
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -367,7 +367,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(579, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(589, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -401,7 +401,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(579, 20)
+      Me.Panel1.Size = New System.Drawing.Size(589, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -428,7 +428,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(579, 544)
+      Me.TabControl1.Size = New System.Drawing.Size(589, 554)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -477,7 +477,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(571, 518)
+      Me.TabPage1.Size = New System.Drawing.Size(581, 528)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -664,9 +664,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 280)
+      Me.Panel2.Location = New System.Drawing.Point(0, 290)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(571, 238)
+      Me.Panel2.Size = New System.Drawing.Size(581, 238)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -1056,7 +1056,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(571, 518)
+      Me.TabPage3.Size = New System.Drawing.Size(581, 528)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -1086,7 +1086,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(571, 477)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(581, 477)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1136,6 +1136,11 @@ Public Class frmPrenCamera
       Me.ColumnHeader3.Text = "Permanenza"
       Me.ColumnHeader3.Width = 80
       '
+      'ColumnHeader4
+      '
+      Me.ColumnHeader4.Text = "Tipo Alloggiato"
+      Me.ColumnHeader4.Width = 100
+      '
       'ColumnHeader12
       '
       Me.ColumnHeader12.Text = "Codice"
@@ -1153,7 +1158,7 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(571, 547)
+      Me.TabPage4.Size = New System.Drawing.Size(571, 518)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Addebiti extra"
       '
@@ -1284,15 +1289,15 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice, Me.clnAliquotaIva, Me.clnCategoria, Me.ColumnHeader2})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup13.Header = "Articoli vari"
-      ListViewGroup13.Name = "ListViewGroup1"
-      ListViewGroup14.Header = "Accessori"
-      ListViewGroup14.Name = "ListViewGroup2"
-      ListViewGroup15.Header = "Servizi"
-      ListViewGroup15.Name = "ListViewGroup3"
-      ListViewGroup16.Header = "Bar/Ristorante"
-      ListViewGroup16.Name = "ListViewGroup4"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup13, ListViewGroup14, ListViewGroup15, ListViewGroup16})
+      ListViewGroup1.Header = "Articoli vari"
+      ListViewGroup1.Name = "ListViewGroup1"
+      ListViewGroup2.Header = "Accessori"
+      ListViewGroup2.Name = "ListViewGroup2"
+      ListViewGroup3.Header = "Servizi"
+      ListViewGroup3.Name = "ListViewGroup3"
+      ListViewGroup4.Header = "Bar/Ristorante"
+      ListViewGroup4.Name = "ListViewGroup4"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
@@ -1377,7 +1382,7 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(571, 547)
+      Me.TabPage7.Size = New System.Drawing.Size(571, 518)
       Me.TabPage7.TabIndex = 9
       Me.TabPage7.Text = "Gestione conto"
       '
@@ -1767,7 +1772,7 @@ Public Class frmPrenCamera
       Me.TabPage5.Controls.Add(Me.lvwAllegati)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(571, 547)
+      Me.TabPage5.Size = New System.Drawing.Size(571, 518)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
@@ -1847,7 +1852,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(587, 537)
+      Me.TabPage6.Size = New System.Drawing.Size(571, 518)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1864,7 +1869,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(587, 537)
+      Me.txtNote.Size = New System.Drawing.Size(571, 518)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1876,16 +1881,11 @@ Public Class frmPrenCamera
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'ColumnHeader4
-      '
-      Me.ColumnHeader4.Text = "Tipo Alloggiato"
-      Me.ColumnHeader4.Width = 100
-      '
       'frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(579, 590)
+      Me.ClientSize = New System.Drawing.Size(589, 600)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -2068,7 +2068,7 @@ Public Class frmPrenCamera
 
             '  Se la propriet‡ 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
-            If Me.Tag <> "" Then
+            If Me.Tag <> String.Empty Then
                Return .ModificaDati(NOME_TABELLA, Me.Tag)
             Else
                Return .InserisciDati(NOME_TABELLA)
@@ -2165,6 +2165,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
+   ' DA_FARE: Cancellare! SalvaStoricoPresenze
    Private Function SalvaStoricoPresenze(ByVal id As String, ByVal valMese As Integer, ByVal valAnno As Integer, ByVal valNumNotti As Integer) As Boolean
       Try
          With IPrenStorico
@@ -2249,7 +2250,7 @@ Public Class frmPrenCamera
       Try
          With CSchedina
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Numero = 0
+            .Numero = g_frmMain.LeggiNumeroSchedinaConfig(TAB_SCHEDINE_PS)
             .IdCliente = CClienti.Codice
             .TipologiaCliente = cmbTipologia.Text
             .Cognome = CClienti.Cognome
@@ -2277,7 +2278,12 @@ Public Class frmPrenCamera
             .DataStampa = String.Empty
 
             ' Inserisce i dati nel database.
-            Return .InserisciDati(TAB_SCHEDINE_PS)
+            If .InserisciDati(TAB_SCHEDINE_PS) = True Then
+               ' Salva il Numero del prossimo documento da stampare.
+               g_frmMain.SalvaNumeroSchedinaConfig(TAB_SCHEDINE_PS, Convert.ToInt32(.Numero))
+
+               Return True
+            End If
 
          End With
 
@@ -2789,8 +2795,8 @@ Public Class frmPrenCamera
       Select Case e.Button.Tag
          Case "Salva"
             ' Verifica la presenza di un numero per la prenotazione.
-            If txtNumero.Text = String.Empty Then
-               MessageBox.Show("Inserire un numero per la prenotazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            If txtNumero.Text = String.Empty Or txtNumero.Text = "0" Then
+               MessageBox.Show("Inserire un numero valido per la prenotazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                txtNumero.Focus()
                Exit Sub
             End If
@@ -3455,7 +3461,7 @@ Public Class frmPrenCamera
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Dim frm As New frmInsClienti
+         Dim frm As New frmInsClienti("Prenotazioni")
          frm.Tag = txtNumeroNotti.Text
          frm.ShowDialog()
 

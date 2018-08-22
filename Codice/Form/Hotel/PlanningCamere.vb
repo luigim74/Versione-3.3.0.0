@@ -1221,11 +1221,45 @@ Public Class PlanningCamere
       End Try
    End Sub
 
+   Public Sub AnnullaPrenotazione()
+      Try
+         ' Chiede conferma per l'annullamento.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Si desidera annullare la prenotazione del cliente '" & LeggiDescrizionePrenotazione(Me.Tag) & "? " & vbCrLf & vbCrLf &
+                                 "Confermando l'operazione la prenotazione sarà contrassegnata come 'Annullata' e l'assegnazione della Camera sarà eliminata. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         If risposta = vbYes Then
+            ModificaStatoPren(TAB_PRENOTAZIONI, Me.Tag)
+         Else
+            Exit Sub
+         End If
+
+         ' Aggiorna la griglia dati.
+         AggiornaPlanning()
+
+         If IsNothing(g_frmPrenCamere) = False Then
+            ' Aggiorna la griglia dati.
+            g_frmPrenCamere.AggiornaDati()
+         End If
+
+         ' DA_FARE_B: Sviluppare!
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
+         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
    Private Sub AttivaComandoRibbonNuova()
       Try
          g_frmMain.eui_PCamere_PrenNuova.Enabled = True
          g_frmMain.eui_PCamere_PrenModifica.Enabled = False
          g_frmMain.eui_PCamere_PrenElimina.Enabled = False
+         g_frmMain.eui_PCamere_PrenAnnulla.Enabled = False
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1239,6 +1273,7 @@ Public Class PlanningCamere
          g_frmMain.eui_PCamere_PrenNuova.Enabled = False
          g_frmMain.eui_PCamere_PrenModifica.Enabled = True
          g_frmMain.eui_PCamere_PrenElimina.Enabled = True
+         g_frmMain.eui_PCamere_PrenAnnulla.Enabled = True
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

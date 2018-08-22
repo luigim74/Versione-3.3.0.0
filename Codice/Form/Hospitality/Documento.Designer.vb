@@ -265,7 +265,6 @@ Partial Class frmDocumento
       Me.eui_txtNumProgressivo.Name = "eui_txtNumProgressivo"
       Me.eui_txtNumProgressivo.Size = New System.Drawing.Size(75, 21)
       Me.eui_txtNumProgressivo.TabIndex = 3
-      Me.eui_txtNumProgressivo.Text = "105"
       Me.eui_txtNumProgressivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       Me.eui_txtNumProgressivo.Visible = False
       '
@@ -1368,10 +1367,10 @@ Partial Class frmDocumento
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 635)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 646)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(890, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(898, 22)
       Me.StatusBar1.TabIndex = 3
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -1385,7 +1384,7 @@ Partial Class frmDocumento
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(756, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(764, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -1453,7 +1452,7 @@ Partial Class frmDocumento
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane4)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(756, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(764, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -1697,7 +1696,7 @@ Partial Class frmDocumento
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(890, 657)
+      Me.ClientSize = New System.Drawing.Size(898, 668)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_cmdEmettiStampa)
       Me.Controls.Add(Me.eui_txtTotaleDocumento)

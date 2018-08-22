@@ -3,13 +3,13 @@
 ' Nome form:            frmSchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/08/2018
-' Data ultima modifica: 17/08/2018
+' Data ultima modifica: 22/08/2018
 ' Descrizione:          Anagrafica Schedine pubblica sicurezza.
 ' Note:
 
 ' Elenco Attivita:
 
-' DA_FARE: Sviluppare! Aggiungere Tabella Componenti.
+' DA_FARE_A: Testare procedure per la Tabella Componenti.
 ' DA_FARE: Modificare lo Storico presenze prelevando i dati dalle schedine e non dalle prenotazioni.
 
 ' ******************************************************************
@@ -73,12 +73,6 @@ Public Class frmSchedinaPS
    Public WithEvents Label12 As System.Windows.Forms.Label
    Friend WithEvents cmbNumeroCamera As System.Windows.Forms.ComboBox
    Public WithEvents Label11 As System.Windows.Forms.Label
-   Friend WithEvents lvwOccupanti As System.Windows.Forms.ListView
-   Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
    Public WithEvents txtLuogoNascita As System.Windows.Forms.TextBox
    Public WithEvents Label6 As System.Windows.Forms.Label
    Friend WithEvents cmdInserisciOccupanti As Elegant.Ui.Button
@@ -93,8 +87,6 @@ Public Class frmSchedinaPS
    Public WithEvents txtNumeroNotti As System.Windows.Forms.TextBox
    Public WithEvents Label27 As System.Windows.Forms.Label
    Friend WithEvents mcDataArrivo As System.Windows.Forms.MonthCalendar
-   Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
    Friend WithEvents dtpDataStampa As DateTimePicker
    Public WithEvents Label3 As Label
    Public WithEvents txtNumeroPren As TextBox
@@ -126,11 +118,22 @@ Public Class frmSchedinaPS
    Friend WithEvents dtpDataRilascioDoc As DateTimePicker
    Friend WithEvents cmbNazioneRilascioDoc As ComboBox
    Public WithEvents Label35 As Label
-   Friend WithEvents ColumnHeader1 As ColumnHeader
    Public WithEvents txtRilasciatoDaDoc As TextBox
    Friend WithEvents cmdNuovoIntestatario As Button
-   Friend WithEvents cmbTipologia As ComboBox
+   Friend WithEvents cmbTipoAlloggiato As ComboBox
    Public WithEvents Label14 As Label
+   Friend WithEvents lvwOccupanti As ListView
+   Friend WithEvents ColumnHeader2 As ColumnHeader
+   Friend WithEvents ColumnHeader3 As ColumnHeader
+   Friend WithEvents ColumnHeader4 As ColumnHeader
+   Friend WithEvents ColumnHeader5 As ColumnHeader
+   Friend WithEvents ColumnHeader6 As ColumnHeader
+   Friend WithEvents ColumnHeader11 As ColumnHeader
+   Friend WithEvents ColumnHeader15 As ColumnHeader
+   Friend WithEvents ColumnHeader16 As ColumnHeader
+   Friend WithEvents ColumnHeader17 As ColumnHeader
+   Friend WithEvents ColumnHeader18 As ColumnHeader
+   Friend WithEvents ColumnHeader19 As ColumnHeader
    Public WithEvents Label10 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -163,7 +166,7 @@ Public Class frmSchedinaPS
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label5 = New System.Windows.Forms.Label()
       Me.TabPage4 = New System.Windows.Forms.TabPage()
-      Me.cmbTipologia = New System.Windows.Forms.ComboBox()
+      Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
       Me.Label14 = New System.Windows.Forms.Label()
       Me.cmdNuovoIntestatario = New System.Windows.Forms.Button()
       Me.cmbCittadinanza = New System.Windows.Forms.ComboBox()
@@ -201,20 +204,23 @@ Public Class frmSchedinaPS
       Me.TabPage3 = New System.Windows.Forms.TabPage()
       Me.cmdInserisciOccupanti = New Elegant.Ui.Button()
       Me.cmdEliminaOccupanti = New Elegant.Ui.Button()
-      Me.lvwOccupanti = New System.Windows.Forms.ListView()
-      Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.lvwOccupanti = New System.Windows.Forms.ListView()
+      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -236,7 +242,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(645, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(586, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -270,7 +276,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(645, 20)
+      Me.Panel1.Size = New System.Drawing.Size(586, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -295,7 +301,7 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(645, 464)
+      Me.TabControl1.Size = New System.Drawing.Size(586, 406)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -317,7 +323,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(637, 438)
+      Me.TabPage1.Size = New System.Drawing.Size(578, 380)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -326,7 +332,7 @@ Public Class frmSchedinaPS
       Me.txtNumeroPren.AcceptsReturn = True
       Me.txtNumeroPren.BackColor = System.Drawing.SystemColors.Window
       Me.txtNumeroPren.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNumeroPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtNumeroPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNumeroPren.ForeColor = System.Drawing.Color.Black
       Me.txtNumeroPren.Location = New System.Drawing.Point(386, 55)
       Me.txtNumeroPren.MaxLength = 0
@@ -384,9 +390,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 203)
+      Me.Panel2.Location = New System.Drawing.Point(0, 145)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(637, 235)
+      Me.Panel2.Size = New System.Drawing.Size(578, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -573,7 +579,7 @@ Public Class frmSchedinaPS
       'TabPage4
       '
       Me.TabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage4.Controls.Add(Me.cmbTipologia)
+      Me.TabPage4.Controls.Add(Me.cmbTipoAlloggiato)
       Me.TabPage4.Controls.Add(Me.Label14)
       Me.TabPage4.Controls.Add(Me.cmdNuovoIntestatario)
       Me.TabPage4.Controls.Add(Me.cmbCittadinanza)
@@ -597,19 +603,19 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(637, 438)
+      Me.TabPage4.Size = New System.Drawing.Size(568, 370)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
       '
-      'cmbTipologia
+      'cmbTipoAlloggiato
       '
-      Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbTipologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbTipologia.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo"})
-      Me.cmbTipologia.Location = New System.Drawing.Point(394, 96)
-      Me.cmbTipologia.Name = "cmbTipologia"
-      Me.cmbTipologia.Size = New System.Drawing.Size(112, 21)
-      Me.cmbTipologia.TabIndex = 5
+      Me.cmbTipoAlloggiato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipoAlloggiato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipoAlloggiato.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo"})
+      Me.cmbTipoAlloggiato.Location = New System.Drawing.Point(394, 96)
+      Me.cmbTipoAlloggiato.Name = "cmbTipoAlloggiato"
+      Me.cmbTipoAlloggiato.Size = New System.Drawing.Size(112, 21)
+      Me.cmbTipoAlloggiato.TabIndex = 5
       '
       'Label14
       '
@@ -684,7 +690,7 @@ Public Class frmSchedinaPS
       Me.txtProvNascita.AcceptsReturn = True
       Me.txtProvNascita.BackColor = System.Drawing.SystemColors.Window
       Me.txtProvNascita.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtProvNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtProvNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtProvNascita.ForeColor = System.Drawing.Color.Black
       Me.txtProvNascita.Location = New System.Drawing.Point(411, 188)
       Me.txtProvNascita.MaxLength = 0
@@ -765,7 +771,7 @@ Public Class frmSchedinaPS
       Me.txtNome.AcceptsReturn = True
       Me.txtNome.BackColor = System.Drawing.SystemColors.Window
       Me.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNome.ForeColor = System.Drawing.SystemColors.WindowText
       Me.txtNome.Location = New System.Drawing.Point(124, 59)
       Me.txtNome.MaxLength = 0
@@ -840,7 +846,7 @@ Public Class frmSchedinaPS
       Me.txtLuogoNascita.AcceptsReturn = True
       Me.txtLuogoNascita.BackColor = System.Drawing.SystemColors.Window
       Me.txtLuogoNascita.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtLuogoNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtLuogoNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtLuogoNascita.ForeColor = System.Drawing.Color.Black
       Me.txtLuogoNascita.Location = New System.Drawing.Point(125, 188)
       Me.txtLuogoNascita.MaxLength = 0
@@ -879,7 +885,7 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(637, 438)
+      Me.TabPage5.Size = New System.Drawing.Size(568, 370)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
       '
@@ -1033,12 +1039,12 @@ Public Class frmSchedinaPS
       'TabPage3
       '
       Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Controls.Add(Me.cmdInserisciOccupanti)
       Me.TabPage3.Controls.Add(Me.cmdEliminaOccupanti)
-      Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(637, 438)
+      Me.TabPage3.Size = New System.Drawing.Size(578, 380)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -1060,59 +1066,6 @@ Public Class frmSchedinaPS
       Me.cmdEliminaOccupanti.TabIndex = 2
       Me.cmdEliminaOccupanti.Text = "&Elimina"
       '
-      'lvwOccupanti
-      '
-      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader14, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader13, Me.ColumnHeader12})
-      Me.lvwOccupanti.Dock = System.Windows.Forms.DockStyle.Top
-      Me.lvwOccupanti.FullRowSelect = True
-      Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
-      Me.lvwOccupanti.MultiSelect = False
-      Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(637, 327)
-      Me.lvwOccupanti.TabIndex = 0
-      Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
-      Me.lvwOccupanti.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader14
-      '
-      Me.ColumnHeader14.Text = "Indice"
-      Me.ColumnHeader14.Width = 0
-      '
-      'ColumnHeader7
-      '
-      Me.ColumnHeader7.Text = "Cognome"
-      Me.ColumnHeader7.Width = 100
-      '
-      'ColumnHeader8
-      '
-      Me.ColumnHeader8.Text = "Nome"
-      Me.ColumnHeader8.Width = 100
-      '
-      'ColumnHeader1
-      '
-      Me.ColumnHeader1.Text = "Sesso"
-      Me.ColumnHeader1.Width = 50
-      '
-      'ColumnHeader9
-      '
-      Me.ColumnHeader9.Text = "Data di Nascita"
-      Me.ColumnHeader9.Width = 90
-      '
-      'ColumnHeader10
-      '
-      Me.ColumnHeader10.Text = "Luogo di Nascita"
-      Me.ColumnHeader10.Width = 120
-      '
-      'ColumnHeader13
-      '
-      Me.ColumnHeader13.Text = "Nazionalità"
-      Me.ColumnHeader13.Width = 75
-      '
-      'ColumnHeader12
-      '
-      Me.ColumnHeader12.Text = "Codice"
-      Me.ColumnHeader12.Width = 0
-      '
       'ErrorProvider1
       '
       Me.ErrorProvider1.ContainerControl = Me
@@ -1122,11 +1075,78 @@ Public Class frmSchedinaPS
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'lvwOccupanti
+      '
+      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader11, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19})
+      Me.lvwOccupanti.FullRowSelect = True
+      Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
+      Me.lvwOccupanti.MultiSelect = False
+      Me.lvwOccupanti.Name = "lvwOccupanti"
+      Me.lvwOccupanti.Size = New System.Drawing.Size(578, 328)
+      Me.lvwOccupanti.TabIndex = 3
+      Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
+      Me.lvwOccupanti.View = System.Windows.Forms.View.Details
+      '
+      'ColumnHeader2
+      '
+      Me.ColumnHeader2.Text = "Indice"
+      Me.ColumnHeader2.Width = 0
+      '
+      'ColumnHeader3
+      '
+      Me.ColumnHeader3.Text = "Cognome"
+      Me.ColumnHeader3.Width = 150
+      '
+      'ColumnHeader4
+      '
+      Me.ColumnHeader4.Text = "Nome"
+      Me.ColumnHeader4.Width = 100
+      '
+      'ColumnHeader5
+      '
+      Me.ColumnHeader5.Text = "Sesso"
+      Me.ColumnHeader5.Width = 50
+      '
+      'ColumnHeader6
+      '
+      Me.ColumnHeader6.Text = "Data di Nascita"
+      Me.ColumnHeader6.Width = 90
+      '
+      'ColumnHeader11
+      '
+      Me.ColumnHeader11.Text = "Luogo di Nascita"
+      Me.ColumnHeader11.Width = 120
+      '
+      'ColumnHeader15
+      '
+      Me.ColumnHeader15.Text = "Prov. Nascita"
+      Me.ColumnHeader15.Width = 80
+      '
+      'ColumnHeader16
+      '
+      Me.ColumnHeader16.Text = "Nazione Nascita"
+      Me.ColumnHeader16.Width = 100
+      '
+      'ColumnHeader17
+      '
+      Me.ColumnHeader17.Text = "Permanenza"
+      Me.ColumnHeader17.Width = 80
+      '
+      'ColumnHeader18
+      '
+      Me.ColumnHeader18.Text = "Tipo Alloggiato"
+      Me.ColumnHeader18.Width = 100
+      '
+      'ColumnHeader19
+      '
+      Me.ColumnHeader19.Text = "Codice"
+      Me.ColumnHeader19.Width = 0
+      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(645, 510)
+      Me.ClientSize = New System.Drawing.Size(586, 452)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1169,7 +1189,7 @@ Public Class frmSchedinaPS
    Const TAB_DOC_IDENTITA As String = "DocIdentità"
 
    ' DA_FARE: Modificare!
-   Const TAB_PREN_OCCUPANTI As String = "PrenCamereOccupanti"
+   Const TAB_COMPONENTI As String = "ComponentiSchedinePS"
 
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
@@ -1193,97 +1213,79 @@ Public Class frmSchedinaPS
 
    Private Function SalvaDati() As Boolean
 
-      '' Salva eventuali nuovi valori nelle rispettive tabelle dati.
-      'AggiornaTabella(cmbPagamento, TAB_PAGAMENTO)
+      ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
+      AggiornaTabella(cmbNazioneNascita, TAB_NAZIONI)
+      AggiornaTabella(cmbCittadinanza, TAB_NAZIONI)
+      AggiornaTabella(cmbNazioneRilascioDoc, TAB_NAZIONI)
+      AggiornaTabella(cmbTipoDoc, TAB_DOC_IDENTITA)
 
-      'Try
-      '   With IPren
-      '      ' Assegna i dati dei campi della classe alle caselle di testo.
-      '      .IdCliente = Convert.ToInt32(cmbIdCliente.Text)
-      '      .Numero = Convert.ToInt32(txtNumero.Text)
-      '      .Data = dtpData.Text
-      '      .Tipologia = cmbTipologia.Text
-      '      .Stato = cmbStatoPren.Text
-      '      .Cognome = FormattaApici(cmbCognome.Text)
-      '      .Nome = FormattaApici(txtNome.Text)
-      '      .Adulti = nudAdulti.Value
-      '      .Neonati = nudNeonati.Value
-      '      .Bambini = nudBambini.Value
-      '      .Ragazzi = nudRagazzi.Value
-      '      .NumeroCamera = FormattaApici(cmbNumeroCamera.Text)
-      '      .DescrizioneCamera = txtDescrizioneCamera.Text
-      '      .Trattamento = cmbTrattamento.Text
-      '      .DataArrivo = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
-      '      .DataPartenza = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
-      '      .OraArrivo = dtpOraArrivo.Text
-      '      .NumeroNotti = Convert.ToInt32(txtNumeroNotti.Text)
-      '      .Listino = cmbListino.Text
-      '      .Pagamento = FormattaApici(cmbPagamento.Text)
+      Try
+         With CSchedina
+            ' Assegna i dati dei campi della classe alle caselle di testo.
+            If txtNumero.Text = String.Empty Then
+               txtNumero.Text = "0"
+               .Numero = "0"
+            Else
+               .Numero = txtNumero.Text
+            End If
+            .IdCliente = cmbIdCliente.Text
+            .TipologiaCliente = cmbTipoAlloggiato.Text
+            .Cognome = cmbCognome.Text
+            .Nome = txtNome.Text
+            .Sesso = cmbSesso.Text
 
-      '      If IsNumeric(txtPrezzoCamera.Text) = True Then
-      '         .CostoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtPrezzoCamera.Text))
-      '      Else
-      '         .CostoCamera = VALORE_ZERO
-      '      End If
-      '      If IsNumeric(txtTassaSoggiorno.Text) = True Then
-      '         .TassaSoggiorno = CFormatta.FormattaEuro(Convert.ToDouble(txtTassaSoggiorno.Text))
-      '      Else
-      '         .TassaSoggiorno = VALORE_ZERO
-      '      End If
-      '      If IsNumeric(txtAccontoCamera.Text) = True Then
-      '         .AccontoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtAccontoCamera.Text))
-      '      Else
-      '         .AccontoCamera = VALORE_ZERO
-      '      End If
-      '      If IsNumeric(txtTotaleConto.Text) = True Then
-      '         .TotaleConto = CFormatta.FormattaEuro(Convert.ToDouble(txtTotaleConto.Text))
-      '      Else
-      '         .TotaleConto = VALORE_ZERO
-      '      End If
+            If dtpDataNascita.Checked = True Then
+               .DataNascita = dtpDataNascita.Text
+            Else
+               .DataNascita = String.Empty
+            End If
 
-      '      If IsNumeric(txtSconto.Text) = True Then
-      '         .Sconto = CFormatta.FormattaEuro(Convert.ToDouble(txtSconto.Text))
-      '      Else
-      '         .Sconto = VALORE_ZERO
-      '      End If
-      '      If IsNumeric(txtServizio.Text) = True Then
-      '         .Servizio = CFormatta.FormattaEuro(Convert.ToDouble(txtServizio.Text))
-      '      Else
-      '         .Servizio = VALORE_ZERO
-      '      End If
+            .LuogoNascita = txtLuogoNascita.Text
+            .ProvNascita = txtProvNascita.Text.ToUpper
+            .NazioneNascita = cmbNazioneNascita.Text
+            .Cittadinanza = cmbCittadinanza.Text
+            .TipoDoc = cmbTipoDoc.Text
+            .NumeroDoc = txtNumeroDoc.Text
+            .RilasciatoDoc = txtRilasciatoDaDoc.Text
+            .ComuneRilascioDoc = txtComuneRilascioDoc.Text
 
-      '      ' Utilizzare per sconto camera o totale conto.
-      '      '.ApplicaSconto = cmbApplicaSconto.SelectedIndex.ToString
+            If dtpDataRilascioDoc.Checked = True Then
+               .DataRilascioDoc = dtpDataRilascioDoc.Text
+            Else
+               .DataRilascioDoc = String.Empty
+            End If
 
-      '      .ApplicaSconto = txtTotaleImporto.Text
+            .DataScadenzaDoc = String.Empty ' DA_FARE_B: Sviluppare! Campo mancante nella tabelle Clienti.
+            .NazioneRilascioDoc = cmbNazioneRilascioDoc.Text
+            .DataArrivo = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
+            .DataPartenza = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
+            .Permanenza = txtNumeroNotti.Text
+            .NumCamera = cmbNumeroCamera.Text
+            .IdPren = 0
+            .NumPren = txtNumero.Text
+            .Stato = cmbStato.Text
 
-      '      If ckbSchedina.Checked = True Then
-      '         .Schedina = "Inserita"
-      '      Else
-      '         .Schedina = String.Empty
-      '      End If
+            If dtpDataStampa.Checked = True Then
+               .DataStampa = dtpDataStampa.Text
+            Else
+               .DataStampa = String.Empty
+            End If
 
-      '      .Note = FormattaApici(txtNote.Text)
+            '  Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
+            ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
+            If Me.Tag <> String.Empty Then
+               Return .ModificaDati(NOME_TABELLA, Me.Tag)
+            Else
+               Return .InserisciDati(NOME_TABELLA)
+            End If
 
-      '      If .Colore = 0 Then
-      '         .Colore = Convert.ToInt32(Color.White.ToArgb)
-      '      End If
+         End With
 
-      '      '  Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
-      '      ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
-      '      If Me.Tag <> "" Then
-      '         Return .ModificaDati(NOME_TABELLA, Me.Tag)
-      '      Else
-      '         Return .InserisciDati(NOME_TABELLA)
-      '      End If
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      '   End With
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
+      End Try
    End Function
 
    ' DA_FARE: Verificare!
@@ -1295,11 +1297,11 @@ Public Class frmSchedinaPS
          If id <> String.Empty Then
             idPren = id
          Else
-            idPren = LeggiUltimaPren(NOME_TABELLA)
+            idPren = LeggiUltimaSchedina(NOME_TABELLA)
          End If
 
          With CSchedinaComponenti
-            .EliminaDati(TAB_PREN_OCCUPANTI, idPren)
+            .EliminaDati(TAB_COMPONENTI, idPren)
 
             Dim i As Integer
             For i = 0 To lvwOccupanti.Items.Count - 1
@@ -1312,7 +1314,7 @@ Public Class frmSchedinaPS
                .Nazionalità = lvwOccupanti.Items(i).SubItems(6).Text
                .CodiceCliente = lvwOccupanti.Items(i).SubItems(7).Text
 
-               .InserisciDati(TAB_PREN_OCCUPANTI)
+               .InserisciDati(TAB_COMPONENTI)
             Next
          End With
 
@@ -1326,47 +1328,7 @@ Public Class frmSchedinaPS
       End Try
    End Function
 
-   Private Function SalvaAddebitiExtra(ByVal id As String) As Boolean
-      '' Salva i dati per gli addebiti extra.
-      'Try
-      '   Dim idPren As Integer
-
-      '   If id <> String.Empty Then
-      '      idPren = id
-      '   Else
-      '      idPren = LeggiUltimaPren(NOME_TABELLA)
-      '   End If
-
-      '   With IPrenAddebiti
-      '      .EliminaDati(TAB_PREN_ADDEBITI, idPren)
-
-      '      Dim i As Integer
-      '      For i = 0 To lvwAddebiti.Items.Count - 1
-      '         .RifPren = idPren
-      '         .Data = lvwAddebiti.Items(i).Text
-      '         .Descrizione = lvwAddebiti.Items(i).SubItems(1).Text
-      '         .Quantità = lvwAddebiti.Items(i).SubItems(2).Text
-      '         .Importo = lvwAddebiti.Items(i).SubItems(3).Text
-      '         .Codice = lvwAddebiti.Items(i).SubItems(4).Text
-      '         .AliquotaIva = lvwAddebiti.Items(i).SubItems(6).Text
-      '         .Categoria = lvwAddebiti.Items(i).SubItems(7).Text
-      '         .Colore = lvwAddebiti.Items(i).ForeColor.ToArgb
-      '         .Gruppo = lvwAddebiti.Items(i).Group.ToString
-      '         .InserisciDati(TAB_PREN_ADDEBITI)
-      '      Next
-
-      '   End With
-
-      '   Return True
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      '   Return False
-      'End Try
-   End Function
-
+   ' DA_FARE: Verificare!
    Private Function SalvaStoricoPresenze(ByVal id As String, ByVal valMese As Integer, ByVal valAnno As Integer, ByVal valNumNotti As Integer) As Boolean
       'Try
       '   With IPrenStorico
@@ -1391,6 +1353,7 @@ Public Class frmSchedinaPS
       'End Try
    End Function
 
+   ' DA_FARE: Verificare!
    Private Sub SalvaStoricoPresenzeMeseAnno()
       'Try
       '   Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
@@ -1441,109 +1404,11 @@ Public Class frmSchedinaPS
       'End Try
    End Sub
 
-   Private Function SalvaSchedinaPS() As Boolean
-      Dim CSchedina As New SchedinaPS
-      Dim CClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
-
-      ' Legge i dati del cliente.
-      CClienti.LeggiDati("Clienti", CSchedina.IdCliente)
-
-      Try
-         With CSchedina
-            ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Numero = 0
-            .IdCliente = CClienti.Codice
-            .TipologiaCliente = cmbTipologia.Text
-            .Cognome = CClienti.Cognome
-            .Nome = CClienti.Nome
-            .Sesso = CClienti.Sesso
-            .DataNascita = CClienti.DataNascita
-            .LuogoNascita = CClienti.LuogoNascita
-            .ProvNascita = CClienti.ProvNascita
-            .NazioneNascita = CClienti.NazioneNascita
-            .Cittadinanza = CClienti.Nazionalità
-            .TipoDoc = CClienti.TipoDoc
-            .NumeroDoc = CClienti.NumeroDocIdentità
-            .RilasciatoDoc = CClienti.RilasciatoDa
-            .ComuneRilascioDoc = CClienti.CittàRilascioDoc
-            .DataRilascioDoc = CClienti.DataRilascioDoc
-            .DataScadenzaDoc = String.Empty ' DA_FARE_B: Sviluppare! Campo mancante nella tabelle Clienti.
-            .NazioneRilascioDoc = CClienti.NazioneRilascioDoc
-            .DataArrivo = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
-            .DataPartenza = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
-            .Permanenza = txtNumeroNotti.Text
-            .NumCamera = cmbNumeroCamera.Text
-            .IdPren = 0
-            .NumPren = txtNumero.Text
-            .Stato = "Inserita"
-            .DataStampa = String.Empty
-
-            ' Inserisce i dati nel database.
-            'Return .InserisciDati(TAB_SCHEDINE_PS)
-
-         End With
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
-
-      End Try
-   End Function
-
-   Public Sub EliminaScedinePS(ByVal numPren As String)
-      Try
-         Dim sql As String
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM SchedinePS WHERE NumPren = '{0}'", numPren)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-         ' DA_FARE_B: Modificare!
-         ' Registra loperazione effettuata dall'operatore identificato.
-         'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-         If IsNothing(g_frmSchedinePS) = False Then
-            ' Aggiorna la griglia dati.
-            g_frmSchedinePS.AggiornaDati()
-
-            ' Se nella tabella non ci sono record disattiva i pulsanti.
-            g_frmSchedinePS.ConvalidaDati()
-         End If
-
-      End Try
-   End Sub
-
+   ' DA_FARE: Verificare!
    Private Sub LeggiComponenti()
       Try
          With CSchedinaComponenti
-            .LeggiDati(lvwOccupanti, TAB_PREN_OCCUPANTI, Me.Tag)
+            .LeggiDati(lvwOccupanti, TAB_COMPONENTI, Me.Tag)
          End With
 
       Catch ex As Exception
@@ -1553,128 +1418,7 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   Private Sub LeggiAddebitiExtra()
-      'Try
-      '   With IPrenAddebiti
-      '      .LeggiDati(lvwAddebiti, TAB_PREN_ADDEBITI, Me.Tag)
-      '   End With
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   Private Function LeggiTotaleTassaSoggiorno(ByVal numAdulti As Integer, ByVal numNeonati As Integer, ByVal numBambini As Integer, ByVal numRagazzi As Integer) As Decimal
-      Try
-         DatiConfig = New AppConfig
-         DatiConfig.ConfigType = ConfigFileType.AppConfig
-
-         ' Legge il prezzo della Tassa di soggiorno.
-         Dim tassaSoggiorno As Double
-         If IsNumeric(DatiConfig.GetValue("TassaSoggiornoHotel")) = True Then
-            tassaSoggiorno = Convert.ToDouble(DatiConfig.GetValue("TassaSoggiornoHotel"))
-         Else
-            tassaSoggiorno = 0
-         End If
-
-         ' Aggiunge gli Adulti al numero di persone che pagheranno la tassa.
-         Dim numPersone As Integer = numAdulti
-
-         ' Verifica se i Neonati pagheranno la tassa.
-         Dim applicaTassaNeonati As Boolean
-         If DatiConfig.GetValue("ApplicaTassaNeonati") <> String.Empty Then
-            applicaTassaNeonati = DatiConfig.GetValue("ApplicaTassaNeonati")
-         Else
-            applicaTassaNeonati = False
-         End If
-
-         ' Aggiunge i Neonati al numero di persone che pagheranno la tassa.
-         If applicaTassaNeonati = True Then
-            numPersone = numPersone + numNeonati
-         End If
-
-         ' Verifica se i Bambini pagheranno la tassa.
-         Dim applicaTassaBambini As Boolean
-         If DatiConfig.GetValue("ApplicaTassaBambini") <> String.Empty Then
-            applicaTassaBambini = DatiConfig.GetValue("ApplicaTassaBambini")
-         Else
-            applicaTassaBambini = False
-         End If
-
-         ' Aggiunge i Bambini al numero di persone che pagheranno la tassa.
-         If applicaTassaBambini = True Then
-            numPersone = numPersone + numBambini
-         End If
-
-         ' Verifica se i Ragazzi pagheranno la tassa.
-         Dim applicaTassaRagazzi As Boolean
-         If DatiConfig.GetValue("ApplicaTassaRagazzi") <> String.Empty Then
-            applicaTassaRagazzi = DatiConfig.GetValue("ApplicaTassaRagazzi")
-         Else
-            applicaTassaRagazzi = False
-         End If
-
-         ' Aggiunge i Ragazzi al numero di persone che pagheranno la tassa.
-         If applicaTassaRagazzi = True Then
-            numPersone = numPersone + numRagazzi
-         End If
-
-         Return (tassaSoggiorno * numPersone).ToString
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      End Try
-   End Function
-
-   Private Sub LeggiServizio()
-      'Try
-      '   DatiConfig = New AppConfig
-      '   DatiConfig.ConfigType = ConfigFileType.AppConfig
-
-      '   ' Percentuale per il Servizio.
-      '   txtServizio.Text = DatiConfig.GetValue("ServizioHotel")
-      '   If txtServizio.Text.Length = 0 Then
-      '      txtServizio.Text = VALORE_ZERO
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   Public Function LeggiScontoCliente(ByVal tabella As String, ByVal id As Integer) As String
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id & " ORDER BY Id ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read
-            Return dr.Item("Sconto")
-         Loop
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   Private Function LeggiUltimaPren(ByVal tabella As String) As Integer
+   Private Function LeggiUltimaSchedina(ByVal tabella As String) As Integer
       Dim closeOnExit As Boolean
       Dim id As Integer
 
@@ -1695,153 +1439,6 @@ Public Class frmSchedinaPS
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
-
-   ' DA_FARE_A: Verificare il funzionamento della procedura 'VerificaDisponibilitàCamera'.
-   Private Function VerificaDisponibilitàCamera1(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Integer
-      Dim closeOnExit As Boolean
-      Dim numRec As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
-                                         "WHERE NumeroCamera = '{1}' " &
-                                         "AND (DataArrivo BETWEEN #{2}# AND #{3}#)",
-                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal), CFormatta.FormattaData_IT(dataAl.AddDays(-1)))
-
-         numRec = CInt(cmd.ExecuteScalar())
-
-         ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
-         Dim numRecDataArrivo As Integer
-         If Me.Tag <> String.Empty Then
-            numRecDataArrivo = numRec - 1
-         Else
-            numRecDataArrivo = numRec
-         End If
-
-         numRec = 0
-
-         ' Chiude la connessione.
-         cn.Close()
-
-         If numRecDataArrivo = 0 Then
-            cn.Open()
-
-            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} " &
-                                         "WHERE NumeroCamera = '{1}' " &
-                                         "AND (DataPartenza BETWEEN #{2}# AND #{3}#)",
-                                         NOME_TABELLA, numeroCamera, CFormatta.FormattaData_IT(dataDal.AddDays(1)), CFormatta.FormattaData_IT(dataAl))
-
-            numRec = CInt(cmd.ExecuteScalar())
-
-            ' Se un operazione di modifica sottrae la prenotazione in fase di modifica.
-            If Me.Tag <> String.Empty Then
-               Return numRec - 1
-            Else
-               Return numRec
-            End If
-         Else
-            Return numRecDataArrivo
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
-
-   Private Function VerificaDisponibilitàCamera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
-      Try
-         ' In caso di prenotazione esistente se il periodo e la camera non sono cambiati non verifica la disponibilità della camera. 
-         If numCameraPren = numeroCamera And dataArrivoPren = dataDal And dataPartenzaPren = dataAl Then
-            Return False
-         End If
-
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-         End If
-
-         '  Leggo tutte le prenotazioni della camera.
-         Dim cmd As New OleDbCommand("SELECT * FROM " & NOME_TABELLA & " WHERE NumeroCamera = '" & numeroCamera & "' ORDER BY DataArrivo ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            ' Data arrivo.
-            Dim valDataArrivo As Date
-            If IsDate(dr.Item("DataArrivo")) = True Then
-               valDataArrivo = Convert.ToDateTime(dr.Item("DataArrivo"))
-            Else
-               Return False
-            End If
-
-            ' Data partenza.
-            Dim valDataPartenza As Date
-            If IsDate(dr.Item("DataPartenza")) = True Then
-               valDataPartenza = Convert.ToDateTime(dr.Item("DataPartenza"))
-            Else
-               Return False
-            End If
-
-            ' Numero notti.
-            Dim valNumNotti As Integer
-            If IsDBNull(dr.Item("NumeroNotti")) = False Then
-               valNumNotti = Convert.ToInt32(dr.Item("NumeroNotti"))
-            Else
-               Return False
-            End If
-
-            Dim dataDalTemp As Date = dataDal
-
-            Do
-               ' Viene incrementato di uno perchè il primo giorno dell'intervallo può incrociarsi con l'ultimo giorno di eventuali prenotazioni.
-               dataDalTemp = dataDalTemp.AddDays(1)
-
-               Dim valDatatemp As Date = valDataArrivo
-               Dim i As Integer
-               For i = 0 To valNumNotti
-                  If valDatatemp = dataDalTemp Then
-                     If dataDalTemp <> valDataArrivo Then
-                        ' Prenotazione esistente!
-                        Return True
-                     End If
-                  Else
-                     ' Incrementa di un giorno.
-                     valDatatemp = valDatatemp.AddDays(1)
-                  End If
-               Next
-
-               ' Non tiene conto dell'ultimo giorno dell'intervallo perchè può incrociarsi con il primo giorno di eventuali prenotazioni.
-            Loop Until dataDalTemp = dataAl
-
-         Loop
-
-         Return False
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
 
       Finally
          ' Chiude la connessione.
@@ -1882,100 +1479,6 @@ Public Class frmSchedinaPS
          Return False
       End Try
    End Function
-
-   Private Function ImpostaDatiAllegati(ByVal note As String, ByVal ins As Boolean) As Boolean
-      'Try
-      '   OpenFileDialog1.Filter = "Tutti i file |*.*"
-
-      '   OpenFileDialog1.FilterIndex = 1
-
-      '   IAllegati.IdCliente = CInt(IPren.Codice)
-
-      '   If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-      '      ' Assegna i dati dei campi della classe alle caselle di testo.
-      '      IAllegati.Documento = Path.GetFileName(OpenFileDialog1.FileName)
-      '      IAllegati.Data = CStr(Today)
-      '      IAllegati.Ora = CStr(TimeOfDay)
-      '      IAllegati.Percorso = OpenFileDialog1.FileName
-      '      IAllegati.Estensione = Path.GetExtension(OpenFileDialog1.FileName)
-      '   Else
-      '      If ins = True Then
-      '         Return False
-      '      End If
-      '   End If
-
-      '   Dim val As String
-      '   val = InputBox("Digitare il testo per il campo Note.", "Note", note)
-      '   If val <> "" Then
-      '      IAllegati.Note = val
-      '   Else
-      '      IAllegati.Note = note
-      '   End If
-
-      '   Return True
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Function
-
-   Public Sub RimuoviAllegati(ByVal tabella As String, ByVal id As Integer)
-      'Try
-      '   Dim Risposta As Short
-      '   Dim sql As String
-
-      '   ' Dim Documento As String = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
-
-      '   ' Chiede conferma per l'eliminazione.
-      '   Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf &
-      '                     "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
-
-      '   If Risposta = MsgBoxResult.Yes Then
-      '      ' Apre la connessione.
-      '      cn.Open()
-
-      '      ' Avvia una transazione.
-      '      tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-      '      ' Crea la stringa di eliminazione.
-      '      sql = String.Format("DELETE FROM {0} WHERE Id = {1}", tabella, id)
-
-      '      ' Crea il comando per la connessione corrente.
-      '      Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-      '      ' Esegue il comando.
-      '      Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-      '      ' Conferma la transazione.
-      '      tr.Commit()
-
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Annulla la transazione.
-      '   tr.Rollback()
-
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'Finally
-      '   ' Chiude la connessione.
-      '   cn.Close()
-      'End Try
-   End Sub
-
-   Private Sub ConvalidaAllegati()
-      ' Carica la lista dei componenti aggiuntivi.
-      'If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, IPren.Codice) = True Then
-      '   eui_cmdModifica.Enabled = True
-      '   eui_cmdElimina.Enabled = True
-      'Else
-      '   eui_cmdModifica.Enabled = False
-      '   eui_cmdElimina.Enabled = False
-      'End If
-   End Sub
 
    Private Sub CaricaDatiCliente()
       Try
@@ -2030,48 +1533,27 @@ Public Class frmSchedinaPS
          Case "Salva"
             ' Verifica la presenza di un nome Intestatario.
             If cmbCognome.Text = String.Empty Then
-               MessageBox.Show("Inserire un nominativo per l'intestatario della prenotazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               MessageBox.Show("Inserire un nominativo per l'intestatario della Schedina P.S.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                cmbCognome.Focus()
                Exit Sub
             End If
 
-            If VerificaDisponibilitàCamera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) = True Then
-               MessageBox.Show("La camera che si vuole prenotare non è disponibile per il periodo selezionato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Else
-               ' Esegue i calcoli per il totale degli importi.
-               CalcolaTotaleConto()
+            ' Salva i dati nel database.
+            If SalvaDati() = True Then
+               ' Salva il Numero del prossimo documento da stampare.
+               g_frmMain.SalvaNumeroSchedinaConfig(NOME_TABELLA, Convert.ToInt32(txtNumero.Text))
 
-               ' Salva i dati nel database.
-               If SalvaDati() = True Then
+               ' Salva eventuali clienti occupanti.
+               SalvaOccupanti(Me.Tag)
 
-                  ' Salva eventuali clienti occupanti.
-                  SalvaOccupanti(Me.Tag)
+               ' Salva lo storico delle presenze.
+               SalvaStoricoPresenzeMeseAnno()
 
-                  ' Salva eventuali addebiti extra.
-                  SalvaAddebitiExtra(Me.Tag)
+               ' Aggiorna la griglia dati.
+               g_frmSchedinePS.AggiornaDati()
 
-                  ' Salva lo storico delle presenze.
-                  SalvaStoricoPresenzeMeseAnno()
-
-                  'Salva i dati per la schedina PS.
-                  'If ckbSchedina.Checked = True Then
-                  '   If SalvaSchedinaPS() = True Then
-                  '      If IsNothing(g_frmSchedinePS) = False Then
-                  '         ' Aggiorna la griglia dati.
-                  '         g_frmSchedinePS.AggiornaDati()
-                  '      End If
-                  '   End If
-                  'Else
-                  '   ' Elimina tutte le schedine della prenotazione.
-                  '   EliminaScedinePS(txtNumero.Text)
-                  'End If
-
-                  ' Aggiorna la griglia dati.
-                  g_frmSchedinePS.AggiornaDati()
-
-                  ' Chiude la finestra.
-                  Me.Close()
-               End If
+               ' Chiude la finestra.
+               Me.Close()
             End If
 
          Case "Annulla"
@@ -2108,8 +1590,10 @@ Public Class frmSchedinaPS
                cmbCognome.Text = .Cognome
                txtNome.Text = .Nome
                cmbSesso.Text = .Sesso
+               cmbTipoAlloggiato.Text = .TipologiaCliente
 
                If .DataNascita <> String.Empty Then
+                  dtpDataNascita.Checked = True
                   dtpDataNascita.Value = Convert.ToDateTime(.DataNascita)
                End If
 
@@ -2123,6 +1607,7 @@ Public Class frmSchedinaPS
                txtComuneRilascioDoc.Text = .ComuneRilascioDoc
 
                If .DataRilascioDoc <> String.Empty Then
+                  dtpDataRilascioDoc.Checked = True
                   dtpDataRilascioDoc.Value = Convert.ToDateTime(.DataRilascioDoc)
                End If
 
@@ -2135,6 +1620,7 @@ Public Class frmSchedinaPS
                cmbStato.Text = .Stato
 
                If .DataStampa <> String.Empty Then
+                  dtpDataStampa.Checked = True
                   dtpDataStampa.Value = Convert.ToDateTime(.DataStampa)
                End If
 
@@ -2151,9 +1637,10 @@ Public Class frmSchedinaPS
          Else
             ' Comando Nuovo.
 
-            ' DA_FARE: Modificare! generare il numero progressivo.
+            ' DA_FARE_A: Modificare! generare il numero progressivo.
             ' Genera il numero progressivo.
-            txtNumero.Text = "0"
+            txtNumero.Text = g_frmMain.LeggiNumeroSchedinaConfig(NOME_TABELLA)
+            txtNumeroPren.Text = "0"
 
             ' Seleziona il valore Inserita.
             cmbStato.SelectedIndex = 0
@@ -2215,27 +1702,16 @@ Public Class frmSchedinaPS
             txtNumero.Focus()
 
          Case 1
-            ' Occupanti.
-            lvwOccupanti.Focus()
+            ' Dati Anagrafici.
+            cmbCognome.Focus()
 
          Case 2
-            ' Addebiti extra.
-            'lvwAddebiti.Focus()
-
-         Case 3
-            ' Contabile.
+            ' Documento di riconoscimento.
             cmbTipoDoc.Focus()
 
-            ' Inserisce il prezzo della camera in base al Listino elezionato.
-            ApplicaListino()
-
-         Case 4
-            ' Allegati.
-            'lvwAllegati.Focus()
-
-         Case 5
-            ' Note.
-            'txtNote.Focus()
+         Case 3
+            ' Componenti.
+            lvwOccupanti.Focus()
 
       End Select
    End Sub
@@ -2317,18 +1793,6 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   Private Sub cmbStatoPren_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbStato.SelectedIndexChanged
-      'Try
-      '   cmdColore.BackColor = Color.FromArgb(AssegnaColore(cmbStatoPren.Text, TAB_STATO_PREN))
-      '   IPren.Colore = Convert.ToString(cmdColore.BackColor.ToArgb)
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-      'End Try
-
-   End Sub
-
    Private Sub mcDataArrivo_DateChanged(sender As System.Object, e As System.Windows.Forms.DateRangeEventArgs) Handles mcDataArrivo.DateChanged
       Try
          ' Aggiorna la nuova data di arrivo.
@@ -2379,24 +1843,6 @@ Public Class frmSchedinaPS
 
    End Sub
 
-   Private Sub cmbNumeroCamera_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbNumeroCamera.SelectedIndexChanged
-      'Try
-      '   ' Imposta la descrizione della camera selezionata.
-      '   txtDescrizioneCamera.Text = LeggiDescrizioneCamera(cmbNumeroCamera.Text, TAB_CAMERE)
-
-      '   ' Se non è impostato un listino prezzi, Imposta il listino della camera selezionata.
-      '   If cmbListino.Text = String.Empty Then
-      '      cmbListino.Text = LeggiListinoCamera(cmbNumeroCamera.Text, TAB_CAMERE)
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Sub
-
    Private Sub cmbCognome_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbCognome.SelectedIndexChanged
       Try
          ' Legge il nome relativo alla lista Cognome.
@@ -2416,201 +1862,13 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   Private Sub txtPrezzoCamera_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
-      Try
-         e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtAccontoCamera_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
-      Try
-         e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtPrezzoCamera_LostFocus(sender As Object, e As System.EventArgs)
-      Try
-         If IsNumeric(sender.Text) Then
-            sender.Text = CFormatta.FormattaEuro(Convert.ToDecimal(sender.Text))
-         Else
-            sender.Text = VALORE_ZERO
-         End If
-
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtAccontoCamera_LostFocus(sender As Object, e As System.EventArgs)
-      Try
-         If IsNumeric(sender.Text) Then
-            sender.Text = CFormatta.FormattaEuro(Convert.ToDecimal(sender.Text))
-         Else
-            sender.Text = VALORE_ZERO
-         End If
-
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Sub CalcolaTotaleAddebiti()
-      'Try
-      '   If lvwAddebiti.Items.Count <> 0 Then
-      '      Dim i As Integer = 0
-      '      Dim TotRiga As Decimal
-      '      Dim TotaleConto As Decimal
-
-      '      For i = 0 To lvwAddebiti.Items.Count - 1
-      '         TotRiga = Convert.ToDecimal(lvwAddebiti.Items(i).SubItems(3).Text)
-      '         TotaleConto = TotaleConto + TotRiga
-      '      Next i
-
-      '      txtTotaleAddebitiExtra.Text = CFormatta.FormattaEuro(TotaleConto)
-      '   Else
-      '      txtTotaleAddebitiExtra.Text = VALORE_ZERO
-      '   End If
-
-      '   ' Aggiorna il campo nella scheda Contabile.
-      '   txtTotaleAddebiti.Text = txtTotaleAddebitiExtra.Text
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   Public Sub CalcolaTotaleConto()
-      'Try
-      '   Dim numNotti As Integer
-      '   If IsNumeric(txtNumeroNotti.Text) = True Then
-      '      numNotti = Convert.ToInt32(txtNumeroNotti.Text)
-      '   Else
-      '      numNotti = 0
-      '   End If
-
-      '   Dim prezzoCamera As Double
-      '   If IsNumeric(txtPrezzoCamera.Text) = True Then
-      '      prezzoCamera = Convert.ToDouble(txtPrezzoCamera.Text)
-      '   Else
-      '      prezzoCamera = 0
-      '   End If
-
-      '   Dim addebitiExtra As Double
-      '   If IsNumeric(txtTotaleAddebiti.Text) = True Then
-      '      addebitiExtra = Convert.ToDouble(txtTotaleAddebiti.Text)
-      '   Else
-      '      addebitiExtra = 0
-      '   End If
-
-      '   Dim accontoCamera As Double
-      '   If IsNumeric(txtAccontoCamera.Text) = True Then
-      '      accontoCamera = Convert.ToDouble(txtAccontoCamera.Text)
-      '   Else
-      '      accontoCamera = 0
-      '   End If
-
-      '   ' Calcola il totale del costo della camera in base al tipo di listino applicato.
-      '   Dim totCamera As Double
-      '   Dim numAdulti As Integer = Convert.ToInt32(nudAdulti.Value)
-      '   Dim numNeonati As Integer = Convert.ToInt32(nudNeonati.Value)
-      '   Dim numBambini As Integer = Convert.ToInt32(nudBambini.Value)
-      '   Dim numRagazzi As Integer = Convert.ToInt32(nudRagazzi.Value)
-
-      '   ' Totale camera complessivo.
-      '   totCamera = (prezzoCamera * numNotti)
-      '   txtTotaleCostoCamera.Text = CFormatta.FormattaEuro(totCamera)
-
-      '   ' Legge e calcola il totale per la Tassa di Soggiorno.
-      '   Dim totaleTassaSoggiorno As Double
-      '   totaleTassaSoggiorno = LeggiTotaleTassaSoggiorno(numAdulti, numNeonati, numBambini, numRagazzi)
-      '   txtTassaSoggiorno.Text = CFormatta.FormattaEuro(totaleTassaSoggiorno)
-      '   txtTotaleTassaSoggiorno.Text = CFormatta.FormattaEuro(totaleTassaSoggiorno * numNotti)
-
-      '   ' Calcola il totale parziale del conto.
-      '   Dim totConto As Double = (totCamera + addebitiExtra + totaleTassaSoggiorno) ' - accontoCamera)
-
-      '   ' Calcola il valore del servizio sul totale del conto.
-      '   Dim valServizio As Double
-      '   Dim servizio As Double
-      '   'Dim percServizio As Integer = txtServizio.Text.IndexOf("%")
-      '   'If percServizio <> -1 Then
-      '   If IsNumeric((txtServizio.Text)) Then
-      '      servizio = Convert.ToDouble(txtServizio.Text) '.Remove(txtServizio.Text.Length - 1, 1))
-      '      valServizio = CalcolaPercentuale(totConto, servizio)
-      '   Else
-      '      valServizio = 0 'Convert.ToDouble(txtServizio.Text)
-      '      txtServizio.Text = VALORE_ZERO
-      '   End If
-
-      '   ' Calcola il valore dello sconto.
-      '   Dim valSconto As Double
-      '   Dim sconto As Double
-      '   'Dim percSconto As Integer = txtSconto.Text.IndexOf("%")
-      '   'If percSconto <> -1 Then
-      '   If IsNumeric((txtSconto.Text)) Then
-      '      sconto = Convert.ToDouble(txtSconto.Text) '.Remove(txtSconto.Text.Length - 1, 1))
-
-      '      'If cmbApplicaSconto.SelectedIndex = 1 Then
-      '      ' Sul totale del conto.
-      '      valSconto = CalcolaPercentuale(totConto, sconto)
-      '      'Else
-      '      '   ' Sul totale della camera.
-      '      '   valSconto = CalcolaPercentuale(totCamera, sconto)
-      '      'End If
-      '   Else
-      '      valSconto = 0 'Convert.ToDouble(txtSconto.Text)
-      '      txtSconto.Text = VALORE_ZERO
-      '   End If
-
-      '   ' Calcola il totale del conto.
-      '   Dim valDaPagare As Double = (totConto + valServizio - valSconto)
-      '   txtTotaleConto.Text = CFormatta.FormattaEuro(valDaPagare)
-
-      '   ' Utilizzato per calcolare lo sconto nella creazione documento.
-      '   Dim valTotale As Double = (totConto + valServizio)
-      '   txtTotaleImporto.Text = CFormatta.FormattaEuro(valTotale)
-
-      '   ' Calcola il totale da incassare sottraendo eventuali acconti.
-      '   Dim totIncassare As Double = (valDaPagare - accontoCamera)
-      '   txtTotaleIncassare.Text = CFormatta.FormattaEuro(totIncassare)
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Sub
-
    Private Sub cmdInserisciOccupanti_Click(sender As System.Object, e As System.EventArgs) Handles cmdInserisciOccupanti.Click
       Try
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Dim frm As New frmInsClienti
-         'frm.Tag = ""
+         Dim frm As New frmInsClienti("Schedine")
+         frm.Tag = txtNumeroNotti.Text
          frm.ShowDialog()
 
       Catch ex As Exception
@@ -2640,876 +1898,13 @@ Public Class frmSchedinaPS
 
    End Sub
 
-   Private Sub eui_cmdAccessori_Click(sender As System.Object, e As System.EventArgs)
+   Private Sub cmbStato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStato.SelectedIndexChanged
       Try
-         Dim frm As New ListaAccessoriServizi("Accessorio")
-         frm.Tag = "PrenCamera"
-         frm.ShowDialog()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub eui_cmdServizi_Click(sender As System.Object, e As System.EventArgs)
-      Try
-         Dim frm As New ListaAccessoriServizi("Servizio")
-         frm.Tag = "PrenCamera"
-         frm.ShowDialog()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub eui_cmdApriPos_Click(sender As Object, e As EventArgs)
-      ' Apre il punto cassa.
-      'g_frmMain.ApriPos(Convert.ToInt32(txtNumero.Text), "Hotel", txtTotaleConto.Text, String.Empty)
-   End Sub
-
-   Private Sub eui_cmdEliminaRiga_Click(sender As System.Object, e As System.EventArgs)
-      EliminaRiga()
-      CalcolaTotaleAddebiti()
-   End Sub
-
-   Private Sub EliminaRiga()
-      Try
-         ' Registra loperazione effettuata dall'operatore identificato.
-         'lvwAddebiti.Focus()
-         'Dim strDescrizione As String = "(" & lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(1).Text & _
-         '                               " " & lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(2).Text & _
-         '                               " € " & lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(3).Text & ")"
-
-         'g_frmMain.RegistraOperazione(TipoOperazione.Cancella, strDescrizione, MODULO_GESTIONE_POS)
-
-         'If lvwAddebiti.Items.Count <> 0 Then
-         '   lvwAddebiti.Focus()
-         '   lvwAddebiti.Items.RemoveAt(lvwAddebiti.FocusedItem.Index)
-         'End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub eui_cmdQuantitàPiù_Click(sender As System.Object, e As System.EventArgs)
-      AumentaDiminuisciQta(True)
-      CalcolaTotaleAddebiti()
-   End Sub
-
-   Private Sub eui_QuantitàMeno_Click(sender As System.Object, e As System.EventArgs)
-      AumentaDiminuisciQta(False)
-      CalcolaTotaleAddebiti()
-   End Sub
-
-   Private Function AumentaDiminuisciQta(ByVal val As Boolean) As Boolean
-      ' Vero: aumenta di 1 - Falso: diminuisce di 1.
-      'Try
-      '   If lvwAddebiti.Items.Count <> 0 Then
-      '      lvwAddebiti.Focus()
-
-      '      Dim quantità As Integer = Convert.ToInt32(lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(2).Text)
-      '      Dim totPrezzo As Decimal = Convert.ToDecimal(lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(3).Text)
-      '      Dim prezzo As Decimal
-
-      '      ' Ottiene il prezzo di una singola unità.
-      '      prezzo = totPrezzo / quantità
-
-      '      If val = True Then
-      '         quantità += 1
-      '      Else
-      '         If quantità = 1 Then
-      '            EliminaRiga()
-
-      '            Return False
-      '         Else
-      '            quantità -= 1
-      '         End If
-      '      End If
-
-      '      ' Calcola il prezzo totale in base alla quantità inserita.
-      '      totPrezzo = prezzo * quantità
-      '      lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(3).Text = String.Format("{0:0.00}", totPrezzo)
-
-      '      lvwAddebiti.Items(lvwAddebiti.FocusedItem.Index).SubItems(2).Text = quantità
-
-      '      Return True
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      '   Return False
-
-      'End Try
-   End Function
-
-   Private Sub txtServizio_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
-      Try
-         e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtServizio_LostFocus(sender As Object, e As System.EventArgs)
-      Try
-         If IsNumeric(sender.Text) Then
-            sender.Text = CFormatta.FormattaEuro(Convert.ToDecimal(sender.Text))
+         If cmbStato.Text = "Stampata" Then
+            dtpDataStampa.Checked = True
          Else
-            sender.Text = VALORE_ZERO
+            dtpDataStampa.Checked = False
          End If
-
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtSconto_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
-      Try
-         e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub txtSconto_LostFocus(sender As Object, e As System.EventArgs)
-      Try
-         If IsNumeric(sender.Text) Then
-            sender.Text = CFormatta.FormattaEuro(Convert.ToDecimal(sender.Text))
-         Else
-            sender.Text = VALORE_ZERO
-         End If
-
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub cmbApplicaSconto_SelectedIndexChanged(sender As System.Object, e As System.EventArgs)
-      Try
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Function LeggiBassaStagione1(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio1_Bassa) = True And IsDate(.DataFine1_Bassa) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio1_Bassa & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine1_Bassa & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return BASSA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return BASSA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiBassaStagione2(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio2_Bassa) = True And IsDate(.DataFine2_Bassa) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio2_Bassa & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine2_Bassa & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return BASSA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return BASSA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiBassaStagione3(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio3_Bassa) = True And IsDate(.DataFine3_Bassa) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio3_Bassa & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine3_Bassa & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return BASSA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return BASSA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiMediaStagione1(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio1_Media) = True And IsDate(.DataFine1_Media) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio1_Media & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine1_Media & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return MEDIA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return MEDIA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiMediaStagione2(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio2_Media) = True And IsDate(.DataFine2_Media) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio2_Media & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine2_Media & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return MEDIA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return MEDIA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiMediaStagione3(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio3_Media) = True And IsDate(.DataFine3_Media) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio3_Media & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine3_Media & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return MEDIA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return MEDIA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiAltaStagione1(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio1_Alta) = True And IsDate(.DataFine1_Alta) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio1_Alta & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine1_Alta & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return ALTA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return ALTA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiAltaStagione2(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio2_Alta) = True And IsDate(.DataFine2_Alta) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio2_Alta & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine2_Alta & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return ALTA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return ALTA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiAltaStagione3(ByVal dataPren As Date) As String
-      'Try
-      '   ' Verifico la data per sapere il periodo di stagione.
-      '   Dim AStagioni As New Stagioni
-
-      '   With AStagioni
-
-      '      ' Leggo i dati.
-      '      .LeggiDati(TAB_STAGIONI)
-
-      '      If IsDate(.DataInizio3_Alta) = True And IsDate(.DataFine3_Alta) = True Then
-      '         Dim dataTemp As Date = Convert.ToDateTime(.DataInizio3_Alta & Today.Year.ToString)
-      '         Dim dataTempFine As Date = Convert.ToDateTime(.DataFine3_Alta & Today.Year.ToString)
-
-      '         If dataTemp <> dataTempFine Then
-      '            Do
-      '               If dataTemp = dataPren Then
-      '                  Return ALTA_STAGIONE
-      '               Else
-      '                  dataTemp = dataTemp.AddDays(1)
-      '               End If
-      '            Loop Until dataTemp = dataTempFine
-      '         Else
-      '            If dataTemp = dataPren Then
-      '               Return ALTA_STAGIONE
-      '            End If
-      '         End If
-      '      End If
-
-      '   End With
-
-      '   Return String.Empty
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-
-   End Function
-
-   Private Function LeggiPrezzoListino(ByVal tipoStagione As String) As String
-      'Try
-      '   Const PERNOTTAMENTO As String = "PN"
-      '   Const BED_AND_BREAKFAST As String = "BB"
-      '   Const MEZZA_PENSIONE As String = "MP"
-      '   Const PENSIONE_COMPLETA As String = "PC"
-
-      '   If cmbListino.SelectedIndex = -1 Then
-      '      Return VALORE_ZERO
-      '   End If
-
-      '   ' Leggo l'Id del listino selezionato.
-      '   cmbIdListino.SelectedIndex = cmbListino.SelectedIndex
-
-      '   ' Estraggo i dati del listino selezionato.
-      '   Dim AListinoCamera As New ListinoCamera
-      '   With AListinoCamera
-      '      .LeggiDati(TAB_LISTINO, cmbIdListino.Text)
-
-      '      ' Leggo il tipo di Listino - Prezzo a persona o Camera.
-      '      tipoListino = .Tipologia
-
-      '      ' Leggo il Trattamento selezionato.
-      '      Dim trattamento As String = cmbTrattamento.Text.Substring(0, 2)
-
-      '      ' Leggo il prezzo da applicare.
-      '      Select Case tipoStagione
-      '         Case BASSA_STAGIONE
-      '            scontoNeonato = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoNeonato_Bassa))
-      '            scontoBambino = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoBambino_Bassa))
-      '            scontoRagazzo = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoRagazzo_Bassa))
-
-      '            Select Case trattamento
-      '               Case PERNOTTAMENTO
-      '                  Return .SoloPernottamento_Bassa
-      '               Case BED_AND_BREAKFAST
-      '                  Return .BB_Bassa
-      '               Case MEZZA_PENSIONE
-      '                  Return .MezzaPensione_Bassa
-      '               Case PENSIONE_COMPLETA
-      '                  Return .PensioneCompleta_Bassa
-      '            End Select
-
-      '         Case MEDIA_STAGIONE
-      '            scontoNeonato = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoNeonato_Media))
-      '            scontoBambino = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoBambino_Media))
-      '            scontoRagazzo = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoRagazzo_Media))
-
-      '            Select Case trattamento
-      '               Case PERNOTTAMENTO
-      '                  Return .SoloPernottamento_Media
-      '               Case BED_AND_BREAKFAST
-      '                  Return .BB_Media
-      '               Case MEZZA_PENSIONE
-      '                  Return .MezzaPensione_Media
-      '               Case PENSIONE_COMPLETA
-      '                  Return .PensioneCompleta_Media
-      '            End Select
-
-      '         Case ALTA_STAGIONE
-      '            scontoNeonato = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoNeonato_Alta))
-      '            scontoBambino = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoBambino_Alta))
-      '            scontoRagazzo = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.ScontoRagazzo_Alta))
-
-      '            Select Case trattamento
-      '               Case PERNOTTAMENTO
-      '                  Return .SoloPernottamento_Alta
-      '               Case BED_AND_BREAKFAST
-      '                  Return .BB_Alta
-      '               Case MEZZA_PENSIONE
-      '                  Return .MezzaPensione_Alta
-      '               Case PENSIONE_COMPLETA
-      '                  Return .PensioneCompleta_Alta
-      '            End Select
-
-      '         Case Else
-      '            Return VALORE_ZERO
-
-      '      End Select
-
-      '   End With
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      '   Return VALORE_ZERO
-      'End Try
-   End Function
-
-   Private Sub ApplicaListino()
-      Try
-         Dim tipoStagione As String
-         Dim prezzoCamera As String
-
-         ' Leggo la data di inizio prenotazione.
-         Dim dataPrenotazione As Date = mcDataArrivo.SelectionRange.Start.Date
-
-         ' Bassa stagione - Intervallo 1.
-         tipoStagione = LeggiBassaStagione1(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Bassa stagione - Intervallo 2.
-         tipoStagione = LeggiBassaStagione2(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Bassa stagione - Intervallo 3.
-         tipoStagione = LeggiBassaStagione3(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Media stagione - Intervallo 1.
-         tipoStagione = LeggiMediaStagione1(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Media stagione - Intervallo 2.
-         tipoStagione = LeggiMediaStagione2(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Media stagione - Intervallo 3.
-         tipoStagione = LeggiMediaStagione3(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Alta stagione - Intervallo 1.
-         tipoStagione = LeggiAltaStagione1(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Alta stagione - Intervallo 2.
-         tipoStagione = LeggiAltaStagione2(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Alta stagione - Intervallo 3.
-         tipoStagione = LeggiAltaStagione3(dataPrenotazione)
-         If tipoStagione <> String.Empty Then
-            prezzoCamera = LeggiPrezzoListino(tipoStagione)
-         End If
-
-         ' Calcola il totale del costo della camera in base al tipo di listino applicato.
-         Dim totCameraAdulti As Double
-         Dim totCameraNeonati As Double
-         Dim totCameraBambini As Double
-         Dim totCameraRagazzi As Double
-
-         'Dim numAdulti As Integer = Convert.ToInt32(nudAdulti.Value)
-         'Dim numNeonati As Integer = Convert.ToInt32(nudNeonati.Value)
-         'Dim numBambini As Integer = Convert.ToInt32(nudBambini.Value)
-         'Dim numRagazzi As Integer = Convert.ToInt32(nudRagazzi.Value)
-
-         'Select Case tipoListino
-
-         '   Case "Tariffa a Persona"
-         '      ' Adulti.
-         '      totCameraAdulti = (prezzoCamera * numAdulti)
-
-         '      ' Neonati.
-         '      If scontoNeonato = VALORE_ZERO Or scontoNeonato = String.Empty Then
-         '         totCameraNeonati = (prezzoCamera * numNeonati)
-         '      Else
-         '         Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoNeonato)) / 100)
-         '         totCameraNeonati = (scontoPrezzoCamera * numNeonati)
-         '      End If
-
-         '      ' Bambini.
-         '      If scontoBambino = VALORE_ZERO Or scontoBambino = String.Empty Then
-         '         totCameraBambini = (prezzoCamera * numBambini)
-         '      Else
-         '         Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoBambino)) / 100)
-         '         totCameraBambini = (scontoPrezzoCamera * numBambini)
-         '      End If
-
-         '      ' Ragazzi.
-         '      If scontoRagazzo = VALORE_ZERO Or scontoRagazzo = String.Empty Then
-         '         totCameraRagazzi = (prezzoCamera * numRagazzi)
-         '      Else
-         '         Dim scontoPrezzoCamera As Double = ((prezzoCamera * Convert.ToDouble(scontoRagazzo)) / 100)
-         '         totCameraRagazzi = (scontoPrezzoCamera * numRagazzi)
-         '      End If
-
-         '      ' Assegna il prezzo alla camera.
-         '      txtPrezzoCamera.Text = CFormatta.FormattaEuro((totCameraAdulti + totCameraNeonati + totCameraBambini + totCameraRagazzi))
-
-         '   Case "Tariffa a Camera"
-         '      ' Assegna il prezzo alla camera.
-         '      txtPrezzoCamera.Text = CFormatta.FormattaEuro(prezzoCamera)
-
-         'End Select
-
-         ' Esegue i calcoli per il totale degli importi.
-         CalcolaTotaleConto()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub eui_cmdInserisci_Click(sender As Object, e As EventArgs)
-      'Try
-      '   If ImpostaDatiAllegati(String.Empty, True) = True Then
-      '      IAllegati.InserisciDati(TAB_ALLEGATI)
-      '      ConvalidaAllegati()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   Private Sub eui_cmdModifica_Click(sender As Object, e As EventArgs)
-      'Try
-      '   'cmdInserimento.NotifyDefault(False)
-
-      '   With IAllegati
-      '      .Documento = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
-      '      .Data = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(1).Text
-      '      .Ora = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(2).Text
-      '      .Note = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(3).Text
-      '      .Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
-
-      '      If ImpostaDatiAllegati(.Note, False) = True Then
-      '         .ModificaDati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
-      '         ConvalidaAllegati()
-      '      End If
-      '   End With
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   Private Sub eui_cmdElimina_Click(sender As Object, e As EventArgs)
-      'Try
-      '   'cmdInserimento.NotifyDefault(False)
-
-      '   RimuoviAllegati(TAB_ALLEGATI, lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(5).Text)
-      '   ConvalidaAllegati()
-
-      'Catch ex As NullReferenceException
-      '   ' Visualizza un messaggio.
-      '   MessageBox.Show("Selezionare un elemento dalla lista.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-      'End Try
-   End Sub
-
-   Private Sub lvwAllegati_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
-      ' DA_FARE_A: DA TERMINARE - IMPOSTARE TUTTI I PROGRAMMI APRIBILI.
-      Dim Estensione As String
-      Dim NomeFile As String
-      Dim Percorso As String
-      Dim PercorsoApp As String
-      Dim NomeApp As String
-      Dim Proc As New Process
-
-      Try
-
-         ' Nome del file.
-         'NomeFile = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
-         ' Percorso del file.
-         'Percorso = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(4).Text
-
-         ' Ottiene l'estensione del file.
-         Estensione = Path.GetExtension(Percorso)
-
-         Select Case Estensione.ToUpper
-            Case ".DOC", ".RTF"
-               ' Word
-               NomeApp = "WINWORD.EXE"
-
-            Case ".XLS"
-               ' Excel
-               NomeApp = "EXCEL.EXE"
-
-            Case ".MDB"
-               ' Access
-               NomeApp = "MSACCESS.EXE"
-
-            Case ".PPT"
-               ' Power Point
-               NomeApp = "POWERPNT.EXE"
-
-            Case ".TXT"
-               ' Blocco note.
-               NomeApp = "NOTEPAD.EXE"
-
-            Case ".PDF"
-               ' Acrobat Reader
-               NomeApp = "ACRORD32.EXE"
-
-            Case ".HTM"
-               ' Internet Explorer
-               NomeApp = "IEXPLORE.EXE"
-         End Select
-
-         ' Avvia l'applicazione.
-         Proc.StartInfo.FileName = NomeApp
-         Proc.StartInfo.Arguments = Percorso
-         Proc.StartInfo.ErrorDialog = True
-         Proc.StartInfo.ErrorDialogParentHandle = Me.Handle
-         Proc.StartInfo.UseShellExecute = True
-         Proc.Start()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

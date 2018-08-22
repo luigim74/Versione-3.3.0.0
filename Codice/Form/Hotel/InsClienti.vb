@@ -9,11 +9,13 @@ Public Class frmInsClienti
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New()
+   Public Sub New(ByVal frm As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
       InitializeComponent()
+
+      frmChiamante = frm
 
       'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
 
@@ -259,6 +261,8 @@ Public Class frmInsClienti
 
    Const TAB_CLIENTI As String = "Clienti"
 
+   Dim frmChiamante As String
+
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
    ' Dichiara un oggetto transazione.
@@ -415,7 +419,7 @@ Public Class frmInsClienti
       End Try
    End Sub
 
-   Public Sub InserisciCliente(ByVal codice As String)
+   Public Sub InserisciClientePren(ByVal codice As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 
@@ -427,6 +431,98 @@ Public Class frmInsClienti
 
          Do While dr.Read()
             With g_frmPrenCamera
+
+               ' Indice
+               .lvwOccupanti.Items.Add(.lvwOccupanti.Items.Count)
+
+               ' Cognome.
+               If IsDBNull(dr.Item("Cognome")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Cognome"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Nome.
+               If IsDBNull(dr.Item("Nome")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nome"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Sesso.
+               If IsDBNull(dr.Item("Sesso")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Sesso"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Data di nascita.
+               If IsDBNull(dr.Item("DataNascita")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("DataNascita"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Luogo di nascita.
+               If IsDBNull(dr.Item("LuogoNascita")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("LuogoNascita"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Provincia.
+               If IsDBNull(dr.Item("ProvNascita")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("ProvNascita"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Nazionalità.
+               If IsDBNull(dr.Item("Nazionalità")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Giorni di permanenza.
+               .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(nudPermanenza.Value.ToString)
+
+               ' Tipo alloggiato.
+               If IsDBNull(dr.Item("TipoAlloggiato")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("TipoAlloggiato"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Codice.
+               .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Id"))
+
+            End With
+
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Public Sub InserisciClienteSchedine(ByVal codice As String)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_CLIENTI & " WHERE Id = " & codice & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            With g_frmSchedinaPS
 
                ' Indice
                .lvwOccupanti.Items.Add(.lvwOccupanti.Items.Count)
@@ -519,8 +615,16 @@ Public Class frmInsClienti
 
             lvwClienti.Focus()
 
-            ' Inserisce il cliente selezionato nel'elenco degli occupanti.
-            InserisciCliente(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(9).Text)
+            ' Inserisce il cliente selezionato nel'elenco dei componenti.
+            Select Case frmChiamante
+
+               Case "Prenotazioni"
+                  InserisciClientePren(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(9).Text)
+
+               Case "Schedine"
+                  InserisciClienteSchedine(lvwClienti.Items(lvwClienti.FocusedItem.Index).SubItems(9).Text)
+
+            End Select
 
             lvwClienti.Focus()
 

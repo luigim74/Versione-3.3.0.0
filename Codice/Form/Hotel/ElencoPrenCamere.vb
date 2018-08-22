@@ -1382,52 +1382,6 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   Public Function ModificaStatoPren(ByVal tabella As String, ByVal codice As String) As Boolean
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim tr As OleDbTransaction
-      Dim sql As String
-
-      Try
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} SET Stato = @Stato, NumeroCamera = @NumeroCamera WHERE Id = {1}", tabella, codice)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
-
-         cmdUpdate.Parameters.AddWithValue("@StatoDoc", STATO_PREN_ANNULLATA)
-         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", String.Empty)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
-
-         ' Conferma transazione.
-         tr.Commit()
-
-         Return True
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-
-   End Function
-
    Public Sub AnnullaPrenotazione()
       Try
          Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
@@ -1438,7 +1392,7 @@ Public Class ElencoPrenCamere
 
          ' Chiede conferma per l'annullamento.
          Dim risposta As Integer
-         risposta = MessageBox.Show("Si desidera annullare la prenotazione del cliente '" & Nome & " " & Cognome & "' n. " & Numero & " del " & Data & "? " & vbCrLf & vbCrLf &
+         risposta = MessageBox.Show("Si desidera annullare la prenotazione del cliente '" & Nome & " " & Cognome & "' numero " & Numero & " del " & Data & "? " & vbCrLf & vbCrLf &
                                  "Confermando l'operazione la prenotazione sarà contrassegnata come 'Annullata' e l'assegnazione della Camera sarà eliminata. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
          If risposta = vbYes Then
             ModificaStatoPren(TAB_PRENOTAZIONI, Id)
@@ -2000,16 +1954,21 @@ Public Class ElencoPrenCamere
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = True
-      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = True
-      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Visible = False
 
       ' Documento.
+      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = True
+
+      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True   ' DA_FARE: Verificare!
+
+      g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
       g_frmMain.eui_cmdEsportaPdf.Enabled = True
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
       g_frmMain.eui_cmdEsportaTxt.Enabled = False
-
 
 #End Region
 

@@ -4,7 +4,7 @@
 ' Nome Modulo:          Dichiarazioni
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2005
-' Data ultima modifica: 19/08/2018
+' Data ultima modifica: 22/08/2018
 ' Descrizione:          Modulo per le dichiarazioni delle variabili e costanto globali.
 ' Note:
 
@@ -594,6 +594,7 @@ Module Dichiarazioni
    Public g_frmPrenCamera As frmPrenCamera
    Public g_frmStatoPren As frmElencoDati
    Public g_frmSchedinePS As ElencoSchedinePS
+   Public g_frmSchedinaPS As frmSchedinaPS
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
    Public g_frmEmail As ElencoEmail

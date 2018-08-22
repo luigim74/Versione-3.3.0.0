@@ -791,7 +791,6 @@ Module Procedure
       End Try
    End Function
 
-
    Private Sub CreaTabellaReport(ByVal stringaSql As String)
       'Dim sql As String
 
@@ -1226,6 +1225,53 @@ Module Procedure
          'End If
       End Try
    End Function
+
+   Public Function ModificaStatoPren(ByVal tabella As String, ByVal codice As String) As Boolean
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} SET Stato = @Stato, NumeroCamera = @NumeroCamera WHERE Id = {1}", tabella, codice)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+         cmdUpdate.Parameters.AddWithValue("@StatoDoc", "Annullata")
+         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", "Nessuna")
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Function
+
 
 #End Region
 
@@ -1918,7 +1964,6 @@ Module Procedure
       End Try
    End Function
 
-
    Public Function InserisciZero(ByVal val As String) As String
       Try
          If val <> Nothing Then
@@ -2160,7 +2205,7 @@ Module Procedure
       End Try
    End Function
 
-   Public Function CalcolaImponibileIva(ByVal aliquotaIva As String, ByVal valImporto As Decimal) As Decimal
+   Public Function CalcolaImponibileIva(ByVal aliquotaIva As String, ByVal valImporto As Double) As Double
       Try
          Dim valImponibile As Double
          Dim valCoefficiente As Double
@@ -2195,7 +2240,6 @@ Module Procedure
          Return 0.0
       End Try
    End Function
-
 
    Public Function IncrementaId(ByVal ultimoId As String) As Integer
       Dim nuovoId As Integer = Convert.ToInt32(ultimoId) + 1

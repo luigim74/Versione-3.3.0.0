@@ -4,13 +4,11 @@
 ' Nome form:            ElencoSchedinePS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2018
-' Data ultima modifica: 11/08/2018
+' Data ultima modifica: 22/08/2018
 ' Descrizione:          Elenco Schedine di pubblica sicurezza.
 ' Note:
 
 ' Elenco Attivita:
-
-' DA_FARE_A: Terminare! Sviluppare Form Scheda PS.
 
 ' ******************************************************************
 
@@ -26,7 +24,6 @@ Public Class ElencoSchedinePS
 
    Public Const TAB_SCHEDINE As String = "SchedinePS"
 
-   ' DA_FARE_A: Modificare!
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_SCHEDINA As Short = 1
    Public Const COLONNA_NUM_CAMERA As Short = 2
@@ -406,7 +403,7 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
+   ' DA_FARE_A: Modificare!
    Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
@@ -525,14 +522,13 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiTutte()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
          TestoRicerca.Text = String.Empty
 
          ' Crea la stringa di selezione dei dati.
-         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
+         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Numero DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -552,7 +548,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiMese()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -565,7 +560,7 @@ Public Class ElencoSchedinePS
          Dim ultimoGiornoMese As String = DateTime.DaysInMonth(anno, mese)
          Dim fineMese As String = CFormatta.FormattaData(ultimoGiornoMese & "/" & mese & "/" & anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioMese, fineMese)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Numero DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioMese, fineMese)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -585,7 +580,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiAnno()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -597,7 +591,7 @@ Public Class ElencoSchedinePS
          Dim ultimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
          Dim fineAnno As String = CFormatta.FormattaData(ultimoGiornoAnno & "/12/" & Anno)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioAnno, fineAnno)
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Numero DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, inizioAnno, fineAnno)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -617,7 +611,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -629,7 +622,7 @@ Public Class ElencoSchedinePS
             ' Crea la stringa di selezione dei dati.
             Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
             Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, dataDal, dataAl)
+            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataArrivo BETWEEN #{2}# AND #{3}# ORDER BY Numero DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
 
@@ -651,7 +644,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
@@ -697,9 +689,9 @@ Public Class ElencoSchedinePS
             End If
          End If
 
-         Dim frm As New frmSchedinaPS()
-         frm.Tag = val
-         frm.ShowDialog()
+         g_frmSchedinaPS = New frmSchedinaPS
+         g_frmSchedinaPS.Tag = val
+         g_frmSchedinaPS.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -708,16 +700,14 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & " " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4) & " - Prenotazione N. " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) & " del " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
+            DataGrid1.CaptionText = Strings.UCase("Schedina N. " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) & " - " &
+                                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & " " &
+                                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4))
          Else
-            DataGrid1.CaptionText = ""
+            DataGrid1.CaptionText = String.Empty
          End If
 
       Catch ex As Exception
@@ -855,7 +845,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Private Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -885,7 +874,7 @@ Public Class ElencoSchedinePS
             ' Rimuove eventuali filtri impostati.
             g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Partenza.Pressed = False
+            g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
@@ -903,8 +892,8 @@ Public Class ElencoSchedinePS
             g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
 
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY Id DESC", TAB_SCHEDINE)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Numero DESC", DIM_PAGINA_GRANDE, TAB_SCHEDINE)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY Id Numero", TAB_SCHEDINE)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati(TAB_SCHEDINE, sql)
@@ -1015,7 +1004,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE_A: Verificare!
    Private Sub ElencoSchedinePS_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
 #Region "Strumenti di Modifica - (Condivisa) "
@@ -1069,12 +1057,18 @@ Public Class ElencoSchedinePS
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = False
-      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
-      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Visible = True
 
       ' Documento.
+      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
+
+      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True   ' DA_FARE: Verificare!
+
+      g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
       g_frmMain.eui_cmdEsportaPdf.Enabled = False
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
       g_frmMain.eui_cmdEsportaTxt.Enabled = True
@@ -1128,7 +1122,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE_A: Verificare!
    Private Sub ElencoSchedinePS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
@@ -1179,26 +1172,26 @@ Public Class ElencoSchedinePS
 
    ' DA_FARE: Modificare!
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
-      Select Case e.Button.Tag
+      'Select Case e.Button.Tag
 
-         Case "Stampa"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Stampa"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            StampaDocumento(PERCORSO_REP_DOC, TAB_SCHEDINE, repSql)
+      '      StampaDocumento(PERCORSO_REP_DOC, TAB_SCHEDINE, repSql)
 
-         Case "Anteprima"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Anteprima"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            g_frmMain.ApriReports(repSql, TAB_SCHEDINE, PERCORSO_REP_DOC)
+      '      g_frmMain.ApriReports(repSql, TAB_SCHEDINE, PERCORSO_REP_DOC)
 
 
-         Case "Aggiorna"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Aggiorna"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-      End Select
+      'End Select
    End Sub
 
    Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestoRicerca.TextChanged
