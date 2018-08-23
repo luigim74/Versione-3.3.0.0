@@ -1304,6 +1304,8 @@ Public Class ElencoPrenCamere
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
+
+         ' Strumenti di Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = False
          g_frmMain.eui_Strumenti_Elimina.Enabled = False
          g_frmMain.eui_Strumenti_Duplica.Enabled = False
@@ -1312,8 +1314,23 @@ Public Class ElencoPrenCamere
          g_frmMain.eui_Strumenti_Esporta.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = False
+
+         ' Documenti.
+
+         ' Stampa.
+         g_frmMain.eui_Strumenti_Documenti_Proforma.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Ricevuta.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Fattura.Enabled = False
+
+         ' Documento.
+         g_frmMain.eui_Strumenti_Documenti_Schedina.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Invia.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Esporta.Enabled = False
+
       Else
          ' Attiva i pulsanti appropriati.
+
+         ' Strumenti di Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = True
          g_frmMain.eui_Strumenti_Elimina.Enabled = True
          g_frmMain.eui_Strumenti_Duplica.Enabled = True
@@ -1322,6 +1339,19 @@ Public Class ElencoPrenCamere
          g_frmMain.eui_Strumenti_Esporta.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = True
+
+         ' Documenti.
+
+         ' Stampa.
+         g_frmMain.eui_Strumenti_Documenti_Proforma.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Ricevuta.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Fattura.Enabled = True
+
+         ' Documento.
+         g_frmMain.eui_Strumenti_Documenti_Schedina.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Invia.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Esporta.Enabled = True
+
       End If
    End Sub
 

@@ -223,6 +223,37 @@ Public Class SchedinaPS
       End Try
    End Sub
 
+   Public Sub LeggiDati(ByVal tabella As String, ByVal IdPren As Integer)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE IdPren = " & IdPren, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' Assegna i valori dei campi del DataSet ai campi della classe.
+            If IsDBNull(dr.Item("Id")) = False Then
+               Me.Codice = Convert.ToInt32(dr.Item("Id"))
+            Else
+               Me.Codice = 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Sub
+
    Public Function InserisciDati(ByVal tabella As String) As Boolean
       Dim sql As String
 

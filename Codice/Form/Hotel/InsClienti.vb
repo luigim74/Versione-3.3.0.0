@@ -9,13 +9,14 @@ Public Class frmInsClienti
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New(ByVal frm As String)
+   Public Sub New(ByVal frm As String, ByVal filtro As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
       InitializeComponent()
 
       frmChiamante = frm
+      filtroChiamante = filtro
 
       'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
 
@@ -52,7 +53,7 @@ Public Class frmInsClienti
    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
-   Friend WithEvents cmdAnnulla As Elegant.Ui.Button
+   Friend WithEvents cmdEsci As Elegant.Ui.Button
    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
    Friend WithEvents cmdModifica As Elegant.Ui.Button
    Friend WithEvents nudPermanenza As Elegant.Ui.NumericUpDown
@@ -80,12 +81,12 @@ Public Class frmInsClienti
       Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.cmdAnnulla = New Elegant.Ui.Button()
+      Me.cmdEsci = New Elegant.Ui.Button()
       Me.Label1 = New Elegant.Ui.Label()
       Me.nudPermanenza = New Elegant.Ui.NumericUpDown()
       Me.cmdModifica = New Elegant.Ui.Button()
-      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.nudPermanenza, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
@@ -118,10 +119,10 @@ Public Class frmInsClienti
       'cmdNuovo
       '
       Me.cmdNuovo.Id = "449d9c97-e7e9-4436-94bb-d3035dd05b42"
-      Me.cmdNuovo.Location = New System.Drawing.Point(907, 409)
+      Me.cmdNuovo.Location = New System.Drawing.Point(907, 122)
       Me.cmdNuovo.Name = "cmdNuovo"
       Me.cmdNuovo.Size = New System.Drawing.Size(104, 50)
-      Me.cmdNuovo.TabIndex = 4
+      Me.cmdNuovo.TabIndex = 3
       Me.cmdNuovo.Text = "&Nuovo"
       '
       'lvwClienti
@@ -133,7 +134,7 @@ Public Class frmInsClienti
       Me.lvwClienti.MultiSelect = False
       Me.lvwClienti.Name = "lvwClienti"
       Me.lvwClienti.ShowGroups = False
-      Me.lvwClienti.Size = New System.Drawing.Size(894, 531)
+      Me.lvwClienti.Size = New System.Drawing.Size(894, 541)
       Me.lvwClienti.TabIndex = 0
       Me.lvwClienti.UseCompatibleStateImageBehavior = False
       Me.lvwClienti.View = System.Windows.Forms.View.Details
@@ -178,27 +179,32 @@ Public Class frmInsClienti
       Me.ColumnHeader13.Text = "Nazione Nascita"
       Me.ColumnHeader13.Width = 100
       '
+      'ColumnHeader3
+      '
+      Me.ColumnHeader3.Text = "Tipo Cliente"
+      Me.ColumnHeader3.Width = 100
+      '
       'ColumnHeader12
       '
       Me.ColumnHeader12.Text = "Codice"
       Me.ColumnHeader12.Width = 0
       '
-      'cmdAnnulla
+      'cmdEsci
       '
-      Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.cmdAnnulla.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
-      Me.cmdAnnulla.Location = New System.Drawing.Point(907, 122)
-      Me.cmdAnnulla.Name = "cmdAnnulla"
-      Me.cmdAnnulla.Size = New System.Drawing.Size(104, 50)
-      Me.cmdAnnulla.TabIndex = 3
-      Me.cmdAnnulla.Text = "&Annulla"
+      Me.cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.cmdEsci.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
+      Me.cmdEsci.Location = New System.Drawing.Point(907, 482)
+      Me.cmdEsci.Name = "cmdEsci"
+      Me.cmdEsci.Size = New System.Drawing.Size(104, 50)
+      Me.cmdEsci.TabIndex = 5
+      Me.cmdEsci.Text = "&Esci"
       '
       'Label1
       '
       Me.Label1.Location = New System.Drawing.Point(907, 11)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(92, 16)
-      Me.Label1.TabIndex = 4
+      Me.Label1.TabIndex = 6
       Me.Label1.Text = "Giorni Permanenza:"
       '
       'nudPermanenza
@@ -215,28 +221,23 @@ Public Class frmInsClienti
       'cmdModifica
       '
       Me.cmdModifica.Id = "aab3f02f-946d-4c46-8a83-c8b121184f6d"
-      Me.cmdModifica.Location = New System.Drawing.Point(907, 471)
+      Me.cmdModifica.Location = New System.Drawing.Point(907, 184)
       Me.cmdModifica.Name = "cmdModifica"
       Me.cmdModifica.Size = New System.Drawing.Size(104, 50)
-      Me.cmdModifica.TabIndex = 5
+      Me.cmdModifica.TabIndex = 4
       Me.cmdModifica.Text = "&Modifica"
-      '
-      'ColumnHeader3
-      '
-      Me.ColumnHeader3.Text = "Tipo Cliente"
-      Me.ColumnHeader3.Width = 100
       '
       'frmInsClienti
       '
       Me.AcceptButton = Me.cmdInserisci
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(1022, 531)
+      Me.CancelButton = Me.cmdEsci
+      Me.ClientSize = New System.Drawing.Size(1020, 541)
       Me.Controls.Add(Me.cmdModifica)
       Me.Controls.Add(Me.nudPermanenza)
       Me.Controls.Add(Me.Label1)
-      Me.Controls.Add(Me.cmdAnnulla)
+      Me.Controls.Add(Me.cmdEsci)
       Me.Controls.Add(Me.cmdInserisci)
       Me.Controls.Add(Me.cmdNuovo)
       Me.Controls.Add(Me.lvwClienti)
@@ -262,6 +263,7 @@ Public Class frmInsClienti
    Const TAB_CLIENTI As String = "Clienti"
 
    Dim frmChiamante As String
+   Dim filtroChiamante As String
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -339,7 +341,7 @@ Public Class frmInsClienti
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_CLIENTI & " ORDER BY Cognome ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_CLIENTI & " WHERE TipoAlloggiato = '" & filtroChiamante & "' ORDER BY Cognome ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          lvwClienti.Items.Clear()

@@ -1,4 +1,20 @@
-﻿Imports Softgroup.NetButton
+﻿#Region " DATI FILE.VB "
+
+' ******************************************************************
+' Nome form:            PlanningCamere
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2016
+' Data ultima modifica: 23/08/2018
+' Descrizione:          Planning prenotazioni Camere.
+' Note:
+
+' Elenco Attivita: Sviluppare comando Genera Schedina.
+
+' ******************************************************************
+
+#End Region
+
+Imports Softgroup.NetButton
 
 Public Class PlanningCamere
 
@@ -1260,6 +1276,7 @@ Public Class PlanningCamere
          g_frmMain.eui_PCamere_PrenModifica.Enabled = False
          g_frmMain.eui_PCamere_PrenElimina.Enabled = False
          g_frmMain.eui_PCamere_PrenAnnulla.Enabled = False
+         g_frmMain.eui_PCamere_PrenSchedina.Enabled = False
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1274,6 +1291,7 @@ Public Class PlanningCamere
          g_frmMain.eui_PCamere_PrenModifica.Enabled = True
          g_frmMain.eui_PCamere_PrenElimina.Enabled = True
          g_frmMain.eui_PCamere_PrenAnnulla.Enabled = True
+         g_frmMain.eui_PCamere_PrenSchedina.Enabled = True
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

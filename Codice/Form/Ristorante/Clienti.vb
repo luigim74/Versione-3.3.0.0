@@ -1,8 +1,18 @@
+#Region " DATI FILE.VB "
+
+' ******************************************************************
 ' Nome form:            frmClienti
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       07/01/2006
-' Data ultima modifica: 23/06/2006
+' Data ultima modifica: 23/08/2018
 ' Descrizione:          Anagrafica Clienti.
+' Note:
+
+' Elenco Attivita:
+
+' ******************************************************************
+
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -2280,6 +2290,8 @@ Public Class frmClienti
          FormResize(CLIENTI_LARGHEZZA, CLIENTI_ALTEZZA)
 
          If Me.Tag <> "" Then
+            ' Comando Modifica.
+
             With AClienti
                ' Visualizza i dati nei rispettivi campi.
                .LeggiDati(NOME_TABELLA, Me.Tag)
@@ -2385,7 +2397,14 @@ Public Class frmClienti
             ' Carica la lista degli allegati.
             ConvalidaAllegati()
          Else
+            ' Comando Nuovo.
+
             ' In caso di nuovo inserimento dati imposta i valori di default.
+
+            ' Seleziona il valore M.
+            cmbSesso.SelectedIndex = 0
+
+            ' Seleziona il valore Ospite Singolo.
             cmbTipoAlloggiato.SelectedIndex = 0
 
             txtSconto.Text = VALORE_ZERO

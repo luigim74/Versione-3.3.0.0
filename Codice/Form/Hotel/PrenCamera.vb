@@ -1930,6 +1930,7 @@ Public Class frmPrenCamera
    Public IPrenAddebiti As New PrenCamereAddebiti
    Public IPrenStorico As New StoricoPresenzeCamere
    Public IAllegati As New Allegati
+   Public CSchedina As New SchedinaPS
 
    Const NOME_TABELLA As String = "PrenCamere"
    Const TAB_CLIENTI As String = "Clienti"
@@ -1939,6 +1940,7 @@ Public Class frmPrenCamera
    Const TAB_ALLEGATI As String = "PrenCamereAllegati"
    Const TAB_STATO_PREN As String = "StatoPren"
    Const TAB_PREN_OCCUPANTI As String = "PrenCamereOccupanti"
+   Const TAB_SCHEDINE_OCCUPANTI As String = "ComponentiSchedinePS"
    Const TAB_PREN_ADDEBITI As String = "PrenCamereAddebiti"
    Const TAB_PREN_STORICO As String = "StoricoPresenzeCamere"
    Const TAB_STAGIONI As String = "Stagioni"
@@ -2083,7 +2085,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   Private Function SalvaOccupanti(ByVal id As String) As Boolean
+   Private Function SalvaOccupantiPren(ByVal id As String) As Boolean
       ' Salva i dati per il Tavolo selezionato.
       Try
          Dim idPren As Integer
@@ -2091,7 +2093,7 @@ Public Class frmPrenCamera
          If id <> String.Empty Then
             idPren = id
          Else
-            idPren = LeggiUltimaPren(NOME_TABELLA)
+            idPren = LeggiUltimoRecord(NOME_TABELLA)
          End If
 
          With IPrenOccupanti
@@ -2108,11 +2110,67 @@ Public Class frmPrenCamera
                .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
                .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
                .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
-               .CodiceCliente = lvwOccupanti.Items(i).SubItems(9).Text
+               .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
+               .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
 
                .InserisciDati(TAB_PREN_OCCUPANTI)
             Next
          End With
+
+         Return True
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+      End Try
+   End Function
+
+   Private Function SalvaOccupantiSchedina(ByVal id As String) As Boolean
+      ' Salva i dati per il Tavolo selezionato.
+      Try
+         With IPrenOccupanti
+            .EliminaDati(TAB_SCHEDINE_OCCUPANTI, id)
+
+            Dim i As Integer
+            For i = 0 To lvwOccupanti.Items.Count - 1
+               .RifPren = id
+               .Cognome = lvwOccupanti.Items(i).SubItems(1).Text
+               .Nome = lvwOccupanti.Items(i).SubItems(2).Text
+               .Sesso = lvwOccupanti.Items(i).SubItems(3).Text
+               .DataNascita = lvwOccupanti.Items(i).SubItems(4).Text
+               .LuogoNascita = lvwOccupanti.Items(i).SubItems(5).Text
+               .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
+               .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
+               .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
+               .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
+               .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
+
+               .InserisciDati(TAB_SCHeDINE_OCCUPANTI)
+            Next
+         End With
+
+         Return True
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+      End Try
+   End Function
+
+   Private Function EliminaOccupantiSchedina(ByVal id As String) As Boolean
+      ' Salva i dati per il Tavolo selezionato.
+      Try
+         If id = String.Empty Then
+            Exit Function
+         End If
+
+         CSchedina.LeggiDati(TAB_SCHEDINE_PS, Convert.ToInt32(id))
+
+         IPrenOccupanti.EliminaDati(TAB_SCHEDINE_OCCUPANTI, CSchedina.Codice)
 
          Return True
 
@@ -2132,7 +2190,7 @@ Public Class frmPrenCamera
          If id <> String.Empty Then
             idPren = id
          Else
-            idPren = LeggiUltimaPren(NOME_TABELLA)
+            idPren = LeggiUltimoRecord(NOME_TABELLA)
          End If
 
          With IPrenAddebiti
@@ -2204,7 +2262,7 @@ Public Class frmPrenCamera
          If Me.Tag <> String.Empty Then
             idPren = Me.Tag
          Else
-            idPren = LeggiUltimaPren(NOME_TABELLA)
+            idPren = LeggiUltimoRecord(NOME_TABELLA)
          End If
 
          ' Elimina eventuali dati esistenti.
@@ -2478,35 +2536,6 @@ Public Class frmPrenCamera
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       Finally
-         cn.Close()
-
-      End Try
-   End Function
-
-   Private Function LeggiUltimaPren(ByVal tabella As String) As Integer
-      Dim closeOnExit As Boolean
-      Dim id As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Verifica l'esistenza del record.
-         cmd.CommandText = String.Format("SELECT MAX(Id) FROM {0}", tabella)
-
-         id = CInt(cmd.ExecuteScalar())
-
-         Return id
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
          cn.Close()
 
       End Try
@@ -2818,7 +2847,7 @@ Public Class frmPrenCamera
                If SalvaDati() = True Then
 
                   ' Salva eventuali clienti occupanti.
-                  SalvaOccupanti(Me.Tag)
+                  SalvaOccupantiPren(Me.Tag)
 
                   ' Salva eventuali addebiti extra.
                   SalvaAddebitiExtra(Me.Tag)
@@ -2831,14 +2860,22 @@ Public Class frmPrenCamera
                      ' Elimina tutte le schedine della prenotazione.
                      EliminaScedinePS(Me.Tag)
 
+                     ' Elimina anche tutti i componenti associati.
+                     EliminaOccupantiSchedina(Me.Tag)
+
                      If SalvaSchedinaPS(Me.Tag) = True Then
+                        ' Salva anche tutti i componenti associati.
+                        SalvaOccupantiSchedina(LeggiUltimoRecord(TAB_SCHEDINE_PS))
+
                         If IsNothing(g_frmSchedinePS) = False Then
                            ' Aggiorna la griglia dati.
                            g_frmSchedinePS.AggiornaDati()
                         End If
                      End If
                   Else
-                     ' DA_FARE_A: Utilizzare l' Id della prenotazione.
+                     'Elimina anche tutti i componenti associati.
+                     EliminaOccupantiSchedina(Me.Tag)
+
                      ' Elimina tutte le schedine della prenotazione.
                      EliminaScedinePS(Me.Tag)
                   End If
@@ -2981,10 +3018,13 @@ Public Class frmPrenCamera
             txtNumero.Text = LeggiUltimoRecord(NOME_TABELLA, "Numero") + 1
             ' Data prenotazione - Oggi.
             dtpData.Value = Today
-            ' Seleziona il valore Individuale.
+
+            ' Seleziona il valore Ospite Singolo.
             cmbTipologia.SelectedIndex = 0
+
             ' Seleziona il valore Nessuna.
             cmbNumeroCamera.SelectedIndex = 0
+
             ' Seleziona il valore Solo Pernottamento.
             cmbTrattamento.SelectedIndex = 0
 
@@ -3461,7 +3501,18 @@ Public Class frmPrenCamera
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Dim frm As New frmInsClienti("Prenotazioni")
+         Dim tipoAlloggiato As String
+
+         Select Case cmbTipologia.Text
+            Case "Capo Famiglia"
+               tipoAlloggiato = "Familiare"
+
+            Case "Capo Gruppo"
+               tipoAlloggiato = "Membro Gruppo"
+
+         End Select
+
+         Dim frm As New frmInsClienti("Prenotazioni", tipoAlloggiato)
          frm.Tag = txtNumeroNotti.Text
          frm.ShowDialog()
 
@@ -4428,4 +4479,28 @@ Public Class frmPrenCamera
 
       End Try
    End Sub
+
+   Private Sub cmbTipologia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipologia.SelectedIndexChanged
+      Try
+         ' Rimuove tutti i componenti.
+         lvwOccupanti.Items.Clear()
+
+         ' Se si seleziona Ospite Singolo viene disattivata la scheda Altri Componenti.
+         If sender.text = "Ospite Singolo" Then
+            lvwOccupanti.Enabled = False
+            cmdInserisciOccupanti.Enabled = False
+            cmdEliminaOccupanti.Enabled = False
+         Else
+            lvwOccupanti.Enabled = True
+            cmdInserisciOccupanti.Enabled = True
+            cmdEliminaOccupanti.Enabled = True
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 End Class

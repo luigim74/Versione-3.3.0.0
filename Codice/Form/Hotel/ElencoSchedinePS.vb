@@ -8,7 +8,7 @@
 ' Descrizione:          Elenco Schedine di pubblica sicurezza.
 ' Note:
 
-' Elenco Attivita:
+' Elenco Attivita: Sviluppare comando Genera Schedina.
 
 ' ******************************************************************
 
@@ -440,18 +440,16 @@ Public Class ElencoSchedinePS
             ' Esegue il comando.
             Dim Record As Integer = cmdDelete.ExecuteNonQuery()
 
-            ' DA_FARE: Modificare!
-
             ' Elimina i dati degli Occupanti per la prenotazione.
             '-------------------------------------------------------------------------------
             ' Crea la stringa di eliminazione.
-            'sql = String.Format("DELETE FROM PrenCamereOccupanti WHERE RifPren = {0}", id)
+            sql = String.Format("DELETE FROM ComponentiSchedinePS WHERE RifPren = {0}", id)
 
             ' Crea il comando per la connessione corrente.
-            'Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
+            Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
 
             ' Esegue il comando.
-            'Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
+            Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
             '-------------------------------------------------------------------------------
 
             ' Conferma la transazione.
@@ -647,6 +645,8 @@ Public Class ElencoSchedinePS
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
+
+         ' Strumenti di Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = False
          g_frmMain.eui_Strumenti_Elimina.Enabled = False
          g_frmMain.eui_Strumenti_Duplica.Enabled = False
@@ -654,8 +654,23 @@ Public Class ElencoSchedinePS
          g_frmMain.eui_Strumenti_Esporta.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = False
+
+         ' Documenti.
+
+         ' Stampa.
+         g_frmMain.eui_Strumenti_Documenti_Proforma.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Ricevuta.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Fattura.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Enabled = False
+
+         ' Documento.
+         g_frmMain.eui_Strumenti_Documenti_Invia.Enabled = False
+         g_frmMain.eui_Strumenti_Documenti_Esporta.Enabled = False
+
       Else
          ' Attiva i pulsanti appropriati.
+
+         ' Strumenti di Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = True
          g_frmMain.eui_Strumenti_Elimina.Enabled = True
          g_frmMain.eui_Strumenti_Duplica.Enabled = False
@@ -663,6 +678,19 @@ Public Class ElencoSchedinePS
          g_frmMain.eui_Strumenti_Esporta.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = True
+
+         ' Documenti.
+
+         ' Stampa.
+         g_frmMain.eui_Strumenti_Documenti_Proforma.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Ricevuta.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Fattura.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Enabled = True
+
+         ' Documento.
+         g_frmMain.eui_Strumenti_Documenti_Invia.Enabled = True
+         g_frmMain.eui_Strumenti_Documenti_Esporta.Enabled = True
+
       End If
    End Sub
 
@@ -745,13 +773,13 @@ Public Class ElencoSchedinePS
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
          ' 1 - Numero schedina.
-         Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
          numeroStyle.MappingName = "Numero"
          numeroStyle.HeaderText = "Numero"
          numeroStyle.Width = 70
          numeroStyle.NullText = ""
          numeroStyle.Alignment = HorizontalAlignment.Right
-         numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         numeroStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(numeroStyle)
          ' 2 - Numero camera.
          Dim numCameraStyle As New DataGridTextBoxColumn
@@ -786,13 +814,13 @@ Public Class ElencoSchedinePS
          tipologiaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(tipologiaStyle)
          ' 6 - Numero prenotazione.
-         Dim numeroPrenStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         Dim numeroPrenStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          numeroPrenStyle.MappingName = "NumPren"
          numeroPrenStyle.HeaderText = "Numero Pren."
          numeroPrenStyle.Width = 80
          numeroPrenStyle.NullText = ""
          numeroPrenStyle.Alignment = HorizontalAlignment.Right
-         numeroPrenStyle.TextBox.BackColor = Color.White
+         numeroPrenStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(numeroPrenStyle)
          ' 7 - Data arrivo
          Dim dataArrivoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)

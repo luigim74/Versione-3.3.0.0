@@ -9,7 +9,6 @@
 
 ' Elenco Attivita:
 
-' DA_FARE_A: Testare procedure per la Tabella Componenti.
 ' DA_FARE: Modificare lo Storico presenze prelevando i dati dalle schedine e non dalle prenotazioni.
 
 ' ******************************************************************
@@ -67,7 +66,7 @@ Public Class frmSchedinaPS
    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
    Public WithEvents txtCodice As System.Windows.Forms.TextBox
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
-   Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+   Friend WithEvents tpComponenti As System.Windows.Forms.TabPage
    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
    Public WithEvents txtNumero As System.Windows.Forms.TextBox
    Public WithEvents Label12 As System.Windows.Forms.Label
@@ -201,14 +200,7 @@ Public Class frmSchedinaPS
       Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
       Me.Label9 = New System.Windows.Forms.Label()
       Me.Label2 = New System.Windows.Forms.Label()
-      Me.TabPage3 = New System.Windows.Forms.TabPage()
-      Me.cmdInserisciOccupanti = New Elegant.Ui.Button()
-      Me.cmdEliminaOccupanti = New Elegant.Ui.Button()
-      Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-      Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-      Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-      Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.tpComponenti = New System.Windows.Forms.TabPage()
       Me.lvwOccupanti = New System.Windows.Forms.ListView()
       Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -221,13 +213,20 @@ Public Class frmSchedinaPS
       Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.cmdInserisciOccupanti = New Elegant.Ui.Button()
+      Me.cmdEliminaOccupanti = New Elegant.Ui.Button()
+      Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+      Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+      Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+      Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
       Me.Panel2.SuspendLayout()
       Me.TabPage4.SuspendLayout()
       Me.TabPage5.SuspendLayout()
-      Me.TabPage3.SuspendLayout()
+      Me.tpComponenti.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -242,7 +241,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(586, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(606, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -276,7 +275,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(586, 20)
+      Me.Panel1.Size = New System.Drawing.Size(606, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -295,13 +294,13 @@ Public Class frmSchedinaPS
       Me.TabControl1.Controls.Add(Me.TabPage1)
       Me.TabControl1.Controls.Add(Me.TabPage4)
       Me.TabControl1.Controls.Add(Me.TabPage5)
-      Me.TabControl1.Controls.Add(Me.TabPage3)
+      Me.TabControl1.Controls.Add(Me.tpComponenti)
       Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
       Me.TabControl1.Location = New System.Drawing.Point(0, 46)
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(586, 406)
+      Me.TabControl1.Size = New System.Drawing.Size(606, 426)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -323,7 +322,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(578, 380)
+      Me.TabPage1.Size = New System.Drawing.Size(598, 400)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -390,9 +389,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 145)
+      Me.Panel2.Location = New System.Drawing.Point(0, 165)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(578, 235)
+      Me.Panel2.Size = New System.Drawing.Size(598, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -603,7 +602,7 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(568, 370)
+      Me.TabPage4.Size = New System.Drawing.Size(598, 400)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
       '
@@ -885,7 +884,7 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(568, 370)
+      Me.TabPage5.Size = New System.Drawing.Size(588, 390)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
       '
@@ -1036,44 +1035,17 @@ Public Class frmSchedinaPS
       Me.Label2.TabIndex = 271
       Me.Label2.Text = "Rilasciato da:"
       '
-      'TabPage3
+      'tpComponenti
       '
-      Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage3.Controls.Add(Me.lvwOccupanti)
-      Me.TabPage3.Controls.Add(Me.cmdInserisciOccupanti)
-      Me.TabPage3.Controls.Add(Me.cmdEliminaOccupanti)
-      Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-      Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(578, 380)
-      Me.TabPage3.TabIndex = 7
-      Me.TabPage3.Text = "Altri componenti"
-      '
-      'cmdInserisciOccupanti
-      '
-      Me.cmdInserisciOccupanti.Id = "5cb4629d-8026-4d6c-9815-611d4bacb7c7"
-      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(346, 331)
-      Me.cmdInserisciOccupanti.Name = "cmdInserisciOccupanti"
-      Me.cmdInserisciOccupanti.Size = New System.Drawing.Size(104, 32)
-      Me.cmdInserisciOccupanti.TabIndex = 1
-      Me.cmdInserisciOccupanti.Text = "&Inserisci"
-      '
-      'cmdEliminaOccupanti
-      '
-      Me.cmdEliminaOccupanti.Id = "f4c880ee-0846-4e54-a486-3bc390ef19a6"
-      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(458, 331)
-      Me.cmdEliminaOccupanti.Name = "cmdEliminaOccupanti"
-      Me.cmdEliminaOccupanti.Size = New System.Drawing.Size(104, 32)
-      Me.cmdEliminaOccupanti.TabIndex = 2
-      Me.cmdEliminaOccupanti.Text = "&Elimina"
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
+      Me.tpComponenti.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.tpComponenti.Controls.Add(Me.lvwOccupanti)
+      Me.tpComponenti.Controls.Add(Me.cmdInserisciOccupanti)
+      Me.tpComponenti.Controls.Add(Me.cmdEliminaOccupanti)
+      Me.tpComponenti.Location = New System.Drawing.Point(4, 22)
+      Me.tpComponenti.Name = "tpComponenti"
+      Me.tpComponenti.Size = New System.Drawing.Size(598, 400)
+      Me.tpComponenti.TabIndex = 7
+      Me.tpComponenti.Text = "Altri componenti"
       '
       'lvwOccupanti
       '
@@ -1082,7 +1054,7 @@ Public Class frmSchedinaPS
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(578, 328)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(595, 328)
       Me.lvwOccupanti.TabIndex = 3
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1142,11 +1114,38 @@ Public Class frmSchedinaPS
       Me.ColumnHeader19.Text = "Codice"
       Me.ColumnHeader19.Width = 0
       '
+      'cmdInserisciOccupanti
+      '
+      Me.cmdInserisciOccupanti.Id = "5cb4629d-8026-4d6c-9815-611d4bacb7c7"
+      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(346, 331)
+      Me.cmdInserisciOccupanti.Name = "cmdInserisciOccupanti"
+      Me.cmdInserisciOccupanti.Size = New System.Drawing.Size(104, 32)
+      Me.cmdInserisciOccupanti.TabIndex = 1
+      Me.cmdInserisciOccupanti.Text = "&Inserisci"
+      '
+      'cmdEliminaOccupanti
+      '
+      Me.cmdEliminaOccupanti.Id = "f4c880ee-0846-4e54-a486-3bc390ef19a6"
+      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(458, 331)
+      Me.cmdEliminaOccupanti.Name = "cmdEliminaOccupanti"
+      Me.cmdEliminaOccupanti.Size = New System.Drawing.Size(104, 32)
+      Me.cmdEliminaOccupanti.TabIndex = 2
+      Me.cmdEliminaOccupanti.Text = "&Elimina"
+      '
+      'ErrorProvider1
+      '
+      Me.ErrorProvider1.ContainerControl = Me
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(586, 452)
+      Me.ClientSize = New System.Drawing.Size(606, 472)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1169,7 +1168,7 @@ Public Class frmSchedinaPS
       Me.TabPage4.PerformLayout()
       Me.TabPage5.ResumeLayout(False)
       Me.TabPage5.PerformLayout()
-      Me.TabPage3.ResumeLayout(False)
+      Me.tpComponenti.ResumeLayout(False)
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
@@ -1178,7 +1177,6 @@ Public Class frmSchedinaPS
 
 #End Region
 
-   ' DA_FARE: Modificare!
    Public CSchedina As New SchedinaPS
    Public CSchedinaComponenti As New PrenCamereOccupanti
 
@@ -1188,7 +1186,6 @@ Public Class frmSchedinaPS
    Const TAB_NAZIONI As String = "Nazioni"
    Const TAB_DOC_IDENTITA As String = "DocIdentità"
 
-   ' DA_FARE: Modificare!
    Const TAB_COMPONENTI As String = "ComponentiSchedinePS"
 
    Private CFormatta As New ClsFormatta
@@ -1197,9 +1194,9 @@ Public Class frmSchedinaPS
 
    ' DA_FARE: Verificare!
    ' Servono a sapere se il periodo di prenotazione è stato modificato.
-   Dim numCameraPren As String
-   Dim dataArrivoPren As Date
-   Dim dataPartenzaPren As Date
+   'Dim numCameraPren As String
+   'Dim dataArrivoPren As Date
+   'Dim dataPartenzaPren As Date
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -1262,7 +1259,7 @@ Public Class frmSchedinaPS
             .Permanenza = txtNumeroNotti.Text
             .NumCamera = cmbNumeroCamera.Text
             .IdPren = 0
-            .NumPren = txtNumero.Text
+            .NumPren = txtNumeroPren.Text
             .Stato = cmbStato.Text
 
             If dtpDataStampa.Checked = True Then
@@ -1288,31 +1285,33 @@ Public Class frmSchedinaPS
       End Try
    End Function
 
-   ' DA_FARE: Verificare!
    Private Function SalvaOccupanti(ByVal id As String) As Boolean
       ' Salva i dati per il Tavolo selezionato.
       Try
-         Dim idPren As Integer
+         Dim idSchedina As Integer
 
          If id <> String.Empty Then
-            idPren = id
+            idSchedina = id
          Else
-            idPren = LeggiUltimaSchedina(NOME_TABELLA)
+            idSchedina = LeggiUltimoRecord(NOME_TABELLA)
          End If
 
          With CSchedinaComponenti
-            .EliminaDati(TAB_COMPONENTI, idPren)
+            .EliminaDati(TAB_COMPONENTI, idSchedina)
 
             Dim i As Integer
             For i = 0 To lvwOccupanti.Items.Count - 1
-               .RifPren = idPren
+               .RifPren = idSchedina
                .Cognome = lvwOccupanti.Items(i).SubItems(1).Text
                .Nome = lvwOccupanti.Items(i).SubItems(2).Text
-               .DataNascita = lvwOccupanti.Items(i).SubItems(3).Text
-               .LuogoNascita = lvwOccupanti.Items(i).SubItems(4).Text
-               .ProvNascita = lvwOccupanti.Items(i).SubItems(5).Text
-               .Nazionalità = lvwOccupanti.Items(i).SubItems(6).Text
-               .CodiceCliente = lvwOccupanti.Items(i).SubItems(7).Text
+               .Sesso = lvwOccupanti.Items(i).SubItems(3).Text
+               .DataNascita = lvwOccupanti.Items(i).SubItems(4).Text
+               .LuogoNascita = lvwOccupanti.Items(i).SubItems(5).Text
+               .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
+               .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
+               .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
+               .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
+               .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
 
                .InserisciDati(TAB_COMPONENTI)
             Next
@@ -1404,7 +1403,6 @@ Public Class frmSchedinaPS
       'End Try
    End Sub
 
-   ' DA_FARE: Verificare!
    Private Sub LeggiComponenti()
       Try
          With CSchedinaComponenti
@@ -1417,35 +1415,6 @@ Public Class frmSchedinaPS
 
       End Try
    End Sub
-
-   Private Function LeggiUltimaSchedina(ByVal tabella As String) As Integer
-      Dim closeOnExit As Boolean
-      Dim id As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Verifica l'esistenza del record.
-         cmd.CommandText = String.Format("SELECT MAX(Id) FROM {0}", tabella)
-
-         id = CInt(cmd.ExecuteScalar())
-
-         Return id
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
 
    Public Function ApriClienti(ByVal val As String) As Boolean
       Try
@@ -1647,6 +1616,12 @@ Public Class frmSchedinaPS
 
             ' Seleziona il valore Nessuna.
             cmbNumeroCamera.SelectedIndex = 0
+
+            ' Seleziona il valore M.
+            cmbSesso.SelectedIndex = 0
+
+            ' Seleziona il valore Ospite singolo.
+            cmbTipoAlloggiato.SelectedIndex = 0
 
             ' Data e ora di arrivo
             mcDataArrivo.SetDate(Today)
@@ -1867,7 +1842,18 @@ Public Class frmSchedinaPS
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Dim frm As New frmInsClienti("Schedine")
+         Dim tipoAlloggiato As String
+
+         Select Case cmbTipoAlloggiato.Text
+            Case "Capo Famiglia"
+               tipoAlloggiato = "Familiare"
+
+            Case "Capo Gruppo"
+               tipoAlloggiato = "Membro Gruppo"
+
+         End Select
+
+         Dim frm As New frmInsClienti("Schedine", tipoAlloggiato)
          frm.Tag = txtNumeroNotti.Text
          frm.ShowDialog()
 
@@ -1904,6 +1890,29 @@ Public Class frmSchedinaPS
             dtpDataStampa.Checked = True
          Else
             dtpDataStampa.Checked = False
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub cmbTipoAlloggiato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoAlloggiato.SelectedIndexChanged
+      Try
+         ' Rimuove tutti i componenti.
+         lvwOccupanti.Items.Clear()
+
+         ' Se si seleziona Ospite Singolo viene disattivata la scheda Altri Componenti.
+         If sender.text = "Ospite Singolo" Then
+            lvwOccupanti.Enabled = False
+            cmdInserisciOccupanti.Enabled = False
+            cmdEliminaOccupanti.Enabled = False
+         Else
+            lvwOccupanti.Enabled = True
+            cmdInserisciOccupanti.Enabled = True
+            cmdEliminaOccupanti.Enabled = True
          End If
 
       Catch ex As Exception

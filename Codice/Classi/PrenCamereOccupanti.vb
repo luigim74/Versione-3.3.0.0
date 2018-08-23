@@ -2,8 +2,10 @@ Imports System.Data.OleDb
 
 Public Class PrenCamereOccupanti
 
+   Public Codice As Integer
    Public RifPren As Integer
    Public CodiceCliente As String
+   Public TipoAlloggiato As String
    Public Cognome As String
    Public Nome As String
    Public Sesso As String
@@ -31,6 +33,12 @@ Public Class PrenCamereOccupanti
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
+            ' Id.
+            If IsDBNull(dr.Item("Id")) = False Then
+               Me.Codice = Convert.ToInt32(dr.Item("Id"))
+            Else
+               Me.Codice = 0
+            End If
             ' IdRisorsa
             If IsDBNull(dr.Item("RifPren")) = False Then
                Me.RifPren = Convert.ToInt32(dr.Item("RifPren"))
@@ -42,6 +50,12 @@ Public Class PrenCamereOccupanti
                Me.CodiceCliente = dr.Item("CodiceCliente")
             Else
                Me.CodiceCliente = String.Empty
+            End If
+            ' Tipo Alloggiato.
+            If IsDBNull(dr.Item("TipoAlloggiato")) = False Then
+               Me.TipoAlloggiato = dr.Item("TipoAlloggiato").ToString
+            Else
+               Me.TipoAlloggiato = String.Empty
             End If
             ' Cognome.
             If IsDBNull(dr.Item("Cognome")) = False Then
@@ -173,6 +187,12 @@ Public Class PrenCamereOccupanti
             Else
                lst.Items(i).SubItems.Add("")
             End If
+            ' Tipo Alloggiato.
+            If IsDBNull(dr.Item("TipoAlloggiato")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("TipoAlloggiato").ToString)
+            Else
+               lst.Items(i).SubItems.Add("")
+            End If
             ' Codice Cliente.
             If IsDBNull(dr.Item("CodiceCliente")) = False Then
                lst.Items(i).SubItems.Add(dr.Item("CodiceCliente").ToString)
@@ -209,14 +229,15 @@ Public Class PrenCamereOccupanti
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, Nazionalità, Permanenza) " &
-                                       "VALUES(@RifPren, @CodiceCliente, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @Nazionalità, @Permanenza)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, TipoAlloggiato, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, Nazionalità, Permanenza) " &
+                                       "VALUES(@RifPren, @CodiceCliente, @TipoAlloggiato, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @Nazionalità, @Permanenza)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
          cmdInsert.Parameters.AddWithValue("@RifPren", Me.RifPren)
          cmdInsert.Parameters.AddWithValue("@CodiceCliente", Me.CodiceCliente)
+         cmdInsert.Parameters.AddWithValue("@TipoAlloggiato", Me.TipoAlloggiato)
          cmdInsert.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdInsert.Parameters.AddWithValue("@Nome", Me.Nome)
          cmdInsert.Parameters.AddWithValue("@Sesso", Me.Sesso)
@@ -264,6 +285,7 @@ Public Class PrenCamereOccupanti
          sql = String.Format("UPDATE {0} " &
                              "SET RifPren = @RifPren, " &
                              "CodiceCliente = @CodiceCliente, " &
+                             "TipoAlloggiato = @TipoAlloggiato, " &
                              "Cognome = @Cognome, " &
                              "Nome = @Nome, " &
                              "Sesso = @Sesso, " &
@@ -281,6 +303,7 @@ Public Class PrenCamereOccupanti
 
          cmdUpdate.Parameters.AddWithValue("@RifPren", Me.RifPren)
          cmdUpdate.Parameters.AddWithValue("@CodiceCliente", Me.CodiceCliente)
+         cmdUpdate.Parameters.AddWithValue("@TipoAlloggiato", Me.TipoAlloggiato)
          cmdUpdate.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdUpdate.Parameters.AddWithValue("@Nome", Me.Nome)
          cmdUpdate.Parameters.AddWithValue("@Sesso", Me.Sesso)
