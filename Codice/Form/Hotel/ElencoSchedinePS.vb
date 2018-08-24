@@ -8,7 +8,7 @@
 ' Descrizione:          Elenco Schedine di pubblica sicurezza.
 ' Note:
 
-' Elenco Attivita: Sviluppare comando Genera Schedina.
+' Elenco Attivita: 
 
 ' ******************************************************************
 

@@ -1505,3 +1505,103 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, Int32 IdPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 250"
 "
 "
+"*** 24/08/2018 - 14:31:33 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 690"
+"
+"
+"*** 24/08/2018 - 15:25:24 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2334"
+"
+"
+"*** 24/08/2018 - 15:57:51 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @DataStampa."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
+"
+"
+"*** 24/08/2018 - 16:14:22 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Stato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
+"
+"
+"*** 24/08/2018 - 16:17:52 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Stato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
+"
+"
+"*** 24/08/2018 - 18:40:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+"
+"
+"*** 24/08/2018 - 18:40:57 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
+   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
+   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
+"
+"
+"*** 24/08/2018 - 18:41:04 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+"
+"
+"*** 24/08/2018 - 18:41:09 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
+   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
+   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
+"
+"
+"*** 24/08/2018 - 18:41:50 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+"
+"
+"*** 24/08/2018 - 18:41:56 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
+   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
+   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
+"
+"

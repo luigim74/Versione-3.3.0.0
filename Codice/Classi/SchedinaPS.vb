@@ -4,7 +4,7 @@
 ' Nome form:            SchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2018
-' Data ultima modifica: 19/08/2018
+' Data ultima modifica: 24/08/2018
 ' Descrizione:          Classe Schedina PS.
 ' Note:
 
@@ -242,6 +242,25 @@ Public Class SchedinaPS
             Else
                Me.Codice = 0
             End If
+
+            If IsDBNull(dr.Item("Numero")) = False Then
+               Me.Numero = dr.Item("Numero")
+            Else
+               Me.Numero = String.Empty
+            End If
+
+            If IsDBNull(dr.Item("Stato")) = False Then
+               Me.Stato = dr.Item("Stato")
+            Else
+               Me.Stato = String.Empty
+            End If
+
+            If IsDBNull(dr.Item("DataStampa")) = False Then
+               Me.DataStampa = dr.Item("DataStampa")
+            Else
+               Me.DataStampa = String.Empty
+            End If
+
          Loop
 
       Catch ex As Exception

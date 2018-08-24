@@ -1,3 +1,17 @@
+#Region " DATI FILE.VB "
+' ****************************************************************************************
+' Nome Classe:          PrenCamereOccupanti
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/08/2018
+' Data ultima modifica: 24/08/2018
+' Descrizione:          Classe per la gestione dei dati della Tabella PrenCamereOccupanti.
+' Note:
+'
+' Elenco Attivita:
+'
+' *****************************************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class PrenCamereOccupanti

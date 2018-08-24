@@ -3,7 +3,7 @@
 ' Nome form:            frmSchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/08/2018
-' Data ultima modifica: 22/08/2018
+' Data ultima modifica: 24/08/2018
 ' Descrizione:          Anagrafica Schedine pubblica sicurezza.
 ' Note:
 
@@ -1192,12 +1192,6 @@ Public Class frmSchedinaPS
    Private CConvalida As New ConvalidaKeyPress
    Private DatiConfig As AppConfig
 
-   ' DA_FARE: Verificare!
-   ' Servono a sapere se il periodo di prenotazione è stato modificato.
-   'Dim numCameraPren As String
-   'Dim dataArrivoPren As Date
-   'Dim dataPartenzaPren As Date
-
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
    ' Dichiara un oggetto transazione.
@@ -1606,7 +1600,6 @@ Public Class frmSchedinaPS
          Else
             ' Comando Nuovo.
 
-            ' DA_FARE_A: Modificare! generare il numero progressivo.
             ' Genera il numero progressivo.
             txtNumero.Text = g_frmMain.LeggiNumeroSchedinaConfig(NOME_TABELLA)
             txtNumeroPren.Text = "0"
@@ -1661,7 +1654,7 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   ' DA_FARE_A: HOTEL - da modificare!
+   ' DA_FARE_B: HOTEL - da modificare!
    Private Sub frmSchedinaPS_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       If Me.Tag <> "0" Then
          ' Registra loperazione effettuata dall'operatore identificato.

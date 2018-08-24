@@ -3,11 +3,12 @@
 ' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 22/08/2018
+' Data ultima modifica: 24/08/2018
 ' Descrizione:          Anagrafica Prenotazioni Camere.
 ' Note:
 '
 ' Elenco Attivita:
+'
 '
 ' ******************************************************************
 #End Region
@@ -1944,10 +1945,10 @@ Public Class frmPrenCamera
    Const TAB_PREN_ADDEBITI As String = "PrenCamereAddebiti"
    Const TAB_PREN_STORICO As String = "StoricoPresenzeCamere"
    Const TAB_STAGIONI As String = "Stagioni"
-   Const TAB_SCHEDINE_PS As String = "SchedinePS"
    Const TAB_GRUPPI As String = "GruppiOspiti"
    Const TAB_AGENZIE As String = "Agenzie"
    Const TAB_CANALI_PROV As String = "CanaliVendita"
+   Public Const TAB_SCHEDINE_PS As String = "SchedinePS"
 
    Const BASSA_STAGIONE As String = "BASSA"
    Const MEDIA_STAGIONE As String = "MEDIA"
@@ -1984,7 +1985,7 @@ Public Class frmPrenCamera
    Dim numRecord As Integer
    Dim sql As String
 
-   Private Function SalvaDati() As Boolean
+   Public Function SalvaDati() As Boolean
 
       ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
       AggiornaTabella(cmbPagamento, TAB_PAGAMENTO)
@@ -2127,7 +2128,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   Private Function SalvaOccupantiSchedina(ByVal id As String) As Boolean
+   Public Function SalvaOccupantiSchedina(ByVal id As String) As Boolean
       ' Salva i dati per il Tavolo selezionato.
       Try
          With IPrenOccupanti
@@ -2147,7 +2148,7 @@ Public Class frmPrenCamera
                .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
                .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
 
-               .InserisciDati(TAB_SCHeDINE_OCCUPANTI)
+               .InserisciDati(TAB_SCHEDINE_OCCUPANTI)
             Next
          End With
 
@@ -2298,8 +2299,7 @@ Public Class frmPrenCamera
       End Try
    End Sub
 
-   Private Function SalvaSchedinaPS(ByVal id As String) As Boolean
-      Dim CSchedina As New SchedinaPS
+   Public Function SalvaSchedinaPS(ByVal id As String) As Boolean
       Dim CClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
 
       ' Legge i dati del cliente.
@@ -2308,7 +2308,6 @@ Public Class frmPrenCamera
       Try
          With CSchedina
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Numero = g_frmMain.LeggiNumeroSchedinaConfig(TAB_SCHEDINE_PS)
             .IdCliente = CClienti.Codice
             .TipologiaCliente = cmbTipologia.Text
             .Cognome = CClienti.Cognome
@@ -2330,19 +2329,44 @@ Public Class frmPrenCamera
             .DataPartenza = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
             .Permanenza = txtNumeroNotti.Text
             .NumCamera = cmbNumeroCamera.Text
-            .IdPren = id
             .NumPren = txtNumero.Text
-            .Stato = "Inserita"
-            .DataStampa = String.Empty
 
-            ' Inserisce i dati nel database.
+            If id = String.Empty Then
+               ' Nuova prenotazione.
+               .Numero = g_frmMain.LeggiNumeroSchedinaConfig(TAB_SCHEDINE_PS)
+               .IdPren = LeggiUltimoRecord(NOME_TABELLA)
+               .Stato = "Inserita"
+               .DataStampa = String.Empty
+            Else
+
+               .IdPren = id
+
+               If IsNothing(CSchedina.Numero) = False And CSchedina.Numero <> "0" Then
+                  .Numero = CSchedina.Numero
+               Else
+                  .Numero = g_frmMain.LeggiNumeroSchedinaConfig(TAB_SCHEDINE_PS)
+               End If
+
+               If IsNothing(CSchedina.Stato) = False Then
+                  .Stato = CSchedina.Stato
+               Else
+                  .Stato = "Inserita"
+               End If
+
+               If IsNothing(CSchedina.DataStampa) = False Then
+                  .DataStampa = CSchedina.DataStampa
+               Else
+                  .DataStampa = String.Empty
+               End If
+            End If
+
+            ' Inserisce i dati nel database con Stato e DataStampa.
             If .InserisciDati(TAB_SCHEDINE_PS) = True Then
                ' Salva il Numero del prossimo documento da stampare.
                g_frmMain.SalvaNumeroSchedinaConfig(TAB_SCHEDINE_PS, Convert.ToInt32(.Numero))
 
                Return True
             End If
-
          End With
 
       Catch ex As Exception
@@ -2857,6 +2881,12 @@ Public Class frmPrenCamera
 
                   ' Salva i dati per la schedina PS.
                   If ckbSchedina.Checked = True Then
+
+                     ' Se la prenotazione è già esistente legge i dati Stato e DataStampa per salvarli.
+                     If Me.Tag <> String.Empty Then
+                        CSchedina.LeggiDati(TAB_SCHEDINE_PS, Convert.ToInt32(Me.Tag))
+                     End If
+
                      ' Elimina tutte le schedine della prenotazione.
                      EliminaScedinePS(Me.Tag)
 
@@ -3016,6 +3046,7 @@ Public Class frmPrenCamera
 
             ' Genera il numero progressivo.
             txtNumero.Text = LeggiUltimoRecord(NOME_TABELLA, "Numero") + 1
+
             ' Data prenotazione - Oggi.
             dtpData.Value = Today
 

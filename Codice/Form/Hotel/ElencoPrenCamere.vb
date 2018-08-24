@@ -9,6 +9,8 @@
 ' Note:
 
 ' Elenco Attivita:
+'
+' DA_FARE_A: Sviluppare comando Genera Schedina.
 
 ' ******************************************************************
 
@@ -54,6 +56,7 @@ Public Class ElencoPrenCamere
    Public Const COLONNA_NOTE As Short = 27
 
    Const STATO_PREN_ANNULLATA As String = "Annullata"
+   Const STATO_SCHEDINA_INSERITA As String = "Inserita"
 
    Const TESTO_FILTRO_PERIODO As String = "Dal... Al..."
 
@@ -935,6 +938,9 @@ Public Class ElencoPrenCamere
             ' Attiva/disattiva il pulsante annulla.
             AttivaDisattivaAnnullaPren()
 
+            ' Attiva/disattiva il pulsante Genera Schedina PS..
+            AttivaDisattivaSchedinaPS()
+
             ' DA_FARE_A: Modificare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
@@ -1024,6 +1030,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1062,6 +1071,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1099,6 +1111,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1132,6 +1147,9 @@ Public Class ElencoPrenCamere
 
             ' Attiva/disattiva il pulsante annulla.
             AttivaDisattivaAnnullaPren()
+
+            ' Attiva/disattiva il pulsante Genera Schedina PS..
+            AttivaDisattivaSchedinaPS()
 
             ' Se nella tabella non ci sono record disattiva i pulsanti.
             ConvalidaDati()
@@ -1172,6 +1190,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1205,6 +1226,9 @@ Public Class ElencoPrenCamere
 
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
+
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1240,6 +1264,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -1273,6 +1300,9 @@ Public Class ElencoPrenCamere
 
          ' Attiva/disattiva il pulsante annulla.
          AttivaDisattivaAnnullaPren()
+
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1381,6 +1411,28 @@ Public Class ElencoPrenCamere
          g_frmPrenCamera = New frmPrenCamera(nomeFrm)
          g_frmPrenCamera.Tag = val
          g_frmPrenCamera.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AttivaDisattivaSchedinaPS()
+      Try
+         ' Attiva/disattiva il pulsante per generare la Scedina PS.
+         If numRecord <> 0 Then
+
+            Dim statoSchedina As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_SCHEDINA)
+
+            If statoSchedina.ToUpper = STATO_SCHEDINA_INSERITA.ToUpper Then
+               g_frmMain.eui_Strumenti_Documenti_Schedina.Enabled = False
+            Else
+               g_frmMain.eui_Strumenti_Documenti_Schedina.Enabled = True
+            End If
+
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1819,6 +1871,9 @@ Public Class ElencoPrenCamere
          ' Attiva/disattiva il pulsante Annulla.
          AttivaDisattivaAnnullaPren()
 
+         ' Attiva/disattiva il pulsante Genera Schedina PS..
+         AttivaDisattivaSchedinaPS()
+
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
@@ -2078,6 +2133,9 @@ Public Class ElencoPrenCamere
          If g_frmMain.eui_Strumenti_Modifica.Enabled = True Then
             ' Attiva/disattiva il pulsante per annullare un documento.
             AttivaDisattivaAnnullaPren()
+
+            ' Attiva/disattiva il pulsante Genera Schedina PS..
+            AttivaDisattivaSchedinaPS()
          End If
 
          ' Aggiorna il titolo della finestra.
@@ -2106,6 +2164,9 @@ Public Class ElencoPrenCamere
 
       ' Attiva/disattiva il pulsante per annullare la prenotazione.
       AttivaDisattivaAnnullaPren()
+
+      ' Attiva/disattiva il pulsante Genera Schedina PS..
+      AttivaDisattivaSchedinaPS()
    End Sub
 
    ' DA_FARE_A: Modificare!

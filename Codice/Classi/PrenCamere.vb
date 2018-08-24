@@ -1,3 +1,17 @@
+#Region " DATI FILE.VB "
+' ****************************************************************************************
+' Nome Classe:          PrenCamere
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/08/2016
+' Data ultima modifica: 24/08/2018
+' Descrizione:          Classe per la gestione dei dati della Tabella PrenCamere.
+' Note:
+'
+' Elenco Attivita:
+'
+' *****************************************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class PrenCamere

@@ -8,7 +8,9 @@
 ' Descrizione:          Planning prenotazioni Camere.
 ' Note:
 
-' Elenco Attivita: Sviluppare comando Genera Schedina.
+' Elenco Attivita: 
+'
+' DA_FARE_A: Sviluppare comando Genera Schedina.
 
 ' ******************************************************************
 
@@ -1268,7 +1270,6 @@ Public Class PlanningCamere
 
       End Try
    End Sub
-
 
    Private Sub AttivaComandoRibbonNuova()
       Try
