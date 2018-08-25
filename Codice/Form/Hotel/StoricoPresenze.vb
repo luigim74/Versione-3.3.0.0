@@ -1,8 +1,16 @@
-﻿' Nome form:            StoricoPresenze.
+﻿#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome form:            StoricoPresenze
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       24/06/2018
-' Data ultima modifica: 07/07/2018
+' Data ultima modifica: 25/08/2018
 ' Descrizione:          Visualizza l'elenco storico delle presenze delle camere divise per mese, con grafico.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
 
 Imports Elegant.Ui
 

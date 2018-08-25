@@ -7,9 +7,9 @@
 ' Data ultima modifica: 22/08/2018
 ' Descrizione:          Modulo per le dichiarazioni delle variabili e costanto globali.
 ' Note:
-
+'
 ' Elenco Attivita:
-
+'
 ' ******************************************************************
 
 #End Region
@@ -90,6 +90,14 @@ Module Dichiarazioni
 
    ' Utilizzato per le valute.
    Public Const VALORE_ZERO As String = "0,00"
+
+   ' Di utilizzo generale.
+   Public Const VAL_NESSUNO As String = "Nessuno"
+   Public Const VALORE_NESSUNA As String = "Nessuna"
+   Public Const VALORE_INSERITA As String = "Inserita"
+   Public Const VALORE_STAMPATA As String = "Stampata"
+   Public Const VALORE_INVIATA As String = "Inviata"
+   Public Const VALORE_ANNULLATA As String = "Annullata"
 
    ' Utilizzato per i permessi degli operatori.
    Public Const VALORE_NESSUNO As String = "NESSUNO"

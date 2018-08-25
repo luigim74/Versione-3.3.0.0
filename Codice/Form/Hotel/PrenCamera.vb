@@ -3,12 +3,11 @@
 ' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 24/08/2018
+' Data ultima modifica: 25/08/2018
 ' Descrizione:          Anagrafica Prenotazioni Camere.
 ' Note:
 '
 ' Elenco Attivita:
-'
 '
 ' ******************************************************************
 #End Region
@@ -2058,9 +2057,9 @@ Public Class frmPrenCamera
             .ApplicaSconto = txtTotaleImporto.Text
 
             If ckbSchedina.Checked = True Then
-               .Schedina = "Inserita"
+               .Schedina = VALORE_INSERITA
             Else
-               .Schedina = String.Empty
+               .Schedina = VALORE_NESSUNA
             End If
 
             .Note = FormattaApici(txtNote.Text)
@@ -2249,7 +2248,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   Private Sub SalvaStoricoPresenzeMeseAnno()
+   Private Sub SalvaStoricoPresenzeMeseAnno(ByVal id As String)
       Try
          Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
          Dim valDataArrivo As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
@@ -2259,21 +2258,21 @@ Public Class frmPrenCamera
          Dim salvato As Boolean
 
          ' In caso di nuova prenotazione dove l'Id non Ë ancora disponibile.
-         Dim idPren As Integer
-         If Me.Tag <> String.Empty Then
-            idPren = Me.Tag
+         Dim idSchedina As Integer
+         If id <> String.Empty Then
+            idSchedina = id
          Else
-            idPren = LeggiUltimoRecord(NOME_TABELLA)
+            idSchedina = LeggiUltimoRecord(NOME_TABELLA)
          End If
 
          ' Elimina eventuali dati esistenti.
-         IPrenStorico.EliminaDati(TAB_PREN_STORICO, idPren)
+         IPrenStorico.EliminaDati(TAB_PREN_STORICO, idSchedina)
 
          Dim i As Integer
          For i = 1 To valNumNotti
             If valDataArrivo.Month <> valMese Then
                ' Salva lo storico delle presenze.
-               SalvaStoricoPresenze(idPren, valMese, valAnno, NumNottiTemp)
+               SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
 
                ' Salvo in nuovo mese e l'eventuale nuovo anno.
                valMese = valDataArrivo.Month
@@ -2290,7 +2289,7 @@ Public Class frmPrenCamera
          Next
 
          ' Salva lo storico delle presenze.
-         SalvaStoricoPresenze(idPren, valMese, valAnno, NumNottiTemp)
+         SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2335,7 +2334,7 @@ Public Class frmPrenCamera
                ' Nuova prenotazione.
                .Numero = g_frmMain.LeggiNumeroSchedinaConfig(TAB_SCHEDINE_PS)
                .IdPren = LeggiUltimoRecord(NOME_TABELLA)
-               .Stato = "Inserita"
+               .Stato = VALORE_INSERITA
                .DataStampa = String.Empty
             Else
 
@@ -2350,7 +2349,7 @@ Public Class frmPrenCamera
                If IsNothing(CSchedina.Stato) = False Then
                   .Stato = CSchedina.Stato
                Else
-                  .Stato = "Inserita"
+                  .Stato = VALORE_INSERITA
                End If
 
                If IsNothing(CSchedina.DataStampa) = False Then
@@ -2634,7 +2633,7 @@ Public Class frmPrenCamera
    Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
       Try
          ' Se il numero della camera non Ë stato assegnato non verifica la disponibilit‡. 
-         If numeroCamera = "Nessuna" Then
+         If numeroCamera = VALORE_NESSUNA Then
             Return False
          End If
 
@@ -2861,6 +2860,15 @@ Public Class frmPrenCamera
                Exit Sub
             End If
 
+            ' Verifica se il numero totale di persone Ë coerente con il numero degli occupanti inseriti.
+            Dim totPersone As Integer = nudAdulti.Value + nudNeonati.Value + nudBambini.Value + nudRagazzi.Value
+
+            If totPersone <> (lvwOccupanti.Items.Count + 1) Then
+               MessageBox.Show("Il numero di persone specificato non corrisponde con il numero di componenti inseriti.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Error)
+               nudAdulti.Focus()
+               Exit Sub
+            End If
+
             If VerificaDisponibilit‡Camera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) = True Then
                MessageBox.Show("La camera che si vuole prenotare non Ë disponibile per il periodo selezionato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
@@ -2875,9 +2883,6 @@ Public Class frmPrenCamera
 
                   ' Salva eventuali addebiti extra.
                   SalvaAddebitiExtra(Me.Tag)
-
-                  ' Salva lo storico delle presenze.
-                  SalvaStoricoPresenzeMeseAnno()
 
                   ' Salva i dati per la schedina PS.
                   If ckbSchedina.Checked = True Then
@@ -2894,8 +2899,13 @@ Public Class frmPrenCamera
                      EliminaOccupantiSchedina(Me.Tag)
 
                      If SalvaSchedinaPS(Me.Tag) = True Then
+                        Dim idSchedina As Integer = LeggiUltimoRecord(TAB_SCHEDINE_PS)
+
                         ' Salva anche tutti i componenti associati.
-                        SalvaOccupantiSchedina(LeggiUltimoRecord(TAB_SCHEDINE_PS))
+                        SalvaOccupantiSchedina(idSchedina)
+
+                        ' Salva lo storico delle presenze.
+                        SalvaStoricoPresenzeMeseAnno(idSchedina)
 
                         If IsNothing(g_frmSchedinePS) = False Then
                            ' Aggiorna la griglia dati.
@@ -3008,7 +3018,7 @@ Public Class frmPrenCamera
                   txtServizio.Text = VALORE_ZERO
                End If
 
-               If .Schedina <> String.Empty Then
+               If .Schedina <> VALORE_NESSUNA Then
                   ckbSchedina.Checked = True
                Else
                   ckbSchedina.Checked = False

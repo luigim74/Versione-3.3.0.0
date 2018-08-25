@@ -319,7 +319,7 @@ Public Class ElencoListiniCamere
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_B: Da sviluppare!
    Public Function ImpostaFunzioniOperatore(ByVal wnd As String) As Boolean
       'Try
       '   Select Case wnd
@@ -491,7 +491,6 @@ Public Class ElencoListiniCamere
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Public Sub AggiornaDati()
       Try
          If TestoRicerca.Text <> "" Then
@@ -511,6 +510,7 @@ Public Class ElencoListiniCamere
 
          End If
 
+         ' DA_FARE_B: Da sviluppare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1009,7 +1009,6 @@ Public Class ElencoListiniCamere
       End Try
    End Function
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
 
@@ -1108,7 +1107,6 @@ Public Class ElencoListiniCamere
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub ElencoListiniCamere_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       Try
          SalvaDatiConfig()
@@ -1123,6 +1121,7 @@ Public Class ElencoListiniCamere
          g_frmListiniCamere.Dispose()
          g_frmListiniCamere = Nothing
 
+         ' DA_FARE_B: Da sviluppare!
          ' Registra loperazione effettuata dall'operatore identificato.
          ' g_frmMain.RegistraOperazione(TipoOperazione.Chiudi, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1132,7 +1131,6 @@ Public Class ElencoListiniCamere
       End Try
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub ListiniCamere_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
@@ -1164,6 +1162,7 @@ Public Class ElencoListiniCamere
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE)
 
+         ' DA_FARE_B: Da sviluppare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1180,20 +1179,22 @@ Public Class ElencoListiniCamere
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
+   ' DA_FARE_A: Da sviluppare!
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
       Select Case e.Button.Tag
          Case "Stampa"
+            ' DA_FARE_B: Da sviluppare!
             ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            'g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            StampaDocumento(PERCORSO_REP_DOC, TAB_LISTINI, repSql)
+            'StampaDocumento(PERCORSO_REP_DOC, TAB_LISTINI, repSql)
 
          Case "Anteprima"
+            ' DA_FARE_B: Da sviluppare!
             ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            'g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            g_frmMain.ApriReports(repSql, TAB_LISTINI, PERCORSO_REP_DOC)
+            'g_frmMain.ApriReports(repSql, TAB_LISTINI, PERCORSO_REP_DOC)
 
       End Select
    End Sub
@@ -1208,10 +1209,10 @@ Public Class ElencoListiniCamere
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
       Modifica()
 
+      ' DA_FARE_B: Da sviluppare!
       'If Modifica.Enabled = True Then
       '   ' Registra loperazione efettuata dall'operatore identificato.
       '   registraModifica()
@@ -1221,7 +1222,6 @@ Public Class ElencoListiniCamere
       'End If
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Public Sub Nuovo()
       ' Apre la finestra per l'inserimento di nuovi dati.
       ApriDati(Me.Name, "")
@@ -1229,22 +1229,22 @@ Public Class ElencoListiniCamere
       '' Se nella tabella non ci sono record disattiva i pulsanti.
       ConvalidaDati()
 
+      ' DA_FARE_B: Da sviluppare!
       ' Registra loperazione effettuata dall'operatore identificato.
       'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Public Sub Modifica()
       ' Apre la finestra Cliente per la modifica dei dati.
       ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
 
+      ' DA_FARE_B: Da sviluppare!
       ' Registra loperazione effettuata dall'operatore identificato.
       'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
    End Sub
 
-   ' A_TODO: HOTEL - da modificare!
    Public Sub DuplicaDati()
       Try
          Dim Risposta As Short
@@ -1272,6 +1272,9 @@ Public Class ElencoListiniCamere
             ' Aggiorna l'elenco dati con il record nuovo.
             AggiornaDati()
 
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' DA_FARE_B: Da sviluppare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
          End If

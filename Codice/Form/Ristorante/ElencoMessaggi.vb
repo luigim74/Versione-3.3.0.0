@@ -781,7 +781,7 @@ Public Class ElencoMessaggi
    Private Function LeggiPercorsiDoc(ByVal indice As Integer, ByVal valPos As Short) As String
       Dim val() As String = PercorsiStampantiDocumenti(indice).Split(";")
 
-      If val(valPos) <> "Nessuna" Then
+      If val(valPos) <> VALORE_NESSUNA Then
          Return val(valPos)
       Else
          Return String.Empty
@@ -823,7 +823,7 @@ Public Class ElencoMessaggi
 
          rep.SetDataSource(ds)
 
-         If nomeStampante <> String.Empty And nomeStampante <> "Nessuna" Then
+         If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
             rep.PrintOptions.PrinterName = nomeStampante
          End If
 
@@ -941,8 +941,8 @@ Public Class ElencoMessaggi
                   End If
                Next
 
-               If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And _
-                  LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> "Nessuna" Then
+               If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And
+                  LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> VALORE_NESSUNA Then
                   ' Esegue la stampa.
                   StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
                End If

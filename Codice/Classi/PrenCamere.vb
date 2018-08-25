@@ -239,7 +239,7 @@ Public Class PrenCamere
          If IsDBNull(ds.Tables(tabella).Rows(0)("Schedina")) = False Then
             Me.Schedina = ds.Tables(tabella).Rows(0)("Schedina").ToString
          Else
-            Me.Schedina = String.Empty
+            Me.Schedina = VALORE_NESSUNA
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
             Me.Colore = ds.Tables(tabella).Rows(0)("Colore")

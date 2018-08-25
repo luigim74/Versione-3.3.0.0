@@ -697,7 +697,7 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         cmb.Items.Add("Nessuno")
+         cmb.Items.Add(VAL_NESSUNO)
 
          Do While dr.Read
             cmb.Items.Add(dr.Item("Descrizione"))
@@ -723,7 +723,7 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Disponibile = 'Sì' ORDER BY Numero ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         cmb.Items.Add("Nessuna")
+         cmb.Items.Add(VALORE_NESSUNA)
 
          Do While dr.Read
             cmb.Items.Add(dr.Item("Numero"))
@@ -1245,8 +1245,8 @@ Module Procedure
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
-         cmdUpdate.Parameters.AddWithValue("@StatoDoc", "Annullata")
-         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", "Nessuna")
+         cmdUpdate.Parameters.AddWithValue("@StatoDoc", VALORE_ANNULLATA)
+         cmdUpdate.Parameters.AddWithValue("@NumeroCamera", VALORE_NESSUNA)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

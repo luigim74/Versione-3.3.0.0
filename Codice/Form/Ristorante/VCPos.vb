@@ -3474,7 +3474,7 @@ Public Class frmPos
 
                ' Se non esiste un valore per il campo Descrizione Categoria.
                If lstvDettagli.Items(i).SubItems(6).Text = String.Empty Then
-                  .DesCategoria = "Nessuna"
+                  .DesCategoria = VALORE_NESSUNA
                Else
                   .DesCategoria = FormattaApici(lstvDettagli.Items(i).SubItems(6).Text)
                End If

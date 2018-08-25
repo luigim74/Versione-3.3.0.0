@@ -1,3 +1,17 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome Classe:          StoricoPresenzeCamere
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       24/06/2018
+' Data ultima modifica: 25/08/2018
+' Descrizione:          Classe Storico delle presenze per le camere Hotel.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class StoricoPresenzeCamere

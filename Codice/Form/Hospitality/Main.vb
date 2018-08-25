@@ -3,9 +3,12 @@
 ' Nome form:            frmMain
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 03/08/2018
+' Data ultima modifica: 25/08/2018
 ' Descrizione:          Form MDI principale.
-
+' Note:
+'
+' Elenco Attivita:
+'
 ' ******************************************************************
 #End Region
 
@@ -6447,11 +6450,11 @@ Friend Class frmMain
          ' Comanda - Percorso 1.
          reparto = DatiConfig.GetValue("Reparto1")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda1")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda1")
          If report.Length = 0 Then
@@ -6462,11 +6465,11 @@ Friend Class frmMain
          ' Comanda - Percorso 2.
          reparto = DatiConfig.GetValue("Reparto2")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda2")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda2")
          If report.Length = 0 Then
@@ -6477,11 +6480,11 @@ Friend Class frmMain
          ' Comanda - Percorso 3.
          reparto = DatiConfig.GetValue("Reparto3")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda3")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda3")
          If report.Length = 0 Then
@@ -6492,11 +6495,11 @@ Friend Class frmMain
          ' Comanda - Percorso 4.
          reparto = DatiConfig.GetValue("Reparto4")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda4")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda4")
          If report.Length = 0 Then
@@ -6507,11 +6510,11 @@ Friend Class frmMain
          ' Comanda - Percorso 5.
          reparto = DatiConfig.GetValue("Reparto5")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda5")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda5")
          If report.Length = 0 Then
@@ -6522,11 +6525,11 @@ Friend Class frmMain
          ' Comanda - Percorso 6.
          reparto = DatiConfig.GetValue("Reparto6")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda6")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda6")
          If report.Length = 0 Then
@@ -6537,11 +6540,11 @@ Friend Class frmMain
          ' Comanda - Percorso 7.
          reparto = DatiConfig.GetValue("Reparto7")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda7")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda7")
          If report.Length = 0 Then
@@ -6552,11 +6555,11 @@ Friend Class frmMain
          ' Comanda - Percorso 8.
          reparto = DatiConfig.GetValue("Reparto8")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda8")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda8")
          If report.Length = 0 Then
@@ -6567,11 +6570,11 @@ Friend Class frmMain
          ' Comanda - Percorso 9.
          reparto = DatiConfig.GetValue("Reparto9")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda9")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda9")
          If report.Length = 0 Then
@@ -6582,11 +6585,11 @@ Friend Class frmMain
          ' Comanda - Percorso 10.
          reparto = DatiConfig.GetValue("Reparto10")
          If reparto.Length = 0 Then
-            reparto = "Nessuno"
+            reparto = VAL_NESSUNO
          End If
          stampante = DatiConfig.GetValue("PercorsoStampaComanda10")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComanda10")
          If report.Length = 0 Then
@@ -6597,7 +6600,7 @@ Friend Class frmMain
          ' Comanda aggiuntiva.
          stampante = DatiConfig.GetValue("PercorsoStampaComandaAgg")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportComandaAgg")
          If report.Length = 0 Then
@@ -6608,7 +6611,7 @@ Friend Class frmMain
          ' Ricevuta.
          stampante = DatiConfig.GetValue("PercorsoStampaRicevute")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportRicevute")
          If report.Length = 0 Then
@@ -6619,7 +6622,7 @@ Friend Class frmMain
          ' Fattura.
          stampante = DatiConfig.GetValue("PercorsoStampaFatture")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportFatture")
          If report.Length = 0 Then
@@ -6630,7 +6633,7 @@ Friend Class frmMain
          ' Proforma.
          stampante = DatiConfig.GetValue("PercorsoStampaProforma")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportProforma")
          If report.Length = 0 Then
@@ -6641,7 +6644,7 @@ Friend Class frmMain
          ' Scontrino.
          stampante = DatiConfig.GetValue("PercorsoStampaScontrini")
          If stampante.Length = 0 Then
-            stampante = "Nessuna"
+            stampante = VALORE_NESSUNA
          End If
          report = DatiConfig.GetValue("ReportScontrini")
          If report.Length = 0 Then
@@ -10479,7 +10482,7 @@ Friend Class frmMain
 
       ' Se viene premuto il tasto Annulla prima di effettuare il Login - Operatore non identificato.
       If operatore.Nome = String.Empty Then
-         operatore.Nome = "Nessuno"
+         operatore.Nome = VAL_NESSUNO
       End If
 
       ' Registra loperazione effettuata dall'operatore identificato.
@@ -11656,7 +11659,6 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Sviluppare!
    Private Sub eui_PCamere_PrenSchedina_Click(sender As Object, e As EventArgs) Handles eui_PCamere_PrenSchedina.Click
       Try
          ' Apre la scheda prenotazioni Camere.
@@ -11956,6 +11958,9 @@ Friend Class frmMain
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.DuplicaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
+               g_frmPrenCamere.DuplicaDati()
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.DuplicaDocumento()

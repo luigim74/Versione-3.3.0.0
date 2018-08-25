@@ -1334,7 +1334,7 @@ Public Class frmPlanningP
          Prenotazione(NumPren).Tag = componenti
 
          ' A_TODO: MODIFICHE ASD AGON
-         If tipologiaUtilizzo <> "Nessuna" And tipologiaUtilizzo <> String.Empty Then
+         If tipologiaUtilizzo <> VALORE_NESSUNA And tipologiaUtilizzo <> String.Empty Then
             Prenotazione(NumPren).Text = numero & vbNewLine & cliente & vbNewLine & vbNewLine & tipologiaUtilizzo
          Else
             Prenotazione(NumPren).Text = numero & vbNewLine & cliente
@@ -1498,7 +1498,7 @@ Public Class frmPlanningP
             If IsDBNull(dr.Item("CaratteristicaRisorsa")) = False Then
                tipologiaUtilizzo = dr.Item("CaratteristicaRisorsa")
             Else
-               tipologiaUtilizzo = "Nessuna"
+               tipologiaUtilizzo = VALORE_NESSUNA
             End If
             If IsDBNull(dr.Item("pagato")) = False Then
                pagato = dr.Item("pagato")
@@ -1987,7 +1987,7 @@ Public Class frmPlanningP
          ' Prenotazione.
          If val = "" Then
             lblDettagliPren.Text = "[Nessuna prenotazione]"
-         ElseIf val = "Nessuna" Then
+         ElseIf val = VALORE_NESSUNA Then
             lblDettagliPren.Text = "[Nessuna selezione]"
          Else
             lblDettagliPren.Text = val
@@ -2465,7 +2465,7 @@ Public Class frmPlanningP
          AggTitoloFinestra(TitoloFinestra)
 
          ' Visualizza dati informativi.
-         VisualizzaIntestazione("Nessuna")
+         VisualizzaIntestazione(VALORE_NESSUNA)
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_GESTIONE_PLANNING_RISORSE, MODULO_GESTIONE_PLANNING_RISORSE)

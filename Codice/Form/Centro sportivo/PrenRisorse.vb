@@ -3357,7 +3357,7 @@ Public Class frmPrenRisorse
                End If
 
                cmbCliente.Text = ""
-               cmbCaratteristiche.SelectedItem = "Nessuna"
+               cmbCaratteristiche.SelectedItem = VALORE_NESSUNA
 
                If Risorsa = "" Then
                   cmbRisorsa.SelectedIndex = 0
@@ -4393,7 +4393,7 @@ Public Class frmPrenRisorse
 
          'rep.SetDataSource(ds)
 
-         'If nomeStampante <> String.Empty And nomeStampante <> "Nessuna" Then
+         'If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
          '   rep.PrintOptions.PrinterName = nomeStampante
          'End If
 
@@ -4489,7 +4489,7 @@ Public Class frmPrenRisorse
    Private Function ImpostaNomeStampante(ByVal indice As Integer) As String
       Dim val() As String = PercorsiStampantiDocumenti(indice).Split(";")
 
-      If val(1) <> "Nessuna" Then
+      If val(1) <> VALORE_NESSUNA Then
          Return val(1)
       Else
          Return String.Empty

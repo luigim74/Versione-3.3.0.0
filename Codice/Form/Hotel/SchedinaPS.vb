@@ -3,14 +3,12 @@
 ' Nome form:            frmSchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/08/2018
-' Data ultima modifica: 24/08/2018
+' Data ultima modifica: 25/08/2018
 ' Descrizione:          Anagrafica Schedine pubblica sicurezza.
 ' Note:
 
 ' Elenco Attivita:
-
-' DA_FARE: Modificare lo Storico presenze prelevando i dati dalle schedine e non dalle prenotazioni.
-
+'
 ' ******************************************************************
 #End Region
 
@@ -1179,14 +1177,15 @@ Public Class frmSchedinaPS
 
    Public CSchedina As New SchedinaPS
    Public CSchedinaComponenti As New PrenCamereOccupanti
+   Public CPrenStorico As New StoricoPresenzeCamere
 
    Const NOME_TABELLA As String = "SchedinePS"
    Const TAB_CLIENTI As String = "Clienti"
    Const TAB_CAMERE As String = "Camere"
    Const TAB_NAZIONI As String = "Nazioni"
    Const TAB_DOC_IDENTITA As String = "DocIdentità"
-
    Const TAB_COMPONENTI As String = "ComponentiSchedinePS"
+   Const TAB_PREN_STORICO As String = "StoricoPresenzeCamere"
 
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
@@ -1219,6 +1218,7 @@ Public Class frmSchedinaPS
             Else
                .Numero = txtNumero.Text
             End If
+
             .IdCliente = cmbIdCliente.Text
             .TipologiaCliente = cmbTipoAlloggiato.Text
             .Cognome = cmbCognome.Text
@@ -1321,80 +1321,78 @@ Public Class frmSchedinaPS
       End Try
    End Function
 
-   ' DA_FARE: Verificare!
    Private Function SalvaStoricoPresenze(ByVal id As String, ByVal valMese As Integer, ByVal valAnno As Integer, ByVal valNumNotti As Integer) As Boolean
-      'Try
-      '   With IPrenStorico
-      '      ' Assegna i dati dei campi della classe alle caselle di testo.
-      '      .RifPren = id
-      '      .Numero = Convert.ToInt32(txtNumero.Text)
-      '      .Mese = valMese
-      '      .Anno = valAnno
-      '      .Adulti = nudAdulti.Value
-      '      .Neonati = nudNeonati.Value
-      '      .Bambini = nudBambini.Value
-      '      .Ragazzi = nudRagazzi.Value
-      '      .NumeroNotti = valNumNotti
+      Try
+         With CPrenStorico
+            ' Assegna i dati dei campi della classe alle caselle di testo.
+            .RifPren = id
+            .Numero = Convert.ToInt32(txtNumero.Text)
+            .Mese = valMese
+            .Anno = valAnno
+            .Adulti = lvwOccupanti.Items.Count + 1
+            .Neonati = 0
+            .Bambini = 0
+            .Ragazzi = 0
+            .NumeroNotti = valNumNotti
 
-      '      .InserisciDati(TAB_PREN_STORICO)
-      '   End With
+            .InserisciDati(TAB_PREN_STORICO)
+         End With
 
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      'End Try
+      End Try
    End Function
 
-   ' DA_FARE: Verificare!
    Private Sub SalvaStoricoPresenzeMeseAnno()
-      'Try
-      '   Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
-      '   Dim valDataArrivo As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
-      '   Dim valMese As Integer = valDataArrivo.Month
-      '   Dim valAnno As Integer = valDataArrivo.Year
-      '   Dim NumNottiTemp As Integer
-      '   Dim salvato As Boolean
+      Try
+         Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
+         Dim valDataArrivo As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
+         Dim valMese As Integer = valDataArrivo.Month
+         Dim valAnno As Integer = valDataArrivo.Year
+         Dim NumNottiTemp As Integer
+         Dim salvato As Boolean
 
-      '   ' In caso di nuova prenotazione dove l'Id non è ancora disponibile.
-      '   Dim idPren As Integer
-      '   If Me.Tag <> String.Empty Then
-      '      idPren = Me.Tag
-      '   Else
-      '      idPren = LeggiUltimaPren(NOME_TABELLA)
-      '   End If
+         ' In caso di nuova schedina dove l'Id non è ancora disponibile.
+         Dim idSchedina As Integer
+         If Me.Tag <> String.Empty Then
+            idSchedina = Me.Tag
+         Else
+            idSchedina = LeggiUltimoRecord(NOME_TABELLA)
+         End If
 
-      '   ' Elimina eventuali dati esistenti.
-      '   IPrenStorico.EliminaDati(TAB_PREN_STORICO, idPren)
+         ' Elimina eventuali dati esistenti.
+         CPrenStorico.EliminaDati(TAB_PREN_STORICO, idSchedina)
 
-      '   Dim i As Integer
-      '   For i = 1 To valNumNotti
-      '      If valDataArrivo.Month <> valMese Then
-      '         ' Salva lo storico delle presenze.
-      '         SalvaStoricoPresenze(idPren, valMese, valAnno, NumNottiTemp)
+         Dim i As Integer
+         For i = 1 To valNumNotti
+            If valDataArrivo.Month <> valMese Then
+               ' Salva lo storico delle presenze.
+               SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
 
-      '         ' Salvo in nuovo mese e l'eventuale nuovo anno.
-      '         valMese = valDataArrivo.Month
-      '         valAnno = valDataArrivo.Year
+               ' Salvo in nuovo mese e l'eventuale nuovo anno.
+               valMese = valDataArrivo.Month
+               valAnno = valDataArrivo.Year
 
-      '         NumNottiTemp = 0
-      '      End If
+               NumNottiTemp = 0
+            End If
 
-      '      ' Incrementa di un giorno.
-      '      valDataArrivo = valDataArrivo.AddDays(1)
+            ' Incrementa di un giorno.
+            valDataArrivo = valDataArrivo.AddDays(1)
 
-      '      ' Conta le notti.
-      '      NumNottiTemp += 1
-      '   Next
+            ' Conta le notti.
+            NumNottiTemp += 1
+         Next
 
-      '   ' Salva lo storico delle presenze.
-      '   SalvaStoricoPresenze(idPren, valMese, valAnno, NumNottiTemp)
+         ' Salva lo storico delle presenze.
+         SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
 
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      'End Try
+      End Try
    End Sub
 
    Private Sub LeggiComponenti()
@@ -1509,8 +1507,10 @@ Public Class frmSchedinaPS
                ' Salva eventuali clienti occupanti.
                SalvaOccupanti(Me.Tag)
 
-               ' Salva lo storico delle presenze.
-               SalvaStoricoPresenzeMeseAnno()
+               If txtNumero.Text <> "0" Then
+                  ' Salva lo storico delle presenze.
+                  SalvaStoricoPresenzeMeseAnno()
+               End If
 
                ' Aggiorna la griglia dati.
                g_frmSchedinePS.AggiornaDati()
@@ -1654,9 +1654,9 @@ Public Class frmSchedinaPS
       End Try
    End Sub
 
-   ' DA_FARE_B: HOTEL - da modificare!
    Private Sub frmSchedinaPS_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       If Me.Tag <> "0" Then
+         ' DA_FARE_B: HOTEL - da modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_GESTIONE_PREN_RISORSE)
       End If
@@ -1879,7 +1879,7 @@ Public Class frmSchedinaPS
 
    Private Sub cmbStato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStato.SelectedIndexChanged
       Try
-         If cmbStato.Text = "Stampata" Then
+         If cmbStato.Text = VALORE_STAMPATA Then
             dtpDataStampa.Checked = True
          Else
             dtpDataStampa.Checked = False

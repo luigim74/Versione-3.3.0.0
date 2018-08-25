@@ -407,7 +407,7 @@ Public Class frmDocumento
                   If IsNothing(dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString) = False And dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString <> String.Empty Then
                      .DesCategoria = dgvDettagli.Rows(i).Cells(clnCategoria.Name).Value.ToString
                   Else
-                     .DesCategoria = "Nessuna"
+                     .DesCategoria = VALORE_NESSUNA
                   End If
 
                   .IdPiatto = dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString
@@ -1441,7 +1441,7 @@ Public Class frmDocumento
                      If IsNothing(dgvDettagli.Rows(J).Cells(clnCategoria.Name).Value) = False Then
                         .CategoriaPiatto = dgvDettagli.Rows(J).Cells(clnCategoria.Name).Value.ToString
                      Else
-                        .CategoriaPiatto = "Nessuna"
+                        .CategoriaPiatto = VALORE_NESSUNA
                      End If
                      If IsNothing(dgvDettagli.Rows(J).Cells(clnIva.Name).Value) = False Then
                         .AliquotaIva = dgvDettagli.Rows(J).Cells(clnIva.Name).Value.ToString

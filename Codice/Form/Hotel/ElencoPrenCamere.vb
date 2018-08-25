@@ -4,14 +4,12 @@
 ' Nome form:            ElencoPrenCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/08/2014
-' Data ultima modifica: 28/07/2018
+' Data ultima modifica: 25/08/2018
 ' Descrizione:          Elenco prenotazioni camere.
 ' Note:
 
 ' Elenco Attivita:
 '
-' DA_FARE_A: Sviluppare comando Genera Schedina.
-
 ' ******************************************************************
 
 #End Region
@@ -754,7 +752,7 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' DA_FARE_A: HOTEL - da modificare!
+   ' DA_FARE_B: HOTEL - da modificare!
    Public Function ImpostaFunzioniOperatore(ByVal wnd As String) As Boolean
       'Try
       '   Select Case wnd
@@ -941,7 +939,7 @@ Public Class ElencoPrenCamere
             ' Attiva/disattiva il pulsante Genera Schedina PS..
             AttivaDisattivaSchedinaPS()
 
-            ' DA_FARE_A: Modificare!
+            ' DA_FARE_B: Modificare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
          End If
@@ -1291,7 +1289,7 @@ Public Class ElencoPrenCamere
          ' Crea la stringa di selezione dei dati.
          Dim oggi As String = CFormatta.FormattaData(Today)
 
-         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza >= #{2}# AND NumeroCamera = '{3}' ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi, "Nessuna")
+         sql = String.Format("SELECT TOP {0} * FROM {1} WHERE DataPartenza >= #{2}# AND NumeroCamera = '{3}' ORDER BY DataArrivo ASC", DIM_PAGINA_GRANDE, TAB_PRENOTAZIONI, oggi, VALORE_NESSUNA)
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
 
@@ -1385,8 +1383,8 @@ Public Class ElencoPrenCamere
       End If
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub ConvalidaDati()
+      ' DA_FARE_B: Modificare!
       'If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
       ImpostaComandi()
       'End If
@@ -1497,6 +1495,51 @@ Public Class ElencoPrenCamere
          ' Registra loperazione effettuata dall'operatore identificato.
          'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
          'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDati()
+      Try
+         Dim Risposta As Short
+         Dim cliente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NOME) & " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_COGNOME)
+         Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_PREN)
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_PRENOTAZIONI, "Numero") + 1
+
+         ' Chiede conferma per l'eliminazione.
+         Risposta = MsgBox("Si desidera duplicare la prenotazione numero " & numero & " del cliente '" & cliente & "'?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            Dim CPren As New PrenCamere
+
+            With CPren
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_PRENOTAZIONI, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)))
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Numero = ultimoCodice
+               .NumeroCamera = VALORE_NESSUNA
+               .DescrizioneCamera = String.Empty
+               .Schedina = VALORE_NESSUNA
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_PRENOTAZIONI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' DA_FARE_B: Da sviluppare!
+            ' Registra loperazione effettuata dall'operatore identificato.
+            'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2093,7 +2136,7 @@ Public Class ElencoPrenCamere
          g_frmPrenCamere.Dispose()
          g_frmPrenCamere = Nothing
 
-         ' DA_FARE_A: Modificare!
+         ' DA_FARE_B: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Chiudi, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -2147,7 +2190,7 @@ Public Class ElencoPrenCamere
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
 
-         ' DA_FARE_A: Modificare!
+         ' DA_FARE_B: Modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -2212,8 +2255,8 @@ Public Class ElencoPrenCamere
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
+      ' DA_FARE_B: Modificare!
       'If Modifica.Enabled = True Then
       '   ' Registra loperazione efettuata dall'operatore identificato.
       '   registraModifica()
@@ -2223,7 +2266,6 @@ Public Class ElencoPrenCamere
       'End If
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub Nuovo()
       Try
          ' Apre la finestra per l'inserimento di nuovi dati.
@@ -2232,6 +2274,7 @@ Public Class ElencoPrenCamere
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
+         ' DA_FARE_B: HOTEL - da modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -2242,12 +2285,12 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
-   ' DA_FARE: HOTEL - da modificare!
    Public Sub Modifica()
       Try
          ' Apre la finestra Cliente per la modifica dei dati.
          ApriDati(Me.Name, CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
 
+         ' DA_FARE_B: HOTEL - da modificare!
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 

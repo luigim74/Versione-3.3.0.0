@@ -741,27 +741,27 @@ Public Class IncassaSospeso
             Dim frm As New ReportViewer(ds, nomeDoc, nomeStampante)
             frm.ShowDialog()
 
-            ' ---------------------------------------------------------------------------------
-            ' NON UTILIZZATO! - Vecchio codice che utilizza CrystalReports.
+         ' ---------------------------------------------------------------------------------
+         ' NON UTILIZZATO! - Vecchio codice che utilizza CrystalReports.
 
-            'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+         'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
 
-            'rep.Load(Application.StartupPath & nomeDoc)
+         'rep.Load(Application.StartupPath & nomeDoc)
 
-            'rep.SetDataSource(ds)
+         'rep.SetDataSource(ds)
 
-            'If nomeStampante <> String.Empty And nomeStampante <> "Nessuna" Then
-            '   rep.PrintOptions.PrinterName = nomeStampante
-            'End If
+         'If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
+         '   rep.PrintOptions.PrinterName = nomeStampante
+         'End If
 
-            'PrintDialog1.PrinterSettings.Copies = NumeroCopieStampa
+         'PrintDialog1.PrinterSettings.Copies = NumeroCopieStampa
 
-            'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-            '          PrintDialog1.PrinterSettings.FromPage,
-            '          PrintDialog1.PrinterSettings.ToPage)
-            ' ---------------------------------------------------------------------------------
+         'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+         '          PrintDialog1.PrinterSettings.FromPage,
+         '          PrintDialog1.PrinterSettings.ToPage)
+         ' ---------------------------------------------------------------------------------
 
-        Catch ex As Exception
+      Catch ex As Exception
             ' Visualizza un messaggio di errore e lo registra nell'apposito file.
             err.GestisciErrore(ex.StackTrace, ex.Message)
 
@@ -1131,7 +1131,7 @@ Public Class IncassaSospeso
    Private Function ImpostaNomeStampante(ByVal indice As Integer) As String
       Dim val() As String = PercorsiStampantiDocumenti(indice).Split(";")
 
-      If val(1) <> "Nessuna" Then
+      If val(1) <> VALORE_NESSUNA Then
          Return val(1)
       Else
          Return String.Empty
