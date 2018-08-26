@@ -1605,3 +1605,16 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
 "
 "
+"*** 26/08/2018 - 14:04:58 ***"
+"- DESCRIZIONE ERRORE: Operazione annullata dall'utente"
+"- NOME PROCEDURA:    in System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   in System.Diagnostics.Process.Start()
+   in Hospitality_Solution.frmClienti.lvwAllegati_DoubleClick(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\Clienti.vb:riga 2658"
+"
+"
+"*** 26/08/2018 - 17:15:46 ***"
+"- DESCRIZIONE ERRORE: La stringa di filtro fornita non è valida. La stringa di filtro deve contenere una descrizione del filtro, seguita da una barra verticale (|) e dal modello del filtro. Anche le stringhe che definiscono le varie opzioni del filtro devono essere separate da barre verticali. Esempio: ""File di testo (*.txt)|*.txt|Tutti i file (*.*)|*.*"""
+"- NOME PROCEDURA:    in System.Windows.Forms.FileDialog.set_Filter(String value)
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1291"
+"
+"

@@ -85,33 +85,33 @@ Module Procedure
       End Try
    End Function
 
-    ' Procedura comune a tutti i vecchi progetti.
-    'Public Function ImpostaArchivio() As Boolean
-    '    Try
-    '        Dim Val As Boolean
+   ' Procedura comune a tutti i vecchi progetti.
+   Public Function ImpostaArchivio() As Boolean
+      '    Try
+      '        Dim Val As Boolean
 
-    '        ' Controlla se è stato aperto un archivio.
-    '        If VerificaEsistenzaDb(PercorsoDB) = True Then
+      '        ' Controlla se è stato aperto un archivio.
+      '        If VerificaEsistenzaDb(PercorsoDB) = True Then
 
-    '            ' Crea la stringa di connessaione per il database.
-    '            ConnString = CreaConnString(PercorsoDB)
+      '            ' Crea la stringa di connessaione per il database.
+      '            ConnString = CreaConnString(PercorsoDB)
 
-    '            ' Visualizza il nome dell'archivio nella barra di stato.
-    '            VisNomeDb(g_frmMain.sbrMain, 0, ModApp, NomeDB, PercorsoDB)
+      '            ' Visualizza il nome dell'archivio nella barra di stato.
+      '            VisNomeDb(g_frmMain.sbrMain, 0, ModApp, NomeDB, PercorsoDB)
 
-    '            Return True
-    '        Else
-    '            Return False
-    '        End If
+      '            Return True
+      '        Else
+      '            Return False
+      '        End If
 
-    '    Catch ex As Exception
-    '        ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-    '        err.GestisciErrore(ex.StackTrace, ex.Message)
-    '    End Try
-    'End Function
+      '    Catch ex As Exception
+      '        ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '        err.GestisciErrore(ex.StackTrace, ex.Message)
+      '    End Try
+   End Function
 
-    ' Nuova procedura per Hospitality.
-    Public Function ImpostaArchivio(ByVal eui_cmd As Elegant.Ui.Button) As Boolean
+   ' Nuova procedura per Hospitality.
+   Public Function ImpostaArchivio(ByVal eui_cmd As Elegant.Ui.Button) As Boolean
         Try
             Dim Val As Boolean
 

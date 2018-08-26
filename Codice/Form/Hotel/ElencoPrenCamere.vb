@@ -928,7 +928,17 @@ Public Class ElencoPrenCamere
             Dim Record2 As Integer = cmdDelete2.ExecuteNonQuery()
             '-------------------------------------------------------------------------------
 
-            ' DA_FARE_A: Sviluppare! Inserire qui il codice per eliminare anche gli Allegati.
+            ' Elimina i dati degli Allegati per la prenotazione.
+            '-------------------------------------------------------------------------------
+            ' Crea la stringa di eliminazione.
+            sql = String.Format("DELETE FROM PrenCamereAllegati WHERE IdCliente = {0}", id)
+
+            ' Crea il comando per la connessione corrente.
+            Dim cmdDelete3 As New OleDbCommand(sql, cn, tr)
+
+            ' Esegue il comando.
+            Dim Record3 As Integer = cmdDelete3.ExecuteNonQuery()
+            '-------------------------------------------------------------------------------
 
             ' Conferma la transazione.
             tr.Commit()
@@ -2090,13 +2100,11 @@ Public Class ElencoPrenCamere
       ' Documento.
       g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = True
-
-      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True   ' DA_FARE: Verificare!
-
+      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
       g_frmMain.eui_cmdEsportaPdf.Enabled = True
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
-      g_frmMain.eui_cmdEsportaTxt.Enabled = False
+      g_frmMain.eui_cmdEsportaTxt.Visible = False
 
 #End Region
 

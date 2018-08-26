@@ -15,8 +15,9 @@
 #End Region
 
 Option Strict Off
-Option Explicit On 
+Option Explicit On
 
+Imports System.IO
 Imports System.Data.OleDb
 
 Public Class ElencoSchedinePS
@@ -60,6 +61,7 @@ Public Class ElencoSchedinePS
 
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
+   Friend WithEvents SaveFileDialog1 As SaveFileDialog
    Dim filtroDati As String
 
 #Region " Codice generato da Progettazione Windows Form "
@@ -111,6 +113,7 @@ Public Class ElencoSchedinePS
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel1.SuspendLayout()
       Me.SuspendLayout()
@@ -130,7 +133,7 @@ Public Class ElencoSchedinePS
       Me.DataGrid1.Location = New System.Drawing.Point(0, 60)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(968, 440)
+      Me.DataGrid1.Size = New System.Drawing.Size(976, 447)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -143,7 +146,7 @@ Public Class ElencoSchedinePS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(968, 60)
+      Me.Panel1.Size = New System.Drawing.Size(976, 60)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -152,14 +155,14 @@ Public Class ElencoSchedinePS
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(698, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(706, 20)
       Me.TestoRicerca.TabIndex = 7
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(722, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(730, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
       Me.CampoRicerca.TabIndex = 8
@@ -171,7 +174,7 @@ Public Class ElencoSchedinePS
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(722, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(730, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -206,7 +209,7 @@ Public Class ElencoSchedinePS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(968, 501)
+      Me.ClientSize = New System.Drawing.Size(976, 509)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1093,13 +1096,11 @@ Public Class ElencoSchedinePS
       ' Documento.
       g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
-
-      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True   ' DA_FARE: Verificare!
-
+      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
       g_frmMain.eui_cmdEsportaPdf.Enabled = False
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
-      g_frmMain.eui_cmdEsportaTxt.Enabled = True
+      g_frmMain.eui_cmdEsportaTxt.Visible = True
 
 #End Region
 
@@ -1278,5 +1279,40 @@ Public Class ElencoSchedinePS
 
       End Try
    End Sub
+
+   ' DA_FARE_A: Terminare!
+   Public Function GeneraFileTxtAlloggiatiWeb() As Boolean
+      Try
+         ' Genera il file di testo richiesto dal portale AlloggiatiWeb della Polizia di Stato. (alloggiatiweb.poliziadistato.it)
+         Dim CSchedina As New SchedinaPS
+         Dim CSchedinaComponenti As New PrenCamereOccupanti
+
+         SaveFileDialog1.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
+
+         SaveFileDialog1.Filter = "File di testo|*.Txt"
+
+         SaveFileDialog1.FilterIndex = 1
+
+         SaveFileDialog1.FileName = "Schedine_" & Today.ToShortDateString & ".txt"
+
+         If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+
+            ' Nome dell'archivio i uso completo di percorso.
+            Return True
+         End If
+
+         With CSchedina
+
+         End With
+
+         ' Crea o apre il file.
+         'FileOpen(1, percorsoFileLocale, OpenMode.Append)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
 
 End Class
