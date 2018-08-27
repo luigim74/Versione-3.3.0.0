@@ -1272,6 +1272,70 @@ Module Procedure
 
    End Function
 
+   Public Function ImportaDatiFile_CSV() As Boolean
+      Try
+         ' Importa i dati di un file in formato CSV o TXT con separatore ; in una tabella Access.
+
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         Dim tr As OleDbTransaction
+         Dim sql As String
+
+         Dim rigaFile As String
+         Dim campiFile As String()
+
+         ' Crea o apre il file.
+         FileOpen(1, My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\listacomuni.txt", OpenMode.Input)
+
+         ' Apre la connessione.
+         cn.Open()
+
+         Dim i As Integer = 0
+         Do While Not EOF(1)
+            Input(1, rigaFile)
+            campiFile = rigaFile.Split(";")
+
+            ' Salta la prima riga per l'intestazione dei campi.
+            If i > 0 Then
+               ' Avvia una transazione.
+               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+               ' Crea la stringa di eliminazione.
+               sql = String.Format("INSERT INTO {0} (CodiceIstat, Comune, Provincia, Regione, PrefissoTel, Cap, CodiceFisco) " &
+                                             "VALUES(@Campo1, @Campo2, @Campo3, @Campo4, @Campo5, @Campo6, @Campo7)", "CAP")
+
+               ' Crea il comando per la connessione corrente.
+               Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+
+               cmdInsert.Parameters.AddWithValue("@Campo1", campiFile(0))
+               cmdInsert.Parameters.AddWithValue("@Campo2", campiFile(1))
+               cmdInsert.Parameters.AddWithValue("@Campo3", campiFile(2))
+               cmdInsert.Parameters.AddWithValue("@Campo4", campiFile(3))
+               cmdInsert.Parameters.AddWithValue("@Campo5", campiFile(4))
+               cmdInsert.Parameters.AddWithValue("@Campo6", campiFile(5))
+               cmdInsert.Parameters.AddWithValue("@Campo7", campiFile(6))
+
+               ' Esegue il comando.
+               Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+
+               ' Conferma transazione.
+               tr.Commit()
+            End If
+
+            i += 1
+         Loop
+
+         ' Chiude la connessione.
+         cn.Close()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         FileClose(1)
+
+      End Try
+   End Function
 
 #End Region
 

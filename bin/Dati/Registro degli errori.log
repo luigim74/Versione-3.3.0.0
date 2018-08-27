@@ -1618,3 +1618,11 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1291"
 "
 "
+"*** 27/08/2018 - 16:26:39 ***"
+"- DESCRIZIONE ERRORE: File già aperto."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1351
+   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1378"
+"
+"

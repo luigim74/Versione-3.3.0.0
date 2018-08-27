@@ -24,6 +24,7 @@ Public Class ElencoSchedinePS
    Inherits System.Windows.Forms.Form
 
    Public Const TAB_SCHEDINE As String = "SchedinePS"
+   Public Const TAB_COMPONENTI As String = "ComponentiSchedinePS"
 
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_SCHEDINA As Short = 1
@@ -994,6 +995,34 @@ Public Class ElencoSchedinePS
       End Try
    End Function
 
+   Private Function LeggiNumRecord(ByVal tabella As String, ByVal id As String) As Integer
+      Dim closeOnExit As Boolean
+      Dim numRec As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene il numero di record.
+         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE RifPren = {1}", tabella, id)
+         numRec = CInt(cmd.ExecuteScalar())
+
+         Return numRec
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
    ' DA_FARE: Modificare!
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
@@ -1280,37 +1309,171 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE_A: Terminare!
-   Public Function GeneraFileTxtAlloggiatiWeb() As Boolean
+   Public Sub GeneraFileTxtAlloggiatiWeb(ByVal id As String, ByVal percorsoFile As String)
       Try
          ' Genera il file di testo richiesto dal portale AlloggiatiWeb della Polizia di Stato. (alloggiatiweb.poliziadistato.it)
+         ' TOTALE CARATTERI DATI ALLOGGIATO PER RIGA: 168 + 2 CON CR+LF TRANNE PER ULTIMA RIGA.
+
          Dim CSchedina As New SchedinaPS
          Dim CSchedinaComponenti As New PrenCamereOccupanti
+         Dim rigaFileSchedina As String
+         Dim numComponenti As Integer = LeggiNumRecord(TAB_COMPONENTI, id)
+         Dim spazi As Integer
 
+         ' Schedina Capo Famiglia o Campo Gruppo.
+
+         With CSchedina
+            ' Visualizza i dati nei rispettivi campi.
+            .LeggiDati(TAB_SCHEDINE, id)
+
+            ' Tipo alloggiato - 2c.
+            Dim tipoAlloggiato As String
+            Select Case .TipologiaCliente
+               Case "Ospite Singolo"
+                  tipoAlloggiato = "16"
+
+               Case "Capo Famiglia"
+                  tipoAlloggiato = "17"
+
+               Case "Capo Gruppo"
+                  tipoAlloggiato = "18"
+
+            End Select
+
+            ' Data arrivo - 10c.
+            Dim dataArrivo As String
+            dataArrivo = Convert.ToDateTime(.DataArrivo).ToShortDateString
+
+            ' Giorni di permanenza - 2c.
+            Dim permanenza As String
+            Dim lunghezzaPermanenza As Integer = 2
+            spazi = (lunghezzaPermanenza - .Permanenza.ToString.Length)
+            permanenza = .Permanenza.ToString & Space(spazi)
+
+            ' Cognome - 50c.
+            Dim cognome As String
+            Dim lunghezzaCognome As Integer = 50
+            spazi = (lunghezzaCognome - .Cognome.ToString.Length)
+            cognome = .Cognome.ToString & Space(spazi)
+
+            ' Nome - 30c.
+            Dim nome As String
+            Dim lunghezzaNome As Integer = 30
+            spazi = (lunghezzaNome - .Nome.ToString.Length)
+            nome = .Nome.ToString & Space(spazi)
+
+            ' DA_FARE: Terminare!
+
+
+            rigaFileSchedina = tipoAlloggiato & dataArrivo & permanenza & cognome & nome
+
+            '' Se il file esiste già lo elimina.
+            'If File.Exists(percorsoFile) = True Then
+            '   File.Delete(percorsoFile)
+            'End If
+
+            ' Crea il file per la scrittura.
+            FileOpen(1, percorsoFile, OpenMode.Output)
+
+            If numComponenti > 0 Then
+               ' Scrive nel file la riga contenente i dati della schedina con CR + LF.
+               PrintLine(1, rigaFileSchedina)
+            Else
+               ' Scrive nel file la riga contenente i dati della schedina senza CR + LF.
+               Print(1, rigaFileSchedina)
+            End If
+
+         End With
+
+         ' Schedine Famigliari o Membri Gruppo.
+
+         ' Apre la connessione.
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM ComponentiSchedinePS WHERE RifPren = " & id, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Dim i As Integer
+         Do While dr.Read()
+            i += 1
+
+            ' Assegna i valori dei campi del DataSet ai campi della classe.
+            'If IsDBNull(dr.Item("Id")) = False Then
+            '   Me.Codice = Convert.ToInt32(dr.Item("Id"))
+            'Else
+            '   Me.Codice = 0
+            'End If
+
+            'If IsDBNull(dr.Item("Numero")) = False Then
+            '   Me.Numero = dr.Item("Numero")
+            'Else
+            '   Me.Numero = String.Empty
+            'End If
+
+            'If IsDBNull(dr.Item("Stato")) = False Then
+            '   Me.Stato = dr.Item("Stato")
+            'Else
+            '   Me.Stato = String.Empty
+            'End If
+
+            'If IsDBNull(dr.Item("DataStampa")) = False Then
+            '   Me.DataStampa = dr.Item("DataStampa")
+            'Else
+            '   Me.DataStampa = String.Empty
+            'End If
+
+            rigaFileSchedina = "Componenti"
+
+            If i = numComponenti Then
+               ' Scrive nel file la riga contenente i dati della schedina senza CR + LF.
+               Print(1, rigaFileSchedina)
+            Else
+               ' Scrive nel file la riga contenente i dati della schedina con CR + LF.
+               PrintLine(1, rigaFileSchedina)
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude il file.
+         FileClose(1)
+
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Sub
+
+
+   ' DA_FARE_A: Terminare!
+   Public Function SalvaFileTxtAlloggiatiWeb() As Boolean
+      Try
+         ' Impostazioni per la finestra di dialogo.
          SaveFileDialog1.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
 
          SaveFileDialog1.Filter = "File di testo|*.Txt"
 
          SaveFileDialog1.FilterIndex = 1
 
-         SaveFileDialog1.FileName = "Schedine_" & Today.ToShortDateString & ".txt"
+         SaveFileDialog1.FileName = "Schedine_" & Today.Day & Today.Month & Today.Year & ".txt"
 
+         ' Apre la finestra di dialogo per salvare il file delle schedine.
          If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+            GeneraFileTxtAlloggiatiWeb(Convert.ToInt32(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)), SaveFileDialog1.FileName)
 
-            ' Nome dell'archivio i uso completo di percorso.
             Return True
+         Else
+            Return False
          End If
-
-         With CSchedina
-
-         End With
-
-         ' Crea o apre il file.
-         'FileOpen(1, percorsoFileLocale, OpenMode.Append)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
 
       End Try
    End Function

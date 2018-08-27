@@ -212,6 +212,8 @@ Public Class frmClienti
       Me.Label3 = New System.Windows.Forms.Label()
       Me.chkPrivacy = New System.Windows.Forms.CheckBox()
       Me.TabPage2 = New System.Windows.Forms.TabPage()
+      Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
+      Me.Label35 = New System.Windows.Forms.Label()
       Me.cmbSesso = New System.Windows.Forms.ComboBox()
       Me.Label34 = New System.Windows.Forms.Label()
       Me.cmbNazionalità = New System.Windows.Forms.ComboBox()
@@ -275,8 +277,6 @@ Public Class frmClienti
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.Label35 = New System.Windows.Forms.Label()
-      Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -302,7 +302,7 @@ Public Class frmClienti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(630, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(640, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -347,7 +347,7 @@ Public Class frmClienti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(630, 20)
+      Me.Panel1.Size = New System.Drawing.Size(640, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -357,7 +357,7 @@ Public Class frmClienti
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -374,7 +374,7 @@ Public Class frmClienti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(630, 381)
+      Me.TabControl1.Size = New System.Drawing.Size(640, 391)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -420,7 +420,7 @@ Public Class frmClienti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(622, 355)
+      Me.TabPage1.Size = New System.Drawing.Size(632, 365)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -644,7 +644,7 @@ Public Class frmClienti
       Me.Label30.BackColor = System.Drawing.Color.Transparent
       Me.Label30.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label30.ForeColor = System.Drawing.Color.Black
-      Me.Label30.Location = New System.Drawing.Point(16, 224)
+      Me.Label30.Location = New System.Drawing.Point(14, 224)
       Me.Label30.Name = "Label30"
       Me.Label30.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label30.Size = New System.Drawing.Size(76, 13)
@@ -903,9 +903,32 @@ Public Class frmClienti
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
       Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage2.Size = New System.Drawing.Size(622, 355)
+      Me.TabPage2.Size = New System.Drawing.Size(632, 365)
       Me.TabPage2.TabIndex = 7
       Me.TabPage2.Text = "Dati personali"
+      '
+      'cmbTipoAlloggiato
+      '
+      Me.cmbTipoAlloggiato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipoAlloggiato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipoAlloggiato.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo", "Familiare", "Menbro Gruppo"})
+      Me.cmbTipoAlloggiato.Location = New System.Drawing.Point(123, 25)
+      Me.cmbTipoAlloggiato.Name = "cmbTipoAlloggiato"
+      Me.cmbTipoAlloggiato.Size = New System.Drawing.Size(160, 21)
+      Me.cmbTipoAlloggiato.TabIndex = 0
+      '
+      'Label35
+      '
+      Me.Label35.AutoSize = True
+      Me.Label35.BackColor = System.Drawing.Color.Transparent
+      Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label35.ForeColor = System.Drawing.Color.Black
+      Me.Label35.Location = New System.Drawing.Point(23, 28)
+      Me.Label35.Name = "Label35"
+      Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label35.Size = New System.Drawing.Size(65, 13)
+      Me.Label35.TabIndex = 255
+      Me.Label35.Text = "Tipo cliente:"
       '
       'cmbSesso
       '
@@ -1204,7 +1227,7 @@ Public Class frmClienti
       Me.tbpAllegati.Controls.Add(Me.Label11)
       Me.tbpAllegati.Location = New System.Drawing.Point(4, 22)
       Me.tbpAllegati.Name = "tbpAllegati"
-      Me.tbpAllegati.Size = New System.Drawing.Size(612, 345)
+      Me.tbpAllegati.Size = New System.Drawing.Size(622, 355)
       Me.tbpAllegati.TabIndex = 2
       Me.tbpAllegati.Text = "Tel./Internet"
       Me.tbpAllegati.ToolTipText = "Dati sul telefono e Internet"
@@ -1394,7 +1417,7 @@ Public Class frmClienti
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(612, 345)
+      Me.TabPage4.Size = New System.Drawing.Size(622, 355)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1434,7 +1457,7 @@ Public Class frmClienti
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(612, 256)
+      Me.lvwAllegati.Size = New System.Drawing.Size(622, 256)
       Me.lvwAllegati.SmallImageList = Me.ImageList1
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
@@ -1476,7 +1499,7 @@ Public Class frmClienti
       Me.tbpStatGioco.Controls.Add(Me.Panel2)
       Me.tbpStatGioco.Location = New System.Drawing.Point(4, 22)
       Me.tbpStatGioco.Name = "tbpStatGioco"
-      Me.tbpStatGioco.Size = New System.Drawing.Size(612, 345)
+      Me.tbpStatGioco.Size = New System.Drawing.Size(622, 355)
       Me.tbpStatGioco.TabIndex = 6
       Me.tbpStatGioco.Text = "Statistiche di gioco"
       Me.tbpStatGioco.UseVisualStyleBackColor = True
@@ -1496,7 +1519,7 @@ Public Class frmClienti
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(612, 305)
+      Me.DataGrid1.Size = New System.Drawing.Size(622, 315)
       Me.DataGrid1.TabIndex = 233
       '
       'Panel2
@@ -1509,7 +1532,7 @@ Public Class frmClienti
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel2.Location = New System.Drawing.Point(0, 0)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(612, 40)
+      Me.Panel2.Size = New System.Drawing.Size(622, 40)
       Me.Panel2.TabIndex = 232
       '
       'txtTotPartite
@@ -1577,7 +1600,7 @@ Public Class frmClienti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(612, 345)
+      Me.TabPage6.Size = New System.Drawing.Size(622, 355)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1595,7 +1618,7 @@ Public Class frmClienti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(612, 345)
+      Me.txtNote.Size = New System.Drawing.Size(622, 355)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1607,35 +1630,12 @@ Public Class frmClienti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'Label35
-      '
-      Me.Label35.AutoSize = True
-      Me.Label35.BackColor = System.Drawing.Color.Transparent
-      Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label35.ForeColor = System.Drawing.Color.Black
-      Me.Label35.Location = New System.Drawing.Point(23, 28)
-      Me.Label35.Name = "Label35"
-      Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label35.Size = New System.Drawing.Size(65, 13)
-      Me.Label35.TabIndex = 255
-      Me.Label35.Text = "Tipo cliente:"
-      '
-      'cmbTipoAlloggiato
-      '
-      Me.cmbTipoAlloggiato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbTipoAlloggiato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbTipoAlloggiato.Items.AddRange(New Object() {"Ospite Singolo", "Capo Famiglia", "Capo Gruppo", "Familiare", "Menbro Gruppo"})
-      Me.cmbTipoAlloggiato.Location = New System.Drawing.Point(123, 25)
-      Me.cmbTipoAlloggiato.Name = "cmbTipoAlloggiato"
-      Me.cmbTipoAlloggiato.Size = New System.Drawing.Size(160, 21)
-      Me.cmbTipoAlloggiato.TabIndex = 0
-      '
       'frmClienti
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(630, 427)
+      Me.ClientSize = New System.Drawing.Size(640, 437)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

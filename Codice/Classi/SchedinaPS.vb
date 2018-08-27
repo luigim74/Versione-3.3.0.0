@@ -1,7 +1,7 @@
 ﻿#Region " DATI FILE.VB "
 
 ' ******************************************************************
-' Nome form:            SchedinaPS
+' Nome Classe:            SchedinaPS
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2018
 ' Data ultima modifica: 24/08/2018
