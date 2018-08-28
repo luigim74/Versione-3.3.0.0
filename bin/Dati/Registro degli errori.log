@@ -1626,3 +1626,83 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1378"
 "
 "
+"*** 28/08/2018 - 13:48:38 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'Descrizione = 'CARTA DI IDENTITA'' ORDER BY Id ASC'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoSchedinePS.LeggiCodice(String valDescrizione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1570"
+"
+"
+"*** 28/08/2018 - 13:49:57 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'Descrizione = 'CARTA DI IDENTITA'' ORDER BY Id ASC'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoSchedinePS.LeggiCodice(String valDescrizione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1570"
+"
+"
+"*** 28/08/2018 - 15:42:14 ***"
+"- DESCRIZIONE ERRORE: StatoNascita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmInsClienti.InserisciClienteSchedine(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 589"
+"
+"
+"*** 28/08/2018 - 15:42:41 ***"
+"- DESCRIZIONE ERRORE: StatoNascita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmInsClienti.InserisciClienteSchedine(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 589"
+"
+"
+"*** 28/08/2018 - 15:43:20 ***"
+"- DESCRIZIONE ERRORE: StatoNascita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmInsClienti.InserisciClientePren(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 483"
+"
+"
+"*** 28/08/2018 - 16:13:50 ***"
+"- DESCRIZIONE ERRORE: File già aperto."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
+   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
+"
+"
+"*** 28/08/2018 - 16:16:12 ***"
+"- DESCRIZIONE ERRORE: File già aperto."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
+   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
+"
+"
+"*** 28/08/2018 - 16:19:52 ***"
+"- DESCRIZIONE ERRORE: File già aperto."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
+   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
+"
+"
+"*** 28/08/2018 - 16:22:05 ***"
+"- DESCRIZIONE ERRORE: File già aperto."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
+   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
+   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
+"
+"

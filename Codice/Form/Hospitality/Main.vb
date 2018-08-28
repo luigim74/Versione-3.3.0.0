@@ -12796,11 +12796,14 @@ Friend Class frmMain
 
    ' DA_FARE_A: Sviluppare!
    Private Sub eui_cmdEsportaTxtSelezione_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaTxtSelezione.Click
-      g_frmSchedinePS.SalvaFileTxtAlloggiatiWeb()
+      g_frmSchedinePS.SalvaFileTxtAlloggiatiWeb(False)
+
    End Sub
+
    Private Sub eui_cmdEsportaTxtTutte_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaTxtTutte.Click
 
    End Sub
+
 #End Region
 
 #Region "Sospesi / Buoni pasto "

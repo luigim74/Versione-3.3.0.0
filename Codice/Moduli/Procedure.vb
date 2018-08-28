@@ -3486,6 +3486,28 @@ Module Procedure
       End Try
    End Sub
 
+   Public Sub AvviaWinBloccoNote(ByVal hndl As System.IntPtr, ByVal percorsoFile As String)
+      Dim Percorso As String
+      Dim PercorsoApp As String
+      Dim NomeApp As String = "NOTEPAD.EXE"
+      Dim Proc As New Process
+
+      Try
+         ' Avvia l'applicazione.
+         Proc.StartInfo.FileName = NomeApp
+         Proc.StartInfo.Arguments = percorsoFile
+         Proc.StartInfo.ErrorDialog = True
+         Proc.StartInfo.ErrorDialogParentHandle = hndl
+         Proc.StartInfo.UseShellExecute = True
+         Proc.Start()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
+
    Public Sub AvviaWinCalc(ByVal hndl As System.IntPtr)
       Dim Percorso As String
       Dim PercorsoApp As String

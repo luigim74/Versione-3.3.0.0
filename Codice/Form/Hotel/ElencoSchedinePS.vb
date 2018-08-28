@@ -25,6 +25,9 @@ Public Class ElencoSchedinePS
 
    Public Const TAB_SCHEDINE As String = "SchedinePS"
    Public Const TAB_COMPONENTI As String = "ComponentiSchedinePS"
+   Public Const TAB_NAZIONI As String = "Nazioni"
+   Public Const TAB_COMUNI As String = "Comuni"
+   Public Const TAB_DOCUMENTI As String = "DocIdentità"
 
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_SCHEDINA As Short = 1
@@ -1224,8 +1227,22 @@ Public Class ElencoSchedinePS
    End Sub
 
    Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGrid1.CurrentCellChanged
-      ' Visualizza un'intestazione per la griglia dati.
-      AggIntGriglia()
+      Try
+         ' Visualizza un'intestazione per la griglia dati.
+         AggIntGriglia()
+
+         ' Verifica se la schedina è già stata inviata.
+         If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_SCHEDINA).ToString = "0" Or DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO).ToString = VALORE_INVIATA Then
+            g_frmMain.eui_cmdEsportaTxtSelezione.Enabled = False
+         Else
+            g_frmMain.eui_cmdEsportaTxtSelezione.Enabled = True
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    ' DA_FARE: Modificare!
@@ -1309,18 +1326,13 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   Public Sub GeneraFileTxtAlloggiatiWeb(ByVal id As String, ByVal percorsoFile As String)
+   Public Function LeggiValoriSchedina(ByVal id As String) As String
       Try
-         ' Genera il file di testo richiesto dal portale AlloggiatiWeb della Polizia di Stato. (alloggiatiweb.poliziadistato.it)
          ' TOTALE CARATTERI DATI ALLOGGIATO PER RIGA: 168 + 2 CON CR+LF TRANNE PER ULTIMA RIGA.
 
          Dim CSchedina As New SchedinaPS
-         Dim CSchedinaComponenti As New PrenCamereOccupanti
          Dim rigaFileSchedina As String
-         Dim numComponenti As Integer = LeggiNumRecord(TAB_COMPONENTI, id)
          Dim spazi As Integer
-
-         ' Schedina Capo Famiglia o Campo Gruppo.
 
          With CSchedina
             ' Visualizza i dati nei rispettivi campi.
@@ -1337,7 +1349,6 @@ Public Class ElencoSchedinePS
 
                Case "Capo Gruppo"
                   tipoAlloggiato = "18"
-
             End Select
 
             ' Data arrivo - 10c.
@@ -1362,28 +1373,253 @@ Public Class ElencoSchedinePS
             spazi = (lunghezzaNome - .Nome.ToString.Length)
             nome = .Nome.ToString & Space(spazi)
 
-            ' DA_FARE: Terminare!
+            ' Sesso - 1c.
+            Dim sesso As String
+            Select Case .Sesso
+               Case "M"
+                  sesso = "1"
 
+               Case "F"
+                  sesso = "2"
+            End Select
 
-            rigaFileSchedina = tipoAlloggiato & dataArrivo & permanenza & cognome & nome
-
-            '' Se il file esiste già lo elimina.
-            'If File.Exists(percorsoFile) = True Then
-            '   File.Delete(percorsoFile)
-            'End If
-
-            ' Crea il file per la scrittura.
-            FileOpen(1, percorsoFile, OpenMode.Output)
-
-            If numComponenti > 0 Then
-               ' Scrive nel file la riga contenente i dati della schedina con CR + LF.
-               PrintLine(1, rigaFileSchedina)
-            Else
-               ' Scrive nel file la riga contenente i dati della schedina senza CR + LF.
-               Print(1, rigaFileSchedina)
+            ' Data nascita - 10c.
+            Dim dataNascita As String
+            If IsDate(.DataNascita) = True Then
+               dataNascita = Convert.ToDateTime(.DataNascita).ToShortDateString
             End If
 
+            ' Comune nascita - 9c.
+            Dim comuneNascita As String
+            If .LuogoNascita.ToString <> String.Empty Then
+               comuneNascita = LeggiCodice(.LuogoNascita.ToString, TAB_COMUNI)
+            End If
+
+            ' Provincia nascita - 2c.
+            Dim provNascita As String
+            If .ProvNascita.ToString <> String.Empty Then
+               provNascita = .ProvNascita.ToString
+            End If
+
+            ' Stato nascita - 9c.
+            Dim nazioneNascita As String
+            If .NazioneNascita.ToString <> String.Empty Then
+               nazioneNascita = LeggiCodice(FormattaApici(.NazioneNascita.ToString), TAB_NAZIONI)
+            End If
+
+            If .NazioneNascita <> "ITALIA" Then
+               comuneNascita = Space(9)
+               provNascita = Space(2)
+            End If
+
+            ' Cittadinanza - 9c.
+            Dim cittadinanza As String
+            If .Cittadinanza.ToString <> String.Empty Then
+               cittadinanza = LeggiCodice(FormattaApici(.Cittadinanza.ToString), TAB_NAZIONI)
+            End If
+
+            ' Tipo documento - 5c.
+            Dim tipoDoc As String
+            If .TipoDoc.ToString <> String.Empty Then
+               tipoDoc = LeggiCodice(FormattaApici(.TipoDoc.ToString), TAB_DOCUMENTI)
+            Else
+               tipoDoc = Space(5)
+            End If
+
+            ' Numero documento - 20c.
+            Dim numeroDoc As String
+            Dim lunghezzaNumeroDoc As Integer = 20
+            spazi = (lunghezzaNumeroDoc - .NumeroDoc.ToString.Length)
+            If .NumeroDoc.ToString <> String.Empty Then
+               numeroDoc = .NumeroDoc.ToString & Space(spazi)
+            Else
+               numeroDoc = Space(20)
+            End If
+
+            ' Comune rilascio documento - 9c.
+            Dim comuneRilascioDoc As String
+            If .ComuneRilascioDoc.ToString <> String.Empty Then
+               comuneRilascioDoc = LeggiCodice(FormattaApici(.ComuneRilascioDoc.ToString), TAB_COMUNI)
+            Else
+               comuneRilascioDoc = Space(9)
+            End If
+
+            ' Stato rilascio documento - 9c.
+            Dim nazioneRilascioDoc As String
+            If .NazioneRilascioDoc.ToString <> String.Empty Then
+               nazioneRilascioDoc = LeggiCodice(FormattaApici(.NazioneRilascioDoc.ToString), TAB_NAZIONI)
+            Else
+               nazioneRilascioDoc = Space(9)
+            End If
+
+            ' Luogo rilascio documento. - 9c
+            Dim luogoRilascioDoc As String
+
+            Select Case .NazioneRilascioDoc
+               Case "ITALIA"
+                  luogoRilascioDoc = comuneRilascioDoc
+
+               Case Else
+                  luogoRilascioDoc = nazioneRilascioDoc
+            End Select
+
+            ' Crea la stringa con tutti i valori.
+            rigaFileSchedina = (tipoAlloggiato & dataArrivo & permanenza & cognome & nome & sesso & dataNascita & comuneNascita &
+                                provNascita & nazioneNascita & cittadinanza & tipoDoc & numeroDoc & luogoRilascioDoc)
+
          End With
+
+         Return rigaFileSchedina
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiValoriComponente(ByVal id As String) As String
+      Try
+         ' TOTALE CARATTERI DATI ALLOGGIATO PER RIGA: 168 + 2 CON CR+LF TRANNE PER ULTIMA RIGA.
+
+         Dim CSchedinaComponenti As New PrenCamereOccupanti
+         Dim rigaFileSchedina As String
+         Dim spazi As Integer
+
+         With CSchedinaComponenti
+            ' Visualizza i dati nei rispettivi campi.
+            .LeggiDati(TAB_COMPONENTI, id)
+
+            ' Tipo alloggiato - 2c.
+            Dim tipoAlloggiato As String
+            Select Case .TipoAlloggiato
+               Case "Familiare"
+                  tipoAlloggiato = "19"
+
+               Case "Membro Gruppo"
+                  tipoAlloggiato = "20"
+            End Select
+
+            ' Data arrivo - 10c.
+            Dim dataArrivo As String
+            dataArrivo = Convert.ToDateTime(.DataArrivo).ToShortDateString
+
+            ' Giorni di permanenza - 2c.
+            Dim permanenza As String
+            Dim lunghezzaPermanenza As Integer = 2
+            spazi = (lunghezzaPermanenza - .Permanenza.ToString.Length)
+            permanenza = .Permanenza.ToString & Space(spazi)
+
+            ' Cognome - 50c.
+            Dim cognome As String
+            Dim lunghezzaCognome As Integer = 50
+            spazi = (lunghezzaCognome - .Cognome.ToString.Length)
+            cognome = .Cognome.ToString & Space(spazi)
+
+            ' Nome - 30c.
+            Dim nome As String
+            Dim lunghezzaNome As Integer = 30
+            spazi = (lunghezzaNome - .Nome.ToString.Length)
+            nome = .Nome.ToString & Space(spazi)
+
+            ' Sesso - 1c.
+            Dim sesso As String
+            Select Case .Sesso
+               Case "M"
+                  sesso = "1"
+
+               Case "F"
+                  sesso = "2"
+            End Select
+
+            ' Data nascita - 10c.
+            Dim dataNascita As String
+            If IsDate(.DataNascita) = True Then
+               dataNascita = Convert.ToDateTime(.DataNascita).ToShortDateString
+            End If
+
+            ' Comune nascita - 9c.
+            Dim comuneNascita As String
+            If .LuogoNascita.ToString <> String.Empty Then
+               comuneNascita = LeggiCodice(.LuogoNascita.ToString, TAB_COMUNI)
+            End If
+
+            ' Provincia nascita - 2c.
+            Dim provNascita As String
+            If .ProvNascita.ToString <> String.Empty Then
+               provNascita = .ProvNascita.ToString
+            End If
+
+            ' Stato nascita - 9c.
+            Dim nazioneNascita As String
+            If .StatoNascita.ToString <> String.Empty Then
+               nazioneNascita = LeggiCodice(FormattaApici(.StatoNascita.ToString), TAB_NAZIONI)
+            End If
+
+            If .StatoNascita <> "ITALIA" Then
+               comuneNascita = Space(9)
+               provNascita = Space(2)
+            End If
+
+            ' Cittadinanza - 9c.
+            Dim cittadinanza As String
+            If .Cittadinanza.ToString <> String.Empty Then
+               cittadinanza = LeggiCodice(FormattaApici(.Cittadinanza.ToString), TAB_NAZIONI)
+            End If
+
+            ' Tipo documento - 5c.
+            Dim tipoDoc As String
+            tipoDoc = Space(5)
+
+            ' Numero documento - 20c.
+            Dim numeroDoc As String
+            numeroDoc = Space(20)
+
+            ' Comune rilascio documento - 9c.
+            Dim comuneRilascioDoc As String
+            comuneRilascioDoc = Space(9)
+
+            'Crea la stringa con tutti i valori.
+            rigaFileSchedina = (tipoAlloggiato & dataArrivo & permanenza & cognome & nome & sesso & dataNascita & comuneNascita &
+                                provNascita & nazioneNascita & cittadinanza & tipoDoc & numeroDoc & comuneRilascioDoc)
+
+         End With
+
+         Return rigaFileSchedina
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function GeneraFileTxtAlloggiatiWeb(ByVal id As String, ByVal percorsoFile As String) As Boolean
+      Try
+         ' Genera il file di testo richiesto dal portale AlloggiatiWeb della Polizia di Stato. (alloggiatiweb.poliziadistato.it)
+
+         Dim rigaFileSchedina As String
+         Dim numComponenti As Integer = LeggiNumRecord(TAB_COMPONENTI, id)
+         Dim spazi As Integer
+
+         ' Schedina Capo Famiglia o Campo Gruppo.
+
+         rigaFileSchedina = LeggiValoriSchedina(id)
+
+         ' Crea il file per la scrittura.
+         FileOpen(1, percorsoFile, OpenMode.Output)
+
+         If numComponenti > 0 Then
+            ' Scrive nel file la riga contenente i dati della schedina con CR + LF.
+            PrintLine(1, rigaFileSchedina)
+         Else
+            ' Scrive nel file la riga contenente i dati della schedina senza CR + LF.
+            Print(1, rigaFileSchedina)
+         End If
 
          ' Schedine Famigliari o Membri Gruppo.
 
@@ -1397,32 +1633,7 @@ Public Class ElencoSchedinePS
          Do While dr.Read()
             i += 1
 
-            ' Assegna i valori dei campi del DataSet ai campi della classe.
-            'If IsDBNull(dr.Item("Id")) = False Then
-            '   Me.Codice = Convert.ToInt32(dr.Item("Id"))
-            'Else
-            '   Me.Codice = 0
-            'End If
-
-            'If IsDBNull(dr.Item("Numero")) = False Then
-            '   Me.Numero = dr.Item("Numero")
-            'Else
-            '   Me.Numero = String.Empty
-            'End If
-
-            'If IsDBNull(dr.Item("Stato")) = False Then
-            '   Me.Stato = dr.Item("Stato")
-            'Else
-            '   Me.Stato = String.Empty
-            'End If
-
-            'If IsDBNull(dr.Item("DataStampa")) = False Then
-            '   Me.DataStampa = dr.Item("DataStampa")
-            'Else
-            '   Me.DataStampa = String.Empty
-            'End If
-
-            rigaFileSchedina = "Componenti"
+            rigaFileSchedina = LeggiValoriComponente(dr.Item("Id").ToString)
 
             If i = numComponenti Then
                ' Scrive nel file la riga contenente i dati della schedina senza CR + LF.
@@ -1433,9 +1644,13 @@ Public Class ElencoSchedinePS
             End If
          Loop
 
+         Return True
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
 
       Finally
          ' Chiude il file.
@@ -1445,11 +1660,80 @@ Public Class ElencoSchedinePS
          cn.Close()
 
       End Try
-   End Sub
+   End Function
 
+   Private Function LeggiCodice(ByVal valDescrizione As String, ByVal tabella As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
 
-   ' DA_FARE_A: Terminare!
-   Public Function SalvaFileTxtAlloggiatiWeb() As Boolean
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Descrizione = '" & valDescrizione & "' ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("Codice").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function ModificaStatoSchedina(ByVal tabella As String, ByVal codice As String) As Boolean
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} SET Stato = @Stato WHERE Id = {1}", tabella, codice)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+         cmdUpdate.Parameters.AddWithValue("@Stato", VALORE_INVIATA)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Function
+
+   Public Function SalvaFileTxtAlloggiatiWeb(ByVal flagTutte As Boolean) As Boolean
       Try
          ' Impostazioni per la finestra di dialogo.
          SaveFileDialog1.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
@@ -1462,7 +1746,40 @@ Public Class ElencoSchedinePS
 
          ' Apre la finestra di dialogo per salvare il file delle schedine.
          If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
-            GeneraFileTxtAlloggiatiWeb(Convert.ToInt32(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)), SaveFileDialog1.FileName)
+
+            If flagTutte = True Then
+               ' Elabora tutte le schedine che hanno un numero e non sono ancora state inviate.
+
+               ' Apre la connessione.
+               cn.Open()
+
+               Dim cmd As New OleDbCommand("SELECT * FROM SchedinePS WHERE Numero <> 0 AND Stato <> 'Inviata'", cn)
+               Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+               ' DA_FARE_A: Testare!
+
+               Do While dr.Read()
+                  ' Se il file è stato creato correttamente modifica lo stato della schedina in Inviata.
+                  If GeneraFileTxtAlloggiatiWeb(dr.Item("Id").ToString, SaveFileDialog1.FileName) = True Then
+                     ModificaStatoSchedina(TAB_SCHEDINE, dr.Item("Id").ToString)
+                  End If
+               Loop
+            Else
+               ' Elabora solo la schedina selezionata nell'elenco.
+               Dim idSchedina As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString
+
+               ' Se il file è stato creato correttamente modifica lo stato della schedina in Inviata.
+               If GeneraFileTxtAlloggiatiWeb(idSchedina, SaveFileDialog1.FileName) = True Then
+                  ModificaStatoSchedina(TAB_SCHEDINE, idSchedina)
+               End If
+            End If
+
+            ' Chiede se aprire il file.
+            Dim risposta As Short = MessageBox.Show("Il file è stato creato con successo! Si desidera aprire il documento?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If risposta = vbYes Then
+               AvviaWinBloccoNote(Me.Handle, SaveFileDialog1.FileName)
+            End If
 
             Return True
          Else
@@ -1477,5 +1794,6 @@ Public Class ElencoSchedinePS
 
       End Try
    End Function
+
 
 End Class

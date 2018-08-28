@@ -131,6 +131,8 @@ Public Class frmSchedinaPS
    Friend WithEvents ColumnHeader17 As ColumnHeader
    Friend WithEvents ColumnHeader18 As ColumnHeader
    Friend WithEvents ColumnHeader19 As ColumnHeader
+   Friend WithEvents ColumnHeader1 As ColumnHeader
+   Friend WithEvents ColumnHeader7 As ColumnHeader
    Public WithEvents Label10 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -218,6 +220,8 @@ Public Class frmSchedinaPS
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -239,7 +243,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(606, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(616, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -273,7 +277,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(606, 20)
+      Me.Panel1.Size = New System.Drawing.Size(616, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -283,7 +287,7 @@ Public Class frmSchedinaPS
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -298,7 +302,7 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(606, 426)
+      Me.TabControl1.Size = New System.Drawing.Size(616, 436)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -320,7 +324,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(598, 400)
+      Me.TabPage1.Size = New System.Drawing.Size(608, 410)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -387,9 +391,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 165)
+      Me.Panel2.Location = New System.Drawing.Point(0, 175)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(598, 235)
+      Me.Panel2.Size = New System.Drawing.Size(608, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -600,7 +604,7 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(598, 400)
+      Me.TabPage4.Size = New System.Drawing.Size(608, 410)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
       '
@@ -642,6 +646,7 @@ Public Class frmSchedinaPS
       '
       'cmbCittadinanza
       '
+      Me.cmbCittadinanza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbCittadinanza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbCittadinanza.Location = New System.Drawing.Point(379, 223)
       Me.cmbCittadinanza.Name = "cmbCittadinanza"
@@ -663,6 +668,7 @@ Public Class frmSchedinaPS
       '
       'cmbNazioneNascita
       '
+      Me.cmbNazioneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneNascita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbNazioneNascita.Location = New System.Drawing.Point(125, 223)
       Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
@@ -882,7 +888,7 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(588, 390)
+      Me.TabPage5.Size = New System.Drawing.Size(608, 410)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
       '
@@ -901,6 +907,7 @@ Public Class frmSchedinaPS
       '
       'cmbNazioneRilascioDoc
       '
+      Me.cmbNazioneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(389, 63)
       Me.cmbNazioneRilascioDoc.Name = "cmbNazioneRilascioDoc"
       Me.cmbNazioneRilascioDoc.Size = New System.Drawing.Size(149, 21)
@@ -1002,6 +1009,7 @@ Public Class frmSchedinaPS
       '
       'cmbTipoDoc
       '
+      Me.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbTipoDoc.Location = New System.Drawing.Point(113, 22)
       Me.cmbTipoDoc.Name = "cmbTipoDoc"
       Me.cmbTipoDoc.Size = New System.Drawing.Size(161, 21)
@@ -1041,13 +1049,13 @@ Public Class frmSchedinaPS
       Me.tpComponenti.Controls.Add(Me.cmdEliminaOccupanti)
       Me.tpComponenti.Location = New System.Drawing.Point(4, 22)
       Me.tpComponenti.Name = "tpComponenti"
-      Me.tpComponenti.Size = New System.Drawing.Size(598, 400)
+      Me.tpComponenti.Size = New System.Drawing.Size(608, 410)
       Me.tpComponenti.TabIndex = 7
       Me.tpComponenti.Text = "Altri componenti"
       '
       'lvwOccupanti
       '
-      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader11, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19})
+      Me.lvwOccupanti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader11, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19, Me.ColumnHeader1, Me.ColumnHeader7})
       Me.lvwOccupanti.FullRowSelect = True
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
@@ -1139,11 +1147,21 @@ Public Class frmSchedinaPS
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'ColumnHeader1
+      '
+      Me.ColumnHeader1.Text = "Cittadinanza"
+      Me.ColumnHeader1.Width = 0
+      '
+      'ColumnHeader7
+      '
+      Me.ColumnHeader7.Text = "DataArrivo"
+      Me.ColumnHeader7.Width = 0
+      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(606, 472)
+      Me.ClientSize = New System.Drawing.Size(616, 482)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1302,10 +1320,12 @@ Public Class frmSchedinaPS
                .DataNascita = lvwOccupanti.Items(i).SubItems(4).Text
                .LuogoNascita = lvwOccupanti.Items(i).SubItems(5).Text
                .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
-               .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
+               .StatoNascita = lvwOccupanti.Items(i).SubItems(7).Text
                .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
                .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
                .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
+               .Cittadinanza = lvwOccupanti.Items(i).SubItems(11).Text
+               .DataArrivo = lvwOccupanti.Items(i).SubItems(12).Text
 
                .InserisciDati(TAB_COMPONENTI)
             Next

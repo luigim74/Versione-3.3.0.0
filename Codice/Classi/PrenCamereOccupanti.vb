@@ -26,7 +26,9 @@ Public Class PrenCamereOccupanti
    Public DataNascita As String
    Public LuogoNascita As String
    Public ProvNascita As String
-   Public Nazionalità As String
+   Public StatoNascita As String
+   Public Cittadinanza As String
+   Public DataArrivo As String
    Public Permanenza As Integer
 
    ' Dichiara un oggetto connessione.
@@ -36,14 +38,14 @@ Public Class PrenCamereOccupanti
    Private err As New Varie.Errore
    Private CFormatta As New ClsFormatta
 
-   Public Function LeggiDati(ByVal tabella As String, ByVal codPren As Integer) As Boolean
+   Public Function LeggiDati(ByVal tabella As String, ByVal id As String) As Boolean
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE RifPren = " & codPren, cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id, cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -57,7 +59,7 @@ Public Class PrenCamereOccupanti
             If IsDBNull(dr.Item("RifPren")) = False Then
                Me.RifPren = Convert.ToInt32(dr.Item("RifPren"))
             Else
-               Me.RifPren = codPren
+               Me.RifPren = 0
             End If
             ' Codice Cliente
             If IsDBNull(dr.Item("CodiceCliente")) = False Then
@@ -107,11 +109,23 @@ Public Class PrenCamereOccupanti
             Else
                Me.ProvNascita = String.Empty
             End If
-            ' Nazionalità.
-            If IsDBNull(dr.Item("Nazionalità")) = False Then
-               Me.Nazionalità = dr.Item("Nazionalità").ToString
+            ' StatoNascita..
+            If IsDBNull(dr.Item("StatoNascita")) = False Then
+               Me.StatoNascita = dr.Item("StatoNascita").ToString
             Else
-               Me.Nazionalità = String.Empty
+               Me.StatoNascita = String.Empty
+            End If
+            ' Nazionalità.
+            If IsDBNull(dr.Item("Cittadinanza")) = False Then
+               Me.Cittadinanza = dr.Item("Cittadinanza").ToString
+            Else
+               Me.Cittadinanza = String.Empty
+            End If
+            ' DataArrivo.
+            If IsDBNull(dr.Item("DataArrivo")) = False Then
+               Me.DataArrivo = dr.Item("DataArrivo").ToString
+            Else
+               Me.DataArrivo = String.Empty
             End If
             ' Permanenza.
             If IsDBNull(dr.Item("Permanenza")) = False Then
@@ -189,9 +203,9 @@ Public Class PrenCamereOccupanti
             Else
                lst.Items(i).SubItems.Add("")
             End If
-            ' Nazionalità.
-            If IsDBNull(dr.Item("Nazionalità")) = False Then
-               lst.Items(i).SubItems.Add(dr.Item("Nazionalità").ToString)
+            ' StatoNascita.
+            If IsDBNull(dr.Item("StatoNascita")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("StatoNascita").ToString)
             Else
                lst.Items(i).SubItems.Add("")
             End If
@@ -210,6 +224,18 @@ Public Class PrenCamereOccupanti
             ' Codice Cliente.
             If IsDBNull(dr.Item("CodiceCliente")) = False Then
                lst.Items(i).SubItems.Add(dr.Item("CodiceCliente").ToString)
+            Else
+               lst.Items(i).SubItems.Add("")
+            End If
+            ' Cittadinanza.
+            If IsDBNull(dr.Item("Cittadinanza")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("Cittadinanza").ToString)
+            Else
+               lst.Items(i).SubItems.Add("")
+            End If
+            ' DataArrivo.
+            If IsDBNull(dr.Item("DataArrivo")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("DataArrivo").ToString)
             Else
                lst.Items(i).SubItems.Add("")
             End If
@@ -243,8 +269,8 @@ Public Class PrenCamereOccupanti
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, TipoAlloggiato, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, Nazionalità, Permanenza) " &
-                                       "VALUES(@RifPren, @CodiceCliente, @TipoAlloggiato, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @Nazionalità, @Permanenza)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, CodiceCliente, TipoAlloggiato, Cognome, Nome, Sesso, DataNascita, LuogoNascita, ProvNascita, StatoNascita, Cittadinanza, DataArrivo, Permanenza) " &
+                                       "VALUES(@RifPren, @CodiceCliente, @TipoAlloggiato, @Cognome, @Nome, @Sesso, @DataNascita, @LuogoNascita, @ProvNascita, @StatoNascita, @Cittadinanza, @DataArrivo, @Permanenza)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -258,7 +284,9 @@ Public Class PrenCamereOccupanti
          cmdInsert.Parameters.AddWithValue("@DataNascita", Me.DataNascita)
          cmdInsert.Parameters.AddWithValue("@LuogoNascita", Me.LuogoNascita)
          cmdInsert.Parameters.AddWithValue("@ProvNascita", Me.ProvNascita)
-         cmdInsert.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdInsert.Parameters.AddWithValue("@StatoNascita", Me.StatoNascita)
+         cmdInsert.Parameters.AddWithValue("@Cittadinanza", Me.Cittadinanza)
+         cmdInsert.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdInsert.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
 
          ' Esegue il comando.
@@ -306,7 +334,9 @@ Public Class PrenCamereOccupanti
                              "DataNascita = @DataNascita, " &
                              "LuogoNascita = @LuogoNascita, " &
                              "ProvNascita = @ProvNascita, " &
-                             "Nazionalità = @Nazionalità, " &
+                             "StatoNascita = @StatoNascita, " &
+                             "Cittadinanza = @Cittadinanza, " &
+                             "DataArrivo = @DataArrivo, " &
                              "Permanenza = @Permanenza " &
                              "WHERE RifPren = {1}",
                              tabella,
@@ -324,7 +354,9 @@ Public Class PrenCamereOccupanti
          cmdUpdate.Parameters.AddWithValue("@DataNascita", Me.DataNascita)
          cmdUpdate.Parameters.AddWithValue("@LuogoNascita", Me.LuogoNascita)
          cmdUpdate.Parameters.AddWithValue("@ProvNascita", Me.ProvNascita)
-         cmdUpdate.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdUpdate.Parameters.AddWithValue("@StatoNascita", Me.StatoNascita)
+         cmdUpdate.Parameters.AddWithValue("@Cittadinanza", Me.Cittadinanza)
+         cmdUpdate.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
          cmdUpdate.Parameters.AddWithValue("@Permanenza", Me.Permanenza)
 
          ' Esegue il comando.

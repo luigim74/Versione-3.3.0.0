@@ -2120,10 +2120,12 @@ Public Class frmPrenCamera
                .DataNascita = lvwOccupanti.Items(i).SubItems(4).Text
                .LuogoNascita = lvwOccupanti.Items(i).SubItems(5).Text
                .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
-               .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
+               .StatoNascita = lvwOccupanti.Items(i).SubItems(7).Text
                .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
                .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
                .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
+               .Cittadinanza = lvwOccupanti.Items(i).SubItems(11).Text
+               .DataArrivo = lvwOccupanti.Items(i).SubItems(12).Text
 
                .InserisciDati(TAB_PREN_OCCUPANTI)
             Next
@@ -2154,10 +2156,12 @@ Public Class frmPrenCamera
                .DataNascita = lvwOccupanti.Items(i).SubItems(4).Text
                .LuogoNascita = lvwOccupanti.Items(i).SubItems(5).Text
                .ProvNascita = lvwOccupanti.Items(i).SubItems(6).Text
-               .Nazionalità = lvwOccupanti.Items(i).SubItems(7).Text
+               .StatoNascita = lvwOccupanti.Items(i).SubItems(7).Text
                .Permanenza = lvwOccupanti.Items(i).SubItems(8).Text
                .TipoAlloggiato = lvwOccupanti.Items(i).SubItems(9).Text
                .CodiceCliente = lvwOccupanti.Items(i).SubItems(10).Text
+               .Cittadinanza = lvwOccupanti.Items(i).SubItems(11).Text
+               .DataArrivo = lvwOccupanti.Items(i).SubItems(12).Text
 
                .InserisciDati(TAB_SCHEDINE_OCCUPANTI)
             Next

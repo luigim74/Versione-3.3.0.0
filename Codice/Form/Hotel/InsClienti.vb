@@ -392,9 +392,9 @@ Public Class frmInsClienti
                lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add("")
             End If
 
-            ' Nazionalità.
-            If IsDBNull(dr.Item("Nazionalità")) = False Then
-               lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+            ' Nazione nascita.
+            If IsDBNull(dr.Item("NazioneNascita")) = False Then
+               lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add(dr.Item("NazioneNascita"))
             Else
                lvwClienti.Items(lvwClienti.Items.Count - 1).SubItems.Add("")
             End If
@@ -479,9 +479,9 @@ Public Class frmInsClienti
                   .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
                End If
 
-               ' Nazionalità.
-               If IsDBNull(dr.Item("Nazionalità")) = False Then
-                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+               ' Stato di nascita.
+               If IsDBNull(dr.Item("NazioneNascita")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("NazioneNascita"))
                Else
                   .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
                End If
@@ -498,6 +498,16 @@ Public Class frmInsClienti
 
                ' Codice.
                .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Id"))
+
+               ' Cittadinanza.
+               If IsDBNull(dr.Item("Nazionalità")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Data di Arrivo.
+               .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(FormattaData(.mcDataArrivo.SelectionRange.Start.Date, True))
 
             End With
 
@@ -571,9 +581,9 @@ Public Class frmInsClienti
                   .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
                End If
 
-               ' Nazionalità.
-               If IsDBNull(dr.Item("Nazionalità")) = False Then
-                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+               ' Stato di nascita.
+               If IsDBNull(dr.Item("NazioneNascita")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("NazioneNascita"))
                Else
                   .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
                End If
@@ -590,6 +600,16 @@ Public Class frmInsClienti
 
                ' Codice.
                .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Id"))
+
+               ' Cittadinanza.
+               If IsDBNull(dr.Item("Nazionalità")) = False Then
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(dr.Item("Nazionalità"))
+               Else
+                  .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add("")
+               End If
+
+               ' Data di Arrivo.
+               .lvwOccupanti.Items(.lvwOccupanti.Items.Count - 1).SubItems.Add(FormattaData(.mcDataArrivo.SelectionRange.Start.Date, True))
 
             End With
 
