@@ -12801,6 +12801,7 @@ Friend Class frmMain
    End Sub
 
    Private Sub eui_cmdEsportaTxtTutte_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaTxtTutte.Click
+      g_frmSchedinePS.SalvaFileTxtAlloggiatiWeb(True)
 
    End Sub
 

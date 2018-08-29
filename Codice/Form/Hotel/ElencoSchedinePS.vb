@@ -999,14 +999,12 @@ Public Class ElencoSchedinePS
    End Function
 
    Private Function LeggiNumRecord(ByVal tabella As String, ByVal id As String) As Integer
-      Dim closeOnExit As Boolean
       Dim numRec As Integer
 
       Try
          ' Se necessario apre la connessione.
          If cn.State = ConnectionState.Closed Then
             cn.Open()
-            closeOnExit = True
          End If
 
          ' Ottiene il numero di record.
@@ -1598,7 +1596,7 @@ Public Class ElencoSchedinePS
       End Try
    End Function
 
-   Public Function GeneraFileTxtAlloggiatiWeb(ByVal id As String, ByVal percorsoFile As String) As Boolean
+   Public Function GeneraFileTxtAlloggiatiWeb(ByVal id As String) As Boolean
       Try
          ' Genera il file di testo richiesto dal portale AlloggiatiWeb della Polizia di Stato. (alloggiatiweb.poliziadistato.it)
 
@@ -1610,9 +1608,6 @@ Public Class ElencoSchedinePS
 
          rigaFileSchedina = LeggiValoriSchedina(id)
 
-         ' Crea il file per la scrittura.
-         FileOpen(1, percorsoFile, OpenMode.Output)
-
          If numComponenti > 0 Then
             ' Scrive nel file la riga contenente i dati della schedina con CR + LF.
             PrintLine(1, rigaFileSchedina)
@@ -1623,8 +1618,10 @@ Public Class ElencoSchedinePS
 
          ' Schedine Famigliari o Membri Gruppo.
 
-         ' Apre la connessione.
-         cn.Open()
+         If cn.State = ConnectionState.Closed Then
+            ' Apre la connessione.
+            cn.Open()
+         End If
 
          Dim cmd As New OleDbCommand("SELECT * FROM ComponentiSchedinePS WHERE RifPren = " & id, cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
@@ -1653,9 +1650,6 @@ Public Class ElencoSchedinePS
          Return False
 
       Finally
-         ' Chiude il file.
-         FileClose(1)
-
          ' Chiude la connessione.
          cn.Close()
 
@@ -1688,15 +1682,17 @@ Public Class ElencoSchedinePS
       End Try
    End Function
 
-   Public Function ModificaStatoSchedina(ByVal tabella As String, ByVal codice As String) As Boolean
+   Public Sub ModificaStatoSchedina(ByVal tabella As String, ByVal codice As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim tr As OleDbTransaction
       Dim sql As String
 
       Try
-         ' Apre la connessione.
-         cn.Open()
+         If cn.State = ConnectionState.Closed Then
+            ' Apre la connessione.
+            cn.Open()
+         End If
 
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -1715,8 +1711,6 @@ Public Class ElencoSchedinePS
          ' Conferma transazione.
          tr.Commit()
 
-         Return True
-
       Catch ex As Exception
          ' Annulla transazione.
          tr.Rollback()
@@ -1724,17 +1718,17 @@ Public Class ElencoSchedinePS
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return False
-
       Finally
          ' Chiude la connessione.
          cn.Close()
       End Try
 
-   End Function
+   End Sub
 
    Public Function SalvaFileTxtAlloggiatiWeb(ByVal flagTutte As Boolean) As Boolean
       Try
+         Dim fileGenerato As Boolean
+
          ' Impostazioni per la finestra di dialogo.
          SaveFileDialog1.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
 
@@ -1747,38 +1741,76 @@ Public Class ElencoSchedinePS
          ' Apre la finestra di dialogo per salvare il file delle schedine.
          If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
 
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            ' Crea il file per la scrittura.
+            FileOpen(1, SaveFileDialog1.FileName, OpenMode.Output)
+
             If flagTutte = True Then
                ' Elabora tutte le schedine che hanno un numero e non sono ancora state inviate.
 
-               ' Apre la connessione.
-               cn.Open()
+               If cn.State = ConnectionState.Closed Then
+                  ' Apre la connessione.
+                  cn.Open()
+               End If
 
                Dim cmd As New OleDbCommand("SELECT * FROM SchedinePS WHERE Numero <> 0 AND Stato <> 'Inviata'", cn)
                Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-               ' DA_FARE_A: Testare!
+               Dim listaIdSchedne As New Collection
 
                Do While dr.Read()
-                  ' Se il file è stato creato correttamente modifica lo stato della schedina in Inviata.
-                  If GeneraFileTxtAlloggiatiWeb(dr.Item("Id").ToString, SaveFileDialog1.FileName) = True Then
-                     ModificaStatoSchedina(TAB_SCHEDINE, dr.Item("Id").ToString)
-                  End If
+                  listaIdSchedne.Add(dr.Item("Id"))
                Loop
+
+               ' Chiude la connessione.
+               cn.Close()
+
+               Dim i As Integer
+               For i = 1 To listaIdSchedne.Count
+
+                  ' Ritorno a capo CR+LF.
+                  If i <> 1 Then
+                     PrintLine(1)
+                  End If
+
+                  ' Se il file è stato creato correttamente modifica lo stato della schedina in Inviata.
+                  If GeneraFileTxtAlloggiatiWeb(listaIdSchedne(i).ToString) = True Then
+                     ModificaStatoSchedina(TAB_SCHEDINE, listaIdSchedne(i).ToString)
+                  End If
+
+                  fileGenerato = True
+               Next
             Else
                ' Elabora solo la schedina selezionata nell'elenco.
                Dim idSchedina As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString
 
                ' Se il file è stato creato correttamente modifica lo stato della schedina in Inviata.
-               If GeneraFileTxtAlloggiatiWeb(idSchedina, SaveFileDialog1.FileName) = True Then
+               If GeneraFileTxtAlloggiatiWeb(idSchedina) = True Then
                   ModificaStatoSchedina(TAB_SCHEDINE, idSchedina)
+
+                  fileGenerato = True
                End If
             End If
 
-            ' Chiede se aprire il file.
-            Dim risposta As Short = MessageBox.Show("Il file è stato creato con successo! Si desidera aprire il documento?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            ' Chiude il file.
+            FileClose(1)
 
-            If risposta = vbYes Then
-               AvviaWinBloccoNote(Me.Handle, SaveFileDialog1.FileName)
+            If fileGenerato = True Then
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.Default
+
+               ' Aggiorna i dati dell'elenco.
+               AggiornaDati()
+
+               ' Chiede se aprire il file.
+               Dim risposta As Short = MessageBox.Show("Il file è stato creato con successo! Si desidera aprire il documento?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+               If risposta = vbYes Then
+                  AvviaWinBloccoNote(Me.Handle, SaveFileDialog1.FileName)
+               End If
+            Else
+               MessageBox.Show("Il file non è stato creato! Non ci sono schedine da eleaborare", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
             Return True
@@ -1792,8 +1824,11 @@ Public Class ElencoSchedinePS
 
          Return False
 
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
       End Try
    End Function
-
 
 End Class

@@ -57,7 +57,6 @@ Public Class frmCamerieri
    Public WithEvents txtNome As System.Windows.Forms.TextBox
    Public WithEvents txtProv As System.Windows.Forms.TextBox
    Public WithEvents txtCap As System.Windows.Forms.TextBox
-   Public WithEvents txtCittà As System.Windows.Forms.TextBox
    Public WithEvents Label2 As System.Windows.Forms.Label
    Public WithEvents Label10 As System.Windows.Forms.Label
    Public WithEvents Label9 As System.Windows.Forms.Label
@@ -101,6 +100,7 @@ Public Class frmCamerieri
    Public WithEvents txtCostoOra As System.Windows.Forms.TextBox
    Public WithEvents txtCodice As System.Windows.Forms.TextBox
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
+   Friend WithEvents cmbCittà As ComboBox
    Friend WithEvents cmdScrivi As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -113,6 +113,7 @@ Public Class frmCamerieri
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbCittà = New System.Windows.Forms.ComboBox()
       Me.txtCostoOra = New System.Windows.Forms.TextBox()
       Me.Label3 = New System.Windows.Forms.Label()
       Me.txtCodice = New System.Windows.Forms.TextBox()
@@ -128,7 +129,6 @@ Public Class frmCamerieri
       Me.txtNome = New System.Windows.Forms.TextBox()
       Me.txtProv = New System.Windows.Forms.TextBox()
       Me.txtCap = New System.Windows.Forms.TextBox()
-      Me.txtCittà = New System.Windows.Forms.TextBox()
       Me.txtIndirizzo1 = New System.Windows.Forms.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.Label10 = New System.Windows.Forms.Label()
@@ -186,7 +186,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(554, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(574, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -229,7 +229,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(554, 20)
+      Me.Panel1.Size = New System.Drawing.Size(574, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -239,7 +239,7 @@ Public Class frmCamerieri
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -254,12 +254,13 @@ Public Class frmCamerieri
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(554, 332)
+      Me.TabControl1.Size = New System.Drawing.Size(574, 352)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbCittà)
       Me.TabPage1.Controls.Add(Me.txtCostoOra)
       Me.TabPage1.Controls.Add(Me.Label3)
       Me.TabPage1.Controls.Add(Me.txtCodice)
@@ -275,7 +276,6 @@ Public Class frmCamerieri
       Me.TabPage1.Controls.Add(Me.txtNome)
       Me.TabPage1.Controls.Add(Me.txtProv)
       Me.TabPage1.Controls.Add(Me.txtCap)
-      Me.TabPage1.Controls.Add(Me.txtCittà)
       Me.TabPage1.Controls.Add(Me.txtIndirizzo1)
       Me.TabPage1.Controls.Add(Me.Label2)
       Me.TabPage1.Controls.Add(Me.Label10)
@@ -286,10 +286,17 @@ Public Class frmCamerieri
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage1.Size = New System.Drawing.Size(566, 326)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
+      '
+      'cmbCittà
+      '
+      Me.cmbCittà.Location = New System.Drawing.Point(104, 104)
+      Me.cmbCittà.Name = "cmbCittà"
+      Me.cmbCittà.Size = New System.Drawing.Size(264, 21)
+      Me.cmbCittà.TabIndex = 3
       '
       'txtCostoOra
       '
@@ -380,6 +387,7 @@ Public Class frmCamerieri
       '
       'cmbNazione
       '
+      Me.cmbNazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazione.Location = New System.Drawing.Point(104, 152)
       Me.cmbNazione.Name = "cmbNazione"
       Me.cmbNazione.Size = New System.Drawing.Size(184, 21)
@@ -476,19 +484,6 @@ Public Class frmCamerieri
       Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCap.Size = New System.Drawing.Size(49, 20)
       Me.txtCap.TabIndex = 4
-      '
-      'txtCittà
-      '
-      Me.txtCittà.AcceptsReturn = True
-      Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCittà.Location = New System.Drawing.Point(104, 104)
-      Me.txtCittà.MaxLength = 100
-      Me.txtCittà.Name = "txtCittà"
-      Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCittà.Size = New System.Drawing.Size(264, 20)
-      Me.txtCittà.TabIndex = 3
       '
       'txtIndirizzo1
       '
@@ -597,7 +592,7 @@ Public Class frmCamerieri
       Me.TabPage3.Controls.Add(Me.Label11)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage3.Size = New System.Drawing.Size(556, 316)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -751,7 +746,7 @@ Public Class frmCamerieri
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage4.Size = New System.Drawing.Size(556, 316)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -831,7 +826,7 @@ Public Class frmCamerieri
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage6.Size = New System.Drawing.Size(556, 316)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -849,7 +844,7 @@ Public Class frmCamerieri
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(536, 296)
+      Me.txtNote.Size = New System.Drawing.Size(556, 316)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -866,7 +861,7 @@ Public Class frmCamerieri
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(554, 378)
+      Me.ClientSize = New System.Drawing.Size(574, 398)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -904,6 +899,7 @@ Public Class frmCamerieri
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
 
+   Const TAB_CAP As String = "CAP"
    Const TAB_NAZIONI As String = "Nazioni"
    Const TAB_ALLEGATI As String = "Ca_Allegati"
    Const TAB_PREN As String = "Prenotazioni"
@@ -933,13 +929,13 @@ Public Class frmCamerieri
 
    Private Sub InserisciImmagine()
       Try
-         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" & _
-                                  "Bmp (Bitmap di Windows)|*.Bmp|" & _
-                                  "Gif |*.Gif|" & _
-                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" & _
-                                  "Png |*.Png|" & _
-                                  "Tga |*.Tga|" & _
-                                  "Tiff |*.Tiff|" & _
+         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" &
+                                  "Bmp (Bitmap di Windows)|*.Bmp|" &
+                                  "Gif |*.Gif|" &
+                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" &
+                                  "Png |*.Png|" &
+                                  "Tga |*.Tga|" &
+                                  "Tiff |*.Tiff|" &
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
@@ -982,7 +978,7 @@ Public Class frmCamerieri
          Dim Documento As String = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf & _
+         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf &
                            "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -1043,7 +1039,7 @@ Public Class frmCamerieri
    Private Function SalvaDati() As Boolean
       Try
          ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
-         AggiornaTabella(cmbNazione, TAB_NAZIONI)
+         'AggiornaTabella(cmbNazione, TAB_NAZIONI)
 
          With ACamerieri
             ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -1052,7 +1048,7 @@ Public Class frmCamerieri
             .PIva = FormattaApici(txtPIva.Text)
             .Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
             .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(txtCittà.Text)
+            .Città = FormattaApici(cmbCittà.Text)
             .Provincia = FormattaApici(txtProv.Text)
             .Nazione = FormattaApici(cmbNazione.Text)
             .TelCasa = FormattaApici(txtTelCasa.Text)
@@ -1145,7 +1141,7 @@ Public Class frmCamerieri
                txtPIva.Text = .PIva
                txtIndirizzo1.Text = .Indirizzo1
                txtCap.Text = .Cap
-               txtCittà.Text = .Città
+               cmbCittà.Text = .Città
                txtProv.Text = .Provincia
                cmbNazione.Text = .Nazione
                txtTelCasa.Text = .TelCasa
@@ -1179,6 +1175,7 @@ Public Class frmCamerieri
          End If
 
          ' Carica le liste.
+         CaricaLista(cmbCittà, TAB_CAP)
          CaricaLista(cmbNazione, TAB_NAZIONI)
 
          ' Genera l'intestazione con i dati del form.
@@ -1438,6 +1435,19 @@ Public Class frmCamerieri
 
    Private Sub cmdScrivi_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdScrivi.MouseEnter
       ToolTip1.SetToolTip(sender, "Scrivi a """ & txtEmail.Text & """")
+   End Sub
+
+   Private Sub cmbCittà_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCittà.SelectedIndexChanged
+      Try
+         txtCap.Text = LeggiCapCAP(sender.text)
+         txtProv.Text = LeggiProvinciaCAP(sender.text)
+         'txtRegione.Text = LeggiRegioneCAP(sender.text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 #End Region

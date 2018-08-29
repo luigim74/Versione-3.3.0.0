@@ -55,7 +55,6 @@ Public Class Fornitori
    Public WithEvents txtRegione As System.Windows.Forms.TextBox
    Public WithEvents txtProv As System.Windows.Forms.TextBox
    Public WithEvents txtCap As System.Windows.Forms.TextBox
-   Public WithEvents txtCittà As System.Windows.Forms.TextBox
    Public WithEvents Label21 As System.Windows.Forms.Label
    Public WithEvents Label10 As System.Windows.Forms.Label
    Public WithEvents Label9 As System.Windows.Forms.Label
@@ -106,6 +105,7 @@ Public Class Fornitori
    Public WithEvents txtRagSoc As System.Windows.Forms.TextBox
    Friend WithEvents cmdVai As System.Windows.Forms.Button
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
+   Friend WithEvents cmbCittà As ComboBox
    Friend WithEvents cmdScrivi As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -133,7 +133,6 @@ Public Class Fornitori
       Me.txtRegione = New System.Windows.Forms.TextBox()
       Me.txtProv = New System.Windows.Forms.TextBox()
       Me.txtCap = New System.Windows.Forms.TextBox()
-      Me.txtCittà = New System.Windows.Forms.TextBox()
       Me.txtIndirizzo1 = New System.Windows.Forms.TextBox()
       Me.txtRagSoc = New System.Windows.Forms.TextBox()
       Me.Label21 = New System.Windows.Forms.Label()
@@ -175,6 +174,7 @@ Public Class Fornitori
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.cmbCittà = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -196,7 +196,7 @@ Public Class Fornitori
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(544, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(554, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -239,7 +239,7 @@ Public Class Fornitori
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(544, 20)
+      Me.Panel1.Size = New System.Drawing.Size(554, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -264,12 +264,13 @@ Public Class Fornitori
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(544, 322)
+      Me.TabControl1.Size = New System.Drawing.Size(554, 332)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbCittà)
       Me.TabPage1.Controls.Add(Me.cmbAttività)
       Me.TabPage1.Controls.Add(Me.Label7)
       Me.TabPage1.Controls.Add(Me.txtContatto)
@@ -285,7 +286,6 @@ Public Class Fornitori
       Me.TabPage1.Controls.Add(Me.txtRegione)
       Me.TabPage1.Controls.Add(Me.txtProv)
       Me.TabPage1.Controls.Add(Me.txtCap)
-      Me.TabPage1.Controls.Add(Me.txtCittà)
       Me.TabPage1.Controls.Add(Me.txtIndirizzo1)
       Me.TabPage1.Controls.Add(Me.txtRagSoc)
       Me.TabPage1.Controls.Add(Me.Label21)
@@ -298,7 +298,7 @@ Public Class Fornitori
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(546, 306)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -396,6 +396,7 @@ Public Class Fornitori
       '
       'cmbNazione
       '
+      Me.cmbNazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazione.Location = New System.Drawing.Point(104, 168)
       Me.cmbNazione.Name = "cmbNazione"
       Me.cmbNazione.Size = New System.Drawing.Size(184, 21)
@@ -465,19 +466,6 @@ Public Class Fornitori
       Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCap.Size = New System.Drawing.Size(49, 20)
       Me.txtCap.TabIndex = 4
-      '
-      'txtCittà
-      '
-      Me.txtCittà.AcceptsReturn = True
-      Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCittà.Location = New System.Drawing.Point(104, 96)
-      Me.txtCittà.MaxLength = 100
-      Me.txtCittà.Name = "txtCittà"
-      Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCittà.Size = New System.Drawing.Size(264, 20)
-      Me.txtCittà.TabIndex = 3
       '
       'txtIndirizzo1
       '
@@ -917,12 +905,19 @@ Public Class Fornitori
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'cmbCittà
+      '
+      Me.cmbCittà.Location = New System.Drawing.Point(104, 96)
+      Me.cmbCittà.Name = "cmbCittà"
+      Me.cmbCittà.Size = New System.Drawing.Size(264, 21)
+      Me.cmbCittà.TabIndex = 3
+      '
       'Fornitori
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(544, 368)
+      Me.ClientSize = New System.Drawing.Size(554, 378)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -957,6 +952,7 @@ Public Class Fornitori
    Private IAllegati As New Allegati
    Private CConvalida As New ConvalidaKeyPress
 
+   Const TAB_CAP As String = "CAP"
    Const TAB_NAZIONI As String = "Nazioni"
    Const TAB_ATTIVITA As String = "Attività"
    Const TAB_ALLEGATI As String = "Forn_Allegati"
@@ -983,7 +979,7 @@ Public Class Fornitori
    Private Function SalvaDati() As Boolean
       Try
          ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
-         AggiornaTabella(cmbNazione, TAB_NAZIONI)
+         'AggiornaTabella(cmbNazione, TAB_NAZIONI)
          AggiornaTabella(cmbAttività, TAB_ATTIVITA)
 
          ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -991,7 +987,7 @@ Public Class Fornitori
          AFornitori.PIva = FormattaApici(txtPIva.Text)
          AFornitori.Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
          AFornitori.Cap = FormattaApici(txtCap.Text)
-         AFornitori.Città = FormattaApici(txtCittà.Text)
+         AFornitori.Città = FormattaApici(cmbCittà.Text)
          AFornitori.Provincia = FormattaApici(txtProv.Text)
          AFornitori.Regione = FormattaApici(txtRegione.Text)
          AFornitori.Nazione = FormattaApici(cmbNazione.Text)
@@ -1024,13 +1020,13 @@ Public Class Fornitori
 
    Private Sub InserisciImmagine()
       Try
-         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" & _
-                                  "Bmp (Bitmap di Windows)|*.Bmp|" & _
-                                  "Gif |*.Gif|" & _
-                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" & _
-                                  "Png |*.Png|" & _
-                                  "Tga |*.Tga|" & _
-                                  "Tiff |*.Tiff|" & _
+         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" &
+                                  "Bmp (Bitmap di Windows)|*.Bmp|" &
+                                  "Gif |*.Gif|" &
+                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" &
+                                  "Png |*.Png|" &
+                                  "Tga |*.Tga|" &
+                                  "Tiff |*.Tiff|" &
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
@@ -1111,7 +1107,7 @@ Public Class Fornitori
          Dim Documento As String = lvwAllegati.Items(lvwAllegati.FocusedItem.Index).SubItems(0).Text
 
          ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf & _
+         Risposta = MsgBox("Si desidera rimuovere il documento """ & Documento & """?" & vbCrLf & vbCrLf &
                            "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma rimozione")
 
          If Risposta = MsgBoxResult.Yes Then
@@ -1211,7 +1207,7 @@ Public Class Fornitori
             txtPIva.Text = AFornitori.PIva
             txtIndirizzo1.Text = AFornitori.Indirizzo1
             txtCap.Text = AFornitori.Cap
-            txtCittà.Text = AFornitori.Città
+            cmbCittà.Text = AFornitori.Città
             txtProv.Text = AFornitori.Provincia
             txtRegione.Text = AFornitori.Regione
             cmbNazione.Text = AFornitori.Nazione
@@ -1247,6 +1243,7 @@ Public Class Fornitori
          End If
 
          ' Carica le liste.
+         CaricaLista(cmbCittà, TAB_CAP)
          CaricaLista(cmbNazione, TAB_NAZIONI)
          CaricaLista(cmbAttività, TAB_ATTIVITA)
 
@@ -1513,4 +1510,16 @@ Public Class Fornitori
       e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
    End Sub
 
+   Private Sub cmbCittà_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCittà.SelectedIndexChanged
+      Try
+         txtCap.Text = LeggiCapCAP(sender.text)
+         txtProv.Text = LeggiProvinciaCAP(sender.text)
+         txtRegione.Text = LeggiRegioneCAP(sender.text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
 End Class

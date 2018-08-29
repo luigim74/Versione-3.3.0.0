@@ -68,7 +68,6 @@ Public Class frmClienti
    Public WithEvents txtRegione As System.Windows.Forms.TextBox
    Public WithEvents txtProv As System.Windows.Forms.TextBox
    Public WithEvents txtCap As System.Windows.Forms.TextBox
-   Public WithEvents txtCitt‡ As System.Windows.Forms.TextBox
    Public WithEvents txtCognome As System.Windows.Forms.TextBox
    Public WithEvents Label2 As System.Windows.Forms.Label
    Public WithEvents label As System.Windows.Forms.Label
@@ -140,7 +139,6 @@ Public Class frmClienti
    Public WithEvents Label26 As System.Windows.Forms.Label
    Public WithEvents txtRilasciatoDaDoc As System.Windows.Forms.TextBox
    Public WithEvents Label25 As System.Windows.Forms.Label
-   Public WithEvents txtCitt‡RilascioDoc As System.Windows.Forms.TextBox
    Public WithEvents Label24 As System.Windows.Forms.Label
    Public WithEvents Label23 As System.Windows.Forms.Label
    Public WithEvents txtNumeroDoc As System.Windows.Forms.TextBox
@@ -156,12 +154,14 @@ Public Class frmClienti
    Friend WithEvents cmbNazioneNascita As System.Windows.Forms.ComboBox
    Public WithEvents Label32 As System.Windows.Forms.Label
    Public WithEvents txtProvNascita As System.Windows.Forms.TextBox
-   Public WithEvents txtLuogoNascita As System.Windows.Forms.TextBox
    Public WithEvents Label28 As System.Windows.Forms.Label
    Public WithEvents Label27 As System.Windows.Forms.Label
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
    Public WithEvents Label35 As Label
    Friend WithEvents cmbTipoAlloggiato As ComboBox
+   Friend WithEvents cmbCitt‡ As ComboBox
+   Friend WithEvents cmbComuneNascita As ComboBox
+   Friend WithEvents cmbCitt‡RilascioDoc As ComboBox
    Public WithEvents txtIva As System.Windows.Forms.TextBox
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -174,6 +174,7 @@ Public Class frmClienti
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbCitt‡ = New System.Windows.Forms.ComboBox()
       Me.chkObsoleto = New System.Windows.Forms.CheckBox()
       Me.chkDisabile = New System.Windows.Forms.CheckBox()
       Me.chkCorrispondenza = New System.Windows.Forms.CheckBox()
@@ -198,7 +199,6 @@ Public Class frmClienti
       Me.txtRegione = New System.Windows.Forms.TextBox()
       Me.txtProv = New System.Windows.Forms.TextBox()
       Me.txtCap = New System.Windows.Forms.TextBox()
-      Me.txtCitt‡ = New System.Windows.Forms.TextBox()
       Me.txtIndirizzo1 = New System.Windows.Forms.TextBox()
       Me.txtCognome = New System.Windows.Forms.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
@@ -212,6 +212,8 @@ Public Class frmClienti
       Me.Label3 = New System.Windows.Forms.Label()
       Me.chkPrivacy = New System.Windows.Forms.CheckBox()
       Me.TabPage2 = New System.Windows.Forms.TabPage()
+      Me.cmbComuneNascita = New System.Windows.Forms.ComboBox()
+      Me.cmbCitt‡RilascioDoc = New System.Windows.Forms.ComboBox()
       Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
       Me.Label35 = New System.Windows.Forms.Label()
       Me.cmbSesso = New System.Windows.Forms.ComboBox()
@@ -221,7 +223,6 @@ Public Class frmClienti
       Me.cmbNazioneNascita = New System.Windows.Forms.ComboBox()
       Me.Label32 = New System.Windows.Forms.Label()
       Me.txtProvNascita = New System.Windows.Forms.TextBox()
-      Me.txtLuogoNascita = New System.Windows.Forms.TextBox()
       Me.Label28 = New System.Windows.Forms.Label()
       Me.Label27 = New System.Windows.Forms.Label()
       Me.dtpDataNascita = New System.Windows.Forms.DateTimePicker()
@@ -230,7 +231,6 @@ Public Class frmClienti
       Me.Label26 = New System.Windows.Forms.Label()
       Me.txtRilasciatoDaDoc = New System.Windows.Forms.TextBox()
       Me.Label25 = New System.Windows.Forms.Label()
-      Me.txtCitt‡RilascioDoc = New System.Windows.Forms.TextBox()
       Me.Label24 = New System.Windows.Forms.Label()
       Me.Label23 = New System.Windows.Forms.Label()
       Me.txtNumeroDoc = New System.Windows.Forms.TextBox()
@@ -302,7 +302,7 @@ Public Class frmClienti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(640, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(605, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -347,7 +347,7 @@ Public Class frmClienti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(640, 20)
+      Me.Panel1.Size = New System.Drawing.Size(605, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -357,7 +357,7 @@ Public Class frmClienti
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -374,12 +374,13 @@ Public Class frmClienti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(640, 391)
+      Me.TabControl1.Size = New System.Drawing.Size(605, 344)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbCitt‡)
       Me.TabPage1.Controls.Add(Me.chkObsoleto)
       Me.TabPage1.Controls.Add(Me.chkDisabile)
       Me.TabPage1.Controls.Add(Me.chkCorrispondenza)
@@ -404,7 +405,6 @@ Public Class frmClienti
       Me.TabPage1.Controls.Add(Me.txtRegione)
       Me.TabPage1.Controls.Add(Me.txtProv)
       Me.TabPage1.Controls.Add(Me.txtCap)
-      Me.TabPage1.Controls.Add(Me.txtCitt‡)
       Me.TabPage1.Controls.Add(Me.txtIndirizzo1)
       Me.TabPage1.Controls.Add(Me.txtCognome)
       Me.TabPage1.Controls.Add(Me.Label2)
@@ -420,10 +420,17 @@ Public Class frmClienti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(632, 365)
+      Me.TabPage1.Size = New System.Drawing.Size(597, 318)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
+      '
+      'cmbCitt‡
+      '
+      Me.cmbCitt‡.Location = New System.Drawing.Point(136, 128)
+      Me.cmbCitt‡.Name = "cmbCitt‡"
+      Me.cmbCitt‡.Size = New System.Drawing.Size(280, 21)
+      Me.cmbCitt‡.TabIndex = 4
       '
       'chkObsoleto
       '
@@ -586,6 +593,7 @@ Public Class frmClienti
       '
       'cmbNazione
       '
+      Me.cmbNazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazione.Location = New System.Drawing.Point(136, 200)
       Me.cmbNazione.Name = "cmbNazione"
       Me.cmbNazione.Size = New System.Drawing.Size(184, 21)
@@ -703,19 +711,6 @@ Public Class frmClienti
       Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCap.Size = New System.Drawing.Size(49, 20)
       Me.txtCap.TabIndex = 5
-      '
-      'txtCitt‡
-      '
-      Me.txtCitt‡.AcceptsReturn = True
-      Me.txtCitt‡.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCitt‡.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCitt‡.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCitt‡.Location = New System.Drawing.Point(136, 128)
-      Me.txtCitt‡.MaxLength = 100
-      Me.txtCitt‡.Name = "txtCitt‡"
-      Me.txtCitt‡.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCitt‡.Size = New System.Drawing.Size(280, 20)
-      Me.txtCitt‡.TabIndex = 4
       '
       'txtIndirizzo1
       '
@@ -874,6 +869,8 @@ Public Class frmClienti
       'TabPage2
       '
       Me.TabPage2.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage2.Controls.Add(Me.cmbComuneNascita)
+      Me.TabPage2.Controls.Add(Me.cmbCitt‡RilascioDoc)
       Me.TabPage2.Controls.Add(Me.cmbTipoAlloggiato)
       Me.TabPage2.Controls.Add(Me.Label35)
       Me.TabPage2.Controls.Add(Me.cmbSesso)
@@ -883,7 +880,6 @@ Public Class frmClienti
       Me.TabPage2.Controls.Add(Me.cmbNazioneNascita)
       Me.TabPage2.Controls.Add(Me.Label32)
       Me.TabPage2.Controls.Add(Me.txtProvNascita)
-      Me.TabPage2.Controls.Add(Me.txtLuogoNascita)
       Me.TabPage2.Controls.Add(Me.Label28)
       Me.TabPage2.Controls.Add(Me.Label27)
       Me.TabPage2.Controls.Add(Me.dtpDataNascita)
@@ -892,7 +888,6 @@ Public Class frmClienti
       Me.TabPage2.Controls.Add(Me.Label26)
       Me.TabPage2.Controls.Add(Me.txtRilasciatoDaDoc)
       Me.TabPage2.Controls.Add(Me.Label25)
-      Me.TabPage2.Controls.Add(Me.txtCitt‡RilascioDoc)
       Me.TabPage2.Controls.Add(Me.Label24)
       Me.TabPage2.Controls.Add(Me.Label23)
       Me.TabPage2.Controls.Add(Me.txtNumeroDoc)
@@ -903,9 +898,25 @@ Public Class frmClienti
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
       Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage2.Size = New System.Drawing.Size(632, 365)
+      Me.TabPage2.Size = New System.Drawing.Size(597, 318)
       Me.TabPage2.TabIndex = 7
       Me.TabPage2.Text = "Dati personali"
+      '
+      'cmbComuneNascita
+      '
+      Me.cmbComuneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbComuneNascita.Location = New System.Drawing.Point(123, 172)
+      Me.cmbComuneNascita.Name = "cmbComuneNascita"
+      Me.cmbComuneNascita.Size = New System.Drawing.Size(160, 21)
+      Me.cmbComuneNascita.TabIndex = 7
+      '
+      'cmbCitt‡RilascioDoc
+      '
+      Me.cmbCitt‡RilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbCitt‡RilascioDoc.Location = New System.Drawing.Point(123, 92)
+      Me.cmbCitt‡RilascioDoc.Name = "cmbCitt‡RilascioDoc"
+      Me.cmbCitt‡RilascioDoc.Size = New System.Drawing.Size(160, 21)
+      Me.cmbCitt‡RilascioDoc.TabIndex = 3
       '
       'cmbTipoAlloggiato
       '
@@ -954,6 +965,7 @@ Public Class frmClienti
       '
       'cmbNazionalit‡
       '
+      Me.cmbNazionalit‡.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazionalit‡.Location = New System.Drawing.Point(403, 236)
       Me.cmbNazionalit‡.Name = "cmbNazionalit‡"
       Me.cmbNazionalit‡.Size = New System.Drawing.Size(160, 21)
@@ -974,6 +986,7 @@ Public Class frmClienti
       '
       'cmbNazioneNascita
       '
+      Me.cmbNazioneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneNascita.Location = New System.Drawing.Point(123, 236)
       Me.cmbNazioneNascita.Name = "cmbNazioneNascita"
       Me.cmbNazioneNascita.Size = New System.Drawing.Size(160, 21)
@@ -1005,19 +1018,6 @@ Public Class frmClienti
       Me.txtProvNascita.Size = New System.Drawing.Size(48, 20)
       Me.txtProvNascita.TabIndex = 8
       '
-      'txtLuogoNascita
-      '
-      Me.txtLuogoNascita.AcceptsReturn = True
-      Me.txtLuogoNascita.BackColor = System.Drawing.SystemColors.Window
-      Me.txtLuogoNascita.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtLuogoNascita.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtLuogoNascita.Location = New System.Drawing.Point(123, 172)
-      Me.txtLuogoNascita.MaxLength = 0
-      Me.txtLuogoNascita.Name = "txtLuogoNascita"
-      Me.txtLuogoNascita.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtLuogoNascita.Size = New System.Drawing.Size(160, 20)
-      Me.txtLuogoNascita.TabIndex = 7
-      '
       'Label28
       '
       Me.Label28.AutoSize = True
@@ -1040,9 +1040,9 @@ Public Class frmClienti
       Me.Label27.Location = New System.Drawing.Point(23, 172)
       Me.Label27.Name = "Label27"
       Me.Label27.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label27.Size = New System.Drawing.Size(88, 13)
+      Me.Label27.Size = New System.Drawing.Size(97, 13)
       Me.Label27.TabIndex = 245
-      Me.Label27.Text = "Luogo di nascita:"
+      Me.Label27.Text = "Comune di nascita:"
       '
       'dtpDataNascita
       '
@@ -1066,6 +1066,7 @@ Public Class frmClienti
       '
       'cmbNazioneRilascioDoc
       '
+      Me.cmbNazioneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazioneRilascioDoc.Location = New System.Drawing.Point(403, 92)
       Me.cmbNazioneRilascioDoc.Name = "cmbNazioneRilascioDoc"
       Me.cmbNazioneRilascioDoc.Size = New System.Drawing.Size(160, 21)
@@ -1109,19 +1110,6 @@ Public Class frmClienti
       Me.Label25.Size = New System.Drawing.Size(95, 13)
       Me.Label25.TabIndex = 239
       Me.Label25.Text = "Comune di rilascio:"
-      '
-      'txtCitt‡RilascioDoc
-      '
-      Me.txtCitt‡RilascioDoc.AcceptsReturn = True
-      Me.txtCitt‡RilascioDoc.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCitt‡RilascioDoc.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCitt‡RilascioDoc.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCitt‡RilascioDoc.Location = New System.Drawing.Point(123, 92)
-      Me.txtCitt‡RilascioDoc.MaxLength = 0
-      Me.txtCitt‡RilascioDoc.Name = "txtCitt‡RilascioDoc"
-      Me.txtCitt‡RilascioDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCitt‡RilascioDoc.Size = New System.Drawing.Size(160, 20)
-      Me.txtCitt‡RilascioDoc.TabIndex = 3
       '
       'Label24
       '
@@ -1177,6 +1165,7 @@ Public Class frmClienti
       '
       'cmbTipoDoc
       '
+      Me.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbTipoDoc.Location = New System.Drawing.Point(123, 60)
       Me.cmbTipoDoc.Name = "cmbTipoDoc"
       Me.cmbTipoDoc.Size = New System.Drawing.Size(160, 21)
@@ -1227,7 +1216,7 @@ Public Class frmClienti
       Me.tbpAllegati.Controls.Add(Me.Label11)
       Me.tbpAllegati.Location = New System.Drawing.Point(4, 22)
       Me.tbpAllegati.Name = "tbpAllegati"
-      Me.tbpAllegati.Size = New System.Drawing.Size(622, 355)
+      Me.tbpAllegati.Size = New System.Drawing.Size(642, 375)
       Me.tbpAllegati.TabIndex = 2
       Me.tbpAllegati.Text = "Tel./Internet"
       Me.tbpAllegati.ToolTipText = "Dati sul telefono e Internet"
@@ -1417,7 +1406,7 @@ Public Class frmClienti
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(622, 355)
+      Me.TabPage4.Size = New System.Drawing.Size(642, 375)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1457,7 +1446,7 @@ Public Class frmClienti
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(622, 256)
+      Me.lvwAllegati.Size = New System.Drawing.Size(642, 256)
       Me.lvwAllegati.SmallImageList = Me.ImageList1
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
@@ -1499,7 +1488,7 @@ Public Class frmClienti
       Me.tbpStatGioco.Controls.Add(Me.Panel2)
       Me.tbpStatGioco.Location = New System.Drawing.Point(4, 22)
       Me.tbpStatGioco.Name = "tbpStatGioco"
-      Me.tbpStatGioco.Size = New System.Drawing.Size(622, 355)
+      Me.tbpStatGioco.Size = New System.Drawing.Size(642, 375)
       Me.tbpStatGioco.TabIndex = 6
       Me.tbpStatGioco.Text = "Statistiche di gioco"
       Me.tbpStatGioco.UseVisualStyleBackColor = True
@@ -1519,7 +1508,7 @@ Public Class frmClienti
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(622, 315)
+      Me.DataGrid1.Size = New System.Drawing.Size(642, 335)
       Me.DataGrid1.TabIndex = 233
       '
       'Panel2
@@ -1532,7 +1521,7 @@ Public Class frmClienti
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel2.Location = New System.Drawing.Point(0, 0)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(622, 40)
+      Me.Panel2.Size = New System.Drawing.Size(642, 40)
       Me.Panel2.TabIndex = 232
       '
       'txtTotPartite
@@ -1600,7 +1589,7 @@ Public Class frmClienti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(622, 355)
+      Me.TabPage6.Size = New System.Drawing.Size(642, 375)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1618,7 +1607,7 @@ Public Class frmClienti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(622, 355)
+      Me.txtNote.Size = New System.Drawing.Size(642, 375)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1635,7 +1624,7 @@ Public Class frmClienti
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(640, 437)
+      Me.ClientSize = New System.Drawing.Size(605, 390)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1680,6 +1669,8 @@ Public Class frmClienti
    Private CFormatta As New ClsFormatta
 
    Const TAB_QUALIFICHE As String = "Qualifiche"
+   Const TAB_CAP As String = "CAP"
+   Const TAB_COMUNI As String = "Comuni"
    Const TAB_NAZIONI As String = "Nazioni"
    Const TAB_DOC_IDENTITA As String = "DocIdentit‡"
    Const TAB_TIPO_CLIENTE As String = "CategorieClienti"
@@ -2037,11 +2028,11 @@ Public Class frmClienti
          ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
          AggiornaTabella(cmbTitolo, TAB_QUALIFICHE)
          AggiornaTabella(cmbTipoCliente, TAB_TIPO_CLIENTE)
-         AggiornaTabella(cmbNazione, TAB_NAZIONI)
-         AggiornaTabella(cmbNazioneRilascioDoc, TAB_NAZIONI)
-         AggiornaTabella(cmbNazioneNascita, TAB_NAZIONI)
-         AggiornaTabella(cmbNazionalit‡, TAB_NAZIONI)
-         AggiornaTabella(cmbTipoDoc, TAB_DOC_IDENTITA)
+         'AggiornaTabella(cmbNazione, TAB_NAZIONI)
+         'AggiornaTabella(cmbNazioneRilascioDoc, TAB_NAZIONI)
+         'AggiornaTabella(cmbNazioneNascita, TAB_NAZIONI)
+         'AggiornaTabella(cmbNazionalit‡, TAB_NAZIONI)
+         'AggiornaTabella(cmbTipoDoc, TAB_DOC_IDENTITA)
 
          With AClienti
             ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -2053,7 +2044,7 @@ Public Class frmClienti
             .PIva = FormattaApici(txtPIva.Text)
             .Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
             .Cap = FormattaApici(txtCap.Text)
-            .Citt‡ = FormattaApici(txtCitt‡.Text)
+            .Citt‡ = FormattaApici(cmbCitt‡.Text)
             .Provincia = FormattaApici(txtProv.Text)
             .Regione = FormattaApici(txtRegione.Text)
             .Nazione = FormattaApici(cmbNazione.Text)
@@ -2089,9 +2080,9 @@ Public Class frmClienti
                .DataRilascioDoc = String.Empty
             End If
             .RilasciatoDa = FormattaApici(txtRilasciatoDaDoc.Text)
-            .Citt‡RilascioDoc = FormattaApici(txtCitt‡RilascioDoc.Text)
+            .Citt‡RilascioDoc = FormattaApici(cmbCitt‡RilascioDoc.Text)
             .NazioneRilascioDoc = FormattaApici(cmbNazioneRilascioDoc.Text)
-            .LuogoNascita = FormattaApici(txtLuogoNascita.Text)
+            .LuogoNascita = FormattaApici(cmbComuneNascita.Text)
             .ProvNascita = FormattaApici(txtProvNascita.Text)
             If dtpDataNascita.Checked = True Then
                .DataNascita = dtpDataNascita.Text
@@ -2304,7 +2295,7 @@ Public Class frmClienti
                txtPIva.Text = .PIva
                txtIndirizzo1.Text = .Indirizzo1
                txtCap.Text = .Cap
-               txtCitt‡.Text = .Citt‡
+               cmbCitt‡.Text = .Citt‡
                txtProv.Text = .Provincia
                txtRegione.Text = .Regione
                cmbNazione.Text = .Nazione
@@ -2341,9 +2332,9 @@ Public Class frmClienti
                End If
 
                txtRilasciatoDaDoc.Text = .RilasciatoDa
-               txtCitt‡RilascioDoc.Text = .Citt‡RilascioDoc
+               cmbCitt‡RilascioDoc.Text = .Citt‡RilascioDoc
                cmbNazioneRilascioDoc.Text = .NazioneRilascioDoc
-               txtLuogoNascita.Text = .LuogoNascita
+               cmbComuneNascita.Text = .LuogoNascita
                txtProvNascita.Text = .ProvNascita
 
                If .DataNascita <> String.Empty Then
@@ -2420,12 +2411,15 @@ Public Class frmClienti
 
          ' Carica le liste.
          CaricaLista(cmbTitolo, TAB_QUALIFICHE)
+         CaricaLista(cmbCitt‡, TAB_CAP)
          CaricaLista(cmbTipoCliente, TAB_TIPO_CLIENTE)
          CaricaLista(cmbNazione, TAB_NAZIONI)
          CaricaLista(cmbNazioneRilascioDoc, TAB_NAZIONI)
          CaricaLista(cmbNazioneNascita, TAB_NAZIONI)
          CaricaLista(cmbNazionalit‡, TAB_NAZIONI)
          CaricaLista(cmbTipoDoc, TAB_DOC_IDENTITA)
+         CaricaLista(cmbCitt‡RilascioDoc, TAB_COMUNI)
+         CaricaLista(cmbComuneNascita, TAB_COMUNI)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione("", txtCognome.Text, txtNome.Text)
@@ -2756,6 +2750,30 @@ Public Class frmClienti
 
    Private Sub DataGrid1_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.CurrentCellChanged
       AggIntGriglia()
+   End Sub
+
+   Private Sub cmbCitt‡_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCitt‡.SelectedIndexChanged
+      Try
+         txtCap.Text = LeggiCapCAP(sender.text)
+         txtProv.Text = LeggiProvinciaCAP(sender.text)
+         txtRegione.Text = LeggiRegioneCAP(sender.text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub cmbComuneNascita_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbComuneNascita.SelectedIndexChanged
+      Try
+         txtProvNascita.Text = LeggiProvinciaComune(sender.text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 #End Region

@@ -1,8 +1,18 @@
+#Region " DATI FILE.VB "
+
+' ******************************************************************
 ' Nome form:            ElencoCAP
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/01/2007
-' Data ultima modifica: 23/01/2007
-' Descrizione:          Elenco Codici di Avviamento Postale
+' Data ultima modifica: 29/08/2018
+' Descrizione:          Elenco Codici di Avviamento Postale.
+' Note:
+
+' Elenco Attivita:
+
+' ******************************************************************
+
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -15,10 +25,10 @@ Public Class ElencoCAP
 #Region "Dichiarazioni"
 
    Const TITOLO_FINESTRA As String = "Elenco CAP"
-   Dim TAB_CAP = "CAP"
+   Const TAB_CAP As String = "CAP"
 
    ' Dichiara un oggetto connessione.
-   Dim cn As New OleDbConnection(ConnStringCAP)
+   Dim cn As New OleDbConnection(ConnString) ' ConnStringCAP
    ' Dichiara un oggetto transazione.
    Dim tr As OleDbTransaction
    Dim cmd As New OleDbCommand(sql, cn)
