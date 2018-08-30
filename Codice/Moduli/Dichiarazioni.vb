@@ -459,6 +459,8 @@ Module Dichiarazioni
    Public Const MODULO_TABELLA_GRUPPI_OSPITI As String = "TABELLA GRUPPI"
    Public Const MODULO_TABELLA_AGENZIE As String = "TABELLA AGENZIE"
    Public Const MODULO_TABELLA_CANALI As String = "TABELLA CANALI DI PROVENIENZA"
+   Public Const MODULO_TABELLA_TIPO_ALLOGGIATO As String = "TABELLA TIPO ALLOGGIATO"
+   Public Const MODULO_TABELLA_COMUNI As String = "TABELLA COMUNI"
 
    ' Stringhe per la descrizione delle operazioni.
    Public Const STR_HOSPITALITY As String = "Hospitality Solution."
@@ -533,6 +535,8 @@ Module Dichiarazioni
    Public Const STR_TABELLA_GRUPPI As String = "la tabella Gruppi."
    Public Const STR_TABELLA_AGENZIE As String = "la tabella Agenzie."
    Public Const STR_TABELLA_CANALI As String = "la tabella Canali di provenienza."
+   Public Const STR_TABELLA_TIPO_ALLOGGIATO As String = "la tabella Tipo alloggiato."
+   Public Const STR_TABELLA_COMUNI As String = "la tabella Comuni."
 
 #End Region
 
@@ -968,6 +972,8 @@ Module Dichiarazioni
       GruppiOspiti = 65
       Agenzie = 66
       CanaliVendita = 67
+      TipoAlloggiato = 68
+      Comuni = 69
 
    End Enum
 

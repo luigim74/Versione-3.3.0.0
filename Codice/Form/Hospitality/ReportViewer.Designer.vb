@@ -35,10 +35,13 @@ Partial Class ReportViewer
       Me.AziendaTableAdapter = New HospitalityDataSetTableAdapters.AziendaTableAdapter()
       Me.DocumentiTableAdapter = New HospitalityDataSetTableAdapters.DocumentiTableAdapter()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.AccessoriServiziBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+      Me.AccessoriServiziTableAdapter = New HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter()
       CType(Me.DettagliDocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.DocumentiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.AccessoriServiziBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'DettagliDocBindingSource
@@ -78,7 +81,7 @@ Partial Class ReportViewer
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
       Me.ReportViewer1.PromptAreaCollapsed = True
-      Me.ReportViewer1.Size = New System.Drawing.Size(859, 593)
+      Me.ReportViewer1.Size = New System.Drawing.Size(799, 397)
       Me.ReportViewer1.TabIndex = 1
       '
       'DettagliDocTableAdapter
@@ -98,12 +101,21 @@ Partial Class ReportViewer
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'AccessoriServiziBindingSource
+      '
+      Me.AccessoriServiziBindingSource.DataMember = "AccessoriServizi"
+      Me.AccessoriServiziBindingSource.DataSource = Me.HospitalityDataSet
+      '
+      'AccessoriServiziTableAdapter
+      '
+      Me.AccessoriServiziTableAdapter.ClearBeforeFill = True
+      '
       'ReportViewer
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(859, 593)
+      Me.ClientSize = New System.Drawing.Size(799, 397)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "ReportViewer"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -112,6 +124,7 @@ Partial Class ReportViewer
       CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.DocumentiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.AccessoriServiziBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
    End Sub
@@ -124,4 +137,6 @@ Partial Class ReportViewer
    Friend WithEvents AziendaTableAdapter As HospitalityDataSetTableAdapters.AziendaTableAdapter
    Friend WithEvents DocumentiTableAdapter As HospitalityDataSetTableAdapters.DocumentiTableAdapter
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
+   Friend WithEvents AccessoriServiziBindingSource As BindingSource
+   Friend WithEvents AccessoriServiziTableAdapter As HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter
 End Class

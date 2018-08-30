@@ -4,7 +4,7 @@
 ' Nome form:            ElencoCAP
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/01/2007
-' Data ultima modifica: 29/08/2018
+' Data ultima modifica: 30/08/2018
 ' Descrizione:          Elenco Codici di Avviamento Postale.
 ' Note:
 
@@ -24,7 +24,7 @@ Public Class ElencoCAP
 
 #Region "Dichiarazioni"
 
-   Const TITOLO_FINESTRA As String = "Elenco CAP"
+   Const TITOLO_FINESTRA As String = "Elenco Comuni e CAP"
    Const TAB_CAP As String = "CAP"
 
    ' Dichiara un oggetto connessione.
@@ -657,11 +657,12 @@ Public Class ElencoCAP
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " & _
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) & _
-                                                  " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3))
+            DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4) & " " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) & " " &
+                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
          Else
-            DataGrid1.CaptionText = ""
+            DataGrid1.CaptionText = String.Empty
          End If
 
       Catch ex As Exception
@@ -680,70 +681,70 @@ Public Class ElencoCAP
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
-         ' Id (non visibile)
-         Dim idStyle As New DataGridTextBoxColumn
+         ' 0 - Id.
+         Dim idStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
          idStyle.MappingName = "Id"
-         idStyle.HeaderText = "Id"
-         idStyle.Width = 0
+         idStyle.HeaderText = "Codice"
+         idStyle.Width = 50
          idStyle.NullText = ""
-         idStyle.TextBox.BackColor = Color.White
+         idStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(idStyle)
-         ' CAP
-         Dim CAPStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         CAPStyle.MappingName = "CAP"
-         CAPStyle.HeaderText = "CAP"
-         CAPStyle.Width = 60
-         CAPStyle.NullText = ""
-         CAPStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(CAPStyle)
-         ' Provincia
-         Dim provinciaStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         ' 1 - Descrizione / Comune.
+         Dim comuneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         comuneStyle.MappingName = "Descrizione"
+         comuneStyle.HeaderText = "Comune"
+         comuneStyle.Width = 200
+         comuneStyle.NullText = ""
+         comuneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(comuneStyle)
+         ' 2 - Provincia.
+         Dim provinciaStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          provinciaStyle.MappingName = "Provincia"
          provinciaStyle.HeaderText = "Provincia"
          provinciaStyle.Width = 80
          provinciaStyle.NullText = ""
-         provinciaStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         provinciaStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(provinciaStyle)
-         ' Comune
-         Dim comuneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         comuneStyle.MappingName = "Comune"
-         comuneStyle.HeaderText = "Comune"
-         comuneStyle.Width = 250
-         comuneStyle.NullText = ""
-         comuneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(comuneStyle)
-         ' Localit‡
-         Dim localit‡Style As New DataGridTextBoxColumn
-         localit‡Style.MappingName = "Localit‡"
-         localit‡Style.HeaderText = "Localit‡"
-         localit‡Style.Width = 250
-         localit‡Style.NullText = ""
-         localit‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(localit‡Style)
-         ' Nome strada
-         Dim nomeStradaStyle As New DataGridTextBoxColumn
-         nomeStradaStyle.MappingName = "NomeStrada"
-         nomeStradaStyle.HeaderText = "Nome strada"
-         nomeStradaStyle.Width = 200
-         nomeStradaStyle.NullText = ""
-         nomeStradaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nomeStradaStyle)
-         ' Tipo strada
-         Dim tipoStradaStyle As New DataGridTextBoxColumn
-         tipoStradaStyle.MappingName = "TipoStrada"
-         tipoStradaStyle.HeaderText = "Tipo strada"
-         tipoStradaStyle.Width = 150
-         tipoStradaStyle.NullText = ""
-         tipoStradaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoStradaStyle)
-         ' Numeri
-         Dim numeriStyle As New DataGridTextBoxColumn
-         numeriStyle.MappingName = "Numeri"
-         numeriStyle.HeaderText = "Numeri"
-         numeriStyle.Width = 150
-         numeriStyle.NullText = ""
-         numeriStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(numeriStyle)
+         ' 3 - Regione.
+         Dim regioneStyle As New DataGridTextBoxColumn
+         regioneStyle.MappingName = "Regione"
+         regioneStyle.HeaderText = "Regione"
+         regioneStyle.Width = 150
+         regioneStyle.NullText = ""
+         regioneStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(regioneStyle)
+         ' 4 - CAP
+         Dim CAPStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
+         CAPStyle.MappingName = "CAP"
+         CAPStyle.HeaderText = "CAP"
+         CAPStyle.Width = 80
+         CAPStyle.NullText = ""
+         CAPStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(CAPStyle)
+         ' 5 - Prefisso telefonico.
+         Dim prefissoTelStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Blue)
+         prefissoTelStyle.MappingName = "PrefissoTel"
+         prefissoTelStyle.HeaderText = "Prefisso Tel."
+         prefissoTelStyle.Width = 100
+         prefissoTelStyle.NullText = ""
+         prefissoTelStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(prefissoTelStyle)
+         ' 6 - Codice Istat.
+         Dim istatStyle As New DataGridTextBoxColumn
+         istatStyle.MappingName = "CodiceIstat"
+         istatStyle.HeaderText = "Codice Istat"
+         istatStyle.Width = 100
+         istatStyle.NullText = ""
+         istatStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(istatStyle)
+         ' 7 - CodiceFisco
+         Dim fiscoStyle As New DataGridTextBoxColumn
+         fiscoStyle.MappingName = "CodiceFisco"
+         fiscoStyle.HeaderText = "Codice Fisco"
+         fiscoStyle.Width = 100
+         fiscoStyle.NullText = ""
+         fiscoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(fiscoStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -762,10 +763,16 @@ Public Class ElencoCAP
          testoRicerca = FormattaApici(testoRicerca)
 
          Select Case campoRicerca
-            Case "Nome strada"
-               campoRicerca = "NomeStrada"
-            Case "Tipo strada"
-               campoRicerca = "TipoStrada"
+            Case "Codice"
+               campoRicerca = "Id"
+            Case "Comune"
+               campoRicerca = "Descrizione"
+            Case "Prefisso Tel."
+               campoRicerca = "PrefissoTel"
+            Case "Codice Istat"
+               campoRicerca = "CodiceIstat"
+            Case "Codice Fisco"
+               campoRicerca = "CodiceFisco"
          End Select
 
          If testoRicerca <> "" Then
@@ -776,8 +783,8 @@ Public Class ElencoCAP
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati("(" & sql & ")", sql)
          Else
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Cap ASC", dimPagina, TAB_CAP)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY Cap ASC", TAB_CAP)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id ASC", dimPagina, TAB_CAP)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY Cap Id", TAB_CAP)
 
             'repSql = String.Format("SELECT TOP {0} * INTO RepClienti FROM {1} ORDER BY Id ASC", dimPagina, NomeTabella)
 
@@ -803,13 +810,14 @@ Public Class ElencoCAP
 
    Private Sub CaricaCampiRic()
       Try
-         CampoRicerca.Items.Add("CAP")
-         CampoRicerca.Items.Add("Provincia")
+         CampoRicerca.Items.Add("Codice")
          CampoRicerca.Items.Add("Comune")
-         CampoRicerca.Items.Add("Localit‡")
-         CampoRicerca.Items.Add("Nome strada")
-         CampoRicerca.Items.Add("Tipo strada")
-         CampoRicerca.Items.Add("Numeri")
+         CampoRicerca.Items.Add("Provincia")
+         CampoRicerca.Items.Add("Regione")
+         CampoRicerca.Items.Add("CAP")
+         CampoRicerca.Items.Add("Prefisso Tel.")
+         CampoRicerca.Items.Add("Codice Istat")
+         CampoRicerca.Items.Add("Codice Fisco")
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -945,7 +953,7 @@ Public Class ElencoCAP
          CampoRicerca.SelectedIndex = 0
 
          ' Crea la stringa di selezione dei dati..
-         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Cap", dimPagina, TAB_CAP)
+         sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id", dimPagina, TAB_CAP)
          LeggiDati(TAB_CAP, sql)
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.

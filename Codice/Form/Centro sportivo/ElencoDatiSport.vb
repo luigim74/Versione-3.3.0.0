@@ -156,7 +156,7 @@ Public Class frmElencoDatiSport
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(560, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(568, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -291,7 +291,7 @@ Public Class frmElencoDatiSport
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(560, 256)
+      Me.DataGrid1.Size = New System.Drawing.Size(568, 263)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -304,14 +304,14 @@ Public Class frmElencoDatiSport
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(560, 30)
+      Me.Panel1.Size = New System.Drawing.Size(568, 30)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(418, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(426, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -322,7 +322,7 @@ Public Class frmElencoDatiSport
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(336, 8)
+      Me.Label2.Location = New System.Drawing.Point(344, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -345,7 +345,7 @@ Public Class frmElencoDatiSport
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(112, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(215, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(223, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
@@ -364,8 +364,8 @@ Public Class frmElencoDatiSport
       'frmElencoDatiSport
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-      Me.BackColor = System.Drawing.Color.Gray
-      Me.ClientSize = New System.Drawing.Size(560, 310)
+      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.ClientSize = New System.Drawing.Size(568, 318)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1468,7 +1468,7 @@ Public Class frmElencoDatiSport
 
             oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            Dim ds As New Dataset1 'utilizzato con Crystal Reports
+            Dim ds As New HospitalityDataSet 'utilizzato con Crystal Reports
 
             ds.Clear()
 
@@ -1686,7 +1686,24 @@ Public Class frmElencoDatiSport
 
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
-                  g_frmMain.ApriReports(repSql, TAB_ACCESSORI_SERVIZI, PERCORSO_REP_ACCESSORI_SERVIZI_A4)
+                  ' Utilizzato con Crystal Report.
+                  'g_frmMain.ApriReports(repSql, TAB_ACCESSORI_SERVIZI, PERCORSO_REP_ACCESSORI_SERVIZI_A4)
+
+                  Dim cn1 As New OleDbConnection(ConnString)
+                  cn1.Open()
+
+                  Dim oleAdapter As New OleDbDataAdapter
+                  oleAdapter.SelectCommand = New OleDbCommand(repSql, cn1)
+
+                  Dim ds1 As New HospitalityDataSet
+                  ds1.Clear()
+                  oleAdapter.Fill(ds1, TAB_ACCESSORI_SERVIZI)
+
+                  ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+                  Dim frm As New ReportViewer(ds1, PERCORSO_REP_ACCESSORI_SERVIZI_A4, String.Empty)
+                  frm.ShowDialog()
+
+                  cn1.Close()
 
                Case Elenco.Risorse
                   g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)

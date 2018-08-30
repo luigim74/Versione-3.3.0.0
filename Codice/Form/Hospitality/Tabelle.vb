@@ -4,13 +4,11 @@
 ' Nome form:            frmTabelle
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
-' Data ultima modifica: 18/08/2018
+' Data ultima modifica: 30/08/2018
 ' Descrizione:          Form per la visualizzazione dei dati di tutte le tabelle.
 ' Note:
 
 ' Elenco Attivita:
-
-' DA_FARE_A: Inserire Gruppi, Agenzie, Canali nel menu Archivi / tabelle.
 
 ' ********************************************************************************
 
@@ -374,15 +372,15 @@ Public Class TabelleDati
                End If
 
             Case Finestra.Nazioni
-               If operatore.TabNazioni = VALORE_LETTURA Then
-                  Nuovo.Enabled = False
-                  Modifica.Enabled = False
-                  Elimina.Enabled = False
-               Else
-                  Nuovo.Enabled = True
-                  Modifica.Enabled = True
-                  Elimina.Enabled = True
-               End If
+               'If operatore.TabNazioni = VALORE_LETTURA Then
+               Nuovo.Enabled = False
+               Modifica.Enabled = False
+               Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
 
             Case Finestra.Pagamenti
                If operatore.TabPagamenti = VALORE_LETTURA Then
@@ -496,17 +494,70 @@ Public Class TabelleDati
                End If
 
             Case Finestra.DocIdentità
-               If operatore.TabDocIdentità = VALORE_LETTURA Then
-                  Nuovo.Enabled = False
-                  Modifica.Enabled = False
-                  Elimina.Enabled = False
-               Else
-                  Nuovo.Enabled = True
-                  Modifica.Enabled = True
-                  Elimina.Enabled = True
-               End If
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               Nuovo.Enabled = False
+               Modifica.Enabled = False
+               Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
 
-               ' DA_FARE_B: Aggiungere Tab. Gruppi, Agenzie, Canali di vendita e altre tabelle mancanti.
+            Case Finestra.GruppiOspiti
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               '   Nuovo.Enabled = False
+               '   Modifica.Enabled = False
+               '   Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
+
+            Case Finestra.Agenzie
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               '   Nuovo.Enabled = False
+               '   Modifica.Enabled = False
+               '   Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
+
+            Case Finestra.CanaliVendita
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               '   Nuovo.Enabled = False
+               '   Modifica.Enabled = False
+               '   Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
+
+            Case Finestra.TipoAlloggiato
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               Nuovo.Enabled = False
+               Modifica.Enabled = False
+               Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
+
+            Case Finestra.Comuni
+               'If operatore.TabDocIdentità = VALORE_LETTURA Then
+               Nuovo.Enabled = False
+               Modifica.Enabled = False
+               Elimina.Enabled = False
+               'Else
+               '   Nuovo.Enabled = True
+               '   Modifica.Enabled = True
+               '   Elimina.Enabled = True
+               'End If
 
          End Select
 
@@ -536,7 +587,6 @@ Public Class TabelleDati
 
          ' Visualizza la prima pagina di dati.
          VisualizzaPagina(1, sql)
-
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -906,6 +956,16 @@ Public Class TabelleDati
                   ImpostaComandi()
                End If
 
+            Case "TipoAlloggiato"
+               If ImpostaFunzioniOperatore(Finestra.TipoAlloggiato) = True Then
+                  ImpostaComandi()
+               End If
+
+            Case "Comuni"
+               If ImpostaFunzioniOperatore(Finestra.Comuni) = True Then
+                  ImpostaComandi()
+               End If
+
          End Select
 
       Catch ex As Exception
@@ -980,6 +1040,10 @@ Public Class TabelleDati
             Case "CanaliVendita"
                ' Imposta il titolo della tabella.
                Me.Text = "Canali di provenienza" & " (n° totale: " & numRecord & ")"
+
+            Case "TipoAlloggiato"
+               ' Imposta il titolo della tabella.
+               Me.Text = "Tipo alloggiato" & " (n° totale: " & numRecord & ")"
 
             Case Else
                ' Imposta il titolo della tabella.
@@ -1081,6 +1145,13 @@ Public Class TabelleDati
                strDescrizione = STR_TABELLA_CANALI
                strModulo = MODULO_TABELLA_CANALI
 
+            Case "TipoAlloggiato"
+               strDescrizione = STR_TABELLA_TIPO_ALLOGGIATO
+               strModulo = MODULO_TABELLA_TIPO_ALLOGGIATO
+
+            Case "Comuni"
+               strDescrizione = STR_TABELLA_COMUNI
+               strModulo = MODULO_TABELLA_COMUNI
          End Select
 
       Catch ex As Exception
@@ -1223,6 +1294,12 @@ Public Class TabelleDati
                g_frmMain.rtgGestionaleAmica.Visible = False
 
             Case "CanaliVendita"
+               g_frmMain.rtgGestionaleAmica.Visible = False
+
+            Case "TipoAlloggiato"
+               g_frmMain.rtgGestionaleAmica.Visible = False
+
+            Case "Comuni"
                g_frmMain.rtgGestionaleAmica.Visible = False
 
          End Select

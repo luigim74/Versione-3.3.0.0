@@ -1,907 +1,5 @@
-"*** 15/08/2018 - 16:58:38 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 15/08/2018 - 16:58:54 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 15/08/2018 - 16:59:11 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 15/08/2018 - 16:59:23 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 15/08/2018 - 17:17:42 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 15/08/2018 - 17:18:03 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Icona."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Piatti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Piatti.vb:riga 238"
-"
-"
-"*** 16/08/2018 - 10:21:47 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 358"
-"
-"
-"*** 16/08/2018 - 10:21:52 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 358"
-"
-"
-"*** 16/08/2018 - 10:21:53 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 358"
-"
-"
-"*** 16/08/2018 - 10:21:54 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoSchedinePS.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 393"
-"
-"
-"*** 16/08/2018 - 10:21:54 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoSchedinePS.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 393"
-"
-"
-"*** 16/08/2018 - 10:21:56 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 358"
-"
-"
-"*** 16/08/2018 - 10:21:56 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'SchedinePS'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoSchedinePS.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 393"
-"
-"
-"*** 16/08/2018 - 10:34:31 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoEmail.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 352"
-"
-"
-"*** 16/08/2018 - 10:34:34 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoEmail.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 387"
-"
-"
-"*** 16/08/2018 - 10:34:36 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoEmail.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 352"
-"
-"
-"*** 16/08/2018 - 10:34:37 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoEmail.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 387"
-"
-"
-"*** 16/08/2018 - 10:34:38 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoEmail.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 352"
-"
-"
-"*** 16/08/2018 - 10:34:39 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoEmail.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 352"
-"
-"
-"*** 16/08/2018 - 10:34:40 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Email'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoEmail.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ElencoEmail.vb:riga 387"
-"
-"
-"*** 16/08/2018 - 11:33:56 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.PrenCamere.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 67"
-"
-"
-"*** 16/08/2018 - 11:33:59 ***"
-"- DESCRIZIONE ERRORE: '01/01/0001 00:00:00' non è un valore valido per 'Value'. 'Value' deve essere compreso tra 'MinDate' e 'MaxDate'.
-Nome parametro: Value"
-"- NOME PROCEDURA:    in System.Windows.Forms.DateTimePicker.set_Value(DateTime value)
-   in Hospitality_Solution.frmPrenCamera.frmPrenCamera_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2739"
-"
-"
-"*** 16/08/2018 - 14:08:41 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   in System.Convert.ToInt32(Object value)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 83"
-"
-"
-"*** 16/08/2018 - 14:08:43 ***"
-"- DESCRIZIONE ERRORE: '02/01/0001' non è un valore valido per 'MinDate'. 'MinDate' deve essere maggiore o uguale a 01/01/1753.
-Nome parametro: MinDate"
-"- NOME PROCEDURA:    in System.Windows.Forms.MonthCalendar.set_MinDate(DateTime value)
-   in Hospitality_Solution.frmSchedinaPS.mcDataArrivo_DateChanged(Object sender, DateRangeEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2234"
-"
-"
-"*** 16/08/2018 - 14:45:46 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Date'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
-   in Hospitality_Solution.frmSchedinaPS.frmSchedinaPS_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2021"
-"
-"
-"*** 16/08/2018 - 16:45:05 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Date'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
-   in Hospitality_Solution.frmSchedinaPS.frmSchedinaPS_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2021"
-"
-"
-"*** 16/08/2018 - 16:53:45 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Date'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
-   in Hospitality_Solution.frmSchedinaPS.frmSchedinaPS_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2045"
-"
-"
-"*** 16/08/2018 - 17:39:22 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.frmPrenCamera.cmbCognome_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3097"
-"
-"
-"*** 16/08/2018 - 17:39:46 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '7' non valido per 'SelectedIndex'.
-Nome parametro: SelectedIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
-   in Hospitality_Solution.frmPrenCamera.cmbCognome_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3085"
-"
-"
-"*** 16/08/2018 - 17:45:43 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '6' non valido per 'SelectedIndex'.
-Nome parametro: SelectedIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
-   in Hospitality_Solution.frmPrenCamera.cmbCognome_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 3085"
-"
-"
-"*** 16/08/2018 - 18:22:56 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 274"
-"
-"
-"*** 17/08/2018 - 15:40:04 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 686"
-"
-"
-"*** 17/08/2018 - 15:40:35 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 686"
-"
-"
-"*** 17/08/2018 - 15:40:46 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 686"
-"
-"
-"*** 17/08/2018 - 15:45:22 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   in System.Convert.ToInt32(Object value)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 83"
-"
-"
-"*** 17/08/2018 - 15:45:26 ***"
-"- DESCRIZIONE ERRORE: '02/01/0001' non è un valore valido per 'MinDate'. 'MinDate' deve essere maggiore o uguale a 01/01/1753.
-Nome parametro: MinDate"
-"- NOME PROCEDURA:    in System.Windows.Forms.MonthCalendar.set_MinDate(DateTime value)
-   in Hospitality_Solution.frmSchedinaPS.mcDataArrivo_DateChanged(Object sender, DateRangeEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2319"
-"
-"
-"*** 17/08/2018 - 15:54:22 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   in System.Convert.ToInt32(Object value)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 83"
-"
-"
-"*** 17/08/2018 - 15:54:25 ***"
-"- DESCRIZIONE ERRORE: '02/01/0001' non è un valore valido per 'MinDate'. 'MinDate' deve essere maggiore o uguale a 01/01/1753.
-Nome parametro: MinDate"
-"- NOME PROCEDURA:    in System.Windows.Forms.MonthCalendar.set_MinDate(DateTime value)
-   in Hospitality_Solution.frmSchedinaPS.mcDataArrivo_DateChanged(Object sender, DateRangeEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2321"
-"
-"
-"*** 17/08/2018 - 15:59:30 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   in System.Convert.ToInt32(Object value)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 83"
-"
-"
-"*** 17/08/2018 - 15:59:35 ***"
-"- DESCRIZIONE ERRORE: '02/01/0001' non è un valore valido per 'MinDate'. 'MinDate' deve essere maggiore o uguale a 01/01/1753.
-Nome parametro: MinDate"
-"- NOME PROCEDURA:    in System.Windows.Forms.MonthCalendar.set_MinDate(DateTime value)
-   in Hospitality_Solution.frmSchedinaPS.mcDataArrivo_DateChanged(Object sender, DateRangeEventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 2321"
-"
-"
-"*** 17/08/2018 - 17:46:08 ***"
-"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Sesso"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 17/08/2018 - 17:57:55 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 274"
-"
-"
-"*** 17/08/2018 - 17:58:32 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 274"
-"
-"
-"*** 17/08/2018 - 18:16:08 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 267"
-"
-"
-"*** 19/08/2018 - 14:50:04 ***"
-"- DESCRIZIONE ERRORE: La classe DataGridColumnStyle di 'Descrizione' non può essere utilizzata perché non è associata a una proprietà o a una colonna in DataSource."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridColumnStyle.CheckValidDataSource(CurrencyManager value)
-   in System.Windows.Forms.DataGridColumnStyle.GetColumnValueAtRow(CurrencyManager source, Int32 rowNum)
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.TabelleDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Tabelle.vb:riga 635"
-"
-"
-"*** 19/08/2018 - 14:50:14 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:50:21 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:50:26 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:50:40 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:50:58 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:51:08 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:51:13 ***"
-"- DESCRIZIONE ERRORE: La classe DataGridColumnStyle di 'Descrizione' non può essere utilizzata perché non è associata a una proprietà o a una colonna in DataSource."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridColumnStyle.CheckValidDataSource(CurrencyManager value)
-   in System.Windows.Forms.DataGridColumnStyle.GetColumnValueAtRow(CurrencyManager source, Int32 rowNum)
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.TabelleDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Tabelle.vb:riga 635"
-"
-"
-"*** 19/08/2018 - 14:51:16 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 14:51:20 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Operazioni.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Operazioni.vb:riga 98"
-"
-"
-"*** 19/08/2018 - 15:58:07 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'DBNull' al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
-   in Hospitality_Solution.PlanningCamere.LeggiDatiPrenotazioni(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 983"
-"
-"
-"*** 19/08/2018 - 15:59:54 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'DBNull' al tipo 'String'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToString(Object Value)
-   in Hospitality_Solution.PlanningCamere.LeggiDatiPrenotazioni(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 983"
-"
-"
-"*** 19/08/2018 - 16:52:10 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmSchedinaPS.VerificaDisponibilitàCamera(String numeroCamera, DateTime dataDal, DateTime dataAl) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 1789"
-"
-"
-"*** 19/08/2018 - 16:52:54 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmSchedinaPS.VerificaDisponibilitàCamera(String numeroCamera, DateTime dataDal, DateTime dataAl) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 1789"
-"
-"
-"*** 19/08/2018 - 17:42:32 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamere.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 307"
-"
-"
-"*** 19/08/2018 - 17:42:51 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamere.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 307"
-"
-"
-"*** 19/08/2018 - 17:43:14 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'IdPren ='."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.frmPrenCamera.EliminaScedinePS(String idPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2305"
-"
-"
-"*** 20/08/2018 - 14:59:29 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamere.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 417"
-"
-"
-"*** 20/08/2018 - 16:13:50 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Non paga'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmInsClienti.InserisciCliente(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 426"
-"
-"
-"*** 21/08/2018 - 15:29:45 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nella proposizione FROM."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
-"
-"
-"*** 21/08/2018 - 15:29:48 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = "" ORDER BY DataArrivo ASC'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
-"
-"
-"*** 21/08/2018 - 15:30:03 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
-"
-"
-"*** 21/08/2018 - 15:30:05 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
-"
-"
-"*** 21/08/2018 - 15:30:05 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:30:06 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:30:07 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:30:08 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:30:08 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:30:09 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:04 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '''."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
-"
-"
-"*** 21/08/2018 - 15:36:43 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '''."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
-"
-"
-"*** 21/08/2018 - 15:36:45 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
-"
-"
-"*** 21/08/2018 - 15:36:46 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
-"
-"
-"*** 21/08/2018 - 15:36:47 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:47 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:47 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:47 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:48 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:36:48 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:40:51 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '0''."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 818"
-"
-"
-"*** 21/08/2018 - 15:41:08 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'DataPartenza => #8/21/2018# AND NumeroCamera = '0''."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.ElencoPrenCamere.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 853"
-"
-"
-"*** 21/08/2018 - 15:41:09 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AttivaDisattivaAnnullaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1363"
-"
-"
-"*** 21/08/2018 - 15:41:11 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.ElencoPrenCamere.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 1461"
-"
-"
-"*** 21/08/2018 - 15:41:11 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:41:12 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:41:12 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:41:12 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:41:13 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 15:41:14 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1086"
-"
-"
-"*** 21/08/2018 - 16:41:22 ***"
-"- DESCRIZIONE ERRORE: Errore non specificato."
+"*** 30/08/2018 - 14:30:56 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
    in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
    in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
@@ -911,11 +9,15 @@ Nome parametro: rowIndex"
    in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
    in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 921"
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 57"
 "
 "
-"*** 21/08/2018 - 16:41:27 ***"
-"- DESCRIZIONE ERRORE: Errore non specificato."
+"*** 30/08/2018 - 15:09:47 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
    in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
    in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
@@ -925,1017 +27,226 @@ Nome parametro: rowIndex"
    in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
    in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.PlanningCamere.CalcolaTotaleAddebiti(Int32 rifPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 921"
-"
-"
-"*** 21/08/2018 - 16:53:23 ***"
-"- DESCRIZIONE ERRORE:  "
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
-"
-"
-"*** 21/08/2018 - 16:54:50 ***"
-"- DESCRIZIONE ERRORE:  "
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
-"
-"
-"*** 21/08/2018 - 16:54:55 ***"
-"- DESCRIZIONE ERRORE:  "
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.Procedure.CaricaListaCamere(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 726"
-"
-"
-"*** 21/08/2018 - 18:25:28 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroOspitiPartenza(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2259"
-"
-"
-"*** 21/08/2018 - 18:25:36 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroOspitiPartenza(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2259"
-"
-"
-"*** 21/08/2018 - 18:25:37 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataArrivo <= #8/21/2018# AND DataPartenza >= #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereOccupate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2335"
-"
-"
-"*** 21/08/2018 - 18:25:38 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereLiberate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2361"
-"
-"
-"*** 21/08/2018 - 18:25:39 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataArrivo <= #8/21/2018# AND DataPartenza >= #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereOccupate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2335"
-"
-"
-"*** 21/08/2018 - 18:25:39 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'NumeroCamera <> 'Nessuna' DataPartenza = #8/21/2018#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.ElencoPrenCamere.LeggiNumeroCamereLiberate(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoPrenCamere.vb:riga 2361"
-"
-"
-"*** 21/08/2018 - 18:41:05 ***"
-"- DESCRIZIONE ERRORE: Il campo ""Camere.Numero"" non può contenere una stringa di lunghezza zero."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Camera.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\Camera.vb:riga 236"
-"
-"
-"*** 22/08/2018 - 11:29:13 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 370"
-"
-"
-"*** 22/08/2018 - 11:29:53 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 370"
-"
-"
-"*** 22/08/2018 - 11:30:55 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 370"
-"
-"
-"*** 22/08/2018 - 12:09:40 ***"
-"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 370"
-"
-"
-"*** 22/08/2018 - 12:16:40 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 369"
-"
-"
-"*** 22/08/2018 - 12:16:57 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 369"
-"
-"
-"*** 22/08/2018 - 12:47:19 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.frmSchedinaPS.SalvaDati() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 1205"
-"
-"
-"*** 22/08/2018 - 13:03:39 ***"
-"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '0' non valido per 'SelectedIndex'.
-Nome parametro: SelectedIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
-   in Hospitality_Solution.frmSchedinaPS.dtpDataStampa_ValueChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\SchedinaPS.vb:riga 1903"
-"
-"
-"*** 22/08/2018 - 15:13:53 ***"
-"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamere.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamere.vb:riga 417"
-"
-"
-"*** 22/08/2018 - 17:14:23 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:26 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:27 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:28 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:28 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:29 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:30 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:30 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:31 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:31 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:31 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:32 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:32 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:32 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:33 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:33 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:34 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:14:34 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:15:02 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:15:04 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:15:04 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:26:38 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:26:52 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:26:55 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:29:05 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:29:13 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:29:16 ***"
-"- DESCRIZIONE ERRORE: Valore troppo grande o troppo piccolo per un Decimal."
-"- NOME PROCEDURA:    in System.Decimal..ctor(Double value)
-   in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1629"
-"
-"
-"*** 22/08/2018 - 17:45:40 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmInsClienti.InserisciCliente(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 432"
-"
-"
-"*** 22/08/2018 - 18:18:47 ***"
-"- DESCRIZIONE ERRORE: Property can only be set to Nothing"
-"- NOME PROCEDURA:    in Hospitality_Solution.My.MyProject.MyForms.set_frmSchedinaPS(frmSchedinaPS Value)
-   in Hospitality_Solution.ElencoSchedinePS.ApriDati(String val) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 692"
-"
-"
-"*** 22/08/2018 - 18:18:58 ***"
-"- DESCRIZIONE ERRORE: Property can only be set to Nothing"
-"- NOME PROCEDURA:    in Hospitality_Solution.My.MyProject.MyForms.set_frmSchedinaPS(frmSchedinaPS Value)
-   in Hospitality_Solution.ElencoSchedinePS.ApriDati(String val) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 692"
-"
-"
-"*** 22/08/2018 - 18:24:09 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 22/08/2018 - 18:24:17 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 13:18:05 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 13:18:09 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 14:49:33 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 14:50:24 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Sesso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 15:00:14 ***"
-"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 15:00:18 ***"
-"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 15:00:56 ***"
-"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 15:00:59 ***"
-"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PrenCamereOccupanti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\PrenCamereOccupanti.vb:riga 230"
-"
-"
-"*** 23/08/2018 - 15:14:55 ***"
-"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
-"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
-   in System.Net.WebClient.DownloadFile(String address, String fileName)
-   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
-   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13549"
-"
-"
-"*** 23/08/2018 - 15:50:32 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ElencoSchedinePS.EliminaDati(String tabella, Int32 id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 467
-   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11896"
-"
-"
-"*** 23/08/2018 - 15:50:41 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ElencoSchedinePS.EliminaDati(String tabella, Int32 id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 467
-   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11896"
-"
-"
-"*** 23/08/2018 - 15:50:49 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ElencoSchedinePS.EliminaDati(String tabella, Int32 id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 467
-   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11896"
-"
-"
-"*** 23/08/2018 - 16:27:51 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmDocumento.CaricaDatiPrenotazione() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1832"
-"
-"
-"*** 23/08/2018 - 16:27:55 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaPren() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1853"
-"
-"
-"*** 23/08/2018 - 16:27:56 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmDocumento.InserisciDettagliRigaTassaSogg() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 1899"
-"
-"
-"*** 23/08/2018 - 16:27:57 ***"
-"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
-Nome parametro: rowIndex"
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmDocumento.frmDocumento_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Documento.vb:riga 2268"
-"
-"
-"*** 23/08/2018 - 16:30:37 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.frmPrenCamera.EliminaOccupantiSchedina(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2167"
-"
-"
-"*** 23/08/2018 - 16:32:11 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.frmPrenCamera.EliminaOccupantiSchedina(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2167"
-"
-"
-"*** 23/08/2018 - 17:00:04 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, Int32 IdPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 247"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 57"
 "
 "
-"*** 23/08/2018 - 17:13:00 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, Int32 IdPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 250"
-"
-"
-"*** 23/08/2018 - 17:18:42 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.SchedinaPS.LeggiDati(String tabella, Int32 IdPren) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 250"
-"
-"
-"*** 24/08/2018 - 14:31:33 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 690"
-"
-"
-"*** 24/08/2018 - 15:25:24 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2334"
-"
-"
-"*** 24/08/2018 - 15:57:51 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @DataStampa."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
-"
-"
-"*** 24/08/2018 - 16:14:22 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Stato."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
-"
-"
-"*** 24/08/2018 - 16:17:52 ***"
-"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Stato."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.SchedinaPS.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\SchedinaPS.vb:riga 305"
-"
-"
-"*** 24/08/2018 - 18:40:51 ***"
-"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
-   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+"*** 30/08/2018 - 15:13:14 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
    in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
    in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 57"
 "
 "
-"*** 24/08/2018 - 18:40:57 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
-   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
-   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
-"
-"
-"*** 24/08/2018 - 18:41:04 ***"
-"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
-   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+"*** 30/08/2018 - 15:18:08 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
    in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
    in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 57"
 "
 "
-"*** 24/08/2018 - 18:41:09 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
-   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
-   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
-"
-"
-"*** 24/08/2018 - 18:41:50 ***"
-"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
-   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+"*** 30/08/2018 - 15:32:33 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
    in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
    in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
    in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
-"
-"
-"*** 24/08/2018 - 18:41:56 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
-   in Hospitality_Solution.frmPrenCamera.SalvaSchedinaPS(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PrenCamera.vb:riga 2306
-   in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 11672"
-"
-"
-"*** 26/08/2018 - 14:04:58 ***"
-"- DESCRIZIONE ERRORE: Operazione annullata dall'utente"
-"- NOME PROCEDURA:    in System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
-   in System.Diagnostics.Process.Start()
-   in Hospitality_Solution.frmClienti.lvwAllegati_DoubleClick(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\Clienti.vb:riga 2658"
-"
-"
-"*** 26/08/2018 - 17:15:46 ***"
-"- DESCRIZIONE ERRORE: La stringa di filtro fornita non è valida. La stringa di filtro deve contenere una descrizione del filtro, seguita da una barra verticale (|) e dal modello del filtro. Anche le stringhe che definiscono le varie opzioni del filtro devono essere separate da barre verticali. Esempio: ""File di testo (*.txt)|*.txt|Tutti i file (*.*)|*.*"""
-"- NOME PROCEDURA:    in System.Windows.Forms.FileDialog.set_Filter(String value)
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1291"
-"
-"
-"*** 27/08/2018 - 16:26:39 ***"
-"- DESCRIZIONE ERRORE: File già aperto."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1351
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1378"
-"
-"
-"*** 28/08/2018 - 13:48:38 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'Descrizione = 'CARTA DI IDENTITA'' ORDER BY Id ASC'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiCodice(String valDescrizione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1570"
-"
-"
-"*** 28/08/2018 - 13:49:57 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'Descrizione = 'CARTA DI IDENTITA'' ORDER BY Id ASC'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.ElencoSchedinePS.LeggiCodice(String valDescrizione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1570"
-"
-"
-"*** 28/08/2018 - 15:42:14 ***"
-"- DESCRIZIONE ERRORE: StatoNascita"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmInsClienti.InserisciClienteSchedine(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 589"
-"
-"
-"*** 28/08/2018 - 15:42:41 ***"
-"- DESCRIZIONE ERRORE: StatoNascita"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmInsClienti.InserisciClienteSchedine(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 589"
-"
-"
-"*** 28/08/2018 - 15:43:20 ***"
-"- DESCRIZIONE ERRORE: StatoNascita"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmInsClienti.InserisciClientePren(String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\InsClienti.vb:riga 483"
-"
-"
-"*** 28/08/2018 - 16:13:50 ***"
-"- DESCRIZIONE ERRORE: File già aperto."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
-"
-"
-"*** 28/08/2018 - 16:16:12 ***"
-"- DESCRIZIONE ERRORE: File già aperto."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
-"
-"
-"*** 28/08/2018 - 16:19:52 ***"
-"- DESCRIZIONE ERRORE: File già aperto."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
-"
-"
-"*** 28/08/2018 - 16:22:05 ***"
-"- DESCRIZIONE ERRORE: File già aperto."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Varie.Errore.GestisciErrore(String nomeProc, String messaggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\MSolution.vb:riga 17
-   in Hospitality_Solution.ElencoSchedinePS.GeneraFileTxtAlloggiatiWeb(String id, String percorsoFile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1635
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1661"
-"
-"
-"*** 29/08/2018 - 14:03:05 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1766"
-"
-"
-"*** 29/08/2018 - 14:08:23 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1766"
-"
-"
-"*** 29/08/2018 - 14:12:11 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1766"
-"
-"
-"*** 29/08/2018 - 14:14:16 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1766"
-"
-"
-"*** 29/08/2018 - 14:16:48 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1766"
-"
-"
-"*** 29/08/2018 - 14:19:08 ***"
-"- DESCRIZIONE ERRORE: Nessun dato esistente per la riga/colonna."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1762"
-"
-"
-"*** 29/08/2018 - 14:23:32 ***"
-"- DESCRIZIONE ERRORE: Tentativo non valido di chiamare Read con reader chiuso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.Read()
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1759"
-"
-"
-"*** 29/08/2018 - 14:32:13 ***"
-"- DESCRIZIONE ERRORE: Tentativo non valido di chiamare Read con reader chiuso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.Read()
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1759"
-"
-"
-"*** 29/08/2018 - 14:44:23 ***"
-"- DESCRIZIONE ERRORE: Tentativo non valido di chiamare Read con reader chiuso."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbDataReader.Read()
-   in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1763"
-"
-"
-"*** 29/08/2018 - 14:55:55 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.ElencoSchedinePS.SalvaFileTxtAlloggiatiWeb(Boolean flagTutte) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1763"
-"
-"
-"*** 29/08/2018 - 17:13:49 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 322"
-"
-"
-"*** 29/08/2018 - 17:16:46 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 322"
-"
-"
-"*** 29/08/2018 - 17:27:10 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiCapCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 854"
-"
-"
-"*** 29/08/2018 - 17:27:10 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiCapCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 854"
-"
-"
-"*** 29/08/2018 - 17:27:14 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiProvinciaCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 828"
-"
-"
-"*** 29/08/2018 - 17:27:15 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiRegioneCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 880"
-"
-"
-"*** 29/08/2018 - 17:27:17 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiProvinciaCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 828"
-"
-"
-"*** 29/08/2018 - 17:27:18 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiRegioneCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 880"
-"
-"
-"*** 29/08/2018 - 17:27:37 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiCapCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 854"
-"
-"
-"*** 29/08/2018 - 17:27:39 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiProvinciaCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 828"
-"
-"
-"*** 29/08/2018 - 17:27:40 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiRegioneCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 880"
-"
-"
-"*** 29/08/2018 - 17:28:08 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiCapCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 854"
-"
-"
-"*** 29/08/2018 - 17:28:13 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiProvinciaCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 828"
-"
-"
-"*** 29/08/2018 - 17:28:14 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.LeggiRegioneCAP(String comune) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 880"
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
+"
+"
+"*** 30/08/2018 - 15:49:25 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.DettagliDocTableAdapter.Fill(DettagliDocDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9970
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 61"
+"
+"
+"*** 30/08/2018 - 15:52:48 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.DettagliDocTableAdapter.Fill(DettagliDocDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9970
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 61"
+"
+"
+"*** 30/08/2018 - 15:53:16 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
+"
+"
+"*** 30/08/2018 - 15:56:29 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.DettagliDocTableAdapter.Fill(DettagliDocDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9970
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 61"
+"
+"
+"*** 30/08/2018 - 15:56:43 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
+"
+"
+"*** 30/08/2018 - 16:34:46 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.DettagliDocTableAdapter.Fill(DettagliDocDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9970
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 61"
+"
+"
+"*** 30/08/2018 - 16:36:17 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 11246
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
+"
+"
+"*** 30/08/2018 - 17:11:16 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9771
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
+"
+"
+"*** 30/08/2018 - 17:21:24 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter.Fill(AccessoriServiziDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.Designer.vb:riga 9771
+   in Hospitality_Solution.ReportViewer.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\ReportViewer.vb:riga 58"
 "
 "

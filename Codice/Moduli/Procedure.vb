@@ -118,11 +118,11 @@ Module Procedure
             ' Controlla se è stato aperto un archivio.
             If VerificaEsistenzaDb(PercorsoDB) = True Then
 
-                ' Crea la stringa di connessaione per il database.
-                ConnString = CreaConnString(PercorsoDB)
+            ' Crea la stringa di connessaione per il database.
+            ConnString = CreaConnString(PercorsoDB)
 
-                ' Visualizza il nome dell'archivio nella barra di stato.
-                VisNomeDb(eui_cmd, 0, ModApp, NomeDB, PercorsoDB)
+            ' Visualizza il nome dell'archivio nella barra di stato.
+            VisNomeDb(eui_cmd, 0, ModApp, NomeDB, PercorsoDB)
 
                 Return True
             Else

@@ -196,10 +196,10 @@ Public Class frmPrenCamera
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrenCamera))
-      Dim ListViewGroup13 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup14 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup15 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup16 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup9 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Articoli vari", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup10 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Accessori", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup11 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Servizi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup12 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar/Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
@@ -323,6 +323,7 @@ Public Class frmPrenCamera
       Me.cmbPagamento = New System.Windows.Forms.ComboBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.eui_cmdApri = New Elegant.Ui.Button()
       Me.eui_cmdInserisci = New Elegant.Ui.Button()
       Me.eui_cmdModifica = New Elegant.Ui.Button()
       Me.eui_cmdElimina = New Elegant.Ui.Button()
@@ -340,7 +341,6 @@ Public Class frmPrenCamera
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.eui_cmdApri = New Elegant.Ui.Button()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -369,7 +369,7 @@ Public Class frmPrenCamera
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(577, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(587, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -403,7 +403,7 @@ Public Class frmPrenCamera
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(577, 20)
+      Me.Panel1.Size = New System.Drawing.Size(587, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -413,7 +413,7 @@ Public Class frmPrenCamera
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -430,7 +430,7 @@ Public Class frmPrenCamera
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(577, 544)
+      Me.TabControl1.Size = New System.Drawing.Size(587, 554)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -479,7 +479,7 @@ Public Class frmPrenCamera
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(591, 538)
+      Me.TabPage1.Size = New System.Drawing.Size(579, 528)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -666,9 +666,9 @@ Public Class frmPrenCamera
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 300)
+      Me.Panel2.Location = New System.Drawing.Point(0, 290)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(591, 238)
+      Me.Panel2.Size = New System.Drawing.Size(579, 238)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -1058,7 +1058,7 @@ Public Class frmPrenCamera
       Me.TabPage3.Controls.Add(Me.lvwOccupanti)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(581, 528)
+      Me.TabPage3.Size = New System.Drawing.Size(569, 518)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Altri componenti"
       '
@@ -1088,7 +1088,7 @@ Public Class frmPrenCamera
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(581, 477)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(569, 477)
       Me.lvwOccupanti.TabIndex = 0
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1160,9 +1160,9 @@ Public Class frmPrenCamera
       Me.TabPage4.Controls.Add(Me.lvwAddebiti)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(581, 528)
+      Me.TabPage4.Size = New System.Drawing.Size(579, 528)
       Me.TabPage4.TabIndex = 8
-      Me.TabPage4.Text = "Addebiti extra"
+      Me.TabPage4.Text = "Addebiti extra / Supplementi"
       '
       'eui_Quantit‡Meno
       '
@@ -1291,19 +1291,19 @@ Public Class frmPrenCamera
       Me.lvwAddebiti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnDescrizione, Me.clnQta, Me.clnImporto, Me.clnCodice, Me.clnIndice, Me.clnAliquotaIva, Me.clnCategoria, Me.ColumnHeader2})
       Me.lvwAddebiti.Dock = System.Windows.Forms.DockStyle.Top
       Me.lvwAddebiti.FullRowSelect = True
-      ListViewGroup13.Header = "Articoli vari"
-      ListViewGroup13.Name = "ListViewGroup1"
-      ListViewGroup14.Header = "Accessori"
-      ListViewGroup14.Name = "ListViewGroup2"
-      ListViewGroup15.Header = "Servizi"
-      ListViewGroup15.Name = "ListViewGroup3"
-      ListViewGroup16.Header = "Bar/Ristorante"
-      ListViewGroup16.Name = "ListViewGroup4"
-      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup13, ListViewGroup14, ListViewGroup15, ListViewGroup16})
+      ListViewGroup9.Header = "Articoli vari"
+      ListViewGroup9.Name = "ListViewGroup1"
+      ListViewGroup10.Header = "Accessori"
+      ListViewGroup10.Name = "ListViewGroup2"
+      ListViewGroup11.Header = "Servizi"
+      ListViewGroup11.Name = "ListViewGroup3"
+      ListViewGroup12.Header = "Bar/Ristorante"
+      ListViewGroup12.Name = "ListViewGroup4"
+      Me.lvwAddebiti.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup9, ListViewGroup10, ListViewGroup11, ListViewGroup12})
       Me.lvwAddebiti.Location = New System.Drawing.Point(0, 0)
       Me.lvwAddebiti.MultiSelect = False
       Me.lvwAddebiti.Name = "lvwAddebiti"
-      Me.lvwAddebiti.Size = New System.Drawing.Size(581, 477)
+      Me.lvwAddebiti.Size = New System.Drawing.Size(579, 477)
       Me.lvwAddebiti.TabIndex = 0
       Me.lvwAddebiti.UseCompatibleStateImageBehavior = False
       Me.lvwAddebiti.View = System.Windows.Forms.View.Details
@@ -1384,9 +1384,9 @@ Public Class frmPrenCamera
       Me.TabPage7.Controls.Add(Me.Label2)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(581, 528)
+      Me.TabPage7.Size = New System.Drawing.Size(579, 528)
       Me.TabPage7.TabIndex = 9
-      Me.TabPage7.Text = "Gestione conto"
+      Me.TabPage7.Text = "Gestione Conto"
       '
       'txtTotaleImporto
       '
@@ -1779,6 +1779,15 @@ Public Class frmPrenCamera
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documenti allegati"
       '
+      'eui_cmdApri
+      '
+      Me.eui_cmdApri.Id = "8a5e496a-4502-4174-8645-50e2d9e0f588"
+      Me.eui_cmdApri.Location = New System.Drawing.Point(5, 480)
+      Me.eui_cmdApri.Name = "eui_cmdApri"
+      Me.eui_cmdApri.Size = New System.Drawing.Size(104, 32)
+      Me.eui_cmdApri.TabIndex = 1
+      Me.eui_cmdApri.Text = "&Apri allegato"
+      '
       'eui_cmdInserisci
       '
       Me.eui_cmdInserisci.Id = "4304d4d0-9e05-49ae-8d27-505bd1497a25"
@@ -1855,7 +1864,7 @@ Public Class frmPrenCamera
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(581, 528)
+      Me.TabPage6.Size = New System.Drawing.Size(569, 518)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1872,7 +1881,7 @@ Public Class frmPrenCamera
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(581, 528)
+      Me.txtNote.Size = New System.Drawing.Size(569, 518)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1884,20 +1893,11 @@ Public Class frmPrenCamera
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'eui_cmdApri
-      '
-      Me.eui_cmdApri.Id = "8a5e496a-4502-4174-8645-50e2d9e0f588"
-      Me.eui_cmdApri.Location = New System.Drawing.Point(5, 480)
-      Me.eui_cmdApri.Name = "eui_cmdApri"
-      Me.eui_cmdApri.Size = New System.Drawing.Size(104, 32)
-      Me.eui_cmdApri.TabIndex = 1
-      Me.eui_cmdApri.Text = "&Apri allegato"
-      '
       'frmPrenCamera
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(577, 590)
+      Me.ClientSize = New System.Drawing.Size(587, 600)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

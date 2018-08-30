@@ -2556,6 +2556,9 @@ Public Class frmDocumento
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         cn.Close()
+
       End Try
 
    End Sub

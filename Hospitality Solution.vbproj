@@ -212,6 +212,7 @@
     <Reference Include="System.Management">
       <Name>System.Management</Name>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -843,6 +844,7 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
     <EmbeddedResource Include="Codice\Classi\CellaColorata.resx">
       <DependentUpon>CellaColorata.vb</DependentUpon>
     </EmbeddedResource>
@@ -1766,8 +1768,10 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Reports\" />
     <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
