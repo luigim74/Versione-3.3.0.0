@@ -15,20 +15,26 @@
          ' Imposta il nome della stampante.
          nomeStampante = percorsoNomeStampante
 
-         ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+         'ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
          ReportViewer1.LocalReport.ReportPath = Application.StartupPath & nomeDoc
 
-            Select Case nomeReport
+         Select Case nomeReport
+            Case PERCORSO_REP_STORICO_PRESENZE_A4
+               ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "StoricoPresenzeCamere"))
+
+               'Me.StroricoPresenzeBindingSource.DataMember = "StoricoPresenzeCamere"
+               'Me.StroricoPresenzeBindingSource.DataSource = ds
+
             Case PERCORSO_REP_ACCESSORI_SERVIZI_A4
                ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "AccessoriServizi"))
 
-               Me.AccessoriServiziBindingSource.DataMember = "AccessoriServizi"
-               Me.AccessoriServiziBindingSource.DataSource = ds
+               'Me.AccessoriServiziBindingSource.DataMember = "AccessoriServizi"
+               'Me.AccessoriServiziBindingSource.DataSource = ds
 
             Case Else
-               ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "Azienda"))
-               ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "DettagliDoc"))
-               ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "Documenti"))
+               'ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "Azienda"))
+               'ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "DettagliDoc"))
+               'ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("HospitalityDataSet", "Documenti"))
 
                Me.AziendaBindingSource.DataMember = "Azienda"
                Me.AziendaBindingSource.DataSource = ds
@@ -39,7 +45,7 @@
 
          End Select
 
-        Catch ex As Exception
+      Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
@@ -54,8 +60,11 @@
 
          ' Carica i dati delle rispettive tabelle.
          Select Case nomeReport
+            Case PERCORSO_REP_STORICO_PRESENZE_A4
+               'Me.StoricoPresenzeCamereTableAdapter.Fill(Me.HospitalityDataSet.StoricoPresenzeCamere)
+
             Case PERCORSO_REP_ACCESSORI_SERVIZI_A4
-               Me.AccessoriServiziTableAdapter.Fill(Me.HospitalityDataSet.AccessoriServizi)
+               'Me.AccessoriServiziTableAdapter.Fill(Me.HospitalityDataSet.AccessoriServizi)
 
             Case Else
                Me.DettagliDocTableAdapter.Fill(Me.HospitalityDataSet.DettagliDoc)

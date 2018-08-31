@@ -392,4 +392,29 @@ Public Class StoricoPresenze
 
    End Sub
 
+   Private Sub eui_cmdStampa_Click(sender As Object, e As EventArgs) Handles eui_cmdStampa.Click
+      Try
+         Dim cn1 As New OleDbConnection(ConnString)
+         cn1.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STRORICO_PRESENZE_CAMERE, cn1)
+
+         Dim ds1 As New HospitalityDataSet
+         ds1.Clear()
+         oleAdapter.Fill(ds1, TAB_STRORICO_PRESENZE_CAMERE)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New ReportViewer(ds1, PERCORSO_REP_STORICO_PRESENZE_A4, String.Empty)
+         frm.ShowDialog()
+
+         cn1.Close()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
 End Class

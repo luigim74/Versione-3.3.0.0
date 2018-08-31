@@ -2533,7 +2533,6 @@ Public Class frmDocumento
          ' Tabella Documenti.
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOCUMENTI & " WHERE Id = " & idDocumento, cn)
-
          Dim ds As New HospitalityDataSet 'Dataset1 'utilizzato con Crystal Reports
          ds.Clear()
          oleAdapter.Fill(ds, TAB_DOCUMENTI)

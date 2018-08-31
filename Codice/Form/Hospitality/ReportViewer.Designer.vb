@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ReportViewer
    Inherits System.Windows.Forms.Form
 
    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-   <System.Diagnostics.DebuggerNonUserCode()> _
+   <System.Diagnostics.DebuggerNonUserCode()>
    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
       Try
          If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,14 @@ Partial Class ReportViewer
    'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
    'Può essere modificata in Progettazione Windows Form.  
    'Non modificarla mediante l'editor del codice.
-   <System.Diagnostics.DebuggerStepThrough()> _
+   <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
       Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
       Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-      Me.DettagliDocBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.HospitalityDataSet = New HospitalityDataSet()
+      Me.DettagliDocBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.AziendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.DocumentiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -35,24 +35,21 @@ Partial Class ReportViewer
       Me.AziendaTableAdapter = New HospitalityDataSetTableAdapters.AziendaTableAdapter()
       Me.DocumentiTableAdapter = New HospitalityDataSetTableAdapters.DocumentiTableAdapter()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.AccessoriServiziBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.AccessoriServiziTableAdapter = New HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter()
-      CType(Me.DettagliDocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.DettagliDocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.DocumentiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.AccessoriServiziBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
-      '
-      'DettagliDocBindingSource
-      '
-      Me.DettagliDocBindingSource.DataMember = "DettagliDoc"
-      Me.DettagliDocBindingSource.DataSource = Me.HospitalityDataSet
       '
       'HospitalityDataSet
       '
       Me.HospitalityDataSet.DataSetName = "HospitalityDataSet"
       Me.HospitalityDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+      '
+      'DettagliDocBindingSource
+      '
+      Me.DettagliDocBindingSource.DataMember = "DettagliDoc"
+      Me.DettagliDocBindingSource.DataSource = Me.HospitalityDataSet
       '
       'AziendaBindingSource
       '
@@ -77,11 +74,11 @@ Partial Class ReportViewer
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-      Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.Fattura A4_Doppia.rdlc"
+      Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.Fattura A4.rdlc"
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
       Me.ReportViewer1.PromptAreaCollapsed = True
-      Me.ReportViewer1.Size = New System.Drawing.Size(799, 397)
+      Me.ReportViewer1.Size = New System.Drawing.Size(871, 469)
       Me.ReportViewer1.TabIndex = 1
       '
       'DettagliDocTableAdapter
@@ -101,30 +98,20 @@ Partial Class ReportViewer
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'AccessoriServiziBindingSource
-      '
-      Me.AccessoriServiziBindingSource.DataMember = "AccessoriServizi"
-      Me.AccessoriServiziBindingSource.DataSource = Me.HospitalityDataSet
-      '
-      'AccessoriServiziTableAdapter
-      '
-      Me.AccessoriServiziTableAdapter.ClearBeforeFill = True
-      '
       'ReportViewer
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(799, 397)
+      Me.ClientSize = New System.Drawing.Size(871, 469)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "ReportViewer"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Anteprima di stampa"
-      CType(Me.DettagliDocBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.DettagliDocBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.DocumentiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.AccessoriServiziBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
    End Sub
@@ -137,6 +124,4 @@ Partial Class ReportViewer
    Friend WithEvents AziendaTableAdapter As HospitalityDataSetTableAdapters.AziendaTableAdapter
    Friend WithEvents DocumentiTableAdapter As HospitalityDataSetTableAdapters.DocumentiTableAdapter
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
-   Friend WithEvents AccessoriServiziBindingSource As BindingSource
-   Friend WithEvents AccessoriServiziTableAdapter As HospitalityDataSetTableAdapters.AccessoriServiziTableAdapter
 End Class

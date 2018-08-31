@@ -1689,21 +1689,21 @@ Public Class frmElencoDatiSport
                   ' Utilizzato con Crystal Report.
                   'g_frmMain.ApriReports(repSql, TAB_ACCESSORI_SERVIZI, PERCORSO_REP_ACCESSORI_SERVIZI_A4)
 
-                  Dim cn1 As New OleDbConnection(ConnString)
-                  cn1.Open()
+                  Dim cn As New OleDbConnection(ConnString)
+                  cn.Open()
 
                   Dim oleAdapter As New OleDbDataAdapter
-                  oleAdapter.SelectCommand = New OleDbCommand(repSql, cn1)
+                  oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM AccessoriServizi WHERE Disponibile = 'Sì'", cn)
 
-                  Dim ds1 As New HospitalityDataSet
-                  ds1.Clear()
-                  oleAdapter.Fill(ds1, TAB_ACCESSORI_SERVIZI)
+                  Dim ds As New HospitalityDataSet
+                  ds.Clear()
+                  oleAdapter.Fill(ds, TAB_ACCESSORI_SERVIZI)
 
                   ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-                  Dim frm As New ReportViewer(ds1, PERCORSO_REP_ACCESSORI_SERVIZI_A4, String.Empty)
+                  Dim frm As New repAccessoriServizi(ds, PERCORSO_REP_ACCESSORI_SERVIZI_A4, String.Empty)
                   frm.ShowDialog()
 
-                  cn1.Close()
+                  cn.Close()
 
                Case Elenco.Risorse
                   g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)
