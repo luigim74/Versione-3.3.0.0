@@ -414,10 +414,10 @@
     <Compile Include="Codice\Form\Hospitality\InvioEmail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\repAccessoriServizi.Designer.vb">
+    <Compile Include="Codice\Form\Centro sportivo\repAccessoriServizi.Designer.vb">
       <DependentUpon>repAccessoriServizi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\repAccessoriServizi.vb">
+    <Compile Include="Codice\Form\Centro sportivo\repAccessoriServizi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Hospitality\SelezionaPrenotazione.vb">
@@ -441,10 +441,10 @@
     <Compile Include="Codice\Form\Hospitality\GiudizioDemo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\ReportViewer.Designer.vb">
-      <DependentUpon>ReportViewer.vb</DependentUpon>
+    <Compile Include="Codice\Form\Hospitality\repDocumenti.Designer.vb">
+      <DependentUpon>repDocumenti.vb</DependentUpon>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\ReportViewer.vb">
+    <Compile Include="Codice\Form\Hospitality\repDocumenti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Hotel\ElencoSchedinePS.vb">
@@ -760,7 +760,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.vb" />
-    <None Include="bin\Archivi\CAP.mdb" />
     <None Include="bin\Archivi\Hospitality.mdb" />
     <None Include="HospitalityDataSet.xsc">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
@@ -852,6 +851,18 @@
     <None Include="Resources\Hospitality.ico" />
     <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A6.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenze.rdlc" />
     <EmbeddedResource Include="Codice\Classi\CellaColorata.resx">
       <DependentUpon>CellaColorata.vb</DependentUpon>
@@ -910,7 +921,7 @@
     <EmbeddedResource Include="Codice\Form\Hospitality\InvioEmail.resx">
       <DependentUpon>InvioEmail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Codice\Form\Hospitality\repAccessoriServizi.resx">
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\repAccessoriServizi.resx">
       <DependentUpon>repAccessoriServizi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\SelezionaPrenotazione.resx">
@@ -928,8 +939,8 @@
     <EmbeddedResource Include="Codice\Form\Hospitality\Main.it-IT.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Codice\Form\Hospitality\ReportViewer.resx">
-      <DependentUpon>ReportViewer.vb</DependentUpon>
+    <EmbeddedResource Include="Codice\Form\Hospitality\repDocumenti.resx">
+      <DependentUpon>repDocumenti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\StatoPrenotazioni.resx">
       <DependentUpon>StatoPrenotazioni.vb</DependentUpon>

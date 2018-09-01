@@ -1455,46 +1455,36 @@ Public Class frmElencoDatiSport
    End Function
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      Dim cn As OleDbConnection
-
       Try
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         Dim cn As New OleDbConnection(ConnString)
 
-            cn = New OleDbConnection(ConnString)
+         cn.Open()
 
-            cn.Open()
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            Dim oleAdapter As New OleDbDataAdapter
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New repAccessoriServizi(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
-            Dim ds As New HospitalityDataSet 'utilizzato con Crystal Reports
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-            Dim frm As New ReportViewer(ds, nomeDoc, String.Empty)
-            frm.ShowDialog()
-
-
-            'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            'rep.Load(Application.StartupPath & nomeDoc)
-
-            'rep.SetDataSource(ds)
-
-            'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-            '                   PrintDialog1.PrinterSettings.FromPage, _
-            '                   PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' DA_FARE_B: Cancellare!
+         'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+         'rep.Load(Application.StartupPath & nomeDoc)
+         'rep.SetDataSource(ds)
+         'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
+         '                   PrintDialog1.PrinterSettings.FromPage, _
+         '                   PrintDialog1.PrinterSettings.ToPage)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -1670,7 +1660,9 @@ Public Class frmElencoDatiSport
 
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
-                  StampaDocumento(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     StampaDocumento(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                  End If
 
                Case Elenco.Risorse
                   StampaDocumento(PERCORSO_REP_RISORSE, TAB_RISORSE, repSql)
@@ -1686,24 +1678,7 @@ Public Class frmElencoDatiSport
 
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
-                  ' Utilizzato con Crystal Report.
-                  'g_frmMain.ApriReports(repSql, TAB_ACCESSORI_SERVIZI, PERCORSO_REP_ACCESSORI_SERVIZI_A4)
-
-                  Dim cn As New OleDbConnection(ConnString)
-                  cn.Open()
-
-                  Dim oleAdapter As New OleDbDataAdapter
-                  oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM AccessoriServizi WHERE Disponibile = 'Sì'", cn)
-
-                  Dim ds As New HospitalityDataSet
-                  ds.Clear()
-                  oleAdapter.Fill(ds, TAB_ACCESSORI_SERVIZI)
-
-                  ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-                  Dim frm As New repAccessoriServizi(ds, PERCORSO_REP_ACCESSORI_SERVIZI_A4, String.Empty)
-                  frm.ShowDialog()
-
-                  cn.Close()
+                  StampaDocumento(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
 
                Case Elenco.Risorse
                   g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)

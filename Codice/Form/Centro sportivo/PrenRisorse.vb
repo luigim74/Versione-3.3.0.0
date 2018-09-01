@@ -4381,7 +4381,7 @@ Public Class frmPrenRisorse
          oleAdapter2.Fill(ds, TAB_AZIENDA)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New ReportViewer(ds, nomeDoc, nomeStampante)
+         Dim frm As New repDocumenti(ds, nomeDoc, nomeStampante)
          frm.ShowDialog()
 
          ' ---------------------------------------------------------------------------------

@@ -2548,7 +2548,7 @@ Public Class frmDocumento
          oleAdapter2.Fill(ds, TAB_AZIENDA)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New ReportViewer(ds, LeggiNomeReport(eui_cmbTipoDocumento.Text), LeggiNomeStampante(eui_cmbTipoDocumento.Text))
+         Dim frm As New repDocumenti(ds, LeggiNomeReport(eui_cmbTipoDocumento.Text), LeggiNomeStampante(eui_cmbTipoDocumento.Text))
          frm.ShowDialog()
 
       Catch ex As Exception

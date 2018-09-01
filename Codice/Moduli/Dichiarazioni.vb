@@ -78,6 +78,10 @@ Module Dichiarazioni
    Public Const STAGIONI_LARGHEZZA As Integer = 506
    Public Const STAGIONI_ALTEZZA As Integer = 630
 
+   ' Dimensioni della finestra Anteprima di stampa.
+   Public Const REPORTS_LARGHEZZA As Integer = 1000
+   Public Const REPORTS_ALTEZZA As Integer = 700
+
    ' Dimensioni per la paginazione dei dati.
    Public Const DIM_PAGINA As Integer = 50
    ' Dimensioni per la paginazione utilizzata per non fornire la paginazione.
