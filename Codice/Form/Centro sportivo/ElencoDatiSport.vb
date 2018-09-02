@@ -1454,7 +1454,7 @@ Public Class frmElencoDatiSport
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -1468,16 +1468,42 @@ Public Class frmElencoDatiSport
          oleAdapter.Fill(ds, tabella)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New repAccessoriServizi(ds, nomeDoc, String.Empty)
+         Dim frm As New RepAccessoriServizi(ds, nomeDoc, String.Empty)
          frm.ShowDialog()
 
-         ' DA_FARE_B: Cancellare!
-         'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-         'rep.Load(Application.StartupPath & nomeDoc)
-         'rep.SetDataSource(ds)
-         'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-         '                   PrintDialog1.PrinterSettings.FromPage, _
-         '                   PrintDialog1.PrinterSettings.ToPage)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+         rep.Load(Application.StartupPath & nomeDoc)
+
+         rep.SetDataSource(ds)
+
+         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+                            PrintDialog1.PrinterSettings.FromPage,
+                            PrintDialog1.PrinterSettings.ToPage)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1661,7 +1687,7 @@ Public Class frmElencoDatiSport
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaDocumento(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                     AnteprimaDiStampa(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
                   End If
 
                Case Elenco.Risorse
@@ -1678,7 +1704,7 @@ Public Class frmElencoDatiSport
 
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
-                  StampaDocumento(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                  AnteprimaDiStampa(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
 
                Case Elenco.Risorse
                   g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)

@@ -3899,6 +3899,33 @@ Public Class frmElencoDati
       End Try
    End Function
 
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepCamere(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       Dim cn As OleDbConnection
 
@@ -4405,13 +4432,14 @@ Public Class frmElencoDati
                Case Elenco.Tavoli
                   StampaDocumento(PERCORSO_REP_TAVOLI, TAB_TAVOLI, repSql)
 
-                  ' A_TODO: HOTEL - da modificare!
                Case Elenco.Camere
-                  StampaDocumento(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampa(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                  End If
 
-                  ' A_TODO: HOTEL - da valutare!
                Case Elenco.StatoPren
-                  StampaDocumento(PERCORSO_REP_STATO_PREN, TAB_STATO_PREN, repSql)
+                  ' StampaDocumento(PERCORSO_REP_STATO_PREN, TAB_STATO_PREN, repSql)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Prenotazioni
                   StampaDocumento(PERCORSO_REP_PREN, TAB_PREN, repSql)
@@ -4426,8 +4454,8 @@ Public Class frmElencoDati
                   StampaDocumento(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
 
                Case Elenco.CaratteristicheRisorse
-                  ' A_TODO: Da sviluppare per Caratteristiche Risorse.
                   'StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End Select
 
@@ -4460,13 +4488,12 @@ Public Class frmElencoDati
                Case Elenco.Tavoli
                   g_frmMain.ApriReports(repSql, TAB_TAVOLI, PERCORSO_REP_TAVOLI)
 
-                  ' A_TODO: HOTEL - da modificare!
                Case Elenco.Camere
-                  g_frmMain.ApriReports(repSql, TAB_CAMERE, PERCORSO_REP_CAMERE)
+                  AnteprimaDiStampa(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
 
-                  ' A_TODO: HOTEL - da valutare!
-               Case Elenco.Camere
-                  g_frmMain.ApriReports(repSql, TAB_STATO_PREN, PERCORSO_REP_STATO_PREN)
+               Case Elenco.StatoPren
+                  'g_frmMain.ApriReports(repSql, TAB_STATO_PREN, PERCORSO_REP_STATO_PREN)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Prenotazioni
                   g_frmMain.ApriReports(repSql, TAB_PREN, PERCORSO_REP_PREN)
@@ -4481,8 +4508,8 @@ Public Class frmElencoDati
                   g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
 
                Case Elenco.CaratteristicheRisorse
-                  ' A_TODO: Da sviluppare per Caratteristiche Risorse.
                   'g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End Select
 

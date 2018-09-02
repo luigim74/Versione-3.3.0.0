@@ -414,10 +414,10 @@
     <Compile Include="Codice\Form\Hospitality\InvioEmail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Codice\Form\Centro sportivo\repAccessoriServizi.Designer.vb">
-      <DependentUpon>repAccessoriServizi.vb</DependentUpon>
+    <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.Designer.vb">
+      <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Codice\Form\Centro sportivo\repAccessoriServizi.vb">
+    <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Hospitality\SelezionaPrenotazione.vb">
@@ -441,10 +441,16 @@
     <Compile Include="Codice\Form\Hospitality\GiudizioDemo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\repDocumenti.Designer.vb">
-      <DependentUpon>repDocumenti.vb</DependentUpon>
+    <Compile Include="Codice\ReportsViewer\RepCamere.Designer.vb">
+      <DependentUpon>RepCamere.vb</DependentUpon>
     </Compile>
-    <Compile Include="Codice\Form\Hospitality\repDocumenti.vb">
+    <Compile Include="Codice\ReportsViewer\RepCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepDocumenti.Designer.vb">
+      <DependentUpon>RepDocumenti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepDocumenti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Hotel\ElencoSchedinePS.vb">
@@ -850,20 +856,7 @@
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
     <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
-    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
-    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
-    <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />
-    <EmbeddedResource Include="bin\Reports\RFiscale A6.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
-    <EmbeddedResource Include="bin\Reports\StoricoPresenze.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Camere.rdlc" />
     <EmbeddedResource Include="Codice\Classi\CellaColorata.resx">
       <DependentUpon>CellaColorata.vb</DependentUpon>
     </EmbeddedResource>
@@ -921,8 +914,8 @@
     <EmbeddedResource Include="Codice\Form\Hospitality\InvioEmail.resx">
       <DependentUpon>InvioEmail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Codice\Form\Centro sportivo\repAccessoriServizi.resx">
-      <DependentUpon>repAccessoriServizi.vb</DependentUpon>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepAccessoriServizi.resx">
+      <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\SelezionaPrenotazione.resx">
       <DependentUpon>SelezionaPrenotazione.vb</DependentUpon>
@@ -939,8 +932,11 @@
     <EmbeddedResource Include="Codice\Form\Hospitality\Main.it-IT.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Codice\Form\Hospitality\repDocumenti.resx">
-      <DependentUpon>repDocumenti.vb</DependentUpon>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCamere.resx">
+      <DependentUpon>RepCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepDocumenti.resx">
+      <DependentUpon>RepDocumenti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\StatoPrenotazioni.resx">
       <DependentUpon>StatoPrenotazioni.vb</DependentUpon>

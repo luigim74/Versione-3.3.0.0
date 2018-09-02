@@ -139,6 +139,9 @@ Module Dichiarazioni
    ' Dati per l'invio dell'e-mail di utilizzo del software.
    Public Const EMAIL_DATI_LICENZA_A As String = "hospitality@montanasoftware.it"
 
+   ' Stringa per la richiesta di informazioni sul Report non disponibile..
+   Public Const MESSAGGIO_REPORT_NON_DISPONIBILE As String = "Per questo elenco non è disponibile un Report di stampa. Per informazioni scrivere a assistenza@montanasoftware.it."
+
    Public Const NOME_ARCHIVIO As String = "Hospitality.mdb"
    Public Const CARTELLA_ARCHIVI As String = "\Archivi"
    Public Const PERCORSO_LICENZA_RTF As String = "\Documenti\Licenza.rtf"
@@ -161,10 +164,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_CAMERIERI As String = "\Reports\Camerieri.rpt"
    Public Const PERCORSO_REP_SALE As String = "\Reports\Sale.rpt"
    Public Const PERCORSO_REP_TAVOLI As String = "\Reports\Tavoli.rpt"
-   ' A_TODO: HOTEL - da modificare!
-   Public Const PERCORSO_REP_CAMERE As String = "\Reports\Camere.rpt"
-   ' A_TODO: HOTEL - Valutare se creare il report.
-   Public Const PERCORSO_REP_STATO_PREN As String = "\Reports\StatoPren.rpt"
+   Public Const PERCORSO_REP_CAMERE As String = "\Reports\Camere.rdlc"
 
    Public Const PERCORSO_REP_PREN As String = "\Reports\Pren.rpt"
    Public Const PERCORSO_REP_PREN_SALE As String = "\Reports\PSale.rpt"

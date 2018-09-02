@@ -405,7 +405,7 @@ Public Class StoricoPresenze
          oleAdapter.Fill(ds1, TAB_STRORICO_PRESENZE_CAMERE)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New repDocumenti(ds1, PERCORSO_REP_STORICO_PRESENZE_A4, String.Empty)
+         Dim frm As New RepDocumenti(ds1, PERCORSO_REP_STORICO_PRESENZE_A4, String.Empty)
          frm.ShowDialog()
 
          cn1.Close()
