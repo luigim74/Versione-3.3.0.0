@@ -41,7 +41,6 @@ Public Class RepAccessoriServizi
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub repAccessoriServizi_Load(sender As Object, e As EventArgs) Handles MyBase.Load

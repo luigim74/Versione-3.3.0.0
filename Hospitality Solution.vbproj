@@ -447,6 +447,12 @@
     <Compile Include="Codice\ReportsViewer\RepCamere.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCap.Designer.vb">
+      <DependentUpon>RepCap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCap.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepDocumenti.Designer.vb">
       <DependentUpon>RepDocumenti.vb</DependentUpon>
     </Compile>
@@ -855,6 +861,7 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\Cap.rdlc" />
     <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camere.rdlc" />
     <EmbeddedResource Include="Codice\Classi\CellaColorata.resx">
@@ -934,6 +941,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCamere.resx">
       <DependentUpon>RepCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCap.resx">
+      <DependentUpon>RepCap.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepDocumenti.resx">
       <DependentUpon>RepDocumenti.vb</DependentUpon>

@@ -2,7 +2,7 @@
 <xs:schema id="HospitalityDataSet" targetNamespace="http://tempuri.org/HospitalityDataSet.xsd" xmlns:mstns="http://tempuri.org/HospitalityDataSet.xsd" xmlns="http://tempuri.org/HospitalityDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="5" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="6" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString" Provider="System.Data.OleDb" />
@@ -10,6 +10,7 @@
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString3 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString3" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString4 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString3" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString5" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString5 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString3" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString6 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString6" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AccessoriServiziTableAdapter" GeneratorDataComponentClassName="AccessoriServiziTableAdapter" Name="AccessoriServizi" UserDataComponentName="AccessoriServiziTableAdapter">
@@ -1060,6 +1061,94 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CAPTableAdapter" GeneratorDataComponentClassName="CAPTableAdapter" Name="CAP" UserDataComponentName="CAPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalityConnectionString (MySettings)" DbObjectName="CAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Cap` WHERE ((`Id` = ?) AND ((? = 1 AND `CodiceIstat` IS NULL) OR (`CodiceIstat` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `Provincia` IS NULL) OR (`Provincia` = ?)) AND ((? = 1 AND `Regione` IS NULL) OR (`Regione` = ?)) AND ((? = 1 AND `PrefissoTel` IS NULL) OR (`PrefissoTel` = ?)) AND ((? = 1 AND `Cap` IS NULL) OR (`Cap` = ?)) AND ((? = 1 AND `CodiceFisco` IS NULL) OR (`CodiceFisco` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceIstat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceIstat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Provincia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Provincia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Regione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Regione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrefissoTel" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_PrefissoTel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Cap" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Cap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceFisco" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceFisco" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Cap` (`CodiceIstat`, `Descrizione`, `Provincia`, `Regione`, `PrefissoTel`, `Cap`, `CodiceFisco`) VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceIstat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Provincia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Regione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PrefissoTel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Cap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceFisco" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, CodiceIstat, Descrizione, Provincia, Regione, PrefissoTel, Cap, CodiceFisco FROM CAP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Cap` SET `CodiceIstat` = ?, `Descrizione` = ?, `Provincia` = ?, `Regione` = ?, `PrefissoTel` = ?, `Cap` = ?, `CodiceFisco` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `CodiceIstat` IS NULL) OR (`CodiceIstat` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `Provincia` IS NULL) OR (`Provincia` = ?)) AND ((? = 1 AND `Regione` IS NULL) OR (`Regione` = ?)) AND ((? = 1 AND `PrefissoTel` IS NULL) OR (`PrefissoTel` = ?)) AND ((? = 1 AND `Cap` IS NULL) OR (`Cap` = ?)) AND ((? = 1 AND `CodiceFisco` IS NULL) OR (`CodiceFisco` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceIstat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Provincia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Regione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PrefissoTel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Cap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceFisco" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceIstat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceIstat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceIstat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Provincia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Provincia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Provincia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Regione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Regione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Regione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrefissoTel" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_PrefissoTel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PrefissoTel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Cap" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Cap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Cap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceFisco" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceFisco" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceFisco" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CodiceIstat" DataSetColumn="CodiceIstat" />
+              <Mapping SourceColumn="Descrizione" DataSetColumn="Descrizione" />
+              <Mapping SourceColumn="Provincia" DataSetColumn="Provincia" />
+              <Mapping SourceColumn="Regione" DataSetColumn="Regione" />
+              <Mapping SourceColumn="PrefissoTel" DataSetColumn="PrefissoTel" />
+              <Mapping SourceColumn="Cap" DataSetColumn="Cap" />
+              <Mapping SourceColumn="CodiceFisco" DataSetColumn="CodiceFisco" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1672,6 +1761,62 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CAP" msprop:Generator_TableClassName="CAPDataTable" msprop:Generator_TableVarName="tableCAP" msprop:Generator_RowChangedName="CAPRowChanged" msprop:Generator_TablePropName="CAP" msprop:Generator_RowDeletingName="CAPRowDeleting" msprop:Generator_RowChangingName="CAPRowChanging" msprop:Generator_RowEvHandlerName="CAPRowChangeEventHandler" msprop:Generator_RowDeletedName="CAPRowDeleted" msprop:Generator_RowClassName="CAPRow" msprop:Generator_UserTableName="CAP" msprop:Generator_RowEvArgName="CAPRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="CodiceIstat" msprop:Generator_ColumnVarNameInTable="columnCodiceIstat" msprop:Generator_ColumnPropNameInRow="CodiceIstat" msprop:Generator_ColumnPropNameInTable="CodiceIstatColumn" msprop:Generator_UserColumnName="CodiceIstat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descrizione" msprop:Generator_ColumnVarNameInTable="columnDescrizione" msprop:Generator_ColumnPropNameInRow="Descrizione" msprop:Generator_ColumnPropNameInTable="DescrizioneColumn" msprop:Generator_UserColumnName="Descrizione" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Provincia" msprop:Generator_ColumnVarNameInTable="columnProvincia" msprop:Generator_ColumnPropNameInRow="Provincia" msprop:Generator_ColumnPropNameInTable="ProvinciaColumn" msprop:Generator_UserColumnName="Provincia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Regione" msprop:Generator_ColumnVarNameInTable="columnRegione" msprop:Generator_ColumnPropNameInRow="Regione" msprop:Generator_ColumnPropNameInTable="RegioneColumn" msprop:Generator_UserColumnName="Regione" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrefissoTel" msprop:Generator_ColumnVarNameInTable="columnPrefissoTel" msprop:Generator_ColumnPropNameInRow="PrefissoTel" msprop:Generator_ColumnPropNameInTable="PrefissoTelColumn" msprop:Generator_UserColumnName="PrefissoTel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cap" msprop:Generator_ColumnVarNameInTable="columnCap" msprop:Generator_ColumnPropNameInRow="Cap" msprop:Generator_ColumnPropNameInTable="CapColumn" msprop:Generator_UserColumnName="Cap" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodiceFisco" msprop:Generator_ColumnVarNameInTable="columnCodiceFisco" msprop:Generator_ColumnPropNameInRow="CodiceFisco" msprop:Generator_ColumnPropNameInTable="CodiceFiscoColumn" msprop:Generator_UserColumnName="CodiceFisco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1696,6 +1841,10 @@
     </xs:unique>
     <xs:unique name="Camere_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Camere" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="CAP_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CAP" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
   </xs:element>

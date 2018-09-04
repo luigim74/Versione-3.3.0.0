@@ -143,7 +143,7 @@ Public Class ElencoCAP
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(576, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(584, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -225,7 +225,6 @@ Public Class ElencoCAP
       '
       Me.ToolBarButton1.Name = "ToolBarButton1"
       Me.ToolBarButton1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      Me.ToolBarButton1.Visible = False
       '
       'Anteprima
       '
@@ -233,7 +232,6 @@ Public Class ElencoCAP
       Me.Anteprima.Name = "Anteprima"
       Me.Anteprima.Tag = "Anteprima"
       Me.Anteprima.ToolTipText = "Anteprima di stampa"
-      Me.Anteprima.Visible = False
       '
       'Stampa
       '
@@ -241,7 +239,6 @@ Public Class ElencoCAP
       Me.Stampa.Name = "Stampa"
       Me.Stampa.Tag = "Stampa"
       Me.Stampa.ToolTipText = "Stampa"
-      Me.Stampa.Visible = False
       '
       'ImageList1
       '
@@ -275,7 +272,7 @@ Public Class ElencoCAP
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(576, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(584, 262)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -288,14 +285,14 @@ Public Class ElencoCAP
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(576, 30)
+      Me.Panel1.Size = New System.Drawing.Size(584, 30)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(434, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(442, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -306,7 +303,7 @@ Public Class ElencoCAP
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(352, 8)
+      Me.Label2.Location = New System.Drawing.Point(360, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -329,7 +326,7 @@ Public Class ElencoCAP
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(115, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(231, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(239, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
@@ -349,7 +346,7 @@ Public Class ElencoCAP
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(576, 310)
+      Me.ClientSize = New System.Drawing.Size(584, 318)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
@@ -784,9 +781,7 @@ Public Class ElencoCAP
             LeggiDati("(" & sql & ")", sql)
          Else
             sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id ASC", dimPagina, TAB_CAP)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY Cap Id", TAB_CAP)
-
-            'repSql = String.Format("SELECT TOP {0} * INTO RepClienti FROM {1} ORDER BY Id ASC", dimPagina, NomeTabella)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY Id ASC", TAB_CAP)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati(TAB_CAP, sql)
@@ -853,50 +848,29 @@ Public Class ElencoCAP
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      Dim cn As OleDbConnection
-
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         Dim cn As New OleDbConnection(ConnString)
 
-            If frmId = "Clienti" Then
-               ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
+         cn.Open()
 
-               ' Dichiara un oggetto connessione.
-               cn = New OleDbConnection(ConnStringAnagrafiche)
-            Else
-               'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-               cn = New OleDbConnection(ConnString)
-            End If
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepCap(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -998,10 +972,12 @@ Public Class ElencoCAP
             'EliminaDati(NomeTabella, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
 
          Case "Stampa"
-            'StampaDocumento(PERCORSO_REP_MOV_MAG, TAB_CAP, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampa(PERCORSO_REP_CAP_A4, TAB_CAP, repSql)
+            End If
 
          Case "Anteprima"
-            'g_frmMain.ApriReports(repSql, TAB_CAP, PERCORSO_REP_MOV_MAG)
+            AnteprimaDiStampa(PERCORSO_REP_CAP_A4, TAB_CAP, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.

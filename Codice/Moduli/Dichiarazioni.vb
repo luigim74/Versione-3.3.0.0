@@ -187,6 +187,7 @@ Module Dichiarazioni
    ' Nomi per i reports dei documenti in formato .rdlc
    Public Const PERCORSO_REP_ACCESSORI_SERVIZI_A4 As String = "\Reports\AccessoriServizi.rdlc"
    Public Const PERCORSO_REP_STORICO_PRESENZE_A4 As String = "\Reports\StoricoPresenze.rdlc"
+   Public Const PERCORSO_REP_CAP_A4 As String = "\Reports\Cap.rdlc"
 
    ' Nomi per i reports dei documenti in formato .rpt
    Public Const REPORT_RICEVUTA As String = "RFiscale.rpt"
