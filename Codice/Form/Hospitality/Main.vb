@@ -3,7 +3,7 @@
 ' Nome form:            frmMain
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 25/08/2018
+' Data ultima modifica: 05/09/2018
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -12148,7 +12148,7 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE: Terminare!
+   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Esporta_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Esporta.Click
       Try
          ' Ottiene il form attivo.
@@ -12170,6 +12170,7 @@ Friend Class frmMain
                ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12183,7 +12184,7 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE: Terminare!
+   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Stampa_Anteprima_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Stampa_Anteprima.Click
       Try
          ' Ottiene il form attivo.
@@ -12205,6 +12206,7 @@ Friend Class frmMain
                ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
+               g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12217,7 +12219,7 @@ Friend Class frmMain
       End Try
    End Sub
 
-   ' DA_FARE: Terminare!
+   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Stampa_Elenco_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Stampa_Elenco.Click
       Try
          ' Ottiene il form attivo.
@@ -12232,7 +12234,6 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
-
                ' Registra loperazione effettuata dall'operatore identificato.
                RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -12240,6 +12241,9 @@ Friend Class frmMain
                g_frmDocumenti.StampaDocumento(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
+               If g_frmEmail.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
+               End If
 
                ' Inserire qui il codice per gestire le altre finestre.
 

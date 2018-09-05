@@ -52,7 +52,7 @@ Public Class ElencoEmail
    Dim ds As New DataSet
    Dim dt As DataTable
    Dim sql As String
-   Dim repSql As String
+   Public repSql As String
 
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
@@ -914,43 +914,29 @@ Public Class ElencoEmail
       End Try
    End Function
 
-   ' DA_FARE: HOTEL - da modificare!
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                               PrintDialog1.PrinterSettings.FromPage,
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepEmail(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -1183,13 +1169,13 @@ Public Class ElencoEmail
 
          Case "Sospeso"
             ' Apre la finestra per l'incasso del sospeso.
-            Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
-            frm.ShowDialog()
+            ''Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
+            '                              DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
+            '                              DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
+            '                              DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4),
+            '                              DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
+            '                              DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
+            'frm.ShowDialog()
 
          Case "PassaSospeso"
             ' Apre la finestra per l'incasso del sospeso.
@@ -1202,15 +1188,15 @@ Public Class ElencoEmail
 
          Case "Stampa"
             ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            'g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            StampaDocumento(PERCORSO_REP_DOC, TAB_EMAIL, repSql)
+            'StampaDocumento(PERCORSO_REP_DOC, TAB_EMAIL, repSql)
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            'g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            g_frmMain.ApriReports(repSql, TAB_EMAIL, PERCORSO_REP_DOC)
+            'g_frmMain.ApriReports(repSql, TAB_EMAIL, PERCORSO_REP_DOC)
 
          Case "Primo"
             '' Crea la stringa sql.
@@ -1256,7 +1242,7 @@ Public Class ElencoEmail
 
          Case "Aggiorna"
             ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
             'If tbrSospesi.Pushed = True Then
             '   ' Aggiorna la griglia dati.

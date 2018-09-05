@@ -475,6 +475,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Moduli\GeneraPdf.vb" />
+    <Compile Include="Codice\ReportsViewer\RepEmail.Designer.vb">
+      <DependentUpon>RepEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HospitalityDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -861,6 +867,7 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\Email.rdlc" />
     <EmbeddedResource Include="bin\Reports\Cap.rdlc" />
     <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camere.rdlc" />
@@ -1217,6 +1224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\VCTavoli.resx">
       <DependentUpon>VCTavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepEmail.resx">
+      <DependentUpon>RepEmail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
