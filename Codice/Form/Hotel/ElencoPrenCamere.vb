@@ -75,7 +75,7 @@ Public Class ElencoPrenCamere
    Dim ds As New DataSet
    Dim dt As DataTable
    Dim sql As String
-   Dim repSql As String
+   Public repSql As String
 
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
@@ -1998,43 +1998,29 @@ Public Class ElencoPrenCamere
       End Try
    End Function
 
-   ' DA_FARE_A: HOTEL - da modificare!
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                               PrintDialog1.PrinterSettings.FromPage,
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepPrenCamere(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -2222,35 +2208,35 @@ Public Class ElencoPrenCamere
 
    ' DA_FARE_A: Modificare!
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
-      Select Case e.Button.Tag
+      'Select Case e.Button.Tag
 
-         Case "Sospeso"
-            ' Apre la finestra per l'incasso del sospeso.
-            Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
-            frm.ShowDialog()
+      '   Case "Sospeso"
+      '      ' Apre la finestra per l'incasso del sospeso.
+      '      Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
+      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
+      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
+      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4),
+      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
+      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
+      '      frm.ShowDialog()
 
-         Case "Stampa"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Stampa"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            StampaDocumento(PERCORSO_REP_DOC, TAB_PRENOTAZIONI, repSql)
+      '      StampaDocumento(PERCORSO_REP_DOC, TAB_PRENOTAZIONI, repSql)
 
-         Case "Anteprima"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Anteprima"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-            g_frmMain.ApriReports(repSql, TAB_PRENOTAZIONI, PERCORSO_REP_DOC)
+      '      g_frmMain.ApriReports(repSql, TAB_PRENOTAZIONI, PERCORSO_REP_DOC)
 
-         Case "Aggiorna"
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+      '   Case "Aggiorna"
+      '      ' Registra loperazione effettuata dall'operatore identificato.
+      '      g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
-      End Select
+      'End Select
    End Sub
 
    Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestoRicerca.TextChanged
