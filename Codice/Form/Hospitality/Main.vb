@@ -12160,6 +12160,7 @@ Friend Class frmMain
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
+               g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
 
@@ -12197,6 +12198,7 @@ Friend Class frmMain
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
+               g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
 
@@ -12230,11 +12232,14 @@ Friend Class frmMain
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
-               If g_frmEmail.PrintDialog1.ShowDialog() = DialogResult.OK Then
+               If g_frmPrenCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
                End If
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
+               If g_frmSchedinePS.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
+               End If
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
 
