@@ -471,3 +471,333 @@
    in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampa(String nomeDoc, String tabella, String sqlRep) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1038"
 "
 "
+"*** 08/09/2018 - 16:10:57 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:06 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:08 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:08 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:09 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:10 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:11 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:12 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:13 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:15 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:16 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:17 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:17 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:18 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:19 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:20 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:21 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:22 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:23 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:24 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:24 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:25 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:26 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:27 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:28 ***"
+"- DESCRIZIONE ERRORE: L'istruzione INSERT INTO contiene il seguente nome campo sconosciuto: ""Presenze"". Verificare di averlo digitato correttamente, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:11:29 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 363"
+"
+"
+"*** 08/09/2018 - 16:14:42 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 364"
+"
+"
+"*** 08/09/2018 - 16:14:56 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 364"
+"
+"
+"*** 08/09/2018 - 16:22:06 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 364"
+"
+"
+"*** 08/09/2018 - 16:22:19 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Mese."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenze.InserisciDati(String mese, String anno, String presenze, String occupazione, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\StoricoPresenze.vb:riga 364"
+"
+"

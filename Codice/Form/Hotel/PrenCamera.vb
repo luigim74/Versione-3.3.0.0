@@ -2263,7 +2263,7 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   Private Sub SalvaStoricoPresenzeMeseAnno(ByVal id As String)
+   Public Sub SalvaStoricoPresenzeMeseAnno(ByVal id As String)
       Try
          Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
          Dim valDataArrivo As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)

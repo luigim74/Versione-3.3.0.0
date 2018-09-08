@@ -12163,6 +12163,7 @@ Friend Class frmMain
                g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
+               g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
@@ -12201,6 +12202,7 @@ Friend Class frmMain
                g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
+               g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
@@ -12242,6 +12244,9 @@ Friend Class frmMain
                End If
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
+               If g_frmListiniCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
+               End If
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
@@ -12739,6 +12744,9 @@ Friend Class frmMain
             If g_frmPrenCamera.SalvaSchedinaPS(g_frmPrenCamera.Tag) = True Then
                ' Salva anche tutti i componenti associati.
                g_frmPrenCamera.SalvaOccupantiSchedina(LeggiUltimoRecord(g_frmPrenCamera.TAB_SCHEDINE_PS))
+
+               ' Salva lo storico delle presenze.
+               g_frmPrenCamera.SalvaStoricoPresenzeMeseAnno(LeggiUltimoRecord(g_frmPrenCamera.TAB_SCHEDINE_PS))
 
                If IsNothing(g_frmSchedinePS) = False Then
                   ' Aggiorna la griglia dati.

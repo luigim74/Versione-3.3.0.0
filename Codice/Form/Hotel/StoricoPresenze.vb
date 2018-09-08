@@ -3,7 +3,7 @@
 ' Nome form:            StoricoPresenze
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       24/06/2018
-' Data ultima modifica: 25/08/2018
+' Data ultima modifica: 08/09/2018
 ' Descrizione:          Visualizza l'elenco storico delle presenze delle camere divise per mese, con grafico.
 ' Note:
 '
@@ -17,9 +17,17 @@ Imports Elegant.Ui
 Public Class StoricoPresenze
 
    Const TAB_STRORICO_PRESENZE_CAMERE As String = "StoricoPresenzeCamere"
-   Private CFormatta As New ClsFormatta
+   Const TAB_STRORICO_PRESENZE_TEMP As String = "StoricoPresenzeTemp"
+
    Dim Mese(11) As String
    Dim numGiorniMese(11) As Integer
+   Private CFormatta As New ClsFormatta
+
+   ' Dichiara un oggetto connessione.
+   Dim cn As New OleDbConnection(ConnString)
+   Dim tr As OleDbTransaction
+   Dim sql As String
+   Dim cmd As New OleDbCommand(sql, cn)
 
    Private Sub LeggiStoricoPresenzeCamere(ByVal anno As String)
       ' Dichiara un oggetto connessione.
@@ -333,6 +341,135 @@ Public Class StoricoPresenze
       End Try
    End Sub
 
+   Public Function InserisciDati(ByVal mese As String, ByVal anno As String, ByVal presenze As String, ByVal occupazione As String, ByVal tabella As String) As Boolean
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+         Sql = String.Format("INSERT INTO {0} (Mese, Anno, Presenze, Occupazione) " &
+                                       "VALUES(@Mese, @Anno, @Presenze, @Occupazione)", tabella)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdInsert As New OleDbCommand(Sql, cn, tr)
+
+         cmdInsert.Parameters.Add("@Mese", mese)
+         cmdInsert.Parameters.Add("@Anno", anno)
+         cmdInsert.Parameters.Add("@Presenze", presenze)
+         cmdInsert.Parameters.Add("@Occupazione", occupazione)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Sub EliminaDati(ByVal tabella As String)
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("DELETE FROM {0}", tabella)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+
+         ' Conferma la transazione.
+         tr.Commit()
+
+      Catch ex As Exception
+         ' Annulla la transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Sub
+
+   Private Sub SalvaDatiTempPresenze()
+      Try
+         Dim anno As String = eui_cmbAnno.Text
+         Dim mese As String
+         Dim presenze As String
+         Dim occupazione As String
+
+         ' Pulisce la tabella dai vecchi valori.
+         EliminaDati(TAB_STRORICO_PRESENZE_TEMP)
+
+         Dim i As Integer
+         For i = 0 To dgvDettagli.Rows.Count - 2
+            mese = dgvDettagli.Rows.Item(i).Cells(clnMese.Name).Value
+            presenze = dgvDettagli.Rows.Item(i).Cells(clnPresenze.Name).Value
+            occupazione = dgvDettagli.Rows.Item(i).Cells(clnOccupazione.Name).Value
+
+            InserisciDati(mese, anno, presenze, occupazione, TAB_STRORICO_PRESENZE_TEMP)
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepStoricoPresenzeCamere(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StoricoPresenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona del prodotto.
@@ -359,6 +496,9 @@ Public Class StoricoPresenze
          ' Crea il grafico con i dati della griglia.
          GeneraGrafico()
 
+         ' Salva i dati in una tabella temporanea per permettere l'anteprima di stampa.
+         SalvaDatiTempPresenze()
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -384,6 +524,9 @@ Public Class StoricoPresenze
          ' Crea il grafico con i dati della griglia.
          GeneraGrafico()
 
+         ' Salva i dati in una tabella temporanea per permettere l'anteprima di stampa.
+         SalvaDatiTempPresenze()
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -394,21 +537,9 @@ Public Class StoricoPresenze
 
    Private Sub eui_cmdStampa_Click(sender As Object, e As EventArgs) Handles eui_cmdStampa.Click
       Try
-         Dim cn1 As New OleDbConnection(ConnString)
-         cn1.Open()
+         Dim repSql As String = "SELECT * FROM " & TAB_STRORICO_PRESENZE_TEMP & " ORDER BY Id ASC"
 
-         Dim oleAdapter As New OleDbDataAdapter
-         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STRORICO_PRESENZE_CAMERE, cn1)
-
-         Dim ds1 As New HospitalityDataSet
-         ds1.Clear()
-         oleAdapter.Fill(ds1, TAB_STRORICO_PRESENZE_CAMERE)
-
-         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New RepDocumenti(ds1, PERCORSO_REP_STORICO_PRESENZE_A4, String.Empty)
-         frm.ShowDialog()
-
-         cn1.Close()
+         AnteprimaDiStampa(PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4, TAB_STRORICO_PRESENZE_TEMP, repSql)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

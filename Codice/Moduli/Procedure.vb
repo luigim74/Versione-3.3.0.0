@@ -3611,7 +3611,6 @@ Module Procedure
       End Try
    End Sub
 
-
    Public Sub AvviaWinCalc(ByVal hndl As System.IntPtr)
       Dim Percorso As String
       Dim PercorsoApp As String

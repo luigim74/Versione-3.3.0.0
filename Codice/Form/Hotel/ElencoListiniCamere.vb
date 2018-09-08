@@ -25,7 +25,7 @@ Public Class ElencoListiniCamere
    Dim ds As New DataSet
    Dim dt As DataTable
    Dim sql As String
-   Dim repSql As String
+   Public repSql As String
 
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
@@ -1009,42 +1009,29 @@ Public Class ElencoListiniCamere
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                               PrintDialog1.PrinterSettings.FromPage,
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepListiniCamere(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -1209,7 +1196,7 @@ Public Class ElencoListiniCamere
       FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
    End Sub
 
-   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
+   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
       Modifica()
 
       ' DA_FARE_B: Da sviluppare!

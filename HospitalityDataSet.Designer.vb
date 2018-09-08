@@ -33,8 +33,6 @@ Partial Public Class HospitalityDataSet
     
     Private tableDettagliDoc As DettagliDocDataTable
     
-    Private tableStoricoPresenzeCamere As StoricoPresenzeCamereDataTable
-    
     Private tableCamere As CamereDataTable
     
     Private tableCAP As CAPDataTable
@@ -44,6 +42,10 @@ Partial Public Class HospitalityDataSet
     Private tablePrenCamere As PrenCamereDataTable
     
     Private tableSchedinePS As SchedinePSDataTable
+    
+    Private tableListiniCamere As ListiniCamereDataTable
+    
+    Private tableStoricoPresenzeTemp As StoricoPresenzeTempDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -86,9 +88,6 @@ Partial Public Class HospitalityDataSet
             If (Not (ds.Tables("DettagliDoc")) Is Nothing) Then
                 MyBase.Tables.Add(New DettagliDocDataTable(ds.Tables("DettagliDoc")))
             End If
-            If (Not (ds.Tables("StoricoPresenzeCamere")) Is Nothing) Then
-                MyBase.Tables.Add(New StoricoPresenzeCamereDataTable(ds.Tables("StoricoPresenzeCamere")))
-            End If
             If (Not (ds.Tables("Camere")) Is Nothing) Then
                 MyBase.Tables.Add(New CamereDataTable(ds.Tables("Camere")))
             End If
@@ -103,6 +102,12 @@ Partial Public Class HospitalityDataSet
             End If
             If (Not (ds.Tables("SchedinePS")) Is Nothing) Then
                 MyBase.Tables.Add(New SchedinePSDataTable(ds.Tables("SchedinePS")))
+            End If
+            If (Not (ds.Tables("ListiniCamere")) Is Nothing) Then
+                MyBase.Tables.Add(New ListiniCamereDataTable(ds.Tables("ListiniCamere")))
+            End If
+            If (Not (ds.Tables("StoricoPresenzeTemp")) Is Nothing) Then
+                MyBase.Tables.Add(New StoricoPresenzeTempDataTable(ds.Tables("StoricoPresenzeTemp")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -165,16 +170,6 @@ Partial Public Class HospitalityDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property StoricoPresenzeCamere() As StoricoPresenzeCamereDataTable
-        Get
-            Return Me.tableStoricoPresenzeCamere
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property Camere() As CamereDataTable
         Get
             Return Me.tableCamere
@@ -218,6 +213,26 @@ Partial Public Class HospitalityDataSet
     Public ReadOnly Property SchedinePS() As SchedinePSDataTable
         Get
             Return Me.tableSchedinePS
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property ListiniCamere() As ListiniCamereDataTable
+        Get
+            Return Me.tableListiniCamere
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property StoricoPresenzeTemp() As StoricoPresenzeTempDataTable
+        Get
+            Return Me.tableStoricoPresenzeTemp
         End Get
     End Property
     
@@ -300,9 +315,6 @@ Partial Public Class HospitalityDataSet
             If (Not (ds.Tables("DettagliDoc")) Is Nothing) Then
                 MyBase.Tables.Add(New DettagliDocDataTable(ds.Tables("DettagliDoc")))
             End If
-            If (Not (ds.Tables("StoricoPresenzeCamere")) Is Nothing) Then
-                MyBase.Tables.Add(New StoricoPresenzeCamereDataTable(ds.Tables("StoricoPresenzeCamere")))
-            End If
             If (Not (ds.Tables("Camere")) Is Nothing) Then
                 MyBase.Tables.Add(New CamereDataTable(ds.Tables("Camere")))
             End If
@@ -317,6 +329,12 @@ Partial Public Class HospitalityDataSet
             End If
             If (Not (ds.Tables("SchedinePS")) Is Nothing) Then
                 MyBase.Tables.Add(New SchedinePSDataTable(ds.Tables("SchedinePS")))
+            End If
+            If (Not (ds.Tables("ListiniCamere")) Is Nothing) Then
+                MyBase.Tables.Add(New ListiniCamereDataTable(ds.Tables("ListiniCamere")))
+            End If
+            If (Not (ds.Tables("StoricoPresenzeTemp")) Is Nothing) Then
+                MyBase.Tables.Add(New StoricoPresenzeTempDataTable(ds.Tables("StoricoPresenzeTemp")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -374,12 +392,6 @@ Partial Public Class HospitalityDataSet
                 Me.tableDettagliDoc.InitVars
             End If
         End If
-        Me.tableStoricoPresenzeCamere = CType(MyBase.Tables("StoricoPresenzeCamere"),StoricoPresenzeCamereDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableStoricoPresenzeCamere) Is Nothing) Then
-                Me.tableStoricoPresenzeCamere.InitVars
-            End If
-        End If
         Me.tableCamere = CType(MyBase.Tables("Camere"),CamereDataTable)
         If (initTable = true) Then
             If (Not (Me.tableCamere) Is Nothing) Then
@@ -410,6 +422,18 @@ Partial Public Class HospitalityDataSet
                 Me.tableSchedinePS.InitVars
             End If
         End If
+        Me.tableListiniCamere = CType(MyBase.Tables("ListiniCamere"),ListiniCamereDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableListiniCamere) Is Nothing) Then
+                Me.tableListiniCamere.InitVars
+            End If
+        End If
+        Me.tableStoricoPresenzeTemp = CType(MyBase.Tables("StoricoPresenzeTemp"),StoricoPresenzeTempDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableStoricoPresenzeTemp) Is Nothing) Then
+                Me.tableStoricoPresenzeTemp.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -428,8 +452,6 @@ Partial Public Class HospitalityDataSet
         MyBase.Tables.Add(Me.tableAzienda)
         Me.tableDettagliDoc = New DettagliDocDataTable()
         MyBase.Tables.Add(Me.tableDettagliDoc)
-        Me.tableStoricoPresenzeCamere = New StoricoPresenzeCamereDataTable()
-        MyBase.Tables.Add(Me.tableStoricoPresenzeCamere)
         Me.tableCamere = New CamereDataTable()
         MyBase.Tables.Add(Me.tableCamere)
         Me.tableCAP = New CAPDataTable()
@@ -440,6 +462,10 @@ Partial Public Class HospitalityDataSet
         MyBase.Tables.Add(Me.tablePrenCamere)
         Me.tableSchedinePS = New SchedinePSDataTable()
         MyBase.Tables.Add(Me.tableSchedinePS)
+        Me.tableListiniCamere = New ListiniCamereDataTable()
+        MyBase.Tables.Add(Me.tableListiniCamere)
+        Me.tableStoricoPresenzeTemp = New StoricoPresenzeTempDataTable()
+        MyBase.Tables.Add(Me.tableStoricoPresenzeTemp)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -463,12 +489,6 @@ Partial Public Class HospitalityDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeDettagliDoc() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeStoricoPresenzeCamere() As Boolean
         Return false
     End Function
     
@@ -499,6 +519,18 @@ Partial Public Class HospitalityDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSchedinePS() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeListiniCamere() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeStoricoPresenzeTemp() As Boolean
         Return false
     End Function
     
@@ -573,9 +605,6 @@ Partial Public Class HospitalityDataSet
     Public Delegate Sub DettagliDocRowChangeEventHandler(ByVal sender As Object, ByVal e As DettagliDocRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub StoricoPresenzeCamereRowChangeEventHandler(ByVal sender As Object, ByVal e As StoricoPresenzeCamereRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub CamereRowChangeEventHandler(ByVal sender As Object, ByVal e As CamereRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -589,6 +618,12 @@ Partial Public Class HospitalityDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SchedinePSRowChangeEventHandler(ByVal sender As Object, ByVal e As SchedinePSRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub ListiniCamereRowChangeEventHandler(ByVal sender As Object, ByVal e As ListiniCamereRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub StoricoPresenzeTempRowChangeEventHandler(ByVal sender As Object, ByVal e As StoricoPresenzeTempRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2958,417 +2993,6 @@ Partial Public Class HospitalityDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "DettagliDocDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class StoricoPresenzeCamereDataTable
-        Inherits Global.System.Data.TypedTableBase(Of StoricoPresenzeCamereRow)
-        
-        Private columnId As Global.System.Data.DataColumn
-        
-        Private columnRifPren As Global.System.Data.DataColumn
-        
-        Private columnNumero As Global.System.Data.DataColumn
-        
-        Private columnMese As Global.System.Data.DataColumn
-        
-        Private columnAnno As Global.System.Data.DataColumn
-        
-        Private columnAdulti As Global.System.Data.DataColumn
-        
-        Private columnNeonati As Global.System.Data.DataColumn
-        
-        Private columnBambini As Global.System.Data.DataColumn
-        
-        Private columnRagazzi As Global.System.Data.DataColumn
-        
-        Private columnDataArrivo As Global.System.Data.DataColumn
-        
-        Private columnDataPartenza As Global.System.Data.DataColumn
-        
-        Private columnNumeroNotti As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "StoricoPresenzeCamere"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnId
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property RifPrenColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnRifPren
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NumeroColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNumero
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property MeseColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnMese
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property AnnoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnAnno
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property AdultiColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnAdulti
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NeonatiColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNeonati
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property BambiniColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBambini
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property RagazziColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnRagazzi
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property DataArrivoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDataArrivo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property DataPartenzaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDataPartenza
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NumeroNottiColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNumeroNotti
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As StoricoPresenzeCamereRow
-            Get
-                Return CType(Me.Rows(index),StoricoPresenzeCamereRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StoricoPresenzeCamereRowChanging As StoricoPresenzeCamereRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StoricoPresenzeCamereRowChanged As StoricoPresenzeCamereRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StoricoPresenzeCamereRowDeleting As StoricoPresenzeCamereRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StoricoPresenzeCamereRowDeleted As StoricoPresenzeCamereRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddStoricoPresenzeCamereRow(ByVal row As StoricoPresenzeCamereRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddStoricoPresenzeCamereRow(ByVal RifPren As Integer, ByVal Numero As Integer, ByVal Mese As Integer, ByVal Anno As Integer, ByVal Adulti As String, ByVal Neonati As String, ByVal Bambini As String, ByVal Ragazzi As String, ByVal DataArrivo As Date, ByVal DataPartenza As Date, ByVal NumeroNotti As Integer) As StoricoPresenzeCamereRow
-            Dim rowStoricoPresenzeCamereRow As StoricoPresenzeCamereRow = CType(Me.NewRow,StoricoPresenzeCamereRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, RifPren, Numero, Mese, Anno, Adulti, Neonati, Bambini, Ragazzi, DataArrivo, DataPartenza, NumeroNotti}
-            rowStoricoPresenzeCamereRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowStoricoPresenzeCamereRow)
-            Return rowStoricoPresenzeCamereRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindById(ByVal Id As Integer) As StoricoPresenzeCamereRow
-            Return CType(Me.Rows.Find(New Object() {Id}),StoricoPresenzeCamereRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As StoricoPresenzeCamereDataTable = CType(MyBase.Clone,StoricoPresenzeCamereDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New StoricoPresenzeCamereDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnId = MyBase.Columns("Id")
-            Me.columnRifPren = MyBase.Columns("RifPren")
-            Me.columnNumero = MyBase.Columns("Numero")
-            Me.columnMese = MyBase.Columns("Mese")
-            Me.columnAnno = MyBase.Columns("Anno")
-            Me.columnAdulti = MyBase.Columns("Adulti")
-            Me.columnNeonati = MyBase.Columns("Neonati")
-            Me.columnBambini = MyBase.Columns("Bambini")
-            Me.columnRagazzi = MyBase.Columns("Ragazzi")
-            Me.columnDataArrivo = MyBase.Columns("DataArrivo")
-            Me.columnDataPartenza = MyBase.Columns("DataPartenza")
-            Me.columnNumeroNotti = MyBase.Columns("NumeroNotti")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId)
-            Me.columnRifPren = New Global.System.Data.DataColumn("RifPren", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRifPren)
-            Me.columnNumero = New Global.System.Data.DataColumn("Numero", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNumero)
-            Me.columnMese = New Global.System.Data.DataColumn("Mese", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMese)
-            Me.columnAnno = New Global.System.Data.DataColumn("Anno", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnAnno)
-            Me.columnAdulti = New Global.System.Data.DataColumn("Adulti", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnAdulti)
-            Me.columnNeonati = New Global.System.Data.DataColumn("Neonati", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNeonati)
-            Me.columnBambini = New Global.System.Data.DataColumn("Bambini", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBambini)
-            Me.columnRagazzi = New Global.System.Data.DataColumn("Ragazzi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRagazzi)
-            Me.columnDataArrivo = New Global.System.Data.DataColumn("DataArrivo", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataArrivo)
-            Me.columnDataPartenza = New Global.System.Data.DataColumn("DataPartenza", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataPartenza)
-            Me.columnNumeroNotti = New Global.System.Data.DataColumn("NumeroNotti", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNumeroNotti)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
-            Me.columnId.AutoIncrement = true
-            Me.columnId.AutoIncrementSeed = -1
-            Me.columnId.AutoIncrementStep = -1
-            Me.columnId.AllowDBNull = false
-            Me.columnId.Unique = true
-            Me.columnAdulti.MaxLength = 5
-            Me.columnNeonati.MaxLength = 5
-            Me.columnBambini.MaxLength = 5
-            Me.columnRagazzi.MaxLength = 5
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewStoricoPresenzeCamereRow() As StoricoPresenzeCamereRow
-            Return CType(Me.NewRow,StoricoPresenzeCamereRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New StoricoPresenzeCamereRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(StoricoPresenzeCamereRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.StoricoPresenzeCamereRowChangedEvent) Is Nothing) Then
-                RaiseEvent StoricoPresenzeCamereRowChanged(Me, New StoricoPresenzeCamereRowChangeEvent(CType(e.Row,StoricoPresenzeCamereRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.StoricoPresenzeCamereRowChangingEvent) Is Nothing) Then
-                RaiseEvent StoricoPresenzeCamereRowChanging(Me, New StoricoPresenzeCamereRowChangeEvent(CType(e.Row,StoricoPresenzeCamereRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.StoricoPresenzeCamereRowDeletedEvent) Is Nothing) Then
-                RaiseEvent StoricoPresenzeCamereRowDeleted(Me, New StoricoPresenzeCamereRowChangeEvent(CType(e.Row,StoricoPresenzeCamereRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.StoricoPresenzeCamereRowDeletingEvent) Is Nothing) Then
-                RaiseEvent StoricoPresenzeCamereRowDeleting(Me, New StoricoPresenzeCamereRowChangeEvent(CType(e.Row,StoricoPresenzeCamereRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveStoricoPresenzeCamereRow(ByVal row As StoricoPresenzeCamereRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As HospitalityDataSet = New HospitalityDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "StoricoPresenzeCamereDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6062,6 +5686,927 @@ Partial Public Class HospitalityDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ListiniCamereDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ListiniCamereRow)
+        
+        Private columnId As Global.System.Data.DataColumn
+        
+        Private columnDescrizione As Global.System.Data.DataColumn
+        
+        Private columnTipologiaListino As Global.System.Data.DataColumn
+        
+        Private columnSoloPernottamento_Bassa As Global.System.Data.DataColumn
+        
+        Private columnBB_Bassa As Global.System.Data.DataColumn
+        
+        Private columnMezzaPensione_Bassa As Global.System.Data.DataColumn
+        
+        Private columnPensioneCompleta_Bassa As Global.System.Data.DataColumn
+        
+        Private columnScontoNeonato_Bassa As Global.System.Data.DataColumn
+        
+        Private columnScontoBambino_Bassa As Global.System.Data.DataColumn
+        
+        Private columnScontoRagazzo_Bassa As Global.System.Data.DataColumn
+        
+        Private columnSoloPernottamento_Media As Global.System.Data.DataColumn
+        
+        Private columnBB_Media As Global.System.Data.DataColumn
+        
+        Private columnMezzaPensione_Media As Global.System.Data.DataColumn
+        
+        Private columnPensioneCompleta_Media As Global.System.Data.DataColumn
+        
+        Private columnScontoNeonato_Media As Global.System.Data.DataColumn
+        
+        Private columnScontoBambino_Media As Global.System.Data.DataColumn
+        
+        Private columnScontoRagazzo_Media As Global.System.Data.DataColumn
+        
+        Private columnSoloPernottamento_Alta As Global.System.Data.DataColumn
+        
+        Private columnBB_Alta As Global.System.Data.DataColumn
+        
+        Private columnMezzaPensione_Alta As Global.System.Data.DataColumn
+        
+        Private columnPensioneCompleta_Alta As Global.System.Data.DataColumn
+        
+        Private columnScontoNeonato_Alta As Global.System.Data.DataColumn
+        
+        Private columnScontoBambino_Alta As Global.System.Data.DataColumn
+        
+        Private columnScontoRagazzo_Alta As Global.System.Data.DataColumn
+        
+        Private columnNote As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "ListiniCamere"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DescrizioneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescrizione
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TipologiaListinoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTipologiaListino
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SoloPernottamento_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSoloPernottamento_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BB_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBB_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MezzaPensione_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMezzaPensione_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PensioneCompleta_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPensioneCompleta_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoNeonato_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoNeonato_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoBambino_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoBambino_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoRagazzo_BassaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoRagazzo_Bassa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SoloPernottamento_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSoloPernottamento_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BB_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBB_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MezzaPensione_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMezzaPensione_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PensioneCompleta_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPensioneCompleta_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoNeonato_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoNeonato_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoBambino_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoBambino_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoRagazzo_MediaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoRagazzo_Media
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SoloPernottamento_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSoloPernottamento_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BB_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBB_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MezzaPensione_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMezzaPensione_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PensioneCompleta_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPensioneCompleta_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoNeonato_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoNeonato_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoBambino_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoBambino_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ScontoRagazzo_AltaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnScontoRagazzo_Alta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property NoteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNote
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ListiniCamereRow
+            Get
+                Return CType(Me.Rows(index),ListiniCamereRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ListiniCamereRowChanging As ListiniCamereRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ListiniCamereRowChanged As ListiniCamereRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ListiniCamereRowDeleting As ListiniCamereRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ListiniCamereRowDeleted As ListiniCamereRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddListiniCamereRow(ByVal row As ListiniCamereRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddListiniCamereRow( _
+                    ByVal Descrizione As String,  _
+                    ByVal TipologiaListino As String,  _
+                    ByVal SoloPernottamento_Bassa As Decimal,  _
+                    ByVal BB_Bassa As Decimal,  _
+                    ByVal MezzaPensione_Bassa As Decimal,  _
+                    ByVal PensioneCompleta_Bassa As Decimal,  _
+                    ByVal ScontoNeonato_Bassa As Decimal,  _
+                    ByVal ScontoBambino_Bassa As Decimal,  _
+                    ByVal ScontoRagazzo_Bassa As Decimal,  _
+                    ByVal SoloPernottamento_Media As Decimal,  _
+                    ByVal BB_Media As Decimal,  _
+                    ByVal MezzaPensione_Media As Decimal,  _
+                    ByVal PensioneCompleta_Media As Decimal,  _
+                    ByVal ScontoNeonato_Media As Decimal,  _
+                    ByVal ScontoBambino_Media As Decimal,  _
+                    ByVal ScontoRagazzo_Media As Decimal,  _
+                    ByVal SoloPernottamento_Alta As Decimal,  _
+                    ByVal BB_Alta As Decimal,  _
+                    ByVal MezzaPensione_Alta As Decimal,  _
+                    ByVal PensioneCompleta_Alta As Decimal,  _
+                    ByVal ScontoNeonato_Alta As Decimal,  _
+                    ByVal ScontoBambino_Alta As Decimal,  _
+                    ByVal ScontoRagazzo_Alta As Decimal,  _
+                    ByVal Note As String) As ListiniCamereRow
+            Dim rowListiniCamereRow As ListiniCamereRow = CType(Me.NewRow,ListiniCamereRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Descrizione, TipologiaListino, SoloPernottamento_Bassa, BB_Bassa, MezzaPensione_Bassa, PensioneCompleta_Bassa, ScontoNeonato_Bassa, ScontoBambino_Bassa, ScontoRagazzo_Bassa, SoloPernottamento_Media, BB_Media, MezzaPensione_Media, PensioneCompleta_Media, ScontoNeonato_Media, ScontoBambino_Media, ScontoRagazzo_Media, SoloPernottamento_Alta, BB_Alta, MezzaPensione_Alta, PensioneCompleta_Alta, ScontoNeonato_Alta, ScontoBambino_Alta, ScontoRagazzo_Alta, Note}
+            rowListiniCamereRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowListiniCamereRow)
+            Return rowListiniCamereRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindById(ByVal Id As Integer) As ListiniCamereRow
+            Return CType(Me.Rows.Find(New Object() {Id}),ListiniCamereRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ListiniCamereDataTable = CType(MyBase.Clone,ListiniCamereDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ListiniCamereDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnId = MyBase.Columns("Id")
+            Me.columnDescrizione = MyBase.Columns("Descrizione")
+            Me.columnTipologiaListino = MyBase.Columns("TipologiaListino")
+            Me.columnSoloPernottamento_Bassa = MyBase.Columns("SoloPernottamento_Bassa")
+            Me.columnBB_Bassa = MyBase.Columns("BB_Bassa")
+            Me.columnMezzaPensione_Bassa = MyBase.Columns("MezzaPensione_Bassa")
+            Me.columnPensioneCompleta_Bassa = MyBase.Columns("PensioneCompleta_Bassa")
+            Me.columnScontoNeonato_Bassa = MyBase.Columns("ScontoNeonato_Bassa")
+            Me.columnScontoBambino_Bassa = MyBase.Columns("ScontoBambino_Bassa")
+            Me.columnScontoRagazzo_Bassa = MyBase.Columns("ScontoRagazzo_Bassa")
+            Me.columnSoloPernottamento_Media = MyBase.Columns("SoloPernottamento_Media")
+            Me.columnBB_Media = MyBase.Columns("BB_Media")
+            Me.columnMezzaPensione_Media = MyBase.Columns("MezzaPensione_Media")
+            Me.columnPensioneCompleta_Media = MyBase.Columns("PensioneCompleta_Media")
+            Me.columnScontoNeonato_Media = MyBase.Columns("ScontoNeonato_Media")
+            Me.columnScontoBambino_Media = MyBase.Columns("ScontoBambino_Media")
+            Me.columnScontoRagazzo_Media = MyBase.Columns("ScontoRagazzo_Media")
+            Me.columnSoloPernottamento_Alta = MyBase.Columns("SoloPernottamento_Alta")
+            Me.columnBB_Alta = MyBase.Columns("BB_Alta")
+            Me.columnMezzaPensione_Alta = MyBase.Columns("MezzaPensione_Alta")
+            Me.columnPensioneCompleta_Alta = MyBase.Columns("PensioneCompleta_Alta")
+            Me.columnScontoNeonato_Alta = MyBase.Columns("ScontoNeonato_Alta")
+            Me.columnScontoBambino_Alta = MyBase.Columns("ScontoBambino_Alta")
+            Me.columnScontoRagazzo_Alta = MyBase.Columns("ScontoRagazzo_Alta")
+            Me.columnNote = MyBase.Columns("Note")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId)
+            Me.columnDescrizione = New Global.System.Data.DataColumn("Descrizione", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescrizione)
+            Me.columnTipologiaListino = New Global.System.Data.DataColumn("TipologiaListino", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTipologiaListino)
+            Me.columnSoloPernottamento_Bassa = New Global.System.Data.DataColumn("SoloPernottamento_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSoloPernottamento_Bassa)
+            Me.columnBB_Bassa = New Global.System.Data.DataColumn("BB_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBB_Bassa)
+            Me.columnMezzaPensione_Bassa = New Global.System.Data.DataColumn("MezzaPensione_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMezzaPensione_Bassa)
+            Me.columnPensioneCompleta_Bassa = New Global.System.Data.DataColumn("PensioneCompleta_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPensioneCompleta_Bassa)
+            Me.columnScontoNeonato_Bassa = New Global.System.Data.DataColumn("ScontoNeonato_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoNeonato_Bassa)
+            Me.columnScontoBambino_Bassa = New Global.System.Data.DataColumn("ScontoBambino_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoBambino_Bassa)
+            Me.columnScontoRagazzo_Bassa = New Global.System.Data.DataColumn("ScontoRagazzo_Bassa", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoRagazzo_Bassa)
+            Me.columnSoloPernottamento_Media = New Global.System.Data.DataColumn("SoloPernottamento_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSoloPernottamento_Media)
+            Me.columnBB_Media = New Global.System.Data.DataColumn("BB_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBB_Media)
+            Me.columnMezzaPensione_Media = New Global.System.Data.DataColumn("MezzaPensione_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMezzaPensione_Media)
+            Me.columnPensioneCompleta_Media = New Global.System.Data.DataColumn("PensioneCompleta_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPensioneCompleta_Media)
+            Me.columnScontoNeonato_Media = New Global.System.Data.DataColumn("ScontoNeonato_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoNeonato_Media)
+            Me.columnScontoBambino_Media = New Global.System.Data.DataColumn("ScontoBambino_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoBambino_Media)
+            Me.columnScontoRagazzo_Media = New Global.System.Data.DataColumn("ScontoRagazzo_Media", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoRagazzo_Media)
+            Me.columnSoloPernottamento_Alta = New Global.System.Data.DataColumn("SoloPernottamento_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSoloPernottamento_Alta)
+            Me.columnBB_Alta = New Global.System.Data.DataColumn("BB_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBB_Alta)
+            Me.columnMezzaPensione_Alta = New Global.System.Data.DataColumn("MezzaPensione_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMezzaPensione_Alta)
+            Me.columnPensioneCompleta_Alta = New Global.System.Data.DataColumn("PensioneCompleta_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPensioneCompleta_Alta)
+            Me.columnScontoNeonato_Alta = New Global.System.Data.DataColumn("ScontoNeonato_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoNeonato_Alta)
+            Me.columnScontoBambino_Alta = New Global.System.Data.DataColumn("ScontoBambino_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoBambino_Alta)
+            Me.columnScontoRagazzo_Alta = New Global.System.Data.DataColumn("ScontoRagazzo_Alta", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnScontoRagazzo_Alta)
+            Me.columnNote = New Global.System.Data.DataColumn("Note", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNote)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
+            Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = -1
+            Me.columnId.AutoIncrementStep = -1
+            Me.columnId.AllowDBNull = false
+            Me.columnId.Unique = true
+            Me.columnDescrizione.MaxLength = 255
+            Me.columnTipologiaListino.MaxLength = 50
+            Me.columnNote.MaxLength = 536870910
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewListiniCamereRow() As ListiniCamereRow
+            Return CType(Me.NewRow,ListiniCamereRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ListiniCamereRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ListiniCamereRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ListiniCamereRowChangedEvent) Is Nothing) Then
+                RaiseEvent ListiniCamereRowChanged(Me, New ListiniCamereRowChangeEvent(CType(e.Row,ListiniCamereRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ListiniCamereRowChangingEvent) Is Nothing) Then
+                RaiseEvent ListiniCamereRowChanging(Me, New ListiniCamereRowChangeEvent(CType(e.Row,ListiniCamereRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ListiniCamereRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ListiniCamereRowDeleted(Me, New ListiniCamereRowChangeEvent(CType(e.Row,ListiniCamereRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ListiniCamereRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ListiniCamereRowDeleting(Me, New ListiniCamereRowChangeEvent(CType(e.Row,ListiniCamereRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveListiniCamereRow(ByVal row As ListiniCamereRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As HospitalityDataSet = New HospitalityDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ListiniCamereDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class StoricoPresenzeTempDataTable
+        Inherits Global.System.Data.TypedTableBase(Of StoricoPresenzeTempRow)
+        
+        Private columnId As Global.System.Data.DataColumn
+        
+        Private columnMese As Global.System.Data.DataColumn
+        
+        Private columnAnno As Global.System.Data.DataColumn
+        
+        Private columnPresenze As Global.System.Data.DataColumn
+        
+        Private columnOccupazione As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "StoricoPresenzeTemp"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MeseColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMese
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property AnnoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAnno
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PresenzeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPresenze
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property OccupazioneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOccupazione
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As StoricoPresenzeTempRow
+            Get
+                Return CType(Me.Rows(index),StoricoPresenzeTempRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event StoricoPresenzeTempRowChanging As StoricoPresenzeTempRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event StoricoPresenzeTempRowChanged As StoricoPresenzeTempRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event StoricoPresenzeTempRowDeleting As StoricoPresenzeTempRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event StoricoPresenzeTempRowDeleted As StoricoPresenzeTempRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddStoricoPresenzeTempRow(ByVal row As StoricoPresenzeTempRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddStoricoPresenzeTempRow(ByVal Mese As String, ByVal Anno As String, ByVal Presenze As Integer, ByVal Occupazione As Double) As StoricoPresenzeTempRow
+            Dim rowStoricoPresenzeTempRow As StoricoPresenzeTempRow = CType(Me.NewRow,StoricoPresenzeTempRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Mese, Anno, Presenze, Occupazione}
+            rowStoricoPresenzeTempRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowStoricoPresenzeTempRow)
+            Return rowStoricoPresenzeTempRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindById(ByVal Id As Integer) As StoricoPresenzeTempRow
+            Return CType(Me.Rows.Find(New Object() {Id}),StoricoPresenzeTempRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As StoricoPresenzeTempDataTable = CType(MyBase.Clone,StoricoPresenzeTempDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New StoricoPresenzeTempDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnId = MyBase.Columns("Id")
+            Me.columnMese = MyBase.Columns("Mese")
+            Me.columnAnno = MyBase.Columns("Anno")
+            Me.columnPresenze = MyBase.Columns("Presenze")
+            Me.columnOccupazione = MyBase.Columns("Occupazione")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId)
+            Me.columnMese = New Global.System.Data.DataColumn("Mese", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMese)
+            Me.columnAnno = New Global.System.Data.DataColumn("Anno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAnno)
+            Me.columnPresenze = New Global.System.Data.DataColumn("Presenze", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPresenze)
+            Me.columnOccupazione = New Global.System.Data.DataColumn("Occupazione", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOccupazione)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
+            Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = -1
+            Me.columnId.AutoIncrementStep = -1
+            Me.columnId.AllowDBNull = false
+            Me.columnId.Unique = true
+            Me.columnMese.MaxLength = 50
+            Me.columnAnno.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewStoricoPresenzeTempRow() As StoricoPresenzeTempRow
+            Return CType(Me.NewRow,StoricoPresenzeTempRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New StoricoPresenzeTempRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(StoricoPresenzeTempRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.StoricoPresenzeTempRowChangedEvent) Is Nothing) Then
+                RaiseEvent StoricoPresenzeTempRowChanged(Me, New StoricoPresenzeTempRowChangeEvent(CType(e.Row,StoricoPresenzeTempRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.StoricoPresenzeTempRowChangingEvent) Is Nothing) Then
+                RaiseEvent StoricoPresenzeTempRowChanging(Me, New StoricoPresenzeTempRowChangeEvent(CType(e.Row,StoricoPresenzeTempRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.StoricoPresenzeTempRowDeletedEvent) Is Nothing) Then
+                RaiseEvent StoricoPresenzeTempRowDeleted(Me, New StoricoPresenzeTempRowChangeEvent(CType(e.Row,StoricoPresenzeTempRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.StoricoPresenzeTempRowDeletingEvent) Is Nothing) Then
+                RaiseEvent StoricoPresenzeTempRowDeleting(Me, New StoricoPresenzeTempRowChangeEvent(CType(e.Row,StoricoPresenzeTempRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveStoricoPresenzeTempRow(ByVal row As StoricoPresenzeTempRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As HospitalityDataSet = New HospitalityDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "StoricoPresenzeTempDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class AccessoriServiziRow
@@ -8711,337 +9256,6 @@ Partial Public Class HospitalityDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class StoricoPresenzeCamereRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableStoricoPresenzeCamere As StoricoPresenzeCamereDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableStoricoPresenzeCamere = CType(Me.Table,StoricoPresenzeCamereDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Id() As Integer
-            Get
-                Return CType(Me(Me.tableStoricoPresenzeCamere.IdColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.IdColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property RifPren() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.RifPrenColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'RifPren' nella tabella 'StoricoPresenzeCamere' è DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.RifPrenColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Numero() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.NumeroColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Numero' nella tabella 'StoricoPresenzeCamere' è DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.NumeroColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Mese() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.MeseColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Mese' nella tabella 'StoricoPresenzeCamere' è DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.MeseColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Anno() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.AnnoColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Anno' nella tabella 'StoricoPresenzeCamere' è DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.AnnoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Adulti() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.AdultiColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Adulti' nella tabella 'StoricoPresenzeCamere' è DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.AdultiColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Neonati() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.NeonatiColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Neonati' nella tabella 'StoricoPresenzeCamere' è DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.NeonatiColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Bambini() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.BambiniColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Bambini' nella tabella 'StoricoPresenzeCamere' è DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.BambiniColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Ragazzi() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.RagazziColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Ragazzi' nella tabella 'StoricoPresenzeCamere' è DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.RagazziColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property DataArrivo() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.DataArrivoColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'DataArrivo' nella tabella 'StoricoPresenzeCamere' è DBNu"& _ 
-                            "ll.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.DataArrivoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property DataPartenza() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.DataPartenzaColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'DataPartenza' nella tabella 'StoricoPresenzeCamere' è DB"& _ 
-                            "Null.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.DataPartenzaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NumeroNotti() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStoricoPresenzeCamere.NumeroNottiColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'NumeroNotti' nella tabella 'StoricoPresenzeCamere' è DBN"& _ 
-                            "ull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStoricoPresenzeCamere.NumeroNottiColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsRifPrenNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.RifPrenColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetRifPrenNull()
-            Me(Me.tableStoricoPresenzeCamere.RifPrenColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsNumeroNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.NumeroColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetNumeroNull()
-            Me(Me.tableStoricoPresenzeCamere.NumeroColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsMeseNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.MeseColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetMeseNull()
-            Me(Me.tableStoricoPresenzeCamere.MeseColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsAnnoNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.AnnoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetAnnoNull()
-            Me(Me.tableStoricoPresenzeCamere.AnnoColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsAdultiNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.AdultiColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetAdultiNull()
-            Me(Me.tableStoricoPresenzeCamere.AdultiColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsNeonatiNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.NeonatiColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetNeonatiNull()
-            Me(Me.tableStoricoPresenzeCamere.NeonatiColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsBambiniNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.BambiniColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetBambiniNull()
-            Me(Me.tableStoricoPresenzeCamere.BambiniColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsRagazziNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.RagazziColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetRagazziNull()
-            Me(Me.tableStoricoPresenzeCamere.RagazziColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsDataArrivoNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.DataArrivoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetDataArrivoNull()
-            Me(Me.tableStoricoPresenzeCamere.DataArrivoColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsDataPartenzaNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.DataPartenzaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetDataPartenzaNull()
-            Me(Me.tableStoricoPresenzeCamere.DataPartenzaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsNumeroNottiNull() As Boolean
-            Return Me.IsNull(Me.tableStoricoPresenzeCamere.NumeroNottiColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetNumeroNottiNull()
-            Me(Me.tableStoricoPresenzeCamere.NumeroNottiColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
     Partial Public Class CamereRow
         Inherits Global.System.Data.DataRow
         
@@ -11660,6 +11874,836 @@ Partial Public Class HospitalityDataSet
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class ListiniCamereRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableListiniCamere As ListiniCamereDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableListiniCamere = CType(Me.Table,ListiniCamereDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Id() As Integer
+            Get
+                Return CType(Me(Me.tableListiniCamere.IdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableListiniCamere.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Descrizione() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.DescrizioneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Descrizione' nella tabella 'ListiniCamere' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.DescrizioneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property TipologiaListino() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.TipologiaListinoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'TipologiaListino' nella tabella 'ListiniCamere' è DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.TipologiaListinoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SoloPernottamento_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.SoloPernottamento_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'SoloPernottamento_Bassa' nella tabella 'ListiniCamere' è"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.SoloPernottamento_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BB_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.BB_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'BB_Bassa' nella tabella 'ListiniCamere' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.BB_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MezzaPensione_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.MezzaPensione_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'MezzaPensione_Bassa' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.MezzaPensione_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PensioneCompleta_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.PensioneCompleta_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'PensioneCompleta_Bassa' nella tabella 'ListiniCamere' è "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.PensioneCompleta_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoNeonato_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoNeonato_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoNeonato_Bassa' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoNeonato_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoBambino_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoBambino_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoBambino_Bassa' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoBambino_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoRagazzo_Bassa() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoRagazzo_BassaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoRagazzo_Bassa' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoRagazzo_BassaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SoloPernottamento_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.SoloPernottamento_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'SoloPernottamento_Media' nella tabella 'ListiniCamere' è"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.SoloPernottamento_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BB_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.BB_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'BB_Media' nella tabella 'ListiniCamere' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.BB_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MezzaPensione_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.MezzaPensione_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'MezzaPensione_Media' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.MezzaPensione_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PensioneCompleta_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.PensioneCompleta_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'PensioneCompleta_Media' nella tabella 'ListiniCamere' è "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.PensioneCompleta_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoNeonato_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoNeonato_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoNeonato_Media' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoNeonato_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoBambino_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoBambino_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoBambino_Media' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoBambino_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoRagazzo_Media() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoRagazzo_MediaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoRagazzo_Media' nella tabella 'ListiniCamere' è DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoRagazzo_MediaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SoloPernottamento_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.SoloPernottamento_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'SoloPernottamento_Alta' nella tabella 'ListiniCamere' è "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.SoloPernottamento_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BB_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.BB_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'BB_Alta' nella tabella 'ListiniCamere' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.BB_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MezzaPensione_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.MezzaPensione_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'MezzaPensione_Alta' nella tabella 'ListiniCamere' è DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.MezzaPensione_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PensioneCompleta_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.PensioneCompleta_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'PensioneCompleta_Alta' nella tabella 'ListiniCamere' è D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.PensioneCompleta_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoNeonato_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoNeonato_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoNeonato_Alta' nella tabella 'ListiniCamere' è DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoNeonato_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoBambino_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoBambino_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoBambino_Alta' nella tabella 'ListiniCamere' è DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoBambino_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScontoRagazzo_Alta() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.ScontoRagazzo_AltaColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ScontoRagazzo_Alta' nella tabella 'ListiniCamere' è DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.ScontoRagazzo_AltaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Note() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableListiniCamere.NoteColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Note' nella tabella 'ListiniCamere' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableListiniCamere.NoteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDescrizioneNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.DescrizioneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDescrizioneNull()
+            Me(Me.tableListiniCamere.DescrizioneColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTipologiaListinoNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.TipologiaListinoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTipologiaListinoNull()
+            Me(Me.tableListiniCamere.TipologiaListinoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSoloPernottamento_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.SoloPernottamento_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSoloPernottamento_BassaNull()
+            Me(Me.tableListiniCamere.SoloPernottamento_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBB_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.BB_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBB_BassaNull()
+            Me(Me.tableListiniCamere.BB_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMezzaPensione_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.MezzaPensione_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMezzaPensione_BassaNull()
+            Me(Me.tableListiniCamere.MezzaPensione_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPensioneCompleta_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.PensioneCompleta_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPensioneCompleta_BassaNull()
+            Me(Me.tableListiniCamere.PensioneCompleta_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoNeonato_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoNeonato_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoNeonato_BassaNull()
+            Me(Me.tableListiniCamere.ScontoNeonato_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoBambino_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoBambino_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoBambino_BassaNull()
+            Me(Me.tableListiniCamere.ScontoBambino_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoRagazzo_BassaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoRagazzo_BassaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoRagazzo_BassaNull()
+            Me(Me.tableListiniCamere.ScontoRagazzo_BassaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSoloPernottamento_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.SoloPernottamento_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSoloPernottamento_MediaNull()
+            Me(Me.tableListiniCamere.SoloPernottamento_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBB_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.BB_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBB_MediaNull()
+            Me(Me.tableListiniCamere.BB_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMezzaPensione_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.MezzaPensione_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMezzaPensione_MediaNull()
+            Me(Me.tableListiniCamere.MezzaPensione_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPensioneCompleta_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.PensioneCompleta_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPensioneCompleta_MediaNull()
+            Me(Me.tableListiniCamere.PensioneCompleta_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoNeonato_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoNeonato_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoNeonato_MediaNull()
+            Me(Me.tableListiniCamere.ScontoNeonato_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoBambino_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoBambino_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoBambino_MediaNull()
+            Me(Me.tableListiniCamere.ScontoBambino_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoRagazzo_MediaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoRagazzo_MediaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoRagazzo_MediaNull()
+            Me(Me.tableListiniCamere.ScontoRagazzo_MediaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSoloPernottamento_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.SoloPernottamento_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSoloPernottamento_AltaNull()
+            Me(Me.tableListiniCamere.SoloPernottamento_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBB_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.BB_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBB_AltaNull()
+            Me(Me.tableListiniCamere.BB_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMezzaPensione_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.MezzaPensione_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMezzaPensione_AltaNull()
+            Me(Me.tableListiniCamere.MezzaPensione_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPensioneCompleta_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.PensioneCompleta_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPensioneCompleta_AltaNull()
+            Me(Me.tableListiniCamere.PensioneCompleta_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoNeonato_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoNeonato_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoNeonato_AltaNull()
+            Me(Me.tableListiniCamere.ScontoNeonato_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoBambino_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoBambino_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoBambino_AltaNull()
+            Me(Me.tableListiniCamere.ScontoBambino_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsScontoRagazzo_AltaNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.ScontoRagazzo_AltaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetScontoRagazzo_AltaNull()
+            Me(Me.tableListiniCamere.ScontoRagazzo_AltaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsNoteNull() As Boolean
+            Return Me.IsNull(Me.tableListiniCamere.NoteColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetNoteNull()
+            Me(Me.tableListiniCamere.NoteColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class StoricoPresenzeTempRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableStoricoPresenzeTemp As StoricoPresenzeTempDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableStoricoPresenzeTemp = CType(Me.Table,StoricoPresenzeTempDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Id() As Integer
+            Get
+                Return CType(Me(Me.tableStoricoPresenzeTemp.IdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeTemp.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Mese() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeTemp.MeseColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Mese' nella tabella 'StoricoPresenzeTemp' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeTemp.MeseColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Anno() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeTemp.AnnoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Anno' nella tabella 'StoricoPresenzeTemp' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeTemp.AnnoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Presenze() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeTemp.PresenzeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Presenze' nella tabella 'StoricoPresenzeTemp' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeTemp.PresenzeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Occupazione() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeTemp.OccupazioneColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Occupazione' nella tabella 'StoricoPresenzeTemp' è DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeTemp.OccupazioneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMeseNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeTemp.MeseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMeseNull()
+            Me(Me.tableStoricoPresenzeTemp.MeseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsAnnoNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeTemp.AnnoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetAnnoNull()
+            Me(Me.tableStoricoPresenzeTemp.AnnoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPresenzeNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeTemp.PresenzeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPresenzeNull()
+            Me(Me.tableStoricoPresenzeTemp.PresenzeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsOccupazioneNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeTemp.OccupazioneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetOccupazioneNull()
+            Me(Me.tableStoricoPresenzeTemp.OccupazioneColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -11789,42 +12833,6 @@ Partial Public Class HospitalityDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As DettagliDocRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class StoricoPresenzeCamereRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As StoricoPresenzeCamereRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As StoricoPresenzeCamereRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As StoricoPresenzeCamereRow
             Get
                 Return Me.eventRow
             End Get
@@ -12005,6 +13013,78 @@ Partial Public Class HospitalityDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As SchedinePSRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class ListiniCamereRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ListiniCamereRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As ListiniCamereRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As ListiniCamereRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class StoricoPresenzeTempRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As StoricoPresenzeTempRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As StoricoPresenzeTempRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As StoricoPresenzeTempRow
             Get
                 Return Me.eventRow
             End Get
@@ -16514,668 +17594,6 @@ Namespace HospitalityDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_Categoria,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class StoricoPresenzeCamereTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
-        
-        Private _connection As Global.System.Data.OleDb.OleDbConnection
-        
-        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
-        
-        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "StoricoPresenzeCamere"
-            tableMapping.ColumnMappings.Add("Id", "Id")
-            tableMapping.ColumnMappings.Add("RifPren", "RifPren")
-            tableMapping.ColumnMappings.Add("Numero", "Numero")
-            tableMapping.ColumnMappings.Add("Mese", "Mese")
-            tableMapping.ColumnMappings.Add("Anno", "Anno")
-            tableMapping.ColumnMappings.Add("Adulti", "Adulti")
-            tableMapping.ColumnMappings.Add("Neonati", "Neonati")
-            tableMapping.ColumnMappings.Add("Bambini", "Bambini")
-            tableMapping.ColumnMappings.Add("Ragazzi", "Ragazzi")
-            tableMapping.ColumnMappings.Add("DataArrivo", "DataArrivo")
-            tableMapping.ColumnMappings.Add("DataPartenza", "DataPartenza")
-            tableMapping.ColumnMappings.Add("NumeroNotti", "NumeroNotti")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `StoricoPresenzeCamere` WHERE ((`Id` = ?) AND ((? = 1 AND `RifPren` I"& _ 
-                "S NULL) OR (`RifPren` = ?)) AND ((? = 1 AND `Numero` IS NULL) OR (`Numero` = ?))"& _ 
-                " AND ((? = 1 AND `Mese` IS NULL) OR (`Mese` = ?)) AND ((? = 1 AND `Anno` IS NULL"& _ 
-                ") OR (`Anno` = ?)) AND ((? = 1 AND `Adulti` IS NULL) OR (`Adulti` = ?)) AND ((? "& _ 
-                "= 1 AND `Neonati` IS NULL) OR (`Neonati` = ?)) AND ((? = 1 AND `Bambini` IS NULL"& _ 
-                ") OR (`Bambini` = ?)) AND ((? = 1 AND `Ragazzi` IS NULL) OR (`Ragazzi` = ?)) AND"& _ 
-                " ((? = 1 AND `DataArrivo` IS NULL) OR (`DataArrivo` = ?)) AND ((? = 1 AND `DataP"& _ 
-                "artenza` IS NULL) OR (`DataPartenza` = ?)) AND ((? = 1 AND `NumeroNotti` IS NULL"& _ 
-                ") OR (`NumeroNotti` = ?)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Adulti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Adulti", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Neonati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Neonati", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bambini", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bambini", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Ragazzi", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Ragazzi", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DataArrivo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DataArrivo", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DataPartenza", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DataPartenza", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `StoricoPresenzeCamere` (`RifPren`, `Numero`, `Mese`, `Anno`, `Adulti"& _ 
-                "`, `Neonati`, `Bambini`, `Ragazzi`, `DataArrivo`, `DataPartenza`, `NumeroNotti`)"& _ 
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Adulti", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Neonati", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bambini", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Ragazzi", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DataArrivo", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DataPartenza", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `StoricoPresenzeCamere` SET `RifPren` = ?, `Numero` = ?, `Mese` = ?, `Anno"& _ 
-                "` = ?, `Adulti` = ?, `Neonati` = ?, `Bambini` = ?, `Ragazzi` = ?, `DataArrivo` ="& _ 
-                " ?, `DataPartenza` = ?, `NumeroNotti` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `Rif"& _ 
-                "Pren` IS NULL) OR (`RifPren` = ?)) AND ((? = 1 AND `Numero` IS NULL) OR (`Numero"& _ 
-                "` = ?)) AND ((? = 1 AND `Mese` IS NULL) OR (`Mese` = ?)) AND ((? = 1 AND `Anno` "& _ 
-                "IS NULL) OR (`Anno` = ?)) AND ((? = 1 AND `Adulti` IS NULL) OR (`Adulti` = ?)) A"& _ 
-                "ND ((? = 1 AND `Neonati` IS NULL) OR (`Neonati` = ?)) AND ((? = 1 AND `Bambini` "& _ 
-                "IS NULL) OR (`Bambini` = ?)) AND ((? = 1 AND `Ragazzi` IS NULL) OR (`Ragazzi` = "& _ 
-                "?)) AND ((? = 1 AND `DataArrivo` IS NULL) OR (`DataArrivo` = ?)) AND ((? = 1 AND"& _ 
-                " `DataPartenza` IS NULL) OR (`DataPartenza` = ?)) AND ((? = 1 AND `NumeroNotti` "& _ 
-                "IS NULL) OR (`NumeroNotti` = ?)))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Adulti", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Neonati", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bambini", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Ragazzi", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DataArrivo", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DataPartenza", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RifPren", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RifPren", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Adulti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Adulti", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Adulti", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Neonati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Neonati", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Neonati", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bambini", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bambini", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Bambini", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Ragazzi", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Ragazzi", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Ragazzi", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DataArrivo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DataArrivo", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataArrivo", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DataPartenza", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DataPartenza", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DataPartenza", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroNotti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroNotti", Global.System.Data.DataRowVersion.Original, false, Nothing))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, RifPren, Numero, Mese, Anno, Adulti, Neonati, Bambini, Ragazzi, DataAr"& _ 
-                "rivo, DataPartenza, NumeroNotti FROM StoricoPresenzeCamere"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As HospitalityDataSet.StoricoPresenzeCamereDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As HospitalityDataSet.StoricoPresenzeCamereDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As HospitalityDataSet.StoricoPresenzeCamereDataTable = New HospitalityDataSet.StoricoPresenzeCamereDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As HospitalityDataSet.StoricoPresenzeCamereDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As HospitalityDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "StoricoPresenzeCamere")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_RifPren As Global.System.Nullable(Of Integer), ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_Mese As Global.System.Nullable(Of Integer), ByVal Original_Anno As Global.System.Nullable(Of Integer), ByVal Original_Adulti As String, ByVal Original_Neonati As String, ByVal Original_Bambini As String, ByVal Original_Ragazzi As String, ByVal Original_DataArrivo As Global.System.Nullable(Of Date), ByVal Original_DataPartenza As Global.System.Nullable(Of Date), ByVal Original_NumeroNotti As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
-            If (Original_RifPren.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_RifPren.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Numero.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Numero.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Mese.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Mese.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Anno.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Anno.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Adulti Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Adulti,String)
-            End If
-            If (Original_Neonati Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Neonati,String)
-            End If
-            If (Original_Bambini Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Bambini,String)
-            End If
-            If (Original_Ragazzi Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Ragazzi,String)
-            End If
-            If (Original_DataArrivo.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_DataArrivo.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DataPartenza.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_DataPartenza.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (Original_NumeroNotti.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_NumeroNotti.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal RifPren As Global.System.Nullable(Of Integer), ByVal Numero As Global.System.Nullable(Of Integer), ByVal Mese As Global.System.Nullable(Of Integer), ByVal Anno As Global.System.Nullable(Of Integer), ByVal Adulti As String, ByVal Neonati As String, ByVal Bambini As String, ByVal Ragazzi As String, ByVal DataArrivo As Global.System.Nullable(Of Date), ByVal DataPartenza As Global.System.Nullable(Of Date), ByVal NumeroNotti As Global.System.Nullable(Of Integer)) As Integer
-            If (RifPren.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(RifPren.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Numero.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Numero.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Mese.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Mese.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Anno.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Anno.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Adulti Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Adulti,String)
-            End If
-            If (Neonati Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Neonati,String)
-            End If
-            If (Bambini Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Bambini,String)
-            End If
-            If (Ragazzi Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Ragazzi,String)
-            End If
-            If (DataArrivo.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(DataArrivo.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (DataPartenza.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(DataPartenza.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (NumeroNotti.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(NumeroNotti.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal RifPren As Global.System.Nullable(Of Integer),  _
-                    ByVal Numero As Global.System.Nullable(Of Integer),  _
-                    ByVal Mese As Global.System.Nullable(Of Integer),  _
-                    ByVal Anno As Global.System.Nullable(Of Integer),  _
-                    ByVal Adulti As String,  _
-                    ByVal Neonati As String,  _
-                    ByVal Bambini As String,  _
-                    ByVal Ragazzi As String,  _
-                    ByVal DataArrivo As Global.System.Nullable(Of Date),  _
-                    ByVal DataPartenza As Global.System.Nullable(Of Date),  _
-                    ByVal NumeroNotti As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Id As Integer,  _
-                    ByVal Original_RifPren As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Numero As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Mese As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Anno As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Adulti As String,  _
-                    ByVal Original_Neonati As String,  _
-                    ByVal Original_Bambini As String,  _
-                    ByVal Original_Ragazzi As String,  _
-                    ByVal Original_DataArrivo As Global.System.Nullable(Of Date),  _
-                    ByVal Original_DataPartenza As Global.System.Nullable(Of Date),  _
-                    ByVal Original_NumeroNotti As Global.System.Nullable(Of Integer)) As Integer
-            If (RifPren.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(RifPren.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Numero.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Numero.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Mese.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Mese.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Anno.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Anno.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Adulti Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Adulti,String)
-            End If
-            If (Neonati Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Neonati,String)
-            End If
-            If (Bambini Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Bambini,String)
-            End If
-            If (Ragazzi Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Ragazzi,String)
-            End If
-            If (DataArrivo.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(DataArrivo.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (DataPartenza.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(DataPartenza.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (NumeroNotti.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(NumeroNotti.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Id,Integer)
-            If (Original_RifPren.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_RifPren.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Numero.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Numero.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Mese.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Mese.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Anno.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Anno.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Adulti Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Adulti,String)
-            End If
-            If (Original_Neonati Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Neonati,String)
-            End If
-            If (Original_Bambini Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Bambini,String)
-            End If
-            If (Original_Ragazzi Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Ragazzi,String)
-            End If
-            If (Original_DataArrivo.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_DataArrivo.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DataPartenza.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_DataPartenza.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
-            End If
-            If (Original_NumeroNotti.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_NumeroNotti.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -21718,6 +22136,1577 @@ Namespace HospitalityDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class ListiniCamereTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "ListiniCamere"
+            tableMapping.ColumnMappings.Add("Id", "Id")
+            tableMapping.ColumnMappings.Add("Descrizione", "Descrizione")
+            tableMapping.ColumnMappings.Add("TipologiaListino", "TipologiaListino")
+            tableMapping.ColumnMappings.Add("SoloPernottamento_Bassa", "SoloPernottamento_Bassa")
+            tableMapping.ColumnMappings.Add("BB_Bassa", "BB_Bassa")
+            tableMapping.ColumnMappings.Add("MezzaPensione_Bassa", "MezzaPensione_Bassa")
+            tableMapping.ColumnMappings.Add("PensioneCompleta_Bassa", "PensioneCompleta_Bassa")
+            tableMapping.ColumnMappings.Add("ScontoNeonato_Bassa", "ScontoNeonato_Bassa")
+            tableMapping.ColumnMappings.Add("ScontoBambino_Bassa", "ScontoBambino_Bassa")
+            tableMapping.ColumnMappings.Add("ScontoRagazzo_Bassa", "ScontoRagazzo_Bassa")
+            tableMapping.ColumnMappings.Add("SoloPernottamento_Media", "SoloPernottamento_Media")
+            tableMapping.ColumnMappings.Add("BB_Media", "BB_Media")
+            tableMapping.ColumnMappings.Add("MezzaPensione_Media", "MezzaPensione_Media")
+            tableMapping.ColumnMappings.Add("PensioneCompleta_Media", "PensioneCompleta_Media")
+            tableMapping.ColumnMappings.Add("ScontoNeonato_Media", "ScontoNeonato_Media")
+            tableMapping.ColumnMappings.Add("ScontoBambino_Media", "ScontoBambino_Media")
+            tableMapping.ColumnMappings.Add("ScontoRagazzo_Media", "ScontoRagazzo_Media")
+            tableMapping.ColumnMappings.Add("SoloPernottamento_Alta", "SoloPernottamento_Alta")
+            tableMapping.ColumnMappings.Add("BB_Alta", "BB_Alta")
+            tableMapping.ColumnMappings.Add("MezzaPensione_Alta", "MezzaPensione_Alta")
+            tableMapping.ColumnMappings.Add("PensioneCompleta_Alta", "PensioneCompleta_Alta")
+            tableMapping.ColumnMappings.Add("ScontoNeonato_Alta", "ScontoNeonato_Alta")
+            tableMapping.ColumnMappings.Add("ScontoBambino_Alta", "ScontoBambino_Alta")
+            tableMapping.ColumnMappings.Add("ScontoRagazzo_Alta", "ScontoRagazzo_Alta")
+            tableMapping.ColumnMappings.Add("Note", "Note")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `ListiniCamere` WHERE ((`Id` = ?) AND ((? = 1 AND `Descrizione` IS NU"& _ 
+                "LL) OR (`Descrizione` = ?)) AND ((? = 1 AND `TipologiaListino` IS NULL) OR (`Tip"& _ 
+                "ologiaListino` = ?)) AND ((? = 1 AND `SoloPernottamento_Bassa` IS NULL) OR (`Sol"& _ 
+                "oPernottamento_Bassa` = ?)) AND ((? = 1 AND `BB_Bassa` IS NULL) OR (`BB_Bassa` ="& _ 
+                " ?)) AND ((? = 1 AND `MezzaPensione_Bassa` IS NULL) OR (`MezzaPensione_Bassa` = "& _ 
+                "?)) AND ((? = 1 AND `PensioneCompleta_Bassa` IS NULL) OR (`PensioneCompleta_Bass"& _ 
+                "a` = ?)) AND ((? = 1 AND `ScontoNeonato_Bassa` IS NULL) OR (`ScontoNeonato_Bassa"& _ 
+                "` = ?)) AND ((? = 1 AND `ScontoBambino_Bassa` IS NULL) OR (`ScontoBambino_Bassa`"& _ 
+                " = ?)) AND ((? = 1 AND `ScontoRagazzo_Bassa` IS NULL) OR (`ScontoRagazzo_Bassa` "& _ 
+                "= ?)) AND ((? = 1 AND `SoloPernottamento_Media` IS NULL) OR (`SoloPernottamento_"& _ 
+                "Media` = ?)) AND ((? = 1 AND `BB_Media` IS NULL) OR (`BB_Media` = ?)) AND ((? = "& _ 
+                "1 AND `MezzaPensione_Media` IS NULL) OR (`MezzaPensione_Media` = ?)) AND ((? = 1"& _ 
+                " AND `PensioneCompleta_Media` IS NULL) OR (`PensioneCompleta_Media` = ?)) AND (("& _ 
+                "? = 1 AND `ScontoNeonato_Media` IS NULL) OR (`ScontoNeonato_Media` = ?)) AND ((?"& _ 
+                " = 1 AND `ScontoBambino_Media` IS NULL) OR (`ScontoBambino_Media` = ?)) AND ((? "& _ 
+                "= 1 AND `ScontoRagazzo_Media` IS NULL) OR (`ScontoRagazzo_Media` = ?)) AND ((? ="& _ 
+                " 1 AND `SoloPernottamento_Alta` IS NULL) OR (`SoloPernottamento_Alta` = ?)) AND "& _ 
+                "((? = 1 AND `BB_Alta` IS NULL) OR (`BB_Alta` = ?)) AND ((? = 1 AND `MezzaPension"& _ 
+                "e_Alta` IS NULL) OR (`MezzaPensione_Alta` = ?)) AND ((? = 1 AND `PensioneComplet"& _ 
+                "a_Alta` IS NULL) OR (`PensioneCompleta_Alta` = ?)) AND ((? = 1 AND `ScontoNeonat"& _ 
+                "o_Alta` IS NULL) OR (`ScontoNeonato_Alta` = ?)) AND ((? = 1 AND `ScontoBambino_A"& _ 
+                "lta` IS NULL) OR (`ScontoBambino_Alta` = ?)) AND ((? = 1 AND `ScontoRagazzo_Alta"& _ 
+                "` IS NULL) OR (`ScontoRagazzo_Alta` = ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Descrizione", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Descrizione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TipologiaListino", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TipologiaListino", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `ListiniCamere` (`Descrizione`, `TipologiaListino`, `SoloPernottament"& _ 
+                "o_Bassa`, `BB_Bassa`, `MezzaPensione_Bassa`, `PensioneCompleta_Bassa`, `ScontoNe"& _ 
+                "onato_Bassa`, `ScontoBambino_Bassa`, `ScontoRagazzo_Bassa`, `SoloPernottamento_M"& _ 
+                "edia`, `BB_Media`, `MezzaPensione_Media`, `PensioneCompleta_Media`, `ScontoNeona"& _ 
+                "to_Media`, `ScontoBambino_Media`, `ScontoRagazzo_Media`, `SoloPernottamento_Alta"& _ 
+                "`, `BB_Alta`, `MezzaPensione_Alta`, `PensioneCompleta_Alta`, `ScontoNeonato_Alta"& _ 
+                "`, `ScontoBambino_Alta`, `ScontoRagazzo_Alta`, `Note`) VALUES (?, ?, ?, ?, ?, ?,"& _ 
+                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Descrizione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TipologiaListino", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Note", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Note", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `ListiniCamere` SET `Descrizione` = ?, `TipologiaListino` = ?, `SoloPernot"& _ 
+                "tamento_Bassa` = ?, `BB_Bassa` = ?, `MezzaPensione_Bassa` = ?, `PensioneCompleta"& _ 
+                "_Bassa` = ?, `ScontoNeonato_Bassa` = ?, `ScontoBambino_Bassa` = ?, `ScontoRagazz"& _ 
+                "o_Bassa` = ?, `SoloPernottamento_Media` = ?, `BB_Media` = ?, `MezzaPensione_Medi"& _ 
+                "a` = ?, `PensioneCompleta_Media` = ?, `ScontoNeonato_Media` = ?, `ScontoBambino_"& _ 
+                "Media` = ?, `ScontoRagazzo_Media` = ?, `SoloPernottamento_Alta` = ?, `BB_Alta` ="& _ 
+                " ?, `MezzaPensione_Alta` = ?, `PensioneCompleta_Alta` = ?, `ScontoNeonato_Alta` "& _ 
+                "= ?, `ScontoBambino_Alta` = ?, `ScontoRagazzo_Alta` = ?, `Note` = ? WHERE ((`Id`"& _ 
+                " = ?) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1"& _ 
+                " AND `TipologiaListino` IS NULL) OR (`TipologiaListino` = ?)) AND ((? = 1 AND `S"& _ 
+                "oloPernottamento_Bassa` IS NULL) OR (`SoloPernottamento_Bassa` = ?)) AND ((? = 1"& _ 
+                " AND `BB_Bassa` IS NULL) OR (`BB_Bassa` = ?)) AND ((? = 1 AND `MezzaPensione_Bas"& _ 
+                "sa` IS NULL) OR (`MezzaPensione_Bassa` = ?)) AND ((? = 1 AND `PensioneCompleta_B"& _ 
+                "assa` IS NULL) OR (`PensioneCompleta_Bassa` = ?)) AND ((? = 1 AND `ScontoNeonato"& _ 
+                "_Bassa` IS NULL) OR (`ScontoNeonato_Bassa` = ?)) AND ((? = 1 AND `ScontoBambino_"& _ 
+                "Bassa` IS NULL) OR (`ScontoBambino_Bassa` = ?)) AND ((? = 1 AND `ScontoRagazzo_B"& _ 
+                "assa` IS NULL) OR (`ScontoRagazzo_Bassa` = ?)) AND ((? = 1 AND `SoloPernottament"& _ 
+                "o_Media` IS NULL) OR (`SoloPernottamento_Media` = ?)) AND ((? = 1 AND `BB_Media`"& _ 
+                " IS NULL) OR (`BB_Media` = ?)) AND ((? = 1 AND `MezzaPensione_Media` IS NULL) OR"& _ 
+                " (`MezzaPensione_Media` = ?)) AND ((? = 1 AND `PensioneCompleta_Media` IS NULL) "& _ 
+                "OR (`PensioneCompleta_Media` = ?)) AND ((? = 1 AND `ScontoNeonato_Media` IS NULL"& _ 
+                ") OR (`ScontoNeonato_Media` = ?)) AND ((? = 1 AND `ScontoBambino_Media` IS NULL)"& _ 
+                " OR (`ScontoBambino_Media` = ?)) AND ((? = 1 AND `ScontoRagazzo_Media` IS NULL) "& _ 
+                "OR (`ScontoRagazzo_Media` = ?)) AND ((? = 1 AND `SoloPernottamento_Alta` IS NULL"& _ 
+                ") OR (`SoloPernottamento_Alta` = ?)) AND ((? = 1 AND `BB_Alta` IS NULL) OR (`BB_"& _ 
+                "Alta` = ?)) AND ((? = 1 AND `MezzaPensione_Alta` IS NULL) OR (`MezzaPensione_Alt"& _ 
+                "a` = ?)) AND ((? = 1 AND `PensioneCompleta_Alta` IS NULL) OR (`PensioneCompleta_"& _ 
+                "Alta` = ?)) AND ((? = 1 AND `ScontoNeonato_Alta` IS NULL) OR (`ScontoNeonato_Alt"& _ 
+                "a` = ?)) AND ((? = 1 AND `ScontoBambino_Alta` IS NULL) OR (`ScontoBambino_Alta` "& _ 
+                "= ?)) AND ((? = 1 AND `ScontoRagazzo_Alta` IS NULL) OR (`ScontoRagazzo_Alta` = ?"& _ 
+                ")))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Descrizione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TipologiaListino", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BB_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Note", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Note", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Descrizione", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Descrizione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Descrizione", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TipologiaListino", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TipologiaListino", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipologiaListino", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Bassa", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Bassa", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Media", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Media", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SoloPernottamento_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SoloPernottamento_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BB_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BB_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BB_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MezzaPensione_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MezzaPensione_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PensioneCompleta_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PensioneCompleta_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoNeonato_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoNeonato_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoBambino_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoBambino_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ScontoRagazzo_Alta", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ScontoRagazzo_Alta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Id, Descrizione, TipologiaListino, SoloPernottamento_Bassa, BB_Bassa, Mezz"& _ 
+                "aPensione_Bassa, PensioneCompleta_Bassa, ScontoNeonato_Bassa, ScontoBambino_Bass"& _ 
+                "a, ScontoRagazzo_Bassa, SoloPernottamento_Media, BB_Media, MezzaPensione_Media, "& _ 
+                "PensioneCompleta_Media, ScontoNeonato_Media, ScontoBambino_Media, ScontoRagazzo_"& _ 
+                "Media, SoloPernottamento_Alta, BB_Alta, MezzaPensione_Alta, PensioneCompleta_Alt"& _ 
+                "a, ScontoNeonato_Alta, ScontoBambino_Alta, ScontoRagazzo_Alta, [Note] FROM Listi"& _ 
+                "niCamere"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As HospitalityDataSet.ListiniCamereDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As HospitalityDataSet.ListiniCamereDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As HospitalityDataSet.ListiniCamereDataTable = New HospitalityDataSet.ListiniCamereDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As HospitalityDataSet.ListiniCamereDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As HospitalityDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "ListiniCamere")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete( _
+                    ByVal Original_Id As Integer,  _
+                    ByVal Original_Descrizione As String,  _
+                    ByVal Original_TipologiaListino As String,  _
+                    ByVal Original_SoloPernottamento_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_SoloPernottamento_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_SoloPernottamento_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Alta As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
+            If (Original_Descrizione Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Descrizione")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Descrizione,String)
+            End If
+            If (Original_TipologiaListino Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_TipologiaListino,String)
+            End If
+            If (Original_SoloPernottamento_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_SoloPernottamento_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BB_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_MezzaPensione_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_PensioneCompleta_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_ScontoNeonato_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_ScontoBambino_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Bassa.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_ScontoRagazzo_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SoloPernottamento_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_SoloPernottamento_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_BB_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_MezzaPensione_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_PensioneCompleta_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_ScontoNeonato_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_ScontoBambino_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Media.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_ScontoRagazzo_Media.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SoloPernottamento_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_SoloPernottamento_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_BB_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_MezzaPensione_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_PensioneCompleta_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_ScontoNeonato_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_ScontoBambino_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Alta.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = CType(Original_ScontoRagazzo_Alta.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert( _
+                    ByVal Descrizione As String,  _
+                    ByVal TipologiaListino As String,  _
+                    ByVal SoloPernottamento_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal SoloPernottamento_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal SoloPernottamento_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Note As String) As Integer
+            If (Descrizione Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Descrizione")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Descrizione,String)
+            End If
+            If (TipologiaListino Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(TipologiaListino,String)
+            End If
+            If (SoloPernottamento_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(SoloPernottamento_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(BB_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(MezzaPensione_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(PensioneCompleta_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ScontoNeonato_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ScontoBambino_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Bassa.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(ScontoRagazzo_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (SoloPernottamento_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(SoloPernottamento_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(BB_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(MezzaPensione_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(PensioneCompleta_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(ScontoNeonato_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(ScontoBambino_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Media.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(ScontoRagazzo_Media.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (SoloPernottamento_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(16).Value = CType(SoloPernottamento_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(17).Value = CType(BB_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(18).Value = CType(MezzaPensione_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(19).Value = CType(PensioneCompleta_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(20).Value = CType(ScontoNeonato_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(21).Value = CType(ScontoBambino_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Alta.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(22).Value = CType(ScontoRagazzo_Alta.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Note Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(23).Value = CType(Note,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal Descrizione As String,  _
+                    ByVal TipologiaListino As String,  _
+                    ByVal SoloPernottamento_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal SoloPernottamento_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal SoloPernottamento_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal BB_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal MezzaPensione_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal PensioneCompleta_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoNeonato_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoBambino_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal ScontoRagazzo_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Note As String,  _
+                    ByVal Original_Id As Integer,  _
+                    ByVal Original_Descrizione As String,  _
+                    ByVal Original_TipologiaListino As String,  _
+                    ByVal Original_SoloPernottamento_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Bassa As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_SoloPernottamento_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Media As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_SoloPernottamento_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_BB_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_MezzaPensione_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PensioneCompleta_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoNeonato_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoBambino_Alta As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ScontoRagazzo_Alta As Global.System.Nullable(Of Decimal)) As Integer
+            If (Descrizione Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Descrizione")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Descrizione,String)
+            End If
+            If (TipologiaListino Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(TipologiaListino,String)
+            End If
+            If (SoloPernottamento_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(SoloPernottamento_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(BB_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(MezzaPensione_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(PensioneCompleta_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ScontoNeonato_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ScontoBambino_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(ScontoRagazzo_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (SoloPernottamento_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(SoloPernottamento_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(BB_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(MezzaPensione_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(PensioneCompleta_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(ScontoNeonato_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(ScontoBambino_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(ScontoRagazzo_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (SoloPernottamento_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(SoloPernottamento_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (BB_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(BB_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (MezzaPensione_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(MezzaPensione_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (PensioneCompleta_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(PensioneCompleta_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoNeonato_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(ScontoNeonato_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoBambino_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(ScontoBambino_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            If (ScontoRagazzo_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(ScontoRagazzo_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Note Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Note,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Id,Integer)
+            If (Original_Descrizione Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Descrizione")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Descrizione,String)
+            End If
+            If (Original_TipologiaListino Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_TipologiaListino,String)
+            End If
+            If (Original_SoloPernottamento_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_SoloPernottamento_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_BB_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_MezzaPensione_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_PensioneCompleta_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_ScontoNeonato_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_ScontoBambino_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Bassa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_ScontoRagazzo_Bassa.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SoloPernottamento_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_SoloPernottamento_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_BB_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_MezzaPensione_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_PensioneCompleta_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_ScontoNeonato_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_ScontoBambino_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Media.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_ScontoRagazzo_Media.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SoloPernottamento_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_SoloPernottamento_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BB_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_BB_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MezzaPensione_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_MezzaPensione_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PensioneCompleta_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_PensioneCompleta_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoNeonato_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_ScontoNeonato_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoBambino_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_ScontoBambino_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ScontoRagazzo_Alta.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_ScontoRagazzo_Alta.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class StoricoPresenzeTempTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "StoricoPresenzeTemp"
+            tableMapping.ColumnMappings.Add("Id", "Id")
+            tableMapping.ColumnMappings.Add("Mese", "Mese")
+            tableMapping.ColumnMappings.Add("Anno", "Anno")
+            tableMapping.ColumnMappings.Add("Presenze", "Presenze")
+            tableMapping.ColumnMappings.Add("Occupazione", "Occupazione")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `StoricoPresenzeTemp` WHERE ((`Id` = ?) AND ((? = 1 AND `Mese` IS NUL"& _ 
+                "L) OR (`Mese` = ?)) AND ((? = 1 AND `Anno` IS NULL) OR (`Anno` = ?)) AND ((? = 1"& _ 
+                " AND `Presenze` IS NULL) OR (`Presenze` = ?)) AND ((? = 1 AND `Occupazione` IS N"& _ 
+                "ULL) OR (`Occupazione` = ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Mese", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Anno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Occupazione", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Occupazione", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `StoricoPresenzeTemp` (`Mese`, `Anno`, `Presenze`, `Occupazione`) VAL"& _ 
+                "UES (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mese", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Anno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Occupazione", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `StoricoPresenzeTemp` SET `Mese` = ?, `Anno` = ?, `Presenze` = ?, `Occupaz"& _ 
+                "ione` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `Mese` IS NULL) OR (`Mese` = ?)) AND"& _ 
+                " ((? = 1 AND `Anno` IS NULL) OR (`Anno` = ?)) AND ((? = 1 AND `Presenze` IS NULL"& _ 
+                ") OR (`Presenze` = ?)) AND ((? = 1 AND `Occupazione` IS NULL) OR (`Occupazione` "& _ 
+                "= ?)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mese", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Anno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Occupazione", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Mese", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Mese", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mese", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Anno", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Anno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Anno", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Presenze", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Presenze", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Occupazione", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Occupazione", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Occupazione", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Id, Mese, Anno, Presenze, Occupazione FROM StoricoPresenzeTemp"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As HospitalityDataSet.StoricoPresenzeTempDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As HospitalityDataSet.StoricoPresenzeTempDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As HospitalityDataSet.StoricoPresenzeTempDataTable = New HospitalityDataSet.StoricoPresenzeTempDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As HospitalityDataSet.StoricoPresenzeTempDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As HospitalityDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "StoricoPresenzeTemp")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Mese As String, ByVal Original_Anno As String, ByVal Original_Presenze As Global.System.Nullable(Of Integer), ByVal Original_Occupazione As Global.System.Nullable(Of Double)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
+            If (Original_Mese Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Mese,String)
+            End If
+            If (Original_Anno Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Anno,String)
+            End If
+            If (Original_Presenze.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Presenze.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Occupazione.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Occupazione.Value,Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Mese As String, ByVal Anno As String, ByVal Presenze As Global.System.Nullable(Of Integer), ByVal Occupazione As Global.System.Nullable(Of Double)) As Integer
+            If (Mese Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Mese,String)
+            End If
+            If (Anno Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Anno,String)
+            End If
+            If (Presenze.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Presenze.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Occupazione.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Occupazione.Value,Double)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Mese As String, ByVal Anno As String, ByVal Presenze As Global.System.Nullable(Of Integer), ByVal Occupazione As Global.System.Nullable(Of Double), ByVal Original_Id As Integer, ByVal Original_Mese As String, ByVal Original_Anno As String, ByVal Original_Presenze As Global.System.Nullable(Of Integer), ByVal Original_Occupazione As Global.System.Nullable(Of Double)) As Integer
+            If (Mese Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Mese,String)
+            End If
+            If (Anno Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Anno,String)
+            End If
+            If (Presenze.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Presenze.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Occupazione.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Occupazione.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Id,Integer)
+            If (Original_Mese Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Mese,String)
+            End If
+            If (Original_Anno Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Anno,String)
+            End If
+            If (Original_Presenze.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Presenze.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Occupazione.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Occupazione.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -21738,8 +23727,6 @@ Namespace HospitalityDataSetTableAdapters
         
         Private _dettagliDocTableAdapter As DettagliDocTableAdapter
         
-        Private _storicoPresenzeCamereTableAdapter As StoricoPresenzeCamereTableAdapter
-        
         Private _camereTableAdapter As CamereTableAdapter
         
         Private _cAPTableAdapter As CAPTableAdapter
@@ -21749,6 +23736,10 @@ Namespace HospitalityDataSetTableAdapters
         Private _prenCamereTableAdapter As PrenCamereTableAdapter
         
         Private _schedinePSTableAdapter As SchedinePSTableAdapter
+        
+        Private _listiniCamereTableAdapter As ListiniCamereTableAdapter
+        
+        Private _storicoPresenzeTempTableAdapter As StoricoPresenzeTempTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -21826,20 +23817,6 @@ Namespace HospitalityDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property StoricoPresenzeCamereTableAdapter() As StoricoPresenzeCamereTableAdapter
-            Get
-                Return Me._storicoPresenzeCamereTableAdapter
-            End Get
-            Set
-                Me._storicoPresenzeCamereTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property CamereTableAdapter() As CamereTableAdapter
             Get
                 Return Me._camereTableAdapter
@@ -21906,6 +23883,34 @@ Namespace HospitalityDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property ListiniCamereTableAdapter() As ListiniCamereTableAdapter
+            Get
+                Return Me._listiniCamereTableAdapter
+            End Get
+            Set
+                Me._listiniCamereTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property StoricoPresenzeTempTableAdapter() As StoricoPresenzeTempTableAdapter
+            Get
+                Return Me._storicoPresenzeTempTableAdapter
+            End Get
+            Set
+                Me._storicoPresenzeTempTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -21940,10 +23945,6 @@ Namespace HospitalityDataSetTableAdapters
                             AndAlso (Not (Me._dettagliDocTableAdapter.Connection) Is Nothing)) Then
                     Return Me._dettagliDocTableAdapter.Connection
                 End If
-                If ((Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._storicoPresenzeCamereTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._storicoPresenzeCamereTableAdapter.Connection
-                End If
                 If ((Not (Me._camereTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._camereTableAdapter.Connection) Is Nothing)) Then
                     Return Me._camereTableAdapter.Connection
@@ -21963,6 +23964,14 @@ Namespace HospitalityDataSetTableAdapters
                 If ((Not (Me._schedinePSTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._schedinePSTableAdapter.Connection) Is Nothing)) Then
                     Return Me._schedinePSTableAdapter.Connection
+                End If
+                If ((Not (Me._listiniCamereTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._listiniCamereTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._listiniCamereTableAdapter.Connection
+                End If
+                If ((Not (Me._storicoPresenzeTempTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._storicoPresenzeTempTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._storicoPresenzeTempTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -21989,9 +23998,6 @@ Namespace HospitalityDataSetTableAdapters
                 If (Not (Me._dettagliDocTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._camereTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -22005,6 +24011,12 @@ Namespace HospitalityDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._schedinePSTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -22054,15 +24066,6 @@ Namespace HospitalityDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._storicoPresenzeCamereTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._camereTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Camere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -22108,6 +24111,24 @@ Namespace HospitalityDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ListiniCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._listiniCamereTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeTemp.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._storicoPresenzeTempTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -22147,14 +24168,6 @@ Namespace HospitalityDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._dettagliDocTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._storicoPresenzeCamereTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -22198,6 +24211,22 @@ Namespace HospitalityDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ListiniCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._listiniCamereTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeTemp.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._storicoPresenzeTempTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -22208,6 +24237,22 @@ Namespace HospitalityDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As HospitalityDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeTemp.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._storicoPresenzeTempTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ListiniCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._listiniCamereTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._schedinePSTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SchedinePS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -22245,14 +24290,6 @@ Namespace HospitalityDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._camereTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StoricoPresenzeCamere.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._storicoPresenzeCamereTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -22349,11 +24386,6 @@ Namespace HospitalityDataSetTableAdapters
                 Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
                         "a stessa stringa di connessione.")
             End If
-            If ((Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._storicoPresenzeCamereTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
-                        "a stessa stringa di connessione.")
-            End If
             If ((Not (Me._camereTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._camereTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
@@ -22376,6 +24408,16 @@ Namespace HospitalityDataSetTableAdapters
             End If
             If ((Not (Me._schedinePSTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._schedinePSTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
+                        "a stessa stringa di connessione.")
+            End If
+            If ((Not (Me._listiniCamereTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._listiniCamereTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
+                        "a stessa stringa di connessione.")
+            End If
+            If ((Not (Me._storicoPresenzeTempTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._storicoPresenzeTempTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l"& _ 
                         "a stessa stringa di connessione.")
             End If
@@ -22448,15 +24490,6 @@ Namespace HospitalityDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._dettagliDocTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._storicoPresenzeCamereTableAdapter, Me._storicoPresenzeCamereTableAdapter.Connection)
-                    Me._storicoPresenzeCamereTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._storicoPresenzeCamereTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._storicoPresenzeCamereTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._storicoPresenzeCamereTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._storicoPresenzeCamereTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._camereTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._camereTableAdapter, Me._camereTableAdapter.Connection)
                     Me._camereTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
@@ -22500,6 +24533,24 @@ Namespace HospitalityDataSetTableAdapters
                     If Me._schedinePSTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._schedinePSTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._schedinePSTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._listiniCamereTableAdapter, Me._listiniCamereTableAdapter.Connection)
+                    Me._listiniCamereTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._listiniCamereTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._listiniCamereTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._listiniCamereTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._listiniCamereTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._storicoPresenzeTempTableAdapter, Me._storicoPresenzeTempTableAdapter.Connection)
+                    Me._storicoPresenzeTempTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._storicoPresenzeTempTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._storicoPresenzeTempTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._storicoPresenzeTempTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._storicoPresenzeTempTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -22578,10 +24629,6 @@ Namespace HospitalityDataSetTableAdapters
                     Me._dettagliDocTableAdapter.Connection = CType(revertConnections(Me._dettagliDocTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._dettagliDocTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._storicoPresenzeCamereTableAdapter) Is Nothing) Then
-                    Me._storicoPresenzeCamereTableAdapter.Connection = CType(revertConnections(Me._storicoPresenzeCamereTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._storicoPresenzeCamereTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._camereTableAdapter) Is Nothing) Then
                     Me._camereTableAdapter.Connection = CType(revertConnections(Me._camereTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._camereTableAdapter.Transaction = Nothing
@@ -22601,6 +24648,14 @@ Namespace HospitalityDataSetTableAdapters
                 If (Not (Me._schedinePSTableAdapter) Is Nothing) Then
                     Me._schedinePSTableAdapter.Connection = CType(revertConnections(Me._schedinePSTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._schedinePSTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._listiniCamereTableAdapter) Is Nothing) Then
+                    Me._listiniCamereTableAdapter.Connection = CType(revertConnections(Me._listiniCamereTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._listiniCamereTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._storicoPresenzeTempTableAdapter) Is Nothing) Then
+                    Me._storicoPresenzeTempTableAdapter.Connection = CType(revertConnections(Me._storicoPresenzeTempTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._storicoPresenzeTempTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
