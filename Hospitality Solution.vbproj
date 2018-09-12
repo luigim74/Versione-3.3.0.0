@@ -493,6 +493,12 @@
     <Compile Include="Codice\ReportsViewer\RepPrenCamere.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinaPS.Designer.vb">
+      <DependentUpon>RepSchedinaPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinaPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepSchedinePS.Designer.vb">
       <DependentUpon>RepSchedinePS.vb</DependentUpon>
     </Compile>
@@ -891,6 +897,7 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinePS.rdlc" />
@@ -1261,6 +1268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinaPS.resx">
+      <DependentUpon>RepSchedinaPS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinePS.resx">
       <DependentUpon>RepSchedinePS.vb</DependentUpon>

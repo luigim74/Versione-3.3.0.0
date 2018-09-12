@@ -12724,8 +12724,8 @@ Friend Class frmMain
       End Try
    End Sub
 
-   ' DA_FARE_A: Sviluppare!
    Private Sub eui_Strumenti_Documenti_Stampa_Schedina_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Documenti_Stampa_Schedina.Click
+      g_frmSchedinePS.AnteprimaDiStampaSchedina(PERCORSO_REP_SCHEDINA_PS_A4)
 
    End Sub
 
@@ -12860,7 +12860,6 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Sviluppare!
    Private Sub eui_cmdEsportaTxtSelezione_Click(sender As Object, e As EventArgs) Handles eui_cmdEsportaTxtSelezione.Click
       g_frmSchedinePS.SalvaFileTxtAlloggiatiWeb(False)
 

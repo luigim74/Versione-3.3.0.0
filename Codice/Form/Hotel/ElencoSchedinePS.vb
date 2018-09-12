@@ -28,6 +28,7 @@ Public Class ElencoSchedinePS
    Public Const TAB_NAZIONI As String = "Nazioni"
    Public Const TAB_COMUNI As String = "Comuni"
    Public Const TAB_DOCUMENTI As String = "DocIdentità"
+   Public Const TAB_AZIENDA As String = "Azienda"
 
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_SCHEDINA As Short = 1
@@ -1050,6 +1051,51 @@ Public Class ElencoSchedinePS
 
       End Try
    End Sub
+
+   Public Sub AnteprimaDiStampaSchedina(ByVal nomeDoc As String)
+      Try
+         ' Ottiene l'Id del documento.
+         Dim idDocumento As String
+         idDocumento = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString
+
+         ' Stampare il documento...
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         ' Tabella SchedinePS.
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_SCHEDINE & " WHERE Id = " & idDocumento, cn)
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, TAB_SCHEDINE)
+
+         ' Tabella ComponentiSchedinePS.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_COMPONENTI & " WHERE RifPren = " & idDocumento, cn)
+         oleAdapter1.Fill(ds, TAB_COMPONENTI)
+
+         ' Tabella Azienda
+         Dim oleAdapter2 As New OleDbDataAdapter
+         oleAdapter2.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_AZIENDA, cn)
+         oleAdapter2.Fill(ds, TAB_AZIENDA)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepSchedinaPS(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+
+   End Sub
+
 
    Private Sub ElencoSchedinePS_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
