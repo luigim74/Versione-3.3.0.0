@@ -1129,6 +1129,10 @@ Public Class frmCamerieri
          ' Imposta le dimensioni del form.
          FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
 
+         ' Carica le liste.
+         CaricaLista(cmbCittà, TAB_CAP)
+         CaricaLista(cmbNazione, TAB_NAZIONI)
+
          If Me.Tag <> "" Then
             With ACamerieri
                ' Visualizza i dati nei rispettivi campi.
@@ -1173,10 +1177,6 @@ Public Class frmCamerieri
             ' disattiva la scheda Allegati.
             TabControl1.TabPages(2).Enabled = False
          End If
-
-         ' Carica le liste.
-         CaricaLista(cmbCittà, TAB_CAP)
-         CaricaLista(cmbNazione, TAB_NAZIONI)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione(txtCodice.Text, txtNome.Text, "")

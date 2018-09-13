@@ -26,6 +26,10 @@ Public Class StoricoPresenzeCamere
    Public Bambini As Integer
    Public Ragazzi As Integer
    Public NumeroNotti As Integer
+   Public DataArrivo As String
+   Public DataPartenza As String
+   Public Nazionalità As String
+   Public Provincia As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -108,6 +112,26 @@ Public Class StoricoPresenzeCamere
          Else
             Me.NumeroNotti = "0"
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("DataArrivo")) = False Then
+            Me.DataArrivo = ds.Tables(tabella).Rows(0)("DataArrivo").ToString
+         Else
+            Me.DataArrivo = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("DataPartenza")) = False Then
+            Me.DataPartenza = ds.Tables(tabella).Rows(0)("DataPartenza").ToString
+         Else
+            Me.DataPartenza = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Nazionalità")) = False Then
+            Me.Nazionalità = ds.Tables(tabella).Rows(0)("Nazionalità").ToString
+         Else
+            Me.Nazionalità = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Provincia")) = False Then
+            Me.Provincia = ds.Tables(tabella).Rows(0)("Provincia").ToString
+         Else
+            Me.Provincia = String.Empty
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -132,8 +156,8 @@ Public Class StoricoPresenzeCamere
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifPren, Numero, Mese, Anno, Adulti, Neonati, Bambini, Ragazzi, NumeroNotti) " &
-                                       "VALUES(@RifPren, @Numero, @Mese, @Anno, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroNotti)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifPren, Numero, Mese, Anno, Adulti, Neonati, Bambini, Ragazzi, NumeroNotti, DataArrivo, DataPartenza, Nazionalità, Provincia) " &
+                                       "VALUES(@RifPren, @Numero, @Mese, @Anno, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroNotti, @DataArrivo, @DataPartenza, @Nazionalità, @Provincia)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -147,6 +171,10 @@ Public Class StoricoPresenzeCamere
          cmdInsert.Parameters.AddWithValue("@Bambini", Me.Bambini)
          cmdInsert.Parameters.AddWithValue("@Ragazzi", Me.Ragazzi)
          cmdInsert.Parameters.AddWithValue("@NumeroNotti", Me.NumeroNotti)
+         cmdInsert.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
+         cmdInsert.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
+         cmdInsert.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdInsert.Parameters.AddWithValue("@Provincia", Me.Provincia)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -192,7 +220,11 @@ Public Class StoricoPresenzeCamere
                              "Neonati = @Neonati, " &
                              "Bambini = @Bambini, " &
                              "Ragazzi = @Ragazzi, " &
-                             "NumeroNotti = @NumeroNotti " &
+                             "NumeroNotti = @NumeroNotti, " &
+                             "DataArrivo = @DataArrivo, " &
+                             "DataPartenza = @DataPartenza, " &
+                             "Nazionalità = @Nazionalità, " &
+                             "Provincia = @Provincia " &
                              "WHERE Id = {1}",
                               tabella,
                               codice)
@@ -209,6 +241,10 @@ Public Class StoricoPresenzeCamere
          cmdUpdate.Parameters.AddWithValue("@Bambini", Me.Bambini)
          cmdUpdate.Parameters.AddWithValue("@Ragazzi", Me.Ragazzi)
          cmdUpdate.Parameters.AddWithValue("@NumeroNotti", Me.NumeroNotti)
+         cmdUpdate.Parameters.AddWithValue("@DataArrivo", Me.DataArrivo)
+         cmdUpdate.Parameters.AddWithValue("@DataPartenza", Me.DataPartenza)
+         cmdUpdate.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdUpdate.Parameters.AddWithValue("@Provincia", Me.Provincia)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
@@ -272,6 +308,5 @@ Public Class StoricoPresenzeCamere
          cn.Close()
       End Try
    End Function
-
 
 End Class

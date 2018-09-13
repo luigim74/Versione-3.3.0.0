@@ -1197,6 +1197,11 @@ Public Class Fornitori
          ' Imposta le dimensioni del form.
          FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
 
+         ' Carica le liste.
+         CaricaLista(cmbCittà, TAB_CAP)
+         CaricaLista(cmbNazione, TAB_NAZIONI)
+         CaricaLista(cmbAttività, TAB_ATTIVITA)
+
          If Me.Tag <> "" Then
             ' Visualizza i dati nei rispettivi campi.
             AFornitori.LeggiDati(NOME_TABELLA, Me.Tag)
@@ -1241,11 +1246,6 @@ Public Class Fornitori
             ' disattiva la scheda Allegati.
             TabControl1.TabPages(2).Enabled = False
          End If
-
-         ' Carica le liste.
-         CaricaLista(cmbCittà, TAB_CAP)
-         CaricaLista(cmbNazione, TAB_NAZIONI)
-         CaricaLista(cmbAttività, TAB_ATTIVITA)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione(txtCodice.Text, txtRagSoc.Text, "")
@@ -1522,4 +1522,5 @@ Public Class Fornitori
 
       End Try
    End Sub
+
 End Class

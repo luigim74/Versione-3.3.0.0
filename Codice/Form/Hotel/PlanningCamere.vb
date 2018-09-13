@@ -22,6 +22,9 @@ Public Class PlanningCamere
 
    Const NOME_TABELLA As String = "Camere"
    Const TAB_PRENOTAZIONI As String = "PrenCamere"
+   Const TAB_STORICO_PRESENZE_ISTAT As String = "StoricoPresenzeIstat"
+   Const TAB_STORICO_PRESENZE_ISTAT_C59 As String = "StoricoPresenzeIstatC59"
+
    Const ALTEZZA_PRENOTAZIONE As Short = 30
    Public Const ALTEZZA_CELLA As Short = 32
    Public Const LARGHEZZA_CELLA As Short = 40
@@ -1097,6 +1100,49 @@ Public Class PlanningCamere
       ' Attiva Nuova e disattiva Modifica ed Elimina.
       AttivaComandoRibbonNuova()
    End Sub
+
+   Public Sub AnteprimaDiStampa(ByVal nomeDoc As String)
+      Try
+         ' Ottiene l'Id del documento.
+         'Dim idDocumento As String
+         'idDocumento = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC).ToString
+
+         'Dim idCliente As String
+         'idCliente = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_CLIENTE).ToString
+
+         ' Stampare il documento...
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         ' Tabella StoricoPresenzeIstatC59.
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STORICO_PRESENZE_ISTAT_C59, cn)
+         Dim ds As New IstatDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, TAB_STORICO_PRESENZE_ISTAT_C59)
+
+         ' Tabella StoricoPresenzeIstat.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STORICO_PRESENZE_ISTAT, cn)
+         oleAdapter1.Fill(ds, TAB_STORICO_PRESENZE_ISTAT)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepIstat(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+
+   End Sub
+
 
    Private Sub RimuoviPrenotazioni()
       Try

@@ -2785,6 +2785,14 @@ Public Class frmAziende
          ' Imposta le dimensioni del form.
          FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
 
+         ' Carica le liste.
+         CaricaLista(cmbTitolo, TAB_QUALIFICHE)
+         CaricaLista(cmbCittà, TAB_CAP)
+         CaricaLista(cmbNazione, TAB_NAZIONI)
+         CaricaLista(cmbTipoCliente, TAB_TIPO_CLIENTE)
+         CaricaLista(cmbAttività, TAB_ATTIVITA)
+         CaricaLista(cmbPagamento, TAB_PAGAMENTO)
+
          If Me.Tag <> "" Then
             With AAziende
                ' Visualizza i dati nei rispettivi campi.
@@ -2856,14 +2864,6 @@ Public Class frmAziende
             TabControl1.TabPages(3).Enabled = False
             TabControl1.TabPages(5).Enabled = False
          End If
-
-         ' Carica le liste.
-         CaricaLista(cmbTitolo, TAB_QUALIFICHE)
-         CaricaLista(cmbCittà, TAB_CAP)
-         CaricaLista(cmbNazione, TAB_NAZIONI)
-         CaricaLista(cmbTipoCliente, TAB_TIPO_CLIENTE)
-         CaricaLista(cmbAttività, TAB_ATTIVITA)
-         CaricaLista(cmbPagamento, TAB_PAGAMENTO)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione("", txtRagSociale.Text, "")

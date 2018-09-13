@@ -2239,7 +2239,8 @@ Public Class frmPrenCamera
       End Try
    End Function
 
-   Private Function SalvaStoricoPresenze(ByVal id As String, ByVal valMese As Integer, ByVal valAnno As Integer, ByVal valNumNotti As Integer) As Boolean
+   Private Function SalvaStoricoPresenze(ByVal id As String, ByVal valMese As Integer, ByVal valAnno As Integer, ByVal valNumNotti As Integer,
+                                         ByVal dataArrivo As String, ByVal dataPartenza As String, ByVal nazionalit‡ As String, ByVal provincia As String) As Boolean
       Try
          With IPrenStorico
             ' Assegna i dati dei campi della classe alle caselle di testo.
@@ -2252,6 +2253,10 @@ Public Class frmPrenCamera
             .Bambini = nudBambini.Value
             .Ragazzi = nudRagazzi.Value
             .NumeroNotti = valNumNotti
+            .DataArrivo = dataArrivo
+            .DataPartenza = dataPartenza
+            .Nazionalit‡ = nazionalit‡
+            .Provincia = provincia
 
             .InserisciDati(TAB_PREN_STORICO)
          End With
@@ -2267,10 +2272,18 @@ Public Class frmPrenCamera
       Try
          Dim valNumNotti As Integer = Convert.ToInt32(txtNumeroNotti.Text)
          Dim valDataArrivo As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
+         Dim valDataArrivoStorico As Date = FormattaData(mcDataArrivo.SelectionRange.Start.Date, True)
+         Dim valDataPartenzaStorico As Date = FormattaData(mcDataPartenza.SelectionRange.Start.Date, True)
          Dim valMese As Integer = valDataArrivo.Month
          Dim valAnno As Integer = valDataArrivo.Year
          Dim NumNottiTemp As Integer
          Dim salvato As Boolean
+         Dim provincia As String
+         Dim nazionalit‡ As String = LeggiNazionalit‡Cliente(TAB_CLIENTI, cmbIdCliente.Text)
+
+         If nazionalit‡.ToUpper = "ITALIA" Then
+            provincia = LeggiProvinciaCliente(TAB_CLIENTI, cmbIdCliente.Text)
+         End If
 
          ' In caso di nuova prenotazione dove l'Id non Ë ancora disponibile.
          Dim idSchedina As Integer
@@ -2287,7 +2300,7 @@ Public Class frmPrenCamera
          For i = 1 To valNumNotti
             If valDataArrivo.Month <> valMese Then
                ' Salva lo storico delle presenze.
-               SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
+               SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp, valDataArrivoStorico, valDataPartenzaStorico, nazionalit‡, provincia)
 
                ' Salvo in nuovo mese e l'eventuale nuovo anno.
                valMese = valDataArrivo.Month
@@ -2304,7 +2317,7 @@ Public Class frmPrenCamera
          Next
 
          ' Salva lo storico delle presenze.
-         SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp)
+         SalvaStoricoPresenze(idSchedina, valMese, valAnno, NumNottiTemp, valDataArrivoStorico, valDataPartenzaStorico, nazionalit‡, provincia)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2566,12 +2579,80 @@ Public Class frmPrenCamera
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read
-            Return dr.Item("Sconto")
+            Return dr.Item("Sconto").ToString
          Loop
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiProvinciaCliente(ByVal tabella As String, ByVal id As Integer) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim provincia As String
+
+         Do While dr.Read
+            provincia = dr.Item("Provincia").ToString
+         Loop
+
+         If provincia = String.Empty Then
+            provincia = VALORE_NESSUNA
+         End If
+
+         Return provincia
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return VALORE_NESSUNA
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiNazionalit‡Cliente(ByVal tabella As String, ByVal id As Integer) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim nazionalit‡ As String
+
+         Do While dr.Read
+            nazionalit‡ = dr.Item("Nazionalit‡").ToString
+         Loop
+
+         If nazionalit‡ = String.Empty Then
+            nazionalit‡ = VALORE_NESSUNA
+         End If
+
+         Return nazionalit‡
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return VALORE_NESSUNA
 
       Finally
          cn.Close()

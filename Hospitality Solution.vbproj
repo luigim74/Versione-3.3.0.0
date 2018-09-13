@@ -414,6 +414,11 @@
     <Compile Include="Codice\Form\Hospitality\InvioEmail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IstatDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.Designer.vb">
       <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
     </Compile>
@@ -479,6 +484,12 @@
       <DependentUpon>RepEmail.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepIstat.Designer.vb">
+      <DependentUpon>RepIstat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepIstat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepListiniCamere.Designer.vb">
@@ -792,6 +803,7 @@
     <Compile Include="Dataset1.vb">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HospitalityDataSet1.Designer.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -809,6 +821,17 @@
     </Compile>
     <Compile Include="Settings.vb" />
     <None Include="bin\Archivi\Hospitality.mdb" />
+    <None Include="IstatDataSet.xsc">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IstatDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IstatDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IstatDataSet.xss">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
     <None Include="HospitalityDataSet.xsc">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </None>
@@ -823,6 +846,13 @@
     <None Include="Dataset1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HospitalityDataSet1.xsc">
+      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HospitalityDataSet1.xsd" />
+    <None Include="HospitalityDataSet1.xss">
+      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </None>
     <None Include="HsKey.pfx" />
     <None Include="Resources\LogoAmica.ico" />
@@ -897,6 +927,7 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
@@ -1262,6 +1293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepEmail.resx">
       <DependentUpon>RepEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepIstat.resx">
+      <DependentUpon>RepIstat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepListiniCamere.resx">
       <DependentUpon>RepListiniCamere.vb</DependentUpon>

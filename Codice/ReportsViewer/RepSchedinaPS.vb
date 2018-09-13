@@ -1,8 +1,8 @@
 ﻿#Region " DATI FILE.VB "
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
-' Data creazione:       12/09/2018
-' Data ultima modifica: 12/09/2018
+' Data creazione:       13/09/2018
+' Data ultima modifica: 13/09/2018
 ' Descrizione:          Report di stampa con ReportsViewer.
 ' Note:
 '
@@ -37,6 +37,8 @@ Public Class RepSchedinaPS
          Me.SchedinePSBindingSource.DataSource = ds
          Me.ComponentiSchedinePSBindingSource.DataMember = "ComponentiSchedinePS"
          Me.ComponentiSchedinePSBindingSource.DataSource = ds
+         Me.ClientiBindingSource.DataMember = "Clienti"
+         Me.ClientiBindingSource.DataSource = ds
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -55,9 +57,10 @@ Public Class RepSchedinaPS
          ' Imposta le dimensioni del form.
          FormResize(REPORTS_LARGHEZZA, REPORTS_ALTEZZA)
 
-         Me.AziendaTableAdapter.Fill(Me.HospitalityDataSet.Azienda)
-         Me.SchedinePSTableAdapter.Fill(Me.HospitalityDataSet.SchedinePS)
-         Me.ComponentiSchedinePSTableAdapter.Fill(Me.HospitalityDataSet.ComponentiSchedinePS)
+         Me.AziendaTableAdapter.Fill(Me.HospitalityDataSet1.Azienda)
+         Me.SchedinePSTableAdapter.Fill(Me.HospitalityDataSet1.SchedinePS)
+         Me.ComponentiSchedinePSTableAdapter.Fill(Me.HospitalityDataSet1.ComponentiSchedinePS)
+         Me.ClientiTableAdapter.Fill(Me.HospitalityDataSet1.Clienti)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)

@@ -11788,6 +11788,11 @@ Friend Class frmMain
       End Try
    End Sub
 
+   ' DA_FARE: Terminare!
+   Private Sub eui_PCamere_PrenIstat_Click(sender As Object, e As EventArgs) Handles eui_PCamere_PrenIstat.Click
+      g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+   End Sub
+
 #End Region
 
 #Region "Visualizza "
@@ -12148,7 +12153,6 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Esporta_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Esporta.Click
       Try
          ' Ottiene il form attivo.
@@ -12187,7 +12191,6 @@ Friend Class frmMain
 
    End Sub
 
-   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Stampa_Anteprima_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Stampa_Anteprima.Click
       Try
          ' Ottiene il form attivo.
@@ -12225,7 +12228,6 @@ Friend Class frmMain
       End Try
    End Sub
 
-   ' DA_FARE_A: Terminare!
    Private Sub eui_Strumenti_Stampa_Elenco_Click(sender As System.Object, e As System.EventArgs) Handles eui_Strumenti_Stampa_Elenco.Click
       Try
          ' Ottiene il form attivo.

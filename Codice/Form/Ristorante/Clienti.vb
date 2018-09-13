@@ -2280,6 +2280,18 @@ Public Class frmClienti
          ' Imposta le dimensioni del form.
          FormResize(CLIENTI_LARGHEZZA, CLIENTI_ALTEZZA)
 
+         ' Carica le liste.
+         CaricaLista(cmbTitolo, TAB_QUALIFICHE)
+         CaricaLista(cmbCitt‡, TAB_CAP)
+         CaricaLista(cmbTipoCliente, TAB_TIPO_CLIENTE)
+         CaricaLista(cmbNazione, TAB_NAZIONI)
+         CaricaLista(cmbNazioneRilascioDoc, TAB_NAZIONI)
+         CaricaLista(cmbNazioneNascita, TAB_NAZIONI)
+         CaricaLista(cmbNazionalit‡, TAB_NAZIONI)
+         CaricaLista(cmbTipoDoc, TAB_DOC_IDENTITA)
+         CaricaLista(cmbCitt‡RilascioDoc, TAB_COMUNI)
+         CaricaLista(cmbComuneNascita, TAB_COMUNI)
+
          If Me.Tag <> "" Then
             ' Comando Modifica.
 
@@ -2408,18 +2420,6 @@ Public Class frmClienti
             cmdModifica.Enabled = False
             cmdRimuovi.Enabled = False
          End If
-
-         ' Carica le liste.
-         CaricaLista(cmbTitolo, TAB_QUALIFICHE)
-         CaricaLista(cmbCitt‡, TAB_CAP)
-         CaricaLista(cmbTipoCliente, TAB_TIPO_CLIENTE)
-         CaricaLista(cmbNazione, TAB_NAZIONI)
-         CaricaLista(cmbNazioneRilascioDoc, TAB_NAZIONI)
-         CaricaLista(cmbNazioneNascita, TAB_NAZIONI)
-         CaricaLista(cmbNazionalit‡, TAB_NAZIONI)
-         CaricaLista(cmbTipoDoc, TAB_DOC_IDENTITA)
-         CaricaLista(cmbCitt‡RilascioDoc, TAB_COMUNI)
-         CaricaLista(cmbComuneNascita, TAB_COMUNI)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione("", txtCognome.Text, txtNome.Text)

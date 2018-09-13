@@ -737,18 +737,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="HospitalityDataSet">
+    <DataSource Name="HospitalityDSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>61e1481f-ea33-4b8c-b6cc-e8ac5f85ba13</rd:DataSourceID>
+      <rd:DataSourceID>bb5e282d-86f1-4226-8e18-08a0f29cfafc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Email">
       <Query>
-        <DataSourceName>HospitalityDataSet</DataSourceName>
+        <DataSourceName>HospitalityDSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -810,8 +810,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>HospitalityDSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDSet.xsd</rd:SchemaPath>
         <rd:TableName>Email</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -29,6 +29,7 @@ Public Class ElencoSchedinePS
    Public Const TAB_COMUNI As String = "Comuni"
    Public Const TAB_DOCUMENTI As String = "DocIdentità"
    Public Const TAB_AZIENDA As String = "Azienda"
+   Public Const TAB_CLIENTI As String = "Clienti"
 
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_SCHEDINA As Short = 1
@@ -1056,7 +1057,10 @@ Public Class ElencoSchedinePS
       Try
          ' Ottiene l'Id del documento.
          Dim idDocumento As String
-         idDocumento = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString
+         idDocumento = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC).ToString
+
+         Dim idCliente As String
+         idCliente = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_CLIENTE).ToString
 
          ' Stampare il documento...
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
@@ -1067,7 +1071,7 @@ Public Class ElencoSchedinePS
          ' Tabella SchedinePS.
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_SCHEDINE & " WHERE Id = " & idDocumento, cn)
-         Dim ds As New HospitalityDataSet
+         Dim ds As New HospitalityDataSet1
          ds.Clear()
          oleAdapter.Fill(ds, TAB_SCHEDINE)
 
@@ -1076,10 +1080,15 @@ Public Class ElencoSchedinePS
          oleAdapter1.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_COMPONENTI & " WHERE RifPren = " & idDocumento, cn)
          oleAdapter1.Fill(ds, TAB_COMPONENTI)
 
-         ' Tabella Azienda
+         ' Tabella Azienda.
          Dim oleAdapter2 As New OleDbDataAdapter
          oleAdapter2.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_AZIENDA, cn)
          oleAdapter2.Fill(ds, TAB_AZIENDA)
+
+         ' Tabella Clienti.
+         Dim oleAdapter3 As New OleDbDataAdapter
+         oleAdapter3.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_CLIENTI & " WHERE Id = " & idCliente, cn)
+         oleAdapter3.Fill(ds, TAB_CLIENTI)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
          Dim frm As New RepSchedinaPS(ds, nomeDoc, String.Empty)

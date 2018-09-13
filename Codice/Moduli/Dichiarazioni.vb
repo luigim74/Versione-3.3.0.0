@@ -192,7 +192,8 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_SCHEDINE_PS_A4 As String = "\Reports\SchedinePS.rdlc"
    Public Const PERCORSO_REP_SCHEDINA_PS_A4 As String = "\Reports\SchedinaPS A4.rdlc"
    Public Const PERCORSO_REP_LISTINI_CAMERE_A4 As String = "\Reports\ListiniCamere.rdlc"
-   Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdl"
+   Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdlc"
+   Public Const PERCORSO_REP_MODELLO_ISTAT_59_A4 As String = "\Reports\ModelloIstatC59 A4.rdlc"
 
    ' Nomi per i reports dei documenti in formato .rpt
    Public Const REPORT_RICEVUTA As String = "RFiscale.rpt"
