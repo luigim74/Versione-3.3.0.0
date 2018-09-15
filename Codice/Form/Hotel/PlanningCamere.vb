@@ -1101,6 +1101,63 @@ Public Class PlanningCamere
       AttivaComandoRibbonNuova()
    End Sub
 
+   ' DA_FARE: Terminare!
+
+   Public Sub ElaboraModelloIstaC59(ByVal data As String)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim numArrivati As Integer
+      Dim provincia As String
+      Dim numRec As Integer
+      Dim adulti As Integer
+      Dim bambini As Integer
+      Dim ragazzi As Integer
+
+      Try
+         cn.Open()
+
+         ' Clienti italiani arrivati oggi.
+         Dim cmd As New OleDbCommand("SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE DataArrivo = #" & data & "# AND Nazionalità = 'ITALIA' GROUP BY Provincia", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Dim i As Integer
+         Do While dr.Read()
+            i += 1
+            If IsDBNull(dr.Item("Provincia")) = False Then
+               provincia = dr.Item("Provincia").ToString
+            End If
+
+            ' Clienti italiani arrivati oggi.
+            Dim cmd1 As New OleDbCommand("SELECT * FROM " & TAB_PRENOTAZIONI & " WHERE DataArrivo = #" & data & "# AND Provincia = '" & provincia & "'", cn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader()
+
+            Do While dr1.Read()
+               If IsDBNull(dr1.Item("Adulti")) = False Then
+                  adulti = Convert.ToInt32(dr1.Item("Adulti"))
+               Else
+                  adulti = 0
+               End If
+
+               If IsDBNull(dr1.Item("Bambini")) = False Then
+                  bambini = Convert.ToInt32(dr1.Item("Bambini"))
+               Else
+                  bambini = 0
+               End If
+               If IsDBNull(dr1.Item("Ragazzi")) = False Then
+                  ragazzi = Convert.ToInt32(dr1.Item("Ragazzi"))
+               Else
+                  ragazzi = 0
+               End If
+            Loop
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Public Sub AnteprimaDiStampa(ByVal nomeDoc As String)
       Try
          ' Ottiene l'Id del documento.
@@ -1118,14 +1175,14 @@ Public Class PlanningCamere
 
          ' Tabella StoricoPresenzeIstatC59.
          Dim oleAdapter As New OleDbDataAdapter
-         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STORICO_PRESENZE_ISTAT_C59, cn)
+         oleAdapter.SelectCommand = New OleDbCommand("Select * FROM " & TAB_STORICO_PRESENZE_ISTAT_C59, cn)
          Dim ds As New IstatDataSet
          ds.Clear()
          oleAdapter.Fill(ds, TAB_STORICO_PRESENZE_ISTAT_C59)
 
          ' Tabella StoricoPresenzeIstat.
          Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_STORICO_PRESENZE_ISTAT, cn)
+         oleAdapter1.SelectCommand = New OleDbCommand("Select * FROM " & TAB_STORICO_PRESENZE_ISTAT, cn)
          oleAdapter1.Fill(ds, TAB_STORICO_PRESENZE_ISTAT)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.

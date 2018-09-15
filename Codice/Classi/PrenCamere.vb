@@ -3,7 +3,7 @@
 ' Nome Classe:          PrenCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/08/2016
-' Data ultima modifica: 24/08/2018
+' Data ultima modifica: 15/09/2018
 ' Descrizione:          Classe per la gestione dei dati della Tabella PrenCamere.
 ' Note:
 '
@@ -24,6 +24,8 @@ Public Class PrenCamere
    Public Stato As String
    Public Cognome As String
    Public Nome As String
+   Public Provincia As String
+   Public Nazionalità As String
    Public Adulti As Integer
    Public Neonati As Integer
    Public Bambini As Integer
@@ -120,6 +122,16 @@ Public Class PrenCamere
             Me.Nome = ds.Tables(tabella).Rows(0)("Nome").ToString
          Else
             Me.Nome = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Nazionalità")) = False Then
+            Me.Nazionalità = ds.Tables(tabella).Rows(0)("Nazionalità").ToString
+         Else
+            Me.Nazionalità = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Provincia")) = False Then
+            Me.Provincia = ds.Tables(tabella).Rows(0)("Provincia").ToString
+         Else
+            Me.Provincia = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Adulti")) = False Then
             Me.Adulti = ds.Tables(tabella).Rows(0)("Adulti").ToString
@@ -273,10 +285,10 @@ Public Class PrenCamere
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " &
+         sql = String.Format("INSERT INTO {0} (IdCliente, Numero, Data, Tipologia, Stato, Cognome, Nome, Nazionalità, Provincia, Adulti, Neonati, Bambini, Ragazzi, NumeroCamera, DescrizioneCamera, " &
                                               "Trattamento, Gruppo, Agenzia, CanaleVendita, DataArrivo, DataPartenza, OraArrivo, NumeroNotti, Listino, Pagamento, CostoCamera, TassaSoggiorno, AccontoCamera, " &
                                               "TotaleConto, ApplicaSconto, Sconto, Servizio, Schedina, Colore, [Note]) " &
-                                       "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " &
+                                       "VALUES(@IdCliente, @Numero, @Data, @Tipologia, @Stato, @Cognome, @Nome, @Nazionalità, @Provincia, @Adulti, @Neonati, @Bambini, @Ragazzi, @NumeroCamera, @DescrizioneCamera, " &
                                               "@Trattamento, @Gruppo, @Agenzia, @CanaleVendita, @DataArrivo, @DataPartenza, @OraArrivo, @NumeroNotti, @Listino, @Pagamento, @CostoCamera, @TassaSoggiorno, @AccontoCamera, " &
                                               "@TotaleConto, @ApplicaSconto, @Sconto, @Servizio, @Schedina, @Colore, @Note)", tabella)
 
@@ -290,6 +302,8 @@ Public Class PrenCamere
          cmdInsert.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdInsert.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdInsert.Parameters.AddWithValue("@Nome", Me.Nome)
+         cmdInsert.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdInsert.Parameters.AddWithValue("@Provincia", Me.Provincia)
          cmdInsert.Parameters.AddWithValue("@Adulti", Me.Adulti)
          cmdInsert.Parameters.AddWithValue("@Neonati", Me.Neonati)
          cmdInsert.Parameters.AddWithValue("@Bambini", Me.Bambini)
@@ -360,6 +374,8 @@ Public Class PrenCamere
                              "Stato = @Stato, " &
                              "Cognome = @Cognome, " &
                              "Nome = @Nome, " &
+                             "Nazionalità = @Nazionalità, " &
+                             "Provincia = @Provincia, " &
                              "Adulti = @Adulti, " &
                              "Neonati = @Neonati, " &
                              "Bambini = @Bambini, " &
@@ -400,6 +416,8 @@ Public Class PrenCamere
          cmdUpdate.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdUpdate.Parameters.AddWithValue("@Cognome", Me.Cognome)
          cmdUpdate.Parameters.AddWithValue("@Nome", Me.Nome)
+         cmdUpdate.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
+         cmdUpdate.Parameters.AddWithValue("@Provincia", Me.Provincia)
          cmdUpdate.Parameters.AddWithValue("@Adulti", Me.Adulti)
          cmdUpdate.Parameters.AddWithValue("@Neonati", Me.Neonati)
          cmdUpdate.Parameters.AddWithValue("@Bambini", Me.Bambini)

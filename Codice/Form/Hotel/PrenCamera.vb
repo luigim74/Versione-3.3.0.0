@@ -2014,6 +2014,14 @@ Public Class frmPrenCamera
             .Stato = cmbStatoPren.Text
             .Cognome = FormattaApici(cmbCognome.Text)
             .Nome = FormattaApici(txtNome.Text)
+            .Nazionalit‡ = LeggiNazionalit‡Cliente(TAB_CLIENTI, cmbIdCliente.Text)
+
+            If .Nazionalit‡.ToUpper = "ITALIA" Then
+               .Provincia = LeggiProvinciaCliente(TAB_CLIENTI, cmbIdCliente.Text)
+            Else
+               .Provincia = VALORE_NESSUNA
+            End If
+
             .Adulti = nudAdulti.Value
             .Neonati = nudNeonati.Value
             .Bambini = nudBambini.Value
@@ -2283,6 +2291,8 @@ Public Class frmPrenCamera
 
          If nazionalit‡.ToUpper = "ITALIA" Then
             provincia = LeggiProvinciaCliente(TAB_CLIENTI, cmbIdCliente.Text)
+         Else
+            provincia = VALORE_NESSUNA
          End If
 
          ' In caso di nuova prenotazione dove l'Id non Ë ancora disponibile.

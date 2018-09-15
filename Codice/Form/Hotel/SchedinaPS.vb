@@ -1371,6 +1371,8 @@ Public Class frmSchedinaPS
 
          If nazionalità.ToUpper = "ITALIA" Then
             provincia = LeggiProvinciaCliente(TAB_CLIENTI, cmbIdCliente.Text)
+         Else
+            provincia = VALORE_NESSUNA
          End If
 
          ' In caso di nuova schedina dove l'Id non è ancora disponibile.

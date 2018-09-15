@@ -262,7 +262,6 @@
     <Compile Include="Codice\Classi\CellaColorata.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Codice\Classi\Class1.vb" />
     <Compile Include="Codice\Classi\ClsFormatta.vb" />
     <Compile Include="Codice\Classi\CmdTavoliSQLite.vb" />
     <Compile Include="Codice\Classi\CodeBar.vb" />
@@ -290,6 +289,7 @@
     <Compile Include="Codice\Classi\StatoComandeSQLite.vb" />
     <Compile Include="Codice\Classi\StatoTavoliSQLite.vb" />
     <Compile Include="Codice\Classi\StatoVariantiSQLite.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeIstat.vb" />
     <Compile Include="Codice\Classi\VariantiSQLite.vb" />
     <Compile Include="Codice\Classi\PiattiSQLite.vb" />
     <Compile Include="Codice\Classi\TavoliSQLite.vb" />

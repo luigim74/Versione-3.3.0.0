@@ -11790,7 +11790,9 @@ Friend Class frmMain
 
    ' DA_FARE: Terminare!
    Private Sub eui_PCamere_PrenIstat_Click(sender As Object, e As EventArgs) Handles eui_PCamere_PrenIstat.Click
-      g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+      g_frmPlanningCamere.ElaboraModelloIstaC59(Today.ToShortDateString)
+
+      'g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
    End Sub
 
 #End Region
