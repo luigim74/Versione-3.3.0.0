@@ -1041,3 +1041,8 @@
    in Hospitality_Solution.PlanningCamere.ElaboraModelloIstaC59(String data) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1126"
 "
 "
+"*** 18/09/2018 - 21:14:38 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.CalcolaClientiItalianiArrivati(String data) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1154"
+"
+"

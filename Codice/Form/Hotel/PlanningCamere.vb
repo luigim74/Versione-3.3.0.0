@@ -1101,17 +1101,17 @@ Public Class PlanningCamere
       AttivaComandoRibbonNuova()
    End Sub
 
-   ' DA_FARE: Terminare!
-
-   Public Sub ElaboraModelloIstaC59(ByVal data As String)
+   Public Function CalcolaClientiItalianiArrivati(ByVal data As String) As String()
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
+      Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
       Dim numArrivati As Integer
       Dim provincia As String
-      Dim numRec As Integer
       Dim adulti As Integer
       Dim bambini As Integer
       Dim ragazzi As Integer
+      Dim rigaDettagli(1000) As String
+      Dim i As Integer
 
       Try
          cn.Open()
@@ -1120,9 +1120,7 @@ Public Class PlanningCamere
          Dim cmd As New OleDbCommand("SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE DataArrivo = #" & data & "# AND Nazionalità = 'ITALIA' GROUP BY Provincia", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         Dim i As Integer
          Do While dr.Read()
-            i += 1
             If IsDBNull(dr.Item("Provincia")) = False Then
                provincia = dr.Item("Provincia").ToString
             End If
@@ -1132,6 +1130,8 @@ Public Class PlanningCamere
             Dim dr1 As OleDbDataReader = cmd1.ExecuteReader()
 
             Do While dr1.Read()
+               i += 1
+
                If IsDBNull(dr1.Item("Adulti")) = False Then
                   adulti = Convert.ToInt32(dr1.Item("Adulti"))
                Else
@@ -1148,8 +1148,36 @@ Public Class PlanningCamere
                Else
                   ragazzi = 0
                End If
+
+               numArrivati = adulti + bambini + ragazzi
+
+               rigaDettagli(i) = provincia & ";" & numArrivati
             Loop
          Loop
+
+         Return rigaDettagli
+
+         'With CStoricoPresenzeIstat
+
+         'End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+   Public Sub ElaboraModelloIstaC59()
+      Try
+         Dim rigaDettagliIstat As String()
+
+         rigaDettagliIstat = CalcolaClientiItalianiArrivati(Today.ToShortDateString)
+
+         Dim a As String = rigaDettagliIstat(1)
+         Dim b As String = rigaDettagliIstat(2)
+         Dim c As String = rigaDettagliIstat(3)
+         Dim d As String = rigaDettagliIstat(4)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1199,7 +1227,6 @@ Public Class PlanningCamere
       End Try
 
    End Sub
-
 
    Private Sub RimuoviPrenotazioni()
       Try
