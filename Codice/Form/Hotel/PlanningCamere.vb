@@ -1104,20 +1104,20 @@ Public Class PlanningCamere
    Public Function CalcolaClientiItalianiArrivati(ByVal data As String) As String()
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
-      Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
       Dim numArrivati As Integer
+      Dim numPartiti As Integer
       Dim provincia As String
       Dim adulti As Integer
       Dim bambini As Integer
       Dim ragazzi As Integer
-      Dim rigaDettagli(1000) As String
+      Dim rigaDettagli(99) As String
       Dim i As Integer
 
       Try
          cn.Open()
 
-         ' Clienti italiani arrivati oggi.
-         Dim cmd As New OleDbCommand("SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE DataArrivo = #" & data & "# AND Nazionalità = 'ITALIA' GROUP BY Provincia", cn)
+         ' Clienti italiani arrivati oggi. "SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE DataArrivo = #" & data & "# AND Nazionalità = 'ITALIA' GROUP BY Provincia"
+         Dim cmd As New OleDbCommand("SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE Nazionalità = 'ITALIA' GROUP BY Provincia", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -1149,17 +1149,44 @@ Public Class PlanningCamere
                   ragazzi = 0
                End If
 
-               numArrivati = adulti + bambini + ragazzi
-
-               rigaDettagli(i) = provincia & ";" & numArrivati
+               numArrivati = numArrivati + adulti + bambini + ragazzi
+               numPartiti = 0
             Loop
+
+            rigaDettagli(i) = provincia & ";" & numArrivati & ";" & numPartiti
+
+            ' Clienti italiani partiti oggi.
+            Dim cmd2 As New OleDbCommand("SELECT * FROM " & TAB_PRENOTAZIONI & " WHERE DataPartenza = #" & data & "# AND Provincia = '" & provincia & "'", cn)
+            Dim dr2 As OleDbDataReader = cmd2.ExecuteReader()
+
+            Do While dr2.Read()
+               i += 1
+
+               If IsDBNull(dr2.Item("Adulti")) = False Then
+                  adulti = Convert.ToInt32(dr2.Item("Adulti"))
+               Else
+                  adulti = 0
+               End If
+
+               If IsDBNull(dr2.Item("Bambini")) = False Then
+                  bambini = Convert.ToInt32(dr2.Item("Bambini"))
+               Else
+                  bambini = 0
+               End If
+               If IsDBNull(dr2.Item("Ragazzi")) = False Then
+                  ragazzi = Convert.ToInt32(dr2.Item("Ragazzi"))
+               Else
+                  ragazzi = 0
+               End If
+
+               numArrivati = 0
+               numPartiti = numPartiti + adulti + bambini + ragazzi
+            Loop
+            rigaDettagli(i) = provincia & ";" & numArrivati & ";" & numPartiti
+
          Loop
 
          Return rigaDettagli
-
-         'With CStoricoPresenzeIstat
-
-         'End With
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1168,16 +1195,106 @@ Public Class PlanningCamere
       End Try
    End Function
 
+   ' DA_FARE: Cancellare!
+   Public Function CalcolaClientiItalianiPartiti(ByVal data As String) As String()
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim numPartiti As Integer
+      Dim provincia As String
+      Dim adulti As Integer
+      Dim bambini As Integer
+      Dim ragazzi As Integer
+      Dim rigaDettagli(1000) As String
+      Dim i As Integer
+
+      Try
+         cn.Open()
+
+         ' Clienti italiani arrivati oggi.
+         Dim cmd As New OleDbCommand("SELECT Provincia FROM " & TAB_PRENOTAZIONI & " WHERE DataPartenza = #" & data & "# AND Nazionalità = 'ITALIA' GROUP BY Provincia", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Provincia")) = False Then
+               provincia = dr.Item("Provincia").ToString
+            End If
+
+            ' Clienti italiani arrivati oggi.
+            Dim cmd1 As New OleDbCommand("SELECT * FROM " & TAB_PRENOTAZIONI & " WHERE DataPartenza = #" & data & "# AND Provincia = '" & provincia & "'", cn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader()
+
+            Do While dr1.Read()
+               i += 1
+
+               If IsDBNull(dr1.Item("Adulti")) = False Then
+                  adulti = Convert.ToInt32(dr1.Item("Adulti"))
+               Else
+                  adulti = 0
+               End If
+
+               If IsDBNull(dr1.Item("Bambini")) = False Then
+                  bambini = Convert.ToInt32(dr1.Item("Bambini"))
+               Else
+                  bambini = 0
+               End If
+               If IsDBNull(dr1.Item("Ragazzi")) = False Then
+                  ragazzi = Convert.ToInt32(dr1.Item("Ragazzi"))
+               Else
+                  ragazzi = 0
+               End If
+
+               numPartiti = adulti + bambini + ragazzi
+
+               rigaDettagli(i) = numPartiti
+            Loop
+         Loop
+
+         Return rigaDettagli
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+
    Public Sub ElaboraModelloIstaC59()
       Try
-         Dim rigaDettagliIstat As String()
+         Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
 
-         rigaDettagliIstat = CalcolaClientiItalianiArrivati(Today.ToShortDateString)
+         Dim rigaDettagliIstat(99) As String
+         Dim clientiItalianiArrivati As String()
+         Dim clientiItalianiPartiti As String()
+         Dim clientiItalianiArrivatiTemp As String
+         Dim clientiItalianiPartitiTemp As String
 
-         Dim a As String = rigaDettagliIstat(1)
-         Dim b As String = rigaDettagliIstat(2)
-         Dim c As String = rigaDettagliIstat(3)
-         Dim d As String = rigaDettagliIstat(4)
+         clientiItalianiArrivati = CalcolaClientiItalianiArrivati(Today.ToShortDateString)
+         'clientiItalianiPartiti = CalcolaClientiItalianiPartiti(Today.ToShortDateString)
+
+         Dim a As String = clientiItalianiArrivati(1)
+         Dim b As String = clientiItalianiArrivati(2)
+         Dim c As String = clientiItalianiArrivati(3)
+         Dim d As String = clientiItalianiArrivati(4)
+
+         'Dim i As Integer
+         'For i = 1 To clientiItalianiArrivati.Length
+
+         '   If IsNothing(clientiItalianiArrivati(i)) = False Then
+         '      clientiItalianiArrivatiTemp = clientiItalianiArrivati(i)
+         '   Else
+         '      clientiItalianiArrivatiTemp = String.Empty
+         '   End If
+
+         '   If IsNothing(clientiItalianiPartiti(i)) = False Then
+         '      clientiItalianiPartitiTemp = clientiItalianiPartiti(i)
+         '   Else
+         '      clientiItalianiPartitiTemp = String.Empty
+         '   End If
+
+         '   rigaDettagliIstat(i) = clientiItalianiArrivatiTemp & ";" & clientiItalianiPartitiTemp
+         'Next
+
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
