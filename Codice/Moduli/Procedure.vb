@@ -1020,6 +1020,37 @@ Module Procedure
       End Try
    End Function
 
+   Public Function SommaValoriColonna(ByVal tabella As String, ByVal campo As String) As Integer
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Dim totale As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
+
+         ' Ottiene la somma dei valori della colonna.
+         Dim cmd As New OleDbCommand("SELECT SUM(" & campo & ") FROM " & tabella, cn)
+
+         totale = Convert.ToInt32(cmd.ExecuteScalar())
+
+         Return totale
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
+
    Public Function VerificaEsistenzaAzienda(ByVal tabella As String, ByVal val As String) As Boolean
       ' Dichiara un oggetto connessione.
       Dim ConnectionStr As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data source=" & Application.StartupPath & PERCORSO_AZIENDE_DB
