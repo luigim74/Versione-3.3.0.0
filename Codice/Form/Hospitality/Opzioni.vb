@@ -1427,7 +1427,7 @@ Public Class frmOpzioni
       'cmbNumStelle
       '
       Me.cmbNumStelle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbNumStelle.Items.AddRange(New Object() {"1 *", "2 **", "3 ***", "4 ****", "5 *****"})
+      Me.cmbNumStelle.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
       Me.cmbNumStelle.Location = New System.Drawing.Point(576, 32)
       Me.cmbNumStelle.Name = "cmbNumStelle"
       Me.cmbNumStelle.Size = New System.Drawing.Size(112, 21)
@@ -2850,7 +2850,7 @@ Public Class frmOpzioni
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(792, 576)
+      Me.ClientSize = New System.Drawing.Size(802, 586)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)

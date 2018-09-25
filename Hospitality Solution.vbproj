@@ -290,6 +290,7 @@
     <Compile Include="Codice\Classi\StatoTavoliSQLite.vb" />
     <Compile Include="Codice\Classi\StatoVariantiSQLite.vb" />
     <Compile Include="Codice\Classi\StoricoPresenzeIstat.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeIstatC59.vb" />
     <Compile Include="Codice\Classi\VariantiSQLite.vb" />
     <Compile Include="Codice\Classi\PiattiSQLite.vb" />
     <Compile Include="Codice\Classi\TavoliSQLite.vb" />

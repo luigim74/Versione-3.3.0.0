@@ -1096,3 +1096,64 @@
    in Hospitality_Solution.PlanningCamere.ElaboraModelloIstaC59() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1330"
 "
 "
+"*** 25/09/2018 - 22:26:46 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenzeIstatC59.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\StoricoPresenzeIstatC59.vb:riga 142"
+"
+"
+"*** 25/09/2018 - 22:30:24 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenzeIstatC59.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\StoricoPresenzeIstatC59.vb:riga 142"
+"
+"
+"*** 25/09/2018 - 22:38:33 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.StoricoPresenzeIstatC59.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\StoricoPresenzeIstatC59.vb:riga 142"
+"
+"
+"*** 25/09/2018 - 22:53:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.Procedure.SommaValoriColonna(String tabella, String campo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1038"
+"
+"
+"*** 25/09/2018 - 22:53:49 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.Procedure.SommaValoriColonna(String tabella, String campo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1038"
+"
+"
+"*** 25/09/2018 - 22:53:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.Procedure.SommaValoriColonna(String tabella, String campo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1038"
+"
+"
+"*** 25/09/2018 - 22:53:51 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.Procedure.SommaValoriColonna(String tabella, String campo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Moduli\Procedure.vb:riga 1038"
+"
+"

@@ -1285,15 +1285,122 @@ Public Class PlanningCamere
       End Try
    End Function
 
+   Private Function LeggiRagSocAzienda() As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM Azienda", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("RagSoc").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Private Function LeggiComuneAzienda() As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM Azienda", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("Città").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Private Function LeggiTipoEsercizio() As String
+      Try
+         Dim DatiConfig As New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         If DatiConfig.GetValue("TipoEsercizioHotel") <> String.Empty Then
+            Return DatiConfig.GetValue("TipoEsercizioHotel").ToString
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Private Function LeggiNumeroStelle() As String
+      Try
+         Dim DatiConfig As New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         If DatiConfig.GetValue("NumeroStelleHotel") <> String.Empty Then
+            Return DatiConfig.GetValue("NumeroStelleHotel").ToString
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
    Public Sub ElaboraModelloIstaC59()
       Try
+         Dim CStoricoPresenzeIstatC59 As New StoricoPresenzeIstatC59
          Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
          Dim listaClientiItaliani As String()
          Dim listaClientiStranieri As String()
          Dim datiClientiItaliani As String()
          Dim datiClientiStranieri As String()
 
-         ' DA_FARE: Sviluppare! Salvare i dati per l'intestazione.
+         ' Salva i dati per l'intestazione del documento.
+         With CStoricoPresenzeIstatC59
+            .EliminaDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+
+            .Numero = "10" ' Leggere progressivo.
+            .Giorno = Today.Day.ToString
+            .Mese = Today.Month.ToString
+            .Anno = Today.Year.ToString
+            .Comune = LeggiComuneAzienda()
+            .TipoEsercizio = LeggiTipoEsercizio()
+            .Denominazione = LeggiRagSocAzienda()
+            .NumeroStelle = LeggiNumeroStelle()
+
+            .InserisciDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+         End With
 
          ' Calcola il toale dei clienti italiani arrivati e partiti del giorno corrente.
          listaClientiItaliani = CalcolaClientiItaliani(Today.ToShortDateString)
@@ -1329,15 +1436,26 @@ Public Class PlanningCamere
                   datiClientiStranieri(2) = "0"
                End If
 
-               .Numero = i
-               .Nazionalità = datiClientiStranieri(0)
-               .ArrivatiNaz = Convert.ToInt32(datiClientiStranieri(1))
-               .PartitiNaz = Convert.ToInt32(datiClientiStranieri(2))
-               .Provincia = datiClientiItaliani(0)
-               .ArrivatiProv = Convert.ToInt32(datiClientiItaliani(1))
-               .PartitiProv = Convert.ToInt32(datiClientiItaliani(2))
+               ' DA_FARE: Modificare! Se non ci sono valori non inserire il record.
+               If datiClientiStranieri(1) = "0" And datiClientiStranieri(2) = "0" And datiClientiItaliani(1) = "0" And datiClientiItaliani(2) = "0" Then
+                  .Numero = 0
+                  .Nazionalità = String.Empty
+                  .ArrivatiNaz = 0
+                  .PartitiNaz = 0
+                  .Provincia = String.Empty
+                  .ArrivatiProv = 0
+                  .PartitiProv = 0
+               Else
+                  .Numero = i
+                  .Nazionalità = datiClientiStranieri(0)
+                  .ArrivatiNaz = Convert.ToInt32(datiClientiStranieri(1))
+                  .PartitiNaz = Convert.ToInt32(datiClientiStranieri(2))
+                  .Provincia = datiClientiItaliani(0)
+                  .ArrivatiProv = Convert.ToInt32(datiClientiItaliani(1))
+                  .PartitiProv = Convert.ToInt32(datiClientiItaliani(2))
 
-               .InserisciDati(TAB_STORICO_PRESENZE_ISTAT)
+                  .InserisciDati(TAB_STORICO_PRESENZE_ISTAT)
+               End If
             Next
 
             ' Calcola i totali.

@@ -1050,7 +1050,6 @@ Module Procedure
       End Try
    End Function
 
-
    Public Function VerificaEsistenzaAzienda(ByVal tabella As String, ByVal val As String) As Boolean
       ' Dichiara un oggetto connessione.
       Dim ConnectionStr As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data source=" & Application.StartupPath & PERCORSO_AZIENDE_DB

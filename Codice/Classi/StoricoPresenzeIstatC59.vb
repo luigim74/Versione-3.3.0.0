@@ -13,15 +13,16 @@
 
 Imports System.Data.OleDb
 
-Public Class StoricoPresenzeIstat
+Public Class StoricoPresenzeIstatC59
    Public Codice As Integer
    Public Numero As Integer
-   Public Nazionalità As String
-   Public ArrivatiNaz As Integer
-   Public PartitiNaz As Integer
-   Public Provincia As String
-   Public ArrivatiProv As Integer
-   Public PartitiProv As Integer
+   Public Giorno As String
+   Public Mese As String
+   Public Anno As String
+   Public Comune As String
+   Public TipoEsercizio As String
+   Public Denominazione As String
+   Public NumeroStelle As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -63,35 +64,40 @@ Public Class StoricoPresenzeIstat
          Else
             Me.Numero = 0
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("Nazionalità")) = False Then
-            Me.Nazionalità = ds.Tables(tabella).Rows(0)("Nazionalità").ToString
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Giorno")) = False Then
+            Me.Giorno = ds.Tables(tabella).Rows(0)("Giorno").ToString
          Else
-            Me.Nazionalità = String.Empty
+            Me.Giorno = String.Empty
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("ArrivatiNaz")) = False Then
-            Me.ArrivatiNaz = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ArrivatiNaz"))
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Mese")) = False Then
+            Me.Mese = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Mese"))
          Else
-            Me.ArrivatiNaz = 0
+            Me.Mese = String.Empty
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("PartitiNaz")) = False Then
-            Me.PartitiNaz = Convert.ToInt32(ds.Tables(tabella).Rows(0)("PartitiNaz"))
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Anno")) = False Then
+            Me.Anno = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Anno"))
          Else
-            Me.PartitiNaz = 0
+            Me.Anno = String.Empty
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("Provincia")) = False Then
-            Me.Provincia = ds.Tables(tabella).Rows(0)("Provincia").ToString
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Comune")) = False Then
+            Me.Comune = ds.Tables(tabella).Rows(0)("Comune").ToString
          Else
-            Me.Provincia = String.Empty
+            Me.Comune = String.Empty
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("ArrivatiProv")) = False Then
-            Me.ArrivatiProv = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ArrivatiProv"))
+         If IsDBNull(ds.Tables(tabella).Rows(0)("TipoEsercizio")) = False Then
+            Me.TipoEsercizio = Convert.ToInt32(ds.Tables(tabella).Rows(0)("TipoEsercizio"))
          Else
-            Me.ArrivatiProv = 0
+            Me.TipoEsercizio = String.Empty
          End If
-         If IsDBNull(ds.Tables(tabella).Rows(0)("PartitiProv")) = False Then
-            Me.PartitiProv = Convert.ToInt32(ds.Tables(tabella).Rows(0)("PartitiProv"))
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Denominazione")) = False Then
+            Me.Denominazione = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Denominazione"))
          Else
-            Me.PartitiProv = 0
+            Me.Denominazione = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("NumeroStelle")) = False Then
+            Me.NumeroStelle = Convert.ToInt32(ds.Tables(tabella).Rows(0)("NumeroStelle"))
+         Else
+            Me.NumeroStelle = String.Empty
          End If
 
       Catch ex As Exception
@@ -117,19 +123,20 @@ Public Class StoricoPresenzeIstat
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Numero, Nazionalità, ArrivatiNaz, PartitiNaz, Provincia, ArrivatiProv, PartitiProv) " &
-                                       "VALUES(@Numero, @Nazionalità, @ArrivatiNaz, @PartitiNaz, @Provincia, @ArrivatiProv, @PartitiProv)", tabella)
+         sql = String.Format("INSERT INTO {0} (Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, NumeroStelle) " &
+                                       "VALUES(@Numero, @Giorno, @Mese, @Anno, @Comune, @TipoEsercizio, @Denominazione, @NumeroStelle)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
          cmdInsert.Parameters.AddWithValue("@Numero", Me.Numero)
-         cmdInsert.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
-         cmdInsert.Parameters.AddWithValue("@ArrivatiNaz", Me.ArrivatiNaz)
-         cmdInsert.Parameters.AddWithValue("@PartitiNaz", Me.PartitiNaz)
-         cmdInsert.Parameters.AddWithValue("@Provincia", Me.Provincia)
-         cmdInsert.Parameters.AddWithValue("@ArrivatiProv", Me.ArrivatiProv)
-         cmdInsert.Parameters.AddWithValue("@PartitiProv", Me.PartitiProv)
+         cmdInsert.Parameters.AddWithValue("@Giorno", Me.Giorno)
+         cmdInsert.Parameters.AddWithValue("@Mese", Me.Mese)
+         cmdInsert.Parameters.AddWithValue("@Anno", Me.Anno)
+         cmdInsert.Parameters.AddWithValue("@Comune", Me.Comune)
+         cmdInsert.Parameters.AddWithValue("@TipoEsercizio", Me.TipoEsercizio)
+         cmdInsert.Parameters.AddWithValue("@Denominazione", Me.Denominazione)
+         cmdInsert.Parameters.AddWithValue("@NumeroStelle", Me.NumeroStelle)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -168,12 +175,13 @@ Public Class StoricoPresenzeIstat
          ' Crea la stringa di eliminazione.
          sql = String.Format("UPDATE {0} " &
                              "SET Numero = @Numero, " &
-                             "Nazionalità = @Nazionalità, " &
-                             "ArrivatiNaz = @ArrivatiNaz, " &
-                             "PartitiNaz = @PartitiNaz, " &
-                             "Provincia = @Provincia, " &
-                             "ArrivatiProv = @ArrivatiProv, " &
-                             "PartitiProv = @PartitiProv " &
+                             "Giorno = @Giorno, " &
+                             "Mese = @Mese, " &
+                             "Anno = @Anno, " &
+                             "Comune = @Comune, " &
+                             "TipoEsercizio = @TipoEsercizio, " &
+                             "Denominazione = @Denominazione, " &
+                             "NumeroStelle = @NumeroStelle " &
                              "WHERE Id = {1}",
                               tabella,
                               codice)
@@ -182,12 +190,13 @@ Public Class StoricoPresenzeIstat
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
          cmdUpdate.Parameters.AddWithValue("@Numero", Me.Numero)
-         cmdUpdate.Parameters.AddWithValue("@Nazionalità", Me.Nazionalità)
-         cmdUpdate.Parameters.AddWithValue("@ArrivatiNaz", Me.ArrivatiNaz)
-         cmdUpdate.Parameters.AddWithValue("@PartitiNaz", Me.PartitiNaz)
-         cmdUpdate.Parameters.AddWithValue("@Provincia", Me.Provincia)
-         cmdUpdate.Parameters.AddWithValue("@ArrivatiProv", Me.ArrivatiProv)
-         cmdUpdate.Parameters.AddWithValue("@PartitiProv", Me.PartitiProv)
+         cmdUpdate.Parameters.AddWithValue("@Giorno", Me.Giorno)
+         cmdUpdate.Parameters.AddWithValue("@Mese", Me.Mese)
+         cmdUpdate.Parameters.AddWithValue("@Anno", Me.Anno)
+         cmdUpdate.Parameters.AddWithValue("@Comune", Me.Comune)
+         cmdUpdate.Parameters.AddWithValue("@TipoEsercizio", Me.TipoEsercizio)
+         cmdUpdate.Parameters.AddWithValue("@Denominazione", Me.Denominazione)
+         cmdUpdate.Parameters.AddWithValue("@NumeroStelle", Me.NumeroStelle)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
