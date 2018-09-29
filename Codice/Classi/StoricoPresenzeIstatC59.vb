@@ -23,6 +23,11 @@ Public Class StoricoPresenzeIstatC59
    Public TipoEsercizio As String
    Public Denominazione As String
    Public NumeroStelle As String
+   Public ClientiGiornoPrec As Integer
+   Public ClientiArrivati As Integer
+   Public ClientiPartiti As Integer
+   Public TotaleClienti As Integer
+   Public ClientiPresentiNotte As Integer
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -99,6 +104,31 @@ Public Class StoricoPresenzeIstatC59
          Else
             Me.NumeroStelle = String.Empty
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("ClientiGiornoPrec")) = False Then
+            Me.ClientiGiornoPrec = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ClientiGiornoPrec"))
+         Else
+            Me.ClientiGiornoPrec = 0
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("ClientiArrivati")) = False Then
+            Me.ClientiArrivati = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ClientiArrivati"))
+         Else
+            Me.ClientiArrivati = 0
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("ClientiPartiti")) = False Then
+            Me.ClientiPartiti = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ClientiPartiti"))
+         Else
+            Me.ClientiPartiti = 0
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("TotaleClienti")) = False Then
+            Me.TotaleClienti = Convert.ToInt32(ds.Tables(tabella).Rows(0)("TotaleClienti"))
+         Else
+            Me.TotaleClienti = 0
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("ClientiPresentiNotte")) = False Then
+            Me.ClientiPresentiNotte = Convert.ToInt32(ds.Tables(tabella).Rows(0)("ClientiPresentiNotte"))
+         Else
+            Me.ClientiPresentiNotte = 0
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -123,8 +153,8 @@ Public Class StoricoPresenzeIstatC59
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, NumeroStelle) " &
-                                       "VALUES(@Numero, @Giorno, @Mese, @Anno, @Comune, @TipoEsercizio, @Denominazione, @NumeroStelle)", tabella)
+         sql = String.Format("INSERT INTO {0} (Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, NumeroStelle, ClientiGiornoPrec, ClientiArrivati, ClientiPartiti, TotaleClienti, ClientiPresentiNotte) " &
+                                       "VALUES(@Numero, @Giorno, @Mese, @Anno, @Comune, @TipoEsercizio, @Denominazione, @NumeroStelle, @ClientiGiornoPrec, @ClientiArrivati, @ClientiPartiti, @TotaleClienti, @ClientiPresentiNotte)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -137,6 +167,11 @@ Public Class StoricoPresenzeIstatC59
          cmdInsert.Parameters.AddWithValue("@TipoEsercizio", Me.TipoEsercizio)
          cmdInsert.Parameters.AddWithValue("@Denominazione", Me.Denominazione)
          cmdInsert.Parameters.AddWithValue("@NumeroStelle", Me.NumeroStelle)
+         cmdInsert.Parameters.AddWithValue("@ClientiGiornoPrec", Me.ClientiGiornoPrec)
+         cmdInsert.Parameters.AddWithValue("@ClientiArrivati", Me.ClientiArrivati)
+         cmdInsert.Parameters.AddWithValue("@ClientiPartiti", Me.ClientiPartiti)
+         cmdInsert.Parameters.AddWithValue("@TotaleClienti", Me.TotaleClienti)
+         cmdInsert.Parameters.AddWithValue("@ClientiPresentiNotte", Me.ClientiPresentiNotte)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -181,7 +216,12 @@ Public Class StoricoPresenzeIstatC59
                              "Comune = @Comune, " &
                              "TipoEsercizio = @TipoEsercizio, " &
                              "Denominazione = @Denominazione, " &
-                             "NumeroStelle = @NumeroStelle " &
+                             "NumeroStelle = @NumeroStelle, " &
+                             "ClientiGiornoPrec = @ClientiGiornoPrec, " &
+                             "ClientiArrivati = @ClientiArrivati, " &
+                             "ClientiPartiti = @ClientiPartiti, " &
+                             "TotaleClienti = @TotaleClienti, " &
+                             "ClientiPresentiNotte = @ClientiPresentiNotte " &
                              "WHERE Id = {1}",
                               tabella,
                               codice)
@@ -197,6 +237,11 @@ Public Class StoricoPresenzeIstatC59
          cmdUpdate.Parameters.AddWithValue("@TipoEsercizio", Me.TipoEsercizio)
          cmdUpdate.Parameters.AddWithValue("@Denominazione", Me.Denominazione)
          cmdUpdate.Parameters.AddWithValue("@NumeroStelle", Me.NumeroStelle)
+         cmdUpdate.Parameters.AddWithValue("@ClientiGiornoPrec", Me.ClientiGiornoPrec)
+         cmdUpdate.Parameters.AddWithValue("@ClientiArrivati", Me.ClientiArrivati)
+         cmdUpdate.Parameters.AddWithValue("@ClientiPartiti", Me.ClientiPartiti)
+         cmdUpdate.Parameters.AddWithValue("@TotaleClienti", Me.TotaleClienti)
+         cmdUpdate.Parameters.AddWithValue("@ClientiPresentiNotte", Me.ClientiPresentiNotte)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

@@ -25,32 +25,17 @@ Partial Class RepIstat
       Me.components = New System.ComponentModel.Container()
       Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
       Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-      Me.StoricoPresenzeIstatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.IstatDataSet = New IstatDataSet()
-      Me.StoricoPresenzeIstatC59BindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+      Me.IstatDataSet = New IstatDataSet()
+      Me.StoricoPresenzeIstatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.StoricoPresenzeIstatTableAdapter = New IstatDataSetTableAdapters.StoricoPresenzeIstatTableAdapter()
+      Me.StoricoPresenzeIstatC59BindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.StoricoPresenzeIstatC59TableAdapter = New IstatDataSetTableAdapters.StoricoPresenzeIstatC59TableAdapter()
-      CType(Me.StoricoPresenzeIstatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.IstatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.StoricoPresenzeIstatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.StoricoPresenzeIstatC59BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
-      '
-      'StoricoPresenzeIstatBindingSource
-      '
-      Me.StoricoPresenzeIstatBindingSource.DataMember = "StoricoPresenzeIstat"
-      Me.StoricoPresenzeIstatBindingSource.DataSource = Me.IstatDataSet
-      '
-      'IstatDataSet
-      '
-      Me.IstatDataSet.DataSetName = "IstatDataSet"
-      Me.IstatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-      '
-      'StoricoPresenzeIstatC59BindingSource
-      '
-      Me.StoricoPresenzeIstatC59BindingSource.DataMember = "StoricoPresenzeIstatC59"
-      Me.StoricoPresenzeIstatC59BindingSource.DataSource = Me.IstatDataSet
       '
       'formFrameSkinner
       '
@@ -66,15 +51,30 @@ Partial Class RepIstat
       ReportDataSource2.Value = Me.StoricoPresenzeIstatC59BindingSource
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-      Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.Modello Istat C59 A4.rdlc"
+      Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.ModelloIstatC59 A4.rdlc"
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
-      Me.ReportViewer1.Size = New System.Drawing.Size(832, 482)
+      Me.ReportViewer1.Size = New System.Drawing.Size(840, 490)
       Me.ReportViewer1.TabIndex = 1
+      '
+      'IstatDataSet
+      '
+      Me.IstatDataSet.DataSetName = "IstatDataSet"
+      Me.IstatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+      '
+      'StoricoPresenzeIstatBindingSource
+      '
+      Me.StoricoPresenzeIstatBindingSource.DataMember = "StoricoPresenzeIstat"
+      Me.StoricoPresenzeIstatBindingSource.DataSource = Me.IstatDataSet
       '
       'StoricoPresenzeIstatTableAdapter
       '
       Me.StoricoPresenzeIstatTableAdapter.ClearBeforeFill = True
+      '
+      'StoricoPresenzeIstatC59BindingSource
+      '
+      Me.StoricoPresenzeIstatC59BindingSource.DataMember = "StoricoPresenzeIstatC59"
+      Me.StoricoPresenzeIstatC59BindingSource.DataSource = Me.IstatDataSet
       '
       'StoricoPresenzeIstatC59TableAdapter
       '
@@ -84,13 +84,13 @@ Partial Class RepIstat
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(832, 482)
+      Me.ClientSize = New System.Drawing.Size(840, 490)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepIstat"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Anteprima di stampa"
-      CType(Me.StoricoPresenzeIstatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.IstatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.StoricoPresenzeIstatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.StoricoPresenzeIstatC59BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 

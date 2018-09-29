@@ -47,9 +47,6 @@ Public Class RepIstat
    End Sub
 
    Private Sub RepIstat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-      Me.StoricoPresenzeIstatTableAdapter.Fill(Me.IstatDataSet.StoricoPresenzeIstat)
-      Me.StoricoPresenzeIstatC59TableAdapter.Fill(Me.IstatDataSet.StoricoPresenzeIstatC59)
-
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)

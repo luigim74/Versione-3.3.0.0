@@ -1035,7 +1035,11 @@ Module Procedure
          ' Ottiene la somma dei valori della colonna.
          Dim cmd As New OleDbCommand("SELECT SUM(" & campo & ") FROM " & tabella, cn)
 
-         totale = Convert.ToInt32(cmd.ExecuteScalar())
+         If IsDBNull(cmd.ExecuteScalar()) = False Then
+            totale = Convert.ToInt32(cmd.ExecuteScalar())
+         Else
+            totale = 0
+         End If
 
          Return totale
 

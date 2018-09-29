@@ -693,6 +693,16 @@ Partial Public Class IstatDataSet
         
         Private columnNumeroStelle As Global.System.Data.DataColumn
         
+        Private columnClientiGiornoPrec As Global.System.Data.DataColumn
+        
+        Private columnClientiArrivati As Global.System.Data.DataColumn
+        
+        Private columnClientiPartiti As Global.System.Data.DataColumn
+        
+        Private columnTotaleClienti As Global.System.Data.DataColumn
+        
+        Private columnClientiPresentiNotte As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -801,6 +811,46 @@ Partial Public Class IstatDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ClientiGiornoPrecColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClientiGiornoPrec
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ClientiArrivatiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClientiArrivati
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ClientiPartitiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClientiPartiti
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TotaleClientiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTotaleClienti
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ClientiPresentiNotteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClientiPresentiNotte
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -837,9 +887,9 @@ Partial Public Class IstatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddStoricoPresenzeIstatC59Row(ByVal Numero As Integer, ByVal Giorno As String, ByVal Mese As String, ByVal Anno As String, ByVal Comune As String, ByVal TipoEsercizio As String, ByVal Denominazione As String, ByVal NumeroStelle As String) As StoricoPresenzeIstatC59Row
+        Public Overloads Function AddStoricoPresenzeIstatC59Row(ByVal Numero As Integer, ByVal Giorno As String, ByVal Mese As String, ByVal Anno As String, ByVal Comune As String, ByVal TipoEsercizio As String, ByVal Denominazione As String, ByVal NumeroStelle As String, ByVal ClientiGiornoPrec As Integer, ByVal ClientiArrivati As Integer, ByVal ClientiPartiti As Integer, ByVal TotaleClienti As Integer, ByVal ClientiPresentiNotte As Integer) As StoricoPresenzeIstatC59Row
             Dim rowStoricoPresenzeIstatC59Row As StoricoPresenzeIstatC59Row = CType(Me.NewRow,StoricoPresenzeIstatC59Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, NumeroStelle}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, NumeroStelle, ClientiGiornoPrec, ClientiArrivati, ClientiPartiti, TotaleClienti, ClientiPresentiNotte}
             rowStoricoPresenzeIstatC59Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowStoricoPresenzeIstatC59Row)
             Return rowStoricoPresenzeIstatC59Row
@@ -877,6 +927,11 @@ Partial Public Class IstatDataSet
             Me.columnTipoEsercizio = MyBase.Columns("TipoEsercizio")
             Me.columnDenominazione = MyBase.Columns("Denominazione")
             Me.columnNumeroStelle = MyBase.Columns("NumeroStelle")
+            Me.columnClientiGiornoPrec = MyBase.Columns("ClientiGiornoPrec")
+            Me.columnClientiArrivati = MyBase.Columns("ClientiArrivati")
+            Me.columnClientiPartiti = MyBase.Columns("ClientiPartiti")
+            Me.columnTotaleClienti = MyBase.Columns("TotaleClienti")
+            Me.columnClientiPresentiNotte = MyBase.Columns("ClientiPresentiNotte")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -900,6 +955,16 @@ Partial Public Class IstatDataSet
             MyBase.Columns.Add(Me.columnDenominazione)
             Me.columnNumeroStelle = New Global.System.Data.DataColumn("NumeroStelle", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumeroStelle)
+            Me.columnClientiGiornoPrec = New Global.System.Data.DataColumn("ClientiGiornoPrec", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClientiGiornoPrec)
+            Me.columnClientiArrivati = New Global.System.Data.DataColumn("ClientiArrivati", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClientiArrivati)
+            Me.columnClientiPartiti = New Global.System.Data.DataColumn("ClientiPartiti", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClientiPartiti)
+            Me.columnTotaleClienti = New Global.System.Data.DataColumn("TotaleClienti", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTotaleClienti)
+            Me.columnClientiPresentiNotte = New Global.System.Data.DataColumn("ClientiPresentiNotte", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClientiPresentiNotte)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1418,6 +1483,86 @@ Partial Public Class IstatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClientiGiornoPrec() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeIstatC59.ClientiGiornoPrecColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ClientiGiornoPrec' nella tabella 'StoricoPresenzeIstatC5"& _ 
+                            "9' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeIstatC59.ClientiGiornoPrecColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClientiArrivati() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeIstatC59.ClientiArrivatiColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ClientiArrivati' nella tabella 'StoricoPresenzeIstatC59'"& _ 
+                            " è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeIstatC59.ClientiArrivatiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClientiPartiti() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeIstatC59.ClientiPartitiColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ClientiPartiti' nella tabella 'StoricoPresenzeIstatC59' "& _ 
+                            "è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeIstatC59.ClientiPartitiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property TotaleClienti() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeIstatC59.TotaleClientiColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'TotaleClienti' nella tabella 'StoricoPresenzeIstatC59' è"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeIstatC59.TotaleClientiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClientiPresentiNotte() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableStoricoPresenzeIstatC59.ClientiPresentiNotteColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'ClientiPresentiNotte' nella tabella 'StoricoPresenzeIsta"& _ 
+                            "tC59' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStoricoPresenzeIstatC59.ClientiPresentiNotteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsNumeroNull() As Boolean
             Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.NumeroColumn)
         End Function
@@ -1510,6 +1655,66 @@ Partial Public Class IstatDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetNumeroStelleNull()
             Me(Me.tableStoricoPresenzeIstatC59.NumeroStelleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsClientiGiornoPrecNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.ClientiGiornoPrecColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetClientiGiornoPrecNull()
+            Me(Me.tableStoricoPresenzeIstatC59.ClientiGiornoPrecColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsClientiArrivatiNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.ClientiArrivatiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetClientiArrivatiNull()
+            Me(Me.tableStoricoPresenzeIstatC59.ClientiArrivatiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsClientiPartitiNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.ClientiPartitiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetClientiPartitiNull()
+            Me(Me.tableStoricoPresenzeIstatC59.ClientiPartitiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTotaleClientiNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.TotaleClientiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTotaleClientiNull()
+            Me(Me.tableStoricoPresenzeIstatC59.TotaleClientiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsClientiPresentiNotteNull() As Boolean
+            Return Me.IsNull(Me.tableStoricoPresenzeIstatC59.ClientiPresentiNotteColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetClientiPresentiNotteNull()
+            Me(Me.tableStoricoPresenzeIstatC59.ClientiPresentiNotteColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2233,6 +2438,11 @@ Namespace IstatDataSetTableAdapters
             tableMapping.ColumnMappings.Add("TipoEsercizio", "TipoEsercizio")
             tableMapping.ColumnMappings.Add("Denominazione", "Denominazione")
             tableMapping.ColumnMappings.Add("NumeroStelle", "NumeroStelle")
+            tableMapping.ColumnMappings.Add("ClientiGiornoPrec", "ClientiGiornoPrec")
+            tableMapping.ColumnMappings.Add("ClientiArrivati", "ClientiArrivati")
+            tableMapping.ColumnMappings.Add("ClientiPartiti", "ClientiPartiti")
+            tableMapping.ColumnMappings.Add("TotaleClienti", "TotaleClienti")
+            tableMapping.ColumnMappings.Add("ClientiPresentiNotte", "ClientiPresentiNotte")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2242,7 +2452,11 @@ Namespace IstatDataSetTableAdapters
                 ") OR (`Anno` = ?)) AND ((? = 1 AND `Comune` IS NULL) OR (`Comune` = ?)) AND ((? "& _ 
                 "= 1 AND `TipoEsercizio` IS NULL) OR (`TipoEsercizio` = ?)) AND ((? = 1 AND `Deno"& _ 
                 "minazione` IS NULL) OR (`Denominazione` = ?)) AND ((? = 1 AND `NumeroStelle` IS "& _ 
-                "NULL) OR (`NumeroStelle` = ?)))"
+                "NULL) OR (`NumeroStelle` = ?)) AND ((? = 1 AND `ClientiGiornoPrec` IS NULL) OR ("& _ 
+                "`ClientiGiornoPrec` = ?)) AND ((? = 1 AND `ClientiArrivati` IS NULL) OR (`Client"& _ 
+                "iArrivati` = ?)) AND ((? = 1 AND `ClientiPartiti` IS NULL) OR (`ClientiPartiti` "& _ 
+                "= ?)) AND ((? = 1 AND `TotaleClienti` IS NULL) OR (`TotaleClienti` = ?)) AND ((?"& _ 
+                " = 1 AND `ClientiPresentiNotte` IS NULL) OR (`ClientiPresentiNotte` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2261,11 +2475,22 @@ Namespace IstatDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Denominazione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Denominazione", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroStelle", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroStelle", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `StoricoPresenzeIstatC59` (`Numero`, `Giorno`, `Mese`, `Anno`, `Comun"& _ 
-                "e`, `TipoEsercizio`, `Denominazione`, `NumeroStelle`) VALUES (?, ?, ?, ?, ?, ?, "& _ 
-                "?, ?)"
+                "e`, `TipoEsercizio`, `Denominazione`, `NumeroStelle`, `ClientiGiornoPrec`, `Clie"& _ 
+                "ntiArrivati`, `ClientiPartiti`, `TotaleClienti`, `ClientiPresentiNotte`) VALUES "& _ 
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Giorno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Giorno", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2275,16 +2500,27 @@ Namespace IstatDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TipoEsercizio", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipoEsercizio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Denominazione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Denominazione", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroStelle", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `StoricoPresenzeIstatC59` SET `Numero` = ?, `Giorno` = ?, `Mese` = ?, `Ann"& _ 
                 "o` = ?, `Comune` = ?, `TipoEsercizio` = ?, `Denominazione` = ?, `NumeroStelle` ="& _ 
-                " ? WHERE ((`Id` = ?) AND ((? = 1 AND `Numero` IS NULL) OR (`Numero` = ?)) AND (("& _ 
-                "? = 1 AND `Giorno` IS NULL) OR (`Giorno` = ?)) AND ((? = 1 AND `Mese` IS NULL) O"& _ 
-                "R (`Mese` = ?)) AND ((? = 1 AND `Anno` IS NULL) OR (`Anno` = ?)) AND ((? = 1 AND"& _ 
-                " `Comune` IS NULL) OR (`Comune` = ?)) AND ((? = 1 AND `TipoEsercizio` IS NULL) O"& _ 
-                "R (`TipoEsercizio` = ?)) AND ((? = 1 AND `Denominazione` IS NULL) OR (`Denominaz"& _ 
-                "ione` = ?)) AND ((? = 1 AND `NumeroStelle` IS NULL) OR (`NumeroStelle` = ?)))"
+                " ?, `ClientiGiornoPrec` = ?, `ClientiArrivati` = ?, `ClientiPartiti` = ?, `Total"& _ 
+                "eClienti` = ?, `ClientiPresentiNotte` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `Num"& _ 
+                "ero` IS NULL) OR (`Numero` = ?)) AND ((? = 1 AND `Giorno` IS NULL) OR (`Giorno` "& _ 
+                "= ?)) AND ((? = 1 AND `Mese` IS NULL) OR (`Mese` = ?)) AND ((? = 1 AND `Anno` IS"& _ 
+                " NULL) OR (`Anno` = ?)) AND ((? = 1 AND `Comune` IS NULL) OR (`Comune` = ?)) AND"& _ 
+                " ((? = 1 AND `TipoEsercizio` IS NULL) OR (`TipoEsercizio` = ?)) AND ((? = 1 AND "& _ 
+                "`Denominazione` IS NULL) OR (`Denominazione` = ?)) AND ((? = 1 AND `NumeroStelle"& _ 
+                "` IS NULL) OR (`NumeroStelle` = ?)) AND ((? = 1 AND `ClientiGiornoPrec` IS NULL)"& _ 
+                " OR (`ClientiGiornoPrec` = ?)) AND ((? = 1 AND `ClientiArrivati` IS NULL) OR (`C"& _ 
+                "lientiArrivati` = ?)) AND ((? = 1 AND `ClientiPartiti` IS NULL) OR (`ClientiPart"& _ 
+                "iti` = ?)) AND ((? = 1 AND `TotaleClienti` IS NULL) OR (`TotaleClienti` = ?)) AN"& _ 
+                "D ((? = 1 AND `ClientiPresentiNotte` IS NULL) OR (`ClientiPresentiNotte` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Giorno", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Giorno", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2294,6 +2530,11 @@ Namespace IstatDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TipoEsercizio", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TipoEsercizio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Denominazione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Denominazione", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroStelle", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Numero", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Numero", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2311,13 +2552,23 @@ Namespace IstatDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Denominazione", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Denominazione", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroStelle", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroStelle", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroStelle", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiGiornoPrec", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiGiornoPrec", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiArrivati", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiArrivati", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiPartiti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPartiti", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TotaleClienti", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotaleClienti", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientiPresentiNotte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientiPresentiNotte", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString12
+            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString13
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2327,7 +2578,8 @@ Namespace IstatDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Id, Numero, Giorno, Mese, Anno, Comune, TipoEsercizio, Denominazione, Nume"& _ 
-                "roStelle FROM StoricoPresenzeIstatC59"
+                "roStelle, ClientiGiornoPrec, ClientiArrivati, ClientiPartiti, TotaleClienti, Cli"& _ 
+                "entiPresentiNotte FROM StoricoPresenzeIstatC59"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2387,7 +2639,7 @@ Namespace IstatDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_Giorno As String, ByVal Original_Mese As String, ByVal Original_Anno As String, ByVal Original_Comune As String, ByVal Original_TipoEsercizio As String, ByVal Original_Denominazione As String, ByVal Original_NumeroStelle As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_Giorno As String, ByVal Original_Mese As String, ByVal Original_Anno As String, ByVal Original_Comune As String, ByVal Original_TipoEsercizio As String, ByVal Original_Denominazione As String, ByVal Original_NumeroStelle As String, ByVal Original_ClientiGiornoPrec As Global.System.Nullable(Of Integer), ByVal Original_ClientiArrivati As Global.System.Nullable(Of Integer), ByVal Original_ClientiPartiti As Global.System.Nullable(Of Integer), ByVal Original_TotaleClienti As Global.System.Nullable(Of Integer), ByVal Original_ClientiPresentiNotte As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_Numero.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -2445,6 +2697,41 @@ Namespace IstatDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_NumeroStelle,String)
             End If
+            If (Original_ClientiGiornoPrec.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_ClientiGiornoPrec.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiArrivati.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_ClientiArrivati.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiPartiti.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_ClientiPartiti.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TotaleClienti.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_TotaleClienti.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiPresentiNotte.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_ClientiPresentiNotte.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2464,7 +2751,7 @@ Namespace IstatDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Numero As Global.System.Nullable(Of Integer), ByVal Giorno As String, ByVal Mese As String, ByVal Anno As String, ByVal Comune As String, ByVal TipoEsercizio As String, ByVal Denominazione As String, ByVal NumeroStelle As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Numero As Global.System.Nullable(Of Integer), ByVal Giorno As String, ByVal Mese As String, ByVal Anno As String, ByVal Comune As String, ByVal TipoEsercizio As String, ByVal Denominazione As String, ByVal NumeroStelle As String, ByVal ClientiGiornoPrec As Global.System.Nullable(Of Integer), ByVal ClientiArrivati As Global.System.Nullable(Of Integer), ByVal ClientiPartiti As Global.System.Nullable(Of Integer), ByVal TotaleClienti As Global.System.Nullable(Of Integer), ByVal ClientiPresentiNotte As Global.System.Nullable(Of Integer)) As Integer
             If (Numero.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Numero.Value,Integer)
             Else
@@ -2505,6 +2792,31 @@ Namespace IstatDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(NumeroStelle,String)
             End If
+            If (ClientiGiornoPrec.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(ClientiGiornoPrec.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiArrivati.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(ClientiArrivati.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiPartiti.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(ClientiPartiti.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (TotaleClienti.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(TotaleClienti.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiPresentiNotte.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(ClientiPresentiNotte.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2533,6 +2845,11 @@ Namespace IstatDataSetTableAdapters
                     ByVal TipoEsercizio As String,  _
                     ByVal Denominazione As String,  _
                     ByVal NumeroStelle As String,  _
+                    ByVal ClientiGiornoPrec As Global.System.Nullable(Of Integer),  _
+                    ByVal ClientiArrivati As Global.System.Nullable(Of Integer),  _
+                    ByVal ClientiPartiti As Global.System.Nullable(Of Integer),  _
+                    ByVal TotaleClienti As Global.System.Nullable(Of Integer),  _
+                    ByVal ClientiPresentiNotte As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_Numero As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Giorno As String,  _
@@ -2541,7 +2858,12 @@ Namespace IstatDataSetTableAdapters
                     ByVal Original_Comune As String,  _
                     ByVal Original_TipoEsercizio As String,  _
                     ByVal Original_Denominazione As String,  _
-                    ByVal Original_NumeroStelle As String) As Integer
+                    ByVal Original_NumeroStelle As String,  _
+                    ByVal Original_ClientiGiornoPrec As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_ClientiArrivati As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_ClientiPartiti As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_TotaleClienti As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_ClientiPresentiNotte As Global.System.Nullable(Of Integer)) As Integer
             If (Numero.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Numero.Value,Integer)
             Else
@@ -2582,62 +2904,122 @@ Namespace IstatDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(NumeroStelle,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Id,Integer)
-            If (Original_Numero.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Numero.Value,Integer)
+            If (ClientiGiornoPrec.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(ClientiGiornoPrec.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiArrivati.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ClientiArrivati.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiPartiti.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(ClientiPartiti.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_Giorno Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            If (TotaleClienti.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(TotaleClienti.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Giorno,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (ClientiPresentiNotte.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(ClientiPresentiNotte.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Id,Integer)
+            If (Original_Numero.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Numero.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Giorno Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Giorno,String)
             End If
             If (Original_Mese Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Mese,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Mese,String)
             End If
             If (Original_Anno Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Anno,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Anno,String)
             End If
             If (Original_Comune Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Comune,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Comune,String)
             End If
             If (Original_TipoEsercizio Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_TipoEsercizio,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_TipoEsercizio,String)
             End If
             If (Original_Denominazione Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Denominazione,String)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Denominazione,String)
             End If
             If (Original_NumeroStelle Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_NumeroStelle,String)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_NumeroStelle,String)
+            End If
+            If (Original_ClientiGiornoPrec.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_ClientiGiornoPrec.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiArrivati.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_ClientiArrivati.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiPartiti.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_ClientiPartiti.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TotaleClienti.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_TotaleClienti.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ClientiPresentiNotte.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_ClientiPresentiNotte.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

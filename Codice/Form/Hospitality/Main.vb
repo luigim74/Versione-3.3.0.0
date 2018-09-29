@@ -11791,7 +11791,7 @@ Friend Class frmMain
    ' DA_FARE: Terminare!
    Private Sub eui_PCamere_PrenIstat_Click(sender As Object, e As EventArgs) Handles eui_PCamere_PrenIstat.Click
       ' Elabora tutti i dati per creare il report del Modello Istat C/59.
-      g_frmPlanningCamere.ElaboraModelloIstaC59()
+      g_frmPlanningCamere.ElaboraModelloIstaC59(Today.ToShortDateString)
 
       ' Apre il documento Modello Istat C/59.
       g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)

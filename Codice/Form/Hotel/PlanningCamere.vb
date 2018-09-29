@@ -1377,7 +1377,41 @@ Public Class PlanningCamere
       End Try
    End Function
 
-   Public Sub ElaboraModelloIstaC59()
+   Private Function LeggiNumeroClientiGiornoPrec() As String
+      Try
+         Dim DatiConfig As New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         If DatiConfig.GetValue("NumeroClientiGiornoPrec") <> String.Empty Then
+            Return DatiConfig.GetValue("NumeroClientiGiornoPrec").ToString
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Private Sub SalvaNumeroClientiGiornoPrec(ByVal numeroClienti As String)
+      Try
+         Dim DatiConfig As New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         DatiConfig.SetValue("NumeroClientiGiornoPrec", numeroClienti)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Function ElaboraModelloIstaC59(ByVal dataOggi As Date) As Integer
       Try
          Dim CStoricoPresenzeIstatC59 As New StoricoPresenzeIstatC59
          Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
@@ -1386,27 +1420,22 @@ Public Class PlanningCamere
          Dim datiClientiItaliani As String()
          Dim datiClientiStranieri As String()
 
-         ' Salva i dati per l'intestazione del documento.
-         With CStoricoPresenzeIstatC59
-            .EliminaDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+         Dim arrivatiNaz As Integer
+         Dim arrivatiProv As Integer
+         Dim partitiNaz As Integer
+         Dim partitiProv As Integer
 
-            .Numero = "10" ' Leggere progressivo.
-            .Giorno = Today.Day.ToString
-            .Mese = Today.Month.ToString
-            .Anno = Today.Year.ToString
-            .Comune = LeggiComuneAzienda()
-            .TipoEsercizio = LeggiTipoEsercizio()
-            .Denominazione = LeggiRagSocAzienda()
-            .NumeroStelle = LeggiNumeroStelle()
-
-            .InserisciDati(TAB_STORICO_PRESENZE_ISTAT_C59)
-         End With
+         Dim clientiGiornoPrec As Integer
+         Dim clientiArrivati As Integer
+         Dim clientiPartiti As Integer
+         Dim totaleClienti As Integer
+         Dim clientiPresentiNotte As Integer
 
          ' Calcola il toale dei clienti italiani arrivati e partiti del giorno corrente.
-         listaClientiItaliani = CalcolaClientiItaliani(Today.ToShortDateString)
+         listaClientiItaliani = CalcolaClientiItaliani(dataOggi.ToShortDateString)
 
          ' Calcola il toale dei clienti stranieri arrivati e partiti del giorno corrente.
-         listaClientiStranieri = CalcolaClientiStranieri(Today.ToShortDateString)
+         listaClientiStranieri = CalcolaClientiStranieri(dataOggi.ToShortDateString)
 
          ' Unisce i dati dei clienti italiani e stranieri su un'unica riga e li salva in una tabella del database per essere caricati dal Report di stampa.
          With CStoricoPresenzeIstat
@@ -1436,7 +1465,6 @@ Public Class PlanningCamere
                   datiClientiStranieri(2) = "0"
                End If
 
-               ' DA_FARE: Modificare! Se non ci sono valori non inserire il record.
                If datiClientiStranieri(1) = "0" And datiClientiStranieri(2) = "0" And datiClientiItaliani(1) = "0" And datiClientiItaliani(2) = "0" Then
                   .Numero = 0
                   .Nazionalità = String.Empty
@@ -1447,12 +1475,23 @@ Public Class PlanningCamere
                   .PartitiProv = 0
                Else
                   .Numero = i
-                  .Nazionalità = datiClientiStranieri(0)
                   .ArrivatiNaz = Convert.ToInt32(datiClientiStranieri(1))
                   .PartitiNaz = Convert.ToInt32(datiClientiStranieri(2))
-                  .Provincia = datiClientiItaliani(0)
+
+                  If .ArrivatiNaz = 0 And .PartitiNaz = 0 Then
+                     .Nazionalità = String.Empty
+                  Else
+                     .Nazionalità = datiClientiStranieri(0)
+                  End If
+
                   .ArrivatiProv = Convert.ToInt32(datiClientiItaliani(1))
                   .PartitiProv = Convert.ToInt32(datiClientiItaliani(2))
+
+                  If .ArrivatiProv = 0 And .PartitiProv = 0 Then
+                     .Provincia = String.Empty
+                  Else
+                     .Provincia = datiClientiItaliani(0)
+                  End If
 
                   .InserisciDati(TAB_STORICO_PRESENZE_ISTAT)
                End If
@@ -1461,21 +1500,79 @@ Public Class PlanningCamere
             ' Calcola i totali.
             .Numero = 0
             .Nazionalità = "TOTALE STRANIERI"
-            .ArrivatiNaz = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "ArrivatiNaz")
-            .PartitiNaz = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "PartitiNaz")
+
+            arrivatiNaz = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "ArrivatiNaz")
+            .ArrivatiNaz = arrivatiNaz
+            If .ArrivatiNaz = 0 Then
+               .ArrivatiNaz = -1
+            End If
+
+            partitiNaz = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "PartitiNaz")
+            .PartitiNaz = partitiNaz
+            If .PartitiNaz = 0 Then
+               .PartitiNaz = -1
+            End If
+
             .Provincia = "TOTALE ITALIANI"
-            .ArrivatiProv = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "ArrivatiProv")
-            .PartitiProv = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "PartitiProv")
+
+            arrivatiProv = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "ArrivatiProv")
+            .ArrivatiProv = arrivatiProv
+            If .ArrivatiProv = 0 Then
+               .ArrivatiProv = -1
+            End If
+
+            partitiProv = SommaValoriColonna(TAB_STORICO_PRESENZE_ISTAT, "PartitiProv")
+            .PartitiProv = partitiProv
+            If .PartitiProv = 0 Then
+               .PartitiProv = -1
+            End If
 
             .InserisciDati(TAB_STORICO_PRESENZE_ISTAT)
          End With
+
+         ' Calcola il numero dei clienti...
+         clientiGiornoPrec = 0
+         clientiArrivati = arrivatiNaz + arrivatiProv
+         totaleClienti = clientiGiornoPrec + clientiArrivati
+         clientiPartiti = partitiNaz + partitiProv
+         clientiPresentiNotte = totaleClienti - clientiPartiti
+
+         ' Salva i dati per l'intestazione del documento.
+         With CStoricoPresenzeIstatC59
+            .EliminaDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+
+            ' DA_FARE: Sviluppare! Leggere progressivo.
+            .Numero = "10"
+            .Giorno = dataOggi.Day.ToString
+            .Mese = dataOggi.Month.ToString
+            .Anno = dataOggi.Year.ToString
+
+            .Comune = LeggiComuneAzienda()
+            .TipoEsercizio = LeggiTipoEsercizio()
+            .Denominazione = LeggiRagSocAzienda()
+            .NumeroStelle = LeggiNumeroStelle()
+            .ClientiGiornoPrec = clientiGiornoPrec
+            .ClientiArrivati = clientiArrivati
+            .TotaleClienti = totaleClienti
+            .ClientiPartiti = clientiPartiti
+            .ClientiPresentiNotte = clientiPresentiNotte
+
+            .InserisciDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+         End With
+
+         ' Salva i clienti per il campo Clienti del giorno precedente.
+         'SalvaNumeroClientiGiornoPrec(clientiPresentiNotte)
+
+         Return clientiPresentiNotte
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Return 0
+
       End Try
-   End Sub
+   End Function
 
    Public Sub AnteprimaDiStampa(ByVal nomeDoc As String)
       Try
