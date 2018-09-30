@@ -1377,41 +1377,61 @@ Public Class PlanningCamere
       End Try
    End Function
 
-   Private Function LeggiNumeroClientiGiornoPrec() As String
-      Try
-         Dim DatiConfig As New AppConfig
-         DatiConfig.ConfigType = ConfigFileType.AppConfig
+   Private Function CalcolaNumeroClientiGiornoPrec(ByVal data As Date) As Integer
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim numClienti As Integer
+      Dim adulti As Integer
+      Dim bambini As Integer
+      Dim ragazzi As Integer
 
-         If DatiConfig.GetValue("NumeroClientiGiornoPrec") <> String.Empty Then
-            Return DatiConfig.GetValue("NumeroClientiGiornoPrec").ToString
-         Else
-            Return String.Empty
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
          End If
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_PRENOTAZIONI & " WHERE #" & data & "# BETWEEN DataArrivo AND DataPartenza", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            If IsDBNull(dr.Item("Adulti")) = False Then
+               adulti = Convert.ToInt32(dr.Item("Adulti"))
+            Else
+               adulti = 0
+            End If
+
+            If IsDBNull(dr.Item("Bambini")) = False Then
+               bambini = Convert.ToInt32(dr.Item("Bambini"))
+            Else
+               bambini = 0
+            End If
+            If IsDBNull(dr.Item("Ragazzi")) = False Then
+               ragazzi = Convert.ToInt32(dr.Item("Ragazzi"))
+            Else
+               ragazzi = 0
+            End If
+
+            numClienti = numClienti + adulti + bambini + ragazzi
+         Loop
+
+         Return numClienti
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return String.Empty
+         Return 0
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
 
       End Try
    End Function
 
-   Private Sub SalvaNumeroClientiGiornoPrec(ByVal numeroClienti As String)
-      Try
-         Dim DatiConfig As New AppConfig
-         DatiConfig.ConfigType = ConfigFileType.AppConfig
-
-         DatiConfig.SetValue("NumeroClientiGiornoPrec", numeroClienti)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Function ElaboraModelloIstaC59(ByVal dataOggi As Date) As Integer
+   Public Sub ElaboraModelloIstaC59(ByVal dataOggi As Date)
       Try
          Dim CStoricoPresenzeIstatC59 As New StoricoPresenzeIstatC59
          Dim CStoricoPresenzeIstat As New StoricoPresenzeIstat
@@ -1531,7 +1551,7 @@ Public Class PlanningCamere
          End With
 
          ' Calcola il numero dei clienti...
-         clientiGiornoPrec = 0
+         clientiGiornoPrec = CalcolaNumeroClientiGiornoPrec(dataOggi.AddDays(-1))
          clientiArrivati = arrivatiNaz + arrivatiProv
          totaleClienti = clientiGiornoPrec + clientiArrivati
          clientiPartiti = partitiNaz + partitiProv
@@ -1560,19 +1580,12 @@ Public Class PlanningCamere
             .InserisciDati(TAB_STORICO_PRESENZE_ISTAT_C59)
          End With
 
-         ' Salva i clienti per il campo Clienti del giorno precedente.
-         'SalvaNumeroClientiGiornoPrec(clientiPresentiNotte)
-
-         Return clientiPresentiNotte
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return 0
-
       End Try
-   End Function
+   End Sub
 
    Public Sub AnteprimaDiStampa(ByVal nomeDoc As String)
       Try

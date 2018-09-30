@@ -1323,3 +1323,49 @@
 "- NOME PROCEDURA:    in Hospitality_Solution.PlanningCamere.ElaboraModelloIstaC59(DateTime dataOggi) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1458"
 "
 "
+"*** 30/09/2018 - 17:38:06 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella data nell'espressione della query '29/09/2018 BETWEEN #DataArrivo# AND #DataPartenza#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.PlanningCamere.CalcolaNumeroClientiGiornoPrec(DateTime data) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hotel\PlanningCamere.vb:riga 1429"
+"
+"
+"*** 30/09/2018 - 17:53:49 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+"
+"
+"*** 30/09/2018 - 17:53:52 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\Clienti.vb:riga 2300"
+"
+"
+"*** 30/09/2018 - 17:54:00 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 675"
+"
+"
+"*** 30/09/2018 - 17:54:01 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\AnagTab.vb:riga 982
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\Clienti.vb:riga 2300"
+"
+"
