@@ -1,6 +1,5 @@
 #Region " DATI FILE.VB "
 ' ******************************************************************
-' Nome form:            frmPrenCamera
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/01/2005
 ' Data ultima modifica: 25/08/2018

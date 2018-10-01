@@ -1369,3 +1369,35 @@
    in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Ristorante\Clienti.vb:riga 2300"
 "
 "
+"*** 01/10/2018 - 21:03:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13786"
+"
+"
+"*** 01/10/2018 - 21:34:51 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13786"
+"
+"
+"*** 01/10/2018 - 21:38:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13786"
+"
+"
+"*** 01/10/2018 - 21:40:43 ***"
+"- DESCRIZIONE ERRORE: Impossibile risolvere il nome remoto.: 'www.montanasoftware.it'"
+"- NOME PROCEDURA:    in System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   in System.Net.WebClient.DownloadFile(String address, String fileName)
+   in Hospitality_Solution.WebCommunication.LeggiFile(String percorsoRemoto, String percorsoLocale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Classi\WebCommunication.vb:riga 31
+   in Hospitality_Solution.frmMain.VerificaAggiornamenti(Boolean msg) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 13786"
+"
+"

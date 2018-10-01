@@ -3811,7 +3811,7 @@ Public Class frmOpzioni
             ckbApplicaTassaRagazzi.Checked = False
          End If
 
-         ' Schedine PS / Mod .ISTAT C59
+         ' Numerazione progressiva Schedine PS
          txtNumeroSchedinaPS.Text = DatiConfig.GetValue("NumeroSchedina")
          If IsNumeric(txtNumeroSchedinaPS.Text) = False Then
             Dim num As Integer = LeggiNumeroMaxSchedine(TAB_SCHEDINE)
@@ -3822,15 +3822,14 @@ Public Class frmOpzioni
             End If
          End If
 
-         'txtNumeroRicevuta.Text = DatiConfig.GetValue("NumeroRicevuta")
-         'If IsNumeric(txtNumeroRicevuta.Text) = False Then
-         '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_RF)
-         '   If num = 0 Then
-         '      txtNumeroRicevuta.Text = "1"
-         '   Else
-         '      txtNumeroRicevuta.Text = (num + 1).ToString
-         '   End If
-         'End If
+         ' Numerazione progressiva Modello ISTAT C/59
+         Dim numMod As Integer
+         numMod = DatiConfig.GetValue("NumeroModC59")
+         If IsNumeric(numMod) = False Then
+            txtNumeroModC59.Text = "1"
+         Else
+            txtNumeroModC59.Text = numMod.ToString
+         End If
 
          ' SCHEDA CENTRO SPORTIVO.
 
@@ -4401,7 +4400,7 @@ Public Class frmOpzioni
          DatiConfig.SetValue("ApplicaTassaRagazzi", ckbApplicaTassaRagazzi.Checked)
          'ApplicaTassaRagazzi = ckbApplicaTassaRagazzi.Checked
 
-         ' Schedine PS / Mod. ISTAT C59
+         ' Numerazione progressiva Schedine PS.
          If IsNumeric(txtNumeroSchedinaPS.Text) = False Then
             Dim num As Integer = LeggiNumeroMaxSchedine(TAB_SCHEDINE)
             If num = 0 Then
@@ -4413,17 +4412,12 @@ Public Class frmOpzioni
             DatiConfig.SetValue("NumeroSchedina", txtNumeroSchedinaPS.Text)
          End If
 
-         ' DA_FARE: Terminare!
-         'If IsNumeric(txtNumeroRicevuta.Text) = False Then
-         '   Dim num As Integer = LeggiNumeroMax(TAB_DOC, TIPO_DOC_RF)
-         '   If num = 0 Then
-         '      DatiConfig.SetValue("NumeroRicevuta", "1")
-         '   Else
-         '      DatiConfig.SetValue("NumeroRicevuta", (num + 1).ToString)
-         '   End If
-         'Else
-         '   DatiConfig.SetValue("NumeroRicevuta", txtNumeroRicevuta.Text)
-         'End If
+         ' Numerazione progressiva Modello ISTAT C/59.
+         If IsNumeric(txtNumeroModC59.Text) = False Then
+            DatiConfig.SetValue("NumeroModC59", "1")
+         Else
+            DatiConfig.SetValue("NumeroModC59", txtNumeroModC59.Text)
+         End If
 
          ' SCHEDA CENTRO SPORTIVO.
 

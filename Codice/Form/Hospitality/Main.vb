@@ -11790,11 +11790,16 @@ Friend Class frmMain
 
    ' DA_FARE: Terminare!
    Private Sub eui_PCamere_PrenIstat_Click(sender As Object, e As EventArgs) Handles eui_PCamere_PrenIstat.Click
-      ' Elabora tutti i dati per creare il report del Modello Istat C/59.
-      g_frmPlanningCamere.ElaboraModelloIstaC59(Today.ToShortDateString)
+      Try
+         ' Apre la finestra per la selezione della data.
+         Dim frm As New DataModIstatC59(g_frmPlanningCamere.dtpDataPlanning.Value)
+         frm.ShowDialog()
 
-      ' Apre il documento Modello Istat C/59.
-      g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 #End Region
@@ -15766,6 +15771,46 @@ Friend Class frmMain
    End Sub
 
 #End Region
+
+#Region " Modello Istat C/59 "
+
+   Public Function LeggiNumeroModelloIstatC59() As Integer
+      Try
+         Dim DatiConfig As AppConfig
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         If IsNumeric(DatiConfig.GetValue("NumeroModC59")) = False Then
+            Return 1
+         Else
+            ' Legge dal file di configurazione.
+            Return Convert.ToInt32(DatiConfig.GetValue("NumeroModC59"))
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+   Public Sub SalvaNumeroModelloIstatC59(ByVal numDoc As Integer)
+      Try
+         Dim DatiConfig As AppConfig
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         DatiConfig.SetValue("NumeroModC59", (numDoc + 1).ToString)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+#End Region
+
 
    Public Sub SalvaDatiPenDriveRecovery()
       ' Se il modulo Pen Drive Recovery è attivo

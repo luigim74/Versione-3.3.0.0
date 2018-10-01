@@ -1,16 +1,13 @@
 ﻿#Region " DATI FILE.VB "
 
 ' ******************************************************************
-' Nome form:            PlanningCamere
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2016
-' Data ultima modifica: 23/08/2018
+' Data ultima modifica: 01/10/2018
 ' Descrizione:          Planning prenotazioni Camere.
 ' Note:
 
 ' Elenco Attivita: 
-'
-' DA_FARE_A: Sviluppare comando Genera Schedina.
 
 ' ******************************************************************
 
@@ -1562,11 +1559,10 @@ Public Class PlanningCamere
             .EliminaDati(TAB_STORICO_PRESENZE_ISTAT_C59)
 
             ' DA_FARE: Sviluppare! Leggere progressivo.
-            .Numero = "10"
+            .Numero = g_frmMain.LeggiNumeroModelloIstatC59
             .Giorno = dataOggi.Day.ToString
             .Mese = dataOggi.Month.ToString
             .Anno = dataOggi.Year.ToString
-
             .Comune = LeggiComuneAzienda()
             .TipoEsercizio = LeggiTipoEsercizio()
             .Denominazione = LeggiRagSocAzienda()
@@ -1578,6 +1574,8 @@ Public Class PlanningCamere
             .ClientiPresentiNotte = clientiPresentiNotte
 
             .InserisciDati(TAB_STORICO_PRESENZE_ISTAT_C59)
+
+            g_frmMain.SalvaNumeroModelloIstatC59(.Numero)
          End With
 
       Catch ex As Exception
