@@ -12,14 +12,16 @@
 #End Region
 
 Public Class DataModIstatC59
+   Dim nomeForm As String
    Dim dataGestione As Date
 
-   Public Sub New(ByVal data As Date)
+   Public Sub New(ByVal form As String, ByVal data As Date)
 
       ' La chiamata è richiesta dalla finestra di progettazione.
       InitializeComponent()
 
       dataGestione = data
+      nomeForm = form
 
       ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
 
@@ -41,10 +43,17 @@ Public Class DataModIstatC59
          Me.Hide()
 
          ' Elabora tutti i dati per creare il report del Modello Istat C/59.
-         g_frmPlanningCamere.ElaboraModelloIstaC59(eui_dtpDataGestione.Value.Value.ToShortDateString)
+         g_frmMain.ElaboraModelloIstaC59(eui_dtpDataGestione.Value.Value.ToShortDateString)
 
          ' Apre il documento Modello Istat C/59.
-         g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+         Select Case nomeForm
+            Case "PlanningCamere"
+               g_frmPlanningCamere.AnteprimaDiStampa(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+
+            Case "ElencoPrenCamere"
+               g_frmPrenCamere.AnteprimaDiStampaModIstatC59(PERCORSO_REP_MODELLO_ISTAT_59_A4)
+
+         End Select
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

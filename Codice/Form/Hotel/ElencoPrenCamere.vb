@@ -24,6 +24,8 @@ Public Class ElencoPrenCamere
 
    Public Const TAB_PRENOTAZIONI As String = "PrenCamere"
    Public Const TAB_CAMERE As String = "Camere"
+   Public Const TAB_STORICO_PRESENZE_ISTAT As String = "StoricoPresenzeIstat"
+   Public Const TAB_STORICO_PRESENZE_ISTAT_C59 As String = "StoricoPresenzeIstatC59"
 
    Public Const COLONNA_ID_DOC As Short = 0
    Public Const COLONNA_NUMERO_PREN As Short = 1
@@ -2024,6 +2026,41 @@ Public Class ElencoPrenCamere
 
       End Try
    End Sub
+
+   Public Sub AnteprimaDiStampaModIstatC59(ByVal nomeDoc As String)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         ' Tabella StoricoPresenzeIstatC59.
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand("Select * FROM " & TAB_STORICO_PRESENZE_ISTAT_C59, cn)
+         Dim ds As New IstatDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, TAB_STORICO_PRESENZE_ISTAT_C59)
+
+         ' Tabella StoricoPresenzeIstat.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand("Select * FROM " & TAB_STORICO_PRESENZE_ISTAT, cn)
+         oleAdapter1.Fill(ds, TAB_STORICO_PRESENZE_ISTAT)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepIstat(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+
+   End Sub
+
 
    Private Sub ElencoPrenCamere_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 

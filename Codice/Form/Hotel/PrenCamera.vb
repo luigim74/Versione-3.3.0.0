@@ -2735,8 +2735,7 @@ Public Class frmPrenCamera
       'End Try
    End Function
 
-   ' DA_FARE_A: Verificare il funzionamento della procedura 'VerificaDisponibilit‡Camera'.
-   Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date) As Boolean
+   Private Function VerificaDisponibilit‡Camera(ByVal numeroCamera As String, ByVal dataDal As Date, ByVal dataAl As Date, ByVal idPren As String) As Boolean
       Try
          ' Se il numero della camera non Ë stato assegnato non verifica la disponibilit‡. 
          If numeroCamera = VALORE_NESSUNA Then
@@ -2754,7 +2753,7 @@ Public Class frmPrenCamera
          End If
 
          '  Leggo tutte le prenotazioni della camera.
-         Dim cmd As New OleDbCommand("SELECT * FROM " & NOME_TABELLA & " WHERE NumeroCamera = '" & numeroCamera & "' ORDER BY DataArrivo ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & NOME_TABELLA & " WHERE NumeroCamera = '" & numeroCamera & "' AND Id <> " & idPren & " ORDER BY DataArrivo ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -3001,7 +3000,7 @@ Public Class frmPrenCamera
                Exit Sub
             End If
 
-            If VerificaDisponibilit‡Camera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date) = True Then
+            If VerificaDisponibilit‡Camera(cmbNumeroCamera.Text, mcDataArrivo.SelectionRange.Start.Date, mcDataPartenza.SelectionRange.Start.Date, Me.Tag) = True Then
                MessageBox.Show("La camera che si vuole prenotare non Ë disponibile per il periodo selezionato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                ' Esegue i calcoli per il totale degli importi.

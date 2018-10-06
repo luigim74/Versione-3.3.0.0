@@ -58,7 +58,7 @@ Partial Class DataModIstatC59
       Me.eui_dtpDataGestione.Location = New System.Drawing.Point(10, 9)
       Me.eui_dtpDataGestione.Name = "eui_dtpDataGestione"
       Me.eui_dtpDataGestione.Size = New System.Drawing.Size(170, 21)
-      Me.eui_dtpDataGestione.TabIndex = 3
+      Me.eui_dtpDataGestione.TabIndex = 0
       Me.eui_dtpDataGestione.TextEditorWidth = 151
       '
       'DataModIstatC59
@@ -68,7 +68,7 @@ Partial Class DataModIstatC59
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(192, 81)
+      Me.ClientSize = New System.Drawing.Size(188, 80)
       Me.ControlBox = False
       Me.Controls.Add(Me.eui_dtpDataGestione)
       Me.Controls.Add(Me.eui_cmdAnnulla)
