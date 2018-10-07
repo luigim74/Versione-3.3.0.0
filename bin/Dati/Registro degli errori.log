@@ -1,0 +1,28 @@
+"*** 07/10/2018 - 16:23:59 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.frmMain.CalcolaClientiItaliani(String data) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 15966"
+"
+"
+"*** 07/10/2018 - 16:24:03 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.ElaboraModelloIstaC59(DateTime dataOggi) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 16282"
+"
+"
+"*** 07/10/2018 - 16:24:30 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.frmMain.CalcolaClientiItaliani(String data) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 15966"
+"
+"
+"*** 07/10/2018 - 16:24:32 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.ElaboraModelloIstaC59(DateTime dataOggi) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\Codice\Form\Hospitality\Main.vb:riga 16282"
+"
+"

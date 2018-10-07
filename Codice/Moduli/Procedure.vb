@@ -3733,6 +3733,9 @@ Module Procedure
             Case NOME_PRODOTTO_HOSPITALITY, NOME_PRODOTTO_HOSPITALITY_SUITE
                myIco = My.Resources.Hospitality_Ico
 
+            Case NOME_PRODOTTO_HOTEL
+               myIco = My.Resources.Hospitality_Ico
+
             Case NOME_PRODOTTO_BAR
                myIco = My.Resources.bar_Ico
 
@@ -3763,6 +3766,9 @@ Module Procedure
             Case NOME_PRODOTTO_HOSPITALITY, NOME_PRODOTTO_HOSPITALITY_SUITE
                myImage = My.Resources.Hospitality_Ico.ToBitmap
 
+            Case NOME_PRODOTTO_HOTEL
+               myImage = My.Resources.Hospitality_Ico.ToBitmap
+
             Case NOME_PRODOTTO_BAR
                myImage = My.Resources.bar_Ico.ToBitmap
 
@@ -3791,6 +3797,9 @@ Module Procedure
          Select Case NOME_PRODOTTO
 
             Case NOME_PRODOTTO_HOSPITALITY, NOME_PRODOTTO_HOSPITALITY_SUITE
+               myImage = My.Resources.Splash_screen_ombra_hospitality
+
+            Case NOME_PRODOTTO_HOTEL
                myImage = My.Resources.Splash_screen_ombra_hospitality
 
             Case NOME_PRODOTTO_BAR

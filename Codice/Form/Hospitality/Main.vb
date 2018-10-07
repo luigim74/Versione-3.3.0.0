@@ -459,7 +459,7 @@ Friend Class frmMain
    Friend WithEvents eui_Strumenti_Periodo_Terminate As ToggleButton
    Friend WithEvents eui_PCamere_PrenAnnulla As Button
    Friend WithEvents eui_Strumenti_Documenti_Stampa_Schedina As Button
-   Friend WithEvents Separator18 As Separator
+   Friend WithEvents sepStatistiche As Separator
    Friend WithEvents Separator22 As Separator
    Friend WithEvents Separator21 As Separator
    Friend WithEvents eui_cmdEsportaTxt As SplitButton
@@ -469,6 +469,8 @@ Friend Class frmMain
    Friend WithEvents eui_cmdArchiviTabelleComuni As Button
    Friend WithEvents eui_cmdArchiviTabelleTipoAlloggiati As Button
    Friend WithEvents eui_Strumenti_Documenti_IstatC59 As Button
+   Friend WithEvents eui_cmdGestioneStatisticheHotel As Button
+   Friend WithEvents sepHotel As Separator
    Friend WithEvents eui_cmdGestionePrenRisorse As Elegant.Ui.Button
 
    <System.Diagnostics.DebuggerStepThrough()>
@@ -736,9 +738,11 @@ Friend Class frmMain
       Me.eui_cmdGestioneClienti = New Elegant.Ui.Button()
       Me.eui_cmdGestioneSchedine = New Elegant.Ui.Button()
       Me.eui_cmdGestioneAcquisti = New Elegant.Ui.Button()
-      Me.Separator18 = New Elegant.Ui.Separator()
+      Me.sepStatistiche = New Elegant.Ui.Separator()
       Me.eui_ddwnGestioneStatistiche = New Elegant.Ui.DropDown()
       Me.PopupMenu6 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdGestioneStatisticheHotel = New Elegant.Ui.Button()
+      Me.sepHotel = New Elegant.Ui.Separator()
       Me.eui_cmdGestioneStatistiche = New Elegant.Ui.Button()
       Me.sepBarRistorante = New Elegant.Ui.Separator()
       Me.eui_cmdGestioneStatisticheRisorse = New Elegant.Ui.Button()
@@ -1278,7 +1282,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1070, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1142, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -2722,11 +2726,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Proforma.Id = "583195b5-3ccf-436e-a5d8-8c817995cb3f"
       Me.eui_Strumenti_Documenti_Proforma.KeyTip = "P"
       Me.eui_Strumenti_Documenti_Proforma.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(66, 2)
       Me.eui_Strumenti_Documenti_Proforma.Name = "eui_Strumenti_Documenti_Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Caption = "Stampa Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Text = "Stampa il conto Proforma per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(54, 72)
+      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(51, 0)
       Me.eui_Strumenti_Documenti_Proforma.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Proforma.TabIndex = 6
       Me.eui_Strumenti_Documenti_Proforma.Text = "Proforma"
@@ -2734,7 +2738,7 @@ Friend Class frmMain
       'eui_Strumenti_Documenti_Sep
       '
       Me.eui_Strumenti_Documenti_Sep.Id = "487ce7ae-a8ea-478c-90af-3ece9659c76f"
-      Me.eui_Strumenti_Documenti_Sep.Location = New System.Drawing.Point(61, 6)
+      Me.eui_Strumenti_Documenti_Sep.Location = New System.Drawing.Point(67, 6)
       Me.eui_Strumenti_Documenti_Sep.Name = "eui_Strumenti_Documenti_Sep"
       Me.eui_Strumenti_Documenti_Sep.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Documenti_Sep.TabIndex = 7
@@ -2745,11 +2749,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Ricevuta.Id = "40fb78a2-d1a2-4d76-9d83-c420f1b36310"
       Me.eui_Strumenti_Documenti_Ricevuta.KeyTip = "R"
       Me.eui_Strumenti_Documenti_Ricevuta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(67, 2)
+      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(66, 74)
       Me.eui_Strumenti_Documenti_Ricevuta.Name = "eui_Strumenti_Documenti_Ricevuta"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Caption = "Ricevuta fiscale"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Text = "Stampa la Ricevuta fiscale per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(49, 72)
+      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(85, 0)
       Me.eui_Strumenti_Documenti_Ricevuta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Ricevuta.TabIndex = 3
       Me.eui_Strumenti_Documenti_Ricevuta.Text = "Ricevuta fiscale"
@@ -2759,11 +2763,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Fattura.Id = "ed4d06e2-69ee-46d8-8703-f665763e7b5e"
       Me.eui_Strumenti_Documenti_Fattura.KeyTip = "F"
       Me.eui_Strumenti_Documenti_Fattura.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(118, 2)
+      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(66, 74)
       Me.eui_Strumenti_Documenti_Fattura.Name = "eui_Strumenti_Documenti_Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Caption = "Stampa Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Text = "Stampa la Fattura per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 0)
       Me.eui_Strumenti_Documenti_Fattura.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Fattura.TabIndex = 0
       Me.eui_Strumenti_Documenti_Fattura.Text = "Fattura"
@@ -2773,11 +2777,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Id = "321eb080-94ff-4f42-acd7-6e69ba51391f"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.KeyTip = "SS"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Stampa_Schedina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Stampa_Schedina.Location = New System.Drawing.Point(162, 2)
+      Me.eui_Strumenti_Documenti_Stampa_Schedina.Location = New System.Drawing.Point(66, 74)
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Name = "eui_Strumenti_Documenti_Stampa_Schedina"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.ScreenTip.Caption = "Schedina P. S."
       Me.eui_Strumenti_Documenti_Stampa_Schedina.ScreenTip.Text = "Stampa la Schedina di Pubbica Sicurezza per l'elemento selezionato."
-      Me.eui_Strumenti_Documenti_Stampa_Schedina.Size = New System.Drawing.Size(52, 72)
+      Me.eui_Strumenti_Documenti_Stampa_Schedina.Size = New System.Drawing.Size(77, 0)
       Me.eui_Strumenti_Documenti_Stampa_Schedina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Stampa_Schedina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Stampa_Schedina.TabIndex = 6
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Text = "Schedina P.S."
@@ -2802,11 +2806,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_IstatC59.Id = "34a3f8f9-2e6d-44aa-ab29-1fa6216b5c74"
       Me.eui_Strumenti_Documenti_IstatC59.KeyTip = "MI"
       Me.eui_Strumenti_Documenti_IstatC59.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_IstatC59.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_IstatC59.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Documenti_IstatC59.Location = New System.Drawing.Point(62, 2)
       Me.eui_Strumenti_Documenti_IstatC59.Name = "eui_Strumenti_Documenti_IstatC59"
       Me.eui_Strumenti_Documenti_IstatC59.ScreenTip.Caption = "Modello Istat C/59"
       Me.eui_Strumenti_Documenti_IstatC59.ScreenTip.Text = "Genera il modello Istat C/59 per la stampa."
-      Me.eui_Strumenti_Documenti_IstatC59.Size = New System.Drawing.Size(54, 72)
+      Me.eui_Strumenti_Documenti_IstatC59.Size = New System.Drawing.Size(96, 0)
       Me.eui_Strumenti_Documenti_IstatC59.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_IstatC59.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_IstatC59.TabIndex = 6
       Me.eui_Strumenti_Documenti_IstatC59.Text = "Modello Istat C/59"
@@ -2816,11 +2820,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Schedina.Id = "8ff6c145-83eb-4912-8e1f-214058db0341"
       Me.eui_Strumenti_Documenti_Schedina.KeyTip = "S"
       Me.eui_Strumenti_Documenti_Schedina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(60, 2)
+      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(62, 2)
       Me.eui_Strumenti_Documenti_Schedina.Name = "eui_Strumenti_Documenti_Schedina"
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Caption = "Schedina P. S."
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Text = "Genera la Schedina di Pubbica Sicurezza per il documento selezionato."
-      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(52, 72)
+      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(77, 0)
       Me.eui_Strumenti_Documenti_Schedina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Schedina.TabIndex = 5
       Me.eui_Strumenti_Documenti_Schedina.Text = "Schedina P.S."
@@ -2828,7 +2832,7 @@ Friend Class frmMain
       'eui_Strumenti_Documenti_Sep1
       '
       Me.eui_Strumenti_Documenti_Sep1.Id = "4a143a9b-d4d1-4655-bc13-df4474f55c31"
-      Me.eui_Strumenti_Documenti_Sep1.Location = New System.Drawing.Point(115, 6)
+      Me.eui_Strumenti_Documenti_Sep1.Location = New System.Drawing.Point(63, 6)
       Me.eui_Strumenti_Documenti_Sep1.Name = "eui_Strumenti_Documenti_Sep1"
       Me.eui_Strumenti_Documenti_Sep1.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Documenti_Sep1.TabIndex = 4
@@ -2839,12 +2843,12 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Invia.Id = "34645938-3532-4bae-a1dd-d81587bc084f"
       Me.eui_Strumenti_Documenti_Invia.KeyTip = "I"
       Me.eui_Strumenti_Documenti_Invia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(121, 2)
+      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(62, 74)
       Me.eui_Strumenti_Documenti_Invia.Name = "eui_Strumenti_Documenti_Invia"
       Me.eui_Strumenti_Documenti_Invia.Popup = Me.PopupMenu14
       Me.eui_Strumenti_Documenti_Invia.ScreenTip.Caption = "Invia E-mail"
       Me.eui_Strumenti_Documenti_Invia.ScreenTip.Text = "Invia il documento selezionato tramite e-mail in formato PDF."
-      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(48, 72)
+      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(71, 0)
       Me.eui_Strumenti_Documenti_Invia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Invia.TabIndex = 2
       Me.eui_Strumenti_Documenti_Invia.Text = "Invia E-mail"
@@ -2898,12 +2902,12 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Esporta.Id = "fb143d4e-04aa-4681-bdf0-22caf76abf9f"
       Me.eui_Strumenti_Documenti_Esporta.KeyTip = "E"
       Me.eui_Strumenti_Documenti_Esporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(171, 2)
+      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(62, 74)
       Me.eui_Strumenti_Documenti_Esporta.Name = "eui_Strumenti_Documenti_Esporta"
       Me.eui_Strumenti_Documenti_Esporta.Popup = Me.PopupMenu13
       Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Caption = "Esporta documento"
       Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Text = "Esporta il documento selezionato in vari formati."
-      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(45, 72)
+      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(53, 0)
       Me.eui_Strumenti_Documenti_Esporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Esporta.TabIndex = 1
       Me.eui_Strumenti_Documenti_Esporta.Text = "Esporta"
@@ -3642,7 +3646,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1070, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1142, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -3697,6 +3701,7 @@ Friend Class frmMain
       Me.eui_ddwnGestioneQuadroGiornaliero.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestioneQuadroGiornaliero.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_ddwnGestioneQuadroGiornaliero.TabIndex = 2
       Me.eui_ddwnGestioneQuadroGiornaliero.Text = "Quadro giornaliero"
+      Me.eui_ddwnGestioneQuadroGiornaliero.Visible = False
       '
       'eui_ddwnGestionePlanningRisorse
       '
@@ -3911,7 +3916,7 @@ Friend Class frmMain
       Me.RibbonGroup15.Controls.Add(Me.eui_cmdGestioneClienti)
       Me.RibbonGroup15.Controls.Add(Me.eui_cmdGestioneSchedine)
       Me.RibbonGroup15.Controls.Add(Me.eui_cmdGestioneAcquisti)
-      Me.RibbonGroup15.Controls.Add(Me.Separator18)
+      Me.RibbonGroup15.Controls.Add(Me.sepStatistiche)
       Me.RibbonGroup15.Controls.Add(Me.eui_ddwnGestioneStatistiche)
       Me.RibbonGroup15.DialogLauncherButtonVisible = False
       Me.RibbonGroup15.Dock = System.Windows.Forms.DockStyle.Fill
@@ -3964,14 +3969,14 @@ Friend Class frmMain
       Me.eui_cmdGestioneAcquisti.TabIndex = 0
       Me.eui_cmdGestioneAcquisti.Text = "Elenco acquisti"
       '
-      'Separator18
+      'sepStatistiche
       '
-      Me.Separator18.Id = "bc90f9e6-ab1e-4515-b509-f81d2b2d32d6"
-      Me.Separator18.Location = New System.Drawing.Point(171, 6)
-      Me.Separator18.Name = "Separator18"
-      Me.Separator18.Size = New System.Drawing.Size(3, 59)
-      Me.Separator18.TabIndex = 4
-      Me.Separator18.Text = "Separator18"
+      Me.sepStatistiche.Id = "bc90f9e6-ab1e-4515-b509-f81d2b2d32d6"
+      Me.sepStatistiche.Location = New System.Drawing.Point(171, 6)
+      Me.sepStatistiche.Name = "sepStatistiche"
+      Me.sepStatistiche.Size = New System.Drawing.Size(3, 59)
+      Me.sepStatistiche.TabIndex = 4
+      Me.sepStatistiche.Text = "Separator18"
       '
       'eui_ddwnGestioneStatistiche
       '
@@ -3990,16 +3995,36 @@ Friend Class frmMain
       '
       'PopupMenu6
       '
-      Me.PopupMenu6.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdGestioneStatistiche, Me.sepBarRistorante, Me.eui_cmdGestioneStatisticheRisorse})
+      Me.PopupMenu6.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdGestioneStatisticheHotel, Me.sepHotel, Me.eui_cmdGestioneStatistiche, Me.sepBarRistorante, Me.eui_cmdGestioneStatisticheRisorse})
       Me.PopupMenu6.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
       Me.PopupMenu6.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
       Me.PopupMenu6.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdGestioneStatisticheHotel
+      '
+      Me.eui_cmdGestioneStatisticheHotel.Enabled = False
+      Me.eui_cmdGestioneStatisticheHotel.Id = "79971d5c-dbcb-463f-845e-e353b02bd305"
+      Me.eui_cmdGestioneStatisticheHotel.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdGestioneStatisticheHotel.Name = "eui_cmdGestioneStatisticheHotel"
+      Me.eui_cmdGestioneStatisticheHotel.Size = New System.Drawing.Size(179, 23)
+      Me.eui_cmdGestioneStatisticheHotel.TabIndex = 7
+      Me.eui_cmdGestioneStatisticheHotel.Text = "Hotel"
+      '
+      'sepHotel
+      '
+      Me.sepHotel.Id = "554543a1-7d79-4002-9d63-98082cb256f1"
+      Me.sepHotel.Location = New System.Drawing.Point(2, 25)
+      Me.sepHotel.Name = "sepHotel"
+      Me.sepHotel.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepHotel.Size = New System.Drawing.Size(179, 5)
+      Me.sepHotel.TabIndex = 8
+      Me.sepHotel.Text = "Separator23"
       '
       'eui_cmdGestioneStatistiche
       '
       Me.eui_cmdGestioneStatistiche.Id = "e53f25ac-8fbf-43b0-83ed-fe5a6a9ac02e"
       Me.eui_cmdGestioneStatistiche.KeyTip = "BR"
-      Me.eui_cmdGestioneStatistiche.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdGestioneStatistiche.Location = New System.Drawing.Point(2, 30)
       Me.eui_cmdGestioneStatistiche.Name = "eui_cmdGestioneStatistiche"
       Me.eui_cmdGestioneStatistiche.ScreenTip.Caption = "Bar / Ristorante (F6)"
       Me.eui_cmdGestioneStatistiche.ScreenTip.Text = "Apre le statistiche di vendita per il Bar / Ristorante."
@@ -4011,7 +4036,7 @@ Friend Class frmMain
       'sepBarRistorante
       '
       Me.sepBarRistorante.Id = "27aedffd-f5b4-47ff-836d-31f57c0b6b83"
-      Me.sepBarRistorante.Location = New System.Drawing.Point(2, 25)
+      Me.sepBarRistorante.Location = New System.Drawing.Point(2, 53)
       Me.sepBarRistorante.Name = "sepBarRistorante"
       Me.sepBarRistorante.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
       Me.sepBarRistorante.Size = New System.Drawing.Size(179, 5)
@@ -4022,7 +4047,7 @@ Friend Class frmMain
       '
       Me.eui_cmdGestioneStatisticheRisorse.Id = "9e9343c6-db4a-4249-96ba-183162ce77d4"
       Me.eui_cmdGestioneStatisticheRisorse.KeyTip = "C"
-      Me.eui_cmdGestioneStatisticheRisorse.Location = New System.Drawing.Point(2, 30)
+      Me.eui_cmdGestioneStatisticheRisorse.Location = New System.Drawing.Point(2, 58)
       Me.eui_cmdGestioneStatisticheRisorse.Name = "eui_cmdGestioneStatisticheRisorse"
       Me.eui_cmdGestioneStatisticheRisorse.ScreenTip.Caption = "Centro sportivo (F11)"
       Me.eui_cmdGestioneStatisticheRisorse.ScreenTip.Text = "Apre le statistiche di vendita per il Centro spotivo."
@@ -4131,7 +4156,7 @@ Friend Class frmMain
       Me.eui_Archivi.KeyTip = "A"
       Me.eui_Archivi.Location = New System.Drawing.Point(0, 0)
       Me.eui_Archivi.Name = "eui_Archivi"
-      Me.eui_Archivi.Size = New System.Drawing.Size(1046, 99)
+      Me.eui_Archivi.Size = New System.Drawing.Size(1118, 99)
       Me.eui_Archivi.TabIndex = 0
       Me.eui_Archivi.Text = "Archivi"
       '
@@ -5606,10 +5631,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 511)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 538)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1070, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1142, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5621,7 +5646,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(473, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(545, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5698,7 +5723,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(473, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(545, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -5995,7 +6020,7 @@ Friend Class frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1070, 533)
+      Me.ClientSize = New System.Drawing.Size(1142, 560)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -13536,6 +13561,7 @@ Friend Class frmMain
       End Try
    End Function
 
+   ' DA_FARE_A: Verificare!
    Private Sub AttivaDisattivaModuloHotel(ByVal stato As Boolean)
       Try
          ' Prenotazioni.
@@ -13544,22 +13570,35 @@ Friend Class frmMain
             eui_ddwnGestionePrenotazioni.Visible = stato ' Comune
          End If
 
+         'eui_ddwnGestioneQuadroGiornaliero.Visible = stato
          eui_cmdGestionePlanningCamere.Visible = stato
          sepPlannigCamere.Visible = stato
          eui_cmdGestionePrenCamere.Visible = stato
          sepPrenCamere.Visible = stato
+         eui_cmdGestioneSchedine.Visible = stato
+
          ' Archivi / Anagrafiche.
          eui_cmdArchiviAnagraficheCamere.Visible = stato
          sepCamere.Visible = stato
+         eui_cmdArchiviAnagraficheAccServ.Visible = stato ' Comune
+
          ' Archivi / Tabelle.
          eui_cmdArchiviTabelleListini.Visible = stato
          eui_cmdArchiviTabelleStagioni.Visible = stato
          eui_cmdArchiviTabelleTipologieCamere.Visible = stato
          eui_cmdArchiviTabelleUbicazioniCamere.Visible = stato
          eui_cmdArchiviTabellePosizioniCamere.Visible = stato
+         eui_cmdArchiviTabelleTipoAlloggiati.Visible = stato
+         eui_cmdArchiviTabelleGruppi.Visible = stato
+         eui_cmdArchiviTabelleAgenzie.Visible = stato
+         eui_cmdArchiviTabelleCanali.Visible = stato
          sepListini.Visible = stato
          eui_cmdArchiviTabelleStatoPren.Visible = stato
          sepStatoPren.Visible = stato
+
+         ' Gestione.
+         eui_cmdGestioneStatisticheHotel.Visible = stato ' Comune
+         sepHotel.Visible = stato
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -13647,7 +13686,6 @@ Friend Class frmMain
             ' Gestione.
             eui_cmdGestioneStatistiche.Visible = stato ' Comune
             sepBarRistorante.Visible = stato
-
          End If
 
       Catch ex As Exception
@@ -13670,8 +13708,10 @@ Friend Class frmMain
          ' Planning.
          If moduloAttivo.Hotel = False Then
             eui_ddwnGestionePlanningRisorse.Visible = stato ' Comune
+            eui_cmdArchiviAnagraficheAccServ.Visible = stato ' Comune
          Else
             eui_ddwnGestionePlanningRisorse.Visible = True ' Comune
+            eui_cmdArchiviAnagraficheAccServ.Visible = True ' Comune
          End If
 
          eui_cmdGestionePlanningRisorseSport.Visible = stato
@@ -13680,7 +13720,6 @@ Friend Class frmMain
          eui_cmdGestioneStatisticheRisorse.Visible = stato
          ' Archivi / Anagrafiche.
          eui_cmdArchiviAnagraficheRisorse.Visible = stato
-         eui_cmdArchiviAnagraficheAccServ.Visible = stato
          eui_cmdArchiviAnagraficheUtilizzoRisorse.Visible = stato
          ' Archivi / Tabelle.
          eui_cmdArchiviTabelleTipoRisorse.Visible = stato
@@ -15916,6 +15955,18 @@ Friend Class frmMain
                End If
 
                numPartiti = numPartiti + adulti + bambini + ragazzi
+            Loop
+
+            ' Legge il nome della provincia per esteso.
+            Dim cmd3 As New OleDbCommand("SELECT * FROM Province WHERE Sigla = '" & provincia & "'", cn)
+            Dim dr3 As OleDbDataReader = cmd3.ExecuteReader()
+
+            Do While dr3.Read()
+               If IsDBNull(dr3.Item("Nome")) = False Then
+                  provincia = dr3.Item("Nome").ToString
+               Else
+                  provincia = String.Empty
+               End If
             Loop
 
             rigaDettagli(i) = provincia & ";" & numArrivati & ";" & numPartiti
