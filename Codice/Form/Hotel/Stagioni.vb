@@ -1047,8 +1047,8 @@ Public Class frmStagioni
 
                ' Media Stagione
             If chkIntervallo1_Media.Checked = True Then
-               If cmbGiornoInizio1_Bassa.Text = String.Empty Or cmbMeseInizio1_Bassa.Text = String.Empty Or
-                  cmbGiornoFine1_Bassa.Text = String.Empty Or cmbMeseFine1_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio1_Media.Text = String.Empty Or cmbMeseInizio1_Media.Text = String.Empty Or
+                  cmbGiornoFine1_Media.Text = String.Empty Or cmbMeseFine1_Media.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 1 di Media stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
@@ -1062,8 +1062,8 @@ Public Class frmStagioni
             End If
 
             If chkIntervallo2_Media.Checked = True Then
-               If cmbGiornoInizio2_Bassa.Text = String.Empty Or cmbMeseInizio2_Bassa.Text = String.Empty Or
-                  cmbGiornoFine2_Bassa.Text = String.Empty Or cmbMeseFine2_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio2_Media.Text = String.Empty Or cmbMeseInizio2_Media.Text = String.Empty Or
+                  cmbGiornoFine2_Media.Text = String.Empty Or cmbMeseFine2_Media.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 2 di Media stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
@@ -1077,8 +1077,8 @@ Public Class frmStagioni
             End If
 
             If chkIntervallo3_Media.Checked = True Then
-               If cmbGiornoInizio3_Bassa.Text = String.Empty Or cmbMeseInizio3_Bassa.Text = String.Empty Or
-                  cmbGiornoFine3_Bassa.Text = String.Empty Or cmbMeseFine3_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio3_Media.Text = String.Empty Or cmbMeseInizio3_Media.Text = String.Empty Or
+                  cmbGiornoFine3_Media.Text = String.Empty Or cmbMeseFine3_Media.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 3 di Media stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
@@ -1093,8 +1093,8 @@ Public Class frmStagioni
 
                ' Alta Stagione
             If chkIntervallo1_Alta.Checked = True Then
-               If cmbGiornoInizio1_Bassa.Text = String.Empty Or cmbMeseInizio1_Bassa.Text = String.Empty Or
-                  cmbGiornoFine1_Bassa.Text = String.Empty Or cmbMeseFine1_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio1_Alta.Text = String.Empty Or cmbMeseInizio1_Alta.Text = String.Empty Or
+                  cmbGiornoFine1_Alta.Text = String.Empty Or cmbMeseFine1_Alta.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 1 di Alta stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
@@ -1108,8 +1108,8 @@ Public Class frmStagioni
             End If
 
             If chkIntervallo2_Alta.Checked = True Then
-               If cmbGiornoInizio2_Bassa.Text = String.Empty Or cmbMeseInizio2_Bassa.Text = String.Empty Or
-                  cmbGiornoFine2_Bassa.Text = String.Empty Or cmbMeseFine2_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio2_Alta.Text = String.Empty Or cmbMeseInizio2_Alta.Text = String.Empty Or
+                  cmbGiornoFine2_Alta.Text = String.Empty Or cmbMeseFine2_Alta.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 2 di Alta stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
@@ -1123,8 +1123,8 @@ Public Class frmStagioni
             End If
 
             If chkIntervallo3_Alta.Checked = True Then
-               If cmbGiornoInizio3_Bassa.Text = String.Empty Or cmbMeseInizio3_Bassa.Text = String.Empty Or
-                  cmbGiornoFine3_Bassa.Text = String.Empty Or cmbMeseFine3_Bassa.Text = String.Empty Then
+               If cmbGiornoInizio3_Alta.Text = String.Empty Or cmbMeseInizio3_Alta.Text = String.Empty Or
+                  cmbGiornoFine3_Alta.Text = String.Empty Or cmbMeseFine3_Alta.Text = String.Empty Then
 
                   MessageBox.Show("Uno o più campi dell'Intervallo 3 di Alta stagione non sono stati specificati! Inserire i valori o deselezionare l'intervallo di date.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                   Return False
