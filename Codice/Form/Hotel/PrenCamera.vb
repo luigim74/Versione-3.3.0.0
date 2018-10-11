@@ -3223,6 +3223,18 @@ Public Class frmPrenCamera
                   ' Aggiorna il numero delle notti.
                   txtNumeroNotti.Text = CalcolaNumGiorni(Today, mcDataPartenza.SelectionRange.Start.Date).ToString
 
+                  ' Contabile.
+                  txtPrezzoCamera.Text = VALORE_ZERO
+                  txtTotaleCostoCamera.Text = VALORE_ZERO
+                  txtTotaleAddebiti.Text = VALORE_ZERO
+                  txtSconto.Text = VALORE_ZERO
+                  txtServizio.Text = VALORE_ZERO
+                  txtTotaleTassaSoggiorno.Text = VALORE_ZERO
+                  txtTotaleConto.Text = VALORE_ZERO
+                  txtAccontoCamera.Text = VALORE_ZERO
+                  txtTotaleImporto.Text = VALORE_ZERO
+                  'cmbApplicaSconto.SelectedIndex = 0
+
                Case PlanningCamere.Name
                   Dim data As Date = Convert.ToDateTime(g_frmPlanningCamere.dgvPrenotazioni.Columns(g_frmPlanningCamere.dgvPrenotazioni.CurrentCell.ColumnIndex).Name).Date
 
@@ -3239,24 +3251,29 @@ Public Class frmPrenCamera
                   ' Assegna il numero di camera selezionato dal Planning.
                   cmbNumeroCamera.Text = g_frmPlanningCamere.dgvCamere.Rows(g_frmPlanningCamere.dgvPrenotazioni.CurrentCell.RowIndex).Cells("Numero").Value
 
+                  If cmbListino.Text <> String.Empty Then
+                     ApplicaListino()
+                  Else
+                     ' Contabile.
+                     txtPrezzoCamera.Text = VALORE_ZERO
+                     txtTotaleCostoCamera.Text = VALORE_ZERO
+                     txtTotaleAddebiti.Text = VALORE_ZERO
+                     txtSconto.Text = VALORE_ZERO
+                     txtServizio.Text = VALORE_ZERO
+                     txtTotaleTassaSoggiorno.Text = VALORE_ZERO
+                     txtTotaleConto.Text = VALORE_ZERO
+                     txtAccontoCamera.Text = VALORE_ZERO
+                     txtTotaleImporto.Text = VALORE_ZERO
+                     'cmbApplicaSconto.SelectedIndex = 0
+                  End If
+
             End Select
+
+            ' Schedina P.S.
+            ckbSchedina.Checked = False
 
             ' Ora corrente.
             dtpOraArrivo.Value = Now
-
-            ' Contabile.
-            txtPrezzoCamera.Text = VALORE_ZERO
-            txtTotaleCostoCamera.Text = VALORE_ZERO
-            txtTotaleAddebiti.Text = VALORE_ZERO
-            txtSconto.Text = VALORE_ZERO
-            txtServizio.Text = VALORE_ZERO
-            txtTotaleTassaSoggiorno.Text = VALORE_ZERO
-            txtTotaleConto.Text = VALORE_ZERO
-            txtAccontoCamera.Text = VALORE_ZERO
-            txtTotaleImporto.Text = VALORE_ZERO
-            ckbSchedina.Checked = False
-            'cmbApplicaSconto.SelectedIndex = 0
-
          End If
 
          ' Attiva / Disattiva i comandi appropriati degli allegati.

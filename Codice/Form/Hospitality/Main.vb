@@ -11945,8 +11945,9 @@ Friend Class frmMain
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+         'err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Exit Sub
       End Try
 
    End Sub
@@ -11981,8 +11982,9 @@ Friend Class frmMain
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+         'err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Exit Sub
       End Try
 
    End Sub
@@ -16174,7 +16176,7 @@ Friend Class frmMain
 
             Dim dataGiorno As Date = arrivo
 
-            Do While dataGiorno <= partenza
+            Do While dataGiorno < partenza
                i += 1
 
                If dataGiorno = dataGiornoPrec Then
@@ -16289,17 +16291,19 @@ Friend Class frmMain
                If IsNothing(listaClientiItaliani(i)) = False Then
                   datiClientiItaliani = listaClientiItaliani(i).Split(";")
                Else
-                  datiClientiItaliani(0) = String.Empty
-                  datiClientiItaliani(1) = "0"
-                  datiClientiItaliani(2) = "0"
+                  datiClientiItaliani = ";0;0".Split(";")
+                  'datiClientiItaliani(0) = String.Empty
+                  'datiClientiItaliani(1) = "0"
+                  'datiClientiItaliani(2) = "0"
                End If
 
                If IsNothing(listaClientiStranieri(i)) = False Then
                   datiClientiStranieri = listaClientiStranieri(i).Split(";")
                Else
-                  datiClientiStranieri(0) = String.Empty
-                  datiClientiStranieri(1) = "0"
-                  datiClientiStranieri(2) = "0"
+                  datiClientiStranieri = ";0;0".Split(";")
+                  'datiClientiStranieri(0) = String.Empty
+                  'datiClientiStranieri(1) = "0"
+                  'datiClientiStranieri(2) = "0"
                End If
 
                If datiClientiStranieri(1) = "0" And datiClientiStranieri(2) = "0" And datiClientiItaliani(1) = "0" And datiClientiItaliani(2) = "0" Then

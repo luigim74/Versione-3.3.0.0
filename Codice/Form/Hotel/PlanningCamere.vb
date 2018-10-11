@@ -26,7 +26,7 @@ Public Class PlanningCamere
    Public Const ALTEZZA_CELLA As Short = 32
    Public Const LARGHEZZA_CELLA As Short = 40
    Const LARGHEZZA_GRIGLIA_CAMERE As Short = 336
-   Const LARGHEZZA_GRIGLIA_PRENOTAZIONI As Short = 14680
+   Const LARGHEZZA_GRIGLIA_PRENOTAZIONI As Short = 14601
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -155,33 +155,53 @@ Public Class PlanningCamere
 
    End Sub
 
+   Private Sub dgvCamere_MouseWheel(sender As Object, e As MouseEventArgs) Handles dgvCamere.MouseWheel
+      Try
+         If e.Delta.ToString.Contains("-") = True Then
+            If VerticalScrollBar1.Value < (VerticalScrollBar1.Maximum - 300) Then
+               VerticalScrollBar1.Value += ALTEZZA_CELLA
+            End If
+         Else
+            VerticalScrollBar1.Value -= ALTEZZA_CELLA
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub pnlPrenotazioni_MouseWheel(sender As Object, e As MouseEventArgs) Handles pnlPrenotazioni.MouseWheel
+      Try
+         If e.Delta.ToString.Contains("-") = True Then
+            If VerticalScrollBar1.Value < (VerticalScrollBar1.Maximum - 300) Then
+               VerticalScrollBar1.Value += ALTEZZA_CELLA
+            End If
+         Else
+            VerticalScrollBar1.Value -= ALTEZZA_CELLA
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub PlanningCamere_Resize(sender As Object, e As System.EventArgs) Handles Me.Resize
-      HorizontalScrollBar1.Maximum = 15800 - HorizontalScrollBar1.Width
-      HorizontalScrollBar1.Minimum = 0
+      Try
+         HorizontalScrollBar1.Maximum = 15800 - HorizontalScrollBar1.Width
+         HorizontalScrollBar1.Minimum = 0
 
-      VerticalScrollBar1.Maximum = ((ALTEZZA_CELLA * numCamere) + 310) - VerticalScrollBar1.Height '1600 - VerticalScrollBar1.Height ' 
-      VerticalScrollBar1.Minimum = 0
+         VerticalScrollBar1.Maximum = ((ALTEZZA_CELLA * numCamere) + 310) - VerticalScrollBar1.Height
+         VerticalScrollBar1.Minimum = 0
 
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      'VScrollBar1.Maximum = AltezzaGriglia - VScrollBar1.Height
-      'VScrollBar1.Minimum = 0
-
-      'If LarghezzaGriglia >= Me.HScrollBar1.Width Then
-      '   HScrollBar1.Visible = True
-      'Else
-      '   HScrollBar1.Visible = False
-      '   Calendario.Left = 0
-      '   Griglia.Left = 0
-      'End If
-
-      'If AltezzaGriglia >= Me.VScrollBar1.Height Then
-      '   VScrollBar1.Visible = True
-      'Else
-      '   VScrollBar1.Visible = False
-      '   Camere.Top = 162
-      '   Griglia.Top = 61
-      'End If
-
+      End Try
    End Sub
 
    Private Sub dgvPrenotazioni_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvPrenotazioni.CellClick
@@ -453,16 +473,18 @@ Public Class PlanningCamere
             dgvPrenotazioni.Columns(nomeColonna).Width = LARGHEZZA_CELLA
 
             Select Case GiornoSett
+               '  ' DA_FARE: Aggiungere tutti i giorni della settimana.
+
                Case "Sab"
-                  'dgvGiorni.Columns(x).HeaderCell.Style.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)
-                  'dgvGiorni.Columns(x).HeaderCell.Style.ForeColor = Color.LightCoral
+                  ' dgvGiorni.Columns(x.ToString).HeaderCell.Style.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)
+                  ' dgvGiorni.Columns(x.ToString).HeaderCell.Style.ForeColor = Color.LightCoral
 
                   dgvGiorni.Columns(x.ToString).HeaderCell.Style.BackColor = Color.Gainsboro ' Color.Pink
                   dgvPrenotazioni.Columns(nomeColonna).DefaultCellStyle.BackColor = Color.Gainsboro ' Color.Pink
 
                Case "Dom"
-                  'dgvGiorni.Columns(x).HeaderCell.Style.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)
-                  'dgvGiorni.Columns(x).HeaderCell.Style.ForeColor = Color.LightCoral
+                  ' dgvGiorni.Columns(x.ToString).HeaderCell.Style.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)
+                  ' dgvGiorni.Columns(x.ToString).HeaderCell.Style.ForeColor = Color.LightCoral
 
                   dgvGiorni.Columns(x.ToString).HeaderCell.Style.BackColor = Color.LightGray ' Color.PaleVioletRed
                   dgvPrenotazioni.Columns(nomeColonna).DefaultCellStyle.BackColor = Color.LightGray ' Color.PaleVioletRed
@@ -813,6 +835,134 @@ Public Class PlanningCamere
 
    End Sub
 
+   Public Sub DisegnaPrenotazioneDueAnni(ByVal Id As Integer, ByVal numero As String, ByVal numCamera As String, ByVal intestatario As String, ByVal gruppo As String, ByVal persone As Integer, ByVal tipologia As String, ByVal stato As String, ByVal trattamento As String,
+                                         ByVal dataArrivo As String, ByVal dataPartenza As String, ByVal numNotti As Integer, ByVal note As String,
+                                         ByVal totaleCamera As String, ByVal totaleAddebiti As String, ByVal acconto As String, ByVal totaleConto As String, ByVal colore As Integer)
+      Try
+         Dim posCellaX As Integer
+         Dim posCellaY As Integer
+         Dim cordX As Boolean
+         Dim cordY As Boolean
+
+         ' Cerca la colonna X dove disegnare la prenotazione.
+         Dim x As Integer
+         For x = 0 To dgvPrenotazioni.Columns.Count - 1
+            If dgvPrenotazioni.Columns(x).Name = dataPartenza Then
+               posCellaX = x
+               cordX = True
+               Exit For
+            End If
+         Next
+
+         If cordX = False Then
+            ' Se non trova la colonna - data di arrivo non disegna la prenotazione.
+            Exit Sub
+         End If
+
+         ' Cerca la riga Y dove disegnare la prenotazione.
+         Dim y As Integer
+         For y = 0 To dgvCamere.Rows.Count - 1
+            If dgvCamere.Rows(y).Cells("Numero").Value = numCamera Then
+               posCellaY = y
+               cordY = True
+               Exit For
+            End If
+         Next
+
+         If cordY = False Then
+            ' Se non trova la riga - numero camera non disegna la prenotazione.
+            Exit Sub
+         End If
+
+         Dim larghezzaPren As Integer = numNotti * LARGHEZZA_CELLA
+         posCellaX = (posCellaX * LARGHEZZA_CELLA) - larghezzaPren
+
+         NumPren += 1
+         Prenotazioni(NumPren) = New NetButton
+         Prenotazioni(NumPren).Name = Id.ToString
+         Prenotazioni(NumPren).Location = New Point((posCellaX) + 21, (posCellaY * ALTEZZA_CELLA) + 1)
+         Prenotazioni(NumPren).Size = New Point(larghezzaPren, ALTEZZA_PRENOTAZIONE)
+
+         ' Imposta i colori primari.
+         Select Case Color.FromArgb(colore)
+            Case Color.FromArgb(255, 255, 255) ' Nessuno
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Default
+
+            Case Color.Silver ' Default
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Default
+
+            Case Color.RoyalBlue ' Blue
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Blue
+
+            Case Color.FromArgb(0, 192, 0) ' Green
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Green
+
+            Case Color.Gold ' Yellow
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Yellow
+
+            Case Color.FromArgb(210, 0, 0) ' Red
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Red
+
+            Case Color.DarkMagenta ' Pink
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Pink
+
+            Case Color.DimGray ' Gray
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Gray
+
+            Case Else ' Custom
+               Prenotazioni(NumPren).ColorStyle = NetButton.ColorStyleEnum.Custom
+               Prenotazioni(NumPren).ColorBottom = Color.FromArgb(colore)
+
+         End Select
+
+         Prenotazioni(NumPren).TextButtonAlign = ContentAlignment.MiddleRight
+
+         If gruppo <> String.Empty And gruppo <> Space(1) Then
+            Prenotazioni(NumPren).TextButton = intestatario & " [Gruppo " & gruppo & "]"
+         Else
+            Prenotazioni(NumPren).TextButton = intestatario
+         End If
+
+         Prenotazioni(NumPren).CornerRadius = 8
+         Prenotazioni(NumPren).Tag = ""
+
+         ' ScreenTip informativa.
+         Dim infoPrenotazione As New Elegant.Ui.ScreenTipData(Prenotazioni(NumPren))
+         infoPrenotazione.Caption = intestatario & " - N. " & numero
+         infoPrenotazione.Text = "Intestatario: " & intestatario & vbCrLf &
+                                 "Prenotazione numero: " & numero & vbCrLf &
+                                 "Persone: " & persone.ToString & vbCrLf &
+                                 "Tipologia: " & tipologia & vbCrLf &
+                                 "Stato: " & stato & vbCrLf &
+                                 "Trattamento: " & trattamento & vbCrLf &
+                                 "Gruppo: " & gruppo & vbCrLf & vbCrLf &
+                                 "Arrivo: " & dataArrivo & vbCrLf &
+                                 "Partenza: " & dataPartenza & vbCrLf &
+                                 "Notti: " & numNotti & vbCrLf & vbCrLf &
+                                 "Camera: € " & totaleCamera & vbCrLf &
+                                 "Addebiti extra: € " & totaleAddebiti & vbCrLf &
+                                 "Acconto: € " & acconto & vbCrLf &
+                                 "Totale soggiorno: € " & totaleConto & vbCrLf & vbCrLf &
+                                 "Note: " & note
+
+         ' DA_FARE_B: Sviluppare! Aggiungere anche l'elenco dei componenti.
+
+         pnlPrenotazioni.Controls.Add(Prenotazioni(NumPren))
+
+         Prenotazioni(NumPren).BringToFront()
+
+         AddHandler Prenotazioni(NumPren).Click, AddressOf Prenotazioni_Click
+         AddHandler Prenotazioni(NumPren).DoubleClick, AddressOf Prenotazioni_DoubleClick
+         AddHandler Prenotazioni(NumPren).GotFocus, AddressOf Prenotazioni_GotFocus
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
    ' DA_FARE: Funzionalità futura.
    Public Sub DisegnaEtichetta()
       Try
@@ -1000,9 +1150,18 @@ Public Class PlanningCamere
             Dim numNotti As Integer = Convert.ToInt32(dr.Item("NumeroNotti"))
             Dim totCamera As Double = ((costoCamera * adulti) * numNotti)
 
+            ' Prenotazioni nell'anno corrente.
             DisegnaPrenotazione(dr.Item("Id"), dr.Item("Numero"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), dr.Item("Gruppo").ToString, numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
                                 dr.Item("DataArrivo"), dr.Item("DataPartenza"), dr.Item("NumeroNotti"), dr.Item("Note"),
                                 CFormatta.FormattaEuro(totCamera), CalcolaTotaleAddebiti(dr.Item("Id")), CFormatta.FormattaEuro(dr.Item("AccontoCamera")), CFormatta.FormattaEuro(dr.Item("TotaleConto")), dr.Item("Colore"))
+
+            ' Prenotazioni che comprendono due anni diversi.
+            If Convert.ToDateTime(dr.Item("DataArrivo")).Year = (dtpDataPlanning.Value.GetValueOrDefault.AddYears(-1).Year) And Convert.ToDateTime(dr.Item("DataPartenza")).Year = dtpDataPlanning.Value.GetValueOrDefault.Year Then
+
+               DisegnaPrenotazioneDueAnni(dr.Item("Id"), dr.Item("Numero"), dr.Item("NumeroCamera"), dr.Item("Cognome") & " " & dr.Item("Nome"), dr.Item("Gruppo").ToString, numPersone, dr.Item("Tipologia"), dr.Item("Stato"), dr.Item("Trattamento"),
+                                dr.Item("DataArrivo"), dr.Item("DataPartenza"), dr.Item("NumeroNotti"), dr.Item("Note"),
+                                CFormatta.FormattaEuro(totCamera), CalcolaTotaleAddebiti(dr.Item("Id")), CFormatta.FormattaEuro(dr.Item("AccontoCamera")), CFormatta.FormattaEuro(dr.Item("TotaleConto")), dr.Item("Colore"))
+            End If
          Loop
 
          Return True
@@ -1638,7 +1797,9 @@ Public Class PlanningCamere
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+         'err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Exit Sub
 
       End Try
    End Sub
