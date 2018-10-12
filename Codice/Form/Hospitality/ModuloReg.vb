@@ -573,9 +573,9 @@ Public Class frmModuloReg
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(704, 21)
       Me.Label3.TabIndex = 16
-      Me.Label3.Tag = "EFFETTUATA LA REGISTRAZIONE RICEVERETE AL VOSTRO INDIRIZZO E-MAIL LA CHIAVE DI AT" & _
+      Me.Label3.Tag = "EFFETTUATA LA REGISTRAZIONE RICEVERETE AL VOSTRO INDIRIZZO E-MAIL LA CHIAVE DI AT" &
     "TIVAZIONE."
-      Me.Label3.Text = "EFFETTUATA LA REGISTRAZIONE RICEVERETE AL VOSTRO INDIRIZZO E-MAIL LA CHIAVE DI AT" & _
+      Me.Label3.Text = "EFFETTUATA LA REGISTRAZIONE RICEVERETE AL VOSTRO INDIRIZZO E-MAIL LA CHIAVE DI AT" &
     "TIVAZIONE."
       '
       'Label13
@@ -872,7 +872,7 @@ Public Class frmModuloReg
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
       Me.eui_cmdInvia.ScreenTip.Caption = "Invia e-mail"
       Me.eui_cmdInvia.ScreenTip.Text = "Invia la richiesta di attivazione del software tramite e-mail"
-      Me.eui_cmdInvia.Size = New System.Drawing.Size(96, 24)
+      Me.eui_cmdInvia.Size = New System.Drawing.Size(96, 32)
       Me.eui_cmdInvia.TabIndex = 49
       Me.eui_cmdInvia.Text = "&Invia e-mail"
       '
@@ -884,7 +884,7 @@ Public Class frmModuloReg
       Me.eui_cmdCancella.Name = "eui_cmdCancella"
       Me.eui_cmdCancella.ScreenTip.Caption = "Cancella tutto"
       Me.eui_cmdCancella.ScreenTip.Text = "Cancella il contenuto di tutte le caselle"
-      Me.eui_cmdCancella.Size = New System.Drawing.Size(96, 24)
+      Me.eui_cmdCancella.Size = New System.Drawing.Size(96, 32)
       Me.eui_cmdCancella.TabIndex = 50
       Me.eui_cmdCancella.Text = "&Cancella tutto"
       '
@@ -897,7 +897,7 @@ Public Class frmModuloReg
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Annulla"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annulla l'operazione e chiude la finestra"
-      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(96, 24)
+      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(96, 32)
       Me.eui_cmdAnnulla.TabIndex = 51
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
@@ -920,7 +920,7 @@ Public Class frmModuloReg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(731, 485)
+      Me.ClientSize = New System.Drawing.Size(727, 485)
       Me.Controls.Add(Me.Label29)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.eui_cmdCancella)

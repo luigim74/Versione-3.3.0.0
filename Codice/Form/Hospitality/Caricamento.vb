@@ -60,7 +60,7 @@ Public Class frmElaborazione
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(183, 37)
+      Me.ClientSize = New System.Drawing.Size(193, 47)
       Me.ControlBox = False
       Me.Controls.Add(Me.ProgressBar1)
       Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog

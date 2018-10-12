@@ -107,7 +107,7 @@ Public Class frmOperatori
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(544, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(531, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -150,7 +150,7 @@ Public Class frmOperatori
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(544, 20)
+      Me.Panel1.Size = New System.Drawing.Size(531, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -173,7 +173,7 @@ Public Class frmOperatori
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(544, 322)
+      Me.TabControl1.Size = New System.Drawing.Size(531, 304)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -190,7 +190,7 @@ Public Class frmOperatori
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(523, 278)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -338,7 +338,7 @@ Public Class frmOperatori
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(544, 368)
+      Me.ClientSize = New System.Drawing.Size(531, 350)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

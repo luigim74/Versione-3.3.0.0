@@ -41,7 +41,7 @@ Partial Class ListaAccessoriServizi
       Me.lvwAccessoriServizi.MultiSelect = False
       Me.lvwAccessoriServizi.Name = "lvwAccessoriServizi"
       Me.lvwAccessoriServizi.ShowGroups = False
-      Me.lvwAccessoriServizi.Size = New System.Drawing.Size(408, 360)
+      Me.lvwAccessoriServizi.Size = New System.Drawing.Size(410, 433)
       Me.lvwAccessoriServizi.TabIndex = 0
       Me.ToolTip1.SetToolTip(Me.lvwAccessoriServizi, "Fare doppio click sulla voce selezionata per effettuare l'inserimento.")
       Me.lvwAccessoriServizi.UseCompatibleStateImageBehavior = False
@@ -66,7 +66,7 @@ Partial Class ListaAccessoriServizi
       '
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "18f34544-3dbb-4745-85c7-b9b4886ff164"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(304, 376)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(313, 436)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(88, 32)
       Me.eui_cmdAnnulla.TabIndex = 2
@@ -75,7 +75,7 @@ Partial Class ListaAccessoriServizi
       'eui_cmdInserisci
       '
       Me.eui_cmdInserisci.Id = "5a06a0ca-1d3f-4ba0-a3b6-a9c00d271c54"
-      Me.eui_cmdInserisci.Location = New System.Drawing.Point(208, 376)
+      Me.eui_cmdInserisci.Location = New System.Drawing.Point(217, 436)
       Me.eui_cmdInserisci.Name = "eui_cmdInserisci"
       Me.eui_cmdInserisci.Size = New System.Drawing.Size(88, 32)
       Me.eui_cmdInserisci.TabIndex = 1
@@ -93,7 +93,7 @@ Partial Class ListaAccessoriServizi
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(407, 417)
+      Me.ClientSize = New System.Drawing.Size(410, 477)
       Me.Controls.Add(Me.eui_cmdInserisci)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.lvwAccessoriServizi)

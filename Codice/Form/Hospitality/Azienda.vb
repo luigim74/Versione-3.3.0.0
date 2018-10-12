@@ -161,7 +161,7 @@ Friend Class frmAzienda
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(560, 28)
+      Me.ToolBar1.Size = New System.Drawing.Size(543, 28)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -196,7 +196,7 @@ Friend Class frmAzienda
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 28)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(560, 20)
+      Me.Panel1.Size = New System.Drawing.Size(543, 20)
       Me.Panel1.TabIndex = 19
       '
       'lblIntestazione
@@ -238,7 +238,7 @@ Friend Class frmAzienda
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(560, 326)
+      Me.TabControl1.Size = New System.Drawing.Size(543, 311)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -264,7 +264,7 @@ Friend Class frmAzienda
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(552, 300)
+      Me.TabPage1.Size = New System.Drawing.Size(535, 285)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Tag = "Codice fornito da Azienda emettitrice di Buoni pasto:"
       Me.TabPage1.Text = "Dati principali"
@@ -493,7 +493,7 @@ Friend Class frmAzienda
       Me.TabPage3.Controls.Add(Me.Label21)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(544, 292)
+      Me.TabPage3.Size = New System.Drawing.Size(535, 308)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -623,7 +623,7 @@ Friend Class frmAzienda
       Me.TabPage2.Controls.Add(Me.Label38)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(544, 292)
+      Me.TabPage2.Size = New System.Drawing.Size(535, 308)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       Me.TabPage2.Visible = False
@@ -821,7 +821,7 @@ Friend Class frmAzienda
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(560, 374)
+      Me.ClientSize = New System.Drawing.Size(543, 359)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.chkVisRagSoc)
       Me.Controls.Add(Me.Panel1)

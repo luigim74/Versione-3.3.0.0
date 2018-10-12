@@ -86,6 +86,8 @@ Public Class frmAccessoriServizi
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbAliquotaIva = New System.Windows.Forms.ComboBox()
+      Me.Label15 = New System.Windows.Forms.Label()
       Me.txtCosto = New System.Windows.Forms.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.cmdColore = New System.Windows.Forms.Button()
@@ -110,8 +112,6 @@ Public Class frmAccessoriServizi
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.cmbAliquotaIva = New System.Windows.Forms.ComboBox()
-      Me.Label15 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -131,7 +131,7 @@ Public Class frmAccessoriServizi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(558, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(568, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -165,7 +165,7 @@ Public Class frmAccessoriServizi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(558, 20)
+      Me.Panel1.Size = New System.Drawing.Size(568, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -188,7 +188,7 @@ Public Class frmAccessoriServizi
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(558, 334)
+      Me.TabControl1.Size = New System.Drawing.Size(568, 344)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -215,9 +215,32 @@ Public Class frmAccessoriServizi
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(550, 308)
+      Me.TabPage1.Size = New System.Drawing.Size(560, 318)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'cmbAliquotaIva
+      '
+      Me.cmbAliquotaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbAliquotaIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbAliquotaIva.Items.AddRange(New Object() {"", "Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
+      Me.cmbAliquotaIva.Location = New System.Drawing.Point(144, 143)
+      Me.cmbAliquotaIva.Name = "cmbAliquotaIva"
+      Me.cmbAliquotaIva.Size = New System.Drawing.Size(144, 21)
+      Me.cmbAliquotaIva.TabIndex = 4
+      '
+      'Label15
+      '
+      Me.Label15.AutoSize = True
+      Me.Label15.BackColor = System.Drawing.Color.Transparent
+      Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label15.ForeColor = System.Drawing.Color.Black
+      Me.Label15.Location = New System.Drawing.Point(24, 143)
+      Me.Label15.Name = "Label15"
+      Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label15.Size = New System.Drawing.Size(77, 13)
+      Me.Label15.TabIndex = 55781
+      Me.Label15.Text = "Aliquota I.V.A.:"
       '
       'txtCosto
       '
@@ -430,7 +453,7 @@ Public Class frmAccessoriServizi
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(540, 298)
+      Me.TabPage6.Size = New System.Drawing.Size(560, 318)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -447,7 +470,7 @@ Public Class frmAccessoriServizi
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(540, 298)
+      Me.txtNote.Size = New System.Drawing.Size(560, 318)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -459,35 +482,12 @@ Public Class frmAccessoriServizi
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'cmbAliquotaIva
-      '
-      Me.cmbAliquotaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbAliquotaIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbAliquotaIva.Items.AddRange(New Object() {"", "Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
-      Me.cmbAliquotaIva.Location = New System.Drawing.Point(144, 143)
-      Me.cmbAliquotaIva.Name = "cmbAliquotaIva"
-      Me.cmbAliquotaIva.Size = New System.Drawing.Size(144, 21)
-      Me.cmbAliquotaIva.TabIndex = 4
-      '
-      'Label15
-      '
-      Me.Label15.AutoSize = True
-      Me.Label15.BackColor = System.Drawing.Color.Transparent
-      Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label15.ForeColor = System.Drawing.Color.Black
-      Me.Label15.Location = New System.Drawing.Point(24, 143)
-      Me.Label15.Name = "Label15"
-      Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label15.Size = New System.Drawing.Size(77, 13)
-      Me.Label15.TabIndex = 55781
-      Me.Label15.Text = "Aliquota I.V.A.:"
-      '
       'frmAccessoriServizi
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(558, 380)
+      Me.ClientSize = New System.Drawing.Size(568, 390)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

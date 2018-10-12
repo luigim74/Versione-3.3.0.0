@@ -2850,7 +2850,7 @@ Public Class frmOpzioni
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(812, 596)
+      Me.ClientSize = New System.Drawing.Size(778, 564)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)

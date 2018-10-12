@@ -255,7 +255,7 @@ Public Class InPrimaNota
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(400, 174)
+      Me.ClientSize = New System.Drawing.Size(397, 170)
       Me.Controls.Add(Me.txtdata)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.cmdSalva)

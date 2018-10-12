@@ -144,7 +144,7 @@ Public Class frmPostazione
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(383, 177)
+      Me.ClientSize = New System.Drawing.Size(378, 170)
       Me.Controls.Add(Me.txtDescrizione)
       Me.Controls.Add(Me.nudNumero)
       Me.Controls.Add(Me.PictureBox2)

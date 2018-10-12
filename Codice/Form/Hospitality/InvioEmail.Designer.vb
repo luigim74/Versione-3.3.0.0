@@ -71,10 +71,10 @@ Partial Class InvioEmail
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 518)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 529)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(663, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(670, 22)
       Me.StatusBar1.TabIndex = 1
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -86,7 +86,7 @@ Partial Class InvioEmail
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(643, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(650, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -125,7 +125,7 @@ Partial Class InvioEmail
       'StatusBarControlsArea1
       '
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(643, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(650, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -139,7 +139,7 @@ Partial Class InvioEmail
       Me.eui_txtMittente.Id = "9011353d-a173-4211-b7dd-29bc596c81d9"
       Me.eui_txtMittente.Location = New System.Drawing.Point(81, 9)
       Me.eui_txtMittente.Name = "eui_txtMittente"
-      Me.eui_txtMittente.Size = New System.Drawing.Size(440, 21)
+      Me.eui_txtMittente.Size = New System.Drawing.Size(439, 21)
       Me.eui_txtMittente.TabIndex = 0
       Me.eui_txtMittente.TextEditorWidth = 511
       '
@@ -150,7 +150,7 @@ Partial Class InvioEmail
       Me.eui_txtDestinatario.Id = "6ab5f488-b5a2-4511-9193-113cce88e36e"
       Me.eui_txtDestinatario.Location = New System.Drawing.Point(81, 35)
       Me.eui_txtDestinatario.Name = "eui_txtDestinatario"
-      Me.eui_txtDestinatario.Size = New System.Drawing.Size(440, 21)
+      Me.eui_txtDestinatario.Size = New System.Drawing.Size(439, 21)
       Me.eui_txtDestinatario.TabIndex = 1
       Me.eui_txtDestinatario.TextEditorWidth = 511
       '
@@ -161,7 +161,7 @@ Partial Class InvioEmail
       Me.eui_txtOggetto.Id = "d2d36a2b-2e99-4bf8-9cc9-33fb02fee0c5"
       Me.eui_txtOggetto.Location = New System.Drawing.Point(81, 62)
       Me.eui_txtOggetto.Name = "eui_txtOggetto"
-      Me.eui_txtOggetto.Size = New System.Drawing.Size(440, 21)
+      Me.eui_txtOggetto.Size = New System.Drawing.Size(439, 21)
       Me.eui_txtOggetto.TabIndex = 2
       Me.eui_txtOggetto.TextEditorWidth = 511
       '
@@ -173,7 +173,7 @@ Partial Class InvioEmail
       Me.eui_txtAllegati.Location = New System.Drawing.Point(81, 89)
       Me.eui_txtAllegati.Multiline = True
       Me.eui_txtAllegati.Name = "eui_txtAllegati"
-      Me.eui_txtAllegati.Size = New System.Drawing.Size(440, 85)
+      Me.eui_txtAllegati.Size = New System.Drawing.Size(439, 85)
       Me.eui_txtAllegati.TabIndex = 3
       Me.eui_txtAllegati.TextEditorWidth = 511
       Me.eui_txtAllegati.WordWrap = False
@@ -186,7 +186,7 @@ Partial Class InvioEmail
       Me.TabControl1.Location = New System.Drawing.Point(2, 201)
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedTabPage = Me.TabPage1
-      Me.TabControl1.Size = New System.Drawing.Size(661, 317)
+      Me.TabControl1.Size = New System.Drawing.Size(660, 317)
       Me.TabControl1.TabIndex = 4
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1})
       Me.TabControl1.Text = "TabControl1"
@@ -197,7 +197,7 @@ Partial Class InvioEmail
       Me.TabPage1.Controls.Add(Me.eui_txtMessaggio)
       Me.TabPage1.KeyTip = Nothing
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(659, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(658, 296)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Messaggio"
       '
@@ -209,7 +209,7 @@ Partial Class InvioEmail
       Me.eui_txtMessaggio.Multiline = True
       Me.eui_txtMessaggio.Name = "eui_txtMessaggio"
       Me.eui_txtMessaggio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.eui_txtMessaggio.Size = New System.Drawing.Size(659, 296)
+      Me.eui_txtMessaggio.Size = New System.Drawing.Size(658, 296)
       Me.eui_txtMessaggio.TabIndex = 0
       Me.eui_txtMessaggio.TextEditorWidth = 790
       '
@@ -251,7 +251,7 @@ Partial Class InvioEmail
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "8b59c6d8-d387-4a57-b565-aeb3ed3dde9a"
       Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(534, 93)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(533, 93)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Annulla"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude l'e-mail."
@@ -265,7 +265,7 @@ Partial Class InvioEmail
       Me.eui_cmdSalva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalva.Id = "0e02334c-1eaa-4c90-b151-b3bf2232591a"
       Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdSalva.Location = New System.Drawing.Point(534, 51)
+      Me.eui_cmdSalva.Location = New System.Drawing.Point(533, 51)
       Me.eui_cmdSalva.Name = "eui_cmdSalva"
       Me.eui_cmdSalva.ScreenTip.Caption = "Salva"
       Me.eui_cmdSalva.ScreenTip.Text = "Salva l'e-mail."
@@ -279,7 +279,7 @@ Partial Class InvioEmail
       Me.eui_cmdAllegaFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdAllegaFile.Id = "84fe1553-fd8a-4625-ad32-47331fbc3a63"
       Me.eui_cmdAllegaFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdAllegaFile.Location = New System.Drawing.Point(534, 135)
+      Me.eui_cmdAllegaFile.Location = New System.Drawing.Point(533, 135)
       Me.eui_cmdAllegaFile.Name = "eui_cmdAllegaFile"
       Me.eui_cmdAllegaFile.ScreenTip.Caption = "Allega file"
       Me.eui_cmdAllegaFile.ScreenTip.Text = "Apre una finestra per la selezione dei file da allegare all'e-mail."
@@ -293,7 +293,7 @@ Partial Class InvioEmail
       Me.eui_cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdInvia.Id = "5cc6dc80-e953-465d-9d21-2bcaa657e76a"
       Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.eui_cmdInvia.Location = New System.Drawing.Point(534, 9)
+      Me.eui_cmdInvia.Location = New System.Drawing.Point(533, 9)
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
       Me.eui_cmdInvia.ScreenTip.Caption = "Invia"
       Me.eui_cmdInvia.ScreenTip.Text = "Salva ed invia l'e-mail."
@@ -382,7 +382,7 @@ Partial Class InvioEmail
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(663, 540)
+      Me.ClientSize = New System.Drawing.Size(670, 551)
       Me.Controls.Add(Me.eui_txtCategoria)
       Me.Controls.Add(Me.eui_txtStato)
       Me.Controls.Add(Me.eui_txtDataInvio)

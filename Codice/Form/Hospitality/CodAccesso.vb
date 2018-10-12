@@ -104,9 +104,10 @@ Public Class CodAccesso
       'LinkLabel1
       '
       Me.LinkLabel1.AutoSize = True
+      Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.LinkLabel1.Location = New System.Drawing.Point(80, 94)
       Me.LinkLabel1.Name = "LinkLabel1"
-      Me.LinkLabel1.Size = New System.Drawing.Size(123, 13)
+      Me.LinkLabel1.Size = New System.Drawing.Size(182, 20)
       Me.LinkLabel1.TabIndex = 8
       Me.LinkLabel1.TabStop = True
       Me.LinkLabel1.Text = "www.montanasoftware.it"
@@ -118,7 +119,7 @@ Public Class CodAccesso
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(344, 36)
       Me.Label3.TabIndex = 10
-      Me.Label3.Text = "Inserire la chiave di attivazione del software o del modulo selezionato per attiv" & _
+      Me.Label3.Text = "Inserire la chiave di attivazione del software o del modulo selezionato per attiv" &
     "are le funzionalità desiderate. "
       '
       'PictureBox1
@@ -219,9 +220,9 @@ Public Class CodAccesso
       Me.eui_cmdRichiesta.Location = New System.Drawing.Point(80, 200)
       Me.eui_cmdRichiesta.Name = "eui_cmdRichiesta"
       Me.eui_cmdRichiesta.ScreenTip.Caption = "Richiesta di attivazione"
-      Me.eui_cmdRichiesta.ScreenTip.Text = "Apre il modulo per l'inserimento dei dati di registrazione dell'azienda e la rich" & _
+      Me.eui_cmdRichiesta.ScreenTip.Text = "Apre il modulo per l'inserimento dei dati di registrazione dell'azienda e la rich" &
     "iesta del codice di attivazione del software"
-      Me.eui_cmdRichiesta.Size = New System.Drawing.Size(136, 24)
+      Me.eui_cmdRichiesta.Size = New System.Drawing.Size(136, 28)
       Me.eui_cmdRichiesta.TabIndex = 5
       Me.eui_cmdRichiesta.Text = "&Richiesta di attivazione"
       '
@@ -234,7 +235,7 @@ Public Class CodAccesso
       Me.eui_cmdOK.Name = "eui_cmdOK"
       Me.eui_cmdOK.ScreenTip.Caption = "OK"
       Me.eui_cmdOK.ScreenTip.Text = "Conferma l'operazione  e chiude la finestra"
-      Me.eui_cmdOK.Size = New System.Drawing.Size(80, 24)
+      Me.eui_cmdOK.Size = New System.Drawing.Size(80, 28)
       Me.eui_cmdOK.TabIndex = 6
       Me.eui_cmdOK.Text = "&OK"
       '
@@ -247,7 +248,7 @@ Public Class CodAccesso
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Annulla"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annulla l'operazione e chiude la finestra"
-      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(80, 24)
+      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(80, 28)
       Me.eui_cmdAnnulla.TabIndex = 7
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
@@ -257,7 +258,7 @@ Public Class CodAccesso
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(450, 240)
+      Me.ClientSize = New System.Drawing.Size(445, 237)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.eui_cmdOK)
       Me.Controls.Add(Me.eui_cmdRichiesta)

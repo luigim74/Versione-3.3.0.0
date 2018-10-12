@@ -65,7 +65,7 @@ Friend Class frmSplash
       Me.PerformLayout()
 
    End Sub
-#End Region 
+#End Region
 
    Private Sub frmSplash_Load(sender As Object, e As System.EventArgs) Handles Me.Load
       ' Imposta l'immagine in base al prodotto installato.

@@ -17,6 +17,7 @@ Public Class EtichetteIndirizzi
    Const TAB_CLIENTI As String = "Clienti"
 
    Dim percorsoRepEtichette As String = ""
+   Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
 
    ' Dichiara un oggetto connessione.
    'Dim cn As New OleDbConnection(ConnString)
@@ -86,6 +87,7 @@ Public Class EtichetteIndirizzi
       Me.cmbNumero = New System.Windows.Forms.ComboBox()
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       CType(Me.picAnteprima, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -117,7 +119,7 @@ Public Class EtichetteIndirizzi
       Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
       Me.Label3.Location = New System.Drawing.Point(0, 0)
       Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(370, 22)
+      Me.Label3.Size = New System.Drawing.Size(369, 22)
       Me.Label3.TabIndex = 10
       Me.Label3.Text = "  FORMATO ETICHETTE:"
       Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -216,13 +218,17 @@ Public Class EtichetteIndirizzi
       '
       Me.PrintDocument1.DocumentName = ""
       '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.Form = Me
+      '
       'EtichetteIndirizzi
       '
       Me.AcceptButton = Me.cmdAnteprima
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(370, 272)
+      Me.ClientSize = New System.Drawing.Size(369, 282)
       Me.Controls.Add(Me.cmbNumero)
       Me.Controls.Add(Me.Label20)
       Me.Controls.Add(Me.cmdAnnulla)

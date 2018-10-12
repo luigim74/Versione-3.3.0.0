@@ -131,7 +131,7 @@ Public Class frmRisorse
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(543, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(538, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -165,7 +165,7 @@ Public Class frmRisorse
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(543, 20)
+      Me.Panel1.Size = New System.Drawing.Size(538, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -188,7 +188,7 @@ Public Class frmRisorse
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(543, 354)
+      Me.TabControl1.Size = New System.Drawing.Size(538, 331)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -215,7 +215,7 @@ Public Class frmRisorse
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(535, 328)
+      Me.TabPage1.Size = New System.Drawing.Size(530, 305)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -296,7 +296,7 @@ Public Class frmRisorse
       '
       Me.cmbDisponibile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbDisponibile.Items.AddRange(New Object() {"Sì", "No"})
-      Me.cmbDisponibile.Location = New System.Drawing.Point(24, 304)
+      Me.cmbDisponibile.Location = New System.Drawing.Point(24, 275)
       Me.cmbDisponibile.Name = "cmbDisponibile"
       Me.cmbDisponibile.Size = New System.Drawing.Size(80, 21)
       Me.cmbDisponibile.TabIndex = 11
@@ -394,7 +394,7 @@ Public Class frmRisorse
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(24, 288)
+      Me.Label6.Location = New System.Drawing.Point(24, 259)
       Me.Label6.Name = "Label6"
       Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label6.Size = New System.Drawing.Size(61, 13)
@@ -450,7 +450,7 @@ Public Class frmRisorse
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(570, 328)
+      Me.TabPage6.Size = New System.Drawing.Size(535, 328)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -467,7 +467,7 @@ Public Class frmRisorse
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(570, 328)
+      Me.txtNote.Size = New System.Drawing.Size(535, 328)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -484,7 +484,7 @@ Public Class frmRisorse
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(543, 400)
+      Me.ClientSize = New System.Drawing.Size(538, 377)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

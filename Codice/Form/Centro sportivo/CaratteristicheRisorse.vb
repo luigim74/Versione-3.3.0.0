@@ -93,7 +93,7 @@ Public Class frmCaratteristicheRisorse
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(548, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(558, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -127,7 +127,7 @@ Public Class frmCaratteristicheRisorse
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(548, 20)
+      Me.Panel1.Size = New System.Drawing.Size(558, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -237,7 +237,7 @@ Public Class frmCaratteristicheRisorse
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(548, 370)
+      Me.ClientSize = New System.Drawing.Size(558, 380)
       Me.Controls.Add(Me.txtCosto)
       Me.Controls.Add(Me.Label1)
       Me.Controls.Add(Me.txtDescrizione)

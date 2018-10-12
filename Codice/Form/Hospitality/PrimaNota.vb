@@ -259,9 +259,9 @@ Public Class PrimaNota
       Me.Panel1.Controls.Add(Me.cmbData1)
       Me.Panel1.Controls.Add(Me.lblAl)
       Me.Panel1.Controls.Add(Me.lblDal)
-      Me.Panel1.Location = New System.Drawing.Point(0, 26)
+      Me.Panel1.Location = New System.Drawing.Point(0, 40)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(848, 38)
+      Me.Panel1.Size = New System.Drawing.Size(699, 38)
       Me.Panel1.TabIndex = 55665
       '
       'cmbData2
@@ -269,7 +269,7 @@ Public Class PrimaNota
       Me.cmbData2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbData2.Enabled = False
       Me.cmbData2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbData2.Location = New System.Drawing.Point(664, 14)
+      Me.cmbData2.Location = New System.Drawing.Point(515, 9)
       Me.cmbData2.Name = "cmbData2"
       Me.cmbData2.Size = New System.Drawing.Size(174, 20)
       Me.cmbData2.TabIndex = 55665
@@ -279,7 +279,7 @@ Public Class PrimaNota
       Me.cmbData1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbData1.Enabled = False
       Me.cmbData1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbData1.Location = New System.Drawing.Point(448, 14)
+      Me.cmbData1.Location = New System.Drawing.Point(299, 9)
       Me.cmbData1.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.cmbData1.Name = "cmbData1"
       Me.cmbData1.Size = New System.Drawing.Size(174, 20)
@@ -291,7 +291,7 @@ Public Class PrimaNota
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.Color.White
-      Me.lblAl.Location = New System.Drawing.Point(640, 14)
+      Me.lblAl.Location = New System.Drawing.Point(491, 9)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(23, 15)
       Me.lblAl.TabIndex = 10
@@ -303,7 +303,7 @@ Public Class PrimaNota
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.Color.White
-      Me.lblDal.Location = New System.Drawing.Point(416, 14)
+      Me.lblDal.Location = New System.Drawing.Point(267, 9)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(33, 15)
       Me.lblDal.TabIndex = 9
@@ -322,10 +322,10 @@ Public Class PrimaNota
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 64)
+      Me.DataGrid1.Location = New System.Drawing.Point(0, 78)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(848, 373)
+      Me.DataGrid1.Size = New System.Drawing.Size(699, 177)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel2
@@ -343,9 +343,9 @@ Public Class PrimaNota
       Me.Panel2.Controls.Add(Me.txtEntrateCassa)
       Me.Panel2.Controls.Add(Me.Label3)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 438)
+      Me.Panel2.Location = New System.Drawing.Point(0, 256)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(848, 64)
+      Me.Panel2.Size = New System.Drawing.Size(699, 64)
       Me.Panel2.TabIndex = 55673
       '
       'txtSomma
@@ -356,7 +356,7 @@ Public Class PrimaNota
       Me.txtSomma.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtSomma.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtSomma.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtSomma.Location = New System.Drawing.Point(651, 84)
+      Me.txtSomma.Location = New System.Drawing.Point(502, 84)
       Me.txtSomma.MaxLength = 0
       Me.txtSomma.Name = "txtSomma"
       Me.txtSomma.ReadOnly = True
@@ -375,7 +375,7 @@ Public Class PrimaNota
       Me.txtEntrateMenoUsciteVersamentiVarie.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtEntrateMenoUsciteVersamentiVarie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtEntrateMenoUsciteVersamentiVarie.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtEntrateMenoUsciteVersamentiVarie.Location = New System.Drawing.Point(651, 33)
+      Me.txtEntrateMenoUsciteVersamentiVarie.Location = New System.Drawing.Point(511, 33)
       Me.txtEntrateMenoUsciteVersamentiVarie.MaxLength = 0
       Me.txtEntrateMenoUsciteVersamentiVarie.Name = "txtEntrateMenoUsciteVersamentiVarie"
       Me.txtEntrateMenoUsciteVersamentiVarie.ReadOnly = True
@@ -393,7 +393,7 @@ Public Class PrimaNota
       Me.txtVersamentiMenoPrelievi.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtVersamentiMenoPrelievi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtVersamentiMenoPrelievi.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtVersamentiMenoPrelievi.Location = New System.Drawing.Point(471, 33)
+      Me.txtVersamentiMenoPrelievi.Location = New System.Drawing.Point(331, 33)
       Me.txtVersamentiMenoPrelievi.MaxLength = 0
       Me.txtVersamentiMenoPrelievi.Name = "txtVersamentiMenoPrelievi"
       Me.txtVersamentiMenoPrelievi.ReadOnly = True
@@ -411,7 +411,7 @@ Public Class PrimaNota
       Me.txtEntrateMenoUsciteCasse.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtEntrateMenoUsciteCasse.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtEntrateMenoUsciteCasse.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtEntrateMenoUsciteCasse.Location = New System.Drawing.Point(291, 33)
+      Me.txtEntrateMenoUsciteCasse.Location = New System.Drawing.Point(151, 33)
       Me.txtEntrateMenoUsciteCasse.MaxLength = 0
       Me.txtEntrateMenoUsciteCasse.Name = "txtEntrateMenoUsciteCasse"
       Me.txtEntrateMenoUsciteCasse.ReadOnly = True
@@ -429,7 +429,7 @@ Public Class PrimaNota
       Me.txtUsciteVarie.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtUsciteVarie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtUsciteVarie.ForeColor = System.Drawing.Color.Red
-      Me.txtUsciteVarie.Location = New System.Drawing.Point(741, 12)
+      Me.txtUsciteVarie.Location = New System.Drawing.Point(601, 12)
       Me.txtUsciteVarie.MaxLength = 0
       Me.txtUsciteVarie.Name = "txtUsciteVarie"
       Me.txtUsciteVarie.ReadOnly = True
@@ -447,7 +447,7 @@ Public Class PrimaNota
       Me.txtEntrateVarie.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtEntrateVarie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtEntrateVarie.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtEntrateVarie.Location = New System.Drawing.Point(651, 12)
+      Me.txtEntrateVarie.Location = New System.Drawing.Point(511, 12)
       Me.txtEntrateVarie.MaxLength = 0
       Me.txtEntrateVarie.Name = "txtEntrateVarie"
       Me.txtEntrateVarie.ReadOnly = True
@@ -465,7 +465,7 @@ Public Class PrimaNota
       Me.txtPrelieviBanca.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtPrelieviBanca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtPrelieviBanca.ForeColor = System.Drawing.Color.Red
-      Me.txtPrelieviBanca.Location = New System.Drawing.Point(561, 12)
+      Me.txtPrelieviBanca.Location = New System.Drawing.Point(421, 12)
       Me.txtPrelieviBanca.MaxLength = 0
       Me.txtPrelieviBanca.Name = "txtPrelieviBanca"
       Me.txtPrelieviBanca.ReadOnly = True
@@ -483,7 +483,7 @@ Public Class PrimaNota
       Me.txtVersamentiBanca.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtVersamentiBanca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtVersamentiBanca.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtVersamentiBanca.Location = New System.Drawing.Point(471, 12)
+      Me.txtVersamentiBanca.Location = New System.Drawing.Point(331, 12)
       Me.txtVersamentiBanca.MaxLength = 0
       Me.txtVersamentiBanca.Name = "txtVersamentiBanca"
       Me.txtVersamentiBanca.ReadOnly = True
@@ -501,7 +501,7 @@ Public Class PrimaNota
       Me.txtUsciteCassa.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtUsciteCassa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtUsciteCassa.ForeColor = System.Drawing.Color.Red
-      Me.txtUsciteCassa.Location = New System.Drawing.Point(381, 12)
+      Me.txtUsciteCassa.Location = New System.Drawing.Point(241, 12)
       Me.txtUsciteCassa.MaxLength = 0
       Me.txtUsciteCassa.Name = "txtUsciteCassa"
       Me.txtUsciteCassa.ReadOnly = True
@@ -519,7 +519,7 @@ Public Class PrimaNota
       Me.txtEntrateCassa.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtEntrateCassa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtEntrateCassa.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.txtEntrateCassa.Location = New System.Drawing.Point(291, 12)
+      Me.txtEntrateCassa.Location = New System.Drawing.Point(151, 12)
       Me.txtEntrateCassa.MaxLength = 0
       Me.txtEntrateCassa.Name = "txtEntrateCassa"
       Me.txtEntrateCassa.ReadOnly = True
@@ -535,7 +535,7 @@ Public Class PrimaNota
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(200, 10)
+      Me.Label3.Location = New System.Drawing.Point(60, 10)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(88, 32)
       Me.Label3.TabIndex = 9
@@ -561,7 +561,7 @@ Public Class PrimaNota
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(848, 34)
+      Me.ToolBar1.Size = New System.Drawing.Size(699, 34)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -709,7 +709,7 @@ Public Class PrimaNota
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(848, 502)
+      Me.ClientSize = New System.Drawing.Size(699, 320)
       Me.Controls.Add(Me.ToolBar1)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.DataGrid1)

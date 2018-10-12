@@ -74,6 +74,7 @@ Public Class frmAcquisti
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
+      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
       Me.Panel1 = New System.Windows.Forms.Panel()
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -97,7 +98,6 @@ Public Class frmAcquisti
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -115,7 +115,7 @@ Public Class frmAcquisti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(548, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(527, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -135,6 +135,13 @@ Public Class frmAcquisti
       Me.Annulla.Text = "Annulla"
       Me.Annulla.ToolTipText = "Annulla"
       '
+      'ImageList1
+      '
+      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+      Me.ImageList1.Images.SetKeyName(0, "saveHS.png")
+      Me.ImageList1.Images.SetKeyName(1, "Edit_UndoHS.png")
+      '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
@@ -142,7 +149,7 @@ Public Class frmAcquisti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(548, 20)
+      Me.Panel1.Size = New System.Drawing.Size(527, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -165,7 +172,7 @@ Public Class frmAcquisti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(548, 324)
+      Me.TabControl1.Size = New System.Drawing.Size(527, 310)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -187,7 +194,7 @@ Public Class frmAcquisti
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(540, 298)
+      Me.TabPage1.Size = New System.Drawing.Size(519, 284)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -392,18 +399,11 @@ Public Class frmAcquisti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'ImageList1
-      '
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-      Me.ImageList1.Images.SetKeyName(0, "saveHS.png")
-      Me.ImageList1.Images.SetKeyName(1, "Edit_UndoHS.png")
-      '
       'frmAcquisti
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(548, 370)
+      Me.ClientSize = New System.Drawing.Size(527, 356)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

@@ -85,7 +85,7 @@ Public Class PuliziaDB
       Me.Label3.ForeColor = System.Drawing.Color.White
       Me.Label3.Location = New System.Drawing.Point(0, 0)
       Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(386, 22)
+      Me.Label3.Size = New System.Drawing.Size(385, 22)
       Me.Label3.TabIndex = 10
       Me.Label3.Text = " ELENCO TABELLE DEL DATABASE:"
       Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -105,7 +105,7 @@ Public Class PuliziaDB
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(272, 40)
       Me.Label1.TabIndex = 12
-      Me.Label1.Text = "Selezionare le Tabelle su cui si desidera effettuare la pulizia. Tutti i dati del" & _
+      Me.Label1.Text = "Selezionare le Tabelle su cui si desidera effettuare la pulizia. Tutti i dati del" &
     "le tabelle selezionate verranno cancellati."
       '
       'cmdSeleziona
@@ -147,7 +147,7 @@ Public Class PuliziaDB
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(386, 400)
+      Me.ClientSize = New System.Drawing.Size(385, 393)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.cmdEsegui)
       Me.Controls.Add(Me.cmdSeleziona)

@@ -75,7 +75,7 @@ Public Class frmAccesso
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "5815fb08-3511-4c54-a173-cd48cbc7eb17"
       Me.eui_cmdAnnulla.KeyTip = "A"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(290, 126)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(290, 135)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Annulla"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annulla l'operazione e chiude la finestra"
@@ -87,7 +87,7 @@ Public Class frmAccesso
       '
       Me.eui_cmdOK.Id = "3aec9268-18c4-4062-85b2-1459f457e1f3"
       Me.eui_cmdOK.KeyTip = "O"
-      Me.eui_cmdOK.Location = New System.Drawing.Point(202, 126)
+      Me.eui_cmdOK.Location = New System.Drawing.Point(202, 135)
       Me.eui_cmdOK.Name = "eui_cmdOK"
       Me.eui_cmdOK.ScreenTip.Caption = "OK"
       Me.eui_cmdOK.ScreenTip.Text = "Conferma l'operazione  e chiude la finestra." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Nella versione Dimostrativa non è" &
@@ -138,7 +138,7 @@ Public Class frmAccesso
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(380, 160)
+      Me.ClientSize = New System.Drawing.Size(383, 168)
       Me.Controls.Add(Me.Label2)
       Me.Controls.Add(Me.Label1)
       Me.Controls.Add(Me.eui_txtPassword)

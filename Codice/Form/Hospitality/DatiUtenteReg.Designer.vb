@@ -53,7 +53,7 @@ Partial Class DatiUtenteReg
       Me.eui_cmdChiudi.Id = "61587055-035a-4f91-878c-5f280b2528ad"
       Me.eui_cmdChiudi.Location = New System.Drawing.Point(592, 376)
       Me.eui_cmdChiudi.Name = "eui_cmdChiudi"
-      Me.eui_cmdChiudi.Size = New System.Drawing.Size(88, 24)
+      Me.eui_cmdChiudi.Size = New System.Drawing.Size(88, 28)
       Me.eui_cmdChiudi.TabIndex = 2
       Me.eui_cmdChiudi.Text = "&Chiudi"
       '
@@ -62,7 +62,7 @@ Partial Class DatiUtenteReg
       Me.eui_cmdCopia.Id = "c9ecc775-9647-4487-b063-bec3291a19a8"
       Me.eui_cmdCopia.Location = New System.Drawing.Point(496, 376)
       Me.eui_cmdCopia.Name = "eui_cmdCopia"
-      Me.eui_cmdCopia.Size = New System.Drawing.Size(88, 24)
+      Me.eui_cmdCopia.Size = New System.Drawing.Size(88, 28)
       Me.eui_cmdCopia.TabIndex = 1
       Me.eui_cmdCopia.Text = "&Copia"
       '
@@ -78,7 +78,7 @@ Partial Class DatiUtenteReg
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdChiudi
-      Me.ClientSize = New System.Drawing.Size(702, 415)
+      Me.ClientSize = New System.Drawing.Size(703, 417)
       Me.Controls.Add(Me.eui_cmdCopia)
       Me.Controls.Add(Me.eui_cmdChiudi)
       Me.Controls.Add(Me.Label1)

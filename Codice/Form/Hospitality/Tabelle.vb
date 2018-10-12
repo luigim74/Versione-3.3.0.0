@@ -145,7 +145,7 @@ Public Class TabelleDati
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(484, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(492, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -276,7 +276,7 @@ Public Class TabelleDati
       Me.DataGrid1.Location = New System.Drawing.Point(0, 26)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(484, 285)
+      Me.DataGrid1.Size = New System.Drawing.Size(492, 293)
       Me.DataGrid1.TabIndex = 3
       '
       'formFrameSkinner
@@ -288,7 +288,7 @@ Public Class TabelleDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(484, 311)
+      Me.ClientSize = New System.Drawing.Size(492, 319)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
       Me.Name = "TabelleDati"

@@ -126,7 +126,7 @@ Public Class ElencoEmail
       Me.DataGrid1.Location = New System.Drawing.Point(0, 63)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(693, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(597, 271)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -139,7 +139,7 @@ Public Class ElencoEmail
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(694, 63)
+      Me.Panel1.Size = New System.Drawing.Size(597, 63)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -148,14 +148,14 @@ Public Class ElencoEmail
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(16, 32)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(424, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(327, 20)
       Me.TestoRicerca.TabIndex = 7
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(448, 32)
+      Me.CampoRicerca.Location = New System.Drawing.Point(351, 32)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(232, 21)
       Me.CampoRicerca.TabIndex = 8
@@ -167,7 +167,7 @@ Public Class ElencoEmail
       Me.lblCampo.BackColor = System.Drawing.Color.Transparent
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(448, 16)
+      Me.lblCampo.Location = New System.Drawing.Point(351, 16)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -202,7 +202,7 @@ Public Class ElencoEmail
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(694, 319)
+      Me.ClientSize = New System.Drawing.Size(597, 335)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

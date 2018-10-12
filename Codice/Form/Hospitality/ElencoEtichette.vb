@@ -147,7 +147,7 @@ Public Class ElencoEtichette
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(808, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(622, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -282,14 +282,14 @@ Public Class ElencoEtichette
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(808, 38)
+      Me.Panel1.Size = New System.Drawing.Size(622, 38)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(666, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(480, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -300,7 +300,7 @@ Public Class ElencoEtichette
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(584, 8)
+      Me.Label2.Location = New System.Drawing.Point(391, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -323,7 +323,7 @@ Public Class ElencoEtichette
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(112, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(463, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(268, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
@@ -344,7 +344,7 @@ Public Class ElencoEtichette
       Me.tbcElenco.Location = New System.Drawing.Point(3, 66)
       Me.tbcElenco.Name = "tbcElenco"
       Me.tbcElenco.SelectedIndex = 0
-      Me.tbcElenco.Size = New System.Drawing.Size(803, 346)
+      Me.tbcElenco.Size = New System.Drawing.Size(618, 300)
       Me.tbcElenco.TabIndex = 3
       '
       'tbpIndirizzi
@@ -352,7 +352,7 @@ Public Class ElencoEtichette
       Me.tbpIndirizzi.Controls.Add(Me.dgIndirizzi)
       Me.tbpIndirizzi.Location = New System.Drawing.Point(4, 22)
       Me.tbpIndirizzi.Name = "tbpIndirizzi"
-      Me.tbpIndirizzi.Size = New System.Drawing.Size(795, 320)
+      Me.tbpIndirizzi.Size = New System.Drawing.Size(610, 274)
       Me.tbpIndirizzi.TabIndex = 0
       Me.tbpIndirizzi.Text = "Etichette Indirizzi"
       '
@@ -369,7 +369,7 @@ Public Class ElencoEtichette
       Me.dgIndirizzi.Location = New System.Drawing.Point(0, 0)
       Me.dgIndirizzi.Name = "dgIndirizzi"
       Me.dgIndirizzi.ReadOnly = True
-      Me.dgIndirizzi.Size = New System.Drawing.Size(795, 320)
+      Me.dgIndirizzi.Size = New System.Drawing.Size(610, 274)
       Me.dgIndirizzi.TabIndex = 2
       '
       'tbpArticoli
@@ -377,7 +377,7 @@ Public Class ElencoEtichette
       Me.tbpArticoli.Controls.Add(Me.dgArticoli)
       Me.tbpArticoli.Location = New System.Drawing.Point(4, 22)
       Me.tbpArticoli.Name = "tbpArticoli"
-      Me.tbpArticoli.Size = New System.Drawing.Size(795, 320)
+      Me.tbpArticoli.Size = New System.Drawing.Size(602, 266)
       Me.tbpArticoli.TabIndex = 1
       Me.tbpArticoli.Text = "Etichette Codice a barre Articoli"
       '
@@ -394,7 +394,7 @@ Public Class ElencoEtichette
       Me.dgArticoli.Location = New System.Drawing.Point(0, 0)
       Me.dgArticoli.Name = "dgArticoli"
       Me.dgArticoli.ReadOnly = True
-      Me.dgArticoli.Size = New System.Drawing.Size(795, 320)
+      Me.dgArticoli.Size = New System.Drawing.Size(602, 266)
       Me.dgArticoli.TabIndex = 3
       '
       'formFrameSkinner
@@ -406,7 +406,7 @@ Public Class ElencoEtichette
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(808, 414)
+      Me.ClientSize = New System.Drawing.Size(622, 367)
       Me.Controls.Add(Me.tbcElenco)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

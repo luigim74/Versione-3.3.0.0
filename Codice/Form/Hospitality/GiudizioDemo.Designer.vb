@@ -139,7 +139,7 @@ Partial Class frmGiudizioDemo
       '
       Me.cmdInvia.Id = "05960bb7-2399-432c-9b69-74396e9db2ba"
       Me.cmdInvia.KeyTip = "I"
-      Me.cmdInvia.Location = New System.Drawing.Point(240, 408)
+      Me.cmdInvia.Location = New System.Drawing.Point(248, 406)
       Me.cmdInvia.Name = "cmdInvia"
       Me.cmdInvia.Size = New System.Drawing.Size(96, 32)
       Me.cmdInvia.TabIndex = 4
@@ -150,7 +150,7 @@ Partial Class frmGiudizioDemo
       Me.cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.cmdEsci.Id = "d62d71f4-aff7-4096-a1e4-70aa95c12a35"
       Me.cmdEsci.KeyTip = "E"
-      Me.cmdEsci.Location = New System.Drawing.Point(344, 408)
+      Me.cmdEsci.Location = New System.Drawing.Point(352, 406)
       Me.cmdEsci.Name = "cmdEsci"
       Me.cmdEsci.Size = New System.Drawing.Size(96, 32)
       Me.cmdEsci.TabIndex = 5
@@ -174,7 +174,7 @@ Partial Class frmGiudizioDemo
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdEsci
-      Me.ClientSize = New System.Drawing.Size(469, 458)
+      Me.ClientSize = New System.Drawing.Size(467, 447)
       Me.Controls.Add(Me.Label7)
       Me.Controls.Add(Me.cmdEsci)
       Me.Controls.Add(Me.cmdInvia)

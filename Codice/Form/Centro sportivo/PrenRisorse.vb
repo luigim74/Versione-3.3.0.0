@@ -310,7 +310,7 @@ Public Class frmPrenRisorse
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(610, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(596, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -344,7 +344,7 @@ Public Class frmPrenRisorse
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(610, 20)
+      Me.Panel1.Size = New System.Drawing.Size(596, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -369,7 +369,7 @@ Public Class frmPrenRisorse
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(610, 408)
+      Me.TabControl1.Size = New System.Drawing.Size(596, 391)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -403,7 +403,7 @@ Public Class frmPrenRisorse
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(602, 382)
+      Me.TabPage1.Size = New System.Drawing.Size(588, 365)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -713,7 +713,7 @@ Public Class frmPrenRisorse
       Me.TabPage2.Controls.Add(Me.Label4)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(602, 382)
+      Me.TabPage2.Size = New System.Drawing.Size(588, 365)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Altri componenti"
       '
@@ -864,7 +864,7 @@ Public Class frmPrenRisorse
       Me.TabPage3.Controls.Add(Me.lvwConto)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(602, 382)
+      Me.TabPage3.Size = New System.Drawing.Size(588, 365)
       Me.TabPage3.TabIndex = 7
       Me.TabPage3.Text = "Gestione conto"
       '
@@ -1187,7 +1187,7 @@ Public Class frmPrenRisorse
       Me.lvwConto.Location = New System.Drawing.Point(0, 0)
       Me.lvwConto.MultiSelect = False
       Me.lvwConto.Name = "lvwConto"
-      Me.lvwConto.Size = New System.Drawing.Size(408, 382)
+      Me.lvwConto.Size = New System.Drawing.Size(408, 365)
       Me.lvwConto.TabIndex = 10
       Me.lvwConto.UseCompatibleStateImageBehavior = False
       Me.lvwConto.View = System.Windows.Forms.View.Details
@@ -1218,7 +1218,7 @@ Public Class frmPrenRisorse
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(592, 372)
+      Me.TabPage6.Size = New System.Drawing.Size(588, 365)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -1235,7 +1235,7 @@ Public Class frmPrenRisorse
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(592, 372)
+      Me.txtNote.Size = New System.Drawing.Size(588, 365)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1251,7 +1251,7 @@ Public Class frmPrenRisorse
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(610, 454)
+      Me.ClientSize = New System.Drawing.Size(596, 437)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

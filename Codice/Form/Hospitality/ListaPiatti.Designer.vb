@@ -192,7 +192,7 @@ Partial Class ListaPiatti
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(724, 513)
+      Me.ClientSize = New System.Drawing.Size(723, 515)
       Me.Controls.Add(Me.eui_cmbCategoriaPiatti)
       Me.Controls.Add(Me.eui_dwnListino)
       Me.Controls.Add(Me.eui_cmdInserisci)

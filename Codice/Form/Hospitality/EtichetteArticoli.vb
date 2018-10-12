@@ -157,7 +157,7 @@ Public Class EtichetteArticoli
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(544, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(541, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -200,7 +200,7 @@ Public Class EtichetteArticoli
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(544, 20)
+      Me.Panel1.Size = New System.Drawing.Size(541, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -224,7 +224,7 @@ Public Class EtichetteArticoli
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(544, 322)
+      Me.TabControl1.Size = New System.Drawing.Size(541, 316)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -254,7 +254,7 @@ Public Class EtichetteArticoli
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.ControlText
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(533, 290)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -523,7 +523,7 @@ Public Class EtichetteArticoli
       Me.TabPage3.Controls.Add(Me.lstEtichette)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage3.Size = New System.Drawing.Size(532, 292)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Formato"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -588,7 +588,7 @@ Public Class EtichetteArticoli
       Me.TabPage2.Controls.Add(Me.TextBox1)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage2.Size = New System.Drawing.Size(532, 292)
       Me.TabPage2.TabIndex = 3
       Me.TabPage2.Text = "Codice a barre"
       '
@@ -689,7 +689,7 @@ Public Class EtichetteArticoli
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(544, 368)
+      Me.ClientSize = New System.Drawing.Size(541, 362)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

@@ -165,7 +165,7 @@ Public Class frmStatisticheRisorse
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(664, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(672, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -306,10 +306,10 @@ Public Class frmStatisticheRisorse
       Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(216, 80)
+      Me.DataGrid1.Location = New System.Drawing.Point(211, 80)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(448, 216)
+      Me.DataGrid1.Size = New System.Drawing.Size(461, 231)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -326,7 +326,7 @@ Public Class frmStatisticheRisorse
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(664, 54)
+      Me.Panel1.Size = New System.Drawing.Size(672, 54)
       Me.Panel1.TabIndex = 0
       '
       'TestoRicerca
@@ -335,13 +335,13 @@ Public Class frmStatisticheRisorse
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(5, 25)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(163, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(171, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'dtpDataAl
       '
       Me.dtpDataAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpDataAl.Location = New System.Drawing.Point(488, 25)
+      Me.dtpDataAl.Location = New System.Drawing.Point(496, 25)
       Me.dtpDataAl.Name = "dtpDataAl"
       Me.dtpDataAl.Size = New System.Drawing.Size(168, 20)
       Me.dtpDataAl.TabIndex = 3
@@ -349,7 +349,7 @@ Public Class frmStatisticheRisorse
       'dtpDataDal
       '
       Me.dtpDataDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpDataDal.Location = New System.Drawing.Point(312, 25)
+      Me.dtpDataDal.Location = New System.Drawing.Point(320, 25)
       Me.dtpDataDal.Name = "dtpDataDal"
       Me.dtpDataDal.Size = New System.Drawing.Size(168, 20)
       Me.dtpDataDal.TabIndex = 2
@@ -360,7 +360,7 @@ Public Class frmStatisticheRisorse
       Me.Label5.AutoSize = True
       Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label5.ForeColor = System.Drawing.Color.White
-      Me.Label5.Location = New System.Drawing.Point(488, 8)
+      Me.Label5.Location = New System.Drawing.Point(496, 8)
       Me.Label5.Name = "Label5"
       Me.Label5.Size = New System.Drawing.Size(23, 15)
       Me.Label5.TabIndex = 10
@@ -372,7 +372,7 @@ Public Class frmStatisticheRisorse
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(312, 8)
+      Me.Label4.Location = New System.Drawing.Point(320, 8)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(33, 15)
       Me.Label4.TabIndex = 9
@@ -382,7 +382,7 @@ Public Class frmStatisticheRisorse
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(176, 24)
+      Me.CampoRicerca.Location = New System.Drawing.Point(184, 24)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(128, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -393,7 +393,7 @@ Public Class frmStatisticheRisorse
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(176, 8)
+      Me.Label2.Location = New System.Drawing.Point(184, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -423,10 +423,10 @@ Public Class frmStatisticheRisorse
       Me.lstRisorse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.lstRisorse.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstRisorse.Location = New System.Drawing.Point(4, 104)
+      Me.lstRisorse.Location = New System.Drawing.Point(0, 100)
       Me.lstRisorse.Name = "lstRisorse"
       Me.lstRisorse.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lstRisorse.Size = New System.Drawing.Size(210, 186)
+      Me.lstRisorse.Size = New System.Drawing.Size(210, 212)
       Me.lstRisorse.TabIndex = 0
       '
       'Label3
@@ -449,9 +449,9 @@ Public Class frmStatisticheRisorse
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Controls.Add(Me.lblTotale)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 302)
+      Me.Panel2.Location = New System.Drawing.Point(0, 313)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(664, 32)
+      Me.Panel2.Size = New System.Drawing.Size(672, 32)
       Me.Panel2.TabIndex = 12
       '
       'txtTotImporto
@@ -462,7 +462,7 @@ Public Class frmStatisticheRisorse
       Me.txtTotImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotImporto.Location = New System.Drawing.Point(552, 6)
+      Me.txtTotImporto.Location = New System.Drawing.Point(560, 6)
       Me.txtTotImporto.MaxLength = 0
       Me.txtTotImporto.Name = "txtTotImporto"
       Me.txtTotImporto.ReadOnly = True
@@ -479,7 +479,7 @@ Public Class frmStatisticheRisorse
       Me.txtTotQuantità.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotQuantità.ForeColor = System.Drawing.Color.Red
-      Me.txtTotQuantità.Location = New System.Drawing.Point(288, 6)
+      Me.txtTotQuantità.Location = New System.Drawing.Point(296, 6)
       Me.txtTotQuantità.MaxLength = 0
       Me.txtTotQuantità.Name = "txtTotQuantità"
       Me.txtTotQuantità.ReadOnly = True
@@ -494,7 +494,7 @@ Public Class frmStatisticheRisorse
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(408, 8)
+      Me.Label6.Location = New System.Drawing.Point(409, 8)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(148, 15)
       Me.Label6.TabIndex = 16
@@ -506,7 +506,7 @@ Public Class frmStatisticheRisorse
       Me.lblTotale.AutoSize = True
       Me.lblTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblTotale.ForeColor = System.Drawing.Color.White
-      Me.lblTotale.Location = New System.Drawing.Point(152, 8)
+      Me.lblTotale.Location = New System.Drawing.Point(151, 8)
       Me.lblTotale.Name = "lblTotale"
       Me.lblTotale.Size = New System.Drawing.Size(141, 15)
       Me.lblTotale.TabIndex = 13
@@ -521,7 +521,7 @@ Public Class frmStatisticheRisorse
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(664, 334)
+      Me.ClientSize = New System.Drawing.Size(672, 345)
       Me.Controls.Add(Me.lstRisorse)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
