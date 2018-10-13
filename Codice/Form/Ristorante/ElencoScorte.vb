@@ -131,7 +131,7 @@ Public Class ElencoScorte
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(584, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(592, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -248,7 +248,7 @@ Public Class ElencoScorte
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(584, 262)
+      Me.DataGrid1.Size = New System.Drawing.Size(592, 269)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -261,14 +261,14 @@ Public Class ElencoScorte
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(584, 30)
+      Me.Panel1.Size = New System.Drawing.Size(592, 30)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(442, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(450, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -279,7 +279,7 @@ Public Class ElencoScorte
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(360, 8)
+      Me.Label2.Location = New System.Drawing.Point(362, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -300,9 +300,9 @@ Public Class ElencoScorte
       '
       Me.TestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.TestoRicerca.Location = New System.Drawing.Point(112, 8)
+      Me.TestoRicerca.Location = New System.Drawing.Point(118, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(239, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(241, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
@@ -322,7 +322,7 @@ Public Class ElencoScorte
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(584, 318)
+      Me.ClientSize = New System.Drawing.Size(592, 326)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)

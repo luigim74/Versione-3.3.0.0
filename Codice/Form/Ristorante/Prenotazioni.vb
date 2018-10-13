@@ -147,7 +147,7 @@ Public Class frmPrenotazioni
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(544, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(522, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -181,7 +181,7 @@ Public Class frmPrenotazioni
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(544, 20)
+      Me.Panel1.Size = New System.Drawing.Size(522, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -204,7 +204,7 @@ Public Class frmPrenotazioni
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(544, 322)
+      Me.TabControl1.Size = New System.Drawing.Size(522, 313)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -238,7 +238,7 @@ Public Class frmPrenotazioni
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(514, 287)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -443,7 +443,6 @@ Public Class frmPrenotazioni
       '
       'dtpData
       '
-      Me.dtpData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpData.Location = New System.Drawing.Point(128, 56)
       Me.dtpData.Name = "dtpData"
       Me.dtpData.Size = New System.Drawing.Size(224, 20)
@@ -534,7 +533,7 @@ Public Class frmPrenotazioni
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage6.Size = New System.Drawing.Size(514, 287)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -551,7 +550,7 @@ Public Class frmPrenotazioni
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(536, 296)
+      Me.txtNote.Size = New System.Drawing.Size(514, 287)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -567,7 +566,7 @@ Public Class frmPrenotazioni
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(544, 368)
+      Me.ClientSize = New System.Drawing.Size(522, 359)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

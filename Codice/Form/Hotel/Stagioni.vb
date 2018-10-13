@@ -194,7 +194,7 @@ Public Class frmStagioni
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(496, 20)
+      Me.Panel1.Size = New System.Drawing.Size(493, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -228,7 +228,7 @@ Public Class frmStagioni
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(496, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(493, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -937,7 +937,7 @@ Public Class frmStagioni
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(496, 597)
+      Me.ClientSize = New System.Drawing.Size(493, 594)
       Me.Controls.Add(Me.Label12)
       Me.Controls.Add(Me.Label11)
       Me.Controls.Add(Me.Label10)

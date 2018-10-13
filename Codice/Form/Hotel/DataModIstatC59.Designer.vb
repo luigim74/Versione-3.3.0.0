@@ -36,7 +36,7 @@ Partial Class DataModIstatC59
       'eui_cmdOk
       '
       Me.eui_cmdOk.Id = "10aae451-15b3-413e-9224-780895b0e4f7"
-      Me.eui_cmdOk.Location = New System.Drawing.Point(31, 40)
+      Me.eui_cmdOk.Location = New System.Drawing.Point(18, 38)
       Me.eui_cmdOk.Name = "eui_cmdOk"
       Me.eui_cmdOk.Size = New System.Drawing.Size(70, 31)
       Me.eui_cmdOk.TabIndex = 1
@@ -46,7 +46,7 @@ Partial Class DataModIstatC59
       '
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "3b29147e-7cf3-4009-b947-7ebc3fdfc268"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(110, 40)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(97, 38)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(70, 31)
       Me.eui_cmdAnnulla.TabIndex = 2
@@ -55,7 +55,7 @@ Partial Class DataModIstatC59
       'eui_dtpDataGestione
       '
       Me.eui_dtpDataGestione.Id = "c2601d9d-2dd5-4f69-a5e6-059d2eb1709f"
-      Me.eui_dtpDataGestione.Location = New System.Drawing.Point(10, 9)
+      Me.eui_dtpDataGestione.Location = New System.Drawing.Point(7, 9)
       Me.eui_dtpDataGestione.Name = "eui_dtpDataGestione"
       Me.eui_dtpDataGestione.Size = New System.Drawing.Size(170, 21)
       Me.eui_dtpDataGestione.TabIndex = 0
@@ -68,7 +68,7 @@ Partial Class DataModIstatC59
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(188, 80)
+      Me.ClientSize = New System.Drawing.Size(184, 78)
       Me.ControlBox = False
       Me.Controls.Add(Me.eui_dtpDataGestione)
       Me.Controls.Add(Me.eui_cmdAnnulla)

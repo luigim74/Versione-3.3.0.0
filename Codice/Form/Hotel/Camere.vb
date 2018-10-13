@@ -91,6 +91,8 @@ Public Class frmCamere
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbEvidenzia = New System.Windows.Forms.ComboBox()
+      Me.Label8 = New System.Windows.Forms.Label()
       Me.nudPostiLetto = New System.Windows.Forms.NumericUpDown()
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label7 = New System.Windows.Forms.Label()
@@ -128,8 +130,6 @@ Public Class frmCamere
       Me.Salva = New System.Windows.Forms.ToolBarButton()
       Me.Annulla = New System.Windows.Forms.ToolBarButton()
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.cmbEvidenzia = New System.Windows.Forms.ComboBox()
-      Me.Label8 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -147,7 +147,7 @@ Public Class frmCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(546, 20)
+      Me.Panel1.Size = New System.Drawing.Size(552, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -205,6 +205,28 @@ Public Class frmCamere
       Me.TabPage1.Size = New System.Drawing.Size(536, 294)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'cmbEvidenzia
+      '
+      Me.cmbEvidenzia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbEvidenzia.Items.AddRange(New Object() {"Sì", "No"})
+      Me.cmbEvidenzia.Location = New System.Drawing.Point(414, 254)
+      Me.cmbEvidenzia.Name = "cmbEvidenzia"
+      Me.cmbEvidenzia.Size = New System.Drawing.Size(74, 21)
+      Me.cmbEvidenzia.TabIndex = 11
+      '
+      'Label8
+      '
+      Me.Label8.AutoSize = True
+      Me.Label8.BackColor = System.Drawing.Color.Transparent
+      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label8.ForeColor = System.Drawing.Color.Black
+      Me.Label8.Location = New System.Drawing.Point(255, 256)
+      Me.Label8.Name = "Label8"
+      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label8.Size = New System.Drawing.Size(153, 13)
+      Me.Label8.TabIndex = 189
+      Me.Label8.Text = "Evidenzia periodo sul planning:"
       '
       'nudPostiLetto
       '
@@ -552,7 +574,7 @@ Public Class frmCamere
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(546, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(552, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -579,34 +601,12 @@ Public Class frmCamere
       Me.ImageList1.Images.SetKeyName(0, "")
       Me.ImageList1.Images.SetKeyName(1, "")
       '
-      'cmbEvidenzia
-      '
-      Me.cmbEvidenzia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbEvidenzia.Items.AddRange(New Object() {"Sì", "No"})
-      Me.cmbEvidenzia.Location = New System.Drawing.Point(414, 254)
-      Me.cmbEvidenzia.Name = "cmbEvidenzia"
-      Me.cmbEvidenzia.Size = New System.Drawing.Size(74, 21)
-      Me.cmbEvidenzia.TabIndex = 11
-      '
-      'Label8
-      '
-      Me.Label8.AutoSize = True
-      Me.Label8.BackColor = System.Drawing.Color.Transparent
-      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label8.ForeColor = System.Drawing.Color.Black
-      Me.Label8.Location = New System.Drawing.Point(255, 256)
-      Me.Label8.Name = "Label8"
-      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label8.Size = New System.Drawing.Size(153, 13)
-      Me.Label8.TabIndex = 189
-      Me.Label8.Text = "Evidenzia periodo sul planning:"
-      '
       'frmCamere
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(546, 370)
+      Me.ClientSize = New System.Drawing.Size(552, 374)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
       Me.Controls.Add(Me.TabControl1)

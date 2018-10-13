@@ -115,7 +115,7 @@ Public Class Menu
       Me.ToolBar1.Dock = System.Windows.Forms.DockStyle.None
       Me.ToolBar1.DropDownArrows = True
       Me.ToolBar1.ImageList = Me.ImageList1
-      Me.ToolBar1.Location = New System.Drawing.Point(307, 32)
+      Me.ToolBar1.Location = New System.Drawing.Point(306, 32)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
       Me.ToolBar1.Size = New System.Drawing.Size(88, 360)
@@ -236,7 +236,7 @@ Public Class Menu
       Me.lstCategorie.Location = New System.Drawing.Point(8, 32)
       Me.lstCategorie.Name = "lstCategorie"
       Me.lstCategorie.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lstCategorie.Size = New System.Drawing.Size(288, 355)
+      Me.lstCategorie.Size = New System.Drawing.Size(288, 381)
       Me.lstCategorie.TabIndex = 4
       '
       'Label3
@@ -247,7 +247,7 @@ Public Class Menu
       Me.Label3.ForeColor = System.Drawing.Color.White
       Me.Label3.Location = New System.Drawing.Point(0, 0)
       Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(398, 22)
+      Me.Label3.Size = New System.Drawing.Size(407, 22)
       Me.Label3.TabIndex = 10
       Me.Label3.Text = "  ORDINAMENTO CATEGORIE:"
       Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -261,7 +261,7 @@ Public Class Menu
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(398, 400)
+      Me.ClientSize = New System.Drawing.Size(407, 419)
       Me.Controls.Add(Me.Label3)
       Me.Controls.Add(Me.lstCategorie)
       Me.Controls.Add(Me.ToolBar1)

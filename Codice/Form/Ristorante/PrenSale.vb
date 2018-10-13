@@ -132,7 +132,7 @@ Public Class frmPrenSale
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(544, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(518, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -166,7 +166,7 @@ Public Class frmPrenSale
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(544, 20)
+      Me.Panel1.Size = New System.Drawing.Size(518, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -189,7 +189,7 @@ Public Class frmPrenSale
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(544, 322)
+      Me.TabControl1.Size = New System.Drawing.Size(518, 309)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -216,7 +216,7 @@ Public Class frmPrenSale
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage1.Size = New System.Drawing.Size(510, 283)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -267,7 +267,7 @@ Public Class frmPrenSale
       'cmbIdCliente
       '
       Me.cmbIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbIdCliente.Location = New System.Drawing.Point(424, 112)
+      Me.cmbIdCliente.Location = New System.Drawing.Point(426, 112)
       Me.cmbIdCliente.Name = "cmbIdCliente"
       Me.cmbIdCliente.Size = New System.Drawing.Size(70, 21)
       Me.cmbIdCliente.TabIndex = 203
@@ -351,7 +351,6 @@ Public Class frmPrenSale
       '
       'dtpData
       '
-      Me.dtpData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpData.Location = New System.Drawing.Point(128, 56)
       Me.dtpData.Name = "dtpData"
       Me.dtpData.Size = New System.Drawing.Size(200, 20)
@@ -475,7 +474,7 @@ Public Class frmPrenSale
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(544, 368)
+      Me.ClientSize = New System.Drawing.Size(518, 355)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

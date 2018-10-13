@@ -96,397 +96,397 @@ Public Class IncassaSospeso
     Public WithEvents txtSospeso As System.Windows.Forms.TextBox
     Friend WithEvents dtpData As System.Windows.Forms.DateTimePicker
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IncassaSospeso))
-        Me.cmdStampa = New System.Windows.Forms.Button()
-        Me.cmdAnnulla = New System.Windows.Forms.Button()
-        Me.txtProv = New System.Windows.Forms.TextBox()
-        Me.txtCap = New System.Windows.Forms.TextBox()
-        Me.txtCittà = New System.Windows.Forms.TextBox()
-        Me.txtIndirizzo = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtPIva = New System.Windows.Forms.TextBox()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.cmbIntestatario = New System.Windows.Forms.ComboBox()
-        Me.cmbId = New System.Windows.Forms.ComboBox()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtRiscosso = New System.Windows.Forms.TextBox()
-        Me.txtSospeso = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.dtpData = New System.Windows.Forms.DateTimePicker()
-        Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-        Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'cmdStampa
-        '
-        Me.cmdStampa.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdStampa.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmdStampa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdStampa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmdStampa.Location = New System.Drawing.Point(224, 230)
-        Me.cmdStampa.Name = "cmdStampa"
-        Me.cmdStampa.Size = New System.Drawing.Size(88, 24)
-        Me.cmdStampa.TabIndex = 10
-        Me.cmdStampa.Text = "&Stampa"
-        Me.cmdStampa.UseVisualStyleBackColor = False
-        '
-        'cmdAnnulla
-        '
-        Me.cmdAnnulla.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAnnulla.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmdAnnulla.Location = New System.Drawing.Point(320, 230)
-        Me.cmdAnnulla.Name = "cmdAnnulla"
-        Me.cmdAnnulla.Size = New System.Drawing.Size(80, 24)
-        Me.cmdAnnulla.TabIndex = 11
-        Me.cmdAnnulla.Text = "&Annulla"
-        Me.cmdAnnulla.UseVisualStyleBackColor = False
-        '
-        'txtProv
-        '
-        Me.txtProv.AcceptsReturn = True
-        Me.txtProv.BackColor = System.Drawing.SystemColors.Window
-        Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtProv.Enabled = False
-        Me.txtProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtProv.Location = New System.Drawing.Point(368, 104)
-        Me.txtProv.MaxLength = 2
-        Me.txtProv.Name = "txtProv"
-        Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtProv.Size = New System.Drawing.Size(32, 20)
-        Me.txtProv.TabIndex = 5
-        '
-        'txtCap
-        '
-        Me.txtCap.AcceptsReturn = True
-        Me.txtCap.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtCap.Enabled = False
-        Me.txtCap.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCap.Location = New System.Drawing.Point(112, 104)
-        Me.txtCap.MaxLength = 5
-        Me.txtCap.Name = "txtCap"
-        Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtCap.Size = New System.Drawing.Size(64, 20)
-        Me.txtCap.TabIndex = 3
-        '
-        'txtCittà
-        '
-        Me.txtCittà.AcceptsReturn = True
-        Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtCittà.Enabled = False
-        Me.txtCittà.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCittà.Location = New System.Drawing.Point(184, 104)
-        Me.txtCittà.MaxLength = 100
-        Me.txtCittà.Name = "txtCittà"
-        Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtCittà.Size = New System.Drawing.Size(176, 20)
-        Me.txtCittà.TabIndex = 4
-        '
-        'txtIndirizzo
-        '
-        Me.txtIndirizzo.AcceptsReturn = True
-        Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
-        Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtIndirizzo.Enabled = False
-        Me.txtIndirizzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtIndirizzo.Location = New System.Drawing.Point(112, 80)
-        Me.txtIndirizzo.MaxLength = 100
-        Me.txtIndirizzo.Name = "txtIndirizzo"
-        Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtIndirizzo.Size = New System.Drawing.Size(288, 20)
-        Me.txtIndirizzo.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(16, 104)
-        Me.Label5.Name = "Label5"
-        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label5.Size = New System.Drawing.Size(87, 13)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Cap/Città'/Prov.:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(16, 80)
-        Me.Label4.Name = "Label4"
-        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "Indirizzo:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(16, 48)
-        Me.Label3.Name = "Label3"
-        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label3.Size = New System.Drawing.Size(62, 13)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Intestatario:"
-        '
-        'txtPIva
-        '
-        Me.txtPIva.AcceptsReturn = True
-        Me.txtPIva.BackColor = System.Drawing.SystemColors.Window
-        Me.txtPIva.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPIva.Enabled = False
-        Me.txtPIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPIva.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPIva.Location = New System.Drawing.Point(112, 128)
-        Me.txtPIva.MaxLength = 11
-        Me.txtPIva.Name = "txtPIva"
-        Me.txtPIva.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPIva.Size = New System.Drawing.Size(288, 20)
-        Me.txtPIva.TabIndex = 6
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.BackColor = System.Drawing.Color.Transparent
-        Me.Label31.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.Black
-        Me.Label31.Location = New System.Drawing.Point(16, 128)
-        Me.Label31.Name = "Label31"
-        Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label31.Size = New System.Drawing.Size(69, 13)
-        Me.Label31.TabIndex = 16
-        Me.Label31.Text = "Partita I.V.A.:"
-        '
-        'cmbIntestatario
-        '
-        Me.cmbIntestatario.Enabled = False
-        Me.cmbIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbIntestatario.Location = New System.Drawing.Point(112, 48)
-        Me.cmbIntestatario.Name = "cmbIntestatario"
-        Me.cmbIntestatario.Size = New System.Drawing.Size(288, 21)
-        Me.cmbIntestatario.TabIndex = 1
-        '
-        'cmbId
-        '
-        Me.cmbId.Enabled = False
-        Me.cmbId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbId.Location = New System.Drawing.Point(304, 16)
-        Me.cmbId.Name = "cmbId"
-        Me.cmbId.Size = New System.Drawing.Size(40, 23)
-        Me.cmbId.TabIndex = 11
-        Me.cmbId.TabStop = False
-        Me.cmbId.Visible = False
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.Document = Me.PrintDocument1
-        '
-        'PrintDocument1
-        '
-        Me.PrintDocument1.DocumentName = "RFiscale.rpt"
-        '
-        'cmbTipoDoc
-        '
-        Me.cmbTipoDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTipoDoc.Items.AddRange(New Object() {"Ricevuta fiscale intestata", "Ricevuta fiscale", "Fattura"})
-        Me.cmbTipoDoc.Location = New System.Drawing.Point(112, 16)
-        Me.cmbTipoDoc.Name = "cmbTipoDoc"
-        Me.cmbTipoDoc.Size = New System.Drawing.Size(184, 21)
-        Me.cmbTipoDoc.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(16, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(87, 13)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Tipo documento:"
-        '
-        'txtRiscosso
-        '
-        Me.txtRiscosso.AcceptsReturn = True
-        Me.txtRiscosso.BackColor = System.Drawing.SystemColors.Window
-        Me.txtRiscosso.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtRiscosso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRiscosso.ForeColor = System.Drawing.Color.Red
-        Me.txtRiscosso.Location = New System.Drawing.Point(112, 189)
-        Me.txtRiscosso.MaxLength = 5
-        Me.txtRiscosso.Name = "txtRiscosso"
-        Me.txtRiscosso.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtRiscosso.Size = New System.Drawing.Size(104, 20)
-        Me.txtRiscosso.TabIndex = 8
-        Me.txtRiscosso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtSospeso
-        '
-        Me.txtSospeso.AcceptsReturn = True
-        Me.txtSospeso.BackColor = System.Drawing.SystemColors.Window
-        Me.txtSospeso.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSospeso.ForeColor = System.Drawing.Color.Red
-        Me.txtSospeso.Location = New System.Drawing.Point(296, 189)
-        Me.txtSospeso.MaxLength = 5
-        Me.txtSospeso.Name = "txtSospeso"
-        Me.txtSospeso.ReadOnly = True
-        Me.txtSospeso.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSospeso.Size = New System.Drawing.Size(104, 20)
-        Me.txtSospeso.TabIndex = 9
-        Me.txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(16, 189)
-        Me.Label2.Name = "Label2"
-        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Riscosso:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(232, 189)
-        Me.Label6.Name = "Label6"
-        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label6.Size = New System.Drawing.Size(51, 13)
-        Me.Label6.TabIndex = 191
-        Me.Label6.Text = "Sospeso:"
-        '
-        'dtpData
-        '
-        Me.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpData.Location = New System.Drawing.Point(19, 234)
-        Me.dtpData.Name = "dtpData"
-        Me.dtpData.Size = New System.Drawing.Size(96, 20)
-        Me.dtpData.TabIndex = 192
-        Me.dtpData.Visible = False
-        '
-        'formFrameSkinner
-        '
-        Me.formFrameSkinner.AllowGlass = False
-        Me.formFrameSkinner.Form = Me
-        '
-        'txtCodiceFiscale
-        '
-        Me.txtCodiceFiscale.AcceptsReturn = True
-        Me.txtCodiceFiscale.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCodiceFiscale.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtCodiceFiscale.Enabled = False
-        Me.txtCodiceFiscale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodiceFiscale.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCodiceFiscale.Location = New System.Drawing.Point(112, 154)
-        Me.txtCodiceFiscale.MaxLength = 16
-        Me.txtCodiceFiscale.Name = "txtCodiceFiscale"
-        Me.txtCodiceFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtCodiceFiscale.Size = New System.Drawing.Size(288, 20)
-        Me.txtCodiceFiscale.TabIndex = 7
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(16, 154)
-        Me.Label7.Name = "Label7"
-        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label7.Size = New System.Drawing.Size(79, 13)
-        Me.Label7.TabIndex = 194
-        Me.Label7.Text = "Codice Fiscale:"
-        '
-        'IncassaSospeso
-        '
-        Me.AcceptButton = Me.cmdStampa
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.CancelButton = Me.cmdAnnulla
-        Me.ClientSize = New System.Drawing.Size(425, 275)
-        Me.Controls.Add(Me.txtCodiceFiscale)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.dtpData)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtSospeso)
-        Me.Controls.Add(Me.txtRiscosso)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cmbTipoDoc)
-        Me.Controls.Add(Me.cmbId)
-        Me.Controls.Add(Me.cmbIntestatario)
-        Me.Controls.Add(Me.cmdStampa)
-        Me.Controls.Add(Me.cmdAnnulla)
-        Me.Controls.Add(Me.txtPIva)
-        Me.Controls.Add(Me.Label31)
-        Me.Controls.Add(Me.txtProv)
-        Me.Controls.Add(Me.txtCap)
-        Me.Controls.Add(Me.txtCittà)
-        Me.Controls.Add(Me.txtIndirizzo)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "IncassaSospeso"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Stampa documento"
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+      Me.components = New System.ComponentModel.Container()
+      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IncassaSospeso))
+      Me.cmdStampa = New System.Windows.Forms.Button()
+      Me.cmdAnnulla = New System.Windows.Forms.Button()
+      Me.txtProv = New System.Windows.Forms.TextBox()
+      Me.txtCap = New System.Windows.Forms.TextBox()
+      Me.txtCittà = New System.Windows.Forms.TextBox()
+      Me.txtIndirizzo = New System.Windows.Forms.TextBox()
+      Me.Label5 = New System.Windows.Forms.Label()
+      Me.Label4 = New System.Windows.Forms.Label()
+      Me.Label3 = New System.Windows.Forms.Label()
+      Me.txtPIva = New System.Windows.Forms.TextBox()
+      Me.Label31 = New System.Windows.Forms.Label()
+      Me.cmbIntestatario = New System.Windows.Forms.ComboBox()
+      Me.cmbId = New System.Windows.Forms.ComboBox()
+      Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+      Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+      Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+      Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.txtRiscosso = New System.Windows.Forms.TextBox()
+      Me.txtSospeso = New System.Windows.Forms.TextBox()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.Label6 = New System.Windows.Forms.Label()
+      Me.dtpData = New System.Windows.Forms.DateTimePicker()
+      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
+      Me.Label7 = New System.Windows.Forms.Label()
+      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.SuspendLayout()
+      '
+      'cmdStampa
+      '
+      Me.cmdStampa.BackColor = System.Drawing.SystemColors.Control
+      Me.cmdStampa.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.cmdStampa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmdStampa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+      Me.cmdStampa.Location = New System.Drawing.Point(224, 230)
+      Me.cmdStampa.Name = "cmdStampa"
+      Me.cmdStampa.Size = New System.Drawing.Size(88, 24)
+      Me.cmdStampa.TabIndex = 10
+      Me.cmdStampa.Text = "&Stampa"
+      Me.cmdStampa.UseVisualStyleBackColor = False
+      '
+      'cmdAnnulla
+      '
+      Me.cmdAnnulla.BackColor = System.Drawing.SystemColors.Control
+      Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmdAnnulla.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+      Me.cmdAnnulla.Location = New System.Drawing.Point(320, 230)
+      Me.cmdAnnulla.Name = "cmdAnnulla"
+      Me.cmdAnnulla.Size = New System.Drawing.Size(80, 24)
+      Me.cmdAnnulla.TabIndex = 11
+      Me.cmdAnnulla.Text = "&Annulla"
+      Me.cmdAnnulla.UseVisualStyleBackColor = False
+      '
+      'txtProv
+      '
+      Me.txtProv.AcceptsReturn = True
+      Me.txtProv.BackColor = System.Drawing.SystemColors.Window
+      Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtProv.Enabled = False
+      Me.txtProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtProv.Location = New System.Drawing.Point(368, 104)
+      Me.txtProv.MaxLength = 2
+      Me.txtProv.Name = "txtProv"
+      Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtProv.Size = New System.Drawing.Size(32, 20)
+      Me.txtProv.TabIndex = 5
+      '
+      'txtCap
+      '
+      Me.txtCap.AcceptsReturn = True
+      Me.txtCap.BackColor = System.Drawing.SystemColors.Window
+      Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtCap.Enabled = False
+      Me.txtCap.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtCap.Location = New System.Drawing.Point(112, 104)
+      Me.txtCap.MaxLength = 5
+      Me.txtCap.Name = "txtCap"
+      Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtCap.Size = New System.Drawing.Size(64, 20)
+      Me.txtCap.TabIndex = 3
+      '
+      'txtCittà
+      '
+      Me.txtCittà.AcceptsReturn = True
+      Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
+      Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtCittà.Enabled = False
+      Me.txtCittà.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtCittà.Location = New System.Drawing.Point(184, 104)
+      Me.txtCittà.MaxLength = 100
+      Me.txtCittà.Name = "txtCittà"
+      Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtCittà.Size = New System.Drawing.Size(176, 20)
+      Me.txtCittà.TabIndex = 4
+      '
+      'txtIndirizzo
+      '
+      Me.txtIndirizzo.AcceptsReturn = True
+      Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
+      Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtIndirizzo.Enabled = False
+      Me.txtIndirizzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtIndirizzo.Location = New System.Drawing.Point(112, 80)
+      Me.txtIndirizzo.MaxLength = 100
+      Me.txtIndirizzo.Name = "txtIndirizzo"
+      Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtIndirizzo.Size = New System.Drawing.Size(288, 20)
+      Me.txtIndirizzo.TabIndex = 2
+      '
+      'Label5
+      '
+      Me.Label5.AutoSize = True
+      Me.Label5.BackColor = System.Drawing.Color.Transparent
+      Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label5.ForeColor = System.Drawing.Color.Black
+      Me.Label5.Location = New System.Drawing.Point(16, 104)
+      Me.Label5.Name = "Label5"
+      Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label5.Size = New System.Drawing.Size(87, 13)
+      Me.Label5.TabIndex = 15
+      Me.Label5.Text = "Cap/Città'/Prov.:"
+      '
+      'Label4
+      '
+      Me.Label4.AutoSize = True
+      Me.Label4.BackColor = System.Drawing.Color.Transparent
+      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label4.ForeColor = System.Drawing.Color.Black
+      Me.Label4.Location = New System.Drawing.Point(16, 80)
+      Me.Label4.Name = "Label4"
+      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label4.Size = New System.Drawing.Size(48, 13)
+      Me.Label4.TabIndex = 14
+      Me.Label4.Text = "Indirizzo:"
+      '
+      'Label3
+      '
+      Me.Label3.AutoSize = True
+      Me.Label3.BackColor = System.Drawing.Color.Transparent
+      Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label3.ForeColor = System.Drawing.Color.Black
+      Me.Label3.Location = New System.Drawing.Point(16, 48)
+      Me.Label3.Name = "Label3"
+      Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label3.Size = New System.Drawing.Size(62, 13)
+      Me.Label3.TabIndex = 13
+      Me.Label3.Text = "Intestatario:"
+      '
+      'txtPIva
+      '
+      Me.txtPIva.AcceptsReturn = True
+      Me.txtPIva.BackColor = System.Drawing.SystemColors.Window
+      Me.txtPIva.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtPIva.Enabled = False
+      Me.txtPIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtPIva.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtPIva.Location = New System.Drawing.Point(112, 128)
+      Me.txtPIva.MaxLength = 11
+      Me.txtPIva.Name = "txtPIva"
+      Me.txtPIva.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtPIva.Size = New System.Drawing.Size(288, 20)
+      Me.txtPIva.TabIndex = 6
+      '
+      'Label31
+      '
+      Me.Label31.AutoSize = True
+      Me.Label31.BackColor = System.Drawing.Color.Transparent
+      Me.Label31.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label31.ForeColor = System.Drawing.Color.Black
+      Me.Label31.Location = New System.Drawing.Point(16, 128)
+      Me.Label31.Name = "Label31"
+      Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label31.Size = New System.Drawing.Size(69, 13)
+      Me.Label31.TabIndex = 16
+      Me.Label31.Text = "Partita I.V.A.:"
+      '
+      'cmbIntestatario
+      '
+      Me.cmbIntestatario.Enabled = False
+      Me.cmbIntestatario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbIntestatario.Location = New System.Drawing.Point(112, 48)
+      Me.cmbIntestatario.Name = "cmbIntestatario"
+      Me.cmbIntestatario.Size = New System.Drawing.Size(288, 21)
+      Me.cmbIntestatario.TabIndex = 1
+      '
+      'cmbId
+      '
+      Me.cmbId.Enabled = False
+      Me.cmbId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbId.Location = New System.Drawing.Point(304, 16)
+      Me.cmbId.Name = "cmbId"
+      Me.cmbId.Size = New System.Drawing.Size(40, 23)
+      Me.cmbId.TabIndex = 11
+      Me.cmbId.TabStop = False
+      Me.cmbId.Visible = False
+      '
+      'ErrorProvider1
+      '
+      Me.ErrorProvider1.ContainerControl = Me
+      '
+      'PrintDialog1
+      '
+      Me.PrintDialog1.Document = Me.PrintDocument1
+      '
+      'PrintDocument1
+      '
+      Me.PrintDocument1.DocumentName = "RFiscale.rpt"
+      '
+      'cmbTipoDoc
+      '
+      Me.cmbTipoDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.cmbTipoDoc.Items.AddRange(New Object() {"Ricevuta fiscale intestata", "Ricevuta fiscale", "Fattura"})
+      Me.cmbTipoDoc.Location = New System.Drawing.Point(112, 16)
+      Me.cmbTipoDoc.Name = "cmbTipoDoc"
+      Me.cmbTipoDoc.Size = New System.Drawing.Size(184, 21)
+      Me.cmbTipoDoc.TabIndex = 0
+      '
+      'Label1
+      '
+      Me.Label1.AutoSize = True
+      Me.Label1.BackColor = System.Drawing.Color.Transparent
+      Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label1.ForeColor = System.Drawing.Color.Black
+      Me.Label1.Location = New System.Drawing.Point(16, 16)
+      Me.Label1.Name = "Label1"
+      Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label1.Size = New System.Drawing.Size(87, 13)
+      Me.Label1.TabIndex = 12
+      Me.Label1.Text = "Tipo documento:"
+      '
+      'txtRiscosso
+      '
+      Me.txtRiscosso.AcceptsReturn = True
+      Me.txtRiscosso.BackColor = System.Drawing.SystemColors.Window
+      Me.txtRiscosso.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtRiscosso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtRiscosso.ForeColor = System.Drawing.Color.Red
+      Me.txtRiscosso.Location = New System.Drawing.Point(112, 189)
+      Me.txtRiscosso.MaxLength = 5
+      Me.txtRiscosso.Name = "txtRiscosso"
+      Me.txtRiscosso.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtRiscosso.Size = New System.Drawing.Size(104, 20)
+      Me.txtRiscosso.TabIndex = 8
+      Me.txtRiscosso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'txtSospeso
+      '
+      Me.txtSospeso.AcceptsReturn = True
+      Me.txtSospeso.BackColor = System.Drawing.SystemColors.Window
+      Me.txtSospeso.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtSospeso.ForeColor = System.Drawing.Color.Red
+      Me.txtSospeso.Location = New System.Drawing.Point(296, 189)
+      Me.txtSospeso.MaxLength = 5
+      Me.txtSospeso.Name = "txtSospeso"
+      Me.txtSospeso.ReadOnly = True
+      Me.txtSospeso.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtSospeso.Size = New System.Drawing.Size(104, 20)
+      Me.txtSospeso.TabIndex = 9
+      Me.txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.BackColor = System.Drawing.Color.Transparent
+      Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label2.ForeColor = System.Drawing.Color.Black
+      Me.Label2.Location = New System.Drawing.Point(16, 189)
+      Me.Label2.Name = "Label2"
+      Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label2.Size = New System.Drawing.Size(53, 13)
+      Me.Label2.TabIndex = 17
+      Me.Label2.Text = "Riscosso:"
+      '
+      'Label6
+      '
+      Me.Label6.AutoSize = True
+      Me.Label6.BackColor = System.Drawing.Color.Transparent
+      Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label6.ForeColor = System.Drawing.Color.Black
+      Me.Label6.Location = New System.Drawing.Point(232, 189)
+      Me.Label6.Name = "Label6"
+      Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label6.Size = New System.Drawing.Size(51, 13)
+      Me.Label6.TabIndex = 191
+      Me.Label6.Text = "Sospeso:"
+      '
+      'dtpData
+      '
+      Me.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+      Me.dtpData.Location = New System.Drawing.Point(19, 234)
+      Me.dtpData.Name = "dtpData"
+      Me.dtpData.Size = New System.Drawing.Size(96, 20)
+      Me.dtpData.TabIndex = 192
+      Me.dtpData.Visible = False
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
+      'txtCodiceFiscale
+      '
+      Me.txtCodiceFiscale.AcceptsReturn = True
+      Me.txtCodiceFiscale.BackColor = System.Drawing.SystemColors.Window
+      Me.txtCodiceFiscale.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtCodiceFiscale.Enabled = False
+      Me.txtCodiceFiscale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtCodiceFiscale.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtCodiceFiscale.Location = New System.Drawing.Point(112, 154)
+      Me.txtCodiceFiscale.MaxLength = 16
+      Me.txtCodiceFiscale.Name = "txtCodiceFiscale"
+      Me.txtCodiceFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtCodiceFiscale.Size = New System.Drawing.Size(288, 20)
+      Me.txtCodiceFiscale.TabIndex = 7
+      '
+      'Label7
+      '
+      Me.Label7.AutoSize = True
+      Me.Label7.BackColor = System.Drawing.Color.Transparent
+      Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label7.ForeColor = System.Drawing.Color.Black
+      Me.Label7.Location = New System.Drawing.Point(16, 154)
+      Me.Label7.Name = "Label7"
+      Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label7.Size = New System.Drawing.Size(79, 13)
+      Me.Label7.TabIndex = 194
+      Me.Label7.Text = "Codice Fiscale:"
+      '
+      'IncassaSospeso
+      '
+      Me.AcceptButton = Me.cmdStampa
+      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.CancelButton = Me.cmdAnnulla
+      Me.ClientSize = New System.Drawing.Size(413, 264)
+      Me.Controls.Add(Me.txtCodiceFiscale)
+      Me.Controls.Add(Me.Label7)
+      Me.Controls.Add(Me.dtpData)
+      Me.Controls.Add(Me.Label6)
+      Me.Controls.Add(Me.Label2)
+      Me.Controls.Add(Me.txtSospeso)
+      Me.Controls.Add(Me.txtRiscosso)
+      Me.Controls.Add(Me.Label1)
+      Me.Controls.Add(Me.cmbTipoDoc)
+      Me.Controls.Add(Me.cmbId)
+      Me.Controls.Add(Me.cmbIntestatario)
+      Me.Controls.Add(Me.cmdStampa)
+      Me.Controls.Add(Me.cmdAnnulla)
+      Me.Controls.Add(Me.txtPIva)
+      Me.Controls.Add(Me.Label31)
+      Me.Controls.Add(Me.txtProv)
+      Me.Controls.Add(Me.txtCap)
+      Me.Controls.Add(Me.txtCittà)
+      Me.Controls.Add(Me.txtIndirizzo)
+      Me.Controls.Add(Me.Label5)
+      Me.Controls.Add(Me.Label4)
+      Me.Controls.Add(Me.Label3)
+      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+      Me.MaximizeBox = False
+      Me.MinimizeBox = False
+      Me.Name = "IncassaSospeso"
+      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+      Me.Text = "Stampa documento"
+      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.ResumeLayout(False)
+      Me.PerformLayout()
 
-    End Sub
+   End Sub
 
 #End Region
 
-    Public Sub CaricaListaCliente(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal tabella As String)
+   Public Sub CaricaListaCliente(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal tabella As String)
         Try
             ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
 

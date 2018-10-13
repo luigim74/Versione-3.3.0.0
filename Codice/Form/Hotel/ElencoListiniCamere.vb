@@ -123,7 +123,7 @@ Public Class ElencoListiniCamere
       Me.DataGrid1.Location = New System.Drawing.Point(0, 32)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(955, 360)
+      Me.DataGrid1.Size = New System.Drawing.Size(788, 367)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -136,14 +136,14 @@ Public Class ElencoListiniCamere
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(954, 32)
+      Me.Panel1.Size = New System.Drawing.Size(788, 32)
       Me.Panel1.TabIndex = 2
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(812, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(646, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -154,7 +154,7 @@ Public Class ElencoListiniCamere
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(721, 8)
+      Me.Label2.Location = New System.Drawing.Point(555, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -177,7 +177,7 @@ Public Class ElencoListiniCamere
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(120, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(593, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(427, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'Panel3
@@ -188,9 +188,9 @@ Public Class ElencoListiniCamere
       Me.Panel3.Controls.Add(Me.lblBassa)
       Me.Panel3.Controls.Add(Me.Label3)
       Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel3.Location = New System.Drawing.Point(0, 392)
+      Me.Panel3.Location = New System.Drawing.Point(0, 400)
       Me.Panel3.Name = "Panel3"
-      Me.Panel3.Size = New System.Drawing.Size(954, 19)
+      Me.Panel3.Size = New System.Drawing.Size(788, 19)
       Me.Panel3.TabIndex = 12
       '
       'lblAlta
@@ -241,7 +241,7 @@ Public Class ElencoListiniCamere
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(954, 411)
+      Me.ClientSize = New System.Drawing.Size(788, 419)
       Me.Controls.Add(Me.Panel3)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)

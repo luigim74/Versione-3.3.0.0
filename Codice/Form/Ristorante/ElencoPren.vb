@@ -175,7 +175,7 @@ Public Class frmElencoPren
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAnnulla.Id = "c2491443-ce75-4646-ad8b-a689b7673e15"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(697, 487)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(709, 488)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdAnnulla.TabIndex = 4
@@ -185,7 +185,7 @@ Public Class frmElencoPren
       '
       Me.eui_cmdElimina.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdElimina.Id = "ee7fd79e-9cb9-44dd-a448-f57a2678a835"
-      Me.eui_cmdElimina.Location = New System.Drawing.Point(559, 487)
+      Me.eui_cmdElimina.Location = New System.Drawing.Point(571, 488)
       Me.eui_cmdElimina.Name = "eui_cmdElimina"
       Me.eui_cmdElimina.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdElimina.TabIndex = 3
@@ -195,7 +195,7 @@ Public Class frmElencoPren
       '
       Me.eui_cmdModifica.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdModifica.Id = "a61a59e0-8e41-451d-8412-8a0657e2b026"
-      Me.eui_cmdModifica.Location = New System.Drawing.Point(421, 487)
+      Me.eui_cmdModifica.Location = New System.Drawing.Point(433, 488)
       Me.eui_cmdModifica.Name = "eui_cmdModifica"
       Me.eui_cmdModifica.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdModifica.TabIndex = 2
@@ -205,7 +205,7 @@ Public Class frmElencoPren
       '
       Me.eui_cmdNuova.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdNuova.Id = "1a9e92d9-0dbf-4c02-b78b-ee8ce7ae6166"
-      Me.eui_cmdNuova.Location = New System.Drawing.Point(283, 487)
+      Me.eui_cmdNuova.Location = New System.Drawing.Point(295, 488)
       Me.eui_cmdNuova.Name = "eui_cmdNuova"
       Me.eui_cmdNuova.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdNuova.TabIndex = 1
@@ -217,7 +217,7 @@ Public Class frmElencoPren
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(845, 553)
+      Me.ClientSize = New System.Drawing.Size(846, 551)
       Me.Controls.Add(Me.eui_cmdModifica)
       Me.Controls.Add(Me.eui_cmdNuova)
       Me.Controls.Add(Me.eui_cmdAnnulla)

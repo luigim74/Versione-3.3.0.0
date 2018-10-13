@@ -111,7 +111,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdAddebita.DialogResult = System.Windows.Forms.DialogResult.OK
       Me.eui_cmdAddebita.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAddebita.Id = "c1e102ea-84d7-4e3c-8acf-9fe3c5e5ebb0"
-      Me.eui_cmdAddebita.Location = New System.Drawing.Point(711, 509)
+      Me.eui_cmdAddebita.Location = New System.Drawing.Point(732, 518)
       Me.eui_cmdAddebita.Name = "eui_cmdAddebita"
       Me.eui_cmdAddebita.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdAddebita.TabIndex = 5
@@ -126,11 +126,11 @@ Public Class frmSelezionaPrenotazione
       Me.lvwPrenotazioni.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader13, Me.ColumnHeader3, Me.ColumnHeader2, Me.ColumnHeader12})
       Me.lvwPrenotazioni.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lvwPrenotazioni.FullRowSelect = True
-      Me.lvwPrenotazioni.Location = New System.Drawing.Point(0, 0)
+      Me.lvwPrenotazioni.Location = New System.Drawing.Point(2, 0)
       Me.lvwPrenotazioni.MultiSelect = False
       Me.lvwPrenotazioni.Name = "lvwPrenotazioni"
       Me.lvwPrenotazioni.ShowGroups = False
-      Me.lvwPrenotazioni.Size = New System.Drawing.Size(985, 491)
+      Me.lvwPrenotazioni.Size = New System.Drawing.Size(1002, 500)
       Me.lvwPrenotazioni.TabIndex = 0
       Me.lvwPrenotazioni.UseCompatibleStateImageBehavior = False
       Me.lvwPrenotazioni.View = System.Windows.Forms.View.Details
@@ -193,7 +193,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAnnulla.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(848, 509)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(869, 518)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
       Me.eui_cmdAnnulla.TabIndex = 6
@@ -204,7 +204,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdPrenSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdPrenSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdPrenSu.Id = "c0143c92-f784-4c71-8ae2-4daff3fbf5ab"
-      Me.eui_cmdPrenSu.Location = New System.Drawing.Point(440, 509)
+      Me.eui_cmdPrenSu.Location = New System.Drawing.Point(443, 518)
       Me.eui_cmdPrenSu.Name = "eui_cmdPrenSu"
       Me.eui_cmdPrenSu.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdPrenSu.ScreenTip.Text = "Apre la tastiera virtuale."
@@ -217,7 +217,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_cmdPrenGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdPrenGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdPrenGiù.Id = "7a370a7a-c200-480c-9c8e-e8786e7033cf"
-      Me.eui_cmdPrenGiù.Location = New System.Drawing.Point(569, 509)
+      Me.eui_cmdPrenGiù.Location = New System.Drawing.Point(572, 518)
       Me.eui_cmdPrenGiù.Name = "eui_cmdPrenGiù"
       Me.eui_cmdPrenGiù.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdPrenGiù.ScreenTip.Text = "Apre la tastiera virtuale."
@@ -233,7 +233,7 @@ Public Class frmSelezionaPrenotazione
       Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(97, 505)
+      Me.Label6.Location = New System.Drawing.Point(97, 514)
       Me.Label6.Name = "Label6"
       Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label6.Size = New System.Drawing.Size(200, 24)
@@ -245,7 +245,7 @@ Public Class frmSelezionaPrenotazione
       Me.eui_txtTrovaCognome.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTrovaCognome.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTrovaCognome.Id = "da8bd1f2-77f2-4ce1-97bb-e9e1ac426dcb"
-      Me.eui_txtTrovaCognome.Location = New System.Drawing.Point(101, 529)
+      Me.eui_txtTrovaCognome.Location = New System.Drawing.Point(101, 538)
       Me.eui_txtTrovaCognome.Name = "eui_txtTrovaCognome"
       Me.eui_txtTrovaCognome.Size = New System.Drawing.Size(327, 33)
       Me.eui_txtTrovaCognome.TabIndex = 2
@@ -255,7 +255,7 @@ Public Class frmSelezionaPrenotazione
       '
       Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdTastiera.Id = "57e6209c-4998-46b6-a4a0-a223dce1ffaa"
-      Me.eui_cmdTastiera.Location = New System.Drawing.Point(9, 509)
+      Me.eui_cmdTastiera.Location = New System.Drawing.Point(9, 518)
       Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
       Me.eui_cmdTastiera.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
@@ -270,7 +270,7 @@ Public Class frmSelezionaPrenotazione
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(995, 611)
+      Me.ClientSize = New System.Drawing.Size(1006, 583)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_txtTrovaCognome)
       Me.Controls.Add(Me.Label6)

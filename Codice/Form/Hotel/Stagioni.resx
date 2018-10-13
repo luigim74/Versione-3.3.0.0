@@ -117,11 +117,194 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Panel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblIntestazione.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="ErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>217, 17</value>
   </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>
+  </metadata>
+  <metadata name="Label12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panel4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine3_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine3_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio3_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio3_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine2_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine2_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio2_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio2_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine1_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine1_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo3_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo2_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo1_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio1_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio1_Alta.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panel3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine3_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine3_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio3_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio3_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine2_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine2_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio2_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio2_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine1_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine1_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo3_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo2_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo1_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio1_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio1_Media.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine3_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine3_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio3_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio3_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine2_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine2_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio2_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio2_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoFine1_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseFine1_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo3_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo2_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkIntervallo1_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbGiornoInizio1_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmbMeseInizio1_Bassa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label17.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ToolBar1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="ImageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>100, 20</value>
@@ -131,34 +314,34 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABG
-        BwAAAk1TRnQBSQFMAgEBAgEAAfQBAAH0AQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABEAMAAQEBAAEgBgABEP8AFwABzAKZAf8BzAJIAf8BzAJIAf8BmQJIAf8BmQJIAf8BmQJIAf8BmQEV
-        AUgB/wGZAhUB/wGZAhUB/wGZAhUB/wGZAhUB/wGZAhUB/wFIAhUB/wFIAhUB/8gAAcwCSAL/ApkB/wHM
-        ApkB/wHMAhUB/wMVAf8DwAH/A8AB/wPLAf8DzAH/AzcB/wGZAhUB/wGZAhUB/wGZAhUB/wFIAhUB/ygA
-        AcwBSAEVAf8BzAFIARUB/5gAAcwCSAL/ApkC/wKZAf8BzAKZAf8DQQH/AyQB/wOAAf8D6gH/A+oB/wOG
-        Af8BmQIVAf8BmQIVAf8BmQIVAf8BmQIVAf8oAAHMAUgBFQL/AZkBSAH/AcwBSAEVAf+UAAHMAkgC/wKZ
-        Av8CmQL/ApkB/wNBAf8DAAH/AyQC/wHsAcwC/wHsAcwB/wNZAf8BzAIVAf8BzAIVAf8BmQIVAf8BmQIV
-        Af8oAAHMAUgBFQL/AZkBSAL/AZkBSAH/AcwBSAEVAf+QAAHMAUgBmQL/AZkBzAL/ApkC/wKZAf8DQQH/
-        A0EB/wNBAf8DQQH/A0gB/wGZAkgB/wHMAkgB/wHMAkgB/wHMAhUB/wGZAhUB/ywAAcwBSAEVAv8BmQFI
-        Av8BmQFIAf+QAAHMApkB/wHwAcoBpgH/AfABygGmAv8CmQL/ApkC/wKZAf8BzAKZAf8BzAFIAZkB/wHM
-        AkgB/wHMAkgB/wHMAkgB/wHMAkgB/wHMAkgB/wGZAhUB/zAAAcwBSAEVAv8BmQFIAf8BzAFIARUB/4wA
-        AcwCmQL/AswB/wHwAcoBpgH/AcwCSAH/AcwCSAH/AcwCSAH/AcwBSAEVAf8BzAFIARUB/wHMAhUB/wGZ
-        AhUB/wGZARUBAAH/AcwCSAH/AcwCSAH/AZkCFQH/DAABzAFIARUB/wHMAUgBFQH/AcwBSAEVAf8BzAFI
-        ARUB/wHMAUgBFQH/AZkBSAEVAf8MAAHMAUgBFQL/AZkBSAH/AfABygGmAf+MAAHMApkC/wLMAf8BzAJI
-        Cf8D+AH/A/EB/wPqAv8B7AHMAf8D1wH/A8wB/wGZARUBAAH/AcwCSAH/AZkBFQFIAf8MAAHMAZkBSAH/
-        AcwBSAEVAv8BmQFIAv8BmQFIAf8BzAGZAUgB/xAAAcwBSAEVAf8BzAGZAUgC/wHMAZkB/4wAAcwCmQL/
-        AswB/wHMAkgN/wP4Af8D8QH/A+oC/wHsAcwB/wPXAf8BmQIVAf8BzAJIAf8BmQJIAf8MAAHMAZkBSAL/
-        AZkBSAL/AZkBSAL/AZkBSAH/AcwBSAEVAf8QAAHMAUgBFQH/AcwBSAEVAv8BzAGZAf+MAAH/ApkC/wLM
-        Af8BzAJIEf8D+AH/A/EB/wPqAv8B7AHMAf8BzAIVAf8BzAJIAf8BmQJIAf8MAAHMAZkBSAL/AZkBSAL/
-        AZkBSAL/AZkBSAH/AcwBSAEVAf8BzAFIARUB/wwAAZkBSAEVAf8BzAFIARUC/wHMAZkB/4wAAf8CmQL/
-        AswB/wHMApkV/wP4Af8D8QH/A+oB/wHMAUgBFQH/AcwBSAGZAf8BmQJIAf8MAAH/ApkB/wHwAcoBpgH/
-        AfABygGmAv8BzAGZAf8BzAGZAUgB/wHMAUgBFQH/AcwBSAEVAf8BzAGZAUgB/wHMAkgB/wGZAUgBFQL/
-        AZkBSAH/AfABygGmAf+MAAHwAcoBpgL/AswC/wKZGf8D+AH/A/EB/wHMAUgBFQH/AUgCFQH/AcwCSAH/
-        DAAB/wKZAf8IAAHwAcoBpgL/AcwBmQL/AZkBSAH/AcwBSAEVAf8BzAFIARUB/wHMAUgBFQH/AcwBSAEV
-        Af8B8AHKAaYB/wHwAcoBpgH/jAAB8AHKAaYC/wLMAv8CmR3/A/gB/wHMAkgB/wHMAkgB/wHMAkgB/xwA
+        BwAAAk1TRnQBSQFMAgEBAgEAAfwBAAH8AQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABEAMAAQEBAAEgBgABEP8AFwABzAKZAf8BzAJHAf8BzAJHAf8BmQJHAf8BmQJHAf8BmQJHAf8BmQEU
+        AUcB/wGZAhQB/wGZAhQB/wGZAhQB/wGZAhQB/wGZAhQB/wFHAhQB/wFHAhQB/8gAAcwCRwL/ApkB/wHM
+        ApkB/wHMAhQB/wMUAf8DwAH/A8AB/wPLAf8DzAH/AzYB/wGZAhQB/wGZAhQB/wGZAhQB/wFHAhQB/ygA
+        AcwBRwEUAf8BzAFHARQB/5gAAcwCRwL/ApkC/wKZAf8BzAKZAf8DQAH/AyMB/wOAAf8D6gH/A+oB/wOG
+        Af8BmQIUAf8BmQIUAf8BmQIUAf8BmQIUAf8oAAHMAUcBFAL/AZkBRwH/AcwBRwEUAf+UAAHMAkcC/wKZ
+        Av8CmQL/ApkB/wNAAf8DAAH/AyMC/wHsAcwC/wHsAcwB/wNYAf8BzAIUAf8BzAIUAf8BmQIUAf8BmQIU
+        Af8oAAHMAUcBFAL/AZkBRwL/AZkBRwH/AcwBRwEUAf+QAAHMAUcBmQL/AZkBzAL/ApkC/wKZAf8DQAH/
+        A0AB/wNAAf8DQAH/A0cB/wGZAkcB/wHMAkcB/wHMAkcB/wHMAhQB/wGZAhQB/ywAAcwBRwEUAv8BmQFH
+        Av8BmQFHAf+QAAHMApkB/wHwAcoBpgH/AfABygGmAv8CmQL/ApkC/wKZAf8BzAKZAf8BzAFHAZkB/wHM
+        AkcB/wHMAkcB/wHMAkcB/wHMAkcB/wHMAkcB/wGZAhQB/zAAAcwBRwEUAv8BmQFHAf8BzAFHARQB/4wA
+        AcwCmQL/AswB/wHwAcoBpgH/AcwCRwH/AcwCRwH/AcwCRwH/AcwBRwEUAf8BzAFHARQB/wHMAhQB/wGZ
+        AhQB/wGZARQBAAH/AcwCRwH/AcwCRwH/AZkCFAH/DAABzAFHARQB/wHMAUcBFAH/AcwBRwEUAf8BzAFH
+        ARQB/wHMAUcBFAH/AZkBRwEUAf8MAAHMAUcBFAL/AZkBRwH/AfABygGmAf+MAAHMApkC/wLMAf8BzAJH
+        Cf8D+AH/A/EB/wPqAv8B7AHMAf8D1wH/A8wB/wGZARQBAAH/AcwCRwH/AZkBFAFHAf8MAAHMAZkBRwH/
+        AcwBRwEUAv8BmQFHAv8BmQFHAf8BzAGZAUcB/xAAAcwBRwEUAf8BzAGZAUcC/wHMAZkB/4wAAcwCmQL/
+        AswB/wHMAkcN/wP4Af8D8QH/A+oC/wHsAcwB/wPXAf8BmQIUAf8BzAJHAf8BmQJHAf8MAAHMAZkBRwL/
+        AZkBRwL/AZkBRwL/AZkBRwH/AcwBRwEUAf8QAAHMAUcBFAH/AcwBRwEUAv8BzAGZAf+MAAH/ApkC/wLM
+        Af8BzAJHEf8D+AH/A/EB/wPqAv8B7AHMAf8BzAIUAf8BzAJHAf8BmQJHAf8MAAHMAZkBRwL/AZkBRwL/
+        AZkBRwL/AZkBRwH/AcwBRwEUAf8BzAFHARQB/wwAAZkBRwEUAf8BzAFHARQC/wHMAZkB/4wAAf8CmQL/
+        AswB/wHMApkV/wP4Af8D8QH/A+oB/wHMAUcBFAH/AcwBRwGZAf8BmQJHAf8MAAH/ApkB/wHwAcoBpgH/
+        AfABygGmAv8BzAGZAf8BzAGZAUcB/wHMAUcBFAH/AcwBRwEUAf8BzAGZAUcB/wHMAkcB/wGZAUcBFAL/
+        AZkBRwH/AfABygGmAf+MAAHwAcoBpgL/AswC/wKZGf8D+AH/A/EB/wHMAUcBFAH/AUcCFAH/AcwCRwH/
+        DAAB/wKZAf8IAAHwAcoBpgL/AcwBmQL/AZkBRwH/AcwBRwEUAf8BzAFHARQB/wHMAUcBFAH/AcwBRwEU
+        Af8B8AHKAaYB/wHwAcoBpgH/jAAB8AHKAaYC/wLMAv8CmR3/A/gB/wHMAkcB/wHMAkcB/wHMAkcB/xwA
         AfABygGmAv8BzAGZAf8B8AHKAaYC/wKZAv8CmQH/AfABygGmAf8B8AHKAaYB/5AAAfABygGmAf8B8AHK
         AaYB/wHwAcoBpgH/AfABygGmAv8BmQHMAv8CmQH/AcwCmQH/AcwCmQH/AcwCmQH/AcwCmQH/AcwCmQH/
-        AcwBSAGZAf8BzAJIAf8BzAJIAf8gAAH/AswB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYC/wLMAf//AJEA
+        AcwBRwGZAf8BzAJHAf8BzAJHAf8gAAH/AswB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYC/wLMAf//AJEA
         AUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/8BAAT/BAABgAEBAv8EAAGAAQEB/wGf
         BAABgAEBAf8BjwQAAYABAQH/AYcEAAGAAQEB/wHHBAABgAEBAf8B4wQAAYABAQHAAeMEAAGAAQEBwQHj
         BAABgAEBAcEB4wQAAYABAQHAAeMEAAGAAQEBwAEDBAABgAEBAdgBAwQAAYABAQH8AQcEAAGAAQEB/gEP

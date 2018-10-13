@@ -109,7 +109,7 @@ Public Class frmInsClienti
       '
       'cmdInserisci
       '
-      Me.cmdInserisci.Id = "c1e102ea-84d7-4e3c-8acf-9fe3c5e5ebb0"
+      Me.cmdInserisci.Id = "cee6b872-8fb1-4d46-a7bd-05e87b8b2052"
       Me.cmdInserisci.Location = New System.Drawing.Point(907, 60)
       Me.cmdInserisci.Name = "cmdInserisci"
       Me.cmdInserisci.Size = New System.Drawing.Size(104, 50)
@@ -134,7 +134,7 @@ Public Class frmInsClienti
       Me.lvwClienti.MultiSelect = False
       Me.lvwClienti.Name = "lvwClienti"
       Me.lvwClienti.ShowGroups = False
-      Me.lvwClienti.Size = New System.Drawing.Size(894, 541)
+      Me.lvwClienti.Size = New System.Drawing.Size(896, 541)
       Me.lvwClienti.TabIndex = 0
       Me.lvwClienti.UseCompatibleStateImageBehavior = False
       Me.lvwClienti.View = System.Windows.Forms.View.Details
@@ -192,7 +192,7 @@ Public Class frmInsClienti
       'cmdEsci
       '
       Me.cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.cmdEsci.Id = "ad79e064-a6af-41ac-88c1-1cf83860744e"
+      Me.cmdEsci.Id = "e6fafeb6-0b28-4aed-ac54-c230da8bcda0"
       Me.cmdEsci.Location = New System.Drawing.Point(907, 482)
       Me.cmdEsci.Name = "cmdEsci"
       Me.cmdEsci.Size = New System.Drawing.Size(104, 50)

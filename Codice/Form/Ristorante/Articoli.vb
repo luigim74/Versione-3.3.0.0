@@ -247,6 +247,7 @@ Public Class frmArticoli
       Me.Label33 = New System.Windows.Forms.Label()
       Me.Progressivi = New System.Windows.Forms.TabPage()
       Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+      Me.txtValoreCarichi = New System.Windows.Forms.TextBox()
       Me.txtValoreScarichi = New System.Windows.Forms.TextBox()
       Me.Label47 = New System.Windows.Forms.Label()
       Me.Label51 = New System.Windows.Forms.Label()
@@ -337,7 +338,6 @@ Public Class frmArticoli
       Me.Label56 = New System.Windows.Forms.Label()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.txtValoreCarichi = New System.Windows.Forms.TextBox()
       Me.TabControl1.SuspendLayout()
       Me.DatiPrincipale.SuspendLayout()
       Me.InfoVini.SuspendLayout()
@@ -787,6 +787,18 @@ Public Class frmArticoli
       Me.GroupBox3.TabStop = False
       Me.GroupBox3.Text = "Valori"
       '
+      'txtValoreCarichi
+      '
+      Me.txtValoreCarichi.BackColor = System.Drawing.SystemColors.Window
+      Me.txtValoreCarichi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtValoreCarichi.ForeColor = System.Drawing.Color.Red
+      Me.txtValoreCarichi.Location = New System.Drawing.Point(112, 32)
+      Me.txtValoreCarichi.Name = "txtValoreCarichi"
+      Me.txtValoreCarichi.ReadOnly = True
+      Me.txtValoreCarichi.Size = New System.Drawing.Size(112, 20)
+      Me.txtValoreCarichi.TabIndex = 55803
+      Me.txtValoreCarichi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
       'txtValoreScarichi
       '
       Me.txtValoreScarichi.BackColor = System.Drawing.SystemColors.Control
@@ -1107,7 +1119,7 @@ Public Class frmArticoli
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(541, 20)
+      Me.Panel1.Size = New System.Drawing.Size(542, 20)
       Me.Panel1.TabIndex = 10
       '
       'lblIntestazione
@@ -1132,7 +1144,7 @@ Public Class frmArticoli
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(541, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(542, 26)
       Me.ToolBar1.TabIndex = 9
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -1705,24 +1717,12 @@ Public Class frmArticoli
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'txtValoreCarichi
-      '
-      Me.txtValoreCarichi.BackColor = System.Drawing.SystemColors.Window
-      Me.txtValoreCarichi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtValoreCarichi.ForeColor = System.Drawing.Color.Red
-      Me.txtValoreCarichi.Location = New System.Drawing.Point(112, 32)
-      Me.txtValoreCarichi.Name = "txtValoreCarichi"
-      Me.txtValoreCarichi.ReadOnly = True
-      Me.txtValoreCarichi.Size = New System.Drawing.Size(112, 20)
-      Me.txtValoreCarichi.TabIndex = 55803
-      Me.txtValoreCarichi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
       'frmArticoli
       '
       Me.AcceptButton = Me.cmdApri
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(541, 366)
+      Me.ClientSize = New System.Drawing.Size(542, 366)
       Me.Controls.Add(Me.Label49)
       Me.Controls.Add(Me.Label50)
       Me.Controls.Add(Me.Label48)

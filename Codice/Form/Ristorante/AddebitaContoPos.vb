@@ -196,7 +196,7 @@ Public Class AddebitaContoPos
       Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(366, 373)
+      Me.ClientSize = New System.Drawing.Size(375, 372)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.pnlPag)
       Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

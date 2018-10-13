@@ -127,7 +127,7 @@ Public Class frmCategoriePiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(578, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(536, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -161,7 +161,7 @@ Public Class frmCategoriePiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(578, 20)
+      Me.Panel1.Size = New System.Drawing.Size(536, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -184,7 +184,7 @@ Public Class frmCategoriePiatti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(578, 354)
+      Me.TabControl1.Size = New System.Drawing.Size(536, 330)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -198,7 +198,7 @@ Public Class frmCategoriePiatti
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(570, 328)
+      Me.TabPage1.Size = New System.Drawing.Size(528, 304)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -295,7 +295,7 @@ Public Class frmCategoriePiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(570, 328)
+      Me.TabPage2.Size = New System.Drawing.Size(528, 304)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -450,7 +450,7 @@ Public Class frmCategoriePiatti
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(578, 400)
+      Me.ClientSize = New System.Drawing.Size(536, 376)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

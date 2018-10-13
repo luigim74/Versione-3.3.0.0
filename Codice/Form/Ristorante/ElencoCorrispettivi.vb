@@ -180,7 +180,7 @@ Public Class ElencoCorrispettivi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(743, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(751, 26)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -363,7 +363,7 @@ Public Class ElencoCorrispettivi
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(743, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(751, 254)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -376,14 +376,14 @@ Public Class ElencoCorrispettivi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(743, 30)
+      Me.Panel1.Size = New System.Drawing.Size(751, 30)
       Me.Panel1.TabIndex = 1
       '
       'dtpAl
       '
       Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(559, 8)
+      Me.dtpAl.Location = New System.Drawing.Point(567, 8)
       Me.dtpAl.Name = "dtpAl"
       Me.dtpAl.Size = New System.Drawing.Size(174, 20)
       Me.dtpAl.TabIndex = 1
@@ -392,7 +392,7 @@ Public Class ElencoCorrispettivi
       '
       Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(343, 8)
+      Me.dtpDal.Location = New System.Drawing.Point(351, 8)
       Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.dtpDal.Name = "dtpDal"
       Me.dtpDal.Size = New System.Drawing.Size(174, 20)
@@ -404,7 +404,7 @@ Public Class ElencoCorrispettivi
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.Color.White
-      Me.lblAl.Location = New System.Drawing.Point(535, 8)
+      Me.lblAl.Location = New System.Drawing.Point(540, 8)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(23, 15)
       Me.lblAl.TabIndex = 55668
@@ -416,7 +416,7 @@ Public Class ElencoCorrispettivi
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.Color.White
-      Me.lblDal.Location = New System.Drawing.Point(311, 8)
+      Me.lblDal.Location = New System.Drawing.Point(312, 8)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(33, 15)
       Me.lblDal.TabIndex = 55667
@@ -447,9 +447,9 @@ Public Class ElencoCorrispettivi
       Me.Panel2.Controls.Add(Me.txtTotImporto)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 302)
+      Me.Panel2.Location = New System.Drawing.Point(0, 310)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(743, 48)
+      Me.Panel2.Size = New System.Drawing.Size(751, 48)
       Me.Panel2.TabIndex = 2
       '
       'Label9
@@ -458,7 +458,7 @@ Public Class ElencoCorrispettivi
       Me.Label9.AutoSize = True
       Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label9.ForeColor = System.Drawing.Color.White
-      Me.Label9.Location = New System.Drawing.Point(63, 24)
+      Me.Label9.Location = New System.Drawing.Point(71, 24)
       Me.Label9.Name = "Label9"
       Me.Label9.Size = New System.Drawing.Size(51, 15)
       Me.Label9.TabIndex = 245
@@ -472,7 +472,7 @@ Public Class ElencoCorrispettivi
       Me.txtRicevute.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtRicevute.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtRicevute.ForeColor = System.Drawing.Color.Red
-      Me.txtRicevute.Location = New System.Drawing.Point(223, 24)
+      Me.txtRicevute.Location = New System.Drawing.Point(231, 24)
       Me.txtRicevute.MaxLength = 0
       Me.txtRicevute.Name = "txtRicevute"
       Me.txtRicevute.ReadOnly = True
@@ -487,7 +487,7 @@ Public Class ElencoCorrispettivi
       Me.Label5.AutoSize = True
       Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label5.ForeColor = System.Drawing.Color.White
-      Me.Label5.Location = New System.Drawing.Point(223, 8)
+      Me.Label5.Location = New System.Drawing.Point(231, 8)
       Me.Label5.Name = "Label5"
       Me.Label5.Size = New System.Drawing.Size(66, 15)
       Me.Label5.TabIndex = 244
@@ -501,7 +501,7 @@ Public Class ElencoCorrispettivi
       Me.txtScontrini.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtScontrini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtScontrini.ForeColor = System.Drawing.Color.Red
-      Me.txtScontrini.Location = New System.Drawing.Point(327, 24)
+      Me.txtScontrini.Location = New System.Drawing.Point(335, 24)
       Me.txtScontrini.MaxLength = 0
       Me.txtScontrini.Name = "txtScontrini"
       Me.txtScontrini.ReadOnly = True
@@ -516,7 +516,7 @@ Public Class ElencoCorrispettivi
       Me.Label7.AutoSize = True
       Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label7.ForeColor = System.Drawing.Color.White
-      Me.Label7.Location = New System.Drawing.Point(327, 8)
+      Me.Label7.Location = New System.Drawing.Point(335, 8)
       Me.Label7.Name = "Label7"
       Me.Label7.Size = New System.Drawing.Size(68, 15)
       Me.Label7.TabIndex = 242
@@ -530,7 +530,7 @@ Public Class ElencoCorrispettivi
       Me.txtFatture.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtFatture.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtFatture.ForeColor = System.Drawing.Color.Red
-      Me.txtFatture.Location = New System.Drawing.Point(119, 24)
+      Me.txtFatture.Location = New System.Drawing.Point(127, 24)
       Me.txtFatture.MaxLength = 0
       Me.txtFatture.Name = "txtFatture"
       Me.txtFatture.ReadOnly = True
@@ -545,7 +545,7 @@ Public Class ElencoCorrispettivi
       Me.Label8.AutoSize = True
       Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label8.ForeColor = System.Drawing.Color.White
-      Me.Label8.Location = New System.Drawing.Point(119, 8)
+      Me.Label8.Location = New System.Drawing.Point(127, 8)
       Me.Label8.Name = "Label8"
       Me.Label8.Size = New System.Drawing.Size(56, 15)
       Me.Label8.TabIndex = 241
@@ -559,7 +559,7 @@ Public Class ElencoCorrispettivi
       Me.txtIncassato.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIncassato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtIncassato.ForeColor = System.Drawing.Color.Red
-      Me.txtIncassato.Location = New System.Drawing.Point(535, 24)
+      Me.txtIncassato.Location = New System.Drawing.Point(543, 24)
       Me.txtIncassato.MaxLength = 0
       Me.txtIncassato.Name = "txtIncassato"
       Me.txtIncassato.ReadOnly = True
@@ -574,7 +574,7 @@ Public Class ElencoCorrispettivi
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(535, 8)
+      Me.Label4.Location = New System.Drawing.Point(543, 8)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(72, 15)
       Me.Label4.TabIndex = 238
@@ -588,7 +588,7 @@ Public Class ElencoCorrispettivi
       Me.txtNonIncassato.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtNonIncassato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNonIncassato.ForeColor = System.Drawing.Color.Red
-      Me.txtNonIncassato.Location = New System.Drawing.Point(639, 24)
+      Me.txtNonIncassato.Location = New System.Drawing.Point(647, 24)
       Me.txtNonIncassato.MaxLength = 0
       Me.txtNonIncassato.Name = "txtNonIncassato"
       Me.txtNonIncassato.ReadOnly = True
@@ -603,7 +603,7 @@ Public Class ElencoCorrispettivi
       Me.Label3.AutoSize = True
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(639, 8)
+      Me.Label3.Location = New System.Drawing.Point(647, 8)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(102, 15)
       Me.Label3.TabIndex = 236
@@ -617,7 +617,7 @@ Public Class ElencoCorrispettivi
       Me.txtTotImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotImporto.Location = New System.Drawing.Point(431, 24)
+      Me.txtTotImporto.Location = New System.Drawing.Point(439, 24)
       Me.txtTotImporto.MaxLength = 0
       Me.txtTotImporto.Name = "txtTotImporto"
       Me.txtTotImporto.ReadOnly = True
@@ -632,7 +632,7 @@ Public Class ElencoCorrispettivi
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(431, 8)
+      Me.Label6.Location = New System.Drawing.Point(439, 8)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(51, 15)
       Me.Label6.TabIndex = 16
@@ -647,7 +647,7 @@ Public Class ElencoCorrispettivi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(743, 350)
+      Me.ClientSize = New System.Drawing.Size(751, 358)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)

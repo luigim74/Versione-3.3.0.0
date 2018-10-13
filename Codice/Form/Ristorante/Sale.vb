@@ -129,7 +129,7 @@ Public Class frmSale
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(559, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(537, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -163,7 +163,7 @@ Public Class frmSale
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(559, 20)
+      Me.Panel1.Size = New System.Drawing.Size(537, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -187,7 +187,7 @@ Public Class frmSale
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(559, 331)
+      Me.TabControl1.Size = New System.Drawing.Size(537, 331)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -201,7 +201,7 @@ Public Class frmSale
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(551, 305)
+      Me.TabPage1.Size = New System.Drawing.Size(529, 305)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -292,7 +292,7 @@ Public Class frmSale
       Me.TabPage2.Controls.Add(Me.cmdElimina)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(551, 305)
+      Me.TabPage2.Size = New System.Drawing.Size(529, 305)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Sfondo"
       '
@@ -336,7 +336,7 @@ Public Class frmSale
       Me.TabPage4.Controls.Add(Me.Label11)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(551, 305)
+      Me.TabPage4.Size = New System.Drawing.Size(529, 305)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Punto cassa"
       '
@@ -449,7 +449,7 @@ Public Class frmSale
       Me.AcceptButton = Me.cmdImmagine
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(559, 377)
+      Me.ClientSize = New System.Drawing.Size(537, 377)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

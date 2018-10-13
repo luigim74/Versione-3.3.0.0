@@ -117,7 +117,7 @@ Public Class FiltroPeriodo
       Me.eui_cmdOk.Id = "ea8e600e-ad20-4336-b155-46cbfdcfca3b"
       Me.eui_cmdOk.Location = New System.Drawing.Point(88, 88)
       Me.eui_cmdOk.Name = "eui_cmdOk"
-      Me.eui_cmdOk.Size = New System.Drawing.Size(64, 24)
+      Me.eui_cmdOk.Size = New System.Drawing.Size(64, 25)
       Me.eui_cmdOk.TabIndex = 2
       Me.eui_cmdOk.Text = "&OK"
       '
@@ -127,7 +127,7 @@ Public Class FiltroPeriodo
       Me.eui_cmdAnnulla.Id = "6aa420f1-3c78-4fb0-99fa-f5e94600911b"
       Me.eui_cmdAnnulla.Location = New System.Drawing.Point(160, 88)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
-      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(64, 24)
+      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(64, 25)
       Me.eui_cmdAnnulla.TabIndex = 3
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
@@ -137,7 +137,7 @@ Public Class FiltroPeriodo
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(239, 124)
+      Me.ClientSize = New System.Drawing.Size(240, 126)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.eui_cmdOk)
       Me.Controls.Add(Me.Label2)

@@ -196,7 +196,7 @@ Public Class Corrispettivi
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(250, 160)
+      Me.ClientSize = New System.Drawing.Size(248, 161)
       Me.Controls.Add(Me.Label4)
       Me.Controls.Add(Me.txtNonIncassato)
       Me.Controls.Add(Me.txtScontrini)

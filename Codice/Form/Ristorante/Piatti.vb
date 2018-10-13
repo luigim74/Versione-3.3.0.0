@@ -126,6 +126,10 @@ Public Class frmPiatti
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.Label19 = New Elegant.Ui.Label()
+      Me.Label18 = New Elegant.Ui.Label()
+      Me.Label17 = New Elegant.Ui.Label()
+      Me.Label16 = New Elegant.Ui.Label()
       Me.cmbAliquotaIva = New System.Windows.Forms.ComboBox()
       Me.Label15 = New System.Windows.Forms.Label()
       Me.txtCodiceBarre = New System.Windows.Forms.TextBox()
@@ -179,10 +183,6 @@ Public Class frmPiatti
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.Label16 = New Elegant.Ui.Label()
-      Me.Label17 = New Elegant.Ui.Label()
-      Me.Label18 = New Elegant.Ui.Label()
-      Me.Label19 = New Elegant.Ui.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -204,7 +204,7 @@ Public Class frmPiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(574, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(543, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -238,7 +238,7 @@ Public Class frmPiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(574, 20)
+      Me.Panel1.Size = New System.Drawing.Size(543, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -262,7 +262,7 @@ Public Class frmPiatti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(574, 350)
+      Me.TabControl1.Size = New System.Drawing.Size(543, 337)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -306,9 +306,41 @@ Public Class frmPiatti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(566, 324)
+      Me.TabPage1.Size = New System.Drawing.Size(535, 311)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'Label19
+      '
+      Me.Label19.Location = New System.Drawing.Point(288, 196)
+      Me.Label19.Name = "Label19"
+      Me.Label19.Size = New System.Drawing.Size(58, 15)
+      Me.Label19.TabIndex = 55783
+      Me.Label19.Text = "(Iva Inclusa)"
+      '
+      'Label18
+      '
+      Me.Label18.Location = New System.Drawing.Point(288, 172)
+      Me.Label18.Name = "Label18"
+      Me.Label18.Size = New System.Drawing.Size(58, 15)
+      Me.Label18.TabIndex = 55782
+      Me.Label18.Text = "(Iva Inclusa)"
+      '
+      'Label17
+      '
+      Me.Label17.Location = New System.Drawing.Point(288, 148)
+      Me.Label17.Name = "Label17"
+      Me.Label17.Size = New System.Drawing.Size(58, 15)
+      Me.Label17.TabIndex = 55781
+      Me.Label17.Text = "(Iva Inclusa)"
+      '
+      'Label16
+      '
+      Me.Label16.Location = New System.Drawing.Point(288, 124)
+      Me.Label16.Name = "Label16"
+      Me.Label16.Size = New System.Drawing.Size(58, 15)
+      Me.Label16.TabIndex = 55780
+      Me.Label16.Text = "(Iva Inclusa)"
       '
       'cmbAliquotaIva
       '
@@ -717,7 +749,7 @@ Public Class frmPiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(556, 314)
+      Me.TabPage2.Size = New System.Drawing.Size(535, 311)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -891,7 +923,7 @@ Public Class frmPiatti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(556, 314)
+      Me.TabPage6.Size = New System.Drawing.Size(566, 324)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -908,7 +940,7 @@ Public Class frmPiatti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(556, 314)
+      Me.txtNote.Size = New System.Drawing.Size(566, 324)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -920,44 +952,12 @@ Public Class frmPiatti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'Label16
-      '
-      Me.Label16.Location = New System.Drawing.Point(288, 124)
-      Me.Label16.Name = "Label16"
-      Me.Label16.Size = New System.Drawing.Size(58, 15)
-      Me.Label16.TabIndex = 55780
-      Me.Label16.Text = "(Iva Inclusa)"
-      '
-      'Label17
-      '
-      Me.Label17.Location = New System.Drawing.Point(288, 148)
-      Me.Label17.Name = "Label17"
-      Me.Label17.Size = New System.Drawing.Size(58, 15)
-      Me.Label17.TabIndex = 55781
-      Me.Label17.Text = "(Iva Inclusa)"
-      '
-      'Label18
-      '
-      Me.Label18.Location = New System.Drawing.Point(288, 172)
-      Me.Label18.Name = "Label18"
-      Me.Label18.Size = New System.Drawing.Size(58, 15)
-      Me.Label18.TabIndex = 55782
-      Me.Label18.Text = "(Iva Inclusa)"
-      '
-      'Label19
-      '
-      Me.Label19.Location = New System.Drawing.Point(288, 196)
-      Me.Label19.Name = "Label19"
-      Me.Label19.Size = New System.Drawing.Size(58, 15)
-      Me.Label19.TabIndex = 55783
-      Me.Label19.Text = "(Iva Inclusa)"
-      '
       'frmPiatti
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(574, 396)
+      Me.ClientSize = New System.Drawing.Size(543, 383)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

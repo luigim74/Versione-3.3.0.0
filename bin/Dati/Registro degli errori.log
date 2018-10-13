@@ -1,0 +1,28 @@
+"*** 13/10/2018 - 15:01:17 ***"
+"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
+"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
+   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"
+"
+"*** 13/10/2018 - 15:01:25 ***"
+"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
+"
+"
+"*** 13/10/2018 - 15:01:36 ***"
+"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
+"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
+   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"
+"
+"*** 13/10/2018 - 15:01:38 ***"
+"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
+"
+"

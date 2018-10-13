@@ -114,8 +114,8 @@ Public Class ElencoMovMag
       Me.Panel1 = New System.Windows.Forms.Panel()
       Me.CampoRicerca = New System.Windows.Forms.ComboBox()
       Me.Label2 = New System.Windows.Forms.Label()
-      Me.Label1 = New System.Windows.Forms.Label()
       Me.TestoRicerca = New System.Windows.Forms.TextBox()
+      Me.Label1 = New System.Windows.Forms.Label()
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
@@ -133,7 +133,7 @@ Public Class ElencoMovMag
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(576, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(584, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -262,7 +262,7 @@ Public Class ElencoMovMag
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(576, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(584, 261)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -275,14 +275,14 @@ Public Class ElencoMovMag
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(576, 30)
+      Me.Panel1.Size = New System.Drawing.Size(584, 30)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(434, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(442, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -293,11 +293,20 @@ Public Class ElencoMovMag
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(352, 8)
+      Me.Label2.Location = New System.Drawing.Point(354, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
       Me.Label2.Text = "Ricerca per:"
+      '
+      'TestoRicerca
+      '
+      Me.TestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.TestoRicerca.Location = New System.Drawing.Point(118, 8)
+      Me.TestoRicerca.Name = "TestoRicerca"
+      Me.TestoRicerca.Size = New System.Drawing.Size(226, 20)
+      Me.TestoRicerca.TabIndex = 0
       '
       'Label1
       '
@@ -309,15 +318,6 @@ Public Class ElencoMovMag
       Me.Label1.Size = New System.Drawing.Size(110, 15)
       Me.Label1.TabIndex = 6
       Me.Label1.Text = "Testo di ricerca:"
-      '
-      'TestoRicerca
-      '
-      Me.TestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.TestoRicerca.Location = New System.Drawing.Point(110, 8)
-      Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(231, 20)
-      Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
       '
@@ -336,7 +336,7 @@ Public Class ElencoMovMag
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(576, 310)
+      Me.ClientSize = New System.Drawing.Size(584, 318)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)

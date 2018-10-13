@@ -165,6 +165,7 @@ Public Class frmSchedinaPS
       Me.txtCodice = New System.Windows.Forms.TextBox()
       Me.Label5 = New System.Windows.Forms.Label()
       Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.cmbComuneNascita = New System.Windows.Forms.ComboBox()
       Me.cmbTipoAlloggiato = New System.Windows.Forms.ComboBox()
       Me.Label14 = New System.Windows.Forms.Label()
       Me.cmdNuovoIntestatario = New System.Windows.Forms.Button()
@@ -187,6 +188,7 @@ Public Class frmSchedinaPS
       Me.Label20 = New System.Windows.Forms.Label()
       Me.Label6 = New System.Windows.Forms.Label()
       Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.cmbComuneRilascioDoc = New System.Windows.Forms.ComboBox()
       Me.txtRilasciatoDaDoc = New System.Windows.Forms.TextBox()
       Me.cmbNazioneRilascioDoc = New System.Windows.Forms.ComboBox()
       Me.Label35 = New System.Windows.Forms.Label()
@@ -220,8 +222,6 @@ Public Class frmSchedinaPS
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.cmbComuneNascita = New System.Windows.Forms.ComboBox()
-      Me.cmbComuneRilascioDoc = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -243,7 +243,7 @@ Public Class frmSchedinaPS
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(626, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(560, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -277,7 +277,7 @@ Public Class frmSchedinaPS
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(626, 20)
+      Me.Panel1.Size = New System.Drawing.Size(560, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -302,7 +302,7 @@ Public Class frmSchedinaPS
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(626, 446)
+      Me.TabControl1.Size = New System.Drawing.Size(560, 395)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -324,7 +324,7 @@ Public Class frmSchedinaPS
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(618, 420)
+      Me.TabPage1.Size = New System.Drawing.Size(552, 369)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati schedina"
       '
@@ -391,9 +391,9 @@ Public Class frmSchedinaPS
       Me.Panel2.Controls.Add(Me.lblArrivo)
       Me.Panel2.Controls.Add(Me.mcDataPartenza)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 185)
+      Me.Panel2.Location = New System.Drawing.Point(0, 134)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(618, 235)
+      Me.Panel2.Size = New System.Drawing.Size(552, 235)
       Me.Panel2.TabIndex = 232
       '
       'mcDataArrivo
@@ -604,9 +604,17 @@ Public Class frmSchedinaPS
       Me.TabPage4.Controls.Add(Me.Label6)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(618, 420)
+      Me.TabPage4.Size = New System.Drawing.Size(552, 369)
       Me.TabPage4.TabIndex = 8
       Me.TabPage4.Text = "Dati Anagrafici"
+      '
+      'cmbComuneNascita
+      '
+      Me.cmbComuneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbComuneNascita.Location = New System.Drawing.Point(125, 187)
+      Me.cmbComuneNascita.Name = "cmbComuneNascita"
+      Me.cmbComuneNascita.Size = New System.Drawing.Size(160, 21)
+      Me.cmbComuneNascita.TabIndex = 7
       '
       'cmbTipoAlloggiato
       '
@@ -874,9 +882,17 @@ Public Class frmSchedinaPS
       Me.TabPage5.Controls.Add(Me.Label2)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(618, 420)
+      Me.TabPage5.Size = New System.Drawing.Size(552, 369)
       Me.TabPage5.TabIndex = 4
       Me.TabPage5.Text = "Documento di riconoscimento"
+      '
+      'cmbComuneRilascioDoc
+      '
+      Me.cmbComuneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbComuneRilascioDoc.Location = New System.Drawing.Point(113, 62)
+      Me.cmbComuneRilascioDoc.Name = "cmbComuneRilascioDoc"
+      Me.cmbComuneRilascioDoc.Size = New System.Drawing.Size(160, 21)
+      Me.cmbComuneRilascioDoc.TabIndex = 302
       '
       'txtRilasciatoDaDoc
       '
@@ -1018,7 +1034,7 @@ Public Class frmSchedinaPS
       Me.tpComponenti.Controls.Add(Me.cmdEliminaOccupanti)
       Me.tpComponenti.Location = New System.Drawing.Point(4, 22)
       Me.tpComponenti.Name = "tpComponenti"
-      Me.tpComponenti.Size = New System.Drawing.Size(608, 410)
+      Me.tpComponenti.Size = New System.Drawing.Size(552, 369)
       Me.tpComponenti.TabIndex = 7
       Me.tpComponenti.Text = "Altri componenti"
       '
@@ -1029,7 +1045,7 @@ Public Class frmSchedinaPS
       Me.lvwOccupanti.Location = New System.Drawing.Point(0, 0)
       Me.lvwOccupanti.MultiSelect = False
       Me.lvwOccupanti.Name = "lvwOccupanti"
-      Me.lvwOccupanti.Size = New System.Drawing.Size(595, 328)
+      Me.lvwOccupanti.Size = New System.Drawing.Size(552, 328)
       Me.lvwOccupanti.TabIndex = 3
       Me.lvwOccupanti.UseCompatibleStateImageBehavior = False
       Me.lvwOccupanti.View = System.Windows.Forms.View.Details
@@ -1102,7 +1118,7 @@ Public Class frmSchedinaPS
       'cmdInserisciOccupanti
       '
       Me.cmdInserisciOccupanti.Id = "5cb4629d-8026-4d6c-9815-611d4bacb7c7"
-      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(346, 331)
+      Me.cmdInserisciOccupanti.Location = New System.Drawing.Point(331, 332)
       Me.cmdInserisciOccupanti.Name = "cmdInserisciOccupanti"
       Me.cmdInserisciOccupanti.Size = New System.Drawing.Size(104, 32)
       Me.cmdInserisciOccupanti.TabIndex = 1
@@ -1111,7 +1127,7 @@ Public Class frmSchedinaPS
       'cmdEliminaOccupanti
       '
       Me.cmdEliminaOccupanti.Id = "f4c880ee-0846-4e54-a486-3bc390ef19a6"
-      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(458, 331)
+      Me.cmdEliminaOccupanti.Location = New System.Drawing.Point(443, 332)
       Me.cmdEliminaOccupanti.Name = "cmdEliminaOccupanti"
       Me.cmdEliminaOccupanti.Size = New System.Drawing.Size(104, 32)
       Me.cmdEliminaOccupanti.TabIndex = 2
@@ -1126,27 +1142,11 @@ Public Class frmSchedinaPS
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'cmbComuneNascita
-      '
-      Me.cmbComuneNascita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbComuneNascita.Location = New System.Drawing.Point(125, 187)
-      Me.cmbComuneNascita.Name = "cmbComuneNascita"
-      Me.cmbComuneNascita.Size = New System.Drawing.Size(160, 21)
-      Me.cmbComuneNascita.TabIndex = 7
-      '
-      'cmbComuneRilascioDoc
-      '
-      Me.cmbComuneRilascioDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.cmbComuneRilascioDoc.Location = New System.Drawing.Point(113, 62)
-      Me.cmbComuneRilascioDoc.Name = "cmbComuneRilascioDoc"
-      Me.cmbComuneRilascioDoc.Size = New System.Drawing.Size(160, 21)
-      Me.cmbComuneRilascioDoc.TabIndex = 302
-      '
       'frmSchedinaPS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(626, 492)
+      Me.ClientSize = New System.Drawing.Size(560, 441)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

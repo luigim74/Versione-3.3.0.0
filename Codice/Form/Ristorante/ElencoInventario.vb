@@ -166,7 +166,7 @@ Public Class ElencoInventario
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(572, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(580, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -288,7 +288,7 @@ Public Class ElencoInventario
       Me.DataGrid1.Location = New System.Drawing.Point(0, 64)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(572, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(580, 262)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -309,7 +309,7 @@ Public Class ElencoInventario
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(572, 38)
+      Me.Panel1.Size = New System.Drawing.Size(580, 38)
       Me.Panel1.TabIndex = 0
       '
       'Label7
@@ -317,7 +317,7 @@ Public Class ElencoInventario
       Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.Label7.Location = New System.Drawing.Point(324, 72)
+      Me.Label7.Location = New System.Drawing.Point(332, 72)
       Me.Label7.Name = "Label7"
       Me.Label7.Size = New System.Drawing.Size(120, 17)
       Me.Label7.TabIndex = 246
@@ -343,7 +343,7 @@ Public Class ElencoInventario
       Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.System
       Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.CheckBox2.ForeColor = System.Drawing.SystemColors.Window
-      Me.CheckBox2.Location = New System.Drawing.Point(452, 72)
+      Me.CheckBox2.Location = New System.Drawing.Point(460, 72)
       Me.CheckBox2.Name = "CheckBox2"
       Me.CheckBox2.Size = New System.Drawing.Size(112, 16)
       Me.CheckBox2.TabIndex = 5
@@ -352,7 +352,7 @@ Public Class ElencoInventario
       '
       Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.ComboBox2.Location = New System.Drawing.Point(430, 40)
+      Me.ComboBox2.Location = New System.Drawing.Point(438, 40)
       Me.ComboBox2.Name = "ComboBox2"
       Me.ComboBox2.Size = New System.Drawing.Size(136, 21)
       Me.ComboBox2.TabIndex = 3
@@ -364,7 +364,7 @@ Public Class ElencoInventario
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.Label4.Location = New System.Drawing.Point(326, 40)
+      Me.Label4.Location = New System.Drawing.Point(334, 40)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(107, 15)
       Me.Label4.TabIndex = 243
@@ -396,7 +396,7 @@ Public Class ElencoInventario
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(430, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(438, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -407,7 +407,7 @@ Public Class ElencoInventario
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(340, 8)
+      Me.Label2.Location = New System.Drawing.Point(348, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -430,7 +430,7 @@ Public Class ElencoInventario
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(120, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(203, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(211, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'Label3
@@ -463,9 +463,9 @@ Public Class ElencoInventario
       Me.Panel2.Controls.Add(Me.txtTotValAttuale)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 318)
+      Me.Panel2.Location = New System.Drawing.Point(0, 326)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(572, 48)
+      Me.Panel2.Size = New System.Drawing.Size(580, 48)
       Me.Panel2.TabIndex = 14
       '
       'txtTotValScarico
@@ -476,7 +476,7 @@ Public Class ElencoInventario
       Me.txtTotValScarico.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotValScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotValScarico.ForeColor = System.Drawing.Color.Red
-      Me.txtTotValScarico.Location = New System.Drawing.Point(284, 22)
+      Me.txtTotValScarico.Location = New System.Drawing.Point(292, 22)
       Me.txtTotValScarico.MaxLength = 0
       Me.txtTotValScarico.Name = "txtTotValScarico"
       Me.txtTotValScarico.ReadOnly = True
@@ -491,7 +491,7 @@ Public Class ElencoInventario
       Me.Label9.AutoSize = True
       Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label9.ForeColor = System.Drawing.Color.White
-      Me.Label9.Location = New System.Drawing.Point(284, 4)
+      Me.Label9.Location = New System.Drawing.Point(292, 4)
       Me.Label9.Name = "Label9"
       Me.Label9.Size = New System.Drawing.Size(132, 15)
       Me.Label9.TabIndex = 20
@@ -505,7 +505,7 @@ Public Class ElencoInventario
       Me.txtTotValCarico.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotValCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotValCarico.ForeColor = System.Drawing.Color.Red
-      Me.txtTotValCarico.Location = New System.Drawing.Point(140, 22)
+      Me.txtTotValCarico.Location = New System.Drawing.Point(148, 22)
       Me.txtTotValCarico.MaxLength = 0
       Me.txtTotValCarico.Name = "txtTotValCarico"
       Me.txtTotValCarico.ReadOnly = True
@@ -520,7 +520,7 @@ Public Class ElencoInventario
       Me.Label8.AutoSize = True
       Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label8.ForeColor = System.Drawing.Color.White
-      Me.Label8.Location = New System.Drawing.Point(140, 4)
+      Me.Label8.Location = New System.Drawing.Point(148, 4)
       Me.Label8.Name = "Label8"
       Me.Label8.Size = New System.Drawing.Size(125, 15)
       Me.Label8.TabIndex = 18
@@ -534,7 +534,7 @@ Public Class ElencoInventario
       Me.txtTotValAttuale.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotValAttuale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotValAttuale.ForeColor = System.Drawing.Color.Red
-      Me.txtTotValAttuale.Location = New System.Drawing.Point(428, 22)
+      Me.txtTotValAttuale.Location = New System.Drawing.Point(436, 22)
       Me.txtTotValAttuale.MaxLength = 0
       Me.txtTotValAttuale.Name = "txtTotValAttuale"
       Me.txtTotValAttuale.ReadOnly = True
@@ -549,7 +549,7 @@ Public Class ElencoInventario
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(428, 4)
+      Me.Label6.Location = New System.Drawing.Point(436, 4)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(126, 15)
       Me.Label6.TabIndex = 16
@@ -564,7 +564,7 @@ Public Class ElencoInventario
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(572, 366)
+      Me.ClientSize = New System.Drawing.Size(580, 374)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)

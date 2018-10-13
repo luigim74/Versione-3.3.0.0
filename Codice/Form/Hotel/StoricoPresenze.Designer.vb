@@ -83,7 +83,7 @@ Partial Class StoricoPresenze
       Me.eui_tpcPresenze.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcPresenze.Name = "eui_tpcPresenze"
       Me.eui_tpcPresenze.SelectedTabPage = Me.tpElenco
-      Me.eui_tpcPresenze.Size = New System.Drawing.Size(698, 504)
+      Me.eui_tpcPresenze.Size = New System.Drawing.Size(706, 512)
       Me.eui_tpcPresenze.TabIndex = 1
       Me.eui_tpcPresenze.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpElenco, Me.tpGrafico})
       Me.eui_tpcPresenze.Text = " "
@@ -98,7 +98,7 @@ Partial Class StoricoPresenze
       Me.tpElenco.Controls.Add(Me.dgvDettagli)
       Me.tpElenco.KeyTip = Nothing
       Me.tpElenco.Name = "tpElenco"
-      Me.tpElenco.Size = New System.Drawing.Size(696, 483)
+      Me.tpElenco.Size = New System.Drawing.Size(704, 491)
       Me.tpElenco.TabIndex = 0
       Me.tpElenco.Text = "Elenco"
       '
@@ -107,7 +107,7 @@ Partial Class StoricoPresenze
       Me.eui_txtTotalePresenze.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotalePresenze.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotalePresenze.Id = "93e5be5f-7b2f-45ff-a3b6-f0e2c54977b0"
-      Me.eui_txtTotalePresenze.Location = New System.Drawing.Point(460, 448)
+      Me.eui_txtTotalePresenze.Location = New System.Drawing.Point(468, 456)
       Me.eui_txtTotalePresenze.Name = "eui_txtTotalePresenze"
       Me.eui_txtTotalePresenze.ReadOnly = True
       Me.eui_txtTotalePresenze.Size = New System.Drawing.Size(115, 21)
@@ -118,7 +118,7 @@ Partial Class StoricoPresenze
       'Label2
       '
       Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label2.Location = New System.Drawing.Point(460, 432)
+      Me.Label2.Location = New System.Drawing.Point(468, 440)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(79, 16)
       Me.Label2.TabIndex = 3
@@ -129,7 +129,7 @@ Partial Class StoricoPresenze
       Me.eui_txtTotaleOccupazione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotaleOccupazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotaleOccupazione.Id = "e683d444-c6d4-41ea-9bda-3901b401a822"
-      Me.eui_txtTotaleOccupazione.Location = New System.Drawing.Point(577, 448)
+      Me.eui_txtTotaleOccupazione.Location = New System.Drawing.Point(585, 456)
       Me.eui_txtTotaleOccupazione.Name = "eui_txtTotaleOccupazione"
       Me.eui_txtTotaleOccupazione.ReadOnly = True
       Me.eui_txtTotaleOccupazione.Size = New System.Drawing.Size(115, 21)
@@ -140,7 +140,7 @@ Partial Class StoricoPresenze
       'Label18
       '
       Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label18.Location = New System.Drawing.Point(577, 432)
+      Me.Label18.Location = New System.Drawing.Point(585, 440)
       Me.Label18.Name = "Label18"
       Me.Label18.Size = New System.Drawing.Size(116, 16)
       Me.Label18.TabIndex = 0
@@ -171,7 +171,7 @@ Partial Class StoricoPresenze
       Me.dgvDettagli.Name = "dgvDettagli"
       Me.dgvDettagli.ReadOnly = True
       Me.dgvDettagli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-      Me.dgvDettagli.Size = New System.Drawing.Size(690, 416)
+      Me.dgvDettagli.Size = New System.Drawing.Size(698, 424)
       Me.dgvDettagli.TabIndex = 0
       '
       'clnMese
@@ -262,7 +262,7 @@ Partial Class StoricoPresenze
       'Label1
       '
       Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label1.Location = New System.Drawing.Point(719, 12)
+      Me.Label1.Location = New System.Drawing.Point(727, 12)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(46, 16)
       Me.Label1.TabIndex = 11
@@ -275,7 +275,7 @@ Partial Class StoricoPresenze
       Me.eui_cmbTipologia.FormattingEnabled = False
       Me.eui_cmbTipologia.Id = "e3bad87f-e4ea-4c52-87fc-b9ef1d206b88"
       Me.eui_cmbTipologia.Items.AddRange(New Object() {"Hotel"})
-      Me.eui_cmbTipologia.Location = New System.Drawing.Point(719, 28)
+      Me.eui_cmbTipologia.Location = New System.Drawing.Point(727, 28)
       Me.eui_cmbTipologia.Name = "eui_cmbTipologia"
       Me.eui_cmbTipologia.Size = New System.Drawing.Size(113, 21)
       Me.eui_cmbTipologia.Sorted = True
@@ -288,7 +288,7 @@ Partial Class StoricoPresenze
       Me.eui_cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdStampa.Id = "63b7281d-2400-4a95-b56e-3706f3912fe3"
       Me.eui_cmdStampa.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdStampa.Location = New System.Drawing.Point(719, 369)
+      Me.eui_cmdStampa.Location = New System.Drawing.Point(727, 377)
       Me.eui_cmdStampa.Name = "eui_cmdStampa"
       Me.eui_cmdStampa.ScreenTip.Caption = "Stampa"
       Me.eui_cmdStampa.ScreenTip.Text = "Stampa l'elenco delle presenze."
@@ -304,7 +304,7 @@ Partial Class StoricoPresenze
       Me.eui_cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdEsci.Id = "939bbe43-2558-40f8-9053-da695bc51ddd"
       Me.eui_cmdEsci.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdEsci.Location = New System.Drawing.Point(719, 448)
+      Me.eui_cmdEsci.Location = New System.Drawing.Point(727, 456)
       Me.eui_cmdEsci.Name = "eui_cmdEsci"
       Me.eui_cmdEsci.ScreenTip.Caption = "Esci"
       Me.eui_cmdEsci.ScreenTip.Text = "Chiude la finestra."
@@ -317,7 +317,7 @@ Partial Class StoricoPresenze
       'Label3
       '
       Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label3.Location = New System.Drawing.Point(719, 59)
+      Me.Label3.Location = New System.Drawing.Point(727, 59)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(42, 16)
       Me.Label3.TabIndex = 15
@@ -329,7 +329,7 @@ Partial Class StoricoPresenze
       Me.eui_cmbAnno.Editable = False
       Me.eui_cmbAnno.FormattingEnabled = False
       Me.eui_cmbAnno.Id = "9a06333f-b42a-49f3-9cad-415d7360ffd5"
-      Me.eui_cmbAnno.Location = New System.Drawing.Point(719, 75)
+      Me.eui_cmbAnno.Location = New System.Drawing.Point(727, 75)
       Me.eui_cmbAnno.Name = "eui_cmbAnno"
       Me.eui_cmbAnno.Size = New System.Drawing.Size(113, 21)
       Me.eui_cmbAnno.Sorted = True
@@ -341,7 +341,7 @@ Partial Class StoricoPresenze
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(842, 522)
+      Me.ClientSize = New System.Drawing.Size(850, 530)
       Me.Controls.Add(Me.Label3)
       Me.Controls.Add(Me.eui_cmbAnno)
       Me.Controls.Add(Me.eui_cmdEsci)

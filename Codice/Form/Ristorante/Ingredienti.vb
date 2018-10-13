@@ -233,7 +233,7 @@ Public Class Ingredienti
       Me.AcceptButton = Me.cmdOk
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(383, 193)
+      Me.ClientSize = New System.Drawing.Size(383, 189)
       Me.Controls.Add(Me.cmbId_Art)
       Me.Controls.Add(Me.cmbDescrizione)
       Me.Controls.Add(Me.txtCodice)

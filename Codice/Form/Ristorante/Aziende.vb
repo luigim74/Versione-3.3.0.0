@@ -183,6 +183,7 @@ Public Class frmAziende
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbCittà = New System.Windows.Forms.ComboBox()
       Me.cmbAttività = New System.Windows.Forms.ComboBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.txtContatto = New System.Windows.Forms.TextBox()
@@ -304,7 +305,6 @@ Public Class frmAziende
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.cmbCittà = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -328,7 +328,7 @@ Public Class frmAziende
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(554, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(543, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -373,7 +373,7 @@ Public Class frmAziende
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(554, 20)
+      Me.Panel1.Size = New System.Drawing.Size(543, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -401,7 +401,7 @@ Public Class frmAziende
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(554, 332)
+      Me.TabControl1.Size = New System.Drawing.Size(543, 321)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -445,10 +445,17 @@ Public Class frmAziende
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage1.Size = New System.Drawing.Size(535, 295)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
+      '
+      'cmbCittà
+      '
+      Me.cmbCittà.Location = New System.Drawing.Point(112, 96)
+      Me.cmbCittà.Name = "cmbCittà"
+      Me.cmbCittà.Size = New System.Drawing.Size(256, 21)
+      Me.cmbCittà.TabIndex = 3
       '
       'cmbAttività
       '
@@ -870,7 +877,7 @@ Public Class frmAziende
       Me.TabPage3.Controls.Add(Me.Label11)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage3.Size = New System.Drawing.Size(535, 295)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -1070,7 +1077,7 @@ Public Class frmAziende
       Me.TabPage2.Controls.Add(Me.Label23)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage2.Size = New System.Drawing.Size(535, 295)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       '
@@ -1258,7 +1265,7 @@ Public Class frmAziende
       Me.TabPage5.Controls.Add(Me.lvwBuoniPasto)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage5.Size = New System.Drawing.Size(535, 295)
       Me.TabPage5.TabIndex = 7
       Me.TabPage5.Text = "Buoni pasto"
       '
@@ -1365,7 +1372,7 @@ Public Class frmAziende
       Me.TabPage7.Controls.Add(Me.Label27)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage7.Size = New System.Drawing.Size(535, 295)
       Me.TabPage7.TabIndex = 8
       Me.TabPage7.Text = "Fatturazione"
       '
@@ -1510,7 +1517,7 @@ Public Class frmAziende
       Me.cmbDataAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbDataAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbDataAl.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.cmbDataAl.Location = New System.Drawing.Point(354, 8)
+      Me.cmbDataAl.Location = New System.Drawing.Point(343, 8)
       Me.cmbDataAl.Name = "cmbDataAl"
       Me.cmbDataAl.Size = New System.Drawing.Size(88, 20)
       Me.cmbDataAl.TabIndex = 10
@@ -1521,7 +1528,7 @@ Public Class frmAziende
       Me.cmbDataDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbDataDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbDataDal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.cmbDataDal.Location = New System.Drawing.Point(234, 8)
+      Me.cmbDataDal.Location = New System.Drawing.Point(223, 8)
       Me.cmbDataDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.cmbDataDal.Name = "cmbDataDal"
       Me.cmbDataDal.Size = New System.Drawing.Size(88, 20)
@@ -1534,7 +1541,7 @@ Public Class frmAziende
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.Color.Black
-      Me.lblAl.Location = New System.Drawing.Point(330, 8)
+      Me.lblAl.Location = New System.Drawing.Point(319, 8)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(20, 15)
       Me.lblAl.TabIndex = 55667
@@ -1547,7 +1554,7 @@ Public Class frmAziende
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.Color.Black
-      Me.lblDal.Location = New System.Drawing.Point(202, 8)
+      Me.lblDal.Location = New System.Drawing.Point(191, 8)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(29, 15)
       Me.lblDal.TabIndex = 55666
@@ -1657,7 +1664,7 @@ Public Class frmAziende
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(546, 306)
+      Me.TabPage4.Size = New System.Drawing.Size(535, 287)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1737,7 +1744,7 @@ Public Class frmAziende
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(536, 296)
+      Me.TabPage6.Size = New System.Drawing.Size(556, 316)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1755,7 +1762,7 @@ Public Class frmAziende
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(536, 296)
+      Me.txtNote.Size = New System.Drawing.Size(556, 316)
       Me.txtNote.TabIndex = 0
       '
       'PrintDialog1
@@ -1771,19 +1778,12 @@ Public Class frmAziende
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'cmbCittà
-      '
-      Me.cmbCittà.Location = New System.Drawing.Point(112, 96)
-      Me.cmbCittà.Name = "cmbCittà"
-      Me.cmbCittà.Size = New System.Drawing.Size(256, 21)
-      Me.cmbCittà.TabIndex = 3
-      '
       'frmAziende
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(554, 378)
+      Me.ClientSize = New System.Drawing.Size(543, 367)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

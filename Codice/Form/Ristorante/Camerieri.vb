@@ -186,7 +186,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(574, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(551, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -229,7 +229,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(574, 20)
+      Me.Panel1.Size = New System.Drawing.Size(551, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -254,7 +254,7 @@ Public Class frmCamerieri
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(574, 352)
+      Me.TabControl1.Size = New System.Drawing.Size(551, 313)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -286,7 +286,7 @@ Public Class frmCamerieri
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(566, 326)
+      Me.TabPage1.Size = New System.Drawing.Size(543, 287)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -592,7 +592,7 @@ Public Class frmCamerieri
       Me.TabPage3.Controls.Add(Me.Label11)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(556, 316)
+      Me.TabPage3.Size = New System.Drawing.Size(543, 287)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -746,7 +746,7 @@ Public Class frmCamerieri
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(556, 316)
+      Me.TabPage4.Size = New System.Drawing.Size(543, 287)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -826,7 +826,7 @@ Public Class frmCamerieri
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(556, 316)
+      Me.TabPage6.Size = New System.Drawing.Size(543, 287)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -844,7 +844,7 @@ Public Class frmCamerieri
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(556, 316)
+      Me.txtNote.Size = New System.Drawing.Size(543, 287)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -861,7 +861,7 @@ Public Class frmCamerieri
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(574, 398)
+      Me.ClientSize = New System.Drawing.Size(551, 359)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

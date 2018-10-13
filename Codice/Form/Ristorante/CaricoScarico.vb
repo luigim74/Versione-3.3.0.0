@@ -284,7 +284,7 @@ Public Class CaricoScarico
       Me.AcceptButton = Me.cmdOk
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(386, 240)
+      Me.ClientSize = New System.Drawing.Size(379, 239)
       Me.Controls.Add(Me.txtDescrizione)
       Me.Controls.Add(Me.cmbFornitore)
       Me.Controls.Add(Me.lblFornitore)

@@ -131,7 +131,7 @@ Public Class ElencoMessaggi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(768, 40)
+      Me.ToolBar1.Size = New System.Drawing.Size(516, 40)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.Wrappable = False
       '
@@ -289,7 +289,7 @@ Public Class ElencoMessaggi
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(768, 244)
+      Me.DataGrid1.Size = New System.Drawing.Size(516, 254)
       Me.DataGrid1.TabIndex = 1
       '
       'PrintDialog1
@@ -307,9 +307,9 @@ Public Class ElencoMessaggi
       Me.Panel2.Controls.Add(Me.cmdInvia)
       Me.Panel2.Controls.Add(Me.Label1)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 286)
+      Me.Panel2.Location = New System.Drawing.Point(0, 294)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(768, 56)
+      Me.Panel2.Size = New System.Drawing.Size(516, 56)
       Me.Panel2.TabIndex = 0
       '
       'cmbMsg
@@ -318,7 +318,7 @@ Public Class ElencoMessaggi
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbMsg.Location = New System.Drawing.Point(96, 16)
       Me.cmbMsg.Name = "cmbMsg"
-      Me.cmbMsg.Size = New System.Drawing.Size(560, 21)
+      Me.cmbMsg.Size = New System.Drawing.Size(308, 21)
       Me.cmbMsg.TabIndex = 0
       '
       'cmdInvia
@@ -326,7 +326,7 @@ Public Class ElencoMessaggi
       Me.cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmdInvia.BackColor = System.Drawing.SystemColors.Control
       Me.cmdInvia.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdInvia.Location = New System.Drawing.Point(664, 14)
+      Me.cmdInvia.Location = New System.Drawing.Point(412, 14)
       Me.cmdInvia.Name = "cmdInvia"
       Me.cmdInvia.Size = New System.Drawing.Size(88, 24)
       Me.cmdInvia.TabIndex = 1
@@ -354,7 +354,7 @@ Public Class ElencoMessaggi
       Me.AcceptButton = Me.cmdInvia
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(768, 342)
+      Me.ClientSize = New System.Drawing.Size(516, 350)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.ToolBar1)
